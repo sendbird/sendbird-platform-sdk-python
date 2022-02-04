@@ -15,23 +15,18 @@ import time
 import sendbird-platform-sdk
 from pprint import pprint
 from sendbird-platform-sdk.api import advanced_analytics_api
-from sendbird-platform-sdk.model.inline_response20062 import InlineResponse20062
-# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
-# See configuration.py for a list of all supported configuration parameters.
+
 configuration = sendbird-platform-sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 
-# Enter a context with an instance of the API client
 with sendbird-platform-sdk.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
     api_instance = advanced_analytics_api.AdvancedAnalyticsApi(api_client)
     api_token = "{{API_TOKEN}}" # str |  (optional)
 
     try:
-        # Retrieve Advanced analytics metrics
         api_response = api_instance.retrieve_advanced_analytics_metrics(api_token=api_token)
         pprint(api_response)
     except sendbird-platform-sdk.ApiException as e:
