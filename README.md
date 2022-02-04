@@ -50,6 +50,12 @@ In order to make requests with this SDK you will need you master API token. This
 
 
 # 🤓 Local Development
+Install via [Setuptools](http://pypi.python.org/pypi/setuptools).
+
+```sh
+python setup.py install --user
+```
+(or `sudo python setup.py install` to install the package for all users)
 
 
 # 🗃️ Documentation 
