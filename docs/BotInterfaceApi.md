@@ -1,0 +1,746 @@
+# sendbird-platform-sdk.BotInterfaceApi
+
+All URIs are relative to *https://api-APP_ID.sendbird.com*
+
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**create_bot**](BotInterfaceApi.md#create_bot) | **POST** /v3/bots | Create a bot
+[**delete_bot_by_id**](BotInterfaceApi.md#delete_bot_by_id) | **DELETE** /v3/bots/{bot_userid} | Delete a bot
+[**join_channels**](BotInterfaceApi.md#join_channels) | **POST** /v3/bots/{bot_userid}/channels | Join channels
+[**leave_channels**](BotInterfaceApi.md#leave_channels) | **DELETE** /v3/bots/{bot_userid}/channels | Leave channels - When leaving all channels
+[**leave_channels_by_url**](BotInterfaceApi.md#leave_channels_by_url) | **DELETE** /v3/bots/{bot_userid}/channels/{channel_url} | Leave channels - When leaving a channel by its channel URL
+[**list_bots**](BotInterfaceApi.md#list_bots) | **GET** /v3/bots | List bots
+[**send_bots_message**](BotInterfaceApi.md#send_bots_message) | **POST** /v3/bots/{bot_userid}/send | Send a bot&#39;s message
+[**update_bot_by_id**](BotInterfaceApi.md#update_bot_by_id) | **PUT** /v3/bots/{bot_userid} | Update a bot
+[**view_bot_by_id**](BotInterfaceApi.md#view_bot_by_id) | **GET** /v3/bots/{bot_userid} | View a bot
+
+
+# **create_bot**
+> InlineResponse20065Bots create_bot()
+
+Create a bot
+
+## Create a bot  Creates a new bot within the application. Creating a bot is similar to creating a normal user, except that a callback URL is specified in order for the bot to receive events.  > __Note__: The bot must [join](#2-join-channels) a group channel first to interact with users. In group channels, you can invite a bot through the [invite as members](https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-invite-as-members) action instead.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-create-a-bot
+
+### Example
+
+
+```python
+import time
+import sendbird-platform-sdk
+from sendbird-platform-sdk.api import bot_interface_api
+from sendbird-platform-sdk.model.create_bot_data import CreateBotData
+from sendbird-platform-sdk.model.inline_response20065_bots import InlineResponse20065Bots
+from pprint import pprint
+# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = sendbird-platform-sdk.Configuration(
+    host = "https://api-APP_ID.sendbird.com"
+)
+
+
+# Enter a context with an instance of the API client
+with sendbird-platform-sdk.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = bot_interface_api.BotInterfaceApi(api_client)
+    api_token = "{{API_TOKEN}}" # str |  (optional)
+    create_bot_data = CreateBotData(
+        bot_userid="bot_userid_example",
+        bot_nickname="bot_nickname_example",
+        bot_profile_url="bot_profile_url_example",
+        bot_type="bot_type_example",
+        bot_callback_url="bot_callback_url_example",
+        is_privacy_mode=True,
+        enable_mark_as_read=True,
+        show_member=True,
+        channel_invitation_preference=1,
+    ) # CreateBotData |  (optional)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Create a bot
+        api_response = api_instance.create_bot(api_token=api_token, create_bot_data=create_bot_data)
+        pprint(api_response)
+    except sendbird-platform-sdk.ApiException as e:
+        print("Exception when calling BotInterfaceApi->create_bot: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  | [optional]
+ **create_bot_data** | [**CreateBotData**](CreateBotData.md)|  | [optional]
+
+### Return type
+
+[**InlineResponse20065Bots**](InlineResponse20065Bots.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **delete_bot_by_id**
+> delete_bot_by_id(bot_userid)
+
+Delete a bot
+
+## Delete a bot  Deletes a bot from an application.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-delete-a-bot ----------------------------
+
+### Example
+
+
+```python
+import time
+import sendbird-platform-sdk
+from sendbird-platform-sdk.api import bot_interface_api
+from pprint import pprint
+# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = sendbird-platform-sdk.Configuration(
+    host = "https://api-APP_ID.sendbird.com"
+)
+
+
+# Enter a context with an instance of the API client
+with sendbird-platform-sdk.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = bot_interface_api.BotInterfaceApi(api_client)
+    bot_userid = "bot_userid_example" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Delete a bot
+        api_instance.delete_bot_by_id(bot_userid)
+    except sendbird-platform-sdk.ApiException as e:
+        print("Exception when calling BotInterfaceApi->delete_bot_by_id: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Delete a bot
+        api_instance.delete_bot_by_id(bot_userid, api_token=api_token)
+    except sendbird-platform-sdk.ApiException as e:
+        print("Exception when calling BotInterfaceApi->delete_bot_by_id: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bot_userid** | **str**|  |
+ **api_token** | **str**|  | [optional]
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **join_channels**
+> SendBirdGroupChannelCollection join_channels(bot_userid)
+
+Join channels
+
+## Join channels  Makes a bot join one or more channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-join-channels ----------------------------
+
+### Example
+
+
+```python
+import time
+import sendbird-platform-sdk
+from sendbird-platform-sdk.api import bot_interface_api
+from sendbird-platform-sdk.model.send_bird_group_channel_collection import SendBirdGroupChannelCollection
+from sendbird-platform-sdk.model.join_channels_data import JoinChannelsData
+from pprint import pprint
+# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = sendbird-platform-sdk.Configuration(
+    host = "https://api-APP_ID.sendbird.com"
+)
+
+
+# Enter a context with an instance of the API client
+with sendbird-platform-sdk.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = bot_interface_api.BotInterfaceApi(api_client)
+    bot_userid = "bot_userid_example" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
+    join_channels_data = JoinChannelsData(
+        bot_userid="bot_userid_example",
+        channel_urls=[
+            "channel_urls_example",
+        ],
+    ) # JoinChannelsData |  (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Join channels
+        api_response = api_instance.join_channels(bot_userid)
+        pprint(api_response)
+    except sendbird-platform-sdk.ApiException as e:
+        print("Exception when calling BotInterfaceApi->join_channels: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Join channels
+        api_response = api_instance.join_channels(bot_userid, api_token=api_token, join_channels_data=join_channels_data)
+        pprint(api_response)
+    except sendbird-platform-sdk.ApiException as e:
+        print("Exception when calling BotInterfaceApi->join_channels: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bot_userid** | **str**|  |
+ **api_token** | **str**|  | [optional]
+ **join_channels_data** | [**JoinChannelsData**](JoinChannelsData.md)|  | [optional]
+
+### Return type
+
+[**SendBirdGroupChannelCollection**](SendBirdGroupChannelCollection.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **leave_channels**
+> leave_channels(bot_userid)
+
+Leave channels - When leaving all channels
+
+## Leave channels  Makes a bot leave one or more group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-leave-channels ----------------------------
+
+### Example
+
+
+```python
+import time
+import sendbird-platform-sdk
+from sendbird-platform-sdk.api import bot_interface_api
+from pprint import pprint
+# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = sendbird-platform-sdk.Configuration(
+    host = "https://api-APP_ID.sendbird.com"
+)
+
+
+# Enter a context with an instance of the API client
+with sendbird-platform-sdk.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = bot_interface_api.BotInterfaceApi(api_client)
+    bot_userid = "bot_userid_example" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
+    channel_url = "channel_url_example" # str |  (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Leave channels - When leaving all channels
+        api_instance.leave_channels(bot_userid)
+    except sendbird-platform-sdk.ApiException as e:
+        print("Exception when calling BotInterfaceApi->leave_channels: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Leave channels - When leaving all channels
+        api_instance.leave_channels(bot_userid, api_token=api_token, channel_url=channel_url)
+    except sendbird-platform-sdk.ApiException as e:
+        print("Exception when calling BotInterfaceApi->leave_channels: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bot_userid** | **str**|  |
+ **api_token** | **str**|  | [optional]
+ **channel_url** | **str**|  | [optional]
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **leave_channels_by_url**
+> leave_channels_by_url(bot_userid, channel_url)
+
+Leave channels - When leaving a channel by its channel URL
+
+## Leave channels  Makes a bot leave one or more group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-leave-channels ----------------------------
+
+### Example
+
+
+```python
+import time
+import sendbird-platform-sdk
+from sendbird-platform-sdk.api import bot_interface_api
+from pprint import pprint
+# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = sendbird-platform-sdk.Configuration(
+    host = "https://api-APP_ID.sendbird.com"
+)
+
+
+# Enter a context with an instance of the API client
+with sendbird-platform-sdk.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = bot_interface_api.BotInterfaceApi(api_client)
+    bot_userid = "bot_userid_example" # str | 
+    channel_url = "channel_url_example" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Leave channels - When leaving a channel by its channel URL
+        api_instance.leave_channels_by_url(bot_userid, channel_url)
+    except sendbird-platform-sdk.ApiException as e:
+        print("Exception when calling BotInterfaceApi->leave_channels_by_url: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Leave channels - When leaving a channel by its channel URL
+        api_instance.leave_channels_by_url(bot_userid, channel_url, api_token=api_token)
+    except sendbird-platform-sdk.ApiException as e:
+        print("Exception when calling BotInterfaceApi->leave_channels_by_url: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bot_userid** | **str**|  |
+ **channel_url** | **str**|  |
+ **api_token** | **str**|  | [optional]
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **list_bots**
+> InlineResponse20065 list_bots()
+
+List bots
+
+## List bots  Retrieves a list of all bots within an application.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-list-bots ----------------------------
+
+### Example
+
+
+```python
+import time
+import sendbird-platform-sdk
+from sendbird-platform-sdk.api import bot_interface_api
+from sendbird-platform-sdk.model.inline_response20065 import InlineResponse20065
+from pprint import pprint
+# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = sendbird-platform-sdk.Configuration(
+    host = "https://api-APP_ID.sendbird.com"
+)
+
+
+# Enter a context with an instance of the API client
+with sendbird-platform-sdk.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = bot_interface_api.BotInterfaceApi(api_client)
+    api_token = "{{API_TOKEN}}" # str |  (optional)
+    token = "token_example" # str |  (optional)
+    limit = 1 # int |  (optional)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # List bots
+        api_response = api_instance.list_bots(api_token=api_token, token=token, limit=limit)
+        pprint(api_response)
+    except sendbird-platform-sdk.ApiException as e:
+        print("Exception when calling BotInterfaceApi->list_bots: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  | [optional]
+ **token** | **str**|  | [optional]
+ **limit** | **int**|  | [optional]
+
+### Return type
+
+[**InlineResponse20065**](InlineResponse20065.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **send_bots_message**
+> SendBirdMessageResponse send_bots_message(bot_userid)
+
+Send a bot's message
+
+## Send a bot's message  Sends a bot's message to a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-send-a-bot-s-message ----------------------------   `bot_userid`      Type: string      Description: Specifies the ID of the bot to send a message.
+
+### Example
+
+
+```python
+import time
+import sendbird-platform-sdk
+from sendbird-platform-sdk.api import bot_interface_api
+from sendbird-platform-sdk.model.send_bot_s_message_data import SendBotSMessageData
+from sendbird-platform-sdk.model.send_bird_message_response import SendBirdMessageResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = sendbird-platform-sdk.Configuration(
+    host = "https://api-APP_ID.sendbird.com"
+)
+
+
+# Enter a context with an instance of the API client
+with sendbird-platform-sdk.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = bot_interface_api.BotInterfaceApi(api_client)
+    bot_userid = "bot_userid_example" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
+    send_bot_s_message_data = SendBotSMessageData(
+        message="message_example",
+        channel_url="channel_url_example",
+        custom_type="custom_type_example",
+        data="data_example",
+        send_push=True,
+        mentioned=[
+            1,
+        ],
+        mark_as_read=True,
+        dedup_id="dedup_id_example",
+        created_at=1,
+    ) # SendBotSMessageData |  (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Send a bot's message
+        api_response = api_instance.send_bots_message(bot_userid)
+        pprint(api_response)
+    except sendbird-platform-sdk.ApiException as e:
+        print("Exception when calling BotInterfaceApi->send_bots_message: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Send a bot's message
+        api_response = api_instance.send_bots_message(bot_userid, api_token=api_token, send_bot_s_message_data=send_bot_s_message_data)
+        pprint(api_response)
+    except sendbird-platform-sdk.ApiException as e:
+        print("Exception when calling BotInterfaceApi->send_bots_message: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bot_userid** | **str**|  |
+ **api_token** | **str**|  | [optional]
+ **send_bot_s_message_data** | [**SendBotSMessageData**](SendBotSMessageData.md)|  | [optional]
+
+### Return type
+
+[**SendBirdMessageResponse**](SendBirdMessageResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_bot_by_id**
+> InlineResponse20065Bots update_bot_by_id(bot_userid)
+
+Update a bot
+
+## Update a bot  Updates information on a bot.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-update-a-bot ----------------------------
+
+### Example
+
+
+```python
+import time
+import sendbird-platform-sdk
+from sendbird-platform-sdk.api import bot_interface_api
+from sendbird-platform-sdk.model.update_bot_by_id_data import UpdateBotByIdData
+from sendbird-platform-sdk.model.inline_response20065_bots import InlineResponse20065Bots
+from pprint import pprint
+# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = sendbird-platform-sdk.Configuration(
+    host = "https://api-APP_ID.sendbird.com"
+)
+
+
+# Enter a context with an instance of the API client
+with sendbird-platform-sdk.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = bot_interface_api.BotInterfaceApi(api_client)
+    bot_userid = "bot_userid_example" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
+    update_bot_by_id_data = UpdateBotByIdData(
+        bot_userid="bot_userid_example",
+        bot_nickname="bot_nickname_example",
+        bot_profile_url="bot_profile_url_example",
+        bot_callback_url="bot_callback_url_example",
+        is_privacy_mode=True,
+        enable_mark_as_read=True,
+        show_member=True,
+        channel_invitation_preference=1,
+    ) # UpdateBotByIdData |  (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Update a bot
+        api_response = api_instance.update_bot_by_id(bot_userid)
+        pprint(api_response)
+    except sendbird-platform-sdk.ApiException as e:
+        print("Exception when calling BotInterfaceApi->update_bot_by_id: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Update a bot
+        api_response = api_instance.update_bot_by_id(bot_userid, api_token=api_token, update_bot_by_id_data=update_bot_by_id_data)
+        pprint(api_response)
+    except sendbird-platform-sdk.ApiException as e:
+        print("Exception when calling BotInterfaceApi->update_bot_by_id: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bot_userid** | **str**|  |
+ **api_token** | **str**|  | [optional]
+ **update_bot_by_id_data** | [**UpdateBotByIdData**](UpdateBotByIdData.md)|  | [optional]
+
+### Return type
+
+[**InlineResponse20065Bots**](InlineResponse20065Bots.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **view_bot_by_id**
+> InlineResponse20065Bots view_bot_by_id(bot_userid)
+
+View a bot
+
+## View a bot  Retrieves information on a bot.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-view-a-bot ----------------------------
+
+### Example
+
+
+```python
+import time
+import sendbird-platform-sdk
+from sendbird-platform-sdk.api import bot_interface_api
+from sendbird-platform-sdk.model.inline_response20065_bots import InlineResponse20065Bots
+from pprint import pprint
+# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = sendbird-platform-sdk.Configuration(
+    host = "https://api-APP_ID.sendbird.com"
+)
+
+
+# Enter a context with an instance of the API client
+with sendbird-platform-sdk.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = bot_interface_api.BotInterfaceApi(api_client)
+    bot_userid = "bot_userid_example" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # View a bot
+        api_response = api_instance.view_bot_by_id(bot_userid)
+        pprint(api_response)
+    except sendbird-platform-sdk.ApiException as e:
+        print("Exception when calling BotInterfaceApi->view_bot_by_id: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # View a bot
+        api_response = api_instance.view_bot_by_id(bot_userid, api_token=api_token)
+        pprint(api_response)
+    except sendbird-platform-sdk.ApiException as e:
+        print("Exception when calling BotInterfaceApi->view_bot_by_id: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bot_userid** | **str**|  |
+ **api_token** | **str**|  | [optional]
+
+### Return type
+
+[**InlineResponse20065Bots**](InlineResponse20065Bots.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
