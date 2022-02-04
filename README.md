@@ -12,25 +12,36 @@ This is a python library that makes talking to the [Sendbird Platform API](https
 ```python
 
 import time
-import sendbird-platform-sdk
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import user_api
+from sendbird_platform_sdk.model.send_bird_user import SendBirdUser
+from sendbird_platform_sdk.model.create_user_data import CreateUserData
 from pprint import pprint
-from sendbird-platform-sdk.api import advanced_analytics_api
 
-configuration = sendbird-platform-sdk.Configuration(
-    host = "https://api-APP_ID.sendbird.com"
+
+configuration = sendbird_platform_sdk.Configuration(
+    host = "https://api-YOUR_APP_ID_FROM_DASHBOARD.sendbird.com"
 )
 
 
-
-with sendbird-platform-sdk.ApiClient(configuration) as api_client:
-    api_instance = advanced_analytics_api.AdvancedAnalyticsApi(api_client)
-    api_token = "{{API_TOKEN}}" # str |  (optional)
+with sendbird_platform_sdk.ApiClient() as api_client:
+    user_id = "bob_smith"
+    nickname = "bob"
+    profileUrl = "https://cataas.com/c"
+    api_instance = user_api.UserApi(api_client)
+    api_token = "YOUR_MASTER_API_TOKEN_FROM_DASHBOARD"
+    create_user_data = CreateUserData(
+        user_id=user_id,
+        nickname=nickname,
+        profile_url=profileUrl
+       
+    )
 
     try:
-        api_response = api_instance.retrieve_advanced_analytics_metrics(api_token=api_token)
+        api_response = api_instance.create_user(api_token=api_token, create_user_data=create_user_data)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
-        print("Exception when calling AdvancedAnalyticsApi->retrieve_advanced_analytics_metrics: %s\n" % e)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling UserApi->create_user: %s\n" % e)
 ```
 
 # ⚒️ Prerequisite
@@ -39,10 +50,11 @@ In order to make requests with this SDK you will need you master API token. This
 ![how to find you api token](https://i.imgur.com/0YMKtpX.png)
 
 # 💻 Requirements 
+This package has been tested with python version 3.9.10
 
 
 # ⚙️ Installation 
-
+see Local Development
 
 # 🤓 Local Development
 Install via [Setuptools](http://pypi.python.org/pypi/setuptools).
