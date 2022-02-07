@@ -11,7 +11,6 @@ This is a python library that makes talking to the [Sendbird Platform API](https
 
 ```python
 
-import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import user_api
 from pprint import pprint
