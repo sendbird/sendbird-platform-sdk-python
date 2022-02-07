@@ -1,4 +1,4 @@
-# sendbird-platform-sdk.AdvancedAnalyticsApi
+# sendbird_platform_sdk.AdvancedAnalyticsApi
 
 All URIs are relative to *https://api-APP_ID.sendbird.com*
 
@@ -19,19 +19,19 @@ Retrieve Advanced analytics metrics
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import advanced_analytics_api
-from sendbird-platform-sdk.model.inline_response20062 import InlineResponse20062
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import advanced_analytics_api
+from sendbird_platform_sdk.model.inline_response20062 import InlineResponse20062
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = advanced_analytics_api.AdvancedAnalyticsApi(api_client)
     api_token = "{{API_TOKEN}}" # str |  (optional)
@@ -42,7 +42,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Retrieve Advanced analytics metrics
         api_response = api_instance.retrieve_advanced_analytics_metrics(api_token=api_token)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling AdvancedAnalyticsApi->retrieve_advanced_analytics_metrics: %s\n" % e)
 ```
 

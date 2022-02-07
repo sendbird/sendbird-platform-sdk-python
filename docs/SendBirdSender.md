@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **friend_name** | **str** |  | [optional] 
 **is_active** | **bool** |  | [optional] 
 **is_blocked_by_me** | **bool** |  | [optional] 
-**last_seen_at** | **str** |  | [optional] 
+**last_seen_at** | **int** |  | [optional] 
 **meta_data** | [**Object**](Object.md) |  | [optional] 
 **nickname** | **str** |  | [optional] 
 **plain_profile_url** | **str** |  | [optional] 

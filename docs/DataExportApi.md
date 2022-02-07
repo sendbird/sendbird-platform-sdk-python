@@ -1,4 +1,4 @@
-# sendbird-platform-sdk.DataExportApi
+# sendbird_platform_sdk.DataExportApi
 
 All URIs are relative to *https://api-APP_ID.sendbird.com*
 
@@ -21,19 +21,19 @@ List data exports by message, channel, or user
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import data_export_api
-from sendbird-platform-sdk.model.inline_response20063 import InlineResponse20063
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import data_export_api
+from sendbird_platform_sdk.model.inline_response20063 import InlineResponse20063
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = data_export_api.DataExportApi(api_client)
     data_type = "data_type_example" # str | 
@@ -46,7 +46,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # List data exports by message, channel, or user
         api_response = api_instance.list_data_exports_by_message_channel_or_user(data_type)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling DataExportApi->list_data_exports_by_message_channel_or_user: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -55,7 +55,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # List data exports by message, channel, or user
         api_response = api_instance.list_data_exports_by_message_channel_or_user(data_type, api_token=api_token, token=token, limit=limit)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling DataExportApi->list_data_exports_by_message_channel_or_user: %s\n" % e)
 ```
 
@@ -103,20 +103,20 @@ Register and schedule a data export
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import data_export_api
-from sendbird-platform-sdk.model.inline_response20063_exported_data import InlineResponse20063ExportedData
-from sendbird-platform-sdk.model.register_and_schedule_data_export_data import RegisterAndScheduleDataExportData
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import data_export_api
+from sendbird_platform_sdk.model.inline_response20063_exported_data import InlineResponse20063ExportedData
+from sendbird_platform_sdk.model.register_and_schedule_data_export_data import RegisterAndScheduleDataExportData
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = data_export_api.DataExportApi(api_client)
     data_type = "data_type_example" # str | 
@@ -152,7 +152,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Register and schedule a data export
         api_response = api_instance.register_and_schedule_data_export(data_type)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling DataExportApi->register_and_schedule_data_export: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -161,7 +161,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Register and schedule a data export
         api_response = api_instance.register_and_schedule_data_export(data_type, api_token=api_token, register_and_schedule_data_export_data=register_and_schedule_data_export_data)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling DataExportApi->register_and_schedule_data_export: %s\n" % e)
 ```
 
@@ -208,19 +208,19 @@ View a data export
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import data_export_api
-from sendbird-platform-sdk.model.inline_response20064 import InlineResponse20064
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import data_export_api
+from sendbird_platform_sdk.model.inline_response20064 import InlineResponse20064
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = data_export_api.DataExportApi(api_client)
     data_type = "data_type_example" # str | 
@@ -232,7 +232,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # View a data export
         api_response = api_instance.view_data_export_by_id(data_type, request_id)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling DataExportApi->view_data_export_by_id: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -241,7 +241,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # View a data export
         api_response = api_instance.view_data_export_by_id(data_type, request_id, api_token=api_token)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling DataExportApi->view_data_export_by_id: %s\n" % e)
 ```
 

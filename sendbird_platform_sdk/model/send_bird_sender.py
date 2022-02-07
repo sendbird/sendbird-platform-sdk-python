@@ -92,7 +92,7 @@ class SendBirdSender(ModelNormal):
             'friend_name': (str,),  # noqa: E501
             'is_active': (bool,),  # noqa: E501
             'is_blocked_by_me': (bool,),  # noqa: E501
-            'last_seen_at': (str,),  # noqa: E501
+            'last_seen_at': (int,),  # noqa: E501
             'meta_data': (Object,),  # noqa: E501
             'nickname': (str,),  # noqa: E501
             'plain_profile_url': (str,),  # noqa: E501
@@ -169,7 +169,7 @@ class SendBirdSender(ModelNormal):
             friend_name (str): [optional]  # noqa: E501
             is_active (bool): [optional]  # noqa: E501
             is_blocked_by_me (bool): [optional]  # noqa: E501
-            last_seen_at (str): [optional]  # noqa: E501
+            last_seen_at (int): [optional]  # noqa: E501
             meta_data (Object): [optional]  # noqa: E501
             nickname (str): [optional]  # noqa: E501
             plain_profile_url (str): [optional]  # noqa: E501
@@ -263,7 +263,7 @@ class SendBirdSender(ModelNormal):
             friend_name (str): [optional]  # noqa: E501
             is_active (bool): [optional]  # noqa: E501
             is_blocked_by_me (bool): [optional]  # noqa: E501
-            last_seen_at (str): [optional]  # noqa: E501
+            last_seen_at (int): [optional]  # noqa: E501
             meta_data (Object): [optional]  # noqa: E501
             nickname (str): [optional]  # noqa: E501
             plain_profile_url (str): [optional]  # noqa: E501

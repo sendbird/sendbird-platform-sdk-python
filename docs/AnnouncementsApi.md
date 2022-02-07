@@ -1,4 +1,4 @@
-# sendbird-platform-sdk.AnnouncementsApi
+# sendbird_platform_sdk.AnnouncementsApi
 
 All URIs are relative to *https://api-APP_ID.sendbird.com*
 
@@ -29,19 +29,19 @@ Get detailed open rate of an announcement
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import announcements_api
-from sendbird-platform-sdk.model.inline_response20042 import InlineResponse20042
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import announcements_api
+from sendbird_platform_sdk.model.inline_response20042 import InlineResponse20042
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = announcements_api.AnnouncementsApi(api_client)
     unique_id = "unique_id_example" # str | 
@@ -52,7 +52,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Get detailed open rate of an announcement
         api_response = api_instance.get_detailed_open_rate_of_announcement_by_id(unique_id)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling AnnouncementsApi->get_detailed_open_rate_of_announcement_by_id: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -61,7 +61,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Get detailed open rate of an announcement
         api_response = api_instance.get_detailed_open_rate_of_announcement_by_id(unique_id, api_token=api_token)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling AnnouncementsApi->get_detailed_open_rate_of_announcement_by_id: %s\n" % e)
 ```
 
@@ -107,19 +107,19 @@ Get detailed open rate of an announcement group
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import announcements_api
-from sendbird-platform-sdk.model.inline_response20046 import InlineResponse20046
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import announcements_api
+from sendbird_platform_sdk.model.inline_response20046 import InlineResponse20046
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = announcements_api.AnnouncementsApi(api_client)
     announcement_group = "announcement_group_example" # str | 
@@ -130,7 +130,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Get detailed open rate of an announcement group
         api_response = api_instance.get_detailed_open_rate_of_announcement_group(announcement_group)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling AnnouncementsApi->get_detailed_open_rate_of_announcement_group: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -139,7 +139,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Get detailed open rate of an announcement group
         api_response = api_instance.get_detailed_open_rate_of_announcement_group(announcement_group, api_token=api_token)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling AnnouncementsApi->get_detailed_open_rate_of_announcement_group: %s\n" % e)
 ```
 
@@ -185,19 +185,19 @@ Get detailed open status of an announcement
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import announcements_api
-from sendbird-platform-sdk.model.inline_response20043 import InlineResponse20043
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import announcements_api
+from sendbird_platform_sdk.model.inline_response20043 import InlineResponse20043
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = announcements_api.AnnouncementsApi(api_client)
     unique_id = "unique_id_example" # str | 
@@ -217,7 +217,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Get detailed open status of an announcement
         api_response = api_instance.get_detailed_open_status_of_announcement_by_id(unique_id)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling AnnouncementsApi->get_detailed_open_status_of_announcement_by_id: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -226,7 +226,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Get detailed open status of an announcement
         api_response = api_instance.get_detailed_open_status_of_announcement_by_id(unique_id, api_token=api_token, limit=limit, next=next, unique_ids=unique_ids, channel_urls=channel_urls, has_opened=has_opened)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling AnnouncementsApi->get_detailed_open_status_of_announcement_by_id: %s\n" % e)
 ```
 
@@ -277,19 +277,19 @@ Get statistics - weekly
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import announcements_api
-from sendbird-platform-sdk.model.inline_response20044 import InlineResponse20044
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import announcements_api
+from sendbird_platform_sdk.model.inline_response20044 import InlineResponse20044
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = announcements_api.AnnouncementsApi(api_client)
     api_token = "{{API_TOKEN}}" # str |  (optional)
@@ -300,7 +300,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Get statistics - weekly
         api_response = api_instance.get_statistics(api_token=api_token)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling AnnouncementsApi->get_statistics: %s\n" % e)
 ```
 
@@ -345,19 +345,19 @@ Get statistics - daily
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import announcements_api
-from sendbird-platform-sdk.model.inline_response20044 import InlineResponse20044
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import announcements_api
+from sendbird_platform_sdk.model.inline_response20044 import InlineResponse20044
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = announcements_api.AnnouncementsApi(api_client)
     start_date = "start_date_example" # str | 
@@ -374,7 +374,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Get statistics - daily
         api_response = api_instance.get_statistics_daily(start_date, end_date, start_week, end_week, start_month, end_month)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling AnnouncementsApi->get_statistics_daily: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -383,7 +383,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Get statistics - daily
         api_response = api_instance.get_statistics_daily(start_date, end_date, start_week, end_week, start_month, end_month, api_token=api_token, announcement_group=announcement_group)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling AnnouncementsApi->get_statistics_daily: %s\n" % e)
 ```
 
@@ -435,19 +435,19 @@ Get statistics - monthly
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import announcements_api
-from sendbird-platform-sdk.model.inline_response20044 import InlineResponse20044
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import announcements_api
+from sendbird_platform_sdk.model.inline_response20044 import InlineResponse20044
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = announcements_api.AnnouncementsApi(api_client)
     api_token = "{{API_TOKEN}}" # str |  (optional)
@@ -458,7 +458,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Get statistics - monthly
         api_response = api_instance.get_statistics_monthly(api_token=api_token)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling AnnouncementsApi->get_statistics_monthly: %s\n" % e)
 ```
 
@@ -503,19 +503,19 @@ List announcement groups
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import announcements_api
-from sendbird-platform-sdk.model.inline_response20045 import InlineResponse20045
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import announcements_api
+from sendbird_platform_sdk.model.inline_response20045 import InlineResponse20045
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = announcements_api.AnnouncementsApi(api_client)
     api_token = "{{API_TOKEN}}" # str |  (optional)
@@ -528,7 +528,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # List announcement groups
         api_response = api_instance.list_announcement_groups(api_token=api_token, token=token, limit=limit)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling AnnouncementsApi->list_announcement_groups: %s\n" % e)
 ```
 
@@ -575,19 +575,19 @@ List announcements
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import announcements_api
-from sendbird-platform-sdk.model.inline_response20039 import InlineResponse20039
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import announcements_api
+from sendbird_platform_sdk.model.inline_response20039 import InlineResponse20039
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = announcements_api.AnnouncementsApi(api_client)
     api_token = "{{API_TOKEN}}" # str |  (optional)
@@ -603,7 +603,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # List announcements
         api_response = api_instance.list_announcements(api_token=api_token, token=token, limit=limit, order=order, status=status, announcement_group=announcement_group)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling AnnouncementsApi->list_announcements: %s\n" % e)
 ```
 
@@ -653,20 +653,20 @@ Schedule an announcement
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import announcements_api
-from sendbird-platform-sdk.model.inline_response20040 import InlineResponse20040
-from sendbird-platform-sdk.model.schedule_announcement_data import ScheduleAnnouncementData
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import announcements_api
+from sendbird_platform_sdk.model.inline_response20040 import InlineResponse20040
+from sendbird_platform_sdk.model.schedule_announcement_data import ScheduleAnnouncementData
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = announcements_api.AnnouncementsApi(api_client)
     api_token = "{{API_TOKEN}}" # str |  (optional)
@@ -705,7 +705,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Schedule an announcement
         api_response = api_instance.schedule_announcement(api_token=api_token, schedule_announcement_data=schedule_announcement_data)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling AnnouncementsApi->schedule_announcement: %s\n" % e)
 ```
 
@@ -751,20 +751,20 @@ Update an announcement
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import announcements_api
-from sendbird-platform-sdk.model.inline_response20041 import InlineResponse20041
-from sendbird-platform-sdk.model.update_announcement_by_id_data import UpdateAnnouncementByIdData
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import announcements_api
+from sendbird_platform_sdk.model.update_announcement_by_id_data import UpdateAnnouncementByIdData
+from sendbird_platform_sdk.model.inline_response20041 import InlineResponse20041
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = announcements_api.AnnouncementsApi(api_client)
     unique_id = "unique_id_example" # str | 
@@ -794,7 +794,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Update an announcement
         api_response = api_instance.update_announcement_by_id(unique_id)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling AnnouncementsApi->update_announcement_by_id: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -803,7 +803,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Update an announcement
         api_response = api_instance.update_announcement_by_id(unique_id, api_token=api_token, update_announcement_by_id_data=update_announcement_by_id_data)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling AnnouncementsApi->update_announcement_by_id: %s\n" % e)
 ```
 
@@ -850,19 +850,19 @@ View an announcement
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import announcements_api
-from sendbird-platform-sdk.model.inline_response20039_announcements import InlineResponse20039Announcements
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import announcements_api
+from sendbird_platform_sdk.model.inline_response20039_announcements import InlineResponse20039Announcements
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = announcements_api.AnnouncementsApi(api_client)
     unique_id = "unique_id_example" # str | 
@@ -873,7 +873,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # View an announcement
         api_response = api_instance.view_announcement_by_id(unique_id)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling AnnouncementsApi->view_announcement_by_id: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -882,7 +882,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # View an announcement
         api_response = api_instance.view_announcement_by_id(unique_id, api_token=api_token)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling AnnouncementsApi->view_announcement_by_id: %s\n" % e)
 ```
 

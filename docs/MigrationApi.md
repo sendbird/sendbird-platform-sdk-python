@@ -1,4 +1,4 @@
-# sendbird-platform-sdk.MigrationApi
+# sendbird_platform_sdk.MigrationApi
 
 All URIs are relative to *https://api-APP_ID.sendbird.com*
 
@@ -19,18 +19,18 @@ Migrate messages
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import migration_api
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import migration_api
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = migration_api.MigrationApi(api_client)
     target_channel_url = "target_channel_url_example" # str | 
@@ -41,7 +41,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
     try:
         # Migrate messages
         api_instance.migrate_messages_by_url(target_channel_url)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling MigrationApi->migrate_messages_by_url: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -49,7 +49,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
     try:
         # Migrate messages
         api_instance.migrate_messages_by_url(target_channel_url, api_token=api_token, body=body)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling MigrationApi->migrate_messages_by_url: %s\n" % e)
 ```
 

@@ -1,4 +1,4 @@
-# sendbird-platform-sdk.OpenChannelApi
+# sendbird_platform_sdk.OpenChannelApi
 
 All URIs are relative to *https://api-APP_ID.sendbird.com*
 
@@ -37,20 +37,20 @@ Ban a user
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import open_channel_api
-from sendbird-platform-sdk.model.inline_response20033_banned_list import InlineResponse20033BannedList
-from sendbird-platform-sdk.model.oc_ban_user_data import OcBanUserData
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import open_channel_api
+from sendbird_platform_sdk.model.inline_response20033_banned_list import InlineResponse20033BannedList
+from sendbird_platform_sdk.model.oc_ban_user_data import OcBanUserData
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = open_channel_api.OpenChannelApi(api_client)
     channel_url = "channel_url_example" # str | 
@@ -68,7 +68,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Ban a user
         api_response = api_instance.oc_ban_user(channel_url)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling OpenChannelApi->oc_ban_user: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -77,7 +77,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Ban a user
         api_response = api_instance.oc_ban_user(channel_url, api_token=api_token, oc_ban_user_data=oc_ban_user_data)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling OpenChannelApi->oc_ban_user: %s\n" % e)
 ```
 
@@ -124,18 +124,18 @@ Cancel the registration of operators
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import open_channel_api
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import open_channel_api
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = open_channel_api.OpenChannelApi(api_client)
     channel_url = "channel_url_example" # str | 
@@ -149,7 +149,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
     try:
         # Cancel the registration of operators
         api_instance.oc_cancel_the_registration_of_operators(channel_url, operator_ids)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling OpenChannelApi->oc_cancel_the_registration_of_operators: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -157,7 +157,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
     try:
         # Cancel the registration of operators
         api_instance.oc_cancel_the_registration_of_operators(channel_url, operator_ids, api_token=api_token, delete_all=delete_all)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling OpenChannelApi->oc_cancel_the_registration_of_operators: %s\n" % e)
 ```
 
@@ -205,20 +205,20 @@ Create a channel
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import open_channel_api
-from sendbird-platform-sdk.model.oc_create_channel_data import OcCreateChannelData
-from sendbird-platform-sdk.model.send_bird_open_channel import SendBirdOpenChannel
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import open_channel_api
+from sendbird_platform_sdk.model.send_bird_open_channel import SendBirdOpenChannel
+from sendbird_platform_sdk.model.oc_create_channel_data import OcCreateChannelData
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = open_channel_api.OpenChannelApi(api_client)
     api_token = "{{API_TOKEN}}" # str |  (optional)
@@ -245,7 +245,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Create a channel
         api_response = api_instance.oc_create_channel(api_token=api_token, oc_create_channel_data=oc_create_channel_data)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling OpenChannelApi->oc_create_channel: %s\n" % e)
 ```
 
@@ -291,18 +291,18 @@ Delete a channel
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import open_channel_api
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import open_channel_api
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = open_channel_api.OpenChannelApi(api_client)
     channel_url = "channel_url_example" # str | 
@@ -312,7 +312,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
     try:
         # Delete a channel
         api_instance.oc_delete_channel_by_url(channel_url)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling OpenChannelApi->oc_delete_channel_by_url: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -320,7 +320,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
     try:
         # Delete a channel
         api_instance.oc_delete_channel_by_url(channel_url, api_token=api_token)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling OpenChannelApi->oc_delete_channel_by_url: %s\n" % e)
 ```
 
@@ -366,20 +366,20 @@ Freeze a channel
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import open_channel_api
-from sendbird-platform-sdk.model.send_bird_open_channel import SendBirdOpenChannel
-from sendbird-platform-sdk.model.oc_freeze_channel_data import OcFreezeChannelData
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import open_channel_api
+from sendbird_platform_sdk.model.oc_freeze_channel_data import OcFreezeChannelData
+from sendbird_platform_sdk.model.send_bird_open_channel import SendBirdOpenChannel
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = open_channel_api.OpenChannelApi(api_client)
     channel_url = "channel_url_example" # str | 
@@ -394,7 +394,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Freeze a channel
         api_response = api_instance.oc_freeze_channel(channel_url)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling OpenChannelApi->oc_freeze_channel: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -403,7 +403,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Freeze a channel
         api_response = api_instance.oc_freeze_channel(channel_url, api_token=api_token, oc_freeze_channel_data=oc_freeze_channel_data)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling OpenChannelApi->oc_freeze_channel: %s\n" % e)
 ```
 
@@ -450,19 +450,19 @@ List banned users
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import open_channel_api
-from sendbird-platform-sdk.model.inline_response20033 import InlineResponse20033
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import open_channel_api
+from sendbird_platform_sdk.model.inline_response20033 import InlineResponse20033
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = open_channel_api.OpenChannelApi(api_client)
     channel_url = "channel_url_example" # str | 
@@ -475,7 +475,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # List banned users
         api_response = api_instance.oc_list_banned_users(channel_url)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling OpenChannelApi->oc_list_banned_users: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -484,7 +484,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # List banned users
         api_response = api_instance.oc_list_banned_users(channel_url, api_token=api_token, token=token, limit=limit)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling OpenChannelApi->oc_list_banned_users: %s\n" % e)
 ```
 
@@ -532,19 +532,19 @@ List channels
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import open_channel_api
-from sendbird-platform-sdk.model.inline_response20030 import InlineResponse20030
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import open_channel_api
+from sendbird_platform_sdk.model.inline_response20030 import InlineResponse20030
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = open_channel_api.OpenChannelApi(api_client)
     api_token = "{{API_TOKEN}}" # str |  (optional)
@@ -563,7 +563,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # List channels
         api_response = api_instance.oc_list_channels(api_token=api_token, token=token, limit=limit, custom_types=custom_types, name_contains=name_contains, url_contains=url_contains, show_frozen=show_frozen, show_metadata=show_metadata, custom_type=custom_type)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling OpenChannelApi->oc_list_channels: %s\n" % e)
 ```
 
@@ -616,19 +616,19 @@ List muted users
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import open_channel_api
-from sendbird-platform-sdk.model.inline_response20031 import InlineResponse20031
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import open_channel_api
+from sendbird_platform_sdk.model.inline_response20031 import InlineResponse20031
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = open_channel_api.OpenChannelApi(api_client)
     channel_url = "channel_url_example" # str | 
@@ -641,7 +641,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # List muted users
         api_response = api_instance.oc_list_muted_users(channel_url)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling OpenChannelApi->oc_list_muted_users: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -650,7 +650,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # List muted users
         api_response = api_instance.oc_list_muted_users(channel_url, api_token=api_token, token=token, limit=limit)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling OpenChannelApi->oc_list_muted_users: %s\n" % e)
 ```
 
@@ -698,19 +698,19 @@ List operators
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import open_channel_api
-from sendbird-platform-sdk.model.inline_response20034 import InlineResponse20034
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import open_channel_api
+from sendbird_platform_sdk.model.inline_response20034 import InlineResponse20034
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = open_channel_api.OpenChannelApi(api_client)
     channel_url = "channel_url_example" # str | 
@@ -723,7 +723,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # List operators
         api_response = api_instance.oc_list_operators(channel_url)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling OpenChannelApi->oc_list_operators: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -732,7 +732,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # List operators
         api_response = api_instance.oc_list_operators(channel_url, api_token=api_token, token=token, limit=limit)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling OpenChannelApi->oc_list_operators: %s\n" % e)
 ```
 
@@ -780,19 +780,19 @@ List participants
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import open_channel_api
-from sendbird-platform-sdk.model.inline_response20032 import InlineResponse20032
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import open_channel_api
+from sendbird_platform_sdk.model.inline_response20032 import InlineResponse20032
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = open_channel_api.OpenChannelApi(api_client)
     channel_url = "channel_url_example" # str | 
@@ -805,7 +805,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # List participants
         api_response = api_instance.oc_list_participants(channel_url)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling OpenChannelApi->oc_list_participants: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -814,7 +814,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # List participants
         api_response = api_instance.oc_list_participants(channel_url, api_token=api_token, token=token, limit=limit)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling OpenChannelApi->oc_list_participants: %s\n" % e)
 ```
 
@@ -862,20 +862,20 @@ Mute a user
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import open_channel_api
-from sendbird-platform-sdk.model.oc_mute_user_data import OcMuteUserData
-from sendbird-platform-sdk.model.send_bird_open_channel import SendBirdOpenChannel
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import open_channel_api
+from sendbird_platform_sdk.model.send_bird_open_channel import SendBirdOpenChannel
+from sendbird_platform_sdk.model.oc_mute_user_data import OcMuteUserData
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = open_channel_api.OpenChannelApi(api_client)
     channel_url = "channel_url_example" # str | 
@@ -891,7 +891,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Mute a user
         api_response = api_instance.oc_mute_user(channel_url)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling OpenChannelApi->oc_mute_user: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -900,7 +900,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Mute a user
         api_response = api_instance.oc_mute_user(channel_url, api_token=api_token, oc_mute_user_data=oc_mute_user_data)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling OpenChannelApi->oc_mute_user: %s\n" % e)
 ```
 
@@ -947,19 +947,19 @@ Register operators
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import open_channel_api
-from sendbird-platform-sdk.model.oc_register_operators_data import OcRegisterOperatorsData
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import open_channel_api
+from sendbird_platform_sdk.model.oc_register_operators_data import OcRegisterOperatorsData
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = open_channel_api.OpenChannelApi(api_client)
     channel_url = "channel_url_example" # str | 
@@ -975,7 +975,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
     try:
         # Register operators
         api_instance.oc_register_operators(channel_url)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling OpenChannelApi->oc_register_operators: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -983,7 +983,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
     try:
         # Register operators
         api_instance.oc_register_operators(channel_url, api_token=api_token, oc_register_operators_data=oc_register_operators_data)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling OpenChannelApi->oc_register_operators: %s\n" % e)
 ```
 
@@ -1030,18 +1030,18 @@ Unban a user
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import open_channel_api
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import open_channel_api
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = open_channel_api.OpenChannelApi(api_client)
     channel_url = "channel_url_example" # str | 
@@ -1052,7 +1052,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
     try:
         # Unban a user
         api_instance.oc_unban_user_by_id(channel_url, banned_user_id)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling OpenChannelApi->oc_unban_user_by_id: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -1060,7 +1060,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
     try:
         # Unban a user
         api_instance.oc_unban_user_by_id(channel_url, banned_user_id, api_token=api_token)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling OpenChannelApi->oc_unban_user_by_id: %s\n" % e)
 ```
 
@@ -1107,18 +1107,18 @@ Unmute a user
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import open_channel_api
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import open_channel_api
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = open_channel_api.OpenChannelApi(api_client)
     channel_url = "channel_url_example" # str | 
@@ -1129,7 +1129,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
     try:
         # Unmute a user
         api_instance.oc_unmute_user_by_id(channel_url, muted_user_id)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling OpenChannelApi->oc_unmute_user_by_id: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -1137,7 +1137,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
     try:
         # Unmute a user
         api_instance.oc_unmute_user_by_id(channel_url, muted_user_id, api_token=api_token)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling OpenChannelApi->oc_unmute_user_by_id: %s\n" % e)
 ```
 
@@ -1184,20 +1184,20 @@ Update a ban
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import open_channel_api
-from sendbird-platform-sdk.model.oc_update_ban_by_id_data import OcUpdateBanByIdData
-from sendbird-platform-sdk.model.send_bird_user import SendBirdUser
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import open_channel_api
+from sendbird_platform_sdk.model.oc_update_ban_by_id_data import OcUpdateBanByIdData
+from sendbird_platform_sdk.model.send_bird_user import SendBirdUser
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = open_channel_api.OpenChannelApi(api_client)
     channel_url = "channel_url_example" # str | 
@@ -1215,7 +1215,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Update a ban
         api_response = api_instance.oc_update_ban_by_id(channel_url, banned_user_id)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling OpenChannelApi->oc_update_ban_by_id: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -1224,7 +1224,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Update a ban
         api_response = api_instance.oc_update_ban_by_id(channel_url, banned_user_id, api_token=api_token, oc_update_ban_by_id_data=oc_update_ban_by_id_data)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling OpenChannelApi->oc_update_ban_by_id: %s\n" % e)
 ```
 
@@ -1272,20 +1272,20 @@ Update a channel
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import open_channel_api
-from sendbird-platform-sdk.model.oc_update_channel_by_url_data import OcUpdateChannelByUrlData
-from sendbird-platform-sdk.model.send_bird_open_channel import SendBirdOpenChannel
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import open_channel_api
+from sendbird_platform_sdk.model.send_bird_open_channel import SendBirdOpenChannel
+from sendbird_platform_sdk.model.oc_update_channel_by_url_data import OcUpdateChannelByUrlData
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = open_channel_api.OpenChannelApi(api_client)
     channel_url = "channel_url_example" # str | 
@@ -1310,7 +1310,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Update a channel
         api_response = api_instance.oc_update_channel_by_url(channel_url)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling OpenChannelApi->oc_update_channel_by_url: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -1319,7 +1319,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Update a channel
         api_response = api_instance.oc_update_channel_by_url(channel_url, api_token=api_token, oc_update_channel_by_url_data=oc_update_channel_by_url_data)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling OpenChannelApi->oc_update_channel_by_url: %s\n" % e)
 ```
 
@@ -1366,19 +1366,19 @@ View a ban
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import open_channel_api
-from sendbird-platform-sdk.model.send_bird_user import SendBirdUser
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import open_channel_api
+from sendbird_platform_sdk.model.send_bird_user import SendBirdUser
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = open_channel_api.OpenChannelApi(api_client)
     channel_url = "channel_url_example" # str | 
@@ -1390,7 +1390,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # View a ban
         api_response = api_instance.oc_view_ban_by_id(channel_url, banned_user_id)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling OpenChannelApi->oc_view_ban_by_id: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -1399,7 +1399,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # View a ban
         api_response = api_instance.oc_view_ban_by_id(channel_url, banned_user_id, api_token=api_token)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling OpenChannelApi->oc_view_ban_by_id: %s\n" % e)
 ```
 
@@ -1446,19 +1446,19 @@ View a channel
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import open_channel_api
-from sendbird-platform-sdk.model.send_bird_open_channel import SendBirdOpenChannel
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import open_channel_api
+from sendbird_platform_sdk.model.send_bird_open_channel import SendBirdOpenChannel
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = open_channel_api.OpenChannelApi(api_client)
     channel_url = "channel_url_example" # str | 
@@ -1469,7 +1469,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # View a channel
         api_response = api_instance.oc_view_channel_by_url(channel_url)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling OpenChannelApi->oc_view_channel_by_url: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -1478,7 +1478,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # View a channel
         api_response = api_instance.oc_view_channel_by_url(channel_url, api_token=api_token)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling OpenChannelApi->oc_view_channel_by_url: %s\n" % e)
 ```
 
@@ -1524,19 +1524,19 @@ View a mute
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import open_channel_api
-from sendbird-platform-sdk.model.inline_response20035 import InlineResponse20035
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import open_channel_api
+from sendbird_platform_sdk.model.inline_response20035 import InlineResponse20035
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = open_channel_api.OpenChannelApi(api_client)
     channel_url = "channel_url_example" # str | 
@@ -1548,7 +1548,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # View a mute
         api_response = api_instance.oc_view_mute_by_id(channel_url, muted_user_id)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling OpenChannelApi->oc_view_mute_by_id: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -1557,7 +1557,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # View a mute
         api_response = api_instance.oc_view_mute_by_id(channel_url, muted_user_id, api_token=api_token)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling OpenChannelApi->oc_view_mute_by_id: %s\n" % e)
 ```
 

@@ -1,4 +1,4 @@
-# sendbird-platform-sdk.BotInterfaceApi
+# sendbird_platform_sdk.BotInterfaceApi
 
 All URIs are relative to *https://api-APP_ID.sendbird.com*
 
@@ -27,20 +27,20 @@ Create a bot
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import bot_interface_api
-from sendbird-platform-sdk.model.create_bot_data import CreateBotData
-from sendbird-platform-sdk.model.inline_response20065_bots import InlineResponse20065Bots
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import bot_interface_api
+from sendbird_platform_sdk.model.inline_response20065_bots import InlineResponse20065Bots
+from sendbird_platform_sdk.model.create_bot_data import CreateBotData
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = bot_interface_api.BotInterfaceApi(api_client)
     api_token = "{{API_TOKEN}}" # str |  (optional)
@@ -62,7 +62,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Create a bot
         api_response = api_instance.create_bot(api_token=api_token, create_bot_data=create_bot_data)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling BotInterfaceApi->create_bot: %s\n" % e)
 ```
 
@@ -108,18 +108,18 @@ Delete a bot
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import bot_interface_api
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import bot_interface_api
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = bot_interface_api.BotInterfaceApi(api_client)
     bot_userid = "bot_userid_example" # str | 
@@ -129,7 +129,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
     try:
         # Delete a bot
         api_instance.delete_bot_by_id(bot_userid)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling BotInterfaceApi->delete_bot_by_id: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -137,7 +137,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
     try:
         # Delete a bot
         api_instance.delete_bot_by_id(bot_userid, api_token=api_token)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling BotInterfaceApi->delete_bot_by_id: %s\n" % e)
 ```
 
@@ -183,20 +183,20 @@ Join channels
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import bot_interface_api
-from sendbird-platform-sdk.model.send_bird_group_channel_collection import SendBirdGroupChannelCollection
-from sendbird-platform-sdk.model.join_channels_data import JoinChannelsData
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import bot_interface_api
+from sendbird_platform_sdk.model.join_channels_data import JoinChannelsData
+from sendbird_platform_sdk.model.send_bird_group_channel_collection import SendBirdGroupChannelCollection
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = bot_interface_api.BotInterfaceApi(api_client)
     bot_userid = "bot_userid_example" # str | 
@@ -213,7 +213,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Join channels
         api_response = api_instance.join_channels(bot_userid)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling BotInterfaceApi->join_channels: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -222,7 +222,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Join channels
         api_response = api_instance.join_channels(bot_userid, api_token=api_token, join_channels_data=join_channels_data)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling BotInterfaceApi->join_channels: %s\n" % e)
 ```
 
@@ -269,18 +269,18 @@ Leave channels - When leaving all channels
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import bot_interface_api
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import bot_interface_api
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = bot_interface_api.BotInterfaceApi(api_client)
     bot_userid = "bot_userid_example" # str | 
@@ -291,7 +291,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
     try:
         # Leave channels - When leaving all channels
         api_instance.leave_channels(bot_userid)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling BotInterfaceApi->leave_channels: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -299,7 +299,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
     try:
         # Leave channels - When leaving all channels
         api_instance.leave_channels(bot_userid, api_token=api_token, channel_url=channel_url)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling BotInterfaceApi->leave_channels: %s\n" % e)
 ```
 
@@ -346,18 +346,18 @@ Leave channels - When leaving a channel by its channel URL
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import bot_interface_api
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import bot_interface_api
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = bot_interface_api.BotInterfaceApi(api_client)
     bot_userid = "bot_userid_example" # str | 
@@ -368,7 +368,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
     try:
         # Leave channels - When leaving a channel by its channel URL
         api_instance.leave_channels_by_url(bot_userid, channel_url)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling BotInterfaceApi->leave_channels_by_url: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -376,7 +376,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
     try:
         # Leave channels - When leaving a channel by its channel URL
         api_instance.leave_channels_by_url(bot_userid, channel_url, api_token=api_token)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling BotInterfaceApi->leave_channels_by_url: %s\n" % e)
 ```
 
@@ -423,19 +423,19 @@ List bots
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import bot_interface_api
-from sendbird-platform-sdk.model.inline_response20065 import InlineResponse20065
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import bot_interface_api
+from sendbird_platform_sdk.model.inline_response20065 import InlineResponse20065
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = bot_interface_api.BotInterfaceApi(api_client)
     api_token = "{{API_TOKEN}}" # str |  (optional)
@@ -448,7 +448,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # List bots
         api_response = api_instance.list_bots(api_token=api_token, token=token, limit=limit)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling BotInterfaceApi->list_bots: %s\n" % e)
 ```
 
@@ -495,20 +495,20 @@ Send a bot's message
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import bot_interface_api
-from sendbird-platform-sdk.model.send_bot_s_message_data import SendBotSMessageData
-from sendbird-platform-sdk.model.send_bird_message_response import SendBirdMessageResponse
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import bot_interface_api
+from sendbird_platform_sdk.model.send_bird_message_response import SendBirdMessageResponse
+from sendbird_platform_sdk.model.send_bot_s_message_data import SendBotSMessageData
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = bot_interface_api.BotInterfaceApi(api_client)
     bot_userid = "bot_userid_example" # str | 
@@ -532,7 +532,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Send a bot's message
         api_response = api_instance.send_bots_message(bot_userid)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling BotInterfaceApi->send_bots_message: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -541,7 +541,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Send a bot's message
         api_response = api_instance.send_bots_message(bot_userid, api_token=api_token, send_bot_s_message_data=send_bot_s_message_data)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling BotInterfaceApi->send_bots_message: %s\n" % e)
 ```
 
@@ -588,20 +588,20 @@ Update a bot
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import bot_interface_api
-from sendbird-platform-sdk.model.update_bot_by_id_data import UpdateBotByIdData
-from sendbird-platform-sdk.model.inline_response20065_bots import InlineResponse20065Bots
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import bot_interface_api
+from sendbird_platform_sdk.model.update_bot_by_id_data import UpdateBotByIdData
+from sendbird_platform_sdk.model.inline_response20065_bots import InlineResponse20065Bots
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = bot_interface_api.BotInterfaceApi(api_client)
     bot_userid = "bot_userid_example" # str | 
@@ -622,7 +622,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Update a bot
         api_response = api_instance.update_bot_by_id(bot_userid)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling BotInterfaceApi->update_bot_by_id: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -631,7 +631,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Update a bot
         api_response = api_instance.update_bot_by_id(bot_userid, api_token=api_token, update_bot_by_id_data=update_bot_by_id_data)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling BotInterfaceApi->update_bot_by_id: %s\n" % e)
 ```
 
@@ -678,19 +678,19 @@ View a bot
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import bot_interface_api
-from sendbird-platform-sdk.model.inline_response20065_bots import InlineResponse20065Bots
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import bot_interface_api
+from sendbird_platform_sdk.model.inline_response20065_bots import InlineResponse20065Bots
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = bot_interface_api.BotInterfaceApi(api_client)
     bot_userid = "bot_userid_example" # str | 
@@ -701,7 +701,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # View a bot
         api_response = api_instance.view_bot_by_id(bot_userid)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling BotInterfaceApi->view_bot_by_id: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -710,7 +710,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # View a bot
         api_response = api_instance.view_bot_by_id(bot_userid, api_token=api_token)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling BotInterfaceApi->view_bot_by_id: %s\n" % e)
 ```
 

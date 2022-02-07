@@ -1,4 +1,4 @@
-# sendbird-platform-sdk.DataPrivacyApi
+# sendbird_platform_sdk.DataPrivacyApi
 
 All URIs are relative to *https://api-APP_ID.sendbird.com*
 
@@ -22,18 +22,18 @@ Cancel the registration of a GDPR request
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import data_privacy_api
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import data_privacy_api
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = data_privacy_api.DataPrivacyApi(api_client)
     request_id = "request_id_example" # str | 
@@ -43,7 +43,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
     try:
         # Cancel the registration of a GDPR request
         api_instance.cancel_the_registration_of_gdpr_request_by_id(request_id)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling DataPrivacyApi->cancel_the_registration_of_gdpr_request_by_id: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -51,7 +51,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
     try:
         # Cancel the registration of a GDPR request
         api_instance.cancel_the_registration_of_gdpr_request_by_id(request_id, api_token=api_token)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling DataPrivacyApi->cancel_the_registration_of_gdpr_request_by_id: %s\n" % e)
 ```
 
@@ -97,19 +97,19 @@ List GDPR requests
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import data_privacy_api
-from sendbird-platform-sdk.model.inline_response20068 import InlineResponse20068
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import data_privacy_api
+from sendbird_platform_sdk.model.inline_response20068 import InlineResponse20068
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = data_privacy_api.DataPrivacyApi(api_client)
     api_token = "{{API_TOKEN}}" # str |  (optional)
@@ -122,7 +122,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # List GDPR requests
         api_response = api_instance.list_gdpr_requests(api_token=api_token, token=token, limit=limit)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling DataPrivacyApi->list_gdpr_requests: %s\n" % e)
 ```
 
@@ -169,20 +169,20 @@ Register a GDPR request
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import data_privacy_api
-from sendbird-platform-sdk.model.inline_response20069 import InlineResponse20069
-from sendbird-platform-sdk.model.register_gdpr_request_data import RegisterGdprRequestData
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import data_privacy_api
+from sendbird_platform_sdk.model.inline_response20069 import InlineResponse20069
+from sendbird_platform_sdk.model.register_gdpr_request_data import RegisterGdprRequestData
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = data_privacy_api.DataPrivacyApi(api_client)
     api_token = "{{API_TOKEN}}" # str |  (optional)
@@ -201,7 +201,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Register a GDPR request
         api_response = api_instance.register_gdpr_request(api_token=api_token, register_gdpr_request_data=register_gdpr_request_data)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling DataPrivacyApi->register_gdpr_request: %s\n" % e)
 ```
 
@@ -247,19 +247,19 @@ View a GDPR request
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import data_privacy_api
-from sendbird-platform-sdk.model.inline_response20068_requests import InlineResponse20068Requests
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import data_privacy_api
+from sendbird_platform_sdk.model.inline_response20068_requests import InlineResponse20068Requests
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = data_privacy_api.DataPrivacyApi(api_client)
     request_id = "request_id_example" # str | 
@@ -270,7 +270,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # View a GDPR request
         api_response = api_instance.view_gdpr_request_by_id(request_id)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling DataPrivacyApi->view_gdpr_request_by_id: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -279,7 +279,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # View a GDPR request
         api_response = api_instance.view_gdpr_request_by_id(request_id, api_token=api_token)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling DataPrivacyApi->view_gdpr_request_by_id: %s\n" % e)
 ```
 

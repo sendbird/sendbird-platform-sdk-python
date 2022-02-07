@@ -1,4 +1,4 @@
-# sendbird-platform-sdk.MessagesApi
+# sendbird_platform_sdk.MessagesApi
 
 All URIs are relative to *https://api-APP_ID.sendbird.com*
 
@@ -34,20 +34,20 @@ Add extra data to a message
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import messages_api
-from sendbird-platform-sdk.model.add_extra_data_to_message_data import AddExtraDataToMessageData
-from sendbird-platform-sdk.model.inline_response20054 import InlineResponse20054
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import messages_api
+from sendbird_platform_sdk.model.inline_response20054 import InlineResponse20054
+from sendbird_platform_sdk.model.add_extra_data_to_message_data import AddExtraDataToMessageData
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = messages_api.MessagesApi(api_client)
     channel_type = "channel_type_example" # str | 
@@ -67,7 +67,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Add extra data to a message
         api_response = api_instance.add_extra_data_to_message(channel_type, channel_url, message_id)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling MessagesApi->add_extra_data_to_message: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -76,7 +76,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Add extra data to a message
         api_response = api_instance.add_extra_data_to_message(channel_type, channel_url, message_id, api_token=api_token, add_extra_data_to_message_data=add_extra_data_to_message_data)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling MessagesApi->add_extra_data_to_message: %s\n" % e)
 ```
 
@@ -125,20 +125,20 @@ Add a reaction to a message
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import messages_api
-from sendbird-platform-sdk.model.inline_response20053 import InlineResponse20053
-from sendbird-platform-sdk.model.add_reaction_to_a_message_data import AddReactionToAMessageData
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import messages_api
+from sendbird_platform_sdk.model.inline_response20053 import InlineResponse20053
+from sendbird_platform_sdk.model.add_reaction_to_a_message_data import AddReactionToAMessageData
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = messages_api.MessagesApi(api_client)
     channel_type = "channel_type_example" # str | 
@@ -158,7 +158,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Add a reaction to a message
         api_response = api_instance.add_reaction_to_a_message(channel_type, channel_url, message_id)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling MessagesApi->add_reaction_to_a_message: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -167,7 +167,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Add a reaction to a message
         api_response = api_instance.add_reaction_to_a_message(channel_type, channel_url, message_id, api_token=api_token, add_reaction_to_a_message_data=add_reaction_to_a_message_data)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling MessagesApi->add_reaction_to_a_message: %s\n" % e)
 ```
 
@@ -216,18 +216,18 @@ Delete a message
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import messages_api
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import messages_api
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = messages_api.MessagesApi(api_client)
     channel_type = "channel_type_example" # str | 
@@ -239,7 +239,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
     try:
         # Delete a message
         api_instance.delete_message_by_id(channel_type, channel_url, message_id)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling MessagesApi->delete_message_by_id: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -247,7 +247,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
     try:
         # Delete a message
         api_instance.delete_message_by_id(channel_type, channel_url, message_id, api_token=api_token)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling MessagesApi->delete_message_by_id: %s\n" % e)
 ```
 
@@ -295,20 +295,20 @@ Mark all messages as delivered
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import messages_api
-from sendbird-platform-sdk.model.gc_mark_all_messages_as_delivered_data import GcMarkAllMessagesAsDeliveredData
-from sendbird-platform-sdk.model.inline_response20050 import InlineResponse20050
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import messages_api
+from sendbird_platform_sdk.model.gc_mark_all_messages_as_delivered_data import GcMarkAllMessagesAsDeliveredData
+from sendbird_platform_sdk.model.inline_response20050 import InlineResponse20050
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = messages_api.MessagesApi(api_client)
     channel_url = "channel_url_example" # str | 
@@ -324,7 +324,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Mark all messages as delivered
         api_response = api_instance.gc_mark_all_messages_as_delivered(channel_url)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling MessagesApi->gc_mark_all_messages_as_delivered: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -333,7 +333,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Mark all messages as delivered
         api_response = api_instance.gc_mark_all_messages_as_delivered(channel_url, api_token=api_token, gc_mark_all_messages_as_delivered_data=gc_mark_all_messages_as_delivered_data)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling MessagesApi->gc_mark_all_messages_as_delivered: %s\n" % e)
 ```
 
@@ -380,19 +380,19 @@ Mark all messages as read
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import messages_api
-from sendbird-platform-sdk.model.gc_mark_all_messages_as_read_data import GcMarkAllMessagesAsReadData
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import messages_api
+from sendbird_platform_sdk.model.gc_mark_all_messages_as_read_data import GcMarkAllMessagesAsReadData
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = messages_api.MessagesApi(api_client)
     channel_url = "channel_url_example" # str | 
@@ -407,7 +407,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
     try:
         # Mark all messages as read
         api_instance.gc_mark_all_messages_as_read(channel_url)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling MessagesApi->gc_mark_all_messages_as_read: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -415,7 +415,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
     try:
         # Mark all messages as read
         api_instance.gc_mark_all_messages_as_read(channel_url, api_token=api_token, gc_mark_all_messages_as_read_data=gc_mark_all_messages_as_read_data)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling MessagesApi->gc_mark_all_messages_as_read: %s\n" % e)
 ```
 
@@ -462,19 +462,19 @@ View number of each member's unread messages
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import messages_api
-from sendbird-platform-sdk.model.inline_response20049 import InlineResponse20049
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import messages_api
+from sendbird_platform_sdk.model.inline_response20049 import InlineResponse20049
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = messages_api.MessagesApi(api_client)
     channel_url = "channel_url_example" # str | 
@@ -486,7 +486,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # View number of each member's unread messages
         api_response = api_instance.gc_view_number_of_each_members_unread_messages(channel_url)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling MessagesApi->gc_view_number_of_each_members_unread_messages: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -495,7 +495,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # View number of each member's unread messages
         api_response = api_instance.gc_view_number_of_each_members_unread_messages(channel_url, api_token=api_token, user_ids=user_ids)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling MessagesApi->gc_view_number_of_each_members_unread_messages: %s\n" % e)
 ```
 
@@ -542,19 +542,19 @@ List messages
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import messages_api
-from sendbird-platform-sdk.model.inline_response20047 import InlineResponse20047
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import messages_api
+from sendbird_platform_sdk.model.inline_response20047 import InlineResponse20047
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = messages_api.MessagesApi(api_client)
     channel_type = "channel_type_example" # str | 
@@ -584,7 +584,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # List messages
         api_response = api_instance.list_messages(channel_type, channel_url, message_ts, message_id)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling MessagesApi->list_messages: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -593,7 +593,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # List messages
         api_response = api_instance.list_messages(channel_type, channel_url, message_ts, message_id, api_token=api_token, prev_limit=prev_limit, next_limit=next_limit, include=include, reverse=reverse, sender_id=sender_id, sender_ids=sender_ids, operator_filter=operator_filter, custom_types=custom_types, message_type=message_type, including_removed=including_removed, include_reactions=include_reactions, with_sorted_meta_array=with_sorted_meta_array, show_subchannel_messages_only=show_subchannel_messages_only, user_id=user_id, custom_type=custom_type, with_meta_array=with_meta_array)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling MessagesApi->list_messages: %s\n" % e)
 ```
 
@@ -658,19 +658,19 @@ List reactions of a message
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import messages_api
-from sendbird-platform-sdk.model.inline_response20052 import InlineResponse20052
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import messages_api
+from sendbird_platform_sdk.model.inline_response20052 import InlineResponse20052
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = messages_api.MessagesApi(api_client)
     channel_type = "channel_type_example" # str | 
@@ -684,7 +684,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # List reactions of a message
         api_response = api_instance.list_reactions_of_message(channel_type, channel_url, message_id)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling MessagesApi->list_reactions_of_message: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -693,7 +693,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # List reactions of a message
         api_response = api_instance.list_reactions_of_message(channel_type, channel_url, message_id, api_token=api_token, list_users=list_users)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling MessagesApi->list_reactions_of_message: %s\n" % e)
 ```
 
@@ -742,18 +742,18 @@ Remove extra data from a message
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import messages_api
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import messages_api
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = messages_api.MessagesApi(api_client)
     channel_type = "channel_type_example" # str | 
@@ -768,7 +768,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
     try:
         # Remove extra data from a message
         api_instance.remove_extra_data_from_message(channel_type, channel_url, message_id)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling MessagesApi->remove_extra_data_from_message: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -776,7 +776,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
     try:
         # Remove extra data from a message
         api_instance.remove_extra_data_from_message(channel_type, channel_url, message_id, api_token=api_token, keys=keys)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling MessagesApi->remove_extra_data_from_message: %s\n" % e)
 ```
 
@@ -825,19 +825,19 @@ Remove a reaction from a message
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import messages_api
-from sendbird-platform-sdk.model.inline_response20053 import InlineResponse20053
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import messages_api
+from sendbird_platform_sdk.model.inline_response20053 import InlineResponse20053
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = messages_api.MessagesApi(api_client)
     channel_type = "channel_type_example" # str | 
@@ -852,7 +852,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Remove a reaction from a message
         api_response = api_instance.remove_reaction_from_a_message(channel_type, channel_url, message_id)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling MessagesApi->remove_reaction_from_a_message: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -861,7 +861,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Remove a reaction from a message
         api_response = api_instance.remove_reaction_from_a_message(channel_type, channel_url, message_id, api_token=api_token, user_id=user_id, reaction=reaction)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling MessagesApi->remove_reaction_from_a_message: %s\n" % e)
 ```
 
@@ -911,20 +911,20 @@ Send a message
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import messages_api
-from sendbird-platform-sdk.model.send_bird_message_response import SendBirdMessageResponse
-from sendbird-platform-sdk.model.send_message_data import SendMessageData
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import messages_api
+from sendbird_platform_sdk.model.send_bird_message_response import SendBirdMessageResponse
+from sendbird_platform_sdk.model.send_message_data import SendMessageData
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = messages_api.MessagesApi(api_client)
     channel_type = "channel_type_example" # str | 
@@ -957,7 +957,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Send a message
         api_response = api_instance.send_message(channel_type, channel_url)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling MessagesApi->send_message: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -966,7 +966,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Send a message
         api_response = api_instance.send_message(channel_type, channel_url, api_token=api_token, send_message_data=send_message_data)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling MessagesApi->send_message: %s\n" % e)
 ```
 
@@ -1014,19 +1014,19 @@ Translate a message into other languages
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import messages_api
-from sendbird-platform-sdk.model.send_bird_message_response import SendBirdMessageResponse
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import messages_api
+from sendbird_platform_sdk.model.send_bird_message_response import SendBirdMessageResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = messages_api.MessagesApi(api_client)
     channel_type = "channel_type_example" # str | 
@@ -1040,7 +1040,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Translate a message into other languages
         api_response = api_instance.translate_message_into_other_languages(channel_type, channel_url, message_id)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling MessagesApi->translate_message_into_other_languages: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -1049,7 +1049,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Translate a message into other languages
         api_response = api_instance.translate_message_into_other_languages(channel_type, channel_url, message_id, api_token=api_token, body=body)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling MessagesApi->translate_message_into_other_languages: %s\n" % e)
 ```
 
@@ -1098,20 +1098,20 @@ Update extra data in a message
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import messages_api
-from sendbird-platform-sdk.model.inline_response20054 import InlineResponse20054
-from sendbird-platform-sdk.model.update_extra_data_in_message_data import UpdateExtraDataInMessageData
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import messages_api
+from sendbird_platform_sdk.model.inline_response20054 import InlineResponse20054
+from sendbird_platform_sdk.model.update_extra_data_in_message_data import UpdateExtraDataInMessageData
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = messages_api.MessagesApi(api_client)
     channel_type = "channel_type_example" # str | 
@@ -1133,7 +1133,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Update extra data in a message
         api_response = api_instance.update_extra_data_in_message(channel_type, channel_url, message_id)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling MessagesApi->update_extra_data_in_message: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -1142,7 +1142,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Update extra data in a message
         api_response = api_instance.update_extra_data_in_message(channel_type, channel_url, message_id, api_token=api_token, update_extra_data_in_message_data=update_extra_data_in_message_data)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling MessagesApi->update_extra_data_in_message: %s\n" % e)
 ```
 
@@ -1191,20 +1191,20 @@ Update a message
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import messages_api
-from sendbird-platform-sdk.model.send_bird_message_response import SendBirdMessageResponse
-from sendbird-platform-sdk.model.update_message_by_id_data import UpdateMessageByIdData
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import messages_api
+from sendbird_platform_sdk.model.update_message_by_id_data import UpdateMessageByIdData
+from sendbird_platform_sdk.model.send_bird_message_response import SendBirdMessageResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = messages_api.MessagesApi(api_client)
     channel_type = "channel_type_example" # str | 
@@ -1230,7 +1230,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Update a message
         api_response = api_instance.update_message_by_id(channel_type, channel_url, message_id)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling MessagesApi->update_message_by_id: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -1239,7 +1239,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Update a message
         api_response = api_instance.update_message_by_id(channel_type, channel_url, message_id, api_token=api_token, update_message_by_id_data=update_message_by_id_data)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling MessagesApi->update_message_by_id: %s\n" % e)
 ```
 
@@ -1288,19 +1288,19 @@ View a message
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import messages_api
-from sendbird-platform-sdk.model.send_bird_message_response import SendBirdMessageResponse
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import messages_api
+from sendbird_platform_sdk.model.send_bird_message_response import SendBirdMessageResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = messages_api.MessagesApi(api_client)
     channel_type = "channel_type_example" # str | 
@@ -1315,7 +1315,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # View a message
         api_response = api_instance.view_message_by_id(channel_type, channel_url, message_id)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling MessagesApi->view_message_by_id: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -1324,7 +1324,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # View a message
         api_response = api_instance.view_message_by_id(channel_type, channel_url, message_id, api_token=api_token, with_sorted_meta_array=with_sorted_meta_array, with_meta_array=with_meta_array)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling MessagesApi->view_message_by_id: %s\n" % e)
 ```
 
@@ -1374,19 +1374,19 @@ View total number of messages in a channel
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import messages_api
-from sendbird-platform-sdk.model.inline_response20048 import InlineResponse20048
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import messages_api
+from sendbird_platform_sdk.model.inline_response20048 import InlineResponse20048
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = messages_api.MessagesApi(api_client)
     channel_type = "channel_type_example" # str | 
@@ -1398,7 +1398,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # View total number of messages in a channel
         api_response = api_instance.view_total_number_of_messages_in_channel(channel_type, channel_url)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling MessagesApi->view_total_number_of_messages_in_channel: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -1407,7 +1407,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # View total number of messages in a channel
         api_response = api_instance.view_total_number_of_messages_in_channel(channel_type, channel_url, api_token=api_token)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling MessagesApi->view_total_number_of_messages_in_channel: %s\n" % e)
 ```
 

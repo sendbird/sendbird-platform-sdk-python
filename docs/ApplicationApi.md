@@ -1,4 +1,4 @@
-# sendbird-platform-sdk.ApplicationApi
+# sendbird_platform_sdk.ApplicationApi
 
 All URIs are relative to *https://api-APP_ID.sendbird.com*
 
@@ -44,20 +44,20 @@ Add an APNs push configuration
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import application_api
-from sendbird-platform-sdk.model.inline_response2003 import InlineResponse2003
-from sendbird-platform-sdk.model.add_apns_push_configuration_data import AddApnsPushConfigurationData
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import application_api
+from sendbird_platform_sdk.model.inline_response2003 import InlineResponse2003
+from sendbird_platform_sdk.model.add_apns_push_configuration_data import AddApnsPushConfigurationData
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = application_api.ApplicationApi(api_client)
     api_token = "{{API_TOKEN}}" # str |  (optional)
@@ -78,7 +78,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Add an APNs push configuration
         api_response = api_instance.add_apns_push_configuration(api_token=api_token, add_apns_push_configuration_data=add_apns_push_configuration_data)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ApplicationApi->add_apns_push_configuration: %s\n" % e)
 ```
 
@@ -124,20 +124,20 @@ Add a FCM push configuration
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import application_api
-from sendbird-platform-sdk.model.inline_response2001 import InlineResponse2001
-from sendbird-platform-sdk.model.add_fcm_push_configuration_data import AddFcmPushConfigurationData
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import application_api
+from sendbird_platform_sdk.model.inline_response2001 import InlineResponse2001
+from sendbird_platform_sdk.model.add_fcm_push_configuration_data import AddFcmPushConfigurationData
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = application_api.ApplicationApi(api_client)
     api_token = "{{API_TOKEN}}" # str |  (optional)
@@ -152,7 +152,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Add a FCM push configuration
         api_response = api_instance.add_fcm_push_configuration(api_token=api_token, add_fcm_push_configuration_data=add_fcm_push_configuration_data)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ApplicationApi->add_fcm_push_configuration: %s\n" % e)
 ```
 
@@ -198,20 +198,20 @@ Add an HMS push configuration
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import application_api
-from sendbird-platform-sdk.model.add_hms_push_configuration_data import AddHmsPushConfigurationData
-from sendbird-platform-sdk.model.inline_response2002 import InlineResponse2002
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import application_api
+from sendbird_platform_sdk.model.add_hms_push_configuration_data import AddHmsPushConfigurationData
+from sendbird_platform_sdk.model.inline_response2002 import InlineResponse2002
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = application_api.ApplicationApi(api_client)
     api_token = "{{API_TOKEN}}" # str |  (optional)
@@ -227,7 +227,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Add an HMS push configuration
         api_response = api_instance.add_hms_push_configuration(api_token=api_token, add_hms_push_configuration_data=add_hms_push_configuration_data)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ApplicationApi->add_hms_push_configuration: %s\n" % e)
 ```
 
@@ -273,20 +273,20 @@ Add an IP to a whitelist
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import application_api
-from sendbird-platform-sdk.model.add_ip_to_whitelist_data import AddIpToWhitelistData
-from sendbird-platform-sdk.model.inline_response2006 import InlineResponse2006
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import application_api
+from sendbird_platform_sdk.model.inline_response2006 import InlineResponse2006
+from sendbird_platform_sdk.model.add_ip_to_whitelist_data import AddIpToWhitelistData
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = application_api.ApplicationApi(api_client)
     api_token = "{{API_TOKEN}}" # str |  (optional)
@@ -302,7 +302,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Add an IP to a whitelist
         api_response = api_instance.add_ip_to_whitelist(api_token=api_token, add_ip_to_whitelist_data=add_ip_to_whitelist_data)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ApplicationApi->add_ip_to_whitelist: %s\n" % e)
 ```
 
@@ -348,19 +348,19 @@ Delete allowed IPs from a whitelist
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import application_api
-from sendbird-platform-sdk.model.inline_response2006 import InlineResponse2006
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import application_api
+from sendbird_platform_sdk.model.inline_response2006 import InlineResponse2006
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = application_api.ApplicationApi(api_client)
     ip_whitelist_addresses = [
@@ -373,7 +373,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Delete allowed IPs from a whitelist
         api_response = api_instance.delete_allowed_ips_from_whitelist(ip_whitelist_addresses)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ApplicationApi->delete_allowed_ips_from_whitelist: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -382,7 +382,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Delete allowed IPs from a whitelist
         api_response = api_instance.delete_allowed_ips_from_whitelist(ip_whitelist_addresses, api_token=api_token)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ApplicationApi->delete_allowed_ips_from_whitelist: %s\n" % e)
 ```
 
@@ -428,19 +428,19 @@ Delete an APNs certificate
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import application_api
-from sendbird-platform-sdk.model.inline_response20013 import InlineResponse20013
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import application_api
+from sendbird_platform_sdk.model.inline_response20013 import InlineResponse20013
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = application_api.ApplicationApi(api_client)
     provider_id = "provider_id_example" # str | 
@@ -451,7 +451,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Delete an APNs certificate
         api_response = api_instance.delete_apns_certificate_by_id(provider_id)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ApplicationApi->delete_apns_certificate_by_id: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -460,7 +460,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Delete an APNs certificate
         api_response = api_instance.delete_apns_certificate_by_id(provider_id, api_token=api_token)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ApplicationApi->delete_apns_certificate_by_id: %s\n" % e)
 ```
 
@@ -506,20 +506,20 @@ Generate a secondary API token
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import application_api
-from sendbird-platform-sdk.model.generate_secondary_api_token_data import GenerateSecondaryApiTokenData
-from sendbird-platform-sdk.model.inline_response2007 import InlineResponse2007
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import application_api
+from sendbird_platform_sdk.model.generate_secondary_api_token_data import GenerateSecondaryApiTokenData
+from sendbird_platform_sdk.model.inline_response2007 import InlineResponse2007
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = application_api.ApplicationApi(api_client)
     api_token = "{{API_TOKEN}}" # str |  (optional)
@@ -533,7 +533,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Generate a secondary API token
         api_response = api_instance.generate_secondary_api_token(api_token=api_token, generate_secondary_api_token_data=generate_secondary_api_token_data)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ApplicationApi->generate_secondary_api_token: %s\n" % e)
 ```
 
@@ -579,19 +579,19 @@ List push configurations
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import application_api
-from sendbird-platform-sdk.model.inline_response20012 import InlineResponse20012
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import application_api
+from sendbird_platform_sdk.model.inline_response20012 import InlineResponse20012
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = application_api.ApplicationApi(api_client)
     push_type = "push_type_example" # str | 
@@ -602,7 +602,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # List push configurations
         api_response = api_instance.list_push_configurations(push_type)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ApplicationApi->list_push_configurations: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -611,7 +611,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # List push configurations
         api_response = api_instance.list_push_configurations(push_type, api_token=api_token)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ApplicationApi->list_push_configurations: %s\n" % e)
 ```
 
@@ -657,19 +657,19 @@ List push notification content templates
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import application_api
-from sendbird-platform-sdk.model.inline_response2004 import InlineResponse2004
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import application_api
+from sendbird_platform_sdk.model.inline_response2004 import InlineResponse2004
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = application_api.ApplicationApi(api_client)
     api_token = "{{API_TOKEN}}" # str |  (optional)
@@ -680,7 +680,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # List push notification content templates
         api_response = api_instance.list_push_notification_content_templates(api_token=api_token)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ApplicationApi->list_push_notification_content_templates: %s\n" % e)
 ```
 
@@ -725,19 +725,19 @@ List secondary API tokens
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import application_api
-from sendbird-platform-sdk.model.inline_response2008 import InlineResponse2008
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import application_api
+from sendbird_platform_sdk.model.inline_response2008 import InlineResponse2008
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = application_api.ApplicationApi(api_client)
     api_token = "{{API_TOKEN}}" # str |  (optional)
@@ -748,7 +748,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # List secondary API tokens
         api_response = api_instance.list_secondary_api_tokens(api_token=api_token)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ApplicationApi->list_secondary_api_tokens: %s\n" % e)
 ```
 
@@ -793,19 +793,19 @@ Remove a push configuration
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import application_api
-from sendbird-platform-sdk.model.inline_response20013 import InlineResponse20013
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import application_api
+from sendbird_platform_sdk.model.inline_response20013 import InlineResponse20013
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = application_api.ApplicationApi(api_client)
     push_type = "push_type_example" # str | 
@@ -817,7 +817,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Remove a push configuration
         api_response = api_instance.remove_push_configuration_by_id(push_type, provider_id)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ApplicationApi->remove_push_configuration_by_id: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -826,7 +826,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Remove a push configuration
         api_response = api_instance.remove_push_configuration_by_id(push_type, provider_id, api_token=api_token)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ApplicationApi->remove_push_configuration_by_id: %s\n" % e)
 ```
 
@@ -873,19 +873,19 @@ Retrieve an IP whitelist
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import application_api
-from sendbird-platform-sdk.model.inline_response2006 import InlineResponse2006
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import application_api
+from sendbird_platform_sdk.model.inline_response2006 import InlineResponse2006
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = application_api.ApplicationApi(api_client)
     api_token = "{{API_TOKEN}}" # str |  (optional)
@@ -896,7 +896,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Retrieve an IP whitelist
         api_response = api_instance.retrieve_ip_whitelist(api_token=api_token)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ApplicationApi->retrieve_ip_whitelist: %s\n" % e)
 ```
 
@@ -941,19 +941,19 @@ Revoke a secondary API token
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import application_api
-from sendbird-platform-sdk.model.inline_response2007 import InlineResponse2007
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import application_api
+from sendbird_platform_sdk.model.inline_response2007 import InlineResponse2007
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = application_api.ApplicationApi(api_client)
     api_token2 = "api_token_example" # str | 
@@ -964,7 +964,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Revoke a secondary API token
         api_response = api_instance.revoke_secondary_api_token_by_token(api_token2)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ApplicationApi->revoke_secondary_api_token_by_token: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -973,7 +973,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Revoke a secondary API token
         api_response = api_instance.revoke_secondary_api_token_by_token(api_token2, api_token=api_token)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ApplicationApi->revoke_secondary_api_token_by_token: %s\n" % e)
 ```
 
@@ -1019,20 +1019,20 @@ Update an APNs push configuration
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import application_api
-from sendbird-platform-sdk.model.inline_response20014 import InlineResponse20014
-from sendbird-platform-sdk.model.update_apns_push_configuration_by_id_data import UpdateApnsPushConfigurationByIdData
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import application_api
+from sendbird_platform_sdk.model.update_apns_push_configuration_by_id_data import UpdateApnsPushConfigurationByIdData
+from sendbird_platform_sdk.model.inline_response20014 import InlineResponse20014
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = application_api.ApplicationApi(api_client)
     provider_id = "provider_id_example" # str | 
@@ -1054,7 +1054,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Update an APNs push configuration
         api_response = api_instance.update_apns_push_configuration_by_id(provider_id)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ApplicationApi->update_apns_push_configuration_by_id: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -1063,7 +1063,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Update an APNs push configuration
         api_response = api_instance.update_apns_push_configuration_by_id(provider_id, api_token=api_token, update_apns_push_configuration_by_id_data=update_apns_push_configuration_by_id_data)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ApplicationApi->update_apns_push_configuration_by_id: %s\n" % e)
 ```
 
@@ -1110,20 +1110,20 @@ Update default channel invitation preference
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import application_api
-from sendbird-platform-sdk.model.update_default_channel_invitation_preference_data import UpdateDefaultChannelInvitationPreferenceData
-from sendbird-platform-sdk.model.inline_response2005 import InlineResponse2005
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import application_api
+from sendbird_platform_sdk.model.inline_response2005 import InlineResponse2005
+from sendbird_platform_sdk.model.update_default_channel_invitation_preference_data import UpdateDefaultChannelInvitationPreferenceData
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = application_api.ApplicationApi(api_client)
     api_token = "{{API_TOKEN}}" # str |  (optional)
@@ -1137,7 +1137,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Update default channel invitation preference
         api_response = api_instance.update_default_channel_invitation_preference(api_token=api_token, update_default_channel_invitation_preference_data=update_default_channel_invitation_preference_data)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ApplicationApi->update_default_channel_invitation_preference: %s\n" % e)
 ```
 
@@ -1183,20 +1183,20 @@ Update a FCM push configuration
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import application_api
-from sendbird-platform-sdk.model.update_fcm_push_configuration_by_id_data import UpdateFcmPushConfigurationByIdData
-from sendbird-platform-sdk.model.inline_response20014 import InlineResponse20014
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import application_api
+from sendbird_platform_sdk.model.update_fcm_push_configuration_by_id_data import UpdateFcmPushConfigurationByIdData
+from sendbird_platform_sdk.model.inline_response20014 import InlineResponse20014
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = application_api.ApplicationApi(api_client)
     provider_id = "provider_id_example" # str | 
@@ -1212,7 +1212,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Update a FCM push configuration
         api_response = api_instance.update_fcm_push_configuration_by_id(provider_id)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ApplicationApi->update_fcm_push_configuration_by_id: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -1221,7 +1221,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Update a FCM push configuration
         api_response = api_instance.update_fcm_push_configuration_by_id(provider_id, api_token=api_token, update_fcm_push_configuration_by_id_data=update_fcm_push_configuration_by_id_data)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ApplicationApi->update_fcm_push_configuration_by_id: %s\n" % e)
 ```
 
@@ -1268,20 +1268,20 @@ Update an HMS push configuration
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import application_api
-from sendbird-platform-sdk.model.inline_response20014 import InlineResponse20014
-from sendbird-platform-sdk.model.update_hms_push_configuration_by_id_data import UpdateHmsPushConfigurationByIdData
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import application_api
+from sendbird_platform_sdk.model.inline_response20014 import InlineResponse20014
+from sendbird_platform_sdk.model.update_hms_push_configuration_by_id_data import UpdateHmsPushConfigurationByIdData
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = application_api.ApplicationApi(api_client)
     provider_id = "provider_id_example" # str | 
@@ -1298,7 +1298,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Update an HMS push configuration
         api_response = api_instance.update_hms_push_configuration_by_id(provider_id)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ApplicationApi->update_hms_push_configuration_by_id: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -1307,7 +1307,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Update an HMS push configuration
         api_response = api_instance.update_hms_push_configuration_by_id(provider_id, api_token=api_token, update_hms_push_configuration_by_id_data=update_hms_push_configuration_by_id_data)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ApplicationApi->update_hms_push_configuration_by_id: %s\n" % e)
 ```
 
@@ -1354,20 +1354,20 @@ Update a push notification content template
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import application_api
-from sendbird-platform-sdk.model.update_push_notification_content_template_data import UpdatePushNotificationContentTemplateData
-from sendbird-platform-sdk.model.inline_response20015 import InlineResponse20015
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import application_api
+from sendbird_platform_sdk.model.inline_response20015 import InlineResponse20015
+from sendbird_platform_sdk.model.update_push_notification_content_template_data import UpdatePushNotificationContentTemplateData
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = application_api.ApplicationApi(api_client)
     template_name = "template_name_example" # str | 
@@ -1385,7 +1385,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Update a push notification content template
         api_response = api_instance.update_push_notification_content_template(template_name)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ApplicationApi->update_push_notification_content_template: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -1394,7 +1394,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Update a push notification content template
         api_response = api_instance.update_push_notification_content_template(template_name, api_token=api_token, update_push_notification_content_template_data=update_push_notification_content_template_data)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ApplicationApi->update_push_notification_content_template: %s\n" % e)
 ```
 
@@ -1441,19 +1441,19 @@ View default channel invitation preference
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import application_api
-from sendbird-platform-sdk.model.inline_response2005 import InlineResponse2005
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import application_api
+from sendbird_platform_sdk.model.inline_response2005 import InlineResponse2005
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = application_api.ApplicationApi(api_client)
     api_token = "{{API_TOKEN}}" # str |  (optional)
@@ -1464,7 +1464,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # View default channel invitation preference
         api_response = api_instance.view_default_channel_invitation_preference(api_token=api_token)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ApplicationApi->view_default_channel_invitation_preference: %s\n" % e)
 ```
 
@@ -1509,19 +1509,19 @@ View number of concurrent connections
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import application_api
-from sendbird-platform-sdk.model.inline_response200 import InlineResponse200
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import application_api
+from sendbird_platform_sdk.model.inline_response200 import InlineResponse200
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = application_api.ApplicationApi(api_client)
     api_token = "{{API_TOKEN}}" # str |  (optional)
@@ -1532,7 +1532,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # View number of concurrent connections
         api_response = api_instance.view_number_of_concurrent_connections(api_token=api_token)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ApplicationApi->view_number_of_concurrent_connections: %s\n" % e)
 ```
 
@@ -1577,19 +1577,19 @@ View number of daily active users
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import application_api
-from sendbird-platform-sdk.model.inline_response20011 import InlineResponse20011
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import application_api
+from sendbird_platform_sdk.model.inline_response20011 import InlineResponse20011
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = application_api.ApplicationApi(api_client)
     api_token = "{{API_TOKEN}}" # str |  (optional)
@@ -1601,7 +1601,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # View number of daily active users
         api_response = api_instance.view_number_of_daily_active_users(api_token=api_token, date=date)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ApplicationApi->view_number_of_daily_active_users: %s\n" % e)
 ```
 
@@ -1647,19 +1647,19 @@ View number of monthly active users
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import application_api
-from sendbird-platform-sdk.model.inline_response20010 import InlineResponse20010
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import application_api
+from sendbird_platform_sdk.model.inline_response20010 import InlineResponse20010
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = application_api.ApplicationApi(api_client)
     api_token = "{{API_TOKEN}}" # str |  (optional)
@@ -1671,7 +1671,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # View number of monthly active users
         api_response = api_instance.view_number_of_monthly_active_users(api_token=api_token, date=date)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ApplicationApi->view_number_of_monthly_active_users: %s\n" % e)
 ```
 
@@ -1717,19 +1717,19 @@ View number of peak connections
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import application_api
-from sendbird-platform-sdk.model.inline_response2009 import InlineResponse2009
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import application_api
+from sendbird_platform_sdk.model.inline_response2009 import InlineResponse2009
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = application_api.ApplicationApi(api_client)
     time_dimension = "time_dimension_example" # str | 
@@ -1746,7 +1746,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # View number of peak connections
         api_response = api_instance.view_number_of_peak_connections(time_dimension, start_year, start_month, end_year, end_month)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ApplicationApi->view_number_of_peak_connections: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -1755,7 +1755,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # View number of peak connections
         api_response = api_instance.view_number_of_peak_connections(time_dimension, start_year, start_month, end_year, end_month, api_token=api_token, start_day=start_day, end_day=end_day)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ApplicationApi->view_number_of_peak_connections: %s\n" % e)
 ```
 
@@ -1807,19 +1807,19 @@ View a push configuration
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import application_api
-from sendbird-platform-sdk.model.inline_response20012 import InlineResponse20012
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import application_api
+from sendbird_platform_sdk.model.inline_response20012 import InlineResponse20012
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = application_api.ApplicationApi(api_client)
     push_type = "push_type_example" # str | 
@@ -1831,7 +1831,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # View a push configuration
         api_response = api_instance.view_push_configuration_by_id(push_type, provider_id)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ApplicationApi->view_push_configuration_by_id: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -1840,7 +1840,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # View a push configuration
         api_response = api_instance.view_push_configuration_by_id(push_type, provider_id, api_token=api_token)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ApplicationApi->view_push_configuration_by_id: %s\n" % e)
 ```
 
@@ -1887,19 +1887,19 @@ View a push notification content template
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import application_api
-from sendbird-platform-sdk.model.inline_response20015 import InlineResponse20015
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import application_api
+from sendbird_platform_sdk.model.inline_response20015 import InlineResponse20015
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = application_api.ApplicationApi(api_client)
     template_name = "template_name_example" # str | 
@@ -1910,7 +1910,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # View a push notification content template
         api_response = api_instance.view_push_notification_content_template(template_name)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ApplicationApi->view_push_notification_content_template: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -1919,7 +1919,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # View a push notification content template
         api_response = api_instance.view_push_notification_content_template(template_name, api_token=api_token)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ApplicationApi->view_push_notification_content_template: %s\n" % e)
 ```
 
@@ -1965,19 +1965,19 @@ View a secondary API token
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import application_api
-from sendbird-platform-sdk.model.inline_response2007 import InlineResponse2007
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import application_api
+from sendbird_platform_sdk.model.inline_response2007 import InlineResponse2007
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = application_api.ApplicationApi(api_client)
     api_token2 = "api_token_example" # str | 
@@ -1988,7 +1988,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # View a secondary API token
         api_response = api_instance.view_secondary_api_token_by_token(api_token2)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ApplicationApi->view_secondary_api_token_by_token: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -1997,7 +1997,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # View a secondary API token
         api_response = api_instance.view_secondary_api_token_by_token(api_token2, api_token=api_token)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ApplicationApi->view_secondary_api_token_by_token: %s\n" % e)
 ```
 

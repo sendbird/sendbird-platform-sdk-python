@@ -1,4 +1,4 @@
-# sendbird-platform-sdk.ReportContentSubjectApi
+# sendbird_platform_sdk.ReportContentSubjectApi
 
 All URIs are relative to *https://api-APP_ID.sendbird.com*
 
@@ -26,19 +26,19 @@ List reports
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import report_content__subject_api
-from sendbird-platform-sdk.model.inline_response20070 import InlineResponse20070
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import report_content__subject_api
+from sendbird_platform_sdk.model.inline_response20070 import InlineResponse20070
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = report_content__subject_api.ReportContentSubjectApi(api_client)
     api_token = "{{API_TOKEN}}" # str |  (optional)
@@ -53,7 +53,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # List reports
         api_response = api_instance.list_reports(api_token=api_token, token=token, limit=limit, start_ts=start_ts, end_ts=end_ts)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ReportContentSubjectApi->list_reports: %s\n" % e)
 ```
 
@@ -102,19 +102,19 @@ List reports on a channel
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import report_content__subject_api
-from sendbird-platform-sdk.model.inline_response20071 import InlineResponse20071
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import report_content__subject_api
+from sendbird_platform_sdk.model.inline_response20071 import InlineResponse20071
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = report_content__subject_api.ReportContentSubjectApi(api_client)
     channel_type = "channel_type_example" # str | 
@@ -128,7 +128,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # List reports on a channel
         api_response = api_instance.list_reports_on_channel_by_url(channel_type, channel_url)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ReportContentSubjectApi->list_reports_on_channel_by_url: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -137,7 +137,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # List reports on a channel
         api_response = api_instance.list_reports_on_channel_by_url(channel_type, channel_url, api_token=api_token, token=token, limit=limit)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ReportContentSubjectApi->list_reports_on_channel_by_url: %s\n" % e)
 ```
 
@@ -186,19 +186,19 @@ List reports on a message
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import report_content__subject_api
-from sendbird-platform-sdk.model.inline_response20071 import InlineResponse20071
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import report_content__subject_api
+from sendbird_platform_sdk.model.inline_response20071 import InlineResponse20071
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = report_content__subject_api.ReportContentSubjectApi(api_client)
     channel_type = "channel_type_example" # str | 
@@ -213,7 +213,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # List reports on a message
         api_response = api_instance.list_reports_on_message_by_id(channel_type, channel_url, message_id)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ReportContentSubjectApi->list_reports_on_message_by_id: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -222,7 +222,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # List reports on a message
         api_response = api_instance.list_reports_on_message_by_id(channel_type, channel_url, message_id, api_token=api_token, token=token, limit=limit)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ReportContentSubjectApi->list_reports_on_message_by_id: %s\n" % e)
 ```
 
@@ -272,19 +272,19 @@ List reports on a user
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import report_content__subject_api
-from sendbird-platform-sdk.model.inline_response20071 import InlineResponse20071
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import report_content__subject_api
+from sendbird_platform_sdk.model.inline_response20071 import InlineResponse20071
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = report_content__subject_api.ReportContentSubjectApi(api_client)
     offending_user_id = "offending_user_id_example" # str | 
@@ -297,7 +297,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # List reports on a user
         api_response = api_instance.list_reports_on_user_by_id(offending_user_id)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ReportContentSubjectApi->list_reports_on_user_by_id: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -306,7 +306,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # List reports on a user
         api_response = api_instance.list_reports_on_user_by_id(offending_user_id, api_token=api_token, token=token, limit=limit)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ReportContentSubjectApi->list_reports_on_user_by_id: %s\n" % e)
 ```
 
@@ -354,20 +354,20 @@ Report a channel
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import report_content__subject_api
-from sendbird-platform-sdk.model.inline_response20071_report_logs import InlineResponse20071ReportLogs
-from sendbird-platform-sdk.model.report_channel_by_url_data import ReportChannelByUrlData
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import report_content__subject_api
+from sendbird_platform_sdk.model.inline_response20071_report_logs import InlineResponse20071ReportLogs
+from sendbird_platform_sdk.model.report_channel_by_url_data import ReportChannelByUrlData
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = report_content__subject_api.ReportContentSubjectApi(api_client)
     channel_type = "channel_type_example" # str | 
@@ -386,7 +386,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Report a channel
         api_response = api_instance.report_channel_by_url(channel_type, channel_url)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ReportContentSubjectApi->report_channel_by_url: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -395,7 +395,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Report a channel
         api_response = api_instance.report_channel_by_url(channel_type, channel_url, api_token=api_token, report_channel_by_url_data=report_channel_by_url_data)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ReportContentSubjectApi->report_channel_by_url: %s\n" % e)
 ```
 
@@ -443,20 +443,20 @@ Report a message
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import report_content__subject_api
-from sendbird-platform-sdk.model.report_message_by_id_data import ReportMessageByIdData
-from sendbird-platform-sdk.model.inline_response20071_report_logs import InlineResponse20071ReportLogs
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import report_content__subject_api
+from sendbird_platform_sdk.model.inline_response20071_report_logs import InlineResponse20071ReportLogs
+from sendbird_platform_sdk.model.report_message_by_id_data import ReportMessageByIdData
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = report_content__subject_api.ReportContentSubjectApi(api_client)
     channel_type = "channel_type_example" # str | 
@@ -478,7 +478,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Report a message
         api_response = api_instance.report_message_by_id(channel_type, channel_url, message_id)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ReportContentSubjectApi->report_message_by_id: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -487,7 +487,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Report a message
         api_response = api_instance.report_message_by_id(channel_type, channel_url, message_id, api_token=api_token, report_message_by_id_data=report_message_by_id_data)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ReportContentSubjectApi->report_message_by_id: %s\n" % e)
 ```
 
@@ -536,20 +536,20 @@ Report a user
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import report_content__subject_api
-from sendbird-platform-sdk.model.report_user_by_id_data import ReportUserByIdData
-from sendbird-platform-sdk.model.inline_response20071_report_logs import InlineResponse20071ReportLogs
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import report_content__subject_api
+from sendbird_platform_sdk.model.inline_response20071_report_logs import InlineResponse20071ReportLogs
+from sendbird_platform_sdk.model.report_user_by_id_data import ReportUserByIdData
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = report_content__subject_api.ReportContentSubjectApi(api_client)
     offending_user_id = "offending_user_id_example" # str | 
@@ -568,7 +568,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Report a user
         api_response = api_instance.report_user_by_id(offending_user_id)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ReportContentSubjectApi->report_user_by_id: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -577,7 +577,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Report a user
         api_response = api_instance.report_user_by_id(offending_user_id, api_token=api_token, report_user_by_id_data=report_user_by_id_data)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ReportContentSubjectApi->report_user_by_id: %s\n" % e)
 ```
 
@@ -624,18 +624,18 @@ View a moderated message
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import report_content__subject_api
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import report_content__subject_api
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = report_content__subject_api.ReportContentSubjectApi(api_client)
     channel_type = "channel_type_example" # str | 
@@ -648,7 +648,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # View a moderated message
         api_response = api_instance.view_moderated_message_by_id(channel_type, channel_url, message_id)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ReportContentSubjectApi->view_moderated_message_by_id: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -657,7 +657,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # View a moderated message
         api_response = api_instance.view_moderated_message_by_id(channel_type, channel_url, message_id, api_token=api_token)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ReportContentSubjectApi->view_moderated_message_by_id: %s\n" % e)
 ```
 

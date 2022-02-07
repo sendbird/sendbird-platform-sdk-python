@@ -1,4 +1,4 @@
-# sendbird-platform-sdk.UserChannelMetadataApi
+# sendbird_platform_sdk.UserChannelMetadataApi
 
 All URIs are relative to *https://api-APP_ID.sendbird.com*
 
@@ -39,20 +39,20 @@ Create a channel metacounter
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import user__channel_metadata_api
-from sendbird-platform-sdk.model.send_bird_additional_properties import SendBirdAdditionalProperties
-from sendbird-platform-sdk.model.create_channel_metacounter_data import CreateChannelMetacounterData
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import user__channel_metadata_api
+from sendbird_platform_sdk.model.create_channel_metacounter_data import CreateChannelMetacounterData
+from sendbird_platform_sdk.model.send_bird_additional_properties import SendBirdAdditionalProperties
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = user__channel_metadata_api.UserChannelMetadataApi(api_client)
     channel_type = "channel_type_example" # str | 
@@ -69,7 +69,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Create a channel metacounter
         api_response = api_instance.create_channel_metacounter(channel_type, channel_url)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserChannelMetadataApi->create_channel_metacounter: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -78,7 +78,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Create a channel metacounter
         api_response = api_instance.create_channel_metacounter(channel_type, channel_url, api_token=api_token, create_channel_metacounter_data=create_channel_metacounter_data)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserChannelMetadataApi->create_channel_metacounter: %s\n" % e)
 ```
 
@@ -126,20 +126,20 @@ Create a channel metadata
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import user__channel_metadata_api
-from sendbird-platform-sdk.model.inline_response20061 import InlineResponse20061
-from sendbird-platform-sdk.model.create_channel_metadata_data import CreateChannelMetadataData
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import user__channel_metadata_api
+from sendbird_platform_sdk.model.inline_response20061 import InlineResponse20061
+from sendbird_platform_sdk.model.create_channel_metadata_data import CreateChannelMetadataData
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = user__channel_metadata_api.UserChannelMetadataApi(api_client)
     channel_type = "channel_type_example" # str | 
@@ -157,7 +157,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Create a channel metadata
         api_response = api_instance.create_channel_metadata(channel_type, channel_url)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserChannelMetadataApi->create_channel_metadata: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -166,7 +166,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Create a channel metadata
         api_response = api_instance.create_channel_metadata(channel_type, channel_url, api_token=api_token, create_channel_metadata_data=create_channel_metadata_data)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserChannelMetadataApi->create_channel_metadata: %s\n" % e)
 ```
 
@@ -214,20 +214,20 @@ Create a user metadata
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import user__channel_metadata_api
-from sendbird-platform-sdk.model.create_user_metadata_data import CreateUserMetadataData
-from sendbird-platform-sdk.model.inline_response20047_user_metadata import InlineResponse20047UserMetadata
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import user__channel_metadata_api
+from sendbird_platform_sdk.model.inline_response20047_user_metadata import InlineResponse20047UserMetadata
+from sendbird_platform_sdk.model.create_user_metadata_data import CreateUserMetadataData
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = user__channel_metadata_api.UserChannelMetadataApi(api_client)
     user_id = "user_id_example" # str | 
@@ -242,7 +242,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Create a user metadata
         api_response = api_instance.create_user_metadata(user_id)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserChannelMetadataApi->create_user_metadata: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -251,7 +251,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Create a user metadata
         api_response = api_instance.create_user_metadata(user_id, api_token=api_token, create_user_metadata_data=create_user_metadata_data)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserChannelMetadataApi->create_user_metadata: %s\n" % e)
 ```
 
@@ -298,18 +298,18 @@ Delete a channel metacounter - When deleting all items of a channel metacounter
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import user__channel_metadata_api
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import user__channel_metadata_api
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = user__channel_metadata_api.UserChannelMetadataApi(api_client)
     channel_type = "channel_type_example" # str | 
@@ -320,7 +320,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
     try:
         # Delete a channel metacounter - When deleting all items of a channel metacounter
         api_instance.delete_channel_metacounter(channel_type, channel_url)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserChannelMetadataApi->delete_channel_metacounter: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -328,7 +328,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
     try:
         # Delete a channel metacounter - When deleting all items of a channel metacounter
         api_instance.delete_channel_metacounter(channel_type, channel_url, api_token=api_token)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserChannelMetadataApi->delete_channel_metacounter: %s\n" % e)
 ```
 
@@ -375,18 +375,18 @@ Delete a channel metacounter - When deleting a specific item of a channel metaco
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import user__channel_metadata_api
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import user__channel_metadata_api
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = user__channel_metadata_api.UserChannelMetadataApi(api_client)
     channel_type = "channel_type_example" # str | 
@@ -398,7 +398,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
     try:
         # Delete a channel metacounter - When deleting a specific item of a channel metacounter by its key
         api_instance.delete_channel_metacounter_by_key(channel_type, channel_url, key)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserChannelMetadataApi->delete_channel_metacounter_by_key: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -406,7 +406,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
     try:
         # Delete a channel metacounter - When deleting a specific item of a channel metacounter by its key
         api_instance.delete_channel_metacounter_by_key(channel_type, channel_url, key, api_token=api_token)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserChannelMetadataApi->delete_channel_metacounter_by_key: %s\n" % e)
 ```
 
@@ -454,18 +454,18 @@ Delete a channel metadata - When deleting all items of a channel metadata
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import user__channel_metadata_api
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import user__channel_metadata_api
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = user__channel_metadata_api.UserChannelMetadataApi(api_client)
     channel_type = "channel_type_example" # str | 
@@ -477,7 +477,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
     try:
         # Delete a channel metadata - When deleting all items of a channel metadata
         api_instance.delete_channel_metadata(channel_type, channel_url)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserChannelMetadataApi->delete_channel_metadata: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -485,7 +485,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
     try:
         # Delete a channel metadata - When deleting all items of a channel metadata
         api_instance.delete_channel_metadata(channel_type, channel_url, api_token=api_token, key=key)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserChannelMetadataApi->delete_channel_metadata: %s\n" % e)
 ```
 
@@ -533,18 +533,18 @@ Delete a channel metadata - When deleting a specific item of a channel metadata 
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import user__channel_metadata_api
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import user__channel_metadata_api
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = user__channel_metadata_api.UserChannelMetadataApi(api_client)
     channel_type = "channel_type_example" # str | 
@@ -556,7 +556,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
     try:
         # Delete a channel metadata - When deleting a specific item of a channel metadata by its key
         api_instance.delete_channel_metadata_by_key(channel_type, channel_url, key)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserChannelMetadataApi->delete_channel_metadata_by_key: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -564,7 +564,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
     try:
         # Delete a channel metadata - When deleting a specific item of a channel metadata by its key
         api_instance.delete_channel_metadata_by_key(channel_type, channel_url, key, api_token=api_token)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserChannelMetadataApi->delete_channel_metadata_by_key: %s\n" % e)
 ```
 
@@ -612,18 +612,18 @@ Delete a user metadata - When deleting all items of a user metadata
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import user__channel_metadata_api
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import user__channel_metadata_api
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = user__channel_metadata_api.UserChannelMetadataApi(api_client)
     user_id = "user_id_example" # str | 
@@ -634,7 +634,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
     try:
         # Delete a user metadata - When deleting all items of a user metadata
         api_instance.delete_user_metadata(user_id)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserChannelMetadataApi->delete_user_metadata: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -642,7 +642,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
     try:
         # Delete a user metadata - When deleting all items of a user metadata
         api_instance.delete_user_metadata(user_id, api_token=api_token, key=key)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserChannelMetadataApi->delete_user_metadata: %s\n" % e)
 ```
 
@@ -689,18 +689,18 @@ Delete a user metadata - When deleting a specific item of a user metadata by its
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import user__channel_metadata_api
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import user__channel_metadata_api
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = user__channel_metadata_api.UserChannelMetadataApi(api_client)
     user_id = "user_id_example" # str | 
@@ -711,7 +711,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
     try:
         # Delete a user metadata - When deleting a specific item of a user metadata by its key
         api_instance.delete_user_metadata_by_key(user_id, key)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserChannelMetadataApi->delete_user_metadata_by_key: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -719,7 +719,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
     try:
         # Delete a user metadata - When deleting a specific item of a user metadata by its key
         api_instance.delete_user_metadata_by_key(user_id, key, api_token=api_token)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserChannelMetadataApi->delete_user_metadata_by_key: %s\n" % e)
 ```
 
@@ -766,20 +766,20 @@ Update a channel metacounter - When updating existing items of a channel metacou
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import user__channel_metadata_api
-from sendbird-platform-sdk.model.send_bird_additional_properties import SendBirdAdditionalProperties
-from sendbird-platform-sdk.model.update_channel_metacounter_data import UpdateChannelMetacounterData
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import user__channel_metadata_api
+from sendbird_platform_sdk.model.send_bird_additional_properties import SendBirdAdditionalProperties
+from sendbird_platform_sdk.model.update_channel_metacounter_data import UpdateChannelMetacounterData
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = user__channel_metadata_api.UserChannelMetadataApi(api_client)
     channel_type = "channel_type_example" # str | 
@@ -796,7 +796,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Update a channel metacounter - When updating existing items of a channel metacounter by their keys or adding new items to the metacounter
         api_response = api_instance.update_channel_metacounter(channel_type, channel_url)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserChannelMetadataApi->update_channel_metacounter: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -805,7 +805,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Update a channel metacounter - When updating existing items of a channel metacounter by their keys or adding new items to the metacounter
         api_response = api_instance.update_channel_metacounter(channel_type, channel_url, api_token=api_token, update_channel_metacounter_data=update_channel_metacounter_data)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserChannelMetadataApi->update_channel_metacounter: %s\n" % e)
 ```
 
@@ -853,18 +853,18 @@ Update a channel metacounter - When updating a specific item of a channel metaco
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import user__channel_metadata_api
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import user__channel_metadata_api
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = user__channel_metadata_api.UserChannelMetadataApi(api_client)
     channel_type = "channel_type_example" # str | 
@@ -878,7 +878,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Update a channel metacounter - When updating a specific item of a channel metacounter by its key
         api_response = api_instance.update_channel_metacounter_by_key(channel_type, channel_url, key)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserChannelMetadataApi->update_channel_metacounter_by_key: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -887,7 +887,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Update a channel metacounter - When updating a specific item of a channel metacounter by its key
         api_response = api_instance.update_channel_metacounter_by_key(channel_type, channel_url, key, api_token=api_token, body=body)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserChannelMetadataApi->update_channel_metacounter_by_key: %s\n" % e)
 ```
 
@@ -936,19 +936,19 @@ Update a channel metadata - When updating existing items of a channel metadata b
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import user__channel_metadata_api
-from sendbird-platform-sdk.model.update_channel_metadata_data import UpdateChannelMetadataData
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import user__channel_metadata_api
+from sendbird_platform_sdk.model.update_channel_metadata_data import UpdateChannelMetadataData
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = user__channel_metadata_api.UserChannelMetadataApi(api_client)
     channel_type = "channel_type_example" # str | 
@@ -964,7 +964,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Update a channel metadata - When updating existing items of a channel metadata by their keys or adding new items to the metadata
         api_response = api_instance.update_channel_metadata(channel_type, channel_url)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserChannelMetadataApi->update_channel_metadata: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -973,7 +973,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Update a channel metadata - When updating existing items of a channel metadata by their keys or adding new items to the metadata
         api_response = api_instance.update_channel_metadata(channel_type, channel_url, api_token=api_token, update_channel_metadata_data=update_channel_metadata_data)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserChannelMetadataApi->update_channel_metadata: %s\n" % e)
 ```
 
@@ -1021,18 +1021,18 @@ Update a channel metadata - When updating a specific item of a channel metadata 
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import user__channel_metadata_api
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import user__channel_metadata_api
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = user__channel_metadata_api.UserChannelMetadataApi(api_client)
     channel_type = "channel_type_example" # str | 
@@ -1046,7 +1046,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Update a channel metadata - When updating a specific item of a channel metadata by its key
         api_response = api_instance.update_channel_metadata_by_key(channel_type, channel_url, key)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserChannelMetadataApi->update_channel_metadata_by_key: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -1055,7 +1055,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Update a channel metadata - When updating a specific item of a channel metadata by its key
         api_response = api_instance.update_channel_metadata_by_key(channel_type, channel_url, key, api_token=api_token, body=body)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserChannelMetadataApi->update_channel_metadata_by_key: %s\n" % e)
 ```
 
@@ -1104,20 +1104,20 @@ Update a user metadata - When updating existing items of a user metadata by thei
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import user__channel_metadata_api
-from sendbird-platform-sdk.model.inline_response20060 import InlineResponse20060
-from sendbird-platform-sdk.model.update_user_metadata_data import UpdateUserMetadataData
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import user__channel_metadata_api
+from sendbird_platform_sdk.model.inline_response20060 import InlineResponse20060
+from sendbird_platform_sdk.model.update_user_metadata_data import UpdateUserMetadataData
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = user__channel_metadata_api.UserChannelMetadataApi(api_client)
     user_id = "user_id_example" # str | 
@@ -1132,7 +1132,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Update a user metadata - When updating existing items of a user metadata by their keys or adding new items to the metadata
         api_response = api_instance.update_user_metadata(user_id)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserChannelMetadataApi->update_user_metadata: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -1141,7 +1141,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Update a user metadata - When updating existing items of a user metadata by their keys or adding new items to the metadata
         api_response = api_instance.update_user_metadata(user_id, api_token=api_token, update_user_metadata_data=update_user_metadata_data)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserChannelMetadataApi->update_user_metadata: %s\n" % e)
 ```
 
@@ -1188,18 +1188,18 @@ Update a user metadata - When updating a specific item of a user metadata by its
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import user__channel_metadata_api
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import user__channel_metadata_api
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = user__channel_metadata_api.UserChannelMetadataApi(api_client)
     user_id = "user_id_example" # str | 
@@ -1212,7 +1212,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Update a user metadata - When updating a specific item of a user metadata by its key
         api_response = api_instance.update_user_metadata_by_key(user_id, key)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserChannelMetadataApi->update_user_metadata_by_key: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -1221,7 +1221,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Update a user metadata - When updating a specific item of a user metadata by its key
         api_response = api_instance.update_user_metadata_by_key(user_id, key, api_token=api_token, body=body)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserChannelMetadataApi->update_user_metadata_by_key: %s\n" % e)
 ```
 
@@ -1269,19 +1269,19 @@ View a channel metacounter - When retrieving all items of a channel metacounter
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import user__channel_metadata_api
-from sendbird-platform-sdk.model.send_bird_additional_properties import SendBirdAdditionalProperties
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import user__channel_metadata_api
+from sendbird_platform_sdk.model.send_bird_additional_properties import SendBirdAdditionalProperties
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = user__channel_metadata_api.UserChannelMetadataApi(api_client)
     channel_type = "channel_type_example" # str | 
@@ -1297,7 +1297,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # View a channel metacounter - When retrieving all items of a channel metacounter
         api_response = api_instance.view_channel_metacounter(channel_type, channel_url)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserChannelMetadataApi->view_channel_metacounter: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -1306,7 +1306,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # View a channel metacounter - When retrieving all items of a channel metacounter
         api_response = api_instance.view_channel_metacounter(channel_type, channel_url, api_token=api_token, key=key, keys=keys)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserChannelMetadataApi->view_channel_metacounter: %s\n" % e)
 ```
 
@@ -1355,19 +1355,19 @@ View a channel metacounter - When retrieving a specific item of a channel metaco
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import user__channel_metadata_api
-from sendbird-platform-sdk.model.send_bird_additional_properties import SendBirdAdditionalProperties
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import user__channel_metadata_api
+from sendbird_platform_sdk.model.send_bird_additional_properties import SendBirdAdditionalProperties
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = user__channel_metadata_api.UserChannelMetadataApi(api_client)
     channel_type = "channel_type_example" # str | 
@@ -1380,7 +1380,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # View a channel metacounter - When retrieving a specific item of a channel metacounter by its key
         api_response = api_instance.view_channel_metacounter_by_key(channel_type, channel_url, key)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserChannelMetadataApi->view_channel_metacounter_by_key: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -1389,7 +1389,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # View a channel metacounter - When retrieving a specific item of a channel metacounter by its key
         api_response = api_instance.view_channel_metacounter_by_key(channel_type, channel_url, key, api_token=api_token)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserChannelMetadataApi->view_channel_metacounter_by_key: %s\n" % e)
 ```
 
@@ -1437,18 +1437,18 @@ View a channel metadata - When retrieving all items of a channel metadata
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import user__channel_metadata_api
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import user__channel_metadata_api
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = user__channel_metadata_api.UserChannelMetadataApi(api_client)
     channel_type = "channel_type_example" # str | 
@@ -1464,7 +1464,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # View a channel metadata - When retrieving all items of a channel metadata
         api_response = api_instance.view_channel_metadata(channel_type, channel_url)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserChannelMetadataApi->view_channel_metadata: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -1473,7 +1473,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # View a channel metadata - When retrieving all items of a channel metadata
         api_response = api_instance.view_channel_metadata(channel_type, channel_url, api_token=api_token, key=key, keys=keys)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserChannelMetadataApi->view_channel_metadata: %s\n" % e)
 ```
 
@@ -1522,18 +1522,18 @@ View a channel metadata - When retrieving a specific item of a channel metadata 
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import user__channel_metadata_api
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import user__channel_metadata_api
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = user__channel_metadata_api.UserChannelMetadataApi(api_client)
     channel_type = "channel_type_example" # str | 
@@ -1546,7 +1546,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # View a channel metadata - When retrieving a specific item of a channel metadata by its key
         api_response = api_instance.view_channel_metadata_by_key(channel_type, channel_url, key)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserChannelMetadataApi->view_channel_metadata_by_key: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -1555,7 +1555,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # View a channel metadata - When retrieving a specific item of a channel metadata by its key
         api_response = api_instance.view_channel_metadata_by_key(channel_type, channel_url, key, api_token=api_token)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserChannelMetadataApi->view_channel_metadata_by_key: %s\n" % e)
 ```
 
@@ -1603,19 +1603,19 @@ View a user metadata - When retrieving all items of a user metadata
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import user__channel_metadata_api
-from sendbird-platform-sdk.model.inline_response20047_user_metadata import InlineResponse20047UserMetadata
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import user__channel_metadata_api
+from sendbird_platform_sdk.model.inline_response20047_user_metadata import InlineResponse20047UserMetadata
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = user__channel_metadata_api.UserChannelMetadataApi(api_client)
     user_id = "user_id_example" # str | 
@@ -1630,7 +1630,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # View a user metadata - When retrieving all items of a user metadata
         api_response = api_instance.view_user_metadata(user_id)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserChannelMetadataApi->view_user_metadata: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -1639,7 +1639,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # View a user metadata - When retrieving all items of a user metadata
         api_response = api_instance.view_user_metadata(user_id, api_token=api_token, key=key, keys=keys)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserChannelMetadataApi->view_user_metadata: %s\n" % e)
 ```
 
@@ -1687,18 +1687,18 @@ View a user metadata - When retrieving a specific item of a user metadata by its
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import user__channel_metadata_api
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import user__channel_metadata_api
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = user__channel_metadata_api.UserChannelMetadataApi(api_client)
     user_id = "user_id_example" # str | 
@@ -1710,7 +1710,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # View a user metadata - When retrieving a specific item of a user metadata by its key
         api_response = api_instance.view_user_metadata_by_key(user_id, key)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserChannelMetadataApi->view_user_metadata_by_key: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -1719,7 +1719,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # View a user metadata - When retrieving a specific item of a user metadata by its key
         api_response = api_instance.view_user_metadata_by_key(user_id, key, api_token=api_token)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserChannelMetadataApi->view_user_metadata_by_key: %s\n" % e)
 ```
 

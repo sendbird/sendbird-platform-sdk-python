@@ -1,4 +1,4 @@
-# sendbird-platform-sdk.WebhooksApi
+# sendbird_platform_sdk.WebhooksApi
 
 All URIs are relative to *https://api-APP_ID.sendbird.com*
 
@@ -20,20 +20,20 @@ Choose which events to subscribe to
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import webhooks_api
-from sendbird-platform-sdk.model.inline_response20067 import InlineResponse20067
-from sendbird-platform-sdk.model.choose_which_events_to_subscribe_to_data import ChooseWhichEventsToSubscribeToData
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import webhooks_api
+from sendbird_platform_sdk.model.inline_response20067 import InlineResponse20067
+from sendbird_platform_sdk.model.choose_which_events_to_subscribe_to_data import ChooseWhichEventsToSubscribeToData
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = webhooks_api.WebhooksApi(api_client)
     api_token = "{{API_TOKEN}}" # str |  (optional)
@@ -52,7 +52,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Choose which events to subscribe to
         api_response = api_instance.choose_which_events_to_subscribe_to(api_token=api_token, choose_which_events_to_subscribe_to_data=choose_which_events_to_subscribe_to_data)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling WebhooksApi->choose_which_events_to_subscribe_to: %s\n" % e)
 ```
 
@@ -98,19 +98,19 @@ Retrieve a list of subscribed events
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import webhooks_api
-from sendbird-platform-sdk.model.inline_response20066 import InlineResponse20066
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import webhooks_api
+from sendbird_platform_sdk.model.inline_response20066 import InlineResponse20066
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = webhooks_api.WebhooksApi(api_client)
     api_token = "{{API_TOKEN}}" # str |  (optional)
@@ -122,7 +122,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Retrieve a list of subscribed events
         api_response = api_instance.retrieve_list_of_subscribed_events(api_token=api_token, display_all_webhook_categories=display_all_webhook_categories)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling WebhooksApi->retrieve_list_of_subscribed_events: %s\n" % e)
 ```
 

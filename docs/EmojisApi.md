@@ -1,4 +1,4 @@
-# sendbird-platform-sdk.EmojisApi
+# sendbird_platform_sdk.EmojisApi
 
 All URIs are relative to *https://api-APP_ID.sendbird.com*
 
@@ -30,19 +30,19 @@ Add emoji categories
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import emojis_api
-from sendbird-platform-sdk.model.inline_response20057 import InlineResponse20057
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import emojis_api
+from sendbird_platform_sdk.model.inline_response20057 import InlineResponse20057
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = emojis_api.EmojisApi(api_client)
     api_token = "{{API_TOKEN}}" # str |  (optional)
@@ -54,7 +54,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Add emoji categories
         api_response = api_instance.add_emoji_categories(api_token=api_token, body=body)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling EmojisApi->add_emoji_categories: %s\n" % e)
 ```
 
@@ -100,20 +100,20 @@ Add emojis
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import emojis_api
-from sendbird-platform-sdk.model.inline_response20059 import InlineResponse20059
-from sendbird-platform-sdk.model.add_emojis_data import AddEmojisData
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import emojis_api
+from sendbird_platform_sdk.model.inline_response20059 import InlineResponse20059
+from sendbird_platform_sdk.model.add_emojis_data import AddEmojisData
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = emojis_api.EmojisApi(api_client)
     api_token = "{{API_TOKEN}}" # str |  (optional)
@@ -132,7 +132,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Add emojis
         api_response = api_instance.add_emojis(api_token=api_token, add_emojis_data=add_emojis_data)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling EmojisApi->add_emojis: %s\n" % e)
 ```
 
@@ -178,18 +178,18 @@ Delete an emoji
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import emojis_api
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import emojis_api
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = emojis_api.EmojisApi(api_client)
     emoji_key = "emoji_key_example" # str | 
@@ -199,7 +199,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
     try:
         # Delete an emoji
         api_instance.delete_emoji_by_key(emoji_key)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling EmojisApi->delete_emoji_by_key: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -207,7 +207,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
     try:
         # Delete an emoji
         api_instance.delete_emoji_by_key(emoji_key, api_token=api_token)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling EmojisApi->delete_emoji_by_key: %s\n" % e)
 ```
 
@@ -253,18 +253,18 @@ Delete an emoji category
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import emojis_api
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import emojis_api
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = emojis_api.EmojisApi(api_client)
     emoji_category_id = "emoji_category_id_example" # str | 
@@ -274,7 +274,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
     try:
         # Delete an emoji category
         api_instance.delete_emoji_category_by_id(emoji_category_id)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling EmojisApi->delete_emoji_category_by_id: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -282,7 +282,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
     try:
         # Delete an emoji category
         api_instance.delete_emoji_category_by_id(emoji_category_id, api_token=api_token)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling EmojisApi->delete_emoji_category_by_id: %s\n" % e)
 ```
 
@@ -328,20 +328,20 @@ Enable reactions
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import emojis_api
-from sendbird-platform-sdk.model.inline_response20051 import InlineResponse20051
-from sendbird-platform-sdk.model.enable_reactions_data import EnableReactionsData
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import emojis_api
+from sendbird_platform_sdk.model.enable_reactions_data import EnableReactionsData
+from sendbird_platform_sdk.model.inline_response20051 import InlineResponse20051
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = emojis_api.EmojisApi(api_client)
     api_token = "{{API_TOKEN}}" # str |  (optional)
@@ -355,7 +355,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Enable reactions
         api_response = api_instance.enable_reactions(api_token=api_token, enable_reactions_data=enable_reactions_data)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling EmojisApi->enable_reactions: %s\n" % e)
 ```
 
@@ -401,19 +401,19 @@ Get an emoji
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import emojis_api
-from sendbird-platform-sdk.model.send_bird_emoji import SendBirdEmoji
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import emojis_api
+from sendbird_platform_sdk.model.send_bird_emoji import SendBirdEmoji
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = emojis_api.EmojisApi(api_client)
     emoji_key = "emoji_key_example" # str | 
@@ -424,7 +424,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Get an emoji
         api_response = api_instance.get_emoji_by_key(emoji_key)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling EmojisApi->get_emoji_by_key: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -433,7 +433,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Get an emoji
         api_response = api_instance.get_emoji_by_key(emoji_key, api_token=api_token)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling EmojisApi->get_emoji_by_key: %s\n" % e)
 ```
 
@@ -479,19 +479,19 @@ Get an emoji category
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import emojis_api
-from sendbird-platform-sdk.model.send_bird_emoji_category import SendBirdEmojiCategory
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import emojis_api
+from sendbird_platform_sdk.model.send_bird_emoji_category import SendBirdEmojiCategory
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = emojis_api.EmojisApi(api_client)
     emoji_category_id = "emoji_category_id_example" # str | 
@@ -502,7 +502,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Get an emoji category
         api_response = api_instance.get_emoji_category_by_id(emoji_category_id)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling EmojisApi->get_emoji_category_by_id: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -511,7 +511,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Get an emoji category
         api_response = api_instance.get_emoji_category_by_id(emoji_category_id, api_token=api_token)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling EmojisApi->get_emoji_category_by_id: %s\n" % e)
 ```
 
@@ -557,19 +557,19 @@ List all emojis and emoji categories
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import emojis_api
-from sendbird-platform-sdk.model.inline_response20056 import InlineResponse20056
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import emojis_api
+from sendbird_platform_sdk.model.inline_response20056 import InlineResponse20056
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = emojis_api.EmojisApi(api_client)
     api_token = "{{API_TOKEN}}" # str |  (optional)
@@ -580,7 +580,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # List all emojis and emoji categories
         api_response = api_instance.list_all_emojis_and_emoji_categories(api_token=api_token)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling EmojisApi->list_all_emojis_and_emoji_categories: %s\n" % e)
 ```
 
@@ -625,19 +625,19 @@ List emojis
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import emojis_api
-from sendbird-platform-sdk.model.inline_response20058 import InlineResponse20058
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import emojis_api
+from sendbird_platform_sdk.model.inline_response20058 import InlineResponse20058
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = emojis_api.EmojisApi(api_client)
     api_token = "{{API_TOKEN}}" # str |  (optional)
@@ -648,7 +648,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # List emojis
         api_response = api_instance.list_emojis(api_token=api_token)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling EmojisApi->list_emojis: %s\n" % e)
 ```
 
@@ -693,20 +693,20 @@ Update an emoji category URL
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import emojis_api
-from sendbird-platform-sdk.model.update_emoji_category_url_by_id_data import UpdateEmojiCategoryUrlByIdData
-from sendbird-platform-sdk.model.send_bird_emoji_category import SendBirdEmojiCategory
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import emojis_api
+from sendbird_platform_sdk.model.update_emoji_category_url_by_id_data import UpdateEmojiCategoryUrlByIdData
+from sendbird_platform_sdk.model.send_bird_emoji_category import SendBirdEmojiCategory
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = emojis_api.EmojisApi(api_client)
     emoji_category_id = "emoji_category_id_example" # str | 
@@ -721,7 +721,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Update an emoji category URL
         api_response = api_instance.update_emoji_category_url_by_id(emoji_category_id)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling EmojisApi->update_emoji_category_url_by_id: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -730,7 +730,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Update an emoji category URL
         api_response = api_instance.update_emoji_category_url_by_id(emoji_category_id, api_token=api_token, update_emoji_category_url_by_id_data=update_emoji_category_url_by_id_data)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling EmojisApi->update_emoji_category_url_by_id: %s\n" % e)
 ```
 
@@ -777,20 +777,20 @@ Update an emoji URL
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import emojis_api
-from sendbird-platform-sdk.model.send_bird_emoji import SendBirdEmoji
-from sendbird-platform-sdk.model.update_emoji_url_by_key_data import UpdateEmojiUrlByKeyData
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import emojis_api
+from sendbird_platform_sdk.model.send_bird_emoji import SendBirdEmoji
+from sendbird_platform_sdk.model.update_emoji_url_by_key_data import UpdateEmojiUrlByKeyData
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = emojis_api.EmojisApi(api_client)
     emoji_key = "emoji_key_example" # str | 
@@ -805,7 +805,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Update an emoji URL
         api_response = api_instance.update_emoji_url_by_key(emoji_key)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling EmojisApi->update_emoji_url_by_key: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -814,7 +814,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Update an emoji URL
         api_response = api_instance.update_emoji_url_by_key(emoji_key, api_token=api_token, update_emoji_url_by_key_data=update_emoji_url_by_key_data)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling EmojisApi->update_emoji_url_by_key: %s\n" % e)
 ```
 
@@ -861,20 +861,20 @@ Use default emojis
 
 ```python
 import time
-import sendbird-platform-sdk
-from sendbird-platform-sdk.api import emojis_api
-from sendbird-platform-sdk.model.use_default_emojis_data import UseDefaultEmojisData
-from sendbird-platform-sdk.model.inline_response20055 import InlineResponse20055
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import emojis_api
+from sendbird_platform_sdk.model.use_default_emojis_data import UseDefaultEmojisData
+from sendbird_platform_sdk.model.inline_response20055 import InlineResponse20055
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird-platform-sdk.Configuration(
+configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-APP_ID.sendbird.com"
 )
 
 
 # Enter a context with an instance of the API client
-with sendbird-platform-sdk.ApiClient() as api_client:
+with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = emojis_api.EmojisApi(api_client)
     api_token = "{{API_TOKEN}}" # str |  (optional)
@@ -888,7 +888,7 @@ with sendbird-platform-sdk.ApiClient() as api_client:
         # Use default emojis
         api_response = api_instance.use_default_emojis(api_token=api_token, use_default_emojis_data=use_default_emojis_data)
         pprint(api_response)
-    except sendbird-platform-sdk.ApiException as e:
+    except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling EmojisApi->use_default_emojis: %s\n" % e)
 ```
 

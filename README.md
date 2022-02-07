@@ -14,8 +14,6 @@ This is a python library that makes talking to the [Sendbird Platform API](https
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import user_api
-from sendbird_platform_sdk.model.send_bird_user import SendBirdUser
-from sendbird_platform_sdk.model.create_user_data import CreateUserData
 from pprint import pprint
 
 
@@ -23,25 +21,15 @@ configuration = sendbird_platform_sdk.Configuration(
     host = "https://api-YOUR_APP_ID_FROM_DASHBOARD.sendbird.com"
 )
 
-
-with sendbird_platform_sdk.ApiClient() as api_client:
-    user_id = "bob_smith"
-    nickname = "bob"
-    profileUrl = "https://cataas.com/c"
+with sendbird_platform_sdk.ApiClient(configuration=configuration) as api_client:
     api_instance = user_api.UserApi(api_client)
     api_token = "YOUR_MASTER_API_TOKEN_FROM_DASHBOARD"
-    create_user_data = CreateUserData(
-        user_id=user_id,
-        nickname=nickname,
-        profile_url=profileUrl
-       
-    )
 
     try:
-        api_response = api_instance.create_user(api_token=api_token, create_user_data=create_user_data)
+        api_response = api_instance.list_users(api_token=api_token, limit=1)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling UserApi->create_user: %s\n" % e)
+        print("Exception when calling UserApi->list_users: %s\n" % e)
 ```
 
 # ⚒️ Prerequisite
