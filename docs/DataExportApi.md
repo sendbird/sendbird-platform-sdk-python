@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **list_data_exports_by_message_channel_or_user**
-> InlineResponse20063 list_data_exports_by_message_channel_or_user(data_type)
+> ListDataExportsByMessageChannelOrUserResponse list_data_exports_by_message_channel_or_user(data_type)
 
 List data exports by message, channel, or user
 
@@ -23,7 +23,7 @@ List data exports by message, channel, or user
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import data_export_api
-from sendbird_platform_sdk.model.inline_response20063 import InlineResponse20063
+from sendbird_platform_sdk.model.list_data_exports_by_message_channel_or_user_response import ListDataExportsByMessageChannelOrUserResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -71,7 +71,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20063**](InlineResponse20063.md)
+[**ListDataExportsByMessageChannelOrUserResponse**](ListDataExportsByMessageChannelOrUserResponse.md)
 
 ### Authorization
 
@@ -92,7 +92,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **register_and_schedule_data_export**
-> InlineResponse20063ExportedData register_and_schedule_data_export(data_type)
+> RegisterAndScheduleDataExportResponse register_and_schedule_data_export(data_type)
 
 Register and schedule a data export
 
@@ -105,7 +105,7 @@ Register and schedule a data export
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import data_export_api
-from sendbird_platform_sdk.model.inline_response20063_exported_data import InlineResponse20063ExportedData
+from sendbird_platform_sdk.model.register_and_schedule_data_export_response import RegisterAndScheduleDataExportResponse
 from sendbird_platform_sdk.model.register_and_schedule_data_export_data import RegisterAndScheduleDataExportData
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
@@ -176,7 +176,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20063ExportedData**](InlineResponse20063ExportedData.md)
+[**RegisterAndScheduleDataExportResponse**](RegisterAndScheduleDataExportResponse.md)
 
 ### Authorization
 
@@ -197,7 +197,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **view_data_export_by_id**
-> InlineResponse20064 view_data_export_by_id(data_type, request_id)
+> ViewDataExportByIdResponse view_data_export_by_id(data_type, request_id)
 
 View a data export
 
@@ -210,7 +210,7 @@ View a data export
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import data_export_api
-from sendbird_platform_sdk.model.inline_response20064 import InlineResponse20064
+from sendbird_platform_sdk.model.view_data_export_by_id_response import ViewDataExportByIdResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -256,7 +256,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20064**](InlineResponse20064.md)
+[**ViewDataExportByIdResponse**](ViewDataExportByIdResponse.md)
 
 ### Authorization
 

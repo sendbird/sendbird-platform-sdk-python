@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 
 # **create_bot**
-> InlineResponse20065Bots create_bot()
+> CreateBotResponse create_bot()
 
 Create a bot
 
@@ -29,7 +29,7 @@ Create a bot
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import bot_interface_api
-from sendbird_platform_sdk.model.inline_response20065_bots import InlineResponse20065Bots
+from sendbird_platform_sdk.model.create_bot_response import CreateBotResponse
 from sendbird_platform_sdk.model.create_bot_data import CreateBotData
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
@@ -76,7 +76,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20065Bots**](InlineResponse20065Bots.md)
+[**CreateBotResponse**](CreateBotResponse.md)
 
 ### Authorization
 
@@ -412,7 +412,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_bots**
-> InlineResponse20065 list_bots()
+> ListBotsResponse list_bots()
 
 List bots
 
@@ -425,7 +425,7 @@ List bots
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import bot_interface_api
-from sendbird_platform_sdk.model.inline_response20065 import InlineResponse20065
+from sendbird_platform_sdk.model.list_bots_response import ListBotsResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -463,7 +463,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20065**](InlineResponse20065.md)
+[**ListBotsResponse**](ListBotsResponse.md)
 
 ### Authorization
 
@@ -577,7 +577,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_bot_by_id**
-> InlineResponse20065Bots update_bot_by_id(bot_userid)
+> UpdateBotByIdResponse update_bot_by_id(bot_userid)
 
 Update a bot
 
@@ -591,7 +591,7 @@ import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import bot_interface_api
 from sendbird_platform_sdk.model.update_bot_by_id_data import UpdateBotByIdData
-from sendbird_platform_sdk.model.inline_response20065_bots import InlineResponse20065Bots
+from sendbird_platform_sdk.model.update_bot_by_id_response import UpdateBotByIdResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -646,7 +646,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20065Bots**](InlineResponse20065Bots.md)
+[**UpdateBotByIdResponse**](UpdateBotByIdResponse.md)
 
 ### Authorization
 
@@ -667,7 +667,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **view_bot_by_id**
-> InlineResponse20065Bots view_bot_by_id(bot_userid)
+> ViewBotByIdResponse view_bot_by_id(bot_userid)
 
 View a bot
 
@@ -680,7 +680,7 @@ View a bot
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import bot_interface_api
-from sendbird_platform_sdk.model.inline_response20065_bots import InlineResponse20065Bots
+from sendbird_platform_sdk.model.view_bot_by_id_response import ViewBotByIdResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -724,7 +724,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20065Bots**](InlineResponse20065Bots.md)
+[**ViewBotByIdResponse**](ViewBotByIdResponse.md)
 
 ### Authorization
 

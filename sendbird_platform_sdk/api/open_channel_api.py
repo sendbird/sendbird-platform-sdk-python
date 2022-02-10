@@ -21,20 +21,20 @@ from sendbird_platform_sdk.model_utils import (  # noqa: F401
     none_type,
     validate_and_convert_types
 )
-from sendbird_platform_sdk.model.inline_response20030 import InlineResponse20030
-from sendbird_platform_sdk.model.inline_response20031 import InlineResponse20031
-from sendbird_platform_sdk.model.inline_response20032 import InlineResponse20032
-from sendbird_platform_sdk.model.inline_response20033 import InlineResponse20033
-from sendbird_platform_sdk.model.inline_response20033_banned_list import InlineResponse20033BannedList
-from sendbird_platform_sdk.model.inline_response20034 import InlineResponse20034
-from sendbird_platform_sdk.model.inline_response20035 import InlineResponse20035
 from sendbird_platform_sdk.model.oc_ban_user_data import OcBanUserData
+from sendbird_platform_sdk.model.oc_ban_user_response import OcBanUserResponse
 from sendbird_platform_sdk.model.oc_create_channel_data import OcCreateChannelData
 from sendbird_platform_sdk.model.oc_freeze_channel_data import OcFreezeChannelData
+from sendbird_platform_sdk.model.oc_list_banned_users_response import OcListBannedUsersResponse
+from sendbird_platform_sdk.model.oc_list_channels_response import OcListChannelsResponse
+from sendbird_platform_sdk.model.oc_list_muted_users_response import OcListMutedUsersResponse
+from sendbird_platform_sdk.model.oc_list_operators_response import OcListOperatorsResponse
+from sendbird_platform_sdk.model.oc_list_participants_response import OcListParticipantsResponse
 from sendbird_platform_sdk.model.oc_mute_user_data import OcMuteUserData
 from sendbird_platform_sdk.model.oc_register_operators_data import OcRegisterOperatorsData
 from sendbird_platform_sdk.model.oc_update_ban_by_id_data import OcUpdateBanByIdData
 from sendbird_platform_sdk.model.oc_update_channel_by_url_data import OcUpdateChannelByUrlData
+from sendbird_platform_sdk.model.oc_view_mute_by_id_response import OcViewMuteByIdResponse
 from sendbird_platform_sdk.model.send_bird_open_channel import SendBirdOpenChannel
 from sendbird_platform_sdk.model.send_bird_user import SendBirdUser
 
@@ -52,7 +52,7 @@ class OpenChannelApi(object):
         self.api_client = api_client
         self.oc_ban_user_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20033BannedList,),
+                'response_type': (OcBanUserResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/open_channels/{channel_url}/ban',
                 'operation_id': 'oc_ban_user',
@@ -341,7 +341,7 @@ class OpenChannelApi(object):
         )
         self.oc_list_banned_users_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20033,),
+                'response_type': (OcListBannedUsersResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/open_channels/{channel_url}/ban',
                 'operation_id': 'oc_list_banned_users',
@@ -405,7 +405,7 @@ class OpenChannelApi(object):
         )
         self.oc_list_channels_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20030,),
+                'response_type': (OcListChannelsResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/open_channels',
                 'operation_id': 'oc_list_channels',
@@ -492,7 +492,7 @@ class OpenChannelApi(object):
         )
         self.oc_list_muted_users_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20031,),
+                'response_type': (OcListMutedUsersResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/open_channels/{channel_url}/mute',
                 'operation_id': 'oc_list_muted_users',
@@ -556,7 +556,7 @@ class OpenChannelApi(object):
         )
         self.oc_list_operators_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20034,),
+                'response_type': (OcListOperatorsResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/open_channels/{channel_url}/operators',
                 'operation_id': 'oc_list_operators',
@@ -620,7 +620,7 @@ class OpenChannelApi(object):
         )
         self.oc_list_participants_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20032,),
+                'response_type': (OcListParticipantsResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/open_channels/{channel_url}/participants',
                 'operation_id': 'oc_list_participants',
@@ -1158,7 +1158,7 @@ class OpenChannelApi(object):
         )
         self.oc_view_mute_by_id_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20035,),
+                'response_type': (OcViewMuteByIdResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/open_channels/{channel_url}/mute/{muted_user_id}',
                 'operation_id': 'oc_view_mute_by_id',
@@ -1261,7 +1261,7 @@ class OpenChannelApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20033BannedList
+            OcBanUserResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -1625,7 +1625,7 @@ class OpenChannelApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20033
+            OcListBannedUsersResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -1702,7 +1702,7 @@ class OpenChannelApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20030
+            OcListChannelsResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -1774,7 +1774,7 @@ class OpenChannelApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20031
+            OcListMutedUsersResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -1848,7 +1848,7 @@ class OpenChannelApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20034
+            OcListOperatorsResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -1922,7 +1922,7 @@ class OpenChannelApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20032
+            OcListParticipantsResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2592,7 +2592,7 @@ class OpenChannelApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20035
+            OcViewMuteByIdResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """

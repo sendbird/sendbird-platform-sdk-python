@@ -28,7 +28,7 @@ Method | HTTP request | Description
 
 
 # **create_channel_metacounter**
-> {str: (SendBirdAdditionalProperties,)} create_channel_metacounter(channel_type, channel_url)
+> CreateChannelMetacounterResponse create_channel_metacounter(channel_type, channel_url)
 
 Create a channel metacounter
 
@@ -94,7 +94,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**{str: (SendBirdAdditionalProperties,)}**](SendBirdAdditionalProperties.md)
+[**CreateChannelMetacounterResponse**](SendBirdAdditionalProperties.md)
 
 ### Authorization
 
@@ -115,7 +115,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_channel_metadata**
-> InlineResponse20061 create_channel_metadata(channel_type, channel_url)
+> CreateChannelMetadataResponse create_channel_metadata(channel_type, channel_url)
 
 Create a channel metadata
 
@@ -128,7 +128,7 @@ Create a channel metadata
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import user__channel_metadata_api
-from sendbird_platform_sdk.model.inline_response20061 import InlineResponse20061
+from sendbird_platform_sdk.model.create_channel_metadata_response import CreateChannelMetadataResponse
 from sendbird_platform_sdk.model.create_channel_metadata_data import CreateChannelMetadataData
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
@@ -182,7 +182,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20061**](InlineResponse20061.md)
+[**CreateChannelMetadataResponse**](CreateChannelMetadataResponse.md)
 
 ### Authorization
 
@@ -203,7 +203,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_user_metadata**
-> InlineResponse20047UserMetadata create_user_metadata(user_id)
+> CreateUserMetadataResponse create_user_metadata(user_id)
 
 Create a user metadata
 
@@ -216,7 +216,7 @@ Create a user metadata
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import user__channel_metadata_api
-from sendbird_platform_sdk.model.inline_response20047_user_metadata import InlineResponse20047UserMetadata
+from sendbird_platform_sdk.model.create_user_metadata_response import CreateUserMetadataResponse
 from sendbird_platform_sdk.model.create_user_metadata_data import CreateUserMetadataData
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
@@ -266,7 +266,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20047UserMetadata**](InlineResponse20047UserMetadata.md)
+[**CreateUserMetadataResponse**](CreateUserMetadataResponse.md)
 
 ### Authorization
 
@@ -755,7 +755,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_channel_metacounter**
-> {str: (SendBirdAdditionalProperties,)} update_channel_metacounter(channel_type, channel_url)
+> UpdateChannelMetacounterResponse update_channel_metacounter(channel_type, channel_url)
 
 Update a channel metacounter - When updating existing items of a channel metacounter by their keys or adding new items to the metacounter
 
@@ -821,7 +821,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**{str: (SendBirdAdditionalProperties,)}**](SendBirdAdditionalProperties.md)
+[**UpdateChannelMetacounterResponse**](SendBirdAdditionalProperties.md)
 
 ### Authorization
 
@@ -842,7 +842,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_channel_metacounter_by_key**
-> {str: (str,)} update_channel_metacounter_by_key(channel_type, channel_url, key)
+> UpdateChannelMetacounterByKeyResponse update_channel_metacounter_by_key(channel_type, channel_url, key)
 
 Update a channel metacounter - When updating a specific item of a channel metacounter by its key
 
@@ -904,7 +904,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**{str: (str,)}**
+**UpdateChannelMetacounterByKeyResponse**
 
 ### Authorization
 
@@ -925,7 +925,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_channel_metadata**
-> {str: (str,)} update_channel_metadata(channel_type, channel_url)
+> UpdateChannelMetadataResponse update_channel_metadata(channel_type, channel_url)
 
 Update a channel metadata - When updating existing items of a channel metadata by their keys or adding new items to the metadata
 
@@ -989,7 +989,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**{str: (str,)}**
+**UpdateChannelMetadataResponse**
 
 ### Authorization
 
@@ -1010,7 +1010,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_channel_metadata_by_key**
-> {str: (str,)} update_channel_metadata_by_key(channel_type, channel_url, key)
+> UpdateChannelMetadataByKeyResponse update_channel_metadata_by_key(channel_type, channel_url, key)
 
 Update a channel metadata - When updating a specific item of a channel metadata by its key
 
@@ -1072,7 +1072,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**{str: (str,)}**
+**UpdateChannelMetadataByKeyResponse**
 
 ### Authorization
 
@@ -1093,7 +1093,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_user_metadata**
-> InlineResponse20060 update_user_metadata(user_id)
+> UpdateUserMetadataResponse update_user_metadata(user_id)
 
 Update a user metadata - When updating existing items of a user metadata by their keys or adding new items to the metadata
 
@@ -1106,7 +1106,7 @@ Update a user metadata - When updating existing items of a user metadata by thei
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import user__channel_metadata_api
-from sendbird_platform_sdk.model.inline_response20060 import InlineResponse20060
+from sendbird_platform_sdk.model.update_user_metadata_response import UpdateUserMetadataResponse
 from sendbird_platform_sdk.model.update_user_metadata_data import UpdateUserMetadataData
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
@@ -1156,7 +1156,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20060**](InlineResponse20060.md)
+[**UpdateUserMetadataResponse**](UpdateUserMetadataResponse.md)
 
 ### Authorization
 
@@ -1177,7 +1177,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_user_metadata_by_key**
-> {str: (str,)} update_user_metadata_by_key(user_id, key)
+> UpdateUserMetadataByKeyResponse update_user_metadata_by_key(user_id, key)
 
 Update a user metadata - When updating a specific item of a user metadata by its key
 
@@ -1237,7 +1237,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**{str: (str,)}**
+**UpdateUserMetadataByKeyResponse**
 
 ### Authorization
 
@@ -1258,7 +1258,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **view_channel_metacounter**
-> {str: (SendBirdAdditionalProperties,)} view_channel_metacounter(channel_type, channel_url)
+> ViewChannelMetacounterResponse view_channel_metacounter(channel_type, channel_url)
 
 View a channel metacounter - When retrieving all items of a channel metacounter
 
@@ -1323,7 +1323,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**{str: (SendBirdAdditionalProperties,)}**](SendBirdAdditionalProperties.md)
+[**ViewChannelMetacounterResponse**](SendBirdAdditionalProperties.md)
 
 ### Authorization
 
@@ -1344,7 +1344,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **view_channel_metacounter_by_key**
-> {str: (SendBirdAdditionalProperties,)} view_channel_metacounter_by_key(channel_type, channel_url, key)
+> ViewChannelMetacounterByKeyResponse view_channel_metacounter_by_key(channel_type, channel_url, key)
 
 View a channel metacounter - When retrieving a specific item of a channel metacounter by its key
 
@@ -1405,7 +1405,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**{str: (SendBirdAdditionalProperties,)}**](SendBirdAdditionalProperties.md)
+[**ViewChannelMetacounterByKeyResponse**](SendBirdAdditionalProperties.md)
 
 ### Authorization
 
@@ -1426,7 +1426,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **view_channel_metadata**
-> {str: (str,)} view_channel_metadata(channel_type, channel_url)
+> ViewChannelMetadataResponse view_channel_metadata(channel_type, channel_url)
 
 View a channel metadata - When retrieving all items of a channel metadata
 
@@ -1490,7 +1490,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**{str: (str,)}**
+**ViewChannelMetadataResponse**
 
 ### Authorization
 
@@ -1511,7 +1511,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **view_channel_metadata_by_key**
-> {str: (str,)} view_channel_metadata_by_key(channel_type, channel_url, key)
+> ViewChannelMetadataByKeyResponse view_channel_metadata_by_key(channel_type, channel_url, key)
 
 View a channel metadata - When retrieving a specific item of a channel metadata by its key
 
@@ -1571,7 +1571,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**{str: (str,)}**
+**ViewChannelMetadataByKeyResponse**
 
 ### Authorization
 
@@ -1592,7 +1592,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **view_user_metadata**
-> InlineResponse20047UserMetadata view_user_metadata(user_id)
+> ViewUserMetadataResponse view_user_metadata(user_id)
 
 View a user metadata - When retrieving all items of a user metadata
 
@@ -1605,7 +1605,7 @@ View a user metadata - When retrieving all items of a user metadata
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import user__channel_metadata_api
-from sendbird_platform_sdk.model.inline_response20047_user_metadata import InlineResponse20047UserMetadata
+from sendbird_platform_sdk.model.view_user_metadata_response import ViewUserMetadataResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1655,7 +1655,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20047UserMetadata**](InlineResponse20047UserMetadata.md)
+[**ViewUserMetadataResponse**](ViewUserMetadataResponse.md)
 
 ### Authorization
 
@@ -1676,7 +1676,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **view_user_metadata_by_key**
-> {str: (str,)} view_user_metadata_by_key(user_id, key)
+> ViewUserMetadataByKeyResponse view_user_metadata_by_key(user_id, key)
 
 View a user metadata - When retrieving a specific item of a user metadata by its key
 
@@ -1734,7 +1734,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**{str: (str,)}**
+**ViewUserMetadataByKeyResponse**
 
 ### Authorization
 

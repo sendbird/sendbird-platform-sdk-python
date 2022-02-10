@@ -19,7 +19,7 @@ Method | HTTP request | Description
 
 
 # **add_emoji_categories**
-> InlineResponse20057 add_emoji_categories()
+> AddEmojiCategoriesResponse add_emoji_categories()
 
 Add emoji categories
 
@@ -32,7 +32,7 @@ Add emoji categories
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import emojis_api
-from sendbird_platform_sdk.model.inline_response20057 import InlineResponse20057
+from sendbird_platform_sdk.model.add_emoji_categories_response import AddEmojiCategoriesResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20057**](InlineResponse20057.md)
+[**AddEmojiCategoriesResponse**](AddEmojiCategoriesResponse.md)
 
 ### Authorization
 
@@ -89,7 +89,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **add_emojis**
-> InlineResponse20059 add_emojis()
+> AddEmojisResponse add_emojis()
 
 Add emojis
 
@@ -102,7 +102,7 @@ Add emojis
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import emojis_api
-from sendbird_platform_sdk.model.inline_response20059 import InlineResponse20059
+from sendbird_platform_sdk.model.add_emojis_response import AddEmojisResponse
 from sendbird_platform_sdk.model.add_emojis_data import AddEmojisData
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
@@ -122,8 +122,6 @@ with sendbird_platform_sdk.ApiClient() as api_client:
         emojis=[
             "emojis_example",
         ],
-        emoji_key="emoji_key_example",
-        emoji_url="emoji_url_example",
     ) # AddEmojisData |  (optional)
 
     # example passing only required values which don't have defaults set
@@ -146,7 +144,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20059**](InlineResponse20059.md)
+[**AddEmojisResponse**](AddEmojisResponse.md)
 
 ### Authorization
 
@@ -317,7 +315,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **enable_reactions**
-> InlineResponse20051 enable_reactions()
+> EnableReactionsResponse enable_reactions()
 
 Enable reactions
 
@@ -330,8 +328,8 @@ Enable reactions
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import emojis_api
+from sendbird_platform_sdk.model.enable_reactions_response import EnableReactionsResponse
 from sendbird_platform_sdk.model.enable_reactions_data import EnableReactionsData
-from sendbird_platform_sdk.model.inline_response20051 import InlineResponse20051
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -369,7 +367,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20051**](InlineResponse20051.md)
+[**EnableReactionsResponse**](EnableReactionsResponse.md)
 
 ### Authorization
 
@@ -546,7 +544,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_all_emojis_and_emoji_categories**
-> InlineResponse20056 list_all_emojis_and_emoji_categories()
+> ListAllEmojisAndEmojiCategoriesResponse list_all_emojis_and_emoji_categories()
 
 List all emojis and emoji categories
 
@@ -559,7 +557,7 @@ List all emojis and emoji categories
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import emojis_api
-from sendbird_platform_sdk.model.inline_response20056 import InlineResponse20056
+from sendbird_platform_sdk.model.list_all_emojis_and_emoji_categories_response import ListAllEmojisAndEmojiCategoriesResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -593,7 +591,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20056**](InlineResponse20056.md)
+[**ListAllEmojisAndEmojiCategoriesResponse**](ListAllEmojisAndEmojiCategoriesResponse.md)
 
 ### Authorization
 
@@ -614,7 +612,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_emojis**
-> InlineResponse20058 list_emojis()
+> ListEmojisResponse list_emojis()
 
 List emojis
 
@@ -627,7 +625,7 @@ List emojis
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import emojis_api
-from sendbird_platform_sdk.model.inline_response20058 import InlineResponse20058
+from sendbird_platform_sdk.model.list_emojis_response import ListEmojisResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -661,7 +659,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20058**](InlineResponse20058.md)
+[**ListEmojisResponse**](ListEmojisResponse.md)
 
 ### Authorization
 
@@ -850,7 +848,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **use_default_emojis**
-> InlineResponse20055 use_default_emojis()
+> UseDefaultEmojisResponse use_default_emojis()
 
 Use default emojis
 
@@ -864,7 +862,7 @@ import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import emojis_api
 from sendbird_platform_sdk.model.use_default_emojis_data import UseDefaultEmojisData
-from sendbird_platform_sdk.model.inline_response20055 import InlineResponse20055
+from sendbird_platform_sdk.model.use_default_emojis_response import UseDefaultEmojisResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -902,7 +900,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20055**](InlineResponse20055.md)
+[**UseDefaultEmojisResponse**](UseDefaultEmojisResponse.md)
 
 ### Authorization
 

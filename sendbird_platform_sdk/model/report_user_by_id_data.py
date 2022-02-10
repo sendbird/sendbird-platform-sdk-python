@@ -82,9 +82,9 @@ class ReportUserByIdData(ModelNormal):
         """
         return {
             'offending_user_id': (str,),  # noqa: E501
+            'report_category': (str,),  # noqa: E501
             'channel_type': (str,),  # noqa: E501
             'channel_url': (str,),  # noqa: E501
-            'report_category': (str,),  # noqa: E501
             'reporting_user_id': (str,),  # noqa: E501
             'report_description': (str,),  # noqa: E501
         }
@@ -96,9 +96,9 @@ class ReportUserByIdData(ModelNormal):
 
     attribute_map = {
         'offending_user_id': 'offending_user_id',  # noqa: E501
+        'report_category': 'report_category',  # noqa: E501
         'channel_type': 'channel_type',  # noqa: E501
         'channel_url': 'channel_url',  # noqa: E501
-        'report_category': 'report_category',  # noqa: E501
         'reporting_user_id': 'reporting_user_id',  # noqa: E501
         'report_description': 'report_description',  # noqa: E501
     }
@@ -110,16 +110,12 @@ class ReportUserByIdData(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, offending_user_id, channel_type, channel_url, report_category, reporting_user_id, report_description, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, offending_user_id, report_category, *args, **kwargs):  # noqa: E501
         """ReportUserByIdData - a model defined in OpenAPI
 
         Args:
             offending_user_id (str): Specifies the unique ID of the user to report for using offensive or abusive language such as sending explicit messages or inappropriate comments.
-            channel_type (str): Specifies the type of the channel. Either open_channels or group_channels.
-            channel_url (str): Specifies the URL of the channel where the user to report is in.
             report_category (str): Specifies the category which indicates the reason for reporting. Acceptable values are suspicious, harassing, inappropriate, and spam.
-            reporting_user_id (str): Specifies the unique ID of the user who reports the offending user.
-            report_description (str): Specifies additional information to be included in the report.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -152,6 +148,10 @@ class ReportUserByIdData(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            channel_type (str): Specifies the type of the channel. Either open_channels or group_channels.. [optional]  # noqa: E501
+            channel_url (str): Specifies the URL of the channel where the user to report is in.. [optional]  # noqa: E501
+            reporting_user_id (str): Specifies the unique ID of the user who reports the offending user.. [optional]  # noqa: E501
+            report_description (str): Specifies additional information to be included in the report.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -180,11 +180,7 @@ class ReportUserByIdData(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         self.offending_user_id = offending_user_id
-        self.channel_type = channel_type
-        self.channel_url = channel_url
         self.report_category = report_category
-        self.reporting_user_id = reporting_user_id
-        self.report_description = report_description
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -205,16 +201,12 @@ class ReportUserByIdData(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, offending_user_id, channel_type, channel_url, report_category, reporting_user_id, report_description, *args, **kwargs):  # noqa: E501
+    def __init__(self, offending_user_id, report_category, *args, **kwargs):  # noqa: E501
         """ReportUserByIdData - a model defined in OpenAPI
 
         Args:
             offending_user_id (str): Specifies the unique ID of the user to report for using offensive or abusive language such as sending explicit messages or inappropriate comments.
-            channel_type (str): Specifies the type of the channel. Either open_channels or group_channels.
-            channel_url (str): Specifies the URL of the channel where the user to report is in.
             report_category (str): Specifies the category which indicates the reason for reporting. Acceptable values are suspicious, harassing, inappropriate, and spam.
-            reporting_user_id (str): Specifies the unique ID of the user who reports the offending user.
-            report_description (str): Specifies additional information to be included in the report.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -247,6 +239,10 @@ class ReportUserByIdData(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            channel_type (str): Specifies the type of the channel. Either open_channels or group_channels.. [optional]  # noqa: E501
+            channel_url (str): Specifies the URL of the channel where the user to report is in.. [optional]  # noqa: E501
+            reporting_user_id (str): Specifies the unique ID of the user who reports the offending user.. [optional]  # noqa: E501
+            report_description (str): Specifies additional information to be included in the report.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -273,11 +269,7 @@ class ReportUserByIdData(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         self.offending_user_id = offending_user_id
-        self.channel_type = channel_type
-        self.channel_url = channel_url
         self.report_category = report_category
-        self.reporting_user_id = reporting_user_id
-        self.report_description = report_description
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

@@ -120,7 +120,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **gc_ban_user**
-> InlineResponse20033BannedList gc_ban_user(channel_url)
+> GcBanUserResponse gc_ban_user(channel_url)
 
 Ban a user
 
@@ -134,7 +134,7 @@ import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import group_channel_api
 from sendbird_platform_sdk.model.gc_ban_user_data import GcBanUserData
-from sendbird_platform_sdk.model.inline_response20033_banned_list import InlineResponse20033BannedList
+from sendbird_platform_sdk.model.gc_ban_user_response import GcBanUserResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -186,7 +186,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20033BannedList**](InlineResponse20033BannedList.md)
+[**GcBanUserResponse**](GcBanUserResponse.md)
 
 ### Authorization
 
@@ -288,7 +288,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **gc_check_if_member_by_id**
-> InlineResponse20037 gc_check_if_member_by_id(channel_url, user_id)
+> GcCheckIfMemberByIdResponse gc_check_if_member_by_id(channel_url, user_id)
 
 Check if member
 
@@ -301,7 +301,7 @@ Check if member
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import group_channel_api
-from sendbird_platform_sdk.model.inline_response20037 import InlineResponse20037
+from sendbird_platform_sdk.model.gc_check_if_member_by_id_response import GcCheckIfMemberByIdResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -347,7 +347,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20037**](InlineResponse20037.md)
+[**GcCheckIfMemberByIdResponse**](GcCheckIfMemberByIdResponse.md)
 
 ### Authorization
 
@@ -1054,7 +1054,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **gc_list_banned_users**
-> InlineResponse20033 gc_list_banned_users(channel_url)
+> GcListBannedUsersResponse gc_list_banned_users(channel_url)
 
 List banned users
 
@@ -1067,7 +1067,7 @@ List banned users
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import group_channel_api
-from sendbird_platform_sdk.model.inline_response20033 import InlineResponse20033
+from sendbird_platform_sdk.model.gc_list_banned_users_response import GcListBannedUsersResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1115,7 +1115,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20033**](InlineResponse20033.md)
+[**GcListBannedUsersResponse**](GcListBannedUsersResponse.md)
 
 ### Authorization
 
@@ -1136,7 +1136,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **gc_list_channels**
-> InlineResponse20017 gc_list_channels()
+> GcListChannelsResponse gc_list_channels()
 
 List channels
 
@@ -1149,7 +1149,7 @@ List channels
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import group_channel_api
-from sendbird_platform_sdk.model.inline_response20017 import InlineResponse20017
+from sendbird_platform_sdk.model.gc_list_channels_response import GcListChannelsResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1267,7 +1267,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20017**](InlineResponse20017.md)
+[**GcListChannelsResponse**](GcListChannelsResponse.md)
 
 ### Authorization
 
@@ -1288,7 +1288,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **gc_list_members**
-> InlineResponse20036 gc_list_members(channel_url)
+> GcListMembersResponse gc_list_members(channel_url)
 
 List members
 
@@ -1301,7 +1301,7 @@ List members
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import group_channel_api
-from sendbird_platform_sdk.model.inline_response20036 import InlineResponse20036
+from sendbird_platform_sdk.model.gc_list_members_response import GcListMembersResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1363,7 +1363,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20036**](InlineResponse20036.md)
+[**GcListMembersResponse**](GcListMembersResponse.md)
 
 ### Authorization
 
@@ -1384,7 +1384,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **gc_list_muted_users**
-> InlineResponse20031 gc_list_muted_users(channel_url)
+> GcListMutedUsersResponse gc_list_muted_users(channel_url)
 
 List muted users
 
@@ -1397,7 +1397,7 @@ List muted users
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import group_channel_api
-from sendbird_platform_sdk.model.inline_response20031 import InlineResponse20031
+from sendbird_platform_sdk.model.gc_list_muted_users_response import GcListMutedUsersResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1445,7 +1445,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20031**](InlineResponse20031.md)
+[**GcListMutedUsersResponse**](GcListMutedUsersResponse.md)
 
 ### Authorization
 
@@ -1466,7 +1466,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **gc_list_operators**
-> InlineResponse20034 gc_list_operators(channel_url)
+> GcListOperatorsResponse gc_list_operators(channel_url)
 
 List operators
 
@@ -1479,7 +1479,7 @@ List operators
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import group_channel_api
-from sendbird_platform_sdk.model.inline_response20034 import InlineResponse20034
+from sendbird_platform_sdk.model.gc_list_operators_response import GcListOperatorsResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1527,7 +1527,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20034**](InlineResponse20034.md)
+[**GcListOperatorsResponse**](GcListOperatorsResponse.md)
 
 ### Authorization
 
@@ -1634,7 +1634,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **gc_register_operators**
-> InlineResponse20038 gc_register_operators(channel_url)
+> GcRegisterOperatorsResponse gc_register_operators(channel_url)
 
 Register operators
 
@@ -1648,7 +1648,7 @@ import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import group_channel_api
 from sendbird_platform_sdk.model.gc_register_operators_data import GcRegisterOperatorsData
-from sendbird_platform_sdk.model.inline_response20038 import InlineResponse20038
+from sendbird_platform_sdk.model.gc_register_operators_response import GcRegisterOperatorsResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1699,7 +1699,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20038**](InlineResponse20038.md)
+[**GcRegisterOperatorsResponse**](GcRegisterOperatorsResponse.md)
 
 ### Authorization
 
@@ -2385,7 +2385,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **gc_view_mute_by_id**
-> InlineResponse20035 gc_view_mute_by_id(channel_url, muted_user_id)
+> GcViewMuteByIdResponse gc_view_mute_by_id(channel_url, muted_user_id)
 
 View a mute
 
@@ -2398,7 +2398,7 @@ View a mute
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import group_channel_api
-from sendbird_platform_sdk.model.inline_response20035 import InlineResponse20035
+from sendbird_platform_sdk.model.gc_view_mute_by_id_response import GcViewMuteByIdResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -2444,7 +2444,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20035**](InlineResponse20035.md)
+[**GcViewMuteByIdResponse**](GcViewMuteByIdResponse.md)
 
 ### Authorization
 

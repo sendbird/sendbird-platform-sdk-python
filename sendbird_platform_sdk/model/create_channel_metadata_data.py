@@ -106,14 +106,13 @@ class CreateChannelMetadataData(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, channel_type, channel_url, metadata, include_ts, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, channel_type, channel_url, metadata, *args, **kwargs):  # noqa: E501
         """CreateChannelMetadataData - a model defined in OpenAPI
 
         Args:
             channel_type (str): Specifies the type of the channel. Either open_channels or group_channels.
             channel_url (str): Specifies the URL of the channel to store the metadata in.
             metadata (str): Specifies a `JSON` object that stores key-value items. The key must not have a comma (,) and its length is limited to 128 characters. The value must be a string and its length is limited to 190 characters. This property can have up to 5 items.
-            include_ts (bool): Determines whether to include the timestamp of when a metadata has been created in the response. (Default: false)
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -146,6 +145,7 @@ class CreateChannelMetadataData(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            include_ts (bool): Determines whether to include the timestamp of when a metadata has been created in the response. (Default: false). [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -176,7 +176,6 @@ class CreateChannelMetadataData(ModelNormal):
         self.channel_type = channel_type
         self.channel_url = channel_url
         self.metadata = metadata
-        self.include_ts = include_ts
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -197,14 +196,13 @@ class CreateChannelMetadataData(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, channel_type, channel_url, metadata, include_ts, *args, **kwargs):  # noqa: E501
+    def __init__(self, channel_type, channel_url, metadata, *args, **kwargs):  # noqa: E501
         """CreateChannelMetadataData - a model defined in OpenAPI
 
         Args:
             channel_type (str): Specifies the type of the channel. Either open_channels or group_channels.
             channel_url (str): Specifies the URL of the channel to store the metadata in.
             metadata (str): Specifies a `JSON` object that stores key-value items. The key must not have a comma (,) and its length is limited to 128 characters. The value must be a string and its length is limited to 190 characters. This property can have up to 5 items.
-            include_ts (bool): Determines whether to include the timestamp of when a metadata has been created in the response. (Default: false)
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -237,6 +235,7 @@ class CreateChannelMetadataData(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            include_ts (bool): Determines whether to include the timestamp of when a metadata has been created in the response. (Default: false). [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -265,7 +264,6 @@ class CreateChannelMetadataData(ModelNormal):
         self.channel_type = channel_type
         self.channel_url = channel_url
         self.metadata = metadata
-        self.include_ts = include_ts
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

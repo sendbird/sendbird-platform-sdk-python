@@ -22,8 +22,8 @@ from sendbird_platform_sdk.model_utils import (  # noqa: F401
     validate_and_convert_types
 )
 from sendbird_platform_sdk.model.choose_which_events_to_subscribe_to_data import ChooseWhichEventsToSubscribeToData
-from sendbird_platform_sdk.model.inline_response20066 import InlineResponse20066
-from sendbird_platform_sdk.model.inline_response20067 import InlineResponse20067
+from sendbird_platform_sdk.model.choose_which_events_to_subscribe_to_response import ChooseWhichEventsToSubscribeToResponse
+from sendbird_platform_sdk.model.retrieve_list_of_subscribed_events_response import RetrieveListOfSubscribedEventsResponse
 
 
 class WebhooksApi(object):
@@ -39,7 +39,7 @@ class WebhooksApi(object):
         self.api_client = api_client
         self.choose_which_events_to_subscribe_to_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20067,),
+                'response_type': (ChooseWhichEventsToSubscribeToResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/applications/settings/webhook',
                 'operation_id': 'choose_which_events_to_subscribe_to',
@@ -92,7 +92,7 @@ class WebhooksApi(object):
         )
         self.retrieve_list_of_subscribed_events_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20066,),
+                'response_type': (RetrieveListOfSubscribedEventsResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/applications/settings/webhook',
                 'operation_id': 'retrieve_list_of_subscribed_events',
@@ -184,7 +184,7 @@ class WebhooksApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20067
+            ChooseWhichEventsToSubscribeToResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -252,7 +252,7 @@ class WebhooksApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20066
+            RetrieveListOfSubscribedEventsResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """

@@ -22,31 +22,41 @@ from sendbird_platform_sdk.model_utils import (  # noqa: F401
     validate_and_convert_types
 )
 from sendbird_platform_sdk.model.add_apns_push_configuration_data import AddApnsPushConfigurationData
+from sendbird_platform_sdk.model.add_apns_push_configuration_response import AddApnsPushConfigurationResponse
 from sendbird_platform_sdk.model.add_fcm_push_configuration_data import AddFcmPushConfigurationData
+from sendbird_platform_sdk.model.add_fcm_push_configuration_response import AddFcmPushConfigurationResponse
 from sendbird_platform_sdk.model.add_hms_push_configuration_data import AddHmsPushConfigurationData
+from sendbird_platform_sdk.model.add_hms_push_configuration_response import AddHmsPushConfigurationResponse
 from sendbird_platform_sdk.model.add_ip_to_whitelist_data import AddIpToWhitelistData
+from sendbird_platform_sdk.model.add_ip_to_whitelist_response import AddIpToWhitelistResponse
+from sendbird_platform_sdk.model.delete_allowed_ips_from_whitelist_response import DeleteAllowedIpsFromWhitelistResponse
+from sendbird_platform_sdk.model.delete_apns_certificate_by_id_response import DeleteApnsCertificateByIdResponse
 from sendbird_platform_sdk.model.generate_secondary_api_token_data import GenerateSecondaryApiTokenData
-from sendbird_platform_sdk.model.inline_response200 import InlineResponse200
-from sendbird_platform_sdk.model.inline_response2001 import InlineResponse2001
-from sendbird_platform_sdk.model.inline_response20010 import InlineResponse20010
-from sendbird_platform_sdk.model.inline_response20011 import InlineResponse20011
-from sendbird_platform_sdk.model.inline_response20012 import InlineResponse20012
-from sendbird_platform_sdk.model.inline_response20013 import InlineResponse20013
-from sendbird_platform_sdk.model.inline_response20014 import InlineResponse20014
-from sendbird_platform_sdk.model.inline_response20015 import InlineResponse20015
-from sendbird_platform_sdk.model.inline_response2002 import InlineResponse2002
-from sendbird_platform_sdk.model.inline_response2003 import InlineResponse2003
-from sendbird_platform_sdk.model.inline_response2004 import InlineResponse2004
-from sendbird_platform_sdk.model.inline_response2005 import InlineResponse2005
-from sendbird_platform_sdk.model.inline_response2006 import InlineResponse2006
-from sendbird_platform_sdk.model.inline_response2007 import InlineResponse2007
-from sendbird_platform_sdk.model.inline_response2008 import InlineResponse2008
-from sendbird_platform_sdk.model.inline_response2009 import InlineResponse2009
+from sendbird_platform_sdk.model.generate_secondary_api_token_response import GenerateSecondaryApiTokenResponse
+from sendbird_platform_sdk.model.list_push_configurations_response import ListPushConfigurationsResponse
+from sendbird_platform_sdk.model.list_push_notification_content_templates_response import ListPushNotificationContentTemplatesResponse
+from sendbird_platform_sdk.model.list_secondary_api_tokens_response import ListSecondaryApiTokensResponse
+from sendbird_platform_sdk.model.remove_push_configuration_by_id_response import RemovePushConfigurationByIdResponse
+from sendbird_platform_sdk.model.retrieve_ip_whitelist_response import RetrieveIpWhitelistResponse
+from sendbird_platform_sdk.model.revoke_secondary_api_token_by_token_response import RevokeSecondaryApiTokenByTokenResponse
 from sendbird_platform_sdk.model.update_apns_push_configuration_by_id_data import UpdateApnsPushConfigurationByIdData
+from sendbird_platform_sdk.model.update_apns_push_configuration_by_id_response import UpdateApnsPushConfigurationByIdResponse
 from sendbird_platform_sdk.model.update_default_channel_invitation_preference_data import UpdateDefaultChannelInvitationPreferenceData
+from sendbird_platform_sdk.model.update_default_channel_invitation_preference_response import UpdateDefaultChannelInvitationPreferenceResponse
 from sendbird_platform_sdk.model.update_fcm_push_configuration_by_id_data import UpdateFcmPushConfigurationByIdData
+from sendbird_platform_sdk.model.update_fcm_push_configuration_by_id_response import UpdateFcmPushConfigurationByIdResponse
 from sendbird_platform_sdk.model.update_hms_push_configuration_by_id_data import UpdateHmsPushConfigurationByIdData
+from sendbird_platform_sdk.model.update_hms_push_configuration_by_id_response import UpdateHmsPushConfigurationByIdResponse
 from sendbird_platform_sdk.model.update_push_notification_content_template_data import UpdatePushNotificationContentTemplateData
+from sendbird_platform_sdk.model.update_push_notification_content_template_response import UpdatePushNotificationContentTemplateResponse
+from sendbird_platform_sdk.model.view_default_channel_invitation_preference_response import ViewDefaultChannelInvitationPreferenceResponse
+from sendbird_platform_sdk.model.view_number_of_concurrent_connections_response import ViewNumberOfConcurrentConnectionsResponse
+from sendbird_platform_sdk.model.view_number_of_daily_active_users_response import ViewNumberOfDailyActiveUsersResponse
+from sendbird_platform_sdk.model.view_number_of_monthly_active_users_response import ViewNumberOfMonthlyActiveUsersResponse
+from sendbird_platform_sdk.model.view_number_of_peak_connections_response import ViewNumberOfPeakConnectionsResponse
+from sendbird_platform_sdk.model.view_push_configuration_by_id_response import ViewPushConfigurationByIdResponse
+from sendbird_platform_sdk.model.view_push_notification_content_template_response import ViewPushNotificationContentTemplateResponse
+from sendbird_platform_sdk.model.view_secondary_api_token_by_token_response import ViewSecondaryApiTokenByTokenResponse
 
 
 class ApplicationApi(object):
@@ -62,7 +72,7 @@ class ApplicationApi(object):
         self.api_client = api_client
         self.add_apns_push_configuration_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse2003,),
+                'response_type': (AddApnsPushConfigurationResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/applications/push/apns',
                 'operation_id': 'add_apns_push_configuration',
@@ -115,7 +125,7 @@ class ApplicationApi(object):
         )
         self.add_fcm_push_configuration_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse2001,),
+                'response_type': (AddFcmPushConfigurationResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/applications/push/fcm',
                 'operation_id': 'add_fcm_push_configuration',
@@ -168,7 +178,7 @@ class ApplicationApi(object):
         )
         self.add_hms_push_configuration_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse2002,),
+                'response_type': (AddHmsPushConfigurationResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/applications/push/hms',
                 'operation_id': 'add_hms_push_configuration',
@@ -221,7 +231,7 @@ class ApplicationApi(object):
         )
         self.add_ip_to_whitelist_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse2006,),
+                'response_type': (AddIpToWhitelistResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/applications/settings/ip_whitelist',
                 'operation_id': 'add_ip_to_whitelist',
@@ -274,7 +284,7 @@ class ApplicationApi(object):
         )
         self.delete_allowed_ips_from_whitelist_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse2006,),
+                'response_type': (DeleteAllowedIpsFromWhitelistResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/applications/settings/ip_whitelist',
                 'operation_id': 'delete_allowed_ips_from_whitelist',
@@ -329,7 +339,7 @@ class ApplicationApi(object):
         )
         self.delete_apns_certificate_by_id_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20013,),
+                'response_type': (DeleteApnsCertificateByIdResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/applications/push/apns/cert/{provider_id}',
                 'operation_id': 'delete_apns_certificate_by_id',
@@ -383,7 +393,7 @@ class ApplicationApi(object):
         )
         self.generate_secondary_api_token_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse2007,),
+                'response_type': (GenerateSecondaryApiTokenResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/applications/api_tokens',
                 'operation_id': 'generate_secondary_api_token',
@@ -436,7 +446,7 @@ class ApplicationApi(object):
         )
         self.list_push_configurations_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20012,),
+                'response_type': (ListPushConfigurationsResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/applications/push/{push_type}',
                 'operation_id': 'list_push_configurations',
@@ -490,7 +500,7 @@ class ApplicationApi(object):
         )
         self.list_push_notification_content_templates_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse2004,),
+                'response_type': (ListPushNotificationContentTemplatesResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/applications/push/message_templates',
                 'operation_id': 'list_push_notification_content_templates',
@@ -537,7 +547,7 @@ class ApplicationApi(object):
         )
         self.list_secondary_api_tokens_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse2008,),
+                'response_type': (ListSecondaryApiTokensResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/applications/api_tokens',
                 'operation_id': 'list_secondary_api_tokens',
@@ -584,7 +594,7 @@ class ApplicationApi(object):
         )
         self.remove_push_configuration_by_id_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20013,),
+                'response_type': (RemovePushConfigurationByIdResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/applications/push/{push_type}/{provider_id}',
                 'operation_id': 'remove_push_configuration_by_id',
@@ -644,7 +654,7 @@ class ApplicationApi(object):
         )
         self.retrieve_ip_whitelist_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse2006,),
+                'response_type': (RetrieveIpWhitelistResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/applications/settings/ip_whitelist',
                 'operation_id': 'retrieve_ip_whitelist',
@@ -691,7 +701,7 @@ class ApplicationApi(object):
         )
         self.revoke_secondary_api_token_by_token_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse2007,),
+                'response_type': (RevokeSecondaryApiTokenByTokenResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/applications/api_tokens/{api_token}',
                 'operation_id': 'revoke_secondary_api_token_by_token',
@@ -745,7 +755,7 @@ class ApplicationApi(object):
         )
         self.update_apns_push_configuration_by_id_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20014,),
+                'response_type': (UpdateApnsPushConfigurationByIdResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/applications/push/apns/{provider_id}',
                 'operation_id': 'update_apns_push_configuration_by_id',
@@ -805,7 +815,7 @@ class ApplicationApi(object):
         )
         self.update_default_channel_invitation_preference_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse2005,),
+                'response_type': (UpdateDefaultChannelInvitationPreferenceResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/applications/default_channel_invitation_preference',
                 'operation_id': 'update_default_channel_invitation_preference',
@@ -858,7 +868,7 @@ class ApplicationApi(object):
         )
         self.update_fcm_push_configuration_by_id_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20014,),
+                'response_type': (UpdateFcmPushConfigurationByIdResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/applications/push/fcm/{provider_id}',
                 'operation_id': 'update_fcm_push_configuration_by_id',
@@ -918,7 +928,7 @@ class ApplicationApi(object):
         )
         self.update_hms_push_configuration_by_id_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20014,),
+                'response_type': (UpdateHmsPushConfigurationByIdResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/applications/push/hms/{provider_id}',
                 'operation_id': 'update_hms_push_configuration_by_id',
@@ -978,7 +988,7 @@ class ApplicationApi(object):
         )
         self.update_push_notification_content_template_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20015,),
+                'response_type': (UpdatePushNotificationContentTemplateResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/applications/push/message_templates/{template_name}',
                 'operation_id': 'update_push_notification_content_template',
@@ -1038,7 +1048,7 @@ class ApplicationApi(object):
         )
         self.view_default_channel_invitation_preference_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse2005,),
+                'response_type': (ViewDefaultChannelInvitationPreferenceResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/applications/default_channel_invitation_preference',
                 'operation_id': 'view_default_channel_invitation_preference',
@@ -1085,7 +1095,7 @@ class ApplicationApi(object):
         )
         self.view_number_of_concurrent_connections_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse200,),
+                'response_type': (ViewNumberOfConcurrentConnectionsResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/applications/ccu',
                 'operation_id': 'view_number_of_concurrent_connections',
@@ -1132,7 +1142,7 @@ class ApplicationApi(object):
         )
         self.view_number_of_daily_active_users_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20011,),
+                'response_type': (ViewNumberOfDailyActiveUsersResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/applications/dau',
                 'operation_id': 'view_number_of_daily_active_users',
@@ -1184,7 +1194,7 @@ class ApplicationApi(object):
         )
         self.view_number_of_monthly_active_users_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20010,),
+                'response_type': (ViewNumberOfMonthlyActiveUsersResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/applications/mau',
                 'operation_id': 'view_number_of_monthly_active_users',
@@ -1236,7 +1246,7 @@ class ApplicationApi(object):
         )
         self.view_number_of_peak_connections_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse2009,),
+                'response_type': (ViewNumberOfPeakConnectionsResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/applications/peak_connections',
                 'operation_id': 'view_number_of_peak_connections',
@@ -1324,7 +1334,7 @@ class ApplicationApi(object):
         )
         self.view_push_configuration_by_id_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20012,),
+                'response_type': (ViewPushConfigurationByIdResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/applications/push/{push_type}/{provider_id}',
                 'operation_id': 'view_push_configuration_by_id',
@@ -1384,7 +1394,7 @@ class ApplicationApi(object):
         )
         self.view_push_notification_content_template_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20015,),
+                'response_type': (ViewPushNotificationContentTemplateResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/applications/push/message_templates/{template_name}',
                 'operation_id': 'view_push_notification_content_template',
@@ -1438,7 +1448,7 @@ class ApplicationApi(object):
         )
         self.view_secondary_api_token_by_token_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse2007,),
+                'response_type': (ViewSecondaryApiTokenByTokenResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/applications/api_tokens/{api_token}',
                 'operation_id': 'view_secondary_api_token_by_token',
@@ -1532,7 +1542,7 @@ class ApplicationApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse2003
+            AddApnsPushConfigurationResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -1600,7 +1610,7 @@ class ApplicationApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse2001
+            AddFcmPushConfigurationResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -1668,7 +1678,7 @@ class ApplicationApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse2002
+            AddHmsPushConfigurationResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -1736,7 +1746,7 @@ class ApplicationApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse2006
+            AddIpToWhitelistResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -1806,7 +1816,7 @@ class ApplicationApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse2006
+            DeleteAllowedIpsFromWhitelistResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -1878,7 +1888,7 @@ class ApplicationApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20013
+            DeleteApnsCertificateByIdResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -1948,7 +1958,7 @@ class ApplicationApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse2007
+            GenerateSecondaryApiTokenResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2018,7 +2028,7 @@ class ApplicationApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20012
+            ListPushConfigurationsResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2087,7 +2097,7 @@ class ApplicationApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse2004
+            ListPushNotificationContentTemplatesResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2154,7 +2164,7 @@ class ApplicationApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse2008
+            ListSecondaryApiTokensResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2226,7 +2236,7 @@ class ApplicationApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20013
+            RemovePushConfigurationByIdResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2297,7 +2307,7 @@ class ApplicationApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse2006
+            RetrieveIpWhitelistResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2367,7 +2377,7 @@ class ApplicationApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse2007
+            RevokeSecondaryApiTokenByTokenResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2440,7 +2450,7 @@ class ApplicationApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20014
+            UpdateApnsPushConfigurationByIdResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2510,7 +2520,7 @@ class ApplicationApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse2005
+            UpdateDefaultChannelInvitationPreferenceResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2581,7 +2591,7 @@ class ApplicationApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20014
+            UpdateFcmPushConfigurationByIdResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2654,7 +2664,7 @@ class ApplicationApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20014
+            UpdateHmsPushConfigurationByIdResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2727,7 +2737,7 @@ class ApplicationApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20015
+            UpdatePushNotificationContentTemplateResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2796,7 +2806,7 @@ class ApplicationApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse2005
+            ViewDefaultChannelInvitationPreferenceResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2863,7 +2873,7 @@ class ApplicationApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse200
+            ViewNumberOfConcurrentConnectionsResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2931,7 +2941,7 @@ class ApplicationApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20011
+            ViewNumberOfDailyActiveUsersResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2999,7 +3009,7 @@ class ApplicationApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20010
+            ViewNumberOfMonthlyActiveUsersResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -3079,7 +3089,7 @@ class ApplicationApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse2009
+            ViewNumberOfPeakConnectionsResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -3161,7 +3171,7 @@ class ApplicationApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20012
+            ViewPushConfigurationByIdResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -3235,7 +3245,7 @@ class ApplicationApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20015
+            ViewPushNotificationContentTemplateResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -3307,7 +3317,7 @@ class ApplicationApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse2007
+            ViewSecondaryApiTokenByTokenResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """

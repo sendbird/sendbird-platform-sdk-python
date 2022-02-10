@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 
 # **list_reports**
-> InlineResponse20070 list_reports()
+> ListReportsResponse list_reports()
 
 List reports
 
@@ -28,7 +28,7 @@ List reports
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import report_content__subject_api
-from sendbird_platform_sdk.model.inline_response20070 import InlineResponse20070
+from sendbird_platform_sdk.model.list_reports_response import ListReportsResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20070**](InlineResponse20070.md)
+[**ListReportsResponse**](ListReportsResponse.md)
 
 ### Authorization
 
@@ -91,7 +91,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_reports_on_channel_by_url**
-> InlineResponse20071 list_reports_on_channel_by_url(channel_type, channel_url)
+> ListReportsOnChannelByUrlResponse list_reports_on_channel_by_url(channel_type, channel_url)
 
 List reports on a channel
 
@@ -104,7 +104,7 @@ List reports on a channel
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import report_content__subject_api
-from sendbird_platform_sdk.model.inline_response20071 import InlineResponse20071
+from sendbird_platform_sdk.model.list_reports_on_channel_by_url_response import ListReportsOnChannelByUrlResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -154,7 +154,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20071**](InlineResponse20071.md)
+[**ListReportsOnChannelByUrlResponse**](ListReportsOnChannelByUrlResponse.md)
 
 ### Authorization
 
@@ -175,7 +175,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_reports_on_message_by_id**
-> InlineResponse20071 list_reports_on_message_by_id(channel_type, channel_url, message_id)
+> ListReportsOnMessageByIdResponse list_reports_on_message_by_id(channel_type, channel_url, message_id)
 
 List reports on a message
 
@@ -188,7 +188,7 @@ List reports on a message
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import report_content__subject_api
-from sendbird_platform_sdk.model.inline_response20071 import InlineResponse20071
+from sendbird_platform_sdk.model.list_reports_on_message_by_id_response import ListReportsOnMessageByIdResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -240,7 +240,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20071**](InlineResponse20071.md)
+[**ListReportsOnMessageByIdResponse**](ListReportsOnMessageByIdResponse.md)
 
 ### Authorization
 
@@ -261,7 +261,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_reports_on_user_by_id**
-> InlineResponse20071 list_reports_on_user_by_id(offending_user_id)
+> ListReportsOnUserByIdResponse list_reports_on_user_by_id(offending_user_id)
 
 List reports on a user
 
@@ -274,7 +274,7 @@ List reports on a user
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import report_content__subject_api
-from sendbird_platform_sdk.model.inline_response20071 import InlineResponse20071
+from sendbird_platform_sdk.model.list_reports_on_user_by_id_response import ListReportsOnUserByIdResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -322,7 +322,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20071**](InlineResponse20071.md)
+[**ListReportsOnUserByIdResponse**](ListReportsOnUserByIdResponse.md)
 
 ### Authorization
 
@@ -343,7 +343,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **report_channel_by_url**
-> InlineResponse20071ReportLogs report_channel_by_url(channel_type, channel_url)
+> ReportChannelByUrlResponse report_channel_by_url(channel_type, channel_url)
 
 Report a channel
 
@@ -356,8 +356,8 @@ Report a channel
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import report_content__subject_api
-from sendbird_platform_sdk.model.inline_response20071_report_logs import InlineResponse20071ReportLogs
 from sendbird_platform_sdk.model.report_channel_by_url_data import ReportChannelByUrlData
+from sendbird_platform_sdk.model.report_channel_by_url_response import ReportChannelByUrlResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -411,7 +411,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20071ReportLogs**](InlineResponse20071ReportLogs.md)
+[**ReportChannelByUrlResponse**](ReportChannelByUrlResponse.md)
 
 ### Authorization
 
@@ -432,7 +432,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **report_message_by_id**
-> InlineResponse20071ReportLogs report_message_by_id(channel_type, channel_url, message_id)
+> ReportMessageByIdResponse report_message_by_id(channel_type, channel_url, message_id)
 
 Report a message
 
@@ -445,8 +445,8 @@ Report a message
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import report_content__subject_api
-from sendbird_platform_sdk.model.inline_response20071_report_logs import InlineResponse20071ReportLogs
 from sendbird_platform_sdk.model.report_message_by_id_data import ReportMessageByIdData
+from sendbird_platform_sdk.model.report_message_by_id_response import ReportMessageByIdResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -504,7 +504,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20071ReportLogs**](InlineResponse20071ReportLogs.md)
+[**ReportMessageByIdResponse**](ReportMessageByIdResponse.md)
 
 ### Authorization
 
@@ -525,7 +525,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **report_user_by_id**
-> InlineResponse20071ReportLogs report_user_by_id(offending_user_id)
+> ReportUserByIdResponse report_user_by_id(offending_user_id)
 
 Report a user
 
@@ -538,7 +538,7 @@ Report a user
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import report_content__subject_api
-from sendbird_platform_sdk.model.inline_response20071_report_logs import InlineResponse20071ReportLogs
+from sendbird_platform_sdk.model.report_user_by_id_response import ReportUserByIdResponse
 from sendbird_platform_sdk.model.report_user_by_id_data import ReportUserByIdData
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
@@ -592,7 +592,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20071ReportLogs**](InlineResponse20071ReportLogs.md)
+[**ReportUserByIdResponse**](ReportUserByIdResponse.md)
 
 ### Authorization
 
@@ -613,7 +613,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **view_moderated_message_by_id**
-> {str: (str,)} view_moderated_message_by_id(channel_type, channel_url, message_id)
+> ViewModeratedMessageByIdResponse view_moderated_message_by_id(channel_type, channel_url, message_id)
 
 View a moderated message
 
@@ -673,7 +673,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**{str: (str,)}**
+**ViewModeratedMessageByIdResponse**
 
 ### Authorization
 

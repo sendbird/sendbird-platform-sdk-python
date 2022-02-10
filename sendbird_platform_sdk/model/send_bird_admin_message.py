@@ -30,7 +30,7 @@ from sendbird_platform_sdk.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from sendbird_platform_sdk.model.object import Object
+    from sendbird_platform_sdk.model.sb_object import SBObject
     from sendbird_platform_sdk.model.send_bird_apple_critical_alert_options import SendBirdAppleCriticalAlertOptions
     from sendbird_platform_sdk.model.send_bird_message_meta_array import SendBirdMessageMetaArray
     from sendbird_platform_sdk.model.send_bird_message_response import SendBirdMessageResponse
@@ -38,7 +38,7 @@ def lazy_import():
     from sendbird_platform_sdk.model.send_bird_reaction import SendBirdReaction
     from sendbird_platform_sdk.model.send_bird_thread_info import SendBirdThreadInfo
     from sendbird_platform_sdk.model.send_bird_user import SendBirdUser
-    globals()['Object'] = Object
+    globals()['SBObject'] = SBObject
     globals()['SendBirdAppleCriticalAlertOptions'] = SendBirdAppleCriticalAlertOptions
     globals()['SendBirdMessageMetaArray'] = SendBirdMessageMetaArray
     globals()['SendBirdMessageResponse'] = SendBirdMessageResponse
@@ -125,7 +125,7 @@ class SendBirdAdminMessage(ModelNormal):
             'message': (str,),  # noqa: E501
             'message_id': (float,),  # noqa: E501
             'message_type': (str,),  # noqa: E501
-            'meta_array': (Object,),  # noqa: E501
+            'meta_array': (SBObject,),  # noqa: E501
             'meta_arrays': ([SendBirdMessageMetaArray],),  # noqa: E501
             'og_meta_data': (SendBirdOGMetaData,),  # noqa: E501
             'parent_message': (SendBirdMessageResponse,),  # noqa: E501
@@ -135,7 +135,7 @@ class SendBirdAdminMessage(ModelNormal):
             'sending_status': (str,),  # noqa: E501
             'silent': (bool,),  # noqa: E501
             'thread_info': (SendBirdThreadInfo,),  # noqa: E501
-            'translations': (Object,),  # noqa: E501
+            'translations': (SBObject,),  # noqa: E501
             'updated_at': (float,),  # noqa: E501
         }
 
@@ -224,7 +224,7 @@ class SendBirdAdminMessage(ModelNormal):
             message (str): [optional]  # noqa: E501
             message_id (float): [optional]  # noqa: E501
             message_type (str): [optional]  # noqa: E501
-            meta_array (Object): [optional]  # noqa: E501
+            meta_array (SBObject): [optional]  # noqa: E501
             meta_arrays ([SendBirdMessageMetaArray]): [optional]  # noqa: E501
             og_meta_data (SendBirdOGMetaData): [optional]  # noqa: E501
             parent_message (SendBirdMessageResponse): [optional]  # noqa: E501
@@ -234,7 +234,7 @@ class SendBirdAdminMessage(ModelNormal):
             sending_status (str): [optional]  # noqa: E501
             silent (bool): [optional]  # noqa: E501
             thread_info (SendBirdThreadInfo): [optional]  # noqa: E501
-            translations (Object): [optional]  # noqa: E501
+            translations (SBObject): [optional]  # noqa: E501
             updated_at (float): [optional]  # noqa: E501
         """
 
@@ -329,7 +329,7 @@ class SendBirdAdminMessage(ModelNormal):
             message (str): [optional]  # noqa: E501
             message_id (float): [optional]  # noqa: E501
             message_type (str): [optional]  # noqa: E501
-            meta_array (Object): [optional]  # noqa: E501
+            meta_array (SBObject): [optional]  # noqa: E501
             meta_arrays ([SendBirdMessageMetaArray]): [optional]  # noqa: E501
             og_meta_data (SendBirdOGMetaData): [optional]  # noqa: E501
             parent_message (SendBirdMessageResponse): [optional]  # noqa: E501
@@ -339,7 +339,7 @@ class SendBirdAdminMessage(ModelNormal):
             sending_status (str): [optional]  # noqa: E501
             silent (bool): [optional]  # noqa: E501
             thread_info (SendBirdThreadInfo): [optional]  # noqa: E501
-            translations (Object): [optional]  # noqa: E501
+            translations (SBObject): [optional]  # noqa: E501
             updated_at (float): [optional]  # noqa: E501
         """
 

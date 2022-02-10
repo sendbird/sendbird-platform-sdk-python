@@ -23,6 +23,8 @@ from sendbird_platform_sdk.model_utils import (  # noqa: F401
 )
 from sendbird_platform_sdk.model.gc_accept_invitation_data import GcAcceptInvitationData
 from sendbird_platform_sdk.model.gc_ban_user_data import GcBanUserData
+from sendbird_platform_sdk.model.gc_ban_user_response import GcBanUserResponse
+from sendbird_platform_sdk.model.gc_check_if_member_by_id_response import GcCheckIfMemberByIdResponse
 from sendbird_platform_sdk.model.gc_create_channel_data import GcCreateChannelData
 from sendbird_platform_sdk.model.gc_decline_invitation_data import GcDeclineInvitationData
 from sendbird_platform_sdk.model.gc_freeze_channel_data import GcFreezeChannelData
@@ -30,20 +32,18 @@ from sendbird_platform_sdk.model.gc_hide_or_archive_channel_data import GcHideOr
 from sendbird_platform_sdk.model.gc_invite_as_members_data import GcInviteAsMembersData
 from sendbird_platform_sdk.model.gc_join_channel_data import GcJoinChannelData
 from sendbird_platform_sdk.model.gc_leave_channel_data import GcLeaveChannelData
+from sendbird_platform_sdk.model.gc_list_banned_users_response import GcListBannedUsersResponse
+from sendbird_platform_sdk.model.gc_list_channels_response import GcListChannelsResponse
+from sendbird_platform_sdk.model.gc_list_members_response import GcListMembersResponse
+from sendbird_platform_sdk.model.gc_list_muted_users_response import GcListMutedUsersResponse
+from sendbird_platform_sdk.model.gc_list_operators_response import GcListOperatorsResponse
 from sendbird_platform_sdk.model.gc_mute_user_data import GcMuteUserData
 from sendbird_platform_sdk.model.gc_register_operators_data import GcRegisterOperatorsData
+from sendbird_platform_sdk.model.gc_register_operators_response import GcRegisterOperatorsResponse
 from sendbird_platform_sdk.model.gc_reset_chat_history_data import GcResetChatHistoryData
 from sendbird_platform_sdk.model.gc_update_ban_by_id_data import GcUpdateBanByIdData
 from sendbird_platform_sdk.model.gc_update_channel_by_url_data import GcUpdateChannelByUrlData
-from sendbird_platform_sdk.model.inline_response20017 import InlineResponse20017
-from sendbird_platform_sdk.model.inline_response20031 import InlineResponse20031
-from sendbird_platform_sdk.model.inline_response20033 import InlineResponse20033
-from sendbird_platform_sdk.model.inline_response20033_banned_list import InlineResponse20033BannedList
-from sendbird_platform_sdk.model.inline_response20034 import InlineResponse20034
-from sendbird_platform_sdk.model.inline_response20035 import InlineResponse20035
-from sendbird_platform_sdk.model.inline_response20036 import InlineResponse20036
-from sendbird_platform_sdk.model.inline_response20037 import InlineResponse20037
-from sendbird_platform_sdk.model.inline_response20038 import InlineResponse20038
+from sendbird_platform_sdk.model.gc_view_mute_by_id_response import GcViewMuteByIdResponse
 from sendbird_platform_sdk.model.send_bird_group_channel import SendBirdGroupChannel
 from sendbird_platform_sdk.model.send_bird_user import SendBirdUser
 
@@ -121,7 +121,7 @@ class GroupChannelApi(object):
         )
         self.gc_ban_user_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20033BannedList,),
+                'response_type': (GcBanUserResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/group_channels/{channel_url}/ban',
                 'operation_id': 'gc_ban_user',
@@ -245,7 +245,7 @@ class GroupChannelApi(object):
         )
         self.gc_check_if_member_by_id_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20037,),
+                'response_type': (GcCheckIfMemberByIdResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/group_channels/{channel_url}/members/{user_id}',
                 'operation_id': 'gc_check_if_member_by_id',
@@ -762,7 +762,7 @@ class GroupChannelApi(object):
         )
         self.gc_list_banned_users_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20033,),
+                'response_type': (GcListBannedUsersResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/group_channels/{channel_url}/ban',
                 'operation_id': 'gc_list_banned_users',
@@ -826,7 +826,7 @@ class GroupChannelApi(object):
         )
         self.gc_list_channels_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20017,),
+                'response_type': (GcListChannelsResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/group_channels',
                 'operation_id': 'gc_list_channels',
@@ -1083,7 +1083,7 @@ class GroupChannelApi(object):
         )
         self.gc_list_members_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20036,),
+                'response_type': (GcListMembersResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/group_channels/{channel_url}/members',
                 'operation_id': 'gc_list_members',
@@ -1182,7 +1182,7 @@ class GroupChannelApi(object):
         )
         self.gc_list_muted_users_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20031,),
+                'response_type': (GcListMutedUsersResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/group_channels/{channel_url}/mute',
                 'operation_id': 'gc_list_muted_users',
@@ -1246,7 +1246,7 @@ class GroupChannelApi(object):
         )
         self.gc_list_operators_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20034,),
+                'response_type': (GcListOperatorsResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/group_channels/{channel_url}/operators',
                 'operation_id': 'gc_list_operators',
@@ -1370,7 +1370,7 @@ class GroupChannelApi(object):
         )
         self.gc_register_operators_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20038,),
+                'response_type': (GcRegisterOperatorsResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/group_channels/{channel_url}/operators',
                 'operation_id': 'gc_register_operators',
@@ -1932,7 +1932,7 @@ class GroupChannelApi(object):
         )
         self.gc_view_mute_by_id_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20035,),
+                'response_type': (GcViewMuteByIdResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/group_channels/{channel_url}/mute/{muted_user_id}',
                 'operation_id': 'gc_view_mute_by_id',
@@ -2108,7 +2108,7 @@ class GroupChannelApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20033BannedList
+            GcBanUserResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2259,7 +2259,7 @@ class GroupChannelApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20037
+            GcCheckIfMemberByIdResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2913,7 +2913,7 @@ class GroupChannelApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20033
+            GcListBannedUsersResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -3024,7 +3024,7 @@ class GroupChannelApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20017
+            GcListChannelsResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -3103,7 +3103,7 @@ class GroupChannelApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20036
+            GcListMembersResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -3177,7 +3177,7 @@ class GroupChannelApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20031
+            GcListMutedUsersResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -3251,7 +3251,7 @@ class GroupChannelApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20034
+            GcListOperatorsResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -3397,7 +3397,7 @@ class GroupChannelApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20038
+            GcRegisterOperatorsResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -4076,7 +4076,7 @@ class GroupChannelApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20035
+            GcViewMuteByIdResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """

@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **message** | **str** |  | [optional] 
 **message_id** | **float** |  | [optional] 
 **message_type** | **str** |  | [optional] 
-**meta_array** | [**Object**](Object.md) |  | [optional] 
+**meta_array** | [**SBObject**](SBObject.md) |  | [optional] 
 **meta_arrays** | [**[SendBirdMessageMetaArray]**](SendBirdMessageMetaArray.md) |  | [optional] 
 **og_meta_data** | [**SendBirdOGMetaData**](SendBirdOGMetaData.md) |  | [optional] 
 **parent_message** | [**SendBirdMessageResponse**](SendBirdMessageResponse.md) |  | [optional] 
@@ -26,7 +26,7 @@ Name | Type | Description | Notes
 **sending_status** | **str** |  | [optional] 
 **silent** | **bool** |  | [optional] 
 **thread_info** | [**SendBirdThreadInfo**](SendBirdThreadInfo.md) |  | [optional] 
-**translations** | [**Object**](Object.md) |  | [optional] 
+**translations** | [**SBObject**](SBObject.md) |  | [optional] 
 **updated_at** | **float** |  | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 

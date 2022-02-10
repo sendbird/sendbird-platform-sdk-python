@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 
 # **get_detailed_open_rate_of_announcement_by_id**
-> InlineResponse20042 get_detailed_open_rate_of_announcement_by_id(unique_id)
+> GetDetailedOpenRateOfAnnouncementByIdResponse get_detailed_open_rate_of_announcement_by_id(unique_id)
 
 Get detailed open rate of an announcement
 
@@ -31,7 +31,7 @@ Get detailed open rate of an announcement
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import announcements_api
-from sendbird_platform_sdk.model.inline_response20042 import InlineResponse20042
+from sendbird_platform_sdk.model.get_detailed_open_rate_of_announcement_by_id_response import GetDetailedOpenRateOfAnnouncementByIdResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -75,7 +75,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20042**](InlineResponse20042.md)
+[**GetDetailedOpenRateOfAnnouncementByIdResponse**](GetDetailedOpenRateOfAnnouncementByIdResponse.md)
 
 ### Authorization
 
@@ -96,7 +96,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_detailed_open_rate_of_announcement_group**
-> InlineResponse20046 get_detailed_open_rate_of_announcement_group(announcement_group)
+> GetDetailedOpenRateOfAnnouncementGroupResponse get_detailed_open_rate_of_announcement_group(announcement_group)
 
 Get detailed open rate of an announcement group
 
@@ -109,7 +109,7 @@ Get detailed open rate of an announcement group
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import announcements_api
-from sendbird_platform_sdk.model.inline_response20046 import InlineResponse20046
+from sendbird_platform_sdk.model.get_detailed_open_rate_of_announcement_group_response import GetDetailedOpenRateOfAnnouncementGroupResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -153,7 +153,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20046**](InlineResponse20046.md)
+[**GetDetailedOpenRateOfAnnouncementGroupResponse**](GetDetailedOpenRateOfAnnouncementGroupResponse.md)
 
 ### Authorization
 
@@ -174,7 +174,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_detailed_open_status_of_announcement_by_id**
-> InlineResponse20043 get_detailed_open_status_of_announcement_by_id(unique_id)
+> GetDetailedOpenStatusOfAnnouncementByIdResponse get_detailed_open_status_of_announcement_by_id(unique_id)
 
 Get detailed open status of an announcement
 
@@ -187,7 +187,7 @@ Get detailed open status of an announcement
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import announcements_api
-from sendbird_platform_sdk.model.inline_response20043 import InlineResponse20043
+from sendbird_platform_sdk.model.get_detailed_open_status_of_announcement_by_id_response import GetDetailedOpenStatusOfAnnouncementByIdResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -245,7 +245,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20043**](InlineResponse20043.md)
+[**GetDetailedOpenStatusOfAnnouncementByIdResponse**](GetDetailedOpenStatusOfAnnouncementByIdResponse.md)
 
 ### Authorization
 
@@ -266,7 +266,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_statistics**
-> InlineResponse20044 get_statistics()
+> GetStatisticsResponse get_statistics()
 
 Get statistics - weekly
 
@@ -279,7 +279,7 @@ Get statistics - weekly
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import announcements_api
-from sendbird_platform_sdk.model.inline_response20044 import InlineResponse20044
+from sendbird_platform_sdk.model.get_statistics_response import GetStatisticsResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -313,7 +313,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20044**](InlineResponse20044.md)
+[**GetStatisticsResponse**](GetStatisticsResponse.md)
 
 ### Authorization
 
@@ -334,7 +334,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_statistics_daily**
-> InlineResponse20044 get_statistics_daily(start_date, end_date, start_week, end_week, start_month, end_month)
+> GetStatisticsDailyResponse get_statistics_daily(start_date, end_date, start_week, end_week, start_month, end_month)
 
 Get statistics - daily
 
@@ -347,7 +347,7 @@ Get statistics - daily
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import announcements_api
-from sendbird_platform_sdk.model.inline_response20044 import InlineResponse20044
+from sendbird_platform_sdk.model.get_statistics_daily_response import GetStatisticsDailyResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -403,7 +403,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20044**](InlineResponse20044.md)
+[**GetStatisticsDailyResponse**](GetStatisticsDailyResponse.md)
 
 ### Authorization
 
@@ -424,7 +424,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_statistics_monthly**
-> InlineResponse20044 get_statistics_monthly()
+> GetStatisticsMonthlyResponse get_statistics_monthly()
 
 Get statistics - monthly
 
@@ -437,7 +437,7 @@ Get statistics - monthly
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import announcements_api
-from sendbird_platform_sdk.model.inline_response20044 import InlineResponse20044
+from sendbird_platform_sdk.model.get_statistics_monthly_response import GetStatisticsMonthlyResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -471,7 +471,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20044**](InlineResponse20044.md)
+[**GetStatisticsMonthlyResponse**](GetStatisticsMonthlyResponse.md)
 
 ### Authorization
 
@@ -492,7 +492,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_announcement_groups**
-> InlineResponse20045 list_announcement_groups()
+> ListAnnouncementGroupsResponse list_announcement_groups()
 
 List announcement groups
 
@@ -505,7 +505,7 @@ List announcement groups
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import announcements_api
-from sendbird_platform_sdk.model.inline_response20045 import InlineResponse20045
+from sendbird_platform_sdk.model.list_announcement_groups_response import ListAnnouncementGroupsResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -543,7 +543,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20045**](InlineResponse20045.md)
+[**ListAnnouncementGroupsResponse**](ListAnnouncementGroupsResponse.md)
 
 ### Authorization
 
@@ -564,7 +564,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_announcements**
-> InlineResponse20039 list_announcements()
+> ListAnnouncementsResponse list_announcements()
 
 List announcements
 
@@ -577,7 +577,7 @@ List announcements
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import announcements_api
-from sendbird_platform_sdk.model.inline_response20039 import InlineResponse20039
+from sendbird_platform_sdk.model.list_announcements_response import ListAnnouncementsResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -621,7 +621,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20039**](InlineResponse20039.md)
+[**ListAnnouncementsResponse**](ListAnnouncementsResponse.md)
 
 ### Authorization
 
@@ -642,7 +642,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **schedule_announcement**
-> InlineResponse20040 schedule_announcement()
+> ScheduleAnnouncementResponse schedule_announcement()
 
 Schedule an announcement
 
@@ -655,7 +655,7 @@ Schedule an announcement
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import announcements_api
-from sendbird_platform_sdk.model.inline_response20040 import InlineResponse20040
+from sendbird_platform_sdk.model.schedule_announcement_response import ScheduleAnnouncementResponse
 from sendbird_platform_sdk.model.schedule_announcement_data import ScheduleAnnouncementData
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
@@ -719,7 +719,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20040**](InlineResponse20040.md)
+[**ScheduleAnnouncementResponse**](ScheduleAnnouncementResponse.md)
 
 ### Authorization
 
@@ -740,7 +740,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_announcement_by_id**
-> InlineResponse20041 update_announcement_by_id(unique_id)
+> UpdateAnnouncementByIdResponse update_announcement_by_id(unique_id)
 
 Update an announcement
 
@@ -754,7 +754,7 @@ import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import announcements_api
 from sendbird_platform_sdk.model.update_announcement_by_id_data import UpdateAnnouncementByIdData
-from sendbird_platform_sdk.model.inline_response20041 import InlineResponse20041
+from sendbird_platform_sdk.model.update_announcement_by_id_response import UpdateAnnouncementByIdResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -818,7 +818,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20041**](InlineResponse20041.md)
+[**UpdateAnnouncementByIdResponse**](UpdateAnnouncementByIdResponse.md)
 
 ### Authorization
 
@@ -839,7 +839,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **view_announcement_by_id**
-> InlineResponse20039Announcements view_announcement_by_id(unique_id)
+> ViewAnnouncementByIdResponse view_announcement_by_id(unique_id)
 
 View an announcement
 
@@ -852,7 +852,7 @@ View an announcement
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import announcements_api
-from sendbird_platform_sdk.model.inline_response20039_announcements import InlineResponse20039Announcements
+from sendbird_platform_sdk.model.view_announcement_by_id_response import ViewAnnouncementByIdResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -896,7 +896,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20039Announcements**](InlineResponse20039Announcements.md)
+[**ViewAnnouncementByIdResponse**](ViewAnnouncementByIdResponse.md)
 
 ### Authorization
 

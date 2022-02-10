@@ -22,20 +22,22 @@ from sendbird_platform_sdk.model_utils import (  # noqa: F401
     validate_and_convert_types
 )
 from sendbird_platform_sdk.model.add_extra_data_to_message_data import AddExtraDataToMessageData
+from sendbird_platform_sdk.model.add_extra_data_to_message_response import AddExtraDataToMessageResponse
 from sendbird_platform_sdk.model.add_reaction_to_a_message_data import AddReactionToAMessageData
+from sendbird_platform_sdk.model.add_reaction_to_a_message_response import AddReactionToAMessageResponse
 from sendbird_platform_sdk.model.gc_mark_all_messages_as_delivered_data import GcMarkAllMessagesAsDeliveredData
+from sendbird_platform_sdk.model.gc_mark_all_messages_as_delivered_response import GcMarkAllMessagesAsDeliveredResponse
 from sendbird_platform_sdk.model.gc_mark_all_messages_as_read_data import GcMarkAllMessagesAsReadData
-from sendbird_platform_sdk.model.inline_response20047 import InlineResponse20047
-from sendbird_platform_sdk.model.inline_response20048 import InlineResponse20048
-from sendbird_platform_sdk.model.inline_response20049 import InlineResponse20049
-from sendbird_platform_sdk.model.inline_response20050 import InlineResponse20050
-from sendbird_platform_sdk.model.inline_response20052 import InlineResponse20052
-from sendbird_platform_sdk.model.inline_response20053 import InlineResponse20053
-from sendbird_platform_sdk.model.inline_response20054 import InlineResponse20054
+from sendbird_platform_sdk.model.gc_view_number_of_each_members_unread_messages_response import GcViewNumberOfEachMembersUnreadMessagesResponse
+from sendbird_platform_sdk.model.list_messages_response import ListMessagesResponse
+from sendbird_platform_sdk.model.list_reactions_of_message_response import ListReactionsOfMessageResponse
+from sendbird_platform_sdk.model.remove_reaction_from_a_message_response import RemoveReactionFromAMessageResponse
 from sendbird_platform_sdk.model.send_bird_message_response import SendBirdMessageResponse
 from sendbird_platform_sdk.model.send_message_data import SendMessageData
 from sendbird_platform_sdk.model.update_extra_data_in_message_data import UpdateExtraDataInMessageData
+from sendbird_platform_sdk.model.update_extra_data_in_message_response import UpdateExtraDataInMessageResponse
 from sendbird_platform_sdk.model.update_message_by_id_data import UpdateMessageByIdData
+from sendbird_platform_sdk.model.view_total_number_of_messages_in_channel_response import ViewTotalNumberOfMessagesInChannelResponse
 
 
 class MessagesApi(object):
@@ -51,7 +53,7 @@ class MessagesApi(object):
         self.api_client = api_client
         self.add_extra_data_to_message_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20054,),
+                'response_type': (AddExtraDataToMessageResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/{channel_type}/{channel_url}/messages/{message_id}/sorted_metaarray',
                 'operation_id': 'add_extra_data_to_message',
@@ -123,7 +125,7 @@ class MessagesApi(object):
         )
         self.add_reaction_to_a_message_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20053,),
+                'response_type': (AddReactionToAMessageResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/{channel_type}/{channel_url}/messages/{message_id}/reactions',
                 'operation_id': 'add_reaction_to_a_message',
@@ -259,7 +261,7 @@ class MessagesApi(object):
         )
         self.gc_mark_all_messages_as_delivered_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20050,),
+                'response_type': (GcMarkAllMessagesAsDeliveredResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/group_channels/{channel_url}/messages/mark_as_delivered',
                 'operation_id': 'gc_mark_all_messages_as_delivered',
@@ -377,7 +379,7 @@ class MessagesApi(object):
         )
         self.gc_view_number_of_each_members_unread_messages_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20049,),
+                'response_type': (GcViewNumberOfEachMembersUnreadMessagesResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/group_channels/{channel_url}/messages/unread_count',
                 'operation_id': 'gc_view_number_of_each_members_unread_messages',
@@ -436,7 +438,7 @@ class MessagesApi(object):
         )
         self.list_messages_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20047,),
+                'response_type': (ListMessagesResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/{channel_type}/{channel_url}/messages',
                 'operation_id': 'list_messages',
@@ -588,7 +590,7 @@ class MessagesApi(object):
         )
         self.list_reactions_of_message_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20052,),
+                'response_type': (ListReactionsOfMessageResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/{channel_type}/{channel_url}/messages/{message_id}/reactions',
                 'operation_id': 'list_reactions_of_message',
@@ -729,7 +731,7 @@ class MessagesApi(object):
         )
         self.remove_reaction_from_a_message_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20053,),
+                'response_type': (RemoveReactionFromAMessageResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/{channel_type}/{channel_url}/messages/{message_id}/reactions',
                 'operation_id': 'remove_reaction_from_a_message',
@@ -943,7 +945,7 @@ class MessagesApi(object):
         )
         self.update_extra_data_in_message_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20054,),
+                'response_type': (UpdateExtraDataInMessageResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/{channel_type}/{channel_url}/messages/{message_id}/sorted_metaarray',
                 'operation_id': 'update_extra_data_in_message',
@@ -1163,7 +1165,7 @@ class MessagesApi(object):
         )
         self.view_total_number_of_messages_in_channel_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20048,),
+                'response_type': (ViewTotalNumberOfMessagesInChannelResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/{channel_type}/{channel_url}/messages/total_count',
                 'operation_id': 'view_total_number_of_messages_in_channel',
@@ -1270,7 +1272,7 @@ class MessagesApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20054
+            AddExtraDataToMessageResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -1351,7 +1353,7 @@ class MessagesApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20053
+            AddReactionToAMessageResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -1508,7 +1510,7 @@ class MessagesApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20050
+            GcMarkAllMessagesAsDeliveredResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -1654,7 +1656,7 @@ class MessagesApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20049
+            GcViewNumberOfEachMembersUnreadMessagesResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -1748,7 +1750,7 @@ class MessagesApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20047
+            ListMessagesResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -1831,7 +1833,7 @@ class MessagesApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20052
+            ListReactionsOfMessageResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -1994,7 +1996,7 @@ class MessagesApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20053
+            RemoveReactionFromAMessageResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2233,7 +2235,7 @@ class MessagesApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20054
+            UpdateExtraDataInMessageResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2474,7 +2476,7 @@ class MessagesApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20048
+            ViewTotalNumberOfMessagesInChannelResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """

@@ -86,7 +86,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_gdpr_requests**
-> InlineResponse20068 list_gdpr_requests()
+> ListGdprRequestsResponse list_gdpr_requests()
 
 List GDPR requests
 
@@ -99,7 +99,7 @@ List GDPR requests
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import data_privacy_api
-from sendbird_platform_sdk.model.inline_response20068 import InlineResponse20068
+from sendbird_platform_sdk.model.list_gdpr_requests_response import ListGdprRequestsResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -137,7 +137,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20068**](InlineResponse20068.md)
+[**ListGdprRequestsResponse**](ListGdprRequestsResponse.md)
 
 ### Authorization
 
@@ -158,7 +158,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **register_gdpr_request**
-> InlineResponse20069 register_gdpr_request()
+> RegisterGdprRequestResponse register_gdpr_request()
 
 Register a GDPR request
 
@@ -171,7 +171,7 @@ Register a GDPR request
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import data_privacy_api
-from sendbird_platform_sdk.model.inline_response20069 import InlineResponse20069
+from sendbird_platform_sdk.model.register_gdpr_request_response import RegisterGdprRequestResponse
 from sendbird_platform_sdk.model.register_gdpr_request_data import RegisterGdprRequestData
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
@@ -215,7 +215,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20069**](InlineResponse20069.md)
+[**RegisterGdprRequestResponse**](RegisterGdprRequestResponse.md)
 
 ### Authorization
 
@@ -236,7 +236,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **view_gdpr_request_by_id**
-> InlineResponse20068Requests view_gdpr_request_by_id(request_id)
+> ViewGdprRequestByIdResponse view_gdpr_request_by_id(request_id)
 
 View a GDPR request
 
@@ -249,7 +249,7 @@ View a GDPR request
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import data_privacy_api
-from sendbird_platform_sdk.model.inline_response20068_requests import InlineResponse20068Requests
+from sendbird_platform_sdk.model.view_gdpr_request_by_id_response import ViewGdprRequestByIdResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -293,7 +293,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20068Requests**](InlineResponse20068Requests.md)
+[**ViewGdprRequestByIdResponse**](ViewGdprRequestByIdResponse.md)
 
 ### Authorization
 

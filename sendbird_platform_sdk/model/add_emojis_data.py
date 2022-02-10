@@ -83,8 +83,6 @@ class AddEmojisData(ModelNormal):
         return {
             'emoji_category_id': (int,),  # noqa: E501
             'emojis': ([str],),  # noqa: E501
-            'emoji_key': (str,),  # noqa: E501
-            'emoji_url': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -95,8 +93,6 @@ class AddEmojisData(ModelNormal):
     attribute_map = {
         'emoji_category_id': 'emoji_category_id',  # noqa: E501
         'emojis': 'emojis',  # noqa: E501
-        'emoji_key': '(emoji).key',  # noqa: E501
-        'emoji_url': '(emoji).url',  # noqa: E501
     }
 
     read_only_vars = {
@@ -106,14 +102,12 @@ class AddEmojisData(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, emoji_category_id, emojis, emoji_key, emoji_url, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, emoji_category_id, emojis, *args, **kwargs):  # noqa: E501
         """AddEmojisData - a model defined in OpenAPI
 
         Args:
             emoji_category_id (int): Specifies the unique ID of the emoji category that a list of new emojis belong to.
             emojis ([str]): Specifies a list of one or more new emojis to register.
-            emoji_key (str): Specifies the string key of each new emoji.
-            emoji_url (str): Specifies the image URL of each new emoji.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -175,8 +169,6 @@ class AddEmojisData(ModelNormal):
 
         self.emoji_category_id = emoji_category_id
         self.emojis = emojis
-        self.emoji_key = emoji_key
-        self.emoji_url = emoji_url
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -197,14 +189,12 @@ class AddEmojisData(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, emoji_category_id, emojis, emoji_key, emoji_url, *args, **kwargs):  # noqa: E501
+    def __init__(self, emoji_category_id, emojis, *args, **kwargs):  # noqa: E501
         """AddEmojisData - a model defined in OpenAPI
 
         Args:
             emoji_category_id (int): Specifies the unique ID of the emoji category that a list of new emojis belong to.
             emojis ([str]): Specifies a list of one or more new emojis to register.
-            emoji_key (str): Specifies the string key of each new emoji.
-            emoji_url (str): Specifies the image URL of each new emoji.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -264,8 +254,6 @@ class AddEmojisData(ModelNormal):
 
         self.emoji_category_id = emoji_category_id
         self.emojis = emojis
-        self.emoji_key = emoji_key
-        self.emoji_url = emoji_url
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

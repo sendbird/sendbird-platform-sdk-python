@@ -23,7 +23,7 @@ Method | HTTP request | Description
 
 
 # **add_extra_data_to_message**
-> InlineResponse20054 add_extra_data_to_message(channel_type, channel_url, message_id)
+> AddExtraDataToMessageResponse add_extra_data_to_message(channel_type, channel_url, message_id)
 
 Add extra data to a message
 
@@ -36,7 +36,7 @@ Add extra data to a message
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import messages_api
-from sendbird_platform_sdk.model.inline_response20054 import InlineResponse20054
+from sendbird_platform_sdk.model.add_extra_data_to_message_response import AddExtraDataToMessageResponse
 from sendbird_platform_sdk.model.add_extra_data_to_message_data import AddExtraDataToMessageData
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
@@ -59,7 +59,6 @@ with sendbird_platform_sdk.ApiClient() as api_client:
         channel_url="channel_url_example",
         message_id=1,
         sorted_metaarray="sorted_metaarray_example",
-        metaarray="metaarray_example",
     ) # AddExtraDataToMessageData |  (optional)
 
     # example passing only required values which don't have defaults set
@@ -93,7 +92,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20054**](InlineResponse20054.md)
+[**AddExtraDataToMessageResponse**](AddExtraDataToMessageResponse.md)
 
 ### Authorization
 
@@ -114,7 +113,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **add_reaction_to_a_message**
-> InlineResponse20053 add_reaction_to_a_message(channel_type, channel_url, message_id)
+> AddReactionToAMessageResponse add_reaction_to_a_message(channel_type, channel_url, message_id)
 
 Add a reaction to a message
 
@@ -127,8 +126,8 @@ Add a reaction to a message
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import messages_api
-from sendbird_platform_sdk.model.inline_response20053 import InlineResponse20053
 from sendbird_platform_sdk.model.add_reaction_to_a_message_data import AddReactionToAMessageData
+from sendbird_platform_sdk.model.add_reaction_to_a_message_response import AddReactionToAMessageResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -184,7 +183,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20053**](InlineResponse20053.md)
+[**AddReactionToAMessageResponse**](AddReactionToAMessageResponse.md)
 
 ### Authorization
 
@@ -284,7 +283,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **gc_mark_all_messages_as_delivered**
-> InlineResponse20050 gc_mark_all_messages_as_delivered(channel_url)
+> GcMarkAllMessagesAsDeliveredResponse gc_mark_all_messages_as_delivered(channel_url)
 
 Mark all messages as delivered
 
@@ -298,7 +297,7 @@ import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import messages_api
 from sendbird_platform_sdk.model.gc_mark_all_messages_as_delivered_data import GcMarkAllMessagesAsDeliveredData
-from sendbird_platform_sdk.model.inline_response20050 import InlineResponse20050
+from sendbird_platform_sdk.model.gc_mark_all_messages_as_delivered_response import GcMarkAllMessagesAsDeliveredResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -348,7 +347,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20050**](InlineResponse20050.md)
+[**GcMarkAllMessagesAsDeliveredResponse**](GcMarkAllMessagesAsDeliveredResponse.md)
 
 ### Authorization
 
@@ -451,7 +450,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **gc_view_number_of_each_members_unread_messages**
-> InlineResponse20049 gc_view_number_of_each_members_unread_messages(channel_url)
+> GcViewNumberOfEachMembersUnreadMessagesResponse gc_view_number_of_each_members_unread_messages(channel_url)
 
 View number of each member's unread messages
 
@@ -464,7 +463,7 @@ View number of each member's unread messages
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import messages_api
-from sendbird_platform_sdk.model.inline_response20049 import InlineResponse20049
+from sendbird_platform_sdk.model.gc_view_number_of_each_members_unread_messages_response import GcViewNumberOfEachMembersUnreadMessagesResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -510,7 +509,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20049**](InlineResponse20049.md)
+[**GcViewNumberOfEachMembersUnreadMessagesResponse**](GcViewNumberOfEachMembersUnreadMessagesResponse.md)
 
 ### Authorization
 
@@ -531,7 +530,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_messages**
-> InlineResponse20047 list_messages(channel_type, channel_url, message_ts, message_id)
+> ListMessagesResponse list_messages(channel_type, channel_url, message_ts, message_id)
 
 List messages
 
@@ -544,7 +543,7 @@ List messages
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import messages_api
-from sendbird_platform_sdk.model.inline_response20047 import InlineResponse20047
+from sendbird_platform_sdk.model.list_messages_response import ListMessagesResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -626,7 +625,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20047**](InlineResponse20047.md)
+[**ListMessagesResponse**](ListMessagesResponse.md)
 
 ### Authorization
 
@@ -647,7 +646,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_reactions_of_message**
-> InlineResponse20052 list_reactions_of_message(channel_type, channel_url, message_id)
+> ListReactionsOfMessageResponse list_reactions_of_message(channel_type, channel_url, message_id)
 
 List reactions of a message
 
@@ -660,7 +659,7 @@ List reactions of a message
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import messages_api
-from sendbird_platform_sdk.model.inline_response20052 import InlineResponse20052
+from sendbird_platform_sdk.model.list_reactions_of_message_response import ListReactionsOfMessageResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -710,7 +709,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20052**](InlineResponse20052.md)
+[**ListReactionsOfMessageResponse**](ListReactionsOfMessageResponse.md)
 
 ### Authorization
 
@@ -814,7 +813,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **remove_reaction_from_a_message**
-> InlineResponse20053 remove_reaction_from_a_message(channel_type, channel_url, message_id)
+> RemoveReactionFromAMessageResponse remove_reaction_from_a_message(channel_type, channel_url, message_id)
 
 Remove a reaction from a message
 
@@ -827,7 +826,7 @@ Remove a reaction from a message
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import messages_api
-from sendbird_platform_sdk.model.inline_response20053 import InlineResponse20053
+from sendbird_platform_sdk.model.remove_reaction_from_a_message_response import RemoveReactionFromAMessageResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -879,7 +878,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20053**](InlineResponse20053.md)
+[**RemoveReactionFromAMessageResponse**](RemoveReactionFromAMessageResponse.md)
 
 ### Authorization
 
@@ -1087,7 +1086,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_extra_data_in_message**
-> InlineResponse20054 update_extra_data_in_message(channel_type, channel_url, message_id)
+> UpdateExtraDataInMessageResponse update_extra_data_in_message(channel_type, channel_url, message_id)
 
 Update extra data in a message
 
@@ -1100,7 +1099,7 @@ Update extra data in a message
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import messages_api
-from sendbird_platform_sdk.model.inline_response20054 import InlineResponse20054
+from sendbird_platform_sdk.model.update_extra_data_in_message_response import UpdateExtraDataInMessageResponse
 from sendbird_platform_sdk.model.update_extra_data_in_message_data import UpdateExtraDataInMessageData
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
@@ -1125,7 +1124,6 @@ with sendbird_platform_sdk.ApiClient() as api_client:
         sorted_metaarray="sorted_metaarray_example",
         mode="mode_example",
         upsert=True,
-        metaarray="metaarray_example",
     ) # UpdateExtraDataInMessageData |  (optional)
 
     # example passing only required values which don't have defaults set
@@ -1159,7 +1157,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20054**](InlineResponse20054.md)
+[**UpdateExtraDataInMessageResponse**](UpdateExtraDataInMessageResponse.md)
 
 ### Authorization
 
@@ -1363,7 +1361,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **view_total_number_of_messages_in_channel**
-> InlineResponse20048 view_total_number_of_messages_in_channel(channel_type, channel_url)
+> ViewTotalNumberOfMessagesInChannelResponse view_total_number_of_messages_in_channel(channel_type, channel_url)
 
 View total number of messages in a channel
 
@@ -1376,7 +1374,7 @@ View total number of messages in a channel
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import messages_api
-from sendbird_platform_sdk.model.inline_response20048 import InlineResponse20048
+from sendbird_platform_sdk.model.view_total_number_of_messages_in_channel_response import ViewTotalNumberOfMessagesInChannelResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1422,7 +1420,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20048**](InlineResponse20048.md)
+[**ViewTotalNumberOfMessagesInChannelResponse**](ViewTotalNumberOfMessagesInChannelResponse.md)
 
 ### Authorization
 

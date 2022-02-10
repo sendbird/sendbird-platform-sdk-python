@@ -146,7 +146,7 @@ class ScheduleAnnouncementData(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, message, message_type, message_user_id, message_content, target_at, target_list, target_channel_type, unique_id, message_custom_type, message_data, create_channel, announcement_group, create_channel_options, create_channel_options_name, create_channel_options_cover_url, create_channel_options_custom_type, create_channel_options_data, create_channel_options_distinct, scheduled_at, cease_at, resume_at, end_at, enable_push, assign_sender_as_channel_inviter, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, message, message_type, message_user_id, message_content, target_at, target_list, target_channel_type, *args, **kwargs):  # noqa: E501
         """ScheduleAnnouncementData - a model defined in OpenAPI
 
         Args:
@@ -157,23 +157,6 @@ class ScheduleAnnouncementData(ModelNormal):
             target_at (str): Specifies the target channels to send the announcement to. Acceptable values are the following: <br/> - sender_all_channels (Default): sends the announcement to all of the sender's group channels.<br />- target_channels: sends the announcement to all target group channels. When the `message.type` of the announcement is ADMM, this is the only valid option. <br /> - target_users_included_channels: sends the announcement to group channels consisting of the sender, target users, and other members. <br/> - target_users_only_channels: sends the announcement to group channels consisting of the sender and target users only.
             target_list ([str]): Specifies an array of one or more target user IDs or target channel URLs to send the announcement to when the target_at is  target_channels, target_users_only_channels, or target_users_included_channels.<br /><br />  When the target_at value is sender_all_channels, this property is not effective.
             target_channel_type (str): Determines which type of group channel to send the announcement to, based on the target_at and target_list. This property is effective only when the target_at is either target_users_only_channels or target_users_included_channels and the target_list is specified. Acceptable values are limited to the following:<br/>- all: send the announcement to all channels that have all target users and the sender in them, regardless of channel type.<br/>- distinct (default): sends this announcement to the distinct channels. Distinct channels continue to use the same existing channels whenever someone attempts to create a new channel with the same members.<br/>- non-distinct: sends this announcement to the non-distinct channels. Non-distinct channels always create a new channel even if there is an existing channel with the same members.<br/><br/> The distinct and non-distinct channels are a subtype of group channels, determined by the [is_distinct](/docs/chat/v3/platform-api/guides/group-channel#2-types-of-a-channel-3-resource-representation) property.
-            unique_id (str): Specifies the unique ID of the new announcement. The unique_id will be automatically created unless specified.
-            message_custom_type (str): Specifies the custom message type of the message of the new announcement.
-            message_data (str): Specifies additional message information such as custom font size, font type or `JSON` formatted string.
-            create_channel (bool): Determines whether to create a new channel if there is no existing channel that matches with the target options including target_at and target_list. By specifying the create_channel_options, you can configure the properties of newly created channels. (Default: false)
-            announcement_group (str): Specifies the announcement group that the new announcement belongs to.<br/> <br/> This property is effective only when the target_at is either target_users_only_channels or target_users_included_channels.
-            create_channel_options (str): A newly created channel configuration.
-            create_channel_options_name (str): Specifies the name of channels to be created. (Default: Group Channel)
-            create_channel_options_cover_url (str): Specifies the URL of the cover image for the new channels.
-            create_channel_options_custom_type (str): Specifies the custom channel type of the new channels.
-            create_channel_options_data (str): Specifies additional channel information such as a long description of the channel or `JSON` formatted string.
-            create_channel_options_distinct (str): Determines whether to create a [distinct](/docs/chat/v3/platform-api/guides/channel-types#2-group-channel) channel. (Default: true)
-            scheduled_at (int): Specifies the time to start the announcement, in [Unix milliseconds](/docs/chat/v3/platform-api/guides/miscellaneous#2-timestamps) format. If not specified, the default is the timestamp of when the request was delivered to Sendbird server. (Default: current timestamp)
-            cease_at (str): Specifies the time to temporarily put the announcement on hold in UTC. The string is represented in HHMM format. This should be specified in conjunction with the resume_at property.<br/><br/> If both the cease_at and resume_at are not specified, Sendbird server starts to send the announcement at the time of the scheduled_at above.
-            resume_at (str): Specifies the time to automatically resume the on-hold announcement in UTC. The string is represented in HHMM format. This should be specified in conjunction with the cease_at property above.<br/><br/> If both the cease_at and resume_at are not specified, Sendbird server starts to send the announcement at the time of the scheduled_at above.
-            end_at (int): Specifies the time to permanently end the announcement, in [Unix milliseconds](/docs/chat/v3/platform-api/guides/miscellaneous##2-timestamps) format. If this property is specified, the announcement ends even when the announcement is not sent to all its targets. <br/><br/> For the announcement to run safely, the end_at time should be set at least 10 minutes later than the scheduled_at time.
-            enable_push (bool): Determines whether to turn on push notification for the announcement. If set to true, push notifications will be sent for the announcement. (Default: true)
-            assign_sender_as_channel_inviter (bool): Determines whether to assign an announcement sender as an inviter of the newly created channels. (Default: false)
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -206,6 +189,23 @@ class ScheduleAnnouncementData(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            unique_id (str): Specifies the unique ID of the new announcement. The unique_id will be automatically created unless specified.. [optional]  # noqa: E501
+            message_custom_type (str): Specifies the custom message type of the message of the new announcement.. [optional]  # noqa: E501
+            message_data (str): Specifies additional message information such as custom font size, font type or `JSON` formatted string.. [optional]  # noqa: E501
+            create_channel (bool): Determines whether to create a new channel if there is no existing channel that matches with the target options including target_at and target_list. By specifying the create_channel_options, you can configure the properties of newly created channels. (Default: false). [optional]  # noqa: E501
+            announcement_group (str): Specifies the announcement group that the new announcement belongs to.<br/> <br/> This property is effective only when the target_at is either target_users_only_channels or target_users_included_channels.. [optional]  # noqa: E501
+            create_channel_options (str): A newly created channel configuration.. [optional]  # noqa: E501
+            create_channel_options_name (str): Specifies the name of channels to be created. (Default: Group Channel). [optional]  # noqa: E501
+            create_channel_options_cover_url (str): Specifies the URL of the cover image for the new channels.. [optional]  # noqa: E501
+            create_channel_options_custom_type (str): Specifies the custom channel type of the new channels.. [optional]  # noqa: E501
+            create_channel_options_data (str): Specifies additional channel information such as a long description of the channel or `JSON` formatted string.. [optional]  # noqa: E501
+            create_channel_options_distinct (str): Determines whether to create a [distinct](/docs/chat/v3/platform-api/guides/channel-types#2-group-channel) channel. (Default: true). [optional]  # noqa: E501
+            scheduled_at (int): Specifies the time to start the announcement, in [Unix milliseconds](/docs/chat/v3/platform-api/guides/miscellaneous#2-timestamps) format. If not specified, the default is the timestamp of when the request was delivered to Sendbird server. (Default: current timestamp). [optional]  # noqa: E501
+            cease_at (str): Specifies the time to temporarily put the announcement on hold in UTC. The string is represented in HHMM format. This should be specified in conjunction with the resume_at property.<br/><br/> If both the cease_at and resume_at are not specified, Sendbird server starts to send the announcement at the time of the scheduled_at above.. [optional]  # noqa: E501
+            resume_at (str): Specifies the time to automatically resume the on-hold announcement in UTC. The string is represented in HHMM format. This should be specified in conjunction with the cease_at property above.<br/><br/> If both the cease_at and resume_at are not specified, Sendbird server starts to send the announcement at the time of the scheduled_at above.. [optional]  # noqa: E501
+            end_at (int): Specifies the time to permanently end the announcement, in [Unix milliseconds](/docs/chat/v3/platform-api/guides/miscellaneous##2-timestamps) format. If this property is specified, the announcement ends even when the announcement is not sent to all its targets. <br/><br/> For the announcement to run safely, the end_at time should be set at least 10 minutes later than the scheduled_at time.. [optional]  # noqa: E501
+            enable_push (bool): Determines whether to turn on push notification for the announcement. If set to true, push notifications will be sent for the announcement. (Default: true). [optional]  # noqa: E501
+            assign_sender_as_channel_inviter (bool): Determines whether to assign an announcement sender as an inviter of the newly created channels. (Default: false). [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -240,23 +240,6 @@ class ScheduleAnnouncementData(ModelNormal):
         self.target_at = target_at
         self.target_list = target_list
         self.target_channel_type = target_channel_type
-        self.unique_id = unique_id
-        self.message_custom_type = message_custom_type
-        self.message_data = message_data
-        self.create_channel = create_channel
-        self.announcement_group = announcement_group
-        self.create_channel_options = create_channel_options
-        self.create_channel_options_name = create_channel_options_name
-        self.create_channel_options_cover_url = create_channel_options_cover_url
-        self.create_channel_options_custom_type = create_channel_options_custom_type
-        self.create_channel_options_data = create_channel_options_data
-        self.create_channel_options_distinct = create_channel_options_distinct
-        self.scheduled_at = scheduled_at
-        self.cease_at = cease_at
-        self.resume_at = resume_at
-        self.end_at = end_at
-        self.enable_push = enable_push
-        self.assign_sender_as_channel_inviter = assign_sender_as_channel_inviter
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -277,7 +260,7 @@ class ScheduleAnnouncementData(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, message, message_type, message_user_id, message_content, target_at, target_list, target_channel_type, unique_id, message_custom_type, message_data, create_channel, announcement_group, create_channel_options, create_channel_options_name, create_channel_options_cover_url, create_channel_options_custom_type, create_channel_options_data, create_channel_options_distinct, scheduled_at, cease_at, resume_at, end_at, enable_push, assign_sender_as_channel_inviter, *args, **kwargs):  # noqa: E501
+    def __init__(self, message, message_type, message_user_id, message_content, target_at, target_list, target_channel_type, *args, **kwargs):  # noqa: E501
         """ScheduleAnnouncementData - a model defined in OpenAPI
 
         Args:
@@ -288,23 +271,6 @@ class ScheduleAnnouncementData(ModelNormal):
             target_at (str): Specifies the target channels to send the announcement to. Acceptable values are the following: <br/> - sender_all_channels (Default): sends the announcement to all of the sender's group channels.<br />- target_channels: sends the announcement to all target group channels. When the `message.type` of the announcement is ADMM, this is the only valid option. <br /> - target_users_included_channels: sends the announcement to group channels consisting of the sender, target users, and other members. <br/> - target_users_only_channels: sends the announcement to group channels consisting of the sender and target users only.
             target_list ([str]): Specifies an array of one or more target user IDs or target channel URLs to send the announcement to when the target_at is  target_channels, target_users_only_channels, or target_users_included_channels.<br /><br />  When the target_at value is sender_all_channels, this property is not effective.
             target_channel_type (str): Determines which type of group channel to send the announcement to, based on the target_at and target_list. This property is effective only when the target_at is either target_users_only_channels or target_users_included_channels and the target_list is specified. Acceptable values are limited to the following:<br/>- all: send the announcement to all channels that have all target users and the sender in them, regardless of channel type.<br/>- distinct (default): sends this announcement to the distinct channels. Distinct channels continue to use the same existing channels whenever someone attempts to create a new channel with the same members.<br/>- non-distinct: sends this announcement to the non-distinct channels. Non-distinct channels always create a new channel even if there is an existing channel with the same members.<br/><br/> The distinct and non-distinct channels are a subtype of group channels, determined by the [is_distinct](/docs/chat/v3/platform-api/guides/group-channel#2-types-of-a-channel-3-resource-representation) property.
-            unique_id (str): Specifies the unique ID of the new announcement. The unique_id will be automatically created unless specified.
-            message_custom_type (str): Specifies the custom message type of the message of the new announcement.
-            message_data (str): Specifies additional message information such as custom font size, font type or `JSON` formatted string.
-            create_channel (bool): Determines whether to create a new channel if there is no existing channel that matches with the target options including target_at and target_list. By specifying the create_channel_options, you can configure the properties of newly created channels. (Default: false)
-            announcement_group (str): Specifies the announcement group that the new announcement belongs to.<br/> <br/> This property is effective only when the target_at is either target_users_only_channels or target_users_included_channels.
-            create_channel_options (str): A newly created channel configuration.
-            create_channel_options_name (str): Specifies the name of channels to be created. (Default: Group Channel)
-            create_channel_options_cover_url (str): Specifies the URL of the cover image for the new channels.
-            create_channel_options_custom_type (str): Specifies the custom channel type of the new channels.
-            create_channel_options_data (str): Specifies additional channel information such as a long description of the channel or `JSON` formatted string.
-            create_channel_options_distinct (str): Determines whether to create a [distinct](/docs/chat/v3/platform-api/guides/channel-types#2-group-channel) channel. (Default: true)
-            scheduled_at (int): Specifies the time to start the announcement, in [Unix milliseconds](/docs/chat/v3/platform-api/guides/miscellaneous#2-timestamps) format. If not specified, the default is the timestamp of when the request was delivered to Sendbird server. (Default: current timestamp)
-            cease_at (str): Specifies the time to temporarily put the announcement on hold in UTC. The string is represented in HHMM format. This should be specified in conjunction with the resume_at property.<br/><br/> If both the cease_at and resume_at are not specified, Sendbird server starts to send the announcement at the time of the scheduled_at above.
-            resume_at (str): Specifies the time to automatically resume the on-hold announcement in UTC. The string is represented in HHMM format. This should be specified in conjunction with the cease_at property above.<br/><br/> If both the cease_at and resume_at are not specified, Sendbird server starts to send the announcement at the time of the scheduled_at above.
-            end_at (int): Specifies the time to permanently end the announcement, in [Unix milliseconds](/docs/chat/v3/platform-api/guides/miscellaneous##2-timestamps) format. If this property is specified, the announcement ends even when the announcement is not sent to all its targets. <br/><br/> For the announcement to run safely, the end_at time should be set at least 10 minutes later than the scheduled_at time.
-            enable_push (bool): Determines whether to turn on push notification for the announcement. If set to true, push notifications will be sent for the announcement. (Default: true)
-            assign_sender_as_channel_inviter (bool): Determines whether to assign an announcement sender as an inviter of the newly created channels. (Default: false)
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -337,6 +303,23 @@ class ScheduleAnnouncementData(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            unique_id (str): Specifies the unique ID of the new announcement. The unique_id will be automatically created unless specified.. [optional]  # noqa: E501
+            message_custom_type (str): Specifies the custom message type of the message of the new announcement.. [optional]  # noqa: E501
+            message_data (str): Specifies additional message information such as custom font size, font type or `JSON` formatted string.. [optional]  # noqa: E501
+            create_channel (bool): Determines whether to create a new channel if there is no existing channel that matches with the target options including target_at and target_list. By specifying the create_channel_options, you can configure the properties of newly created channels. (Default: false). [optional]  # noqa: E501
+            announcement_group (str): Specifies the announcement group that the new announcement belongs to.<br/> <br/> This property is effective only when the target_at is either target_users_only_channels or target_users_included_channels.. [optional]  # noqa: E501
+            create_channel_options (str): A newly created channel configuration.. [optional]  # noqa: E501
+            create_channel_options_name (str): Specifies the name of channels to be created. (Default: Group Channel). [optional]  # noqa: E501
+            create_channel_options_cover_url (str): Specifies the URL of the cover image for the new channels.. [optional]  # noqa: E501
+            create_channel_options_custom_type (str): Specifies the custom channel type of the new channels.. [optional]  # noqa: E501
+            create_channel_options_data (str): Specifies additional channel information such as a long description of the channel or `JSON` formatted string.. [optional]  # noqa: E501
+            create_channel_options_distinct (str): Determines whether to create a [distinct](/docs/chat/v3/platform-api/guides/channel-types#2-group-channel) channel. (Default: true). [optional]  # noqa: E501
+            scheduled_at (int): Specifies the time to start the announcement, in [Unix milliseconds](/docs/chat/v3/platform-api/guides/miscellaneous#2-timestamps) format. If not specified, the default is the timestamp of when the request was delivered to Sendbird server. (Default: current timestamp). [optional]  # noqa: E501
+            cease_at (str): Specifies the time to temporarily put the announcement on hold in UTC. The string is represented in HHMM format. This should be specified in conjunction with the resume_at property.<br/><br/> If both the cease_at and resume_at are not specified, Sendbird server starts to send the announcement at the time of the scheduled_at above.. [optional]  # noqa: E501
+            resume_at (str): Specifies the time to automatically resume the on-hold announcement in UTC. The string is represented in HHMM format. This should be specified in conjunction with the cease_at property above.<br/><br/> If both the cease_at and resume_at are not specified, Sendbird server starts to send the announcement at the time of the scheduled_at above.. [optional]  # noqa: E501
+            end_at (int): Specifies the time to permanently end the announcement, in [Unix milliseconds](/docs/chat/v3/platform-api/guides/miscellaneous##2-timestamps) format. If this property is specified, the announcement ends even when the announcement is not sent to all its targets. <br/><br/> For the announcement to run safely, the end_at time should be set at least 10 minutes later than the scheduled_at time.. [optional]  # noqa: E501
+            enable_push (bool): Determines whether to turn on push notification for the announcement. If set to true, push notifications will be sent for the announcement. (Default: true). [optional]  # noqa: E501
+            assign_sender_as_channel_inviter (bool): Determines whether to assign an announcement sender as an inviter of the newly created channels. (Default: false). [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -369,23 +352,6 @@ class ScheduleAnnouncementData(ModelNormal):
         self.target_at = target_at
         self.target_list = target_list
         self.target_channel_type = target_channel_type
-        self.unique_id = unique_id
-        self.message_custom_type = message_custom_type
-        self.message_data = message_data
-        self.create_channel = create_channel
-        self.announcement_group = announcement_group
-        self.create_channel_options = create_channel_options
-        self.create_channel_options_name = create_channel_options_name
-        self.create_channel_options_cover_url = create_channel_options_cover_url
-        self.create_channel_options_custom_type = create_channel_options_custom_type
-        self.create_channel_options_data = create_channel_options_data
-        self.create_channel_options_distinct = create_channel_options_distinct
-        self.scheduled_at = scheduled_at
-        self.cease_at = cease_at
-        self.resume_at = resume_at
-        self.end_at = end_at
-        self.enable_push = enable_push
-        self.assign_sender_as_channel_inviter = assign_sender_as_channel_inviter
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

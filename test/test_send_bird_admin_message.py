@@ -12,7 +12,7 @@ import sys
 import unittest
 
 import sendbird_platform_sdk
-from sendbird_platform_sdk.model.object import Object
+from sendbird_platform_sdk.model.sb_object import SBObject
 from sendbird_platform_sdk.model.send_bird_apple_critical_alert_options import SendBirdAppleCriticalAlertOptions
 from sendbird_platform_sdk.model.send_bird_message_meta_array import SendBirdMessageMetaArray
 from sendbird_platform_sdk.model.send_bird_message_response import SendBirdMessageResponse
@@ -20,7 +20,7 @@ from sendbird_platform_sdk.model.send_bird_og_meta_data import SendBirdOGMetaDat
 from sendbird_platform_sdk.model.send_bird_reaction import SendBirdReaction
 from sendbird_platform_sdk.model.send_bird_thread_info import SendBirdThreadInfo
 from sendbird_platform_sdk.model.send_bird_user import SendBirdUser
-globals()['Object'] = Object
+globals()['SBObject'] = SBObject
 globals()['SendBirdAppleCriticalAlertOptions'] = SendBirdAppleCriticalAlertOptions
 globals()['SendBirdMessageMetaArray'] = SendBirdMessageMetaArray
 globals()['SendBirdMessageResponse'] = SendBirdMessageResponse

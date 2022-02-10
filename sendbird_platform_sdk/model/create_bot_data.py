@@ -116,7 +116,7 @@ class CreateBotData(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, bot_userid, bot_nickname, bot_profile_url, bot_type, bot_callback_url, is_privacy_mode, enable_mark_as_read, show_member, channel_invitation_preference, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, bot_userid, bot_nickname, bot_profile_url, bot_type, bot_callback_url, is_privacy_mode, *args, **kwargs):  # noqa: E501
         """CreateBotData - a model defined in OpenAPI
 
         Args:
@@ -126,9 +126,6 @@ class CreateBotData(ModelNormal):
             bot_type (str): Specifies the type of the bot that you can specify for categorization. The length is limited to 128 characters.
             bot_callback_url (str): Specifies the server URL where bot is located to receive all events, requests, and data forwarded from an application. For security reasons, it is highly recommended that you use an SSL server. The length is limited to 1,024 characters.
             is_privacy_mode (bool): In the channels of where the bot is a member, determines whether to only forward the messages with the specific conditions to the bot or forword all messages to the bot, for privacy concerns. If set to true, only messages that start with a '/' or mention the bot_userid are forwarded to the bot. If set to false, all messages are forwarded.
-            enable_mark_as_read (bool): Determines whether to mark the bot's message as read upon sending it. (Default: true)
-            show_member (bool): Determines whether to include information about the members of each channel in a callback response. (Default: false)
-            channel_invitation_preference (int):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -161,6 +158,9 @@ class CreateBotData(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            enable_mark_as_read (bool): Determines whether to mark the bot's message as read upon sending it. (Default: true). [optional]  # noqa: E501
+            show_member (bool): Determines whether to include information about the members of each channel in a callback response. (Default: false). [optional]  # noqa: E501
+            channel_invitation_preference (int): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -194,9 +194,6 @@ class CreateBotData(ModelNormal):
         self.bot_type = bot_type
         self.bot_callback_url = bot_callback_url
         self.is_privacy_mode = is_privacy_mode
-        self.enable_mark_as_read = enable_mark_as_read
-        self.show_member = show_member
-        self.channel_invitation_preference = channel_invitation_preference
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -217,7 +214,7 @@ class CreateBotData(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, bot_userid, bot_nickname, bot_profile_url, bot_type, bot_callback_url, is_privacy_mode, enable_mark_as_read, show_member, channel_invitation_preference, *args, **kwargs):  # noqa: E501
+    def __init__(self, bot_userid, bot_nickname, bot_profile_url, bot_type, bot_callback_url, is_privacy_mode, *args, **kwargs):  # noqa: E501
         """CreateBotData - a model defined in OpenAPI
 
         Args:
@@ -227,9 +224,6 @@ class CreateBotData(ModelNormal):
             bot_type (str): Specifies the type of the bot that you can specify for categorization. The length is limited to 128 characters.
             bot_callback_url (str): Specifies the server URL where bot is located to receive all events, requests, and data forwarded from an application. For security reasons, it is highly recommended that you use an SSL server. The length is limited to 1,024 characters.
             is_privacy_mode (bool): In the channels of where the bot is a member, determines whether to only forward the messages with the specific conditions to the bot or forword all messages to the bot, for privacy concerns. If set to true, only messages that start with a '/' or mention the bot_userid are forwarded to the bot. If set to false, all messages are forwarded.
-            enable_mark_as_read (bool): Determines whether to mark the bot's message as read upon sending it. (Default: true)
-            show_member (bool): Determines whether to include information about the members of each channel in a callback response. (Default: false)
-            channel_invitation_preference (int):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -262,6 +256,9 @@ class CreateBotData(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            enable_mark_as_read (bool): Determines whether to mark the bot's message as read upon sending it. (Default: true). [optional]  # noqa: E501
+            show_member (bool): Determines whether to include information about the members of each channel in a callback response. (Default: false). [optional]  # noqa: E501
+            channel_invitation_preference (int): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -293,9 +290,6 @@ class CreateBotData(ModelNormal):
         self.bot_type = bot_type
         self.bot_callback_url = bot_callback_url
         self.is_privacy_mode = is_privacy_mode
-        self.enable_mark_as_read = enable_mark_as_read
-        self.show_member = show_member
-        self.channel_invitation_preference = channel_invitation_preference
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

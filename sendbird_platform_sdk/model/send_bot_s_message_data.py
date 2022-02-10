@@ -116,19 +116,12 @@ class SendBotSMessageData(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, message, channel_url, custom_type, data, send_push, mentioned, mark_as_read, dedup_id, created_at, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, message, channel_url, *args, **kwargs):  # noqa: E501
         """SendBotSMessageData - a model defined in OpenAPI
 
         Args:
             message (str): Specifies the content of the message sent by the bot.
             channel_url (str): Specifies the URL of the channel where the message is sent to.
-            custom_type (str): Specifies a custom message type which is used for message grouping. The length is limited to 128 characters.
-            data (str): Specifies additional message information such as custom font size, font type or `JSON` formatted string.
-            send_push (bool): Determines whether to send a push notification for the message to the members of the channel (Default: true)
-            mentioned ([int]): Specifies an array of one or more IDs of the users who get a notification for the message.
-            mark_as_read (bool): Determines whether to mark the message as read for the bot. If set to false, the bot's unread_count and read_receipt remain unchanged after the message is sent. (Default: true)
-            dedup_id (str): Specifies the unique ID for the message to prevent the same message data from getting sent to the channel.
-            created_at (int): Specifies the time that the message was sent, in [Unix milliseconds](/docs/chat/v3/platform-api/guides/miscellaneous#2-timestamps) format.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -161,6 +154,13 @@ class SendBotSMessageData(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            custom_type (str): Specifies a custom message type which is used for message grouping. The length is limited to 128 characters.. [optional]  # noqa: E501
+            data (str): Specifies additional message information such as custom font size, font type or `JSON` formatted string.. [optional]  # noqa: E501
+            send_push (bool): Determines whether to send a push notification for the message to the members of the channel (Default: true). [optional]  # noqa: E501
+            mentioned ([int]): Specifies an array of one or more IDs of the users who get a notification for the message.. [optional]  # noqa: E501
+            mark_as_read (bool): Determines whether to mark the message as read for the bot. If set to false, the bot's unread_count and read_receipt remain unchanged after the message is sent. (Default: true). [optional]  # noqa: E501
+            dedup_id (str): Specifies the unique ID for the message to prevent the same message data from getting sent to the channel.. [optional]  # noqa: E501
+            created_at (int): Specifies the time that the message was sent, in [Unix milliseconds](/docs/chat/v3/platform-api/guides/miscellaneous#2-timestamps) format.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -190,13 +190,6 @@ class SendBotSMessageData(ModelNormal):
 
         self.message = message
         self.channel_url = channel_url
-        self.custom_type = custom_type
-        self.data = data
-        self.send_push = send_push
-        self.mentioned = mentioned
-        self.mark_as_read = mark_as_read
-        self.dedup_id = dedup_id
-        self.created_at = created_at
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -217,19 +210,12 @@ class SendBotSMessageData(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, message, channel_url, custom_type, data, send_push, mentioned, mark_as_read, dedup_id, created_at, *args, **kwargs):  # noqa: E501
+    def __init__(self, message, channel_url, *args, **kwargs):  # noqa: E501
         """SendBotSMessageData - a model defined in OpenAPI
 
         Args:
             message (str): Specifies the content of the message sent by the bot.
             channel_url (str): Specifies the URL of the channel where the message is sent to.
-            custom_type (str): Specifies a custom message type which is used for message grouping. The length is limited to 128 characters.
-            data (str): Specifies additional message information such as custom font size, font type or `JSON` formatted string.
-            send_push (bool): Determines whether to send a push notification for the message to the members of the channel (Default: true)
-            mentioned ([int]): Specifies an array of one or more IDs of the users who get a notification for the message.
-            mark_as_read (bool): Determines whether to mark the message as read for the bot. If set to false, the bot's unread_count and read_receipt remain unchanged after the message is sent. (Default: true)
-            dedup_id (str): Specifies the unique ID for the message to prevent the same message data from getting sent to the channel.
-            created_at (int): Specifies the time that the message was sent, in [Unix milliseconds](/docs/chat/v3/platform-api/guides/miscellaneous#2-timestamps) format.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -262,6 +248,13 @@ class SendBotSMessageData(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            custom_type (str): Specifies a custom message type which is used for message grouping. The length is limited to 128 characters.. [optional]  # noqa: E501
+            data (str): Specifies additional message information such as custom font size, font type or `JSON` formatted string.. [optional]  # noqa: E501
+            send_push (bool): Determines whether to send a push notification for the message to the members of the channel (Default: true). [optional]  # noqa: E501
+            mentioned ([int]): Specifies an array of one or more IDs of the users who get a notification for the message.. [optional]  # noqa: E501
+            mark_as_read (bool): Determines whether to mark the message as read for the bot. If set to false, the bot's unread_count and read_receipt remain unchanged after the message is sent. (Default: true). [optional]  # noqa: E501
+            dedup_id (str): Specifies the unique ID for the message to prevent the same message data from getting sent to the channel.. [optional]  # noqa: E501
+            created_at (int): Specifies the time that the message was sent, in [Unix milliseconds](/docs/chat/v3/platform-api/guides/miscellaneous#2-timestamps) format.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -289,13 +282,6 @@ class SendBotSMessageData(ModelNormal):
 
         self.message = message
         self.channel_url = channel_url
-        self.custom_type = custom_type
-        self.data = data
-        self.send_push = send_push
-        self.mentioned = mentioned
-        self.mark_as_read = mark_as_read
-        self.dedup_id = dedup_id
-        self.created_at = created_at
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

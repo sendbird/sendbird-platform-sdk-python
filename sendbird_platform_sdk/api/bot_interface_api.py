@@ -22,13 +22,15 @@ from sendbird_platform_sdk.model_utils import (  # noqa: F401
     validate_and_convert_types
 )
 from sendbird_platform_sdk.model.create_bot_data import CreateBotData
-from sendbird_platform_sdk.model.inline_response20065 import InlineResponse20065
-from sendbird_platform_sdk.model.inline_response20065_bots import InlineResponse20065Bots
+from sendbird_platform_sdk.model.create_bot_response import CreateBotResponse
 from sendbird_platform_sdk.model.join_channels_data import JoinChannelsData
+from sendbird_platform_sdk.model.list_bots_response import ListBotsResponse
 from sendbird_platform_sdk.model.send_bird_group_channel_collection import SendBirdGroupChannelCollection
 from sendbird_platform_sdk.model.send_bird_message_response import SendBirdMessageResponse
 from sendbird_platform_sdk.model.send_bot_s_message_data import SendBotSMessageData
 from sendbird_platform_sdk.model.update_bot_by_id_data import UpdateBotByIdData
+from sendbird_platform_sdk.model.update_bot_by_id_response import UpdateBotByIdResponse
+from sendbird_platform_sdk.model.view_bot_by_id_response import ViewBotByIdResponse
 
 
 class BotInterfaceApi(object):
@@ -44,7 +46,7 @@ class BotInterfaceApi(object):
         self.api_client = api_client
         self.create_bot_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20065Bots,),
+                'response_type': (CreateBotResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/bots',
                 'operation_id': 'create_bot',
@@ -324,7 +326,7 @@ class BotInterfaceApi(object):
         )
         self.list_bots_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20065,),
+                'response_type': (ListBotsResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/bots',
                 'operation_id': 'list_bots',
@@ -441,7 +443,7 @@ class BotInterfaceApi(object):
         )
         self.update_bot_by_id_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20065Bots,),
+                'response_type': (UpdateBotByIdResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/bots/{bot_userid}',
                 'operation_id': 'update_bot_by_id',
@@ -501,7 +503,7 @@ class BotInterfaceApi(object):
         )
         self.view_bot_by_id_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20065Bots,),
+                'response_type': (ViewBotByIdResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/bots/{bot_userid}',
                 'operation_id': 'view_bot_by_id',
@@ -595,7 +597,7 @@ class BotInterfaceApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20065Bots
+            CreateBotResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -958,7 +960,7 @@ class BotInterfaceApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20065
+            ListBotsResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -1102,7 +1104,7 @@ class BotInterfaceApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20065Bots
+            UpdateBotByIdResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -1174,7 +1176,7 @@ class BotInterfaceApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20065Bots
+            ViewBotByIdResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """

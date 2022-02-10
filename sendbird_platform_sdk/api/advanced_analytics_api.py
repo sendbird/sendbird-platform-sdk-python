@@ -21,7 +21,7 @@ from sendbird_platform_sdk.model_utils import (  # noqa: F401
     none_type,
     validate_and_convert_types
 )
-from sendbird_platform_sdk.model.inline_response20062 import InlineResponse20062
+from sendbird_platform_sdk.model.retrieve_advanced_analytics_metrics_response import RetrieveAdvancedAnalyticsMetricsResponse
 
 
 class AdvancedAnalyticsApi(object):
@@ -37,7 +37,7 @@ class AdvancedAnalyticsApi(object):
         self.api_client = api_client
         self.retrieve_advanced_analytics_metrics_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20062,),
+                'response_type': (RetrieveAdvancedAnalyticsMetricsResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/statistics/metric',
                 'operation_id': 'retrieve_advanced_analytics_metrics',
@@ -123,7 +123,7 @@ class AdvancedAnalyticsApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20062
+            RetrieveAdvancedAnalyticsMetricsResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """

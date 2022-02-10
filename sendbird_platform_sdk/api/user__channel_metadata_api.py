@@ -23,14 +23,15 @@ from sendbird_platform_sdk.model_utils import (  # noqa: F401
 )
 from sendbird_platform_sdk.model.create_channel_metacounter_data import CreateChannelMetacounterData
 from sendbird_platform_sdk.model.create_channel_metadata_data import CreateChannelMetadataData
+from sendbird_platform_sdk.model.create_channel_metadata_response import CreateChannelMetadataResponse
 from sendbird_platform_sdk.model.create_user_metadata_data import CreateUserMetadataData
-from sendbird_platform_sdk.model.inline_response20047_user_metadata import InlineResponse20047UserMetadata
-from sendbird_platform_sdk.model.inline_response20060 import InlineResponse20060
-from sendbird_platform_sdk.model.inline_response20061 import InlineResponse20061
+from sendbird_platform_sdk.model.create_user_metadata_response import CreateUserMetadataResponse
 from sendbird_platform_sdk.model.send_bird_additional_properties import SendBirdAdditionalProperties
 from sendbird_platform_sdk.model.update_channel_metacounter_data import UpdateChannelMetacounterData
 from sendbird_platform_sdk.model.update_channel_metadata_data import UpdateChannelMetadataData
 from sendbird_platform_sdk.model.update_user_metadata_data import UpdateUserMetadataData
+from sendbird_platform_sdk.model.update_user_metadata_response import UpdateUserMetadataResponse
+from sendbird_platform_sdk.model.view_user_metadata_response import ViewUserMetadataResponse
 
 
 class UserChannelMetadataApi(object):
@@ -46,7 +47,7 @@ class UserChannelMetadataApi(object):
         self.api_client = api_client
         self.create_channel_metacounter_endpoint = _Endpoint(
             settings={
-                'response_type': ({str: (SendBirdAdditionalProperties,)},),
+                'response_type': (CreateChannelMetacounterResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/{channel_type}/{channel_url}/metacounter',
                 'operation_id': 'create_channel_metacounter',
@@ -112,7 +113,7 @@ class UserChannelMetadataApi(object):
         )
         self.create_channel_metadata_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20061,),
+                'response_type': (CreateChannelMetadataResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/{channel_type}/{channel_url}/metadata',
                 'operation_id': 'create_channel_metadata',
@@ -178,7 +179,7 @@ class UserChannelMetadataApi(object):
         )
         self.create_user_metadata_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20047UserMetadata,),
+                'response_type': (CreateUserMetadataResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/users/{user_id}/metadata',
                 'operation_id': 'create_user_metadata',
@@ -602,7 +603,7 @@ class UserChannelMetadataApi(object):
         )
         self.update_channel_metacounter_endpoint = _Endpoint(
             settings={
-                'response_type': ({str: (SendBirdAdditionalProperties,)},),
+                'response_type': (UpdateChannelMetacounterResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/{channel_type}/{channel_url}/metacounter',
                 'operation_id': 'update_channel_metacounter',
@@ -668,7 +669,7 @@ class UserChannelMetadataApi(object):
         )
         self.update_channel_metacounter_by_key_endpoint = _Endpoint(
             settings={
-                'response_type': ({str: (str,)},),
+                'response_type': (UpdateChannelMetacounterByKeyResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/{channel_type}/{channel_url}/metacounter/{key}',
                 'operation_id': 'update_channel_metacounter_by_key',
@@ -740,7 +741,7 @@ class UserChannelMetadataApi(object):
         )
         self.update_channel_metadata_endpoint = _Endpoint(
             settings={
-                'response_type': ({str: (str,)},),
+                'response_type': (UpdateChannelMetadataResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/{channel_type}/{channel_url}/metadata',
                 'operation_id': 'update_channel_metadata',
@@ -806,7 +807,7 @@ class UserChannelMetadataApi(object):
         )
         self.update_channel_metadata_by_key_endpoint = _Endpoint(
             settings={
-                'response_type': ({str: (str,)},),
+                'response_type': (UpdateChannelMetadataByKeyResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/{channel_type}/{channel_url}/metadata/{key}',
                 'operation_id': 'update_channel_metadata_by_key',
@@ -878,7 +879,7 @@ class UserChannelMetadataApi(object):
         )
         self.update_user_metadata_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20060,),
+                'response_type': (UpdateUserMetadataResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/users/{user_id}/metadata',
                 'operation_id': 'update_user_metadata',
@@ -938,7 +939,7 @@ class UserChannelMetadataApi(object):
         )
         self.update_user_metadata_by_key_endpoint = _Endpoint(
             settings={
-                'response_type': ({str: (str,)},),
+                'response_type': (UpdateUserMetadataByKeyResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/users/{user_id}/metadata/{key}',
                 'operation_id': 'update_user_metadata_by_key',
@@ -1004,7 +1005,7 @@ class UserChannelMetadataApi(object):
         )
         self.view_channel_metacounter_endpoint = _Endpoint(
             settings={
-                'response_type': ({str: (SendBirdAdditionalProperties,)},),
+                'response_type': (ViewChannelMetacounterResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/{channel_type}/{channel_url}/metacounter',
                 'operation_id': 'view_channel_metacounter',
@@ -1075,7 +1076,7 @@ class UserChannelMetadataApi(object):
         )
         self.view_channel_metacounter_by_key_endpoint = _Endpoint(
             settings={
-                'response_type': ({str: (SendBirdAdditionalProperties,)},),
+                'response_type': (ViewChannelMetacounterByKeyResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/{channel_type}/{channel_url}/metacounter/{key}',
                 'operation_id': 'view_channel_metacounter_by_key',
@@ -1141,7 +1142,7 @@ class UserChannelMetadataApi(object):
         )
         self.view_channel_metadata_endpoint = _Endpoint(
             settings={
-                'response_type': ({str: (str,)},),
+                'response_type': (ViewChannelMetadataResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/{channel_type}/{channel_url}/metadata',
                 'operation_id': 'view_channel_metadata',
@@ -1212,7 +1213,7 @@ class UserChannelMetadataApi(object):
         )
         self.view_channel_metadata_by_key_endpoint = _Endpoint(
             settings={
-                'response_type': ({str: (str,)},),
+                'response_type': (ViewChannelMetadataByKeyResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/{channel_type}/{channel_url}/metadata/{key}',
                 'operation_id': 'view_channel_metadata_by_key',
@@ -1278,7 +1279,7 @@ class UserChannelMetadataApi(object):
         )
         self.view_user_metadata_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20047UserMetadata,),
+                'response_type': (ViewUserMetadataResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/users/{user_id}/metadata',
                 'operation_id': 'view_user_metadata',
@@ -1343,7 +1344,7 @@ class UserChannelMetadataApi(object):
         )
         self.view_user_metadata_by_key_endpoint = _Endpoint(
             settings={
-                'response_type': ({str: (str,)},),
+                'response_type': (ViewUserMetadataByKeyResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/users/{user_id}/metadata/{key}',
                 'operation_id': 'view_user_metadata_by_key',
@@ -1448,7 +1449,7 @@ class UserChannelMetadataApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            {str: (SendBirdAdditionalProperties,)}
+            CreateChannelMetacounterResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -1525,7 +1526,7 @@ class UserChannelMetadataApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20061
+            CreateChannelMetadataResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -1600,7 +1601,7 @@ class UserChannelMetadataApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20047UserMetadata
+            CreateUserMetadataResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2137,7 +2138,7 @@ class UserChannelMetadataApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            {str: (SendBirdAdditionalProperties,)}
+            UpdateChannelMetacounterResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2216,7 +2217,7 @@ class UserChannelMetadataApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            {str: (str,)}
+            UpdateChannelMetacounterByKeyResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2295,7 +2296,7 @@ class UserChannelMetadataApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            {str: (str,)}
+            UpdateChannelMetadataResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2374,7 +2375,7 @@ class UserChannelMetadataApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            {str: (str,)}
+            UpdateChannelMetadataByKeyResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2451,7 +2452,7 @@ class UserChannelMetadataApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20060
+            UpdateUserMetadataResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2526,7 +2527,7 @@ class UserChannelMetadataApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            {str: (str,)}
+            UpdateUserMetadataByKeyResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2604,7 +2605,7 @@ class UserChannelMetadataApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            {str: (SendBirdAdditionalProperties,)}
+            ViewChannelMetacounterResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2682,7 +2683,7 @@ class UserChannelMetadataApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            {str: (SendBirdAdditionalProperties,)}
+            ViewChannelMetacounterByKeyResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2762,7 +2763,7 @@ class UserChannelMetadataApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            {str: (str,)}
+            ViewChannelMetadataResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2840,7 +2841,7 @@ class UserChannelMetadataApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            {str: (str,)}
+            ViewChannelMetadataByKeyResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2918,7 +2919,7 @@ class UserChannelMetadataApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20047UserMetadata
+            ViewUserMetadataResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2992,7 +2993,7 @@ class UserChannelMetadataApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            {str: (str,)}
+            ViewUserMetadataByKeyResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """

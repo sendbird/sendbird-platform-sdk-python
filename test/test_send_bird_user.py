@@ -12,8 +12,8 @@ import sys
 import unittest
 
 import sendbird_platform_sdk
-from sendbird_platform_sdk.model.object import Object
-globals()['Object'] = Object
+from sendbird_platform_sdk.model.sb_object import SBObject
+globals()['SBObject'] = SBObject
 from sendbird_platform_sdk.model.send_bird_user import SendBirdUser
 
 

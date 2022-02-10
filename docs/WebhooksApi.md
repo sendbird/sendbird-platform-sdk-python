@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **choose_which_events_to_subscribe_to**
-> InlineResponse20067 choose_which_events_to_subscribe_to()
+> ChooseWhichEventsToSubscribeToResponse choose_which_events_to_subscribe_to()
 
 Choose which events to subscribe to
 
@@ -22,8 +22,8 @@ Choose which events to subscribe to
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import webhooks_api
-from sendbird_platform_sdk.model.inline_response20067 import InlineResponse20067
 from sendbird_platform_sdk.model.choose_which_events_to_subscribe_to_data import ChooseWhichEventsToSubscribeToData
+from sendbird_platform_sdk.model.choose_which_events_to_subscribe_to_response import ChooseWhichEventsToSubscribeToResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20067**](InlineResponse20067.md)
+[**ChooseWhichEventsToSubscribeToResponse**](ChooseWhichEventsToSubscribeToResponse.md)
 
 ### Authorization
 
@@ -87,7 +87,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **retrieve_list_of_subscribed_events**
-> InlineResponse20066 retrieve_list_of_subscribed_events()
+> RetrieveListOfSubscribedEventsResponse retrieve_list_of_subscribed_events()
 
 Retrieve a list of subscribed events
 
@@ -100,7 +100,7 @@ Retrieve a list of subscribed events
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import webhooks_api
-from sendbird_platform_sdk.model.inline_response20066 import InlineResponse20066
+from sendbird_platform_sdk.model.retrieve_list_of_subscribed_events_response import RetrieveListOfSubscribedEventsResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -136,7 +136,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20066**](InlineResponse20066.md)
+[**RetrieveListOfSubscribedEventsResponse**](RetrieveListOfSubscribedEventsResponse.md)
 
 ### Authorization
 

@@ -85,7 +85,6 @@ class AddExtraDataToMessageData(ModelNormal):
             'channel_url': (str,),  # noqa: E501
             'message_id': (int,),  # noqa: E501
             'sorted_metaarray': (str,),  # noqa: E501
-            'metaarray': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -98,7 +97,6 @@ class AddExtraDataToMessageData(ModelNormal):
         'channel_url': 'channel_url',  # noqa: E501
         'message_id': 'message_id',  # noqa: E501
         'sorted_metaarray': 'sorted_metaarray',  # noqa: E501
-        'metaarray': 'metaarray',  # noqa: E501
     }
 
     read_only_vars = {
@@ -108,7 +106,7 @@ class AddExtraDataToMessageData(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, channel_type, channel_url, message_id, sorted_metaarray, metaarray, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, channel_type, channel_url, message_id, sorted_metaarray, *args, **kwargs):  # noqa: E501
         """AddExtraDataToMessageData - a model defined in OpenAPI
 
         Args:
@@ -116,7 +114,6 @@ class AddExtraDataToMessageData(ModelNormal):
             channel_url (str): Specifies the URL of the target channel.
             message_id (int): Specifies the unique ID of the message to add key-values items for additional information.
             sorted_metaarray (str): Specifies a `JSON` object of one or more key-values items which store additional message information. Each item consists of a key and the values in an array. Items are saved and will be returned in the exact order they've been specified.
-            metaarray (str): (Deprecated) Specifies a `JSON` object of one or more key-values items which store additional message information. The item consists of a key and the values in an array.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -180,7 +177,6 @@ class AddExtraDataToMessageData(ModelNormal):
         self.channel_url = channel_url
         self.message_id = message_id
         self.sorted_metaarray = sorted_metaarray
-        self.metaarray = metaarray
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -201,7 +197,7 @@ class AddExtraDataToMessageData(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, channel_type, channel_url, message_id, sorted_metaarray, metaarray, *args, **kwargs):  # noqa: E501
+    def __init__(self, channel_type, channel_url, message_id, sorted_metaarray, *args, **kwargs):  # noqa: E501
         """AddExtraDataToMessageData - a model defined in OpenAPI
 
         Args:
@@ -209,7 +205,6 @@ class AddExtraDataToMessageData(ModelNormal):
             channel_url (str): Specifies the URL of the target channel.
             message_id (int): Specifies the unique ID of the message to add key-values items for additional information.
             sorted_metaarray (str): Specifies a `JSON` object of one or more key-values items which store additional message information. Each item consists of a key and the values in an array. Items are saved and will be returned in the exact order they've been specified.
-            metaarray (str): (Deprecated) Specifies a `JSON` object of one or more key-values items which store additional message information. The item consists of a key and the values in an array.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -271,7 +266,6 @@ class AddExtraDataToMessageData(ModelNormal):
         self.channel_url = channel_url
         self.message_id = message_id
         self.sorted_metaarray = sorted_metaarray
-        self.metaarray = metaarray
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

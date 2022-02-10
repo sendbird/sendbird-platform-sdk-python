@@ -132,27 +132,11 @@ class UpdateAnnouncementByIdData(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, unique_id, action, announcement_group, create_channel, create_channel_options_name, create_channel_options_cover_url, create_channel_options_custom_type, create_channel_options_data, create_channel_options_distinct, message_user_id, message_content, message_data, enable_push, scheduled_at, end_at, cease_at, resume_at, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, unique_id, *args, **kwargs):  # noqa: E501
         """UpdateAnnouncementByIdData - a model defined in OpenAPI
 
         Args:
             unique_id (str): Specifies the unique ID of the announcement to update.
-            action (str): Specifies an action to take on the announcement. If this property is updated, other specified properties in the request are not effective. Acceptable values are limited to remove, pause, resume, and cancel. The [Announcement actions](#2-update-an-announcement-3-how-to-change-announcement-status) table explains each action in detail.
-            announcement_group (str): Specifies the name of an announcement group to retrieve. If not specified, all announcements are returned, regardless of their group.
-            create_channel (bool): Determines whether to create a new channel if there is no existing channel that matches with the target options including target_at and target_list.
-            create_channel_options_name (str): Specifies the name of the channel. (Default: Group Channel)
-            create_channel_options_cover_url (str): Specifies the URL of the cover image.
-            create_channel_options_custom_type (str): Specifies the custom channel type.
-            create_channel_options_data (str): Specifies additional channel information such as a long description of the channel or `JSON` formatted string.
-            create_channel_options_distinct (str): Determines whether to create a [distinct](/docs/chat/v3/platform-api/guides/channel-types#2-group-channel) channel. (Default: true)
-            message_user_id (str): Specifies the unique ID of the announcement sender.
-            message_content (str): Specifies the content of the message.
-            message_data (str): Specifies additional message information such as custom font size, font type or `JSON` formatted string.
-            enable_push (bool): Determines whether to turn on push notification for the announcement. If set to true, push notifications will be sent for announcements.
-            scheduled_at (int): Specifies the time to start the announcement, in [Unix milliseconds](/docs/chat/v3/platform-api/guides/miscellaneous#2-timestamps) format. (Default: current timestamp)
-            end_at (int): Specifies the time to permanently end the announcement, in [Unix milliseconds](/docs/chat/v3/platform-api/guides/miscellaneous#2-timestamps) format, even if the announcement is not sent to all its targets.
-            cease_at (str): Specifies the time to temporarily put the announcement on hold in UTC. The string is represented in HHMM format. This property should be specified in conjunction with the resume_at below.
-            resume_at (str): Specifies the time to automatically resume the on-hold announcement in UTC. The string is represented in HHMM format. This property should be specified in conjunction with the cease_at above.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -185,6 +169,22 @@ class UpdateAnnouncementByIdData(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            action (str): Specifies an action to take on the announcement. If this property is updated, other specified properties in the request are not effective. Acceptable values are limited to remove, pause, resume, and cancel. The [Announcement actions](#2-update-an-announcement-3-how-to-change-announcement-status) table explains each action in detail.. [optional]  # noqa: E501
+            announcement_group (str): Specifies the name of an announcement group to retrieve. If not specified, all announcements are returned, regardless of their group.. [optional]  # noqa: E501
+            create_channel (bool): Determines whether to create a new channel if there is no existing channel that matches with the target options including target_at and target_list.. [optional]  # noqa: E501
+            create_channel_options_name (str): Specifies the name of the channel. (Default: Group Channel). [optional]  # noqa: E501
+            create_channel_options_cover_url (str): Specifies the URL of the cover image.. [optional]  # noqa: E501
+            create_channel_options_custom_type (str): Specifies the custom channel type.. [optional]  # noqa: E501
+            create_channel_options_data (str): Specifies additional channel information such as a long description of the channel or `JSON` formatted string.. [optional]  # noqa: E501
+            create_channel_options_distinct (str): Determines whether to create a [distinct](/docs/chat/v3/platform-api/guides/channel-types#2-group-channel) channel. (Default: true). [optional]  # noqa: E501
+            message_user_id (str): Specifies the unique ID of the announcement sender.. [optional]  # noqa: E501
+            message_content (str): Specifies the content of the message.. [optional]  # noqa: E501
+            message_data (str): Specifies additional message information such as custom font size, font type or `JSON` formatted string.. [optional]  # noqa: E501
+            enable_push (bool): Determines whether to turn on push notification for the announcement. If set to true, push notifications will be sent for announcements.. [optional]  # noqa: E501
+            scheduled_at (int): Specifies the time to start the announcement, in [Unix milliseconds](/docs/chat/v3/platform-api/guides/miscellaneous#2-timestamps) format. (Default: current timestamp). [optional]  # noqa: E501
+            end_at (int): Specifies the time to permanently end the announcement, in [Unix milliseconds](/docs/chat/v3/platform-api/guides/miscellaneous#2-timestamps) format, even if the announcement is not sent to all its targets.. [optional]  # noqa: E501
+            cease_at (str): Specifies the time to temporarily put the announcement on hold in UTC. The string is represented in HHMM format. This property should be specified in conjunction with the resume_at below.. [optional]  # noqa: E501
+            resume_at (str): Specifies the time to automatically resume the on-hold announcement in UTC. The string is represented in HHMM format. This property should be specified in conjunction with the cease_at above.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -213,22 +213,6 @@ class UpdateAnnouncementByIdData(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         self.unique_id = unique_id
-        self.action = action
-        self.announcement_group = announcement_group
-        self.create_channel = create_channel
-        self.create_channel_options_name = create_channel_options_name
-        self.create_channel_options_cover_url = create_channel_options_cover_url
-        self.create_channel_options_custom_type = create_channel_options_custom_type
-        self.create_channel_options_data = create_channel_options_data
-        self.create_channel_options_distinct = create_channel_options_distinct
-        self.message_user_id = message_user_id
-        self.message_content = message_content
-        self.message_data = message_data
-        self.enable_push = enable_push
-        self.scheduled_at = scheduled_at
-        self.end_at = end_at
-        self.cease_at = cease_at
-        self.resume_at = resume_at
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -249,27 +233,11 @@ class UpdateAnnouncementByIdData(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, unique_id, action, announcement_group, create_channel, create_channel_options_name, create_channel_options_cover_url, create_channel_options_custom_type, create_channel_options_data, create_channel_options_distinct, message_user_id, message_content, message_data, enable_push, scheduled_at, end_at, cease_at, resume_at, *args, **kwargs):  # noqa: E501
+    def __init__(self, unique_id, *args, **kwargs):  # noqa: E501
         """UpdateAnnouncementByIdData - a model defined in OpenAPI
 
         Args:
             unique_id (str): Specifies the unique ID of the announcement to update.
-            action (str): Specifies an action to take on the announcement. If this property is updated, other specified properties in the request are not effective. Acceptable values are limited to remove, pause, resume, and cancel. The [Announcement actions](#2-update-an-announcement-3-how-to-change-announcement-status) table explains each action in detail.
-            announcement_group (str): Specifies the name of an announcement group to retrieve. If not specified, all announcements are returned, regardless of their group.
-            create_channel (bool): Determines whether to create a new channel if there is no existing channel that matches with the target options including target_at and target_list.
-            create_channel_options_name (str): Specifies the name of the channel. (Default: Group Channel)
-            create_channel_options_cover_url (str): Specifies the URL of the cover image.
-            create_channel_options_custom_type (str): Specifies the custom channel type.
-            create_channel_options_data (str): Specifies additional channel information such as a long description of the channel or `JSON` formatted string.
-            create_channel_options_distinct (str): Determines whether to create a [distinct](/docs/chat/v3/platform-api/guides/channel-types#2-group-channel) channel. (Default: true)
-            message_user_id (str): Specifies the unique ID of the announcement sender.
-            message_content (str): Specifies the content of the message.
-            message_data (str): Specifies additional message information such as custom font size, font type or `JSON` formatted string.
-            enable_push (bool): Determines whether to turn on push notification for the announcement. If set to true, push notifications will be sent for announcements.
-            scheduled_at (int): Specifies the time to start the announcement, in [Unix milliseconds](/docs/chat/v3/platform-api/guides/miscellaneous#2-timestamps) format. (Default: current timestamp)
-            end_at (int): Specifies the time to permanently end the announcement, in [Unix milliseconds](/docs/chat/v3/platform-api/guides/miscellaneous#2-timestamps) format, even if the announcement is not sent to all its targets.
-            cease_at (str): Specifies the time to temporarily put the announcement on hold in UTC. The string is represented in HHMM format. This property should be specified in conjunction with the resume_at below.
-            resume_at (str): Specifies the time to automatically resume the on-hold announcement in UTC. The string is represented in HHMM format. This property should be specified in conjunction with the cease_at above.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -302,6 +270,22 @@ class UpdateAnnouncementByIdData(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            action (str): Specifies an action to take on the announcement. If this property is updated, other specified properties in the request are not effective. Acceptable values are limited to remove, pause, resume, and cancel. The [Announcement actions](#2-update-an-announcement-3-how-to-change-announcement-status) table explains each action in detail.. [optional]  # noqa: E501
+            announcement_group (str): Specifies the name of an announcement group to retrieve. If not specified, all announcements are returned, regardless of their group.. [optional]  # noqa: E501
+            create_channel (bool): Determines whether to create a new channel if there is no existing channel that matches with the target options including target_at and target_list.. [optional]  # noqa: E501
+            create_channel_options_name (str): Specifies the name of the channel. (Default: Group Channel). [optional]  # noqa: E501
+            create_channel_options_cover_url (str): Specifies the URL of the cover image.. [optional]  # noqa: E501
+            create_channel_options_custom_type (str): Specifies the custom channel type.. [optional]  # noqa: E501
+            create_channel_options_data (str): Specifies additional channel information such as a long description of the channel or `JSON` formatted string.. [optional]  # noqa: E501
+            create_channel_options_distinct (str): Determines whether to create a [distinct](/docs/chat/v3/platform-api/guides/channel-types#2-group-channel) channel. (Default: true). [optional]  # noqa: E501
+            message_user_id (str): Specifies the unique ID of the announcement sender.. [optional]  # noqa: E501
+            message_content (str): Specifies the content of the message.. [optional]  # noqa: E501
+            message_data (str): Specifies additional message information such as custom font size, font type or `JSON` formatted string.. [optional]  # noqa: E501
+            enable_push (bool): Determines whether to turn on push notification for the announcement. If set to true, push notifications will be sent for announcements.. [optional]  # noqa: E501
+            scheduled_at (int): Specifies the time to start the announcement, in [Unix milliseconds](/docs/chat/v3/platform-api/guides/miscellaneous#2-timestamps) format. (Default: current timestamp). [optional]  # noqa: E501
+            end_at (int): Specifies the time to permanently end the announcement, in [Unix milliseconds](/docs/chat/v3/platform-api/guides/miscellaneous#2-timestamps) format, even if the announcement is not sent to all its targets.. [optional]  # noqa: E501
+            cease_at (str): Specifies the time to temporarily put the announcement on hold in UTC. The string is represented in HHMM format. This property should be specified in conjunction with the resume_at below.. [optional]  # noqa: E501
+            resume_at (str): Specifies the time to automatically resume the on-hold announcement in UTC. The string is represented in HHMM format. This property should be specified in conjunction with the cease_at above.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -328,22 +312,6 @@ class UpdateAnnouncementByIdData(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         self.unique_id = unique_id
-        self.action = action
-        self.announcement_group = announcement_group
-        self.create_channel = create_channel
-        self.create_channel_options_name = create_channel_options_name
-        self.create_channel_options_cover_url = create_channel_options_cover_url
-        self.create_channel_options_custom_type = create_channel_options_custom_type
-        self.create_channel_options_data = create_channel_options_data
-        self.create_channel_options_distinct = create_channel_options_distinct
-        self.message_user_id = message_user_id
-        self.message_content = message_content
-        self.message_data = message_data
-        self.enable_push = enable_push
-        self.scheduled_at = scheduled_at
-        self.end_at = end_at
-        self.cease_at = cease_at
-        self.resume_at = resume_at
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

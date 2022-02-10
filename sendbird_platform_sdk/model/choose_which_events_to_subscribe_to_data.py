@@ -106,14 +106,12 @@ class ChooseWhichEventsToSubscribeToData(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, enabled, url, include_members, enabled_events, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, enabled, url, *args, **kwargs):  # noqa: E501
         """ChooseWhichEventsToSubscribeToData - a model defined in OpenAPI
 
         Args:
             enabled (bool): Determines whether webhooks are turned on in your Sendbird application or not. (Default: false)
             url (str): Specifies the URL of your webhook server to receive payloads for events.
-            include_members (bool): Determines whether to include the information on the members of group channels in payloads. (Default: false)
-            enabled_events ([str]): Specifies an array of one or more [events](#2-webhook-events) for your webhook server to subscribe to. If set to an asterisk () only, the server will subscribe to all supported events. If set to an empty array, the server will unsubscribe from all (which indicates turning off webhooks).
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -146,6 +144,8 @@ class ChooseWhichEventsToSubscribeToData(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            include_members (bool): Determines whether to include the information on the members of group channels in payloads. (Default: false). [optional]  # noqa: E501
+            enabled_events ([str]): Specifies an array of one or more [events](#2-webhook-events) for your webhook server to subscribe to. If set to an asterisk () only, the server will subscribe to all supported events. If set to an empty array, the server will unsubscribe from all (which indicates turning off webhooks).. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -175,8 +175,6 @@ class ChooseWhichEventsToSubscribeToData(ModelNormal):
 
         self.enabled = enabled
         self.url = url
-        self.include_members = include_members
-        self.enabled_events = enabled_events
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -197,14 +195,12 @@ class ChooseWhichEventsToSubscribeToData(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, enabled, url, include_members, enabled_events, *args, **kwargs):  # noqa: E501
+    def __init__(self, enabled, url, *args, **kwargs):  # noqa: E501
         """ChooseWhichEventsToSubscribeToData - a model defined in OpenAPI
 
         Args:
             enabled (bool): Determines whether webhooks are turned on in your Sendbird application or not. (Default: false)
             url (str): Specifies the URL of your webhook server to receive payloads for events.
-            include_members (bool): Determines whether to include the information on the members of group channels in payloads. (Default: false)
-            enabled_events ([str]): Specifies an array of one or more [events](#2-webhook-events) for your webhook server to subscribe to. If set to an asterisk () only, the server will subscribe to all supported events. If set to an empty array, the server will unsubscribe from all (which indicates turning off webhooks).
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -237,6 +233,8 @@ class ChooseWhichEventsToSubscribeToData(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            include_members (bool): Determines whether to include the information on the members of group channels in payloads. (Default: false). [optional]  # noqa: E501
+            enabled_events ([str]): Specifies an array of one or more [events](#2-webhook-events) for your webhook server to subscribe to. If set to an asterisk () only, the server will subscribe to all supported events. If set to an empty array, the server will unsubscribe from all (which indicates turning off webhooks).. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -264,8 +262,6 @@ class ChooseWhichEventsToSubscribeToData(ModelNormal):
 
         self.enabled = enabled
         self.url = url
-        self.include_members = include_members
-        self.enabled_events = enabled_events
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

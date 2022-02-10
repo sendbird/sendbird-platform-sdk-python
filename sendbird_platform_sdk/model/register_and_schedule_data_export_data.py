@@ -124,23 +124,12 @@ class RegisterAndScheduleDataExportData(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, start_ts, end_ts, format, csv_delimiter, timezone, sender_ids, exclude_sender_ids, channel_urls, exclude_channel_urls, user_ids, show_read_receipt, show_channel_metadata, neighboring_message_limit, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, start_ts, end_ts, *args, **kwargs):  # noqa: E501
         """RegisterAndScheduleDataExportData - a model defined in OpenAPI
 
         Args:
             start_ts (int): Specifies the starting timestamp of a period for target objects' creation date, in [Unix milliseconds](/docs/chat/v3/platform-api/guides/miscellaneous#2-timestamps) format. The creation time of messages, channels, and users will be in-between the start_ts and end_ts.
             end_ts (int): Specifies the ending timestamp of a period for target objects' creation date, in [Unix milliseconds](/docs/chat/v3/platform-api/guides/miscellaneous#2-timestamps) format. The creation time of messages, channels, and users will be in-between the start_ts and end_ts.
-            format (str): Specifies the format of the file to export the messages to. Acceptable values are json and csv. (Default: json)
-            csv_delimiter (str): Sets a single character delimiter to separate the values in each row of the csv file which stores two-dimensional arrays of the exported message data. Either English alphabets or special characters can be used as a delimiter, including a horizontal tab (\\t), a line feed (\\n), a vertical bar (\\
-            timezone (str): Specifies the timezone to be applied to the timestamp of the exported messages. For example, US/Pacific, Asia/Seoul, Europe/London, etc. (Default: UTC)
-            sender_ids ([int]): Specifies an array of the IDs of the users which are used to filter the messages by its sender for the export. This property is effective only when the data_type parameter is set to messages, and can be specified up to 10 IDs in the request. (Default: all messages sent by any user)
-            exclude_sender_ids ([int]): Specifies an array of the IDs of the users which are used to exclude their sent messages from the export. This property is effective only when the data_type parameter is set to messages, and can be specified up to 10 IDs. (Default: all messages sent by any user)
-            channel_urls ([str]): Specifies an array of one or more URLs of channels to export the messages from. This property is effective only when the data_type parameter is set to messages or channels. (Default: all channels)
-            exclude_channel_urls ([str]): Specifies an array of one or more URLs of channels to exclude when exporting the messages. This property is effective only when the data_type parameter is set to messages or channels. (Default: include all channels)
-            user_ids ([int]): Specifies an array of the IDs of the users to export their information. This property is effective only when the data_type parameter is set to users. (Default: all users)
-            show_read_receipt (bool): Determines whether to include information about the read receipts of each channel in the exported data. The read receipt indicates the timestamps of when each user has last read the messages in the channel, in [Unix milliseconds](/docs/chat/v3/platform-api/guides/miscellaneous#2-timestamps). (Default: true)
-            show_channel_metadata (bool): Determines whether to include [channel metadata](/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-view-a-channel-metadata) in the result files.
-            neighboring_message_limit (int): Specifies the maximum number of other users' messages to be exported, which took place after the specified message of a user filtered by the sender_ids property. Even if there may be more messages that took place, if the quantity exceeds the number of the neighboring_message_limit, they are omitted. Only the messages that took place right after the specified message will be counted and exported. This can be used to better analyze the context. Acceptable values are 1 to 10, inclusive. (Default: 0)
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -173,6 +162,17 @@ class RegisterAndScheduleDataExportData(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            format (str): Specifies the format of the file to export the messages to. Acceptable values are json and csv. (Default: json). [optional]  # noqa: E501
+            csv_delimiter (str): Sets a single character delimiter to separate the values in each row of the csv file which stores two-dimensional arrays of the exported message data. Either English alphabets or special characters can be used as a delimiter, including a horizontal tab (\\t), a line feed (\\n), a vertical bar (\\. [optional]  # noqa: E501
+            timezone (str): Specifies the timezone to be applied to the timestamp of the exported messages. For example, US/Pacific, Asia/Seoul, Europe/London, etc. (Default: UTC). [optional]  # noqa: E501
+            sender_ids ([int]): Specifies an array of the IDs of the users which are used to filter the messages by its sender for the export. This property is effective only when the data_type parameter is set to messages, and can be specified up to 10 IDs in the request. (Default: all messages sent by any user). [optional]  # noqa: E501
+            exclude_sender_ids ([int]): Specifies an array of the IDs of the users which are used to exclude their sent messages from the export. This property is effective only when the data_type parameter is set to messages, and can be specified up to 10 IDs. (Default: all messages sent by any user). [optional]  # noqa: E501
+            channel_urls ([str]): Specifies an array of one or more URLs of channels to export the messages from. This property is effective only when the data_type parameter is set to messages or channels. (Default: all channels). [optional]  # noqa: E501
+            exclude_channel_urls ([str]): Specifies an array of one or more URLs of channels to exclude when exporting the messages. This property is effective only when the data_type parameter is set to messages or channels. (Default: include all channels). [optional]  # noqa: E501
+            user_ids ([int]): Specifies an array of the IDs of the users to export their information. This property is effective only when the data_type parameter is set to users. (Default: all users). [optional]  # noqa: E501
+            show_read_receipt (bool): Determines whether to include information about the read receipts of each channel in the exported data. The read receipt indicates the timestamps of when each user has last read the messages in the channel, in [Unix milliseconds](/docs/chat/v3/platform-api/guides/miscellaneous#2-timestamps). (Default: true). [optional]  # noqa: E501
+            show_channel_metadata (bool): Determines whether to include [channel metadata](/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-view-a-channel-metadata) in the result files.. [optional]  # noqa: E501
+            neighboring_message_limit (int): Specifies the maximum number of other users' messages to be exported, which took place after the specified message of a user filtered by the sender_ids property. Even if there may be more messages that took place, if the quantity exceeds the number of the neighboring_message_limit, they are omitted. Only the messages that took place right after the specified message will be counted and exported. This can be used to better analyze the context. Acceptable values are 1 to 10, inclusive. (Default: 0). [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -202,17 +202,6 @@ class RegisterAndScheduleDataExportData(ModelNormal):
 
         self.start_ts = start_ts
         self.end_ts = end_ts
-        self.format = format
-        self.csv_delimiter = csv_delimiter
-        self.timezone = timezone
-        self.sender_ids = sender_ids
-        self.exclude_sender_ids = exclude_sender_ids
-        self.channel_urls = channel_urls
-        self.exclude_channel_urls = exclude_channel_urls
-        self.user_ids = user_ids
-        self.show_read_receipt = show_read_receipt
-        self.show_channel_metadata = show_channel_metadata
-        self.neighboring_message_limit = neighboring_message_limit
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -233,23 +222,12 @@ class RegisterAndScheduleDataExportData(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, start_ts, end_ts, format, csv_delimiter, timezone, sender_ids, exclude_sender_ids, channel_urls, exclude_channel_urls, user_ids, show_read_receipt, show_channel_metadata, neighboring_message_limit, *args, **kwargs):  # noqa: E501
+    def __init__(self, start_ts, end_ts, *args, **kwargs):  # noqa: E501
         """RegisterAndScheduleDataExportData - a model defined in OpenAPI
 
         Args:
             start_ts (int): Specifies the starting timestamp of a period for target objects' creation date, in [Unix milliseconds](/docs/chat/v3/platform-api/guides/miscellaneous#2-timestamps) format. The creation time of messages, channels, and users will be in-between the start_ts and end_ts.
             end_ts (int): Specifies the ending timestamp of a period for target objects' creation date, in [Unix milliseconds](/docs/chat/v3/platform-api/guides/miscellaneous#2-timestamps) format. The creation time of messages, channels, and users will be in-between the start_ts and end_ts.
-            format (str): Specifies the format of the file to export the messages to. Acceptable values are json and csv. (Default: json)
-            csv_delimiter (str): Sets a single character delimiter to separate the values in each row of the csv file which stores two-dimensional arrays of the exported message data. Either English alphabets or special characters can be used as a delimiter, including a horizontal tab (\\t), a line feed (\\n), a vertical bar (\\
-            timezone (str): Specifies the timezone to be applied to the timestamp of the exported messages. For example, US/Pacific, Asia/Seoul, Europe/London, etc. (Default: UTC)
-            sender_ids ([int]): Specifies an array of the IDs of the users which are used to filter the messages by its sender for the export. This property is effective only when the data_type parameter is set to messages, and can be specified up to 10 IDs in the request. (Default: all messages sent by any user)
-            exclude_sender_ids ([int]): Specifies an array of the IDs of the users which are used to exclude their sent messages from the export. This property is effective only when the data_type parameter is set to messages, and can be specified up to 10 IDs. (Default: all messages sent by any user)
-            channel_urls ([str]): Specifies an array of one or more URLs of channels to export the messages from. This property is effective only when the data_type parameter is set to messages or channels. (Default: all channels)
-            exclude_channel_urls ([str]): Specifies an array of one or more URLs of channels to exclude when exporting the messages. This property is effective only when the data_type parameter is set to messages or channels. (Default: include all channels)
-            user_ids ([int]): Specifies an array of the IDs of the users to export their information. This property is effective only when the data_type parameter is set to users. (Default: all users)
-            show_read_receipt (bool): Determines whether to include information about the read receipts of each channel in the exported data. The read receipt indicates the timestamps of when each user has last read the messages in the channel, in [Unix milliseconds](/docs/chat/v3/platform-api/guides/miscellaneous#2-timestamps). (Default: true)
-            show_channel_metadata (bool): Determines whether to include [channel metadata](/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-view-a-channel-metadata) in the result files.
-            neighboring_message_limit (int): Specifies the maximum number of other users' messages to be exported, which took place after the specified message of a user filtered by the sender_ids property. Even if there may be more messages that took place, if the quantity exceeds the number of the neighboring_message_limit, they are omitted. Only the messages that took place right after the specified message will be counted and exported. This can be used to better analyze the context. Acceptable values are 1 to 10, inclusive. (Default: 0)
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -282,6 +260,17 @@ class RegisterAndScheduleDataExportData(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            format (str): Specifies the format of the file to export the messages to. Acceptable values are json and csv. (Default: json). [optional]  # noqa: E501
+            csv_delimiter (str): Sets a single character delimiter to separate the values in each row of the csv file which stores two-dimensional arrays of the exported message data. Either English alphabets or special characters can be used as a delimiter, including a horizontal tab (\\t), a line feed (\\n), a vertical bar (\\. [optional]  # noqa: E501
+            timezone (str): Specifies the timezone to be applied to the timestamp of the exported messages. For example, US/Pacific, Asia/Seoul, Europe/London, etc. (Default: UTC). [optional]  # noqa: E501
+            sender_ids ([int]): Specifies an array of the IDs of the users which are used to filter the messages by its sender for the export. This property is effective only when the data_type parameter is set to messages, and can be specified up to 10 IDs in the request. (Default: all messages sent by any user). [optional]  # noqa: E501
+            exclude_sender_ids ([int]): Specifies an array of the IDs of the users which are used to exclude their sent messages from the export. This property is effective only when the data_type parameter is set to messages, and can be specified up to 10 IDs. (Default: all messages sent by any user). [optional]  # noqa: E501
+            channel_urls ([str]): Specifies an array of one or more URLs of channels to export the messages from. This property is effective only when the data_type parameter is set to messages or channels. (Default: all channels). [optional]  # noqa: E501
+            exclude_channel_urls ([str]): Specifies an array of one or more URLs of channels to exclude when exporting the messages. This property is effective only when the data_type parameter is set to messages or channels. (Default: include all channels). [optional]  # noqa: E501
+            user_ids ([int]): Specifies an array of the IDs of the users to export their information. This property is effective only when the data_type parameter is set to users. (Default: all users). [optional]  # noqa: E501
+            show_read_receipt (bool): Determines whether to include information about the read receipts of each channel in the exported data. The read receipt indicates the timestamps of when each user has last read the messages in the channel, in [Unix milliseconds](/docs/chat/v3/platform-api/guides/miscellaneous#2-timestamps). (Default: true). [optional]  # noqa: E501
+            show_channel_metadata (bool): Determines whether to include [channel metadata](/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-view-a-channel-metadata) in the result files.. [optional]  # noqa: E501
+            neighboring_message_limit (int): Specifies the maximum number of other users' messages to be exported, which took place after the specified message of a user filtered by the sender_ids property. Even if there may be more messages that took place, if the quantity exceeds the number of the neighboring_message_limit, they are omitted. Only the messages that took place right after the specified message will be counted and exported. This can be used to better analyze the context. Acceptable values are 1 to 10, inclusive. (Default: 0). [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -309,17 +298,6 @@ class RegisterAndScheduleDataExportData(ModelNormal):
 
         self.start_ts = start_ts
         self.end_ts = end_ts
-        self.format = format
-        self.csv_delimiter = csv_delimiter
-        self.timezone = timezone
-        self.sender_ids = sender_ids
-        self.exclude_sender_ids = exclude_sender_ids
-        self.channel_urls = channel_urls
-        self.exclude_channel_urls = exclude_channel_urls
-        self.user_ids = user_ids
-        self.show_read_receipt = show_read_receipt
-        self.show_channel_metadata = show_channel_metadata
-        self.neighboring_message_limit = neighboring_message_limit
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

@@ -26,7 +26,7 @@ Method | HTTP request | Description
 
 
 # **oc_ban_user**
-> InlineResponse20033BannedList oc_ban_user(channel_url)
+> OcBanUserResponse oc_ban_user(channel_url)
 
 Ban a user
 
@@ -39,7 +39,7 @@ Ban a user
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import open_channel_api
-from sendbird_platform_sdk.model.inline_response20033_banned_list import InlineResponse20033BannedList
+from sendbird_platform_sdk.model.oc_ban_user_response import OcBanUserResponse
 from sendbird_platform_sdk.model.oc_ban_user_data import OcBanUserData
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
@@ -92,7 +92,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20033BannedList**](InlineResponse20033BannedList.md)
+[**OcBanUserResponse**](OcBanUserResponse.md)
 
 ### Authorization
 
@@ -439,7 +439,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **oc_list_banned_users**
-> InlineResponse20033 oc_list_banned_users(channel_url)
+> OcListBannedUsersResponse oc_list_banned_users(channel_url)
 
 List banned users
 
@@ -452,7 +452,7 @@ List banned users
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import open_channel_api
-from sendbird_platform_sdk.model.inline_response20033 import InlineResponse20033
+from sendbird_platform_sdk.model.oc_list_banned_users_response import OcListBannedUsersResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -500,7 +500,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20033**](InlineResponse20033.md)
+[**OcListBannedUsersResponse**](OcListBannedUsersResponse.md)
 
 ### Authorization
 
@@ -521,7 +521,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **oc_list_channels**
-> InlineResponse20030 oc_list_channels()
+> OcListChannelsResponse oc_list_channels()
 
 List channels
 
@@ -534,7 +534,7 @@ List channels
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import open_channel_api
-from sendbird_platform_sdk.model.inline_response20030 import InlineResponse20030
+from sendbird_platform_sdk.model.oc_list_channels_response import OcListChannelsResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -584,7 +584,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20030**](InlineResponse20030.md)
+[**OcListChannelsResponse**](OcListChannelsResponse.md)
 
 ### Authorization
 
@@ -605,7 +605,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **oc_list_muted_users**
-> InlineResponse20031 oc_list_muted_users(channel_url)
+> OcListMutedUsersResponse oc_list_muted_users(channel_url)
 
 List muted users
 
@@ -618,7 +618,7 @@ List muted users
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import open_channel_api
-from sendbird_platform_sdk.model.inline_response20031 import InlineResponse20031
+from sendbird_platform_sdk.model.oc_list_muted_users_response import OcListMutedUsersResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -666,7 +666,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20031**](InlineResponse20031.md)
+[**OcListMutedUsersResponse**](OcListMutedUsersResponse.md)
 
 ### Authorization
 
@@ -687,7 +687,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **oc_list_operators**
-> InlineResponse20034 oc_list_operators(channel_url)
+> OcListOperatorsResponse oc_list_operators(channel_url)
 
 List operators
 
@@ -700,7 +700,7 @@ List operators
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import open_channel_api
-from sendbird_platform_sdk.model.inline_response20034 import InlineResponse20034
+from sendbird_platform_sdk.model.oc_list_operators_response import OcListOperatorsResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -748,7 +748,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20034**](InlineResponse20034.md)
+[**OcListOperatorsResponse**](OcListOperatorsResponse.md)
 
 ### Authorization
 
@@ -769,7 +769,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **oc_list_participants**
-> InlineResponse20032 oc_list_participants(channel_url)
+> OcListParticipantsResponse oc_list_participants(channel_url)
 
 List participants
 
@@ -782,7 +782,7 @@ List participants
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import open_channel_api
-from sendbird_platform_sdk.model.inline_response20032 import InlineResponse20032
+from sendbird_platform_sdk.model.oc_list_participants_response import OcListParticipantsResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -830,7 +830,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20032**](InlineResponse20032.md)
+[**OcListParticipantsResponse**](OcListParticipantsResponse.md)
 
 ### Authorization
 
@@ -1513,7 +1513,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **oc_view_mute_by_id**
-> InlineResponse20035 oc_view_mute_by_id(channel_url, muted_user_id)
+> OcViewMuteByIdResponse oc_view_mute_by_id(channel_url, muted_user_id)
 
 View a mute
 
@@ -1526,7 +1526,7 @@ View a mute
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import open_channel_api
-from sendbird_platform_sdk.model.inline_response20035 import InlineResponse20035
+from sendbird_platform_sdk.model.oc_view_mute_by_id_response import OcViewMuteByIdResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1572,7 +1572,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20035**](InlineResponse20035.md)
+[**OcViewMuteByIdResponse**](OcViewMuteByIdResponse.md)
 
 ### Authorization
 

@@ -21,19 +21,19 @@ from sendbird_platform_sdk.model_utils import (  # noqa: F401
     none_type,
     validate_and_convert_types
 )
+from sendbird_platform_sdk.model.add_emoji_categories_response import AddEmojiCategoriesResponse
 from sendbird_platform_sdk.model.add_emojis_data import AddEmojisData
+from sendbird_platform_sdk.model.add_emojis_response import AddEmojisResponse
 from sendbird_platform_sdk.model.enable_reactions_data import EnableReactionsData
-from sendbird_platform_sdk.model.inline_response20051 import InlineResponse20051
-from sendbird_platform_sdk.model.inline_response20055 import InlineResponse20055
-from sendbird_platform_sdk.model.inline_response20056 import InlineResponse20056
-from sendbird_platform_sdk.model.inline_response20057 import InlineResponse20057
-from sendbird_platform_sdk.model.inline_response20058 import InlineResponse20058
-from sendbird_platform_sdk.model.inline_response20059 import InlineResponse20059
+from sendbird_platform_sdk.model.enable_reactions_response import EnableReactionsResponse
+from sendbird_platform_sdk.model.list_all_emojis_and_emoji_categories_response import ListAllEmojisAndEmojiCategoriesResponse
+from sendbird_platform_sdk.model.list_emojis_response import ListEmojisResponse
 from sendbird_platform_sdk.model.send_bird_emoji import SendBirdEmoji
 from sendbird_platform_sdk.model.send_bird_emoji_category import SendBirdEmojiCategory
 from sendbird_platform_sdk.model.update_emoji_category_url_by_id_data import UpdateEmojiCategoryUrlByIdData
 from sendbird_platform_sdk.model.update_emoji_url_by_key_data import UpdateEmojiUrlByKeyData
 from sendbird_platform_sdk.model.use_default_emojis_data import UseDefaultEmojisData
+from sendbird_platform_sdk.model.use_default_emojis_response import UseDefaultEmojisResponse
 
 
 class EmojisApi(object):
@@ -49,7 +49,7 @@ class EmojisApi(object):
         self.api_client = api_client
         self.add_emoji_categories_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20057,),
+                'response_type': (AddEmojiCategoriesResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/emoji_categories',
                 'operation_id': 'add_emoji_categories',
@@ -102,7 +102,7 @@ class EmojisApi(object):
         )
         self.add_emojis_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20059,),
+                'response_type': (AddEmojisResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/emojis',
                 'operation_id': 'add_emojis',
@@ -259,7 +259,7 @@ class EmojisApi(object):
         )
         self.enable_reactions_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20051,),
+                'response_type': (EnableReactionsResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/applications/settings/reactions',
                 'operation_id': 'enable_reactions',
@@ -420,7 +420,7 @@ class EmojisApi(object):
         )
         self.list_all_emojis_and_emoji_categories_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20056,),
+                'response_type': (ListAllEmojisAndEmojiCategoriesResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/emoji_categories',
                 'operation_id': 'list_all_emojis_and_emoji_categories',
@@ -467,7 +467,7 @@ class EmojisApi(object):
         )
         self.list_emojis_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20058,),
+                'response_type': (ListEmojisResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/emojis',
                 'operation_id': 'list_emojis',
@@ -634,7 +634,7 @@ class EmojisApi(object):
         )
         self.use_default_emojis_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20055,),
+                'response_type': (UseDefaultEmojisResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/applications/settings/use_default_emoji',
                 'operation_id': 'use_default_emojis',
@@ -727,7 +727,7 @@ class EmojisApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20057
+            AddEmojiCategoriesResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -795,7 +795,7 @@ class EmojisApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20059
+            AddEmojisResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -1007,7 +1007,7 @@ class EmojisApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20051
+            EnableReactionsResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -1218,7 +1218,7 @@ class EmojisApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20056
+            ListAllEmojisAndEmojiCategoriesResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -1285,7 +1285,7 @@ class EmojisApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20058
+            ListEmojisResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -1499,7 +1499,7 @@ class EmojisApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20055
+            UseDefaultEmojisResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """

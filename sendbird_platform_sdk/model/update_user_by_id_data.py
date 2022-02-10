@@ -122,22 +122,13 @@ class UpdateUserByIdData(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, user_id, nickname, profile_url, profile_file, issue_access_token, issue_session_token, session_token_expires_at, is_active, last_seen_at, discovery_keys, preferred_languages, leave_all_when_deactivated, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, user_id, nickname, profile_url, *args, **kwargs):  # noqa: E501
         """UpdateUserByIdData - a model defined in OpenAPI
 
         Args:
             user_id (str): Specifies the unique ID of the user to update.
             nickname (str): Specifies the user's nickname. The length is limited to 80 characters.
             profile_url (str): Specifies the URL of the user's profile image. The length is limited to 2,048 characters.<br /><br /> The [domain filter](/docs/chat/v3/platform-api/guides/filter-and-moderation#2-domain-filter) filters out the request if the value of this property matches the filter's domain set.
-            profile_file (file_type): Uploads the file of the user's profile image. An acceptable image is limited to `JPG` (.jpg), `JPEG` (.jpeg), or `PNG` (.png) file of up to 25 MB.
-            issue_access_token (bool): Determines whether to revoke the existing access token and create a new one for the user. If true, an opaque string token is issued and provided upon creation, which should be passed whenever the user logs in. If false, an access token is not required when the user logs in. (Default: false)
-            issue_session_token (bool): Determines whether to add a new session token for the user. If true, an opaque string token is issued and provided upon creation, which should be passed whenever the user logs in. If false, a session token is not required when the user logs in. (Default: false)
-            session_token_expires_at (int): Specifies the time for the issued session token to expire in [Unix milliseconds](/docs/chat/v3/platform-api/guides/miscellaneous#2-timestamps) format. The length should be 13. If not specified and the issue_session_token property above is true, the value of this property is set to the sum of the current timestamp and 604800000 by default, which indicates that the token will be valid for the next 7 days starting from the current timestamp.
-            is_active (bool): Determines whether to activate or deactivate the user within the application.
-            last_seen_at (int): Specifies the time when the user goes offline, to indicate when they were last online, in [Unix milliseconds](/docs/chat/v3/platform-api/guides/miscellaneous#2-timestamps) format.
-            discovery_keys ([str]): Specifies an array of unique keys of the user which is provided to Sendbird server for discovering friends. By using the keys, the server can identify and match the user with other users.
-            preferred_languages ([str]): Specifies an array of one or more [language codes](/docs/chat/v3/platform-api/guides/miscellaneous#2-language-codes-for-auto-translation) to translate notification messages to preferred languages. Up to 4 languages can be set for the user. If messages are sent in one of the preferred languages, notification messages won't be translated. If messages are sent in a language other than the preferred languages, notification messages will be translated into the first language in the array. In addition, the messages translated into other preferred languages will be provided in the `sendbird` property of a notification message payload.
-            leave_all_when_deactivated (bool): Determines whether the user leaves all joined group channels upon deactivation. Note that this value is true by default. Use in conjunction with the is_active property above.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -170,6 +161,15 @@ class UpdateUserByIdData(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            profile_file (file_type): Uploads the file of the user's profile image. An acceptable image is limited to `JPG` (.jpg), `JPEG` (.jpeg), or `PNG` (.png) file of up to 25 MB.. [optional]  # noqa: E501
+            issue_access_token (bool): Determines whether to revoke the existing access token and create a new one for the user. If true, an opaque string token is issued and provided upon creation, which should be passed whenever the user logs in. If false, an access token is not required when the user logs in. (Default: false). [optional]  # noqa: E501
+            issue_session_token (bool): Determines whether to add a new session token for the user. If true, an opaque string token is issued and provided upon creation, which should be passed whenever the user logs in. If false, a session token is not required when the user logs in. (Default: false). [optional]  # noqa: E501
+            session_token_expires_at (int): Specifies the time for the issued session token to expire in [Unix milliseconds](/docs/chat/v3/platform-api/guides/miscellaneous#2-timestamps) format. The length should be 13. If not specified and the issue_session_token property above is true, the value of this property is set to the sum of the current timestamp and 604800000 by default, which indicates that the token will be valid for the next 7 days starting from the current timestamp.. [optional]  # noqa: E501
+            is_active (bool): Determines whether to activate or deactivate the user within the application.. [optional]  # noqa: E501
+            last_seen_at (int): Specifies the time when the user goes offline, to indicate when they were last online, in [Unix milliseconds](/docs/chat/v3/platform-api/guides/miscellaneous#2-timestamps) format.. [optional]  # noqa: E501
+            discovery_keys ([str]): Specifies an array of unique keys of the user which is provided to Sendbird server for discovering friends. By using the keys, the server can identify and match the user with other users.. [optional]  # noqa: E501
+            preferred_languages ([str]): Specifies an array of one or more [language codes](/docs/chat/v3/platform-api/guides/miscellaneous#2-language-codes-for-auto-translation) to translate notification messages to preferred languages. Up to 4 languages can be set for the user. If messages are sent in one of the preferred languages, notification messages won't be translated. If messages are sent in a language other than the preferred languages, notification messages will be translated into the first language in the array. In addition, the messages translated into other preferred languages will be provided in the `sendbird` property of a notification message payload.. [optional]  # noqa: E501
+            leave_all_when_deactivated (bool): Determines whether the user leaves all joined group channels upon deactivation. Note that this value is true by default. Use in conjunction with the is_active property above.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -200,15 +200,6 @@ class UpdateUserByIdData(ModelNormal):
         self.user_id = user_id
         self.nickname = nickname
         self.profile_url = profile_url
-        self.profile_file = profile_file
-        self.issue_access_token = issue_access_token
-        self.issue_session_token = issue_session_token
-        self.session_token_expires_at = session_token_expires_at
-        self.is_active = is_active
-        self.last_seen_at = last_seen_at
-        self.discovery_keys = discovery_keys
-        self.preferred_languages = preferred_languages
-        self.leave_all_when_deactivated = leave_all_when_deactivated
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -229,22 +220,13 @@ class UpdateUserByIdData(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, user_id, nickname, profile_url, profile_file, issue_access_token, issue_session_token, session_token_expires_at, is_active, last_seen_at, discovery_keys, preferred_languages, leave_all_when_deactivated, *args, **kwargs):  # noqa: E501
+    def __init__(self, user_id, nickname, profile_url, *args, **kwargs):  # noqa: E501
         """UpdateUserByIdData - a model defined in OpenAPI
 
         Args:
             user_id (str): Specifies the unique ID of the user to update.
             nickname (str): Specifies the user's nickname. The length is limited to 80 characters.
             profile_url (str): Specifies the URL of the user's profile image. The length is limited to 2,048 characters.<br /><br /> The [domain filter](/docs/chat/v3/platform-api/guides/filter-and-moderation#2-domain-filter) filters out the request if the value of this property matches the filter's domain set.
-            profile_file (file_type): Uploads the file of the user's profile image. An acceptable image is limited to `JPG` (.jpg), `JPEG` (.jpeg), or `PNG` (.png) file of up to 25 MB.
-            issue_access_token (bool): Determines whether to revoke the existing access token and create a new one for the user. If true, an opaque string token is issued and provided upon creation, which should be passed whenever the user logs in. If false, an access token is not required when the user logs in. (Default: false)
-            issue_session_token (bool): Determines whether to add a new session token for the user. If true, an opaque string token is issued and provided upon creation, which should be passed whenever the user logs in. If false, a session token is not required when the user logs in. (Default: false)
-            session_token_expires_at (int): Specifies the time for the issued session token to expire in [Unix milliseconds](/docs/chat/v3/platform-api/guides/miscellaneous#2-timestamps) format. The length should be 13. If not specified and the issue_session_token property above is true, the value of this property is set to the sum of the current timestamp and 604800000 by default, which indicates that the token will be valid for the next 7 days starting from the current timestamp.
-            is_active (bool): Determines whether to activate or deactivate the user within the application.
-            last_seen_at (int): Specifies the time when the user goes offline, to indicate when they were last online, in [Unix milliseconds](/docs/chat/v3/platform-api/guides/miscellaneous#2-timestamps) format.
-            discovery_keys ([str]): Specifies an array of unique keys of the user which is provided to Sendbird server for discovering friends. By using the keys, the server can identify and match the user with other users.
-            preferred_languages ([str]): Specifies an array of one or more [language codes](/docs/chat/v3/platform-api/guides/miscellaneous#2-language-codes-for-auto-translation) to translate notification messages to preferred languages. Up to 4 languages can be set for the user. If messages are sent in one of the preferred languages, notification messages won't be translated. If messages are sent in a language other than the preferred languages, notification messages will be translated into the first language in the array. In addition, the messages translated into other preferred languages will be provided in the `sendbird` property of a notification message payload.
-            leave_all_when_deactivated (bool): Determines whether the user leaves all joined group channels upon deactivation. Note that this value is true by default. Use in conjunction with the is_active property above.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -277,6 +259,15 @@ class UpdateUserByIdData(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            profile_file (file_type): Uploads the file of the user's profile image. An acceptable image is limited to `JPG` (.jpg), `JPEG` (.jpeg), or `PNG` (.png) file of up to 25 MB.. [optional]  # noqa: E501
+            issue_access_token (bool): Determines whether to revoke the existing access token and create a new one for the user. If true, an opaque string token is issued and provided upon creation, which should be passed whenever the user logs in. If false, an access token is not required when the user logs in. (Default: false). [optional]  # noqa: E501
+            issue_session_token (bool): Determines whether to add a new session token for the user. If true, an opaque string token is issued and provided upon creation, which should be passed whenever the user logs in. If false, a session token is not required when the user logs in. (Default: false). [optional]  # noqa: E501
+            session_token_expires_at (int): Specifies the time for the issued session token to expire in [Unix milliseconds](/docs/chat/v3/platform-api/guides/miscellaneous#2-timestamps) format. The length should be 13. If not specified and the issue_session_token property above is true, the value of this property is set to the sum of the current timestamp and 604800000 by default, which indicates that the token will be valid for the next 7 days starting from the current timestamp.. [optional]  # noqa: E501
+            is_active (bool): Determines whether to activate or deactivate the user within the application.. [optional]  # noqa: E501
+            last_seen_at (int): Specifies the time when the user goes offline, to indicate when they were last online, in [Unix milliseconds](/docs/chat/v3/platform-api/guides/miscellaneous#2-timestamps) format.. [optional]  # noqa: E501
+            discovery_keys ([str]): Specifies an array of unique keys of the user which is provided to Sendbird server for discovering friends. By using the keys, the server can identify and match the user with other users.. [optional]  # noqa: E501
+            preferred_languages ([str]): Specifies an array of one or more [language codes](/docs/chat/v3/platform-api/guides/miscellaneous#2-language-codes-for-auto-translation) to translate notification messages to preferred languages. Up to 4 languages can be set for the user. If messages are sent in one of the preferred languages, notification messages won't be translated. If messages are sent in a language other than the preferred languages, notification messages will be translated into the first language in the array. In addition, the messages translated into other preferred languages will be provided in the `sendbird` property of a notification message payload.. [optional]  # noqa: E501
+            leave_all_when_deactivated (bool): Determines whether the user leaves all joined group channels upon deactivation. Note that this value is true by default. Use in conjunction with the is_active property above.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -305,15 +296,6 @@ class UpdateUserByIdData(ModelNormal):
         self.user_id = user_id
         self.nickname = nickname
         self.profile_url = profile_url
-        self.profile_file = profile_file
-        self.issue_access_token = issue_access_token
-        self.issue_session_token = issue_session_token
-        self.session_token_expires_at = session_token_expires_at
-        self.is_active = is_active
-        self.last_seen_at = last_seen_at
-        self.discovery_keys = discovery_keys
-        self.preferred_languages = preferred_languages
-        self.leave_all_when_deactivated = leave_all_when_deactivated
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

@@ -104,13 +104,11 @@ class UpdateChannelMetacounterData(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, metacounter, mode, upsert, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, metacounter, *args, **kwargs):  # noqa: E501
         """UpdateChannelMetacounterData - a model defined in OpenAPI
 
         Args:
             metacounter (str): Specifies a `JSON` object that stores key-value items. The key must not have a comma (,) and its length is limited to 128 characters. The value must be an integer. This property can have up to 5 items.
-            mode (str): Specifies how to calculate the item value of the metacounter. Acceptable values are increase, decrease, and set. If set to increase, increments the item value of the metacounter by the value specified in the metacounter property, while decrease decrements. set sets the item value to the specified value exactly. (Default: set)
-            upsert (bool):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -143,6 +141,8 @@ class UpdateChannelMetacounterData(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            mode (str): Specifies how to calculate the item value of the metacounter. Acceptable values are increase, decrease, and set. If set to increase, increments the item value of the metacounter by the value specified in the metacounter property, while decrease decrements. set sets the item value to the specified value exactly. (Default: set). [optional]  # noqa: E501
+            upsert (bool): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -171,8 +171,6 @@ class UpdateChannelMetacounterData(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         self.metacounter = metacounter
-        self.mode = mode
-        self.upsert = upsert
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -193,13 +191,11 @@ class UpdateChannelMetacounterData(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, metacounter, mode, upsert, *args, **kwargs):  # noqa: E501
+    def __init__(self, metacounter, *args, **kwargs):  # noqa: E501
         """UpdateChannelMetacounterData - a model defined in OpenAPI
 
         Args:
             metacounter (str): Specifies a `JSON` object that stores key-value items. The key must not have a comma (,) and its length is limited to 128 characters. The value must be an integer. This property can have up to 5 items.
-            mode (str): Specifies how to calculate the item value of the metacounter. Acceptable values are increase, decrease, and set. If set to increase, increments the item value of the metacounter by the value specified in the metacounter property, while decrease decrements. set sets the item value to the specified value exactly. (Default: set)
-            upsert (bool):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -232,6 +228,8 @@ class UpdateChannelMetacounterData(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            mode (str): Specifies how to calculate the item value of the metacounter. Acceptable values are increase, decrease, and set. If set to increase, increments the item value of the metacounter by the value specified in the metacounter property, while decrease decrements. set sets the item value to the specified value exactly. (Default: set). [optional]  # noqa: E501
+            upsert (bool): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -258,8 +256,6 @@ class UpdateChannelMetacounterData(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         self.metacounter = metacounter
-        self.mode = mode
-        self.upsert = upsert
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

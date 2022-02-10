@@ -81,9 +81,9 @@ class UpdateMessageByIdData(ModelNormal):
                 and the value is attribute type.
         """
         return {
+            'message_id': (int,),  # noqa: E501
             'channel_type': (str,),  # noqa: E501
             'channel_url': (str,),  # noqa: E501
-            'message_id': (int,),  # noqa: E501
             'message_type': (str,),  # noqa: E501
             'message': (str,),  # noqa: E501
             'custom_type': (str,),  # noqa: E501
@@ -98,9 +98,9 @@ class UpdateMessageByIdData(ModelNormal):
 
 
     attribute_map = {
+        'message_id': 'message_id',  # noqa: E501
         'channel_type': 'channel_type',  # noqa: E501
         'channel_url': 'channel_url',  # noqa: E501
-        'message_id': 'message_id',  # noqa: E501
         'message_type': 'message_type',  # noqa: E501
         'message': 'message',  # noqa: E501
         'custom_type': 'custom_type',  # noqa: E501
@@ -116,19 +116,11 @@ class UpdateMessageByIdData(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, channel_type, channel_url, message_id, message_type, message, custom_type, data, mention_type, mentioned_user_ids, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, message_id, *args, **kwargs):  # noqa: E501
         """UpdateMessageByIdData - a model defined in OpenAPI
 
         Args:
-            channel_type (str): Specifies the type of the channel. Either open_channels or group_channels.
-            channel_url (str): Specifies the URL of the target channel.
             message_id (int): Specifies the unique ID of the message to update.
-            message_type (str): Specifies the type of the message as ADMM.
-            message (str): Specifies the content of the message.
-            custom_type (str): Specifies a custom message type which is used for message grouping. The length is limited to 128 characters.<br /><br /> Custom types are also used within Sendbird's [Advanced analytics](/docs/chat/v3/platform-api/guides/advanced-analytics) to segment metrics, which enables the sub-classification of data views.
-            data (str): Specifies additional message information such as custom font size, font type or `JSON` formatted string.
-            mention_type (str): Specifies the mentioning method which indicates the user scope who will get a notification for the message. Acceptable values are users and channel. If set to users, only the specified users with the mentioned_users property below will get notified. If set to channel, all users in the channel will get notified. (Default: users)
-            mentioned_user_ids ([int]): Specifies an array of one or more IDs of the users who will get a notification for the message.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -161,6 +153,14 @@ class UpdateMessageByIdData(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            channel_type (str): Specifies the type of the channel. Either open_channels or group_channels.. [optional]  # noqa: E501
+            channel_url (str): Specifies the URL of the target channel.. [optional]  # noqa: E501
+            message_type (str): Specifies the type of the message as ADMM.. [optional]  # noqa: E501
+            message (str): Specifies the content of the message.. [optional]  # noqa: E501
+            custom_type (str): Specifies a custom message type which is used for message grouping. The length is limited to 128 characters.<br /><br /> Custom types are also used within Sendbird's [Advanced analytics](/docs/chat/v3/platform-api/guides/advanced-analytics) to segment metrics, which enables the sub-classification of data views.. [optional]  # noqa: E501
+            data (str): Specifies additional message information such as custom font size, font type or `JSON` formatted string.. [optional]  # noqa: E501
+            mention_type (str): Specifies the mentioning method which indicates the user scope who will get a notification for the message. Acceptable values are users and channel. If set to users, only the specified users with the mentioned_users property below will get notified. If set to channel, all users in the channel will get notified. (Default: users). [optional]  # noqa: E501
+            mentioned_user_ids ([int]): Specifies an array of one or more IDs of the users who will get a notification for the message.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -188,15 +188,7 @@ class UpdateMessageByIdData(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.channel_type = channel_type
-        self.channel_url = channel_url
         self.message_id = message_id
-        self.message_type = message_type
-        self.message = message
-        self.custom_type = custom_type
-        self.data = data
-        self.mention_type = mention_type
-        self.mentioned_user_ids = mentioned_user_ids
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -217,19 +209,11 @@ class UpdateMessageByIdData(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, channel_type, channel_url, message_id, message_type, message, custom_type, data, mention_type, mentioned_user_ids, *args, **kwargs):  # noqa: E501
+    def __init__(self, message_id, *args, **kwargs):  # noqa: E501
         """UpdateMessageByIdData - a model defined in OpenAPI
 
         Args:
-            channel_type (str): Specifies the type of the channel. Either open_channels or group_channels.
-            channel_url (str): Specifies the URL of the target channel.
             message_id (int): Specifies the unique ID of the message to update.
-            message_type (str): Specifies the type of the message as ADMM.
-            message (str): Specifies the content of the message.
-            custom_type (str): Specifies a custom message type which is used for message grouping. The length is limited to 128 characters.<br /><br /> Custom types are also used within Sendbird's [Advanced analytics](/docs/chat/v3/platform-api/guides/advanced-analytics) to segment metrics, which enables the sub-classification of data views.
-            data (str): Specifies additional message information such as custom font size, font type or `JSON` formatted string.
-            mention_type (str): Specifies the mentioning method which indicates the user scope who will get a notification for the message. Acceptable values are users and channel. If set to users, only the specified users with the mentioned_users property below will get notified. If set to channel, all users in the channel will get notified. (Default: users)
-            mentioned_user_ids ([int]): Specifies an array of one or more IDs of the users who will get a notification for the message.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -262,6 +246,14 @@ class UpdateMessageByIdData(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            channel_type (str): Specifies the type of the channel. Either open_channels or group_channels.. [optional]  # noqa: E501
+            channel_url (str): Specifies the URL of the target channel.. [optional]  # noqa: E501
+            message_type (str): Specifies the type of the message as ADMM.. [optional]  # noqa: E501
+            message (str): Specifies the content of the message.. [optional]  # noqa: E501
+            custom_type (str): Specifies a custom message type which is used for message grouping. The length is limited to 128 characters.<br /><br /> Custom types are also used within Sendbird's [Advanced analytics](/docs/chat/v3/platform-api/guides/advanced-analytics) to segment metrics, which enables the sub-classification of data views.. [optional]  # noqa: E501
+            data (str): Specifies additional message information such as custom font size, font type or `JSON` formatted string.. [optional]  # noqa: E501
+            mention_type (str): Specifies the mentioning method which indicates the user scope who will get a notification for the message. Acceptable values are users and channel. If set to users, only the specified users with the mentioned_users property below will get notified. If set to channel, all users in the channel will get notified. (Default: users). [optional]  # noqa: E501
+            mentioned_user_ids ([int]): Specifies an array of one or more IDs of the users who will get a notification for the message.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -287,15 +279,7 @@ class UpdateMessageByIdData(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.channel_type = channel_type
-        self.channel_url = channel_url
         self.message_id = message_id
-        self.message_type = message_type
-        self.message = message
-        self.custom_type = custom_type
-        self.data = data
-        self.mention_type = mention_type
-        self.mentioned_user_ids = mentioned_user_ids
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

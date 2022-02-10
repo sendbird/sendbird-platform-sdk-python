@@ -87,7 +87,6 @@ class UpdateExtraDataInMessageData(ModelNormal):
             'sorted_metaarray': (str,),  # noqa: E501
             'mode': (str,),  # noqa: E501
             'upsert': (bool,),  # noqa: E501
-            'metaarray': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -102,7 +101,6 @@ class UpdateExtraDataInMessageData(ModelNormal):
         'sorted_metaarray': 'sorted_metaarray',  # noqa: E501
         'mode': 'mode',  # noqa: E501
         'upsert': 'upsert',  # noqa: E501
-        'metaarray': 'metaarray',  # noqa: E501
     }
 
     read_only_vars = {
@@ -112,7 +110,7 @@ class UpdateExtraDataInMessageData(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, channel_type, channel_url, message_id, sorted_metaarray, mode, upsert, metaarray, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, channel_type, channel_url, message_id, sorted_metaarray, mode, upsert, *args, **kwargs):  # noqa: E501
         """UpdateExtraDataInMessageData - a model defined in OpenAPI
 
         Args:
@@ -122,7 +120,6 @@ class UpdateExtraDataInMessageData(ModelNormal):
             sorted_metaarray (str): Specifies a `JSON` object of one or more key-values items which store additional message information. Each item consists of a key and the values in an array. Items are saved and will be returned in the exact order they've been specified.
             mode (str): Determines whether to add the specified values in the items or remove the specified values from the existing items. Acceptable values are limited to add and remove. If set to add, the specified values are added only when they are different from the existing values. If set to remove, the specified values are removed only when they have the corresponding ones in the existing values.
             upsert (bool): Determines whether to add new items in addition to updating existing items. If true, new key-values items are added when there are no items with the keys. The existing items are updated with new values when there are already items with the keys. If false, only the items of which keys match the ones you specify are updated with new values. (Default: false)
-            metaarray (str): (Deprecated) Specifies a `JSON` object of one or more key-values items which store additional message information. The item consists of a key and the values in an array.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -188,7 +185,6 @@ class UpdateExtraDataInMessageData(ModelNormal):
         self.sorted_metaarray = sorted_metaarray
         self.mode = mode
         self.upsert = upsert
-        self.metaarray = metaarray
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -209,7 +205,7 @@ class UpdateExtraDataInMessageData(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, channel_type, channel_url, message_id, sorted_metaarray, mode, upsert, metaarray, *args, **kwargs):  # noqa: E501
+    def __init__(self, channel_type, channel_url, message_id, sorted_metaarray, mode, upsert, *args, **kwargs):  # noqa: E501
         """UpdateExtraDataInMessageData - a model defined in OpenAPI
 
         Args:
@@ -219,7 +215,6 @@ class UpdateExtraDataInMessageData(ModelNormal):
             sorted_metaarray (str): Specifies a `JSON` object of one or more key-values items which store additional message information. Each item consists of a key and the values in an array. Items are saved and will be returned in the exact order they've been specified.
             mode (str): Determines whether to add the specified values in the items or remove the specified values from the existing items. Acceptable values are limited to add and remove. If set to add, the specified values are added only when they are different from the existing values. If set to remove, the specified values are removed only when they have the corresponding ones in the existing values.
             upsert (bool): Determines whether to add new items in addition to updating existing items. If true, new key-values items are added when there are no items with the keys. The existing items are updated with new values when there are already items with the keys. If false, only the items of which keys match the ones you specify are updated with new values. (Default: false)
-            metaarray (str): (Deprecated) Specifies a `JSON` object of one or more key-values items which store additional message information. The item consists of a key and the values in an array.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -283,7 +278,6 @@ class UpdateExtraDataInMessageData(ModelNormal):
         self.sorted_metaarray = sorted_metaarray
         self.mode = mode
         self.upsert = upsert
-        self.metaarray = metaarray
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

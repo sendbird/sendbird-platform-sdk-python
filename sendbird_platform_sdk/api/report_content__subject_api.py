@@ -21,12 +21,16 @@ from sendbird_platform_sdk.model_utils import (  # noqa: F401
     none_type,
     validate_and_convert_types
 )
-from sendbird_platform_sdk.model.inline_response20070 import InlineResponse20070
-from sendbird_platform_sdk.model.inline_response20071 import InlineResponse20071
-from sendbird_platform_sdk.model.inline_response20071_report_logs import InlineResponse20071ReportLogs
+from sendbird_platform_sdk.model.list_reports_on_channel_by_url_response import ListReportsOnChannelByUrlResponse
+from sendbird_platform_sdk.model.list_reports_on_message_by_id_response import ListReportsOnMessageByIdResponse
+from sendbird_platform_sdk.model.list_reports_on_user_by_id_response import ListReportsOnUserByIdResponse
+from sendbird_platform_sdk.model.list_reports_response import ListReportsResponse
 from sendbird_platform_sdk.model.report_channel_by_url_data import ReportChannelByUrlData
+from sendbird_platform_sdk.model.report_channel_by_url_response import ReportChannelByUrlResponse
 from sendbird_platform_sdk.model.report_message_by_id_data import ReportMessageByIdData
+from sendbird_platform_sdk.model.report_message_by_id_response import ReportMessageByIdResponse
 from sendbird_platform_sdk.model.report_user_by_id_data import ReportUserByIdData
+from sendbird_platform_sdk.model.report_user_by_id_response import ReportUserByIdResponse
 
 
 class ReportContentSubjectApi(object):
@@ -42,7 +46,7 @@ class ReportContentSubjectApi(object):
         self.api_client = api_client
         self.list_reports_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20070,),
+                'response_type': (ListReportsResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/report',
                 'operation_id': 'list_reports',
@@ -109,7 +113,7 @@ class ReportContentSubjectApi(object):
         )
         self.list_reports_on_channel_by_url_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20071,),
+                'response_type': (ListReportsOnChannelByUrlResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/report/{channel_type}/{channel_url}',
                 'operation_id': 'list_reports_on_channel_by_url',
@@ -179,7 +183,7 @@ class ReportContentSubjectApi(object):
         )
         self.list_reports_on_message_by_id_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20071,),
+                'response_type': (ListReportsOnMessageByIdResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/report/{channel_type}/{channel_url}/messages/{message_id}',
                 'operation_id': 'list_reports_on_message_by_id',
@@ -255,7 +259,7 @@ class ReportContentSubjectApi(object):
         )
         self.list_reports_on_user_by_id_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20071,),
+                'response_type': (ListReportsOnUserByIdResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/report/users/{offending_user_id}',
                 'operation_id': 'list_reports_on_user_by_id',
@@ -319,7 +323,7 @@ class ReportContentSubjectApi(object):
         )
         self.report_channel_by_url_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20071ReportLogs,),
+                'response_type': (ReportChannelByUrlResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/report/{channel_type}/{channel_url}',
                 'operation_id': 'report_channel_by_url',
@@ -385,7 +389,7 @@ class ReportContentSubjectApi(object):
         )
         self.report_message_by_id_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20071ReportLogs,),
+                'response_type': (ReportMessageByIdResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/report/{channel_type}/{channel_url}/messages/{message_id}',
                 'operation_id': 'report_message_by_id',
@@ -457,7 +461,7 @@ class ReportContentSubjectApi(object):
         )
         self.report_user_by_id_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20071ReportLogs,),
+                'response_type': (ReportUserByIdResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/report/users/{offending_user_id}',
                 'operation_id': 'report_user_by_id',
@@ -517,7 +521,7 @@ class ReportContentSubjectApi(object):
         )
         self.view_moderated_message_by_id_endpoint = _Endpoint(
             settings={
-                'response_type': ({str: (str,)},),
+                'response_type': (ViewModeratedMessageByIdResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/report/{channel_type}/{channel_url}/profanity_messages/{message_id}',
                 'operation_id': 'view_moderated_message_by_id',
@@ -626,7 +630,7 @@ class ReportContentSubjectApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20070
+            ListReportsResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -700,7 +704,7 @@ class ReportContentSubjectApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20071
+            ListReportsOnChannelByUrlResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -780,7 +784,7 @@ class ReportContentSubjectApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20071
+            ListReportsOnMessageByIdResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -858,7 +862,7 @@ class ReportContentSubjectApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20071
+            ListReportsOnUserByIdResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -933,7 +937,7 @@ class ReportContentSubjectApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20071ReportLogs
+            ReportChannelByUrlResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -1012,7 +1016,7 @@ class ReportContentSubjectApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20071ReportLogs
+            ReportMessageByIdResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -1089,7 +1093,7 @@ class ReportContentSubjectApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20071ReportLogs
+            ReportUserByIdResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -1165,7 +1169,7 @@ class ReportContentSubjectApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            {str: (str,)}
+            ViewModeratedMessageByIdResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """

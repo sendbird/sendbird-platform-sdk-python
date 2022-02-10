@@ -22,34 +22,43 @@ from sendbird_platform_sdk.model_utils import (  # noqa: F401
     validate_and_convert_types
 )
 from sendbird_platform_sdk.model.add_registration_or_device_token_data import AddRegistrationOrDeviceTokenData
+from sendbird_platform_sdk.model.add_registration_or_device_token_response import AddRegistrationOrDeviceTokenResponse
 from sendbird_platform_sdk.model.ban_from_channels_with_custom_channel_types_data import BanFromChannelsWithCustomChannelTypesData
 from sendbird_platform_sdk.model.block_user_data import BlockUserData
+from sendbird_platform_sdk.model.choose_push_notification_content_template_response import ChoosePushNotificationContentTemplateResponse
 from sendbird_platform_sdk.model.create_user_data import CreateUserData
-from sendbird_platform_sdk.model.inline_response20016 import InlineResponse20016
-from sendbird_platform_sdk.model.inline_response20017 import InlineResponse20017
-from sendbird_platform_sdk.model.inline_response20018 import InlineResponse20018
-from sendbird_platform_sdk.model.inline_response20019 import InlineResponse20019
-from sendbird_platform_sdk.model.inline_response20020 import InlineResponse20020
-from sendbird_platform_sdk.model.inline_response20021 import InlineResponse20021
-from sendbird_platform_sdk.model.inline_response20022 import InlineResponse20022
-from sendbird_platform_sdk.model.inline_response20023 import InlineResponse20023
-from sendbird_platform_sdk.model.inline_response20024 import InlineResponse20024
-from sendbird_platform_sdk.model.inline_response20025 import InlineResponse20025
-from sendbird_platform_sdk.model.inline_response20026 import InlineResponse20026
-from sendbird_platform_sdk.model.inline_response20027 import InlineResponse20027
-from sendbird_platform_sdk.model.inline_response20028 import InlineResponse20028
-from sendbird_platform_sdk.model.inline_response20029 import InlineResponse20029
-from sendbird_platform_sdk.model.inline_response2005 import InlineResponse2005
 from sendbird_platform_sdk.model.leave_my_group_channels_data import LeaveMyGroupChannelsData
+from sendbird_platform_sdk.model.list_banned_channels_response import ListBannedChannelsResponse
+from sendbird_platform_sdk.model.list_blocked_users_response import ListBlockedUsersResponse
+from sendbird_platform_sdk.model.list_muted_channels_response import ListMutedChannelsResponse
+from sendbird_platform_sdk.model.list_my_group_channels_response import ListMyGroupChannelsResponse
+from sendbird_platform_sdk.model.list_registration_or_device_tokens_response import ListRegistrationOrDeviceTokensResponse
+from sendbird_platform_sdk.model.list_users_response import ListUsersResponse
 from sendbird_platform_sdk.model.mark_all_messages_as_read_data import MarkAllMessagesAsReadData
 from sendbird_platform_sdk.model.mute_in_channels_with_custom_channel_types_data import MuteInChannelsWithCustomChannelTypesData
 from sendbird_platform_sdk.model.register_as_operator_to_channels_with_custom_channel_types_data import RegisterAsOperatorToChannelsWithCustomChannelTypesData
+from sendbird_platform_sdk.model.remove_registration_or_device_token_by_token_response import RemoveRegistrationOrDeviceTokenByTokenResponse
+from sendbird_platform_sdk.model.remove_registration_or_device_token_from_owner_by_token_response import RemoveRegistrationOrDeviceTokenFromOwnerByTokenResponse
+from sendbird_platform_sdk.model.remove_registration_or_device_token_response import RemoveRegistrationOrDeviceTokenResponse
 from sendbird_platform_sdk.model.send_bird_user import SendBirdUser
 from sendbird_platform_sdk.model.update_channel_invitation_preference_data import UpdateChannelInvitationPreferenceData
+from sendbird_platform_sdk.model.update_channel_invitation_preference_response import UpdateChannelInvitationPreferenceResponse
 from sendbird_platform_sdk.model.update_count_preference_of_channel_by_url_data import UpdateCountPreferenceOfChannelByUrlData
+from sendbird_platform_sdk.model.update_count_preference_of_channel_by_url_response import UpdateCountPreferenceOfChannelByUrlResponse
 from sendbird_platform_sdk.model.update_push_preferences_data import UpdatePushPreferencesData
 from sendbird_platform_sdk.model.update_push_preferences_for_channel_by_url_data import UpdatePushPreferencesForChannelByUrlData
+from sendbird_platform_sdk.model.update_push_preferences_for_channel_by_url_response import UpdatePushPreferencesForChannelByUrlResponse
+from sendbird_platform_sdk.model.update_push_preferences_response import UpdatePushPreferencesResponse
 from sendbird_platform_sdk.model.update_user_by_id_data import UpdateUserByIdData
+from sendbird_platform_sdk.model.view_channel_invitation_preference_response import ViewChannelInvitationPreferenceResponse
+from sendbird_platform_sdk.model.view_count_preference_of_channel_by_url_response import ViewCountPreferenceOfChannelByUrlResponse
+from sendbird_platform_sdk.model.view_number_of_channels_by_join_status_response import ViewNumberOfChannelsByJoinStatusResponse
+from sendbird_platform_sdk.model.view_number_of_channels_with_unread_messages_response import ViewNumberOfChannelsWithUnreadMessagesResponse
+from sendbird_platform_sdk.model.view_number_of_unread_items_response import ViewNumberOfUnreadItemsResponse
+from sendbird_platform_sdk.model.view_number_of_unread_messages_response import ViewNumberOfUnreadMessagesResponse
+from sendbird_platform_sdk.model.view_push_preferences_for_channel_by_url_response import ViewPushPreferencesForChannelByUrlResponse
+from sendbird_platform_sdk.model.view_push_preferences_response import ViewPushPreferencesResponse
+from sendbird_platform_sdk.model.view_who_owns_registration_or_device_token_by_token_response import ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponse
 
 
 class UserApi(object):
@@ -65,7 +74,7 @@ class UserApi(object):
         self.api_client = api_client
         self.add_registration_or_device_token_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20025,),
+                'response_type': (AddRegistrationOrDeviceTokenResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/users/{user_id}/push/{token_type}',
                 'operation_id': 'add_registration_or_device_token',
@@ -249,7 +258,7 @@ class UserApi(object):
         )
         self.choose_push_notification_content_template_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20029,),
+                'response_type': (ChoosePushNotificationContentTemplateResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/users/{user_id}/push/template',
                 'operation_id': 'choose_push_notification_content_template',
@@ -472,7 +481,7 @@ class UserApi(object):
         )
         self.list_banned_channels_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20022,),
+                'response_type': (ListBannedChannelsResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/users/{user_id}/ban',
                 'operation_id': 'list_banned_channels',
@@ -536,7 +545,7 @@ class UserApi(object):
         )
         self.list_blocked_users_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20016,),
+                'response_type': (ListBlockedUsersResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/users/{user_id}/block',
                 'operation_id': 'list_blocked_users',
@@ -615,7 +624,7 @@ class UserApi(object):
         )
         self.list_muted_channels_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20023,),
+                'response_type': (ListMutedChannelsResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/users/{user_id}/mute',
                 'operation_id': 'list_muted_channels',
@@ -679,7 +688,7 @@ class UserApi(object):
         )
         self.list_my_group_channels_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20017,),
+                'response_type': (ListMyGroupChannelsResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/users/{user_id}/my_group_channels',
                 'operation_id': 'list_my_group_channels',
@@ -933,7 +942,7 @@ class UserApi(object):
         )
         self.list_registration_or_device_tokens_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20024,),
+                'response_type': (ListRegistrationOrDeviceTokensResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/users/{user_id}/push/{token_type}',
                 'operation_id': 'list_registration_or_device_tokens',
@@ -993,7 +1002,7 @@ class UserApi(object):
         )
         self.list_users_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20016,),
+                'response_type': (ListUsersResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/users',
                 'operation_id': 'list_users',
@@ -1259,7 +1268,7 @@ class UserApi(object):
         )
         self.remove_registration_or_device_token_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20026,),
+                'response_type': (RemoveRegistrationOrDeviceTokenResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/users/{user_id}/push',
                 'operation_id': 'remove_registration_or_device_token',
@@ -1313,7 +1322,7 @@ class UserApi(object):
         )
         self.remove_registration_or_device_token_by_token_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20026,),
+                'response_type': (RemoveRegistrationOrDeviceTokenByTokenResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/users/{user_id}/push/{token_type}/{token}',
                 'operation_id': 'remove_registration_or_device_token_by_token',
@@ -1379,7 +1388,7 @@ class UserApi(object):
         )
         self.remove_registration_or_device_token_from_owner_by_token_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20027,),
+                'response_type': (RemoveRegistrationOrDeviceTokenFromOwnerByTokenResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/push/device_tokens/{token_type}/{token}',
                 'operation_id': 'remove_registration_or_device_token_from_owner_by_token',
@@ -1549,7 +1558,7 @@ class UserApi(object):
         )
         self.update_channel_invitation_preference_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse2005,),
+                'response_type': (UpdateChannelInvitationPreferenceResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/users/{user_id}/channel_invitation_preference',
                 'operation_id': 'update_channel_invitation_preference',
@@ -1609,7 +1618,7 @@ class UserApi(object):
         )
         self.update_count_preference_of_channel_by_url_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20021,),
+                'response_type': (UpdateCountPreferenceOfChannelByUrlResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/users/{user_id}/count_preference/{channel_url}',
                 'operation_id': 'update_count_preference_of_channel_by_url',
@@ -1675,7 +1684,7 @@ class UserApi(object):
         )
         self.update_push_preferences_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20028,),
+                'response_type': (UpdatePushPreferencesResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/users/{user_id}/push_preference',
                 'operation_id': 'update_push_preferences',
@@ -1735,7 +1744,7 @@ class UserApi(object):
         )
         self.update_push_preferences_for_channel_by_url_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20028,),
+                'response_type': (UpdatePushPreferencesForChannelByUrlResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/users/{user_id}/push_preference/{channel_url}',
                 'operation_id': 'update_push_preferences_for_channel_by_url',
@@ -1861,7 +1870,7 @@ class UserApi(object):
         )
         self.view_channel_invitation_preference_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse2005,),
+                'response_type': (ViewChannelInvitationPreferenceResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/users/{user_id}/channel_invitation_preference',
                 'operation_id': 'view_channel_invitation_preference',
@@ -1915,7 +1924,7 @@ class UserApi(object):
         )
         self.view_count_preference_of_channel_by_url_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20021,),
+                'response_type': (ViewCountPreferenceOfChannelByUrlResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/users/{user_id}/count_preference/{channel_url}',
                 'operation_id': 'view_count_preference_of_channel_by_url',
@@ -1975,7 +1984,7 @@ class UserApi(object):
         )
         self.view_number_of_channels_by_join_status_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20020,),
+                'response_type': (ViewNumberOfChannelsByJoinStatusResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/users/{user_id}/group_channel_count',
                 'operation_id': 'view_number_of_channels_by_join_status',
@@ -2034,7 +2043,7 @@ class UserApi(object):
         )
         self.view_number_of_channels_with_unread_messages_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20018,),
+                'response_type': (ViewNumberOfChannelsWithUnreadMessagesResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/users/{user_id}/unread_channel_count',
                 'operation_id': 'view_number_of_channels_with_unread_messages',
@@ -2099,7 +2108,7 @@ class UserApi(object):
         )
         self.view_number_of_unread_items_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20019,),
+                'response_type': (ViewNumberOfUnreadItemsResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/users/{user_id}/unread_item_count',
                 'operation_id': 'view_number_of_unread_items',
@@ -2163,7 +2172,7 @@ class UserApi(object):
         )
         self.view_number_of_unread_messages_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20018,),
+                'response_type': (ViewNumberOfUnreadMessagesResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/users/{user_id}/unread_message_count',
                 'operation_id': 'view_number_of_unread_messages',
@@ -2227,7 +2236,7 @@ class UserApi(object):
         )
         self.view_push_preferences_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20028,),
+                'response_type': (ViewPushPreferencesResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/users/{user_id}/push_preference',
                 'operation_id': 'view_push_preferences',
@@ -2281,7 +2290,7 @@ class UserApi(object):
         )
         self.view_push_preferences_for_channel_by_url_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20028,),
+                'response_type': (ViewPushPreferencesForChannelByUrlResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/users/{user_id}/push_preference/{channel_url}',
                 'operation_id': 'view_push_preferences_for_channel_by_url',
@@ -2410,7 +2419,7 @@ class UserApi(object):
         )
         self.view_who_owns_registration_or_device_token_by_token_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20027,),
+                'response_type': (ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/push/device_tokens/{token_type}/{token}',
                 'operation_id': 'view_who_owns_registration_or_device_token_by_token',
@@ -2515,7 +2524,7 @@ class UserApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20025
+            AddRegistrationOrDeviceTokenResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2736,7 +2745,7 @@ class UserApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20029
+            ChoosePushNotificationContentTemplateResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -3023,7 +3032,7 @@ class UserApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20022
+            ListBannedChannelsResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -3100,7 +3109,7 @@ class UserApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20016
+            ListBlockedUsersResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -3174,7 +3183,7 @@ class UserApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20023
+            ListMutedChannelsResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -3286,7 +3295,7 @@ class UserApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20017
+            ListMyGroupChannelsResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -3360,7 +3369,7 @@ class UserApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20024
+            ListRegistrationOrDeviceTokensResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -3440,7 +3449,7 @@ class UserApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20016
+            ListUsersResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -3729,7 +3738,7 @@ class UserApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20026
+            RemoveRegistrationOrDeviceTokenResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -3805,7 +3814,7 @@ class UserApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20026
+            RemoveRegistrationOrDeviceTokenByTokenResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -3883,7 +3892,7 @@ class UserApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20027
+            RemoveRegistrationOrDeviceTokenFromOwnerByTokenResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -4106,7 +4115,7 @@ class UserApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse2005
+            UpdateChannelInvitationPreferenceResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -4181,7 +4190,7 @@ class UserApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20021
+            UpdateCountPreferenceOfChannelByUrlResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -4256,7 +4265,7 @@ class UserApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20028
+            UpdatePushPreferencesResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -4331,7 +4340,7 @@ class UserApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20028
+            UpdatePushPreferencesForChannelByUrlResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -4478,7 +4487,7 @@ class UserApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse2005
+            ViewChannelInvitationPreferenceResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -4552,7 +4561,7 @@ class UserApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20021
+            ViewCountPreferenceOfChannelByUrlResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -4627,7 +4636,7 @@ class UserApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20020
+            ViewNumberOfChannelsByJoinStatusResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -4701,7 +4710,7 @@ class UserApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20018
+            ViewNumberOfChannelsWithUnreadMessagesResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -4775,7 +4784,7 @@ class UserApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20019
+            ViewNumberOfUnreadItemsResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -4849,7 +4858,7 @@ class UserApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20018
+            ViewNumberOfUnreadMessagesResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -4921,7 +4930,7 @@ class UserApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20028
+            ViewPushPreferencesResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -4995,7 +5004,7 @@ class UserApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20028
+            ViewPushPreferencesForChannelByUrlResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -5146,7 +5155,7 @@ class UserApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20027
+            ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """

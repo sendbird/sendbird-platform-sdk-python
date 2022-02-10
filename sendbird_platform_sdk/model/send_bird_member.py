@@ -30,9 +30,9 @@ from sendbird_platform_sdk.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from sendbird_platform_sdk.model.object import Object
+    from sendbird_platform_sdk.model.sb_object import SBObject
     from sendbird_platform_sdk.model.send_bird_restriction_info import SendBirdRestrictionInfo
-    globals()['Object'] = Object
+    globals()['SBObject'] = SBObject
     globals()['SendBirdRestrictionInfo'] = SendBirdRestrictionInfo
 
 
@@ -105,7 +105,7 @@ class SendBirdMember(ModelNormal):
             'is_blocking_me': (bool,),  # noqa: E501
             'is_muted': (bool,),  # noqa: E501
             'last_seen_at': (int,),  # noqa: E501
-            'meta_data': (Object,),  # noqa: E501
+            'meta_data': (SBObject,),  # noqa: E501
             'nickname': (str,),  # noqa: E501
             'plain_profile_url': (str,),  # noqa: E501
             'preferred_languages': ([str],),  # noqa: E501
@@ -192,7 +192,7 @@ class SendBirdMember(ModelNormal):
             is_blocking_me (bool): [optional]  # noqa: E501
             is_muted (bool): [optional]  # noqa: E501
             last_seen_at (int): [optional]  # noqa: E501
-            meta_data (Object): [optional]  # noqa: E501
+            meta_data (SBObject): [optional]  # noqa: E501
             nickname (str): [optional]  # noqa: E501
             plain_profile_url (str): [optional]  # noqa: E501
             preferred_languages ([str]): [optional]  # noqa: E501
@@ -291,7 +291,7 @@ class SendBirdMember(ModelNormal):
             is_blocking_me (bool): [optional]  # noqa: E501
             is_muted (bool): [optional]  # noqa: E501
             last_seen_at (int): [optional]  # noqa: E501
-            meta_data (Object): [optional]  # noqa: E501
+            meta_data (SBObject): [optional]  # noqa: E501
             nickname (str): [optional]  # noqa: E501
             plain_profile_url (str): [optional]  # noqa: E501
             preferred_languages ([str]): [optional]  # noqa: E501

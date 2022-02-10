@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **retrieve_advanced_analytics_metrics**
-> InlineResponse20062 retrieve_advanced_analytics_metrics()
+> RetrieveAdvancedAnalyticsMetricsResponse retrieve_advanced_analytics_metrics()
 
 Retrieve Advanced analytics metrics
 
@@ -21,7 +21,7 @@ Retrieve Advanced analytics metrics
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import advanced_analytics_api
-from sendbird_platform_sdk.model.inline_response20062 import InlineResponse20062
+from sendbird_platform_sdk.model.retrieve_advanced_analytics_metrics_response import RetrieveAdvancedAnalyticsMetricsResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -55,7 +55,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20062**](InlineResponse20062.md)
+[**RetrieveAdvancedAnalyticsMetricsResponse**](RetrieveAdvancedAnalyticsMetricsResponse.md)
 
 ### Authorization
 

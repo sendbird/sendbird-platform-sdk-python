@@ -21,10 +21,10 @@ from sendbird_platform_sdk.model_utils import (  # noqa: F401
     none_type,
     validate_and_convert_types
 )
-from sendbird_platform_sdk.model.inline_response20068 import InlineResponse20068
-from sendbird_platform_sdk.model.inline_response20068_requests import InlineResponse20068Requests
-from sendbird_platform_sdk.model.inline_response20069 import InlineResponse20069
+from sendbird_platform_sdk.model.list_gdpr_requests_response import ListGdprRequestsResponse
 from sendbird_platform_sdk.model.register_gdpr_request_data import RegisterGdprRequestData
+from sendbird_platform_sdk.model.register_gdpr_request_response import RegisterGdprRequestResponse
+from sendbird_platform_sdk.model.view_gdpr_request_by_id_response import ViewGdprRequestByIdResponse
 
 
 class DataPrivacyApi(object):
@@ -92,7 +92,7 @@ class DataPrivacyApi(object):
         )
         self.list_gdpr_requests_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20068,),
+                'response_type': (ListGdprRequestsResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/privacy/gdpr',
                 'operation_id': 'list_gdpr_requests',
@@ -149,7 +149,7 @@ class DataPrivacyApi(object):
         )
         self.register_gdpr_request_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20069,),
+                'response_type': (RegisterGdprRequestResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/privacy/gdpr',
                 'operation_id': 'register_gdpr_request',
@@ -202,7 +202,7 @@ class DataPrivacyApi(object):
         )
         self.view_gdpr_request_by_id_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20068Requests,),
+                'response_type': (ViewGdprRequestByIdResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/privacy/gdpr/{request_id}',
                 'operation_id': 'view_gdpr_request_by_id',
@@ -369,7 +369,7 @@ class DataPrivacyApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20068
+            ListGdprRequestsResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -437,7 +437,7 @@ class DataPrivacyApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20069
+            RegisterGdprRequestResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -507,7 +507,7 @@ class DataPrivacyApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20068Requests
+            ViewGdprRequestByIdResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """

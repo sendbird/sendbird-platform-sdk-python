@@ -21,17 +21,19 @@ from sendbird_platform_sdk.model_utils import (  # noqa: F401
     none_type,
     validate_and_convert_types
 )
-from sendbird_platform_sdk.model.inline_response20039 import InlineResponse20039
-from sendbird_platform_sdk.model.inline_response20039_announcements import InlineResponse20039Announcements
-from sendbird_platform_sdk.model.inline_response20040 import InlineResponse20040
-from sendbird_platform_sdk.model.inline_response20041 import InlineResponse20041
-from sendbird_platform_sdk.model.inline_response20042 import InlineResponse20042
-from sendbird_platform_sdk.model.inline_response20043 import InlineResponse20043
-from sendbird_platform_sdk.model.inline_response20044 import InlineResponse20044
-from sendbird_platform_sdk.model.inline_response20045 import InlineResponse20045
-from sendbird_platform_sdk.model.inline_response20046 import InlineResponse20046
+from sendbird_platform_sdk.model.get_detailed_open_rate_of_announcement_by_id_response import GetDetailedOpenRateOfAnnouncementByIdResponse
+from sendbird_platform_sdk.model.get_detailed_open_rate_of_announcement_group_response import GetDetailedOpenRateOfAnnouncementGroupResponse
+from sendbird_platform_sdk.model.get_detailed_open_status_of_announcement_by_id_response import GetDetailedOpenStatusOfAnnouncementByIdResponse
+from sendbird_platform_sdk.model.get_statistics_daily_response import GetStatisticsDailyResponse
+from sendbird_platform_sdk.model.get_statistics_monthly_response import GetStatisticsMonthlyResponse
+from sendbird_platform_sdk.model.get_statistics_response import GetStatisticsResponse
+from sendbird_platform_sdk.model.list_announcement_groups_response import ListAnnouncementGroupsResponse
+from sendbird_platform_sdk.model.list_announcements_response import ListAnnouncementsResponse
 from sendbird_platform_sdk.model.schedule_announcement_data import ScheduleAnnouncementData
+from sendbird_platform_sdk.model.schedule_announcement_response import ScheduleAnnouncementResponse
 from sendbird_platform_sdk.model.update_announcement_by_id_data import UpdateAnnouncementByIdData
+from sendbird_platform_sdk.model.update_announcement_by_id_response import UpdateAnnouncementByIdResponse
+from sendbird_platform_sdk.model.view_announcement_by_id_response import ViewAnnouncementByIdResponse
 
 
 class AnnouncementsApi(object):
@@ -47,7 +49,7 @@ class AnnouncementsApi(object):
         self.api_client = api_client
         self.get_detailed_open_rate_of_announcement_by_id_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20042,),
+                'response_type': (GetDetailedOpenRateOfAnnouncementByIdResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/announcement_open_rate/{unique_id}',
                 'operation_id': 'get_detailed_open_rate_of_announcement_by_id',
@@ -101,7 +103,7 @@ class AnnouncementsApi(object):
         )
         self.get_detailed_open_rate_of_announcement_group_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20046,),
+                'response_type': (GetDetailedOpenRateOfAnnouncementGroupResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/announcement_open_rate_by_group/{announcement_group}',
                 'operation_id': 'get_detailed_open_rate_of_announcement_group',
@@ -155,7 +157,7 @@ class AnnouncementsApi(object):
         )
         self.get_detailed_open_status_of_announcement_by_id_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20043,),
+                'response_type': (GetDetailedOpenStatusOfAnnouncementByIdResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/announcement_open_status/{unique_id}',
                 'operation_id': 'get_detailed_open_status_of_announcement_by_id',
@@ -236,7 +238,7 @@ class AnnouncementsApi(object):
         )
         self.get_statistics_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20044,),
+                'response_type': (GetStatisticsResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/announcement_stats/weekly',
                 'operation_id': 'get_statistics',
@@ -283,7 +285,7 @@ class AnnouncementsApi(object):
         )
         self.get_statistics_daily_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20044,),
+                'response_type': (GetStatisticsDailyResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/announcement_stats/daily',
                 'operation_id': 'get_statistics_daily',
@@ -372,7 +374,7 @@ class AnnouncementsApi(object):
         )
         self.get_statistics_monthly_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20044,),
+                'response_type': (GetStatisticsMonthlyResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/announcement_stats/monthly',
                 'operation_id': 'get_statistics_monthly',
@@ -419,7 +421,7 @@ class AnnouncementsApi(object):
         )
         self.list_announcement_groups_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20045,),
+                'response_type': (ListAnnouncementGroupsResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/announcement_group',
                 'operation_id': 'list_announcement_groups',
@@ -476,7 +478,7 @@ class AnnouncementsApi(object):
         )
         self.list_announcements_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20039,),
+                'response_type': (ListAnnouncementsResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/announcements',
                 'operation_id': 'list_announcements',
@@ -548,7 +550,7 @@ class AnnouncementsApi(object):
         )
         self.schedule_announcement_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20040,),
+                'response_type': (ScheduleAnnouncementResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/announcements',
                 'operation_id': 'schedule_announcement',
@@ -601,7 +603,7 @@ class AnnouncementsApi(object):
         )
         self.update_announcement_by_id_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20041,),
+                'response_type': (UpdateAnnouncementByIdResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/announcements/{unique_id}',
                 'operation_id': 'update_announcement_by_id',
@@ -661,7 +663,7 @@ class AnnouncementsApi(object):
         )
         self.view_announcement_by_id_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20039Announcements,),
+                'response_type': (ViewAnnouncementByIdResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/announcements/{unique_id}',
                 'operation_id': 'view_announcement_by_id',
@@ -757,7 +759,7 @@ class AnnouncementsApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20042
+            GetDetailedOpenRateOfAnnouncementByIdResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -829,7 +831,7 @@ class AnnouncementsApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20046
+            GetDetailedOpenRateOfAnnouncementGroupResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -906,7 +908,7 @@ class AnnouncementsApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20043
+            GetDetailedOpenStatusOfAnnouncementByIdResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -975,7 +977,7 @@ class AnnouncementsApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20044
+            GetStatisticsResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -1056,7 +1058,7 @@ class AnnouncementsApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20044
+            GetStatisticsDailyResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -1135,7 +1137,7 @@ class AnnouncementsApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20044
+            GetStatisticsMonthlyResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -1204,7 +1206,7 @@ class AnnouncementsApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20045
+            ListAnnouncementGroupsResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -1276,7 +1278,7 @@ class AnnouncementsApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20039
+            ListAnnouncementsResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -1344,7 +1346,7 @@ class AnnouncementsApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20040
+            ScheduleAnnouncementResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -1415,7 +1417,7 @@ class AnnouncementsApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20041
+            UpdateAnnouncementByIdResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -1487,7 +1489,7 @@ class AnnouncementsApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20039Announcements
+            ViewAnnouncementByIdResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """

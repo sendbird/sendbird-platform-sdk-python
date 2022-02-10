@@ -21,10 +21,10 @@ from sendbird_platform_sdk.model_utils import (  # noqa: F401
     none_type,
     validate_and_convert_types
 )
-from sendbird_platform_sdk.model.inline_response20063 import InlineResponse20063
-from sendbird_platform_sdk.model.inline_response20063_exported_data import InlineResponse20063ExportedData
-from sendbird_platform_sdk.model.inline_response20064 import InlineResponse20064
+from sendbird_platform_sdk.model.list_data_exports_by_message_channel_or_user_response import ListDataExportsByMessageChannelOrUserResponse
 from sendbird_platform_sdk.model.register_and_schedule_data_export_data import RegisterAndScheduleDataExportData
+from sendbird_platform_sdk.model.register_and_schedule_data_export_response import RegisterAndScheduleDataExportResponse
+from sendbird_platform_sdk.model.view_data_export_by_id_response import ViewDataExportByIdResponse
 
 
 class DataExportApi(object):
@@ -40,7 +40,7 @@ class DataExportApi(object):
         self.api_client = api_client
         self.list_data_exports_by_message_channel_or_user_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20063,),
+                'response_type': (ListDataExportsByMessageChannelOrUserResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/export/{data_type}',
                 'operation_id': 'list_data_exports_by_message_channel_or_user',
@@ -104,7 +104,7 @@ class DataExportApi(object):
         )
         self.register_and_schedule_data_export_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20063ExportedData,),
+                'response_type': (RegisterAndScheduleDataExportResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/export/{data_type}',
                 'operation_id': 'register_and_schedule_data_export',
@@ -164,7 +164,7 @@ class DataExportApi(object):
         )
         self.view_data_export_by_id_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20064,),
+                'response_type': (ViewDataExportByIdResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/export/{data_type}/{request_id}',
                 'operation_id': 'view_data_export_by_id',
@@ -268,7 +268,7 @@ class DataExportApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20063
+            ListDataExportsByMessageChannelOrUserResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -341,7 +341,7 @@ class DataExportApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20063ExportedData
+            RegisterAndScheduleDataExportResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -415,7 +415,7 @@ class DataExportApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20064
+            ViewDataExportByIdResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """

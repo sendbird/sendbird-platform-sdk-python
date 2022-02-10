@@ -12,9 +12,9 @@ import sys
 import unittest
 
 import sendbird_platform_sdk
-from sendbird_platform_sdk.model.object import Object
+from sendbird_platform_sdk.model.sb_object import SBObject
 from sendbird_platform_sdk.model.send_bird_restriction_info import SendBirdRestrictionInfo
-globals()['Object'] = Object
+globals()['SBObject'] = SBObject
 globals()['SendBirdRestrictionInfo'] = SendBirdRestrictionInfo
 from sendbird_platform_sdk.model.send_bird_member import SendBirdMember
 

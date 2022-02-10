@@ -33,7 +33,7 @@ Method | HTTP request | Description
 
 
 # **add_apns_push_configuration**
-> InlineResponse2003 add_apns_push_configuration()
+> AddApnsPushConfigurationResponse add_apns_push_configuration()
 
 Add an APNs push configuration
 
@@ -46,7 +46,7 @@ Add an APNs push configuration
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import application_api
-from sendbird_platform_sdk.model.inline_response2003 import InlineResponse2003
+from sendbird_platform_sdk.model.add_apns_push_configuration_response import AddApnsPushConfigurationResponse
 from sendbird_platform_sdk.model.add_apns_push_configuration_data import AddApnsPushConfigurationData
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
@@ -92,7 +92,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2003**](InlineResponse2003.md)
+[**AddApnsPushConfigurationResponse**](AddApnsPushConfigurationResponse.md)
 
 ### Authorization
 
@@ -113,7 +113,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **add_fcm_push_configuration**
-> InlineResponse2001 add_fcm_push_configuration()
+> AddFcmPushConfigurationResponse add_fcm_push_configuration()
 
 Add a FCM push configuration
 
@@ -126,7 +126,7 @@ Add a FCM push configuration
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import application_api
-from sendbird_platform_sdk.model.inline_response2001 import InlineResponse2001
+from sendbird_platform_sdk.model.add_fcm_push_configuration_response import AddFcmPushConfigurationResponse
 from sendbird_platform_sdk.model.add_fcm_push_configuration_data import AddFcmPushConfigurationData
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
@@ -166,7 +166,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**AddFcmPushConfigurationResponse**](AddFcmPushConfigurationResponse.md)
 
 ### Authorization
 
@@ -187,7 +187,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **add_hms_push_configuration**
-> InlineResponse2002 add_hms_push_configuration()
+> AddHmsPushConfigurationResponse add_hms_push_configuration()
 
 Add an HMS push configuration
 
@@ -200,8 +200,8 @@ Add an HMS push configuration
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import application_api
+from sendbird_platform_sdk.model.add_hms_push_configuration_response import AddHmsPushConfigurationResponse
 from sendbird_platform_sdk.model.add_hms_push_configuration_data import AddHmsPushConfigurationData
-from sendbird_platform_sdk.model.inline_response2002 import InlineResponse2002
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -241,7 +241,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2002**](InlineResponse2002.md)
+[**AddHmsPushConfigurationResponse**](AddHmsPushConfigurationResponse.md)
 
 ### Authorization
 
@@ -262,7 +262,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **add_ip_to_whitelist**
-> InlineResponse2006 add_ip_to_whitelist()
+> AddIpToWhitelistResponse add_ip_to_whitelist()
 
 Add an IP to a whitelist
 
@@ -275,7 +275,7 @@ Add an IP to a whitelist
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import application_api
-from sendbird_platform_sdk.model.inline_response2006 import InlineResponse2006
+from sendbird_platform_sdk.model.add_ip_to_whitelist_response import AddIpToWhitelistResponse
 from sendbird_platform_sdk.model.add_ip_to_whitelist_data import AddIpToWhitelistData
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
@@ -316,7 +316,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2006**](InlineResponse2006.md)
+[**AddIpToWhitelistResponse**](AddIpToWhitelistResponse.md)
 
 ### Authorization
 
@@ -337,7 +337,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_allowed_ips_from_whitelist**
-> InlineResponse2006 delete_allowed_ips_from_whitelist(ip_whitelist_addresses)
+> DeleteAllowedIpsFromWhitelistResponse delete_allowed_ips_from_whitelist(ip_whitelist_addresses)
 
 Delete allowed IPs from a whitelist
 
@@ -350,7 +350,7 @@ Delete allowed IPs from a whitelist
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import application_api
-from sendbird_platform_sdk.model.inline_response2006 import InlineResponse2006
+from sendbird_platform_sdk.model.delete_allowed_ips_from_whitelist_response import DeleteAllowedIpsFromWhitelistResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -396,7 +396,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2006**](InlineResponse2006.md)
+[**DeleteAllowedIpsFromWhitelistResponse**](DeleteAllowedIpsFromWhitelistResponse.md)
 
 ### Authorization
 
@@ -417,7 +417,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_apns_certificate_by_id**
-> InlineResponse20013 delete_apns_certificate_by_id(provider_id)
+> DeleteApnsCertificateByIdResponse delete_apns_certificate_by_id(provider_id)
 
 Delete an APNs certificate
 
@@ -430,7 +430,7 @@ Delete an APNs certificate
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import application_api
-from sendbird_platform_sdk.model.inline_response20013 import InlineResponse20013
+from sendbird_platform_sdk.model.delete_apns_certificate_by_id_response import DeleteApnsCertificateByIdResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -474,7 +474,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20013**](InlineResponse20013.md)
+[**DeleteApnsCertificateByIdResponse**](DeleteApnsCertificateByIdResponse.md)
 
 ### Authorization
 
@@ -495,7 +495,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **generate_secondary_api_token**
-> InlineResponse2007 generate_secondary_api_token()
+> GenerateSecondaryApiTokenResponse generate_secondary_api_token()
 
 Generate a secondary API token
 
@@ -508,8 +508,8 @@ Generate a secondary API token
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import application_api
+from sendbird_platform_sdk.model.generate_secondary_api_token_response import GenerateSecondaryApiTokenResponse
 from sendbird_platform_sdk.model.generate_secondary_api_token_data import GenerateSecondaryApiTokenData
-from sendbird_platform_sdk.model.inline_response2007 import InlineResponse2007
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -547,7 +547,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2007**](InlineResponse2007.md)
+[**GenerateSecondaryApiTokenResponse**](GenerateSecondaryApiTokenResponse.md)
 
 ### Authorization
 
@@ -568,7 +568,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_push_configurations**
-> InlineResponse20012 list_push_configurations(push_type)
+> ListPushConfigurationsResponse list_push_configurations(push_type)
 
 List push configurations
 
@@ -581,7 +581,7 @@ List push configurations
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import application_api
-from sendbird_platform_sdk.model.inline_response20012 import InlineResponse20012
+from sendbird_platform_sdk.model.list_push_configurations_response import ListPushConfigurationsResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -625,7 +625,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20012**](InlineResponse20012.md)
+[**ListPushConfigurationsResponse**](ListPushConfigurationsResponse.md)
 
 ### Authorization
 
@@ -646,7 +646,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_push_notification_content_templates**
-> InlineResponse2004 list_push_notification_content_templates()
+> ListPushNotificationContentTemplatesResponse list_push_notification_content_templates()
 
 List push notification content templates
 
@@ -659,7 +659,7 @@ List push notification content templates
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import application_api
-from sendbird_platform_sdk.model.inline_response2004 import InlineResponse2004
+from sendbird_platform_sdk.model.list_push_notification_content_templates_response import ListPushNotificationContentTemplatesResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -693,7 +693,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2004**](InlineResponse2004.md)
+[**ListPushNotificationContentTemplatesResponse**](ListPushNotificationContentTemplatesResponse.md)
 
 ### Authorization
 
@@ -714,7 +714,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_secondary_api_tokens**
-> InlineResponse2008 list_secondary_api_tokens()
+> ListSecondaryApiTokensResponse list_secondary_api_tokens()
 
 List secondary API tokens
 
@@ -727,7 +727,7 @@ List secondary API tokens
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import application_api
-from sendbird_platform_sdk.model.inline_response2008 import InlineResponse2008
+from sendbird_platform_sdk.model.list_secondary_api_tokens_response import ListSecondaryApiTokensResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -761,7 +761,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2008**](InlineResponse2008.md)
+[**ListSecondaryApiTokensResponse**](ListSecondaryApiTokensResponse.md)
 
 ### Authorization
 
@@ -782,7 +782,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **remove_push_configuration_by_id**
-> InlineResponse20013 remove_push_configuration_by_id(push_type, provider_id)
+> RemovePushConfigurationByIdResponse remove_push_configuration_by_id(push_type, provider_id)
 
 Remove a push configuration
 
@@ -795,7 +795,7 @@ Remove a push configuration
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import application_api
-from sendbird_platform_sdk.model.inline_response20013 import InlineResponse20013
+from sendbird_platform_sdk.model.remove_push_configuration_by_id_response import RemovePushConfigurationByIdResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -841,7 +841,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20013**](InlineResponse20013.md)
+[**RemovePushConfigurationByIdResponse**](RemovePushConfigurationByIdResponse.md)
 
 ### Authorization
 
@@ -862,7 +862,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **retrieve_ip_whitelist**
-> InlineResponse2006 retrieve_ip_whitelist()
+> RetrieveIpWhitelistResponse retrieve_ip_whitelist()
 
 Retrieve an IP whitelist
 
@@ -875,7 +875,7 @@ Retrieve an IP whitelist
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import application_api
-from sendbird_platform_sdk.model.inline_response2006 import InlineResponse2006
+from sendbird_platform_sdk.model.retrieve_ip_whitelist_response import RetrieveIpWhitelistResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -909,7 +909,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2006**](InlineResponse2006.md)
+[**RetrieveIpWhitelistResponse**](RetrieveIpWhitelistResponse.md)
 
 ### Authorization
 
@@ -930,7 +930,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **revoke_secondary_api_token_by_token**
-> InlineResponse2007 revoke_secondary_api_token_by_token(api_token2)
+> RevokeSecondaryApiTokenByTokenResponse revoke_secondary_api_token_by_token(api_token2)
 
 Revoke a secondary API token
 
@@ -943,7 +943,7 @@ Revoke a secondary API token
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import application_api
-from sendbird_platform_sdk.model.inline_response2007 import InlineResponse2007
+from sendbird_platform_sdk.model.revoke_secondary_api_token_by_token_response import RevokeSecondaryApiTokenByTokenResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -987,7 +987,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2007**](InlineResponse2007.md)
+[**RevokeSecondaryApiTokenByTokenResponse**](RevokeSecondaryApiTokenByTokenResponse.md)
 
 ### Authorization
 
@@ -1008,7 +1008,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_apns_push_configuration_by_id**
-> InlineResponse20014 update_apns_push_configuration_by_id(provider_id)
+> UpdateApnsPushConfigurationByIdResponse update_apns_push_configuration_by_id(provider_id)
 
 Update an APNs push configuration
 
@@ -1022,7 +1022,7 @@ import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import application_api
 from sendbird_platform_sdk.model.update_apns_push_configuration_by_id_data import UpdateApnsPushConfigurationByIdData
-from sendbird_platform_sdk.model.inline_response20014 import InlineResponse20014
+from sendbird_platform_sdk.model.update_apns_push_configuration_by_id_response import UpdateApnsPushConfigurationByIdResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1078,7 +1078,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20014**](InlineResponse20014.md)
+[**UpdateApnsPushConfigurationByIdResponse**](UpdateApnsPushConfigurationByIdResponse.md)
 
 ### Authorization
 
@@ -1099,7 +1099,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_default_channel_invitation_preference**
-> InlineResponse2005 update_default_channel_invitation_preference()
+> UpdateDefaultChannelInvitationPreferenceResponse update_default_channel_invitation_preference()
 
 Update default channel invitation preference
 
@@ -1112,8 +1112,8 @@ Update default channel invitation preference
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import application_api
-from sendbird_platform_sdk.model.inline_response2005 import InlineResponse2005
 from sendbird_platform_sdk.model.update_default_channel_invitation_preference_data import UpdateDefaultChannelInvitationPreferenceData
+from sendbird_platform_sdk.model.update_default_channel_invitation_preference_response import UpdateDefaultChannelInvitationPreferenceResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1151,7 +1151,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2005**](InlineResponse2005.md)
+[**UpdateDefaultChannelInvitationPreferenceResponse**](UpdateDefaultChannelInvitationPreferenceResponse.md)
 
 ### Authorization
 
@@ -1172,7 +1172,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_fcm_push_configuration_by_id**
-> InlineResponse20014 update_fcm_push_configuration_by_id(provider_id)
+> UpdateFcmPushConfigurationByIdResponse update_fcm_push_configuration_by_id(provider_id)
 
 Update a FCM push configuration
 
@@ -1185,8 +1185,8 @@ Update a FCM push configuration
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import application_api
+from sendbird_platform_sdk.model.update_fcm_push_configuration_by_id_response import UpdateFcmPushConfigurationByIdResponse
 from sendbird_platform_sdk.model.update_fcm_push_configuration_by_id_data import UpdateFcmPushConfigurationByIdData
-from sendbird_platform_sdk.model.inline_response20014 import InlineResponse20014
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1236,7 +1236,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20014**](InlineResponse20014.md)
+[**UpdateFcmPushConfigurationByIdResponse**](UpdateFcmPushConfigurationByIdResponse.md)
 
 ### Authorization
 
@@ -1257,7 +1257,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_hms_push_configuration_by_id**
-> InlineResponse20014 update_hms_push_configuration_by_id(provider_id)
+> UpdateHmsPushConfigurationByIdResponse update_hms_push_configuration_by_id(provider_id)
 
 Update an HMS push configuration
 
@@ -1270,7 +1270,7 @@ Update an HMS push configuration
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import application_api
-from sendbird_platform_sdk.model.inline_response20014 import InlineResponse20014
+from sendbird_platform_sdk.model.update_hms_push_configuration_by_id_response import UpdateHmsPushConfigurationByIdResponse
 from sendbird_platform_sdk.model.update_hms_push_configuration_by_id_data import UpdateHmsPushConfigurationByIdData
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
@@ -1322,7 +1322,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20014**](InlineResponse20014.md)
+[**UpdateHmsPushConfigurationByIdResponse**](UpdateHmsPushConfigurationByIdResponse.md)
 
 ### Authorization
 
@@ -1343,7 +1343,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_push_notification_content_template**
-> InlineResponse20015 update_push_notification_content_template(template_name)
+> UpdatePushNotificationContentTemplateResponse update_push_notification_content_template(template_name)
 
 Update a push notification content template
 
@@ -1356,7 +1356,7 @@ Update a push notification content template
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import application_api
-from sendbird_platform_sdk.model.inline_response20015 import InlineResponse20015
+from sendbird_platform_sdk.model.update_push_notification_content_template_response import UpdatePushNotificationContentTemplateResponse
 from sendbird_platform_sdk.model.update_push_notification_content_template_data import UpdatePushNotificationContentTemplateData
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
@@ -1409,7 +1409,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20015**](InlineResponse20015.md)
+[**UpdatePushNotificationContentTemplateResponse**](UpdatePushNotificationContentTemplateResponse.md)
 
 ### Authorization
 
@@ -1430,7 +1430,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **view_default_channel_invitation_preference**
-> InlineResponse2005 view_default_channel_invitation_preference()
+> ViewDefaultChannelInvitationPreferenceResponse view_default_channel_invitation_preference()
 
 View default channel invitation preference
 
@@ -1443,7 +1443,7 @@ View default channel invitation preference
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import application_api
-from sendbird_platform_sdk.model.inline_response2005 import InlineResponse2005
+from sendbird_platform_sdk.model.view_default_channel_invitation_preference_response import ViewDefaultChannelInvitationPreferenceResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1477,7 +1477,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2005**](InlineResponse2005.md)
+[**ViewDefaultChannelInvitationPreferenceResponse**](ViewDefaultChannelInvitationPreferenceResponse.md)
 
 ### Authorization
 
@@ -1498,7 +1498,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **view_number_of_concurrent_connections**
-> InlineResponse200 view_number_of_concurrent_connections()
+> ViewNumberOfConcurrentConnectionsResponse view_number_of_concurrent_connections()
 
 View number of concurrent connections
 
@@ -1511,7 +1511,7 @@ View number of concurrent connections
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import application_api
-from sendbird_platform_sdk.model.inline_response200 import InlineResponse200
+from sendbird_platform_sdk.model.view_number_of_concurrent_connections_response import ViewNumberOfConcurrentConnectionsResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1545,7 +1545,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse200**](InlineResponse200.md)
+[**ViewNumberOfConcurrentConnectionsResponse**](ViewNumberOfConcurrentConnectionsResponse.md)
 
 ### Authorization
 
@@ -1566,7 +1566,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **view_number_of_daily_active_users**
-> InlineResponse20011 view_number_of_daily_active_users()
+> ViewNumberOfDailyActiveUsersResponse view_number_of_daily_active_users()
 
 View number of daily active users
 
@@ -1579,7 +1579,7 @@ View number of daily active users
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import application_api
-from sendbird_platform_sdk.model.inline_response20011 import InlineResponse20011
+from sendbird_platform_sdk.model.view_number_of_daily_active_users_response import ViewNumberOfDailyActiveUsersResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1615,7 +1615,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20011**](InlineResponse20011.md)
+[**ViewNumberOfDailyActiveUsersResponse**](ViewNumberOfDailyActiveUsersResponse.md)
 
 ### Authorization
 
@@ -1636,7 +1636,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **view_number_of_monthly_active_users**
-> InlineResponse20010 view_number_of_monthly_active_users()
+> ViewNumberOfMonthlyActiveUsersResponse view_number_of_monthly_active_users()
 
 View number of monthly active users
 
@@ -1649,7 +1649,7 @@ View number of monthly active users
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import application_api
-from sendbird_platform_sdk.model.inline_response20010 import InlineResponse20010
+from sendbird_platform_sdk.model.view_number_of_monthly_active_users_response import ViewNumberOfMonthlyActiveUsersResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1685,7 +1685,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20010**](InlineResponse20010.md)
+[**ViewNumberOfMonthlyActiveUsersResponse**](ViewNumberOfMonthlyActiveUsersResponse.md)
 
 ### Authorization
 
@@ -1706,7 +1706,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **view_number_of_peak_connections**
-> InlineResponse2009 view_number_of_peak_connections(time_dimension, start_year, start_month, end_year, end_month)
+> ViewNumberOfPeakConnectionsResponse view_number_of_peak_connections(time_dimension, start_year, start_month, end_year, end_month)
 
 View number of peak connections
 
@@ -1719,7 +1719,7 @@ View number of peak connections
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import application_api
-from sendbird_platform_sdk.model.inline_response2009 import InlineResponse2009
+from sendbird_platform_sdk.model.view_number_of_peak_connections_response import ViewNumberOfPeakConnectionsResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1775,7 +1775,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2009**](InlineResponse2009.md)
+[**ViewNumberOfPeakConnectionsResponse**](ViewNumberOfPeakConnectionsResponse.md)
 
 ### Authorization
 
@@ -1796,7 +1796,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **view_push_configuration_by_id**
-> InlineResponse20012 view_push_configuration_by_id(push_type, provider_id)
+> ViewPushConfigurationByIdResponse view_push_configuration_by_id(push_type, provider_id)
 
 View a push configuration
 
@@ -1809,7 +1809,7 @@ View a push configuration
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import application_api
-from sendbird_platform_sdk.model.inline_response20012 import InlineResponse20012
+from sendbird_platform_sdk.model.view_push_configuration_by_id_response import ViewPushConfigurationByIdResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1855,7 +1855,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20012**](InlineResponse20012.md)
+[**ViewPushConfigurationByIdResponse**](ViewPushConfigurationByIdResponse.md)
 
 ### Authorization
 
@@ -1876,7 +1876,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **view_push_notification_content_template**
-> InlineResponse20015 view_push_notification_content_template(template_name)
+> ViewPushNotificationContentTemplateResponse view_push_notification_content_template(template_name)
 
 View a push notification content template
 
@@ -1889,7 +1889,7 @@ View a push notification content template
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import application_api
-from sendbird_platform_sdk.model.inline_response20015 import InlineResponse20015
+from sendbird_platform_sdk.model.view_push_notification_content_template_response import ViewPushNotificationContentTemplateResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1933,7 +1933,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20015**](InlineResponse20015.md)
+[**ViewPushNotificationContentTemplateResponse**](ViewPushNotificationContentTemplateResponse.md)
 
 ### Authorization
 
@@ -1954,7 +1954,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **view_secondary_api_token_by_token**
-> InlineResponse2007 view_secondary_api_token_by_token(api_token2)
+> ViewSecondaryApiTokenByTokenResponse view_secondary_api_token_by_token(api_token2)
 
 View a secondary API token
 
@@ -1967,7 +1967,7 @@ View a secondary API token
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import application_api
-from sendbird_platform_sdk.model.inline_response2007 import InlineResponse2007
+from sendbird_platform_sdk.model.view_secondary_api_token_by_token_response import ViewSecondaryApiTokenByTokenResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -2011,7 +2011,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2007**](InlineResponse2007.md)
+[**ViewSecondaryApiTokenByTokenResponse**](ViewSecondaryApiTokenByTokenResponse.md)
 
 ### Authorization
 
