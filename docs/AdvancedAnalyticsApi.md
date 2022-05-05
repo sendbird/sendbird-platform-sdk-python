@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **retrieve_advanced_analytics_metrics**
-> RetrieveAdvancedAnalyticsMetricsResponse retrieve_advanced_analytics_metrics()
+> RetrieveAdvancedAnalyticsMetricsResponse retrieve_advanced_analytics_metrics(api_token)
 
 Retrieve Advanced analytics metrics
 
@@ -34,13 +34,12 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = advanced_analytics_api.AdvancedAnalyticsApi(api_client)
-    api_token = "{{API_TOKEN}}" # str |  (optional)
+    api_token = "{{API_TOKEN}}" # str | 
 
     # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # Retrieve Advanced analytics metrics
-        api_response = api_instance.retrieve_advanced_analytics_metrics(api_token=api_token)
+        api_response = api_instance.retrieve_advanced_analytics_metrics(api_token)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling AdvancedAnalyticsApi->retrieve_advanced_analytics_metrics: %s\n" % e)
@@ -51,7 +50,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  | [optional]
+ **api_token** | **str**|  |
 
 ### Return type
 

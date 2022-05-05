@@ -4,7 +4,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**token** | **str** |  | [optional] 
+**tokens** | **[str]** |  | [optional] 
+**token** | **[str]** |  | [optional] 
 **type** | **str** |  | [optional] 
 **user** | [**SendBirdUser**](SendBirdUser.md) |  | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]

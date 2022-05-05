@@ -30,7 +30,9 @@ from sendbird_platform_sdk.exceptions import ApiAttributeError
 
 
 def lazy_import():
+    from sendbird_platform_sdk.model.inline_response200 import InlineResponse200
     from sendbird_platform_sdk.model.send_bird_user import SendBirdUser
+    globals()['InlineResponse200'] = InlineResponse200
     globals()['SendBirdUser'] = SendBirdUser
 
 
@@ -91,6 +93,12 @@ class GcBanUserResponse(ModelNormal):
             'start_at': (float,),  # noqa: E501
             'end_at': (float,),  # noqa: E501
             'description': (str,),  # noqa: E501
+            'metadata': (InlineResponse200,),  # noqa: E501
+            'next_url': (str,),  # noqa: E501
+            'nickname': (str,),  # noqa: E501
+            'profile_url': (str,),  # noqa: E501
+            'require_auth_for_profile_image': (bool,),  # noqa: E501
+            'user_id': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -103,6 +111,12 @@ class GcBanUserResponse(ModelNormal):
         'start_at': 'start_at',  # noqa: E501
         'end_at': 'end_at',  # noqa: E501
         'description': 'description',  # noqa: E501
+        'metadata': 'metadata',  # noqa: E501
+        'next_url': 'next_url',  # noqa: E501
+        'nickname': 'nickname',  # noqa: E501
+        'profile_url': 'profile_url',  # noqa: E501
+        'require_auth_for_profile_image': 'require_auth_for_profile_image',  # noqa: E501
+        'user_id': 'user_id',  # noqa: E501
     }
 
     read_only_vars = {
@@ -150,6 +164,12 @@ class GcBanUserResponse(ModelNormal):
             start_at (float): [optional]  # noqa: E501
             end_at (float): [optional]  # noqa: E501
             description (str): [optional]  # noqa: E501
+            metadata (InlineResponse200): [optional]  # noqa: E501
+            next_url (str): [optional]  # noqa: E501
+            nickname (str): [optional]  # noqa: E501
+            profile_url (str): [optional]  # noqa: E501
+            require_auth_for_profile_image (bool): [optional]  # noqa: E501
+            user_id (str): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -235,6 +255,12 @@ class GcBanUserResponse(ModelNormal):
             start_at (float): [optional]  # noqa: E501
             end_at (float): [optional]  # noqa: E501
             description (str): [optional]  # noqa: E501
+            metadata (InlineResponse200): [optional]  # noqa: E501
+            next_url (str): [optional]  # noqa: E501
+            nickname (str): [optional]  # noqa: E501
+            profile_url (str): [optional]  # noqa: E501
+            require_auth_for_profile_image (bool): [optional]  # noqa: E501
+            user_id (str): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

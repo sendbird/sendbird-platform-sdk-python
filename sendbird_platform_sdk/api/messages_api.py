@@ -62,13 +62,14 @@ class MessagesApi(object):
             },
             params_map={
                 'all': [
+                    'api_token',
                     'channel_type',
                     'channel_url',
                     'message_id',
-                    'api_token',
                     'add_extra_data_to_message_data',
                 ],
                 'required': [
+                    'api_token',
                     'channel_type',
                     'channel_url',
                     'message_id',
@@ -86,28 +87,28 @@ class MessagesApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
+                    'api_token':
+                        (str,),
                     'channel_type':
                         (str,),
                     'channel_url':
                         (str,),
                     'message_id':
                         (str,),
-                    'api_token':
-                        (str,),
                     'add_extra_data_to_message_data':
                         (AddExtraDataToMessageData,),
                 },
                 'attribute_map': {
+                    'api_token': 'Api-Token',
                     'channel_type': 'channel_type',
                     'channel_url': 'channel_url',
                     'message_id': 'message_id',
-                    'api_token': 'Api-Token',
                 },
                 'location_map': {
+                    'api_token': 'header',
                     'channel_type': 'path',
                     'channel_url': 'path',
                     'message_id': 'path',
-                    'api_token': 'header',
                     'add_extra_data_to_message_data': 'body',
                 },
                 'collection_format_map': {
@@ -134,13 +135,14 @@ class MessagesApi(object):
             },
             params_map={
                 'all': [
+                    'api_token',
                     'channel_type',
                     'channel_url',
                     'message_id',
-                    'api_token',
                     'add_reaction_to_a_message_data',
                 ],
                 'required': [
+                    'api_token',
                     'channel_type',
                     'channel_url',
                     'message_id',
@@ -158,28 +160,28 @@ class MessagesApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
+                    'api_token':
+                        (str,),
                     'channel_type':
                         (str,),
                     'channel_url':
                         (str,),
                     'message_id':
                         (str,),
-                    'api_token':
-                        (str,),
                     'add_reaction_to_a_message_data':
                         (AddReactionToAMessageData,),
                 },
                 'attribute_map': {
+                    'api_token': 'Api-Token',
                     'channel_type': 'channel_type',
                     'channel_url': 'channel_url',
                     'message_id': 'message_id',
-                    'api_token': 'Api-Token',
                 },
                 'location_map': {
+                    'api_token': 'header',
                     'channel_type': 'path',
                     'channel_url': 'path',
                     'message_id': 'path',
-                    'api_token': 'header',
                     'add_reaction_to_a_message_data': 'body',
                 },
                 'collection_format_map': {
@@ -197,7 +199,7 @@ class MessagesApi(object):
         )
         self.delete_message_by_id_endpoint = _Endpoint(
             settings={
-                'response_type': None,
+                'response_type': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
                 'auth': [],
                 'endpoint_path': '/v3/{channel_type}/{channel_url}/messages/{message_id}',
                 'operation_id': 'delete_message_by_id',
@@ -206,12 +208,13 @@ class MessagesApi(object):
             },
             params_map={
                 'all': [
+                    'api_token',
                     'channel_type',
                     'channel_url',
                     'message_id',
-                    'api_token',
                 ],
                 'required': [
+                    'api_token',
                     'channel_type',
                     'channel_url',
                     'message_id',
@@ -229,32 +232,34 @@ class MessagesApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
+                    'api_token':
+                        (str,),
                     'channel_type':
                         (str,),
                     'channel_url':
                         (str,),
                     'message_id':
                         (str,),
-                    'api_token':
-                        (str,),
                 },
                 'attribute_map': {
+                    'api_token': 'Api-Token',
                     'channel_type': 'channel_type',
                     'channel_url': 'channel_url',
                     'message_id': 'message_id',
-                    'api_token': 'Api-Token',
                 },
                 'location_map': {
+                    'api_token': 'header',
                     'channel_type': 'path',
                     'channel_url': 'path',
                     'message_id': 'path',
-                    'api_token': 'header',
                 },
                 'collection_format_map': {
                 }
             },
             headers_map={
-                'accept': [],
+                'accept': [
+                    'application/json'
+                ],
                 'content_type': [],
             },
             api_client=api_client
@@ -270,11 +275,12 @@ class MessagesApi(object):
             },
             params_map={
                 'all': [
-                    'channel_url',
                     'api_token',
+                    'channel_url',
                     'gc_mark_all_messages_as_delivered_data',
                 ],
                 'required': [
+                    'api_token',
                     'channel_url',
                 ],
                 'nullable': [
@@ -290,20 +296,20 @@ class MessagesApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'channel_url':
-                        (str,),
                     'api_token':
+                        (str,),
+                    'channel_url':
                         (str,),
                     'gc_mark_all_messages_as_delivered_data':
                         (GcMarkAllMessagesAsDeliveredData,),
                 },
                 'attribute_map': {
-                    'channel_url': 'channel_url',
                     'api_token': 'Api-Token',
+                    'channel_url': 'channel_url',
                 },
                 'location_map': {
-                    'channel_url': 'path',
                     'api_token': 'header',
+                    'channel_url': 'path',
                     'gc_mark_all_messages_as_delivered_data': 'body',
                 },
                 'collection_format_map': {
@@ -321,7 +327,7 @@ class MessagesApi(object):
         )
         self.gc_mark_all_messages_as_read_endpoint = _Endpoint(
             settings={
-                'response_type': None,
+                'response_type': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
                 'auth': [],
                 'endpoint_path': '/v3/group_channels/{channel_url}/messages/mark_as_read',
                 'operation_id': 'gc_mark_all_messages_as_read',
@@ -330,11 +336,12 @@ class MessagesApi(object):
             },
             params_map={
                 'all': [
-                    'channel_url',
                     'api_token',
+                    'channel_url',
                     'gc_mark_all_messages_as_read_data',
                 ],
                 'required': [
+                    'api_token',
                     'channel_url',
                 ],
                 'nullable': [
@@ -350,27 +357,29 @@ class MessagesApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'channel_url':
-                        (str,),
                     'api_token':
+                        (str,),
+                    'channel_url':
                         (str,),
                     'gc_mark_all_messages_as_read_data':
                         (GcMarkAllMessagesAsReadData,),
                 },
                 'attribute_map': {
-                    'channel_url': 'channel_url',
                     'api_token': 'Api-Token',
+                    'channel_url': 'channel_url',
                 },
                 'location_map': {
-                    'channel_url': 'path',
                     'api_token': 'header',
+                    'channel_url': 'path',
                     'gc_mark_all_messages_as_read_data': 'body',
                 },
                 'collection_format_map': {
                 }
             },
             headers_map={
-                'accept': [],
+                'accept': [
+                    'application/json'
+                ],
                 'content_type': [
                     'application/json'
                 ]
@@ -388,11 +397,12 @@ class MessagesApi(object):
             },
             params_map={
                 'all': [
-                    'channel_url',
                     'api_token',
+                    'channel_url',
                     'user_ids',
                 ],
                 'required': [
+                    'api_token',
                     'channel_url',
                 ],
                 'nullable': [
@@ -408,21 +418,21 @@ class MessagesApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'channel_url':
-                        (str,),
                     'api_token':
+                        (str,),
+                    'channel_url':
                         (str,),
                     'user_ids':
                         (str,),
                 },
                 'attribute_map': {
-                    'channel_url': 'channel_url',
                     'api_token': 'Api-Token',
+                    'channel_url': 'channel_url',
                     'user_ids': 'user_ids',
                 },
                 'location_map': {
-                    'channel_url': 'path',
                     'api_token': 'header',
+                    'channel_url': 'path',
                     'user_ids': 'query',
                 },
                 'collection_format_map': {
@@ -447,11 +457,11 @@ class MessagesApi(object):
             },
             params_map={
                 'all': [
+                    'api_token',
                     'channel_type',
                     'channel_url',
                     'message_ts',
                     'message_id',
-                    'api_token',
                     'prev_limit',
                     'next_limit',
                     'include',
@@ -470,10 +480,9 @@ class MessagesApi(object):
                     'with_meta_array',
                 ],
                 'required': [
+                    'api_token',
                     'channel_type',
                     'channel_url',
-                    'message_ts',
-                    'message_id',
                 ],
                 'nullable': [
                 ],
@@ -488,6 +497,8 @@ class MessagesApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
+                    'api_token':
+                        (str,),
                     'channel_type':
                         (str,),
                     'channel_url':
@@ -496,8 +507,6 @@ class MessagesApi(object):
                         (int,),
                     'message_id':
                         (int,),
-                    'api_token':
-                        (str,),
                     'prev_limit':
                         (int,),
                     'next_limit':
@@ -532,11 +541,11 @@ class MessagesApi(object):
                         (bool,),
                 },
                 'attribute_map': {
+                    'api_token': 'Api-Token',
                     'channel_type': 'channel_type',
                     'channel_url': 'channel_url',
                     'message_ts': 'message_ts',
                     'message_id': 'message_id',
-                    'api_token': 'Api-Token',
                     'prev_limit': 'prev_limit',
                     'next_limit': 'next_limit',
                     'include': 'include',
@@ -555,11 +564,11 @@ class MessagesApi(object):
                     'with_meta_array': 'with_meta_array',
                 },
                 'location_map': {
+                    'api_token': 'header',
                     'channel_type': 'path',
                     'channel_url': 'path',
                     'message_ts': 'query',
                     'message_id': 'query',
-                    'api_token': 'header',
                     'prev_limit': 'query',
                     'next_limit': 'query',
                     'include': 'query',
@@ -599,13 +608,14 @@ class MessagesApi(object):
             },
             params_map={
                 'all': [
+                    'api_token',
                     'channel_type',
                     'channel_url',
                     'message_id',
-                    'api_token',
                     'list_users',
                 ],
                 'required': [
+                    'api_token',
                     'channel_type',
                     'channel_url',
                     'message_id',
@@ -623,29 +633,29 @@ class MessagesApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
+                    'api_token':
+                        (str,),
                     'channel_type':
                         (str,),
                     'channel_url':
                         (str,),
                     'message_id':
                         (str,),
-                    'api_token':
-                        (str,),
                     'list_users':
                         (bool,),
                 },
                 'attribute_map': {
+                    'api_token': 'Api-Token',
                     'channel_type': 'channel_type',
                     'channel_url': 'channel_url',
                     'message_id': 'message_id',
-                    'api_token': 'Api-Token',
                     'list_users': 'list_users',
                 },
                 'location_map': {
+                    'api_token': 'header',
                     'channel_type': 'path',
                     'channel_url': 'path',
                     'message_id': 'path',
-                    'api_token': 'header',
                     'list_users': 'query',
                 },
                 'collection_format_map': {
@@ -661,7 +671,7 @@ class MessagesApi(object):
         )
         self.remove_extra_data_from_message_endpoint = _Endpoint(
             settings={
-                'response_type': None,
+                'response_type': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
                 'auth': [],
                 'endpoint_path': '/v3/{channel_type}/{channel_url}/messages/{message_id}/sorted_metaarray',
                 'operation_id': 'remove_extra_data_from_message',
@@ -670,13 +680,14 @@ class MessagesApi(object):
             },
             params_map={
                 'all': [
+                    'api_token',
                     'channel_type',
                     'channel_url',
                     'message_id',
-                    'api_token',
                     'keys',
                 ],
                 'required': [
+                    'api_token',
                     'channel_type',
                     'channel_url',
                     'message_id',
@@ -694,29 +705,29 @@ class MessagesApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
+                    'api_token':
+                        (str,),
                     'channel_type':
                         (str,),
                     'channel_url':
                         (str,),
                     'message_id':
                         (str,),
-                    'api_token':
-                        (str,),
                     'keys':
                         ([str],),
                 },
                 'attribute_map': {
+                    'api_token': 'Api-Token',
                     'channel_type': 'channel_type',
                     'channel_url': 'channel_url',
                     'message_id': 'message_id',
-                    'api_token': 'Api-Token',
                     'keys': 'keys',
                 },
                 'location_map': {
+                    'api_token': 'header',
                     'channel_type': 'path',
                     'channel_url': 'path',
                     'message_id': 'path',
-                    'api_token': 'header',
                     'keys': 'query',
                 },
                 'collection_format_map': {
@@ -724,7 +735,9 @@ class MessagesApi(object):
                 }
             },
             headers_map={
-                'accept': [],
+                'accept': [
+                    'application/json'
+                ],
                 'content_type': [],
             },
             api_client=api_client
@@ -740,14 +753,15 @@ class MessagesApi(object):
             },
             params_map={
                 'all': [
+                    'api_token',
                     'channel_type',
                     'channel_url',
                     'message_id',
-                    'api_token',
                     'user_id',
                     'reaction',
                 ],
                 'required': [
+                    'api_token',
                     'channel_type',
                     'channel_url',
                     'message_id',
@@ -765,13 +779,13 @@ class MessagesApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
+                    'api_token':
+                        (str,),
                     'channel_type':
                         (str,),
                     'channel_url':
                         (str,),
                     'message_id':
-                        (str,),
-                    'api_token':
                         (str,),
                     'user_id':
                         (str,),
@@ -779,18 +793,18 @@ class MessagesApi(object):
                         (str,),
                 },
                 'attribute_map': {
+                    'api_token': 'Api-Token',
                     'channel_type': 'channel_type',
                     'channel_url': 'channel_url',
                     'message_id': 'message_id',
-                    'api_token': 'Api-Token',
                     'user_id': 'user_id',
                     'reaction': 'reaction',
                 },
                 'location_map': {
+                    'api_token': 'header',
                     'channel_type': 'path',
                     'channel_url': 'path',
                     'message_id': 'path',
-                    'api_token': 'header',
                     'user_id': 'query',
                     'reaction': 'query',
                 },
@@ -816,12 +830,13 @@ class MessagesApi(object):
             },
             params_map={
                 'all': [
+                    'api_token',
                     'channel_type',
                     'channel_url',
-                    'api_token',
                     'send_message_data',
                 ],
                 'required': [
+                    'api_token',
                     'channel_type',
                     'channel_url',
                 ],
@@ -838,24 +853,24 @@ class MessagesApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
+                    'api_token':
+                        (str,),
                     'channel_type':
                         (str,),
                     'channel_url':
-                        (str,),
-                    'api_token':
                         (str,),
                     'send_message_data':
                         (SendMessageData,),
                 },
                 'attribute_map': {
+                    'api_token': 'Api-Token',
                     'channel_type': 'channel_type',
                     'channel_url': 'channel_url',
-                    'api_token': 'Api-Token',
                 },
                 'location_map': {
+                    'api_token': 'header',
                     'channel_type': 'path',
                     'channel_url': 'path',
-                    'api_token': 'header',
                     'send_message_data': 'body',
                 },
                 'collection_format_map': {
@@ -882,13 +897,14 @@ class MessagesApi(object):
             },
             params_map={
                 'all': [
+                    'api_token',
                     'channel_type',
                     'channel_url',
                     'message_id',
-                    'api_token',
                     'body',
                 ],
                 'required': [
+                    'api_token',
                     'channel_type',
                     'channel_url',
                     'message_id',
@@ -906,28 +922,28 @@ class MessagesApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
+                    'api_token':
+                        (str,),
                     'channel_type':
                         (str,),
                     'channel_url':
                         (str,),
                     'message_id':
                         (str,),
-                    'api_token':
-                        (str,),
                     'body':
                         ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
                 },
                 'attribute_map': {
+                    'api_token': 'Api-Token',
                     'channel_type': 'channel_type',
                     'channel_url': 'channel_url',
                     'message_id': 'message_id',
-                    'api_token': 'Api-Token',
                 },
                 'location_map': {
+                    'api_token': 'header',
                     'channel_type': 'path',
                     'channel_url': 'path',
                     'message_id': 'path',
-                    'api_token': 'header',
                     'body': 'body',
                 },
                 'collection_format_map': {
@@ -954,13 +970,14 @@ class MessagesApi(object):
             },
             params_map={
                 'all': [
+                    'api_token',
                     'channel_type',
                     'channel_url',
                     'message_id',
-                    'api_token',
                     'update_extra_data_in_message_data',
                 ],
                 'required': [
+                    'api_token',
                     'channel_type',
                     'channel_url',
                     'message_id',
@@ -978,28 +995,28 @@ class MessagesApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
+                    'api_token':
+                        (str,),
                     'channel_type':
                         (str,),
                     'channel_url':
                         (str,),
                     'message_id':
                         (str,),
-                    'api_token':
-                        (str,),
                     'update_extra_data_in_message_data':
                         (UpdateExtraDataInMessageData,),
                 },
                 'attribute_map': {
+                    'api_token': 'Api-Token',
                     'channel_type': 'channel_type',
                     'channel_url': 'channel_url',
                     'message_id': 'message_id',
-                    'api_token': 'Api-Token',
                 },
                 'location_map': {
+                    'api_token': 'header',
                     'channel_type': 'path',
                     'channel_url': 'path',
                     'message_id': 'path',
-                    'api_token': 'header',
                     'update_extra_data_in_message_data': 'body',
                 },
                 'collection_format_map': {
@@ -1026,13 +1043,14 @@ class MessagesApi(object):
             },
             params_map={
                 'all': [
+                    'api_token',
                     'channel_type',
                     'channel_url',
                     'message_id',
-                    'api_token',
                     'update_message_by_id_data',
                 ],
                 'required': [
+                    'api_token',
                     'channel_type',
                     'channel_url',
                     'message_id',
@@ -1050,28 +1068,28 @@ class MessagesApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
+                    'api_token':
+                        (str,),
                     'channel_type':
                         (str,),
                     'channel_url':
                         (str,),
                     'message_id':
                         (str,),
-                    'api_token':
-                        (str,),
                     'update_message_by_id_data':
                         (UpdateMessageByIdData,),
                 },
                 'attribute_map': {
+                    'api_token': 'Api-Token',
                     'channel_type': 'channel_type',
                     'channel_url': 'channel_url',
                     'message_id': 'message_id',
-                    'api_token': 'Api-Token',
                 },
                 'location_map': {
+                    'api_token': 'header',
                     'channel_type': 'path',
                     'channel_url': 'path',
                     'message_id': 'path',
-                    'api_token': 'header',
                     'update_message_by_id_data': 'body',
                 },
                 'collection_format_map': {
@@ -1098,14 +1116,15 @@ class MessagesApi(object):
             },
             params_map={
                 'all': [
+                    'api_token',
                     'channel_type',
                     'channel_url',
                     'message_id',
-                    'api_token',
                     'with_sorted_meta_array',
                     'with_meta_array',
                 ],
                 'required': [
+                    'api_token',
                     'channel_type',
                     'channel_url',
                     'message_id',
@@ -1123,13 +1142,13 @@ class MessagesApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
+                    'api_token':
+                        (str,),
                     'channel_type':
                         (str,),
                     'channel_url':
                         (str,),
                     'message_id':
-                        (str,),
-                    'api_token':
                         (str,),
                     'with_sorted_meta_array':
                         (bool,),
@@ -1137,18 +1156,18 @@ class MessagesApi(object):
                         (bool,),
                 },
                 'attribute_map': {
+                    'api_token': 'Api-Token',
                     'channel_type': 'channel_type',
                     'channel_url': 'channel_url',
                     'message_id': 'message_id',
-                    'api_token': 'Api-Token',
                     'with_sorted_meta_array': 'with_sorted_meta_array',
                     'with_meta_array': 'with_meta_array',
                 },
                 'location_map': {
+                    'api_token': 'header',
                     'channel_type': 'path',
                     'channel_url': 'path',
                     'message_id': 'path',
-                    'api_token': 'header',
                     'with_sorted_meta_array': 'query',
                     'with_meta_array': 'query',
                 },
@@ -1174,11 +1193,12 @@ class MessagesApi(object):
             },
             params_map={
                 'all': [
+                    'api_token',
                     'channel_type',
                     'channel_url',
-                    'api_token',
                 ],
                 'required': [
+                    'api_token',
                     'channel_type',
                     'channel_url',
                 ],
@@ -1195,22 +1215,22 @@ class MessagesApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
+                    'api_token':
+                        (str,),
                     'channel_type':
                         (str,),
                     'channel_url':
                         (str,),
-                    'api_token':
-                        (str,),
                 },
                 'attribute_map': {
+                    'api_token': 'Api-Token',
                     'channel_type': 'channel_type',
                     'channel_url': 'channel_url',
-                    'api_token': 'Api-Token',
                 },
                 'location_map': {
+                    'api_token': 'header',
                     'channel_type': 'path',
                     'channel_url': 'path',
-                    'api_token': 'header',
                 },
                 'collection_format_map': {
                 }
@@ -1226,6 +1246,7 @@ class MessagesApi(object):
 
     def add_extra_data_to_message(
         self,
+        api_token,
         channel_type,
         channel_url,
         message_id,
@@ -1237,16 +1258,16 @@ class MessagesApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.add_extra_data_to_message(channel_type, channel_url, message_id, async_req=True)
+        >>> thread = api.add_extra_data_to_message(api_token, channel_type, channel_url, message_id, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             channel_type (str):
             channel_url (str):
             message_id (str):
 
         Keyword Args:
-            api_token (str): [optional]
             add_extra_data_to_message_data (AddExtraDataToMessageData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -1297,6 +1318,8 @@ class MessagesApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['channel_type'] = \
             channel_type
         kwargs['channel_url'] = \
@@ -1307,6 +1330,7 @@ class MessagesApi(object):
 
     def add_reaction_to_a_message(
         self,
+        api_token,
         channel_type,
         channel_url,
         message_id,
@@ -1318,16 +1342,16 @@ class MessagesApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.add_reaction_to_a_message(channel_type, channel_url, message_id, async_req=True)
+        >>> thread = api.add_reaction_to_a_message(api_token, channel_type, channel_url, message_id, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             channel_type (str):
             channel_url (str):
             message_id (str):
 
         Keyword Args:
-            api_token (str): [optional]
             add_reaction_to_a_message_data (AddReactionToAMessageData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -1378,6 +1402,8 @@ class MessagesApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['channel_type'] = \
             channel_type
         kwargs['channel_url'] = \
@@ -1388,6 +1414,7 @@ class MessagesApi(object):
 
     def delete_message_by_id(
         self,
+        api_token,
         channel_type,
         channel_url,
         message_id,
@@ -1399,16 +1426,16 @@ class MessagesApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.delete_message_by_id(channel_type, channel_url, message_id, async_req=True)
+        >>> thread = api.delete_message_by_id(api_token, channel_type, channel_url, message_id, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             channel_type (str):
             channel_url (str):
             message_id (str):
 
         Keyword Args:
-            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -1433,7 +1460,7 @@ class MessagesApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            None
+            {str: (bool, date, datetime, dict, float, int, list, str, none_type)}
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -1458,6 +1485,8 @@ class MessagesApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['channel_type'] = \
             channel_type
         kwargs['channel_url'] = \
@@ -1468,6 +1497,7 @@ class MessagesApi(object):
 
     def gc_mark_all_messages_as_delivered(
         self,
+        api_token,
         channel_url,
         **kwargs
     ):
@@ -1477,14 +1507,14 @@ class MessagesApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.gc_mark_all_messages_as_delivered(channel_url, async_req=True)
+        >>> thread = api.gc_mark_all_messages_as_delivered(api_token, channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             channel_url (str):
 
         Keyword Args:
-            api_token (str): [optional]
             gc_mark_all_messages_as_delivered_data (GcMarkAllMessagesAsDeliveredData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -1535,12 +1565,15 @@ class MessagesApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['channel_url'] = \
             channel_url
         return self.gc_mark_all_messages_as_delivered_endpoint.call_with_http_info(**kwargs)
 
     def gc_mark_all_messages_as_read(
         self,
+        api_token,
         channel_url,
         **kwargs
     ):
@@ -1550,14 +1583,14 @@ class MessagesApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.gc_mark_all_messages_as_read(channel_url, async_req=True)
+        >>> thread = api.gc_mark_all_messages_as_read(api_token, channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             channel_url (str):
 
         Keyword Args:
-            api_token (str): [optional]
             gc_mark_all_messages_as_read_data (GcMarkAllMessagesAsReadData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -1583,7 +1616,7 @@ class MessagesApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            None
+            {str: (bool, date, datetime, dict, float, int, list, str, none_type)}
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -1608,12 +1641,15 @@ class MessagesApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['channel_url'] = \
             channel_url
         return self.gc_mark_all_messages_as_read_endpoint.call_with_http_info(**kwargs)
 
     def gc_view_number_of_each_members_unread_messages(
         self,
+        api_token,
         channel_url,
         **kwargs
     ):
@@ -1623,14 +1659,14 @@ class MessagesApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.gc_view_number_of_each_members_unread_messages(channel_url, async_req=True)
+        >>> thread = api.gc_view_number_of_each_members_unread_messages(api_token, channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             channel_url (str):
 
         Keyword Args:
-            api_token (str): [optional]
             user_ids (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -1681,16 +1717,17 @@ class MessagesApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['channel_url'] = \
             channel_url
         return self.gc_view_number_of_each_members_unread_messages_endpoint.call_with_http_info(**kwargs)
 
     def list_messages(
         self,
+        api_token,
         channel_type,
         channel_url,
-        message_ts,
-        message_id,
         **kwargs
     ):
         """List messages  # noqa: E501
@@ -1699,17 +1736,17 @@ class MessagesApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.list_messages(channel_type, channel_url, message_ts, message_id, async_req=True)
+        >>> thread = api.list_messages(api_token, channel_type, channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             channel_type (str):
             channel_url (str):
-            message_ts (int):
-            message_id (int):
 
         Keyword Args:
-            api_token (str): [optional]
+            message_ts (int): [optional]
+            message_id (int): [optional]
             prev_limit (int): [optional]
             next_limit (int): [optional]
             include (bool): [optional]
@@ -1775,18 +1812,17 @@ class MessagesApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['channel_type'] = \
             channel_type
         kwargs['channel_url'] = \
             channel_url
-        kwargs['message_ts'] = \
-            message_ts
-        kwargs['message_id'] = \
-            message_id
         return self.list_messages_endpoint.call_with_http_info(**kwargs)
 
     def list_reactions_of_message(
         self,
+        api_token,
         channel_type,
         channel_url,
         message_id,
@@ -1798,16 +1834,16 @@ class MessagesApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.list_reactions_of_message(channel_type, channel_url, message_id, async_req=True)
+        >>> thread = api.list_reactions_of_message(api_token, channel_type, channel_url, message_id, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             channel_type (str):
             channel_url (str):
             message_id (str):
 
         Keyword Args:
-            api_token (str): [optional]
             list_users (bool): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -1858,6 +1894,8 @@ class MessagesApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['channel_type'] = \
             channel_type
         kwargs['channel_url'] = \
@@ -1868,6 +1906,7 @@ class MessagesApi(object):
 
     def remove_extra_data_from_message(
         self,
+        api_token,
         channel_type,
         channel_url,
         message_id,
@@ -1879,16 +1918,16 @@ class MessagesApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.remove_extra_data_from_message(channel_type, channel_url, message_id, async_req=True)
+        >>> thread = api.remove_extra_data_from_message(api_token, channel_type, channel_url, message_id, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             channel_type (str):
             channel_url (str):
             message_id (str):
 
         Keyword Args:
-            api_token (str): [optional]
             keys ([str]): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -1914,7 +1953,7 @@ class MessagesApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            None
+            {str: (bool, date, datetime, dict, float, int, list, str, none_type)}
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -1939,6 +1978,8 @@ class MessagesApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['channel_type'] = \
             channel_type
         kwargs['channel_url'] = \
@@ -1949,6 +1990,7 @@ class MessagesApi(object):
 
     def remove_reaction_from_a_message(
         self,
+        api_token,
         channel_type,
         channel_url,
         message_id,
@@ -1960,16 +2002,16 @@ class MessagesApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.remove_reaction_from_a_message(channel_type, channel_url, message_id, async_req=True)
+        >>> thread = api.remove_reaction_from_a_message(api_token, channel_type, channel_url, message_id, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             channel_type (str):
             channel_url (str):
             message_id (str):
 
         Keyword Args:
-            api_token (str): [optional]
             user_id (str): [optional]
             reaction (str): [optional]
             _return_http_data_only (bool): response data without head status
@@ -2021,6 +2063,8 @@ class MessagesApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['channel_type'] = \
             channel_type
         kwargs['channel_url'] = \
@@ -2031,6 +2075,7 @@ class MessagesApi(object):
 
     def send_message(
         self,
+        api_token,
         channel_type,
         channel_url,
         **kwargs
@@ -2041,15 +2086,15 @@ class MessagesApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.send_message(channel_type, channel_url, async_req=True)
+        >>> thread = api.send_message(api_token, channel_type, channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             channel_type (str):
             channel_url (str):
 
         Keyword Args:
-            api_token (str): [optional]
             send_message_data (SendMessageData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -2100,6 +2145,8 @@ class MessagesApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['channel_type'] = \
             channel_type
         kwargs['channel_url'] = \
@@ -2108,6 +2155,7 @@ class MessagesApi(object):
 
     def translate_message_into_other_languages(
         self,
+        api_token,
         channel_type,
         channel_url,
         message_id,
@@ -2119,16 +2167,16 @@ class MessagesApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.translate_message_into_other_languages(channel_type, channel_url, message_id, async_req=True)
+        >>> thread = api.translate_message_into_other_languages(api_token, channel_type, channel_url, message_id, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             channel_type (str):
             channel_url (str):
             message_id (str):
 
         Keyword Args:
-            api_token (str): [optional]
             body ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -2179,6 +2227,8 @@ class MessagesApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['channel_type'] = \
             channel_type
         kwargs['channel_url'] = \
@@ -2189,6 +2239,7 @@ class MessagesApi(object):
 
     def update_extra_data_in_message(
         self,
+        api_token,
         channel_type,
         channel_url,
         message_id,
@@ -2200,16 +2251,16 @@ class MessagesApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.update_extra_data_in_message(channel_type, channel_url, message_id, async_req=True)
+        >>> thread = api.update_extra_data_in_message(api_token, channel_type, channel_url, message_id, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             channel_type (str):
             channel_url (str):
             message_id (str):
 
         Keyword Args:
-            api_token (str): [optional]
             update_extra_data_in_message_data (UpdateExtraDataInMessageData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -2260,6 +2311,8 @@ class MessagesApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['channel_type'] = \
             channel_type
         kwargs['channel_url'] = \
@@ -2270,6 +2323,7 @@ class MessagesApi(object):
 
     def update_message_by_id(
         self,
+        api_token,
         channel_type,
         channel_url,
         message_id,
@@ -2281,16 +2335,16 @@ class MessagesApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.update_message_by_id(channel_type, channel_url, message_id, async_req=True)
+        >>> thread = api.update_message_by_id(api_token, channel_type, channel_url, message_id, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             channel_type (str):
             channel_url (str):
             message_id (str):
 
         Keyword Args:
-            api_token (str): [optional]
             update_message_by_id_data (UpdateMessageByIdData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -2341,6 +2395,8 @@ class MessagesApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['channel_type'] = \
             channel_type
         kwargs['channel_url'] = \
@@ -2351,6 +2407,7 @@ class MessagesApi(object):
 
     def view_message_by_id(
         self,
+        api_token,
         channel_type,
         channel_url,
         message_id,
@@ -2362,16 +2419,16 @@ class MessagesApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.view_message_by_id(channel_type, channel_url, message_id, async_req=True)
+        >>> thread = api.view_message_by_id(api_token, channel_type, channel_url, message_id, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             channel_type (str):
             channel_url (str):
             message_id (str):
 
         Keyword Args:
-            api_token (str): [optional]
             with_sorted_meta_array (bool): [optional]
             with_meta_array (bool): [optional]
             _return_http_data_only (bool): response data without head status
@@ -2423,6 +2480,8 @@ class MessagesApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['channel_type'] = \
             channel_type
         kwargs['channel_url'] = \
@@ -2433,6 +2492,7 @@ class MessagesApi(object):
 
     def view_total_number_of_messages_in_channel(
         self,
+        api_token,
         channel_type,
         channel_url,
         **kwargs
@@ -2443,15 +2503,15 @@ class MessagesApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.view_total_number_of_messages_in_channel(channel_type, channel_url, async_req=True)
+        >>> thread = api.view_total_number_of_messages_in_channel(api_token, channel_type, channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             channel_type (str):
             channel_url (str):
 
         Keyword Args:
-            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -2501,6 +2561,8 @@ class MessagesApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['channel_type'] = \
             channel_type
         kwargs['channel_url'] = \

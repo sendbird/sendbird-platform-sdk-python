@@ -49,10 +49,11 @@ class DataPrivacyApi(object):
             },
             params_map={
                 'all': [
-                    'request_id',
                     'api_token',
+                    'request_id',
                 ],
                 'required': [
+                    'api_token',
                     'request_id',
                 ],
                 'nullable': [
@@ -68,18 +69,18 @@ class DataPrivacyApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'request_id':
-                        (str,),
                     'api_token':
+                        (str,),
+                    'request_id':
                         (str,),
                 },
                 'attribute_map': {
-                    'request_id': 'request_id',
                     'api_token': 'Api-Token',
+                    'request_id': 'request_id',
                 },
                 'location_map': {
-                    'request_id': 'path',
                     'api_token': 'header',
+                    'request_id': 'path',
                 },
                 'collection_format_map': {
                 }
@@ -105,7 +106,9 @@ class DataPrivacyApi(object):
                     'token',
                     'limit',
                 ],
-                'required': [],
+                'required': [
+                    'api_token',
+                ],
                 'nullable': [
                 ],
                 'enum': [
@@ -161,7 +164,9 @@ class DataPrivacyApi(object):
                     'api_token',
                     'register_gdpr_request_data',
                 ],
-                'required': [],
+                'required': [
+                    'api_token',
+                ],
                 'nullable': [
                 ],
                 'enum': [
@@ -211,10 +216,11 @@ class DataPrivacyApi(object):
             },
             params_map={
                 'all': [
-                    'request_id',
                     'api_token',
+                    'request_id',
                 ],
                 'required': [
+                    'api_token',
                     'request_id',
                 ],
                 'nullable': [
@@ -230,18 +236,18 @@ class DataPrivacyApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'request_id':
-                        (str,),
                     'api_token':
+                        (str,),
+                    'request_id':
                         (str,),
                 },
                 'attribute_map': {
-                    'request_id': 'request_id',
                     'api_token': 'Api-Token',
+                    'request_id': 'request_id',
                 },
                 'location_map': {
-                    'request_id': 'path',
                     'api_token': 'header',
+                    'request_id': 'path',
                 },
                 'collection_format_map': {
                 }
@@ -257,6 +263,7 @@ class DataPrivacyApi(object):
 
     def cancel_the_registration_of_gdpr_request_by_id(
         self,
+        api_token,
         request_id,
         **kwargs
     ):
@@ -266,14 +273,14 @@ class DataPrivacyApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.cancel_the_registration_of_gdpr_request_by_id(request_id, async_req=True)
+        >>> thread = api.cancel_the_registration_of_gdpr_request_by_id(api_token, request_id, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             request_id (str):
 
         Keyword Args:
-            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -323,12 +330,15 @@ class DataPrivacyApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['request_id'] = \
             request_id
         return self.cancel_the_registration_of_gdpr_request_by_id_endpoint.call_with_http_info(**kwargs)
 
     def list_gdpr_requests(
         self,
+        api_token,
         **kwargs
     ):
         """List GDPR requests  # noqa: E501
@@ -337,12 +347,13 @@ class DataPrivacyApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.list_gdpr_requests(async_req=True)
+        >>> thread = api.list_gdpr_requests(api_token, async_req=True)
         >>> result = thread.get()
 
+        Args:
+            api_token (str):
 
         Keyword Args:
-            api_token (str): [optional]
             token (str): [optional]
             limit (int): [optional]
             _return_http_data_only (bool): response data without head status
@@ -394,10 +405,13 @@ class DataPrivacyApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         return self.list_gdpr_requests_endpoint.call_with_http_info(**kwargs)
 
     def register_gdpr_request(
         self,
+        api_token,
         **kwargs
     ):
         """Register a GDPR request  # noqa: E501
@@ -406,12 +420,13 @@ class DataPrivacyApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.register_gdpr_request(async_req=True)
+        >>> thread = api.register_gdpr_request(api_token, async_req=True)
         >>> result = thread.get()
 
+        Args:
+            api_token (str):
 
         Keyword Args:
-            api_token (str): [optional]
             register_gdpr_request_data (RegisterGdprRequestData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -462,10 +477,13 @@ class DataPrivacyApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         return self.register_gdpr_request_endpoint.call_with_http_info(**kwargs)
 
     def view_gdpr_request_by_id(
         self,
+        api_token,
         request_id,
         **kwargs
     ):
@@ -475,14 +493,14 @@ class DataPrivacyApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.view_gdpr_request_by_id(request_id, async_req=True)
+        >>> thread = api.view_gdpr_request_by_id(api_token, request_id, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             request_id (str):
 
         Keyword Args:
-            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -532,6 +550,8 @@ class DataPrivacyApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['request_id'] = \
             request_id
         return self.view_gdpr_request_by_id_endpoint.call_with_http_info(**kwargs)

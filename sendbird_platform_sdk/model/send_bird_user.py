@@ -87,18 +87,29 @@ class SendBirdUser(ModelNormal):
         """
         lazy_import()
         return {
-            'connection_status': (str,),  # noqa: E501
-            'friend_discovery_key': (str,),  # noqa: E501
-            'friend_name': (str,),  # noqa: E501
+            'require_auth_for_profile_image': (bool,),  # noqa: E501
+            'is_online': (bool,),  # noqa: E501
+            'user_id': (str,),  # noqa: E501
+            'access_token': (str,),  # noqa: E501
+            'has_ever_logged_in': (bool,),  # noqa: E501
             'is_active': (bool,),  # noqa: E501
             'last_seen_at': (int,),  # noqa: E501
-            'meta_data': (SBObject,),  # noqa: E501
             'nickname': (str,),  # noqa: E501
-            'plain_profile_url': (str,),  # noqa: E501
+            'discovery_keys': ([str],),  # noqa: E501
+            'session_tokens': ([str],),  # noqa: E501
             'preferred_languages': ([str],),  # noqa: E501
             'profile_url': (str,),  # noqa: E501
-            'require_auth': (bool,),  # noqa: E501
-            'user_id': (str,),  # noqa: E501
+            'created_at': (int,),  # noqa: E501
+            'phone_number': (str,),  # noqa: E501
+            'local': (str,),  # noqa: E501
+            'locale': (str,),  # noqa: E501
+            'is_hide_me_from_friends': (bool,),  # noqa: E501
+            'is_shadow_blocked': (bool,),  # noqa: E501
+            'is_created': (bool,),  # noqa: E501
+            'metadata': (SBObject,),  # noqa: E501
+            'description': (str,),  # noqa: E501
+            'end_at': (float,),  # noqa: E501
+            'start_at': (float,),  # noqa: E501
         }
 
     @cached_property
@@ -107,18 +118,29 @@ class SendBirdUser(ModelNormal):
 
 
     attribute_map = {
-        'connection_status': 'connection_status',  # noqa: E501
-        'friend_discovery_key': 'friend_discovery_key',  # noqa: E501
-        'friend_name': 'friend_name',  # noqa: E501
+        'require_auth_for_profile_image': 'require_auth_for_profile_image',  # noqa: E501
+        'is_online': 'is_online',  # noqa: E501
+        'user_id': 'user_id',  # noqa: E501
+        'access_token': 'access_token',  # noqa: E501
+        'has_ever_logged_in': 'has_ever_logged_in',  # noqa: E501
         'is_active': 'is_active',  # noqa: E501
         'last_seen_at': 'last_seen_at',  # noqa: E501
-        'meta_data': 'meta_data',  # noqa: E501
         'nickname': 'nickname',  # noqa: E501
-        'plain_profile_url': 'plain_profile_url',  # noqa: E501
+        'discovery_keys': 'discovery_keys',  # noqa: E501
+        'session_tokens': 'session_tokens',  # noqa: E501
         'preferred_languages': 'preferred_languages',  # noqa: E501
         'profile_url': 'profile_url',  # noqa: E501
-        'require_auth': 'require_auth',  # noqa: E501
-        'user_id': 'user_id',  # noqa: E501
+        'created_at': 'created_at',  # noqa: E501
+        'phone_number': 'phone_number',  # noqa: E501
+        'local': 'local',  # noqa: E501
+        'locale': 'locale',  # noqa: E501
+        'is_hide_me_from_friends': 'is_hide_me_from_friends',  # noqa: E501
+        'is_shadow_blocked': 'is_shadow_blocked',  # noqa: E501
+        'is_created': 'is_created',  # noqa: E501
+        'metadata': 'metadata',  # noqa: E501
+        'description': 'description',  # noqa: E501
+        'end_at': 'end_at',  # noqa: E501
+        'start_at': 'start_at',  # noqa: E501
     }
 
     read_only_vars = {
@@ -162,18 +184,29 @@ class SendBirdUser(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            connection_status (str): [optional]  # noqa: E501
-            friend_discovery_key (str): [optional]  # noqa: E501
-            friend_name (str): [optional]  # noqa: E501
+            require_auth_for_profile_image (bool): [optional]  # noqa: E501
+            is_online (bool): [optional]  # noqa: E501
+            user_id (str): [optional]  # noqa: E501
+            access_token (str): [optional]  # noqa: E501
+            has_ever_logged_in (bool): [optional]  # noqa: E501
             is_active (bool): [optional]  # noqa: E501
             last_seen_at (int): [optional]  # noqa: E501
-            meta_data (SBObject): [optional]  # noqa: E501
             nickname (str): [optional]  # noqa: E501
-            plain_profile_url (str): [optional]  # noqa: E501
+            discovery_keys ([str]): [optional]  # noqa: E501
+            session_tokens ([str]): [optional]  # noqa: E501
             preferred_languages ([str]): [optional]  # noqa: E501
             profile_url (str): [optional]  # noqa: E501
-            require_auth (bool): [optional]  # noqa: E501
-            user_id (str): [optional]  # noqa: E501
+            created_at (int): [optional]  # noqa: E501
+            phone_number (str): [optional]  # noqa: E501
+            local (str): [optional]  # noqa: E501
+            locale (str): [optional]  # noqa: E501
+            is_hide_me_from_friends (bool): [optional]  # noqa: E501
+            is_shadow_blocked (bool): [optional]  # noqa: E501
+            is_created (bool): [optional]  # noqa: E501
+            metadata (SBObject): [optional]  # noqa: E501
+            description (str): [optional]  # noqa: E501
+            end_at (float): [optional]  # noqa: E501
+            start_at (float): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -255,18 +288,29 @@ class SendBirdUser(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            connection_status (str): [optional]  # noqa: E501
-            friend_discovery_key (str): [optional]  # noqa: E501
-            friend_name (str): [optional]  # noqa: E501
+            require_auth_for_profile_image (bool): [optional]  # noqa: E501
+            is_online (bool): [optional]  # noqa: E501
+            user_id (str): [optional]  # noqa: E501
+            access_token (str): [optional]  # noqa: E501
+            has_ever_logged_in (bool): [optional]  # noqa: E501
             is_active (bool): [optional]  # noqa: E501
             last_seen_at (int): [optional]  # noqa: E501
-            meta_data (SBObject): [optional]  # noqa: E501
             nickname (str): [optional]  # noqa: E501
-            plain_profile_url (str): [optional]  # noqa: E501
+            discovery_keys ([str]): [optional]  # noqa: E501
+            session_tokens ([str]): [optional]  # noqa: E501
             preferred_languages ([str]): [optional]  # noqa: E501
             profile_url (str): [optional]  # noqa: E501
-            require_auth (bool): [optional]  # noqa: E501
-            user_id (str): [optional]  # noqa: E501
+            created_at (int): [optional]  # noqa: E501
+            phone_number (str): [optional]  # noqa: E501
+            local (str): [optional]  # noqa: E501
+            locale (str): [optional]  # noqa: E501
+            is_hide_me_from_friends (bool): [optional]  # noqa: E501
+            is_shadow_blocked (bool): [optional]  # noqa: E501
+            is_created (bool): [optional]  # noqa: E501
+            metadata (SBObject): [optional]  # noqa: E501
+            description (str): [optional]  # noqa: E501
+            end_at (float): [optional]  # noqa: E501
+            start_at (float): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

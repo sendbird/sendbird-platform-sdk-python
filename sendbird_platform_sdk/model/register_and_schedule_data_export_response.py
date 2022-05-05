@@ -87,6 +87,8 @@ class RegisterAndScheduleDataExportResponse(ModelNormal):
         """
         lazy_import()
         return {
+            'channel_custom_types': ([str],),  # noqa: E501
+            'data_type': (str,),  # noqa: E501
             'request_id': (str,),  # noqa: E501
             'status': (str,),  # noqa: E501
             'format': (str,),  # noqa: E501
@@ -107,6 +109,8 @@ class RegisterAndScheduleDataExportResponse(ModelNormal):
 
 
     attribute_map = {
+        'channel_custom_types': 'channel_custom_types',  # noqa: E501
+        'data_type': 'data_type',  # noqa: E501
         'request_id': 'request_id',  # noqa: E501
         'status': 'status',  # noqa: E501
         'format': 'format',  # noqa: E501
@@ -162,6 +166,8 @@ class RegisterAndScheduleDataExportResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            channel_custom_types ([str]): [optional]  # noqa: E501
+            data_type (str): [optional]  # noqa: E501
             request_id (str): [optional]  # noqa: E501
             status (str): [optional]  # noqa: E501
             format (str): [optional]  # noqa: E501
@@ -255,6 +261,8 @@ class RegisterAndScheduleDataExportResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            channel_custom_types ([str]): [optional]  # noqa: E501
+            data_type (str): [optional]  # noqa: E501
             request_id (str): [optional]  # noqa: E501
             status (str): [optional]  # noqa: E501
             format (str): [optional]  # noqa: E501

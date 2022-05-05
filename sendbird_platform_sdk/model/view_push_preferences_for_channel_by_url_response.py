@@ -92,6 +92,7 @@ class ViewPushPreferencesForChannelByUrlResponse(ModelNormal):
             'snooze_end_ts': (float,),  # noqa: E501
             'timezone': (str,),  # noqa: E501
             'push_sound': (str,),  # noqa: E501
+            'enable': (bool,),  # noqa: E501
         }
 
     @cached_property
@@ -111,6 +112,7 @@ class ViewPushPreferencesForChannelByUrlResponse(ModelNormal):
         'snooze_end_ts': 'snooze_end_ts',  # noqa: E501
         'timezone': 'timezone',  # noqa: E501
         'push_sound': 'push_sound',  # noqa: E501
+        'enable': 'enable',  # noqa: E501
     }
 
     read_only_vars = {
@@ -165,6 +167,7 @@ class ViewPushPreferencesForChannelByUrlResponse(ModelNormal):
             snooze_end_ts (float): [optional]  # noqa: E501
             timezone (str): [optional]  # noqa: E501
             push_sound (str): [optional]  # noqa: E501
+            enable (bool): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -257,6 +260,7 @@ class ViewPushPreferencesForChannelByUrlResponse(ModelNormal):
             snooze_end_ts (float): [optional]  # noqa: E501
             timezone (str): [optional]  # noqa: E501
             push_sound (str): [optional]  # noqa: E501
+            enable (bool): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

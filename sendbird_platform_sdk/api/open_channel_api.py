@@ -21,6 +21,7 @@ from sendbird_platform_sdk.model_utils import (  # noqa: F401
     none_type,
     validate_and_convert_types
 )
+from sendbird_platform_sdk.model.inline_response200 import InlineResponse200
 from sendbird_platform_sdk.model.oc_ban_user_data import OcBanUserData
 from sendbird_platform_sdk.model.oc_ban_user_response import OcBanUserResponse
 from sendbird_platform_sdk.model.oc_create_channel_data import OcCreateChannelData
@@ -33,10 +34,11 @@ from sendbird_platform_sdk.model.oc_list_participants_response import OcListPart
 from sendbird_platform_sdk.model.oc_mute_user_data import OcMuteUserData
 from sendbird_platform_sdk.model.oc_register_operators_data import OcRegisterOperatorsData
 from sendbird_platform_sdk.model.oc_update_ban_by_id_data import OcUpdateBanByIdData
+from sendbird_platform_sdk.model.oc_update_ban_by_id_response import OcUpdateBanByIdResponse
 from sendbird_platform_sdk.model.oc_update_channel_by_url_data import OcUpdateChannelByUrlData
+from sendbird_platform_sdk.model.oc_view_ban_by_id_response import OcViewBanByIdResponse
 from sendbird_platform_sdk.model.oc_view_mute_by_id_response import OcViewMuteByIdResponse
 from sendbird_platform_sdk.model.send_bird_open_channel import SendBirdOpenChannel
-from sendbird_platform_sdk.model.send_bird_user import SendBirdUser
 
 
 class OpenChannelApi(object):
@@ -61,11 +63,12 @@ class OpenChannelApi(object):
             },
             params_map={
                 'all': [
-                    'channel_url',
                     'api_token',
+                    'channel_url',
                     'oc_ban_user_data',
                 ],
                 'required': [
+                    'api_token',
                     'channel_url',
                 ],
                 'nullable': [
@@ -81,20 +84,20 @@ class OpenChannelApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'channel_url':
-                        (str,),
                     'api_token':
+                        (str,),
+                    'channel_url':
                         (str,),
                     'oc_ban_user_data':
                         (OcBanUserData,),
                 },
                 'attribute_map': {
-                    'channel_url': 'channel_url',
                     'api_token': 'Api-Token',
+                    'channel_url': 'channel_url',
                 },
                 'location_map': {
-                    'channel_url': 'path',
                     'api_token': 'header',
+                    'channel_url': 'path',
                     'oc_ban_user_data': 'body',
                 },
                 'collection_format_map': {
@@ -121,12 +124,13 @@ class OpenChannelApi(object):
             },
             params_map={
                 'all': [
+                    'api_token',
                     'channel_url',
                     'operator_ids',
-                    'api_token',
                     'delete_all',
                 ],
                 'required': [
+                    'api_token',
                     'channel_url',
                     'operator_ids',
                 ],
@@ -143,25 +147,25 @@ class OpenChannelApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
+                    'api_token':
+                        (str,),
                     'channel_url':
                         (str,),
                     'operator_ids':
                         ([str],),
-                    'api_token':
-                        (str,),
                     'delete_all':
                         (bool,),
                 },
                 'attribute_map': {
+                    'api_token': 'Api-Token',
                     'channel_url': 'channel_url',
                     'operator_ids': 'operator_ids',
-                    'api_token': 'Api-Token',
                     'delete_all': 'delete_all',
                 },
                 'location_map': {
+                    'api_token': 'header',
                     'channel_url': 'path',
                     'operator_ids': 'query',
-                    'api_token': 'header',
                     'delete_all': 'query',
                 },
                 'collection_format_map': {
@@ -188,7 +192,9 @@ class OpenChannelApi(object):
                     'api_token',
                     'oc_create_channel_data',
                 ],
-                'required': [],
+                'required': [
+                    'api_token',
+                ],
                 'nullable': [
                 ],
                 'enum': [
@@ -229,7 +235,7 @@ class OpenChannelApi(object):
         )
         self.oc_delete_channel_by_url_endpoint = _Endpoint(
             settings={
-                'response_type': None,
+                'response_type': (InlineResponse200,),
                 'auth': [],
                 'endpoint_path': '/v3/open_channels/{channel_url}',
                 'operation_id': 'oc_delete_channel_by_url',
@@ -238,10 +244,11 @@ class OpenChannelApi(object):
             },
             params_map={
                 'all': [
-                    'channel_url',
                     'api_token',
+                    'channel_url',
                 ],
                 'required': [
+                    'api_token',
                     'channel_url',
                 ],
                 'nullable': [
@@ -257,24 +264,26 @@ class OpenChannelApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'channel_url':
-                        (str,),
                     'api_token':
+                        (str,),
+                    'channel_url':
                         (str,),
                 },
                 'attribute_map': {
-                    'channel_url': 'channel_url',
                     'api_token': 'Api-Token',
+                    'channel_url': 'channel_url',
                 },
                 'location_map': {
-                    'channel_url': 'path',
                     'api_token': 'header',
+                    'channel_url': 'path',
                 },
                 'collection_format_map': {
                 }
             },
             headers_map={
-                'accept': [],
+                'accept': [
+                    'application/json'
+                ],
                 'content_type': [],
             },
             api_client=api_client
@@ -290,11 +299,12 @@ class OpenChannelApi(object):
             },
             params_map={
                 'all': [
-                    'channel_url',
                     'api_token',
+                    'channel_url',
                     'oc_freeze_channel_data',
                 ],
                 'required': [
+                    'api_token',
                     'channel_url',
                 ],
                 'nullable': [
@@ -310,20 +320,20 @@ class OpenChannelApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'channel_url':
-                        (str,),
                     'api_token':
+                        (str,),
+                    'channel_url':
                         (str,),
                     'oc_freeze_channel_data':
                         (OcFreezeChannelData,),
                 },
                 'attribute_map': {
-                    'channel_url': 'channel_url',
                     'api_token': 'Api-Token',
+                    'channel_url': 'channel_url',
                 },
                 'location_map': {
-                    'channel_url': 'path',
                     'api_token': 'header',
+                    'channel_url': 'path',
                     'oc_freeze_channel_data': 'body',
                 },
                 'collection_format_map': {
@@ -350,12 +360,13 @@ class OpenChannelApi(object):
             },
             params_map={
                 'all': [
-                    'channel_url',
                     'api_token',
+                    'channel_url',
                     'token',
                     'limit',
                 ],
                 'required': [
+                    'api_token',
                     'channel_url',
                 ],
                 'nullable': [
@@ -371,9 +382,9 @@ class OpenChannelApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'channel_url':
-                        (str,),
                     'api_token':
+                        (str,),
+                    'channel_url':
                         (str,),
                     'token':
                         (str,),
@@ -381,14 +392,14 @@ class OpenChannelApi(object):
                         (int,),
                 },
                 'attribute_map': {
-                    'channel_url': 'channel_url',
                     'api_token': 'Api-Token',
+                    'channel_url': 'channel_url',
                     'token': 'token',
                     'limit': 'limit',
                 },
                 'location_map': {
-                    'channel_url': 'path',
                     'api_token': 'header',
+                    'channel_url': 'path',
                     'token': 'query',
                     'limit': 'query',
                 },
@@ -424,7 +435,9 @@ class OpenChannelApi(object):
                     'show_metadata',
                     'custom_type',
                 ],
-                'required': [],
+                'required': [
+                    'api_token',
+                ],
                 'nullable': [
                 ],
                 'enum': [
@@ -501,12 +514,13 @@ class OpenChannelApi(object):
             },
             params_map={
                 'all': [
-                    'channel_url',
                     'api_token',
+                    'channel_url',
                     'token',
                     'limit',
                 ],
                 'required': [
+                    'api_token',
                     'channel_url',
                 ],
                 'nullable': [
@@ -522,9 +536,9 @@ class OpenChannelApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'channel_url':
-                        (str,),
                     'api_token':
+                        (str,),
+                    'channel_url':
                         (str,),
                     'token':
                         (str,),
@@ -532,14 +546,14 @@ class OpenChannelApi(object):
                         (int,),
                 },
                 'attribute_map': {
-                    'channel_url': 'channel_url',
                     'api_token': 'Api-Token',
+                    'channel_url': 'channel_url',
                     'token': 'token',
                     'limit': 'limit',
                 },
                 'location_map': {
-                    'channel_url': 'path',
                     'api_token': 'header',
+                    'channel_url': 'path',
                     'token': 'query',
                     'limit': 'query',
                 },
@@ -565,12 +579,13 @@ class OpenChannelApi(object):
             },
             params_map={
                 'all': [
-                    'channel_url',
                     'api_token',
+                    'channel_url',
                     'token',
                     'limit',
                 ],
                 'required': [
+                    'api_token',
                     'channel_url',
                 ],
                 'nullable': [
@@ -586,9 +601,9 @@ class OpenChannelApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'channel_url':
-                        (str,),
                     'api_token':
+                        (str,),
+                    'channel_url':
                         (str,),
                     'token':
                         (str,),
@@ -596,14 +611,14 @@ class OpenChannelApi(object):
                         (int,),
                 },
                 'attribute_map': {
-                    'channel_url': 'channel_url',
                     'api_token': 'Api-Token',
+                    'channel_url': 'channel_url',
                     'token': 'token',
                     'limit': 'limit',
                 },
                 'location_map': {
-                    'channel_url': 'path',
                     'api_token': 'header',
+                    'channel_url': 'path',
                     'token': 'query',
                     'limit': 'query',
                 },
@@ -629,12 +644,13 @@ class OpenChannelApi(object):
             },
             params_map={
                 'all': [
-                    'channel_url',
                     'api_token',
+                    'channel_url',
                     'token',
                     'limit',
                 ],
                 'required': [
+                    'api_token',
                     'channel_url',
                 ],
                 'nullable': [
@@ -650,9 +666,9 @@ class OpenChannelApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'channel_url':
-                        (str,),
                     'api_token':
+                        (str,),
+                    'channel_url':
                         (str,),
                     'token':
                         (str,),
@@ -660,14 +676,14 @@ class OpenChannelApi(object):
                         (int,),
                 },
                 'attribute_map': {
-                    'channel_url': 'channel_url',
                     'api_token': 'Api-Token',
+                    'channel_url': 'channel_url',
                     'token': 'token',
                     'limit': 'limit',
                 },
                 'location_map': {
-                    'channel_url': 'path',
                     'api_token': 'header',
+                    'channel_url': 'path',
                     'token': 'query',
                     'limit': 'query',
                 },
@@ -693,11 +709,12 @@ class OpenChannelApi(object):
             },
             params_map={
                 'all': [
-                    'channel_url',
                     'api_token',
+                    'channel_url',
                     'oc_mute_user_data',
                 ],
                 'required': [
+                    'api_token',
                     'channel_url',
                 ],
                 'nullable': [
@@ -713,20 +730,20 @@ class OpenChannelApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'channel_url':
-                        (str,),
                     'api_token':
+                        (str,),
+                    'channel_url':
                         (str,),
                     'oc_mute_user_data':
                         (OcMuteUserData,),
                 },
                 'attribute_map': {
-                    'channel_url': 'channel_url',
                     'api_token': 'Api-Token',
+                    'channel_url': 'channel_url',
                 },
                 'location_map': {
-                    'channel_url': 'path',
                     'api_token': 'header',
+                    'channel_url': 'path',
                     'oc_mute_user_data': 'body',
                 },
                 'collection_format_map': {
@@ -744,7 +761,7 @@ class OpenChannelApi(object):
         )
         self.oc_register_operators_endpoint = _Endpoint(
             settings={
-                'response_type': None,
+                'response_type': (InlineResponse200,),
                 'auth': [],
                 'endpoint_path': '/v3/open_channels/{channel_url}/operators',
                 'operation_id': 'oc_register_operators',
@@ -753,11 +770,12 @@ class OpenChannelApi(object):
             },
             params_map={
                 'all': [
-                    'channel_url',
                     'api_token',
+                    'channel_url',
                     'oc_register_operators_data',
                 ],
                 'required': [
+                    'api_token',
                     'channel_url',
                 ],
                 'nullable': [
@@ -773,27 +791,29 @@ class OpenChannelApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'channel_url':
-                        (str,),
                     'api_token':
+                        (str,),
+                    'channel_url':
                         (str,),
                     'oc_register_operators_data':
                         (OcRegisterOperatorsData,),
                 },
                 'attribute_map': {
-                    'channel_url': 'channel_url',
                     'api_token': 'Api-Token',
+                    'channel_url': 'channel_url',
                 },
                 'location_map': {
-                    'channel_url': 'path',
                     'api_token': 'header',
+                    'channel_url': 'path',
                     'oc_register_operators_data': 'body',
                 },
                 'collection_format_map': {
                 }
             },
             headers_map={
-                'accept': [],
+                'accept': [
+                    'application/json'
+                ],
                 'content_type': [
                     'application/json'
                 ]
@@ -802,7 +822,7 @@ class OpenChannelApi(object):
         )
         self.oc_unban_user_by_id_endpoint = _Endpoint(
             settings={
-                'response_type': None,
+                'response_type': (InlineResponse200,),
                 'auth': [],
                 'endpoint_path': '/v3/open_channels/{channel_url}/ban/{banned_user_id}',
                 'operation_id': 'oc_unban_user_by_id',
@@ -811,11 +831,12 @@ class OpenChannelApi(object):
             },
             params_map={
                 'all': [
+                    'api_token',
                     'channel_url',
                     'banned_user_id',
-                    'api_token',
                 ],
                 'required': [
+                    'api_token',
                     'channel_url',
                     'banned_user_id',
                 ],
@@ -832,35 +853,37 @@ class OpenChannelApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
+                    'api_token':
+                        (str,),
                     'channel_url':
                         (str,),
                     'banned_user_id':
                         (str,),
-                    'api_token':
-                        (str,),
                 },
                 'attribute_map': {
+                    'api_token': 'Api-Token',
                     'channel_url': 'channel_url',
                     'banned_user_id': 'banned_user_id',
-                    'api_token': 'Api-Token',
                 },
                 'location_map': {
+                    'api_token': 'header',
                     'channel_url': 'path',
                     'banned_user_id': 'path',
-                    'api_token': 'header',
                 },
                 'collection_format_map': {
                 }
             },
             headers_map={
-                'accept': [],
+                'accept': [
+                    'application/json'
+                ],
                 'content_type': [],
             },
             api_client=api_client
         )
         self.oc_unmute_user_by_id_endpoint = _Endpoint(
             settings={
-                'response_type': None,
+                'response_type': (InlineResponse200,),
                 'auth': [],
                 'endpoint_path': '/v3/open_channels/{channel_url}/mute/{muted_user_id}',
                 'operation_id': 'oc_unmute_user_by_id',
@@ -869,11 +892,12 @@ class OpenChannelApi(object):
             },
             params_map={
                 'all': [
+                    'api_token',
                     'channel_url',
                     'muted_user_id',
-                    'api_token',
                 ],
                 'required': [
+                    'api_token',
                     'channel_url',
                     'muted_user_id',
                 ],
@@ -890,35 +914,37 @@ class OpenChannelApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
+                    'api_token':
+                        (str,),
                     'channel_url':
                         (str,),
                     'muted_user_id':
                         (str,),
-                    'api_token':
-                        (str,),
                 },
                 'attribute_map': {
+                    'api_token': 'Api-Token',
                     'channel_url': 'channel_url',
                     'muted_user_id': 'muted_user_id',
-                    'api_token': 'Api-Token',
                 },
                 'location_map': {
+                    'api_token': 'header',
                     'channel_url': 'path',
                     'muted_user_id': 'path',
-                    'api_token': 'header',
                 },
                 'collection_format_map': {
                 }
             },
             headers_map={
-                'accept': [],
+                'accept': [
+                    'application/json'
+                ],
                 'content_type': [],
             },
             api_client=api_client
         )
         self.oc_update_ban_by_id_endpoint = _Endpoint(
             settings={
-                'response_type': (SendBirdUser,),
+                'response_type': (OcUpdateBanByIdResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/open_channels/{channel_url}/ban/{banned_user_id}',
                 'operation_id': 'oc_update_ban_by_id',
@@ -927,12 +953,13 @@ class OpenChannelApi(object):
             },
             params_map={
                 'all': [
+                    'api_token',
                     'channel_url',
                     'banned_user_id',
-                    'api_token',
                     'oc_update_ban_by_id_data',
                 ],
                 'required': [
+                    'api_token',
                     'channel_url',
                     'banned_user_id',
                 ],
@@ -949,24 +976,24 @@ class OpenChannelApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
+                    'api_token':
+                        (str,),
                     'channel_url':
                         (str,),
                     'banned_user_id':
-                        (str,),
-                    'api_token':
                         (str,),
                     'oc_update_ban_by_id_data':
                         (OcUpdateBanByIdData,),
                 },
                 'attribute_map': {
+                    'api_token': 'Api-Token',
                     'channel_url': 'channel_url',
                     'banned_user_id': 'banned_user_id',
-                    'api_token': 'Api-Token',
                 },
                 'location_map': {
+                    'api_token': 'header',
                     'channel_url': 'path',
                     'banned_user_id': 'path',
-                    'api_token': 'header',
                     'oc_update_ban_by_id_data': 'body',
                 },
                 'collection_format_map': {
@@ -993,11 +1020,12 @@ class OpenChannelApi(object):
             },
             params_map={
                 'all': [
-                    'channel_url',
                     'api_token',
+                    'channel_url',
                     'oc_update_channel_by_url_data',
                 ],
                 'required': [
+                    'api_token',
                     'channel_url',
                 ],
                 'nullable': [
@@ -1013,20 +1041,20 @@ class OpenChannelApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'channel_url':
-                        (str,),
                     'api_token':
+                        (str,),
+                    'channel_url':
                         (str,),
                     'oc_update_channel_by_url_data':
                         (OcUpdateChannelByUrlData,),
                 },
                 'attribute_map': {
-                    'channel_url': 'channel_url',
                     'api_token': 'Api-Token',
+                    'channel_url': 'channel_url',
                 },
                 'location_map': {
-                    'channel_url': 'path',
                     'api_token': 'header',
+                    'channel_url': 'path',
                     'oc_update_channel_by_url_data': 'body',
                 },
                 'collection_format_map': {
@@ -1044,7 +1072,7 @@ class OpenChannelApi(object):
         )
         self.oc_view_ban_by_id_endpoint = _Endpoint(
             settings={
-                'response_type': (SendBirdUser,),
+                'response_type': (OcViewBanByIdResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/open_channels/{channel_url}/ban/{banned_user_id}',
                 'operation_id': 'oc_view_ban_by_id',
@@ -1053,11 +1081,12 @@ class OpenChannelApi(object):
             },
             params_map={
                 'all': [
+                    'api_token',
                     'channel_url',
                     'banned_user_id',
-                    'api_token',
                 ],
                 'required': [
+                    'api_token',
                     'channel_url',
                     'banned_user_id',
                 ],
@@ -1074,22 +1103,22 @@ class OpenChannelApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
+                    'api_token':
+                        (str,),
                     'channel_url':
                         (str,),
                     'banned_user_id':
                         (str,),
-                    'api_token':
-                        (str,),
                 },
                 'attribute_map': {
+                    'api_token': 'Api-Token',
                     'channel_url': 'channel_url',
                     'banned_user_id': 'banned_user_id',
-                    'api_token': 'Api-Token',
                 },
                 'location_map': {
+                    'api_token': 'header',
                     'channel_url': 'path',
                     'banned_user_id': 'path',
-                    'api_token': 'header',
                 },
                 'collection_format_map': {
                 }
@@ -1113,10 +1142,11 @@ class OpenChannelApi(object):
             },
             params_map={
                 'all': [
-                    'channel_url',
                     'api_token',
+                    'channel_url',
                 ],
                 'required': [
+                    'api_token',
                     'channel_url',
                 ],
                 'nullable': [
@@ -1132,18 +1162,18 @@ class OpenChannelApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'channel_url':
-                        (str,),
                     'api_token':
+                        (str,),
+                    'channel_url':
                         (str,),
                 },
                 'attribute_map': {
-                    'channel_url': 'channel_url',
                     'api_token': 'Api-Token',
+                    'channel_url': 'channel_url',
                 },
                 'location_map': {
-                    'channel_url': 'path',
                     'api_token': 'header',
+                    'channel_url': 'path',
                 },
                 'collection_format_map': {
                 }
@@ -1167,11 +1197,12 @@ class OpenChannelApi(object):
             },
             params_map={
                 'all': [
+                    'api_token',
                     'channel_url',
                     'muted_user_id',
-                    'api_token',
                 ],
                 'required': [
+                    'api_token',
                     'channel_url',
                     'muted_user_id',
                 ],
@@ -1188,22 +1219,22 @@ class OpenChannelApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
+                    'api_token':
+                        (str,),
                     'channel_url':
                         (str,),
                     'muted_user_id':
                         (str,),
-                    'api_token':
-                        (str,),
                 },
                 'attribute_map': {
+                    'api_token': 'Api-Token',
                     'channel_url': 'channel_url',
                     'muted_user_id': 'muted_user_id',
-                    'api_token': 'Api-Token',
                 },
                 'location_map': {
+                    'api_token': 'header',
                     'channel_url': 'path',
                     'muted_user_id': 'path',
-                    'api_token': 'header',
                 },
                 'collection_format_map': {
                 }
@@ -1219,6 +1250,7 @@ class OpenChannelApi(object):
 
     def oc_ban_user(
         self,
+        api_token,
         channel_url,
         **kwargs
     ):
@@ -1228,14 +1260,14 @@ class OpenChannelApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.oc_ban_user(channel_url, async_req=True)
+        >>> thread = api.oc_ban_user(api_token, channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             channel_url (str):
 
         Keyword Args:
-            api_token (str): [optional]
             oc_ban_user_data (OcBanUserData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -1286,12 +1318,15 @@ class OpenChannelApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['channel_url'] = \
             channel_url
         return self.oc_ban_user_endpoint.call_with_http_info(**kwargs)
 
     def oc_cancel_the_registration_of_operators(
         self,
+        api_token,
         channel_url,
         operator_ids,
         **kwargs
@@ -1302,15 +1337,15 @@ class OpenChannelApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.oc_cancel_the_registration_of_operators(channel_url, operator_ids, async_req=True)
+        >>> thread = api.oc_cancel_the_registration_of_operators(api_token, channel_url, operator_ids, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             channel_url (str):
             operator_ids ([str]):
 
         Keyword Args:
-            api_token (str): [optional]
             delete_all (bool): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -1361,6 +1396,8 @@ class OpenChannelApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['channel_url'] = \
             channel_url
         kwargs['operator_ids'] = \
@@ -1369,6 +1406,7 @@ class OpenChannelApi(object):
 
     def oc_create_channel(
         self,
+        api_token,
         **kwargs
     ):
         """Create a channel  # noqa: E501
@@ -1377,12 +1415,13 @@ class OpenChannelApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.oc_create_channel(async_req=True)
+        >>> thread = api.oc_create_channel(api_token, async_req=True)
         >>> result = thread.get()
 
+        Args:
+            api_token (str):
 
         Keyword Args:
-            api_token (str): [optional]
             oc_create_channel_data (OcCreateChannelData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -1433,10 +1472,13 @@ class OpenChannelApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         return self.oc_create_channel_endpoint.call_with_http_info(**kwargs)
 
     def oc_delete_channel_by_url(
         self,
+        api_token,
         channel_url,
         **kwargs
     ):
@@ -1446,14 +1488,14 @@ class OpenChannelApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.oc_delete_channel_by_url(channel_url, async_req=True)
+        >>> thread = api.oc_delete_channel_by_url(api_token, channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             channel_url (str):
 
         Keyword Args:
-            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -1478,7 +1520,7 @@ class OpenChannelApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            None
+            InlineResponse200
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -1503,12 +1545,15 @@ class OpenChannelApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['channel_url'] = \
             channel_url
         return self.oc_delete_channel_by_url_endpoint.call_with_http_info(**kwargs)
 
     def oc_freeze_channel(
         self,
+        api_token,
         channel_url,
         **kwargs
     ):
@@ -1518,14 +1563,14 @@ class OpenChannelApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.oc_freeze_channel(channel_url, async_req=True)
+        >>> thread = api.oc_freeze_channel(api_token, channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             channel_url (str):
 
         Keyword Args:
-            api_token (str): [optional]
             oc_freeze_channel_data (OcFreezeChannelData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -1576,12 +1621,15 @@ class OpenChannelApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['channel_url'] = \
             channel_url
         return self.oc_freeze_channel_endpoint.call_with_http_info(**kwargs)
 
     def oc_list_banned_users(
         self,
+        api_token,
         channel_url,
         **kwargs
     ):
@@ -1591,14 +1639,14 @@ class OpenChannelApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.oc_list_banned_users(channel_url, async_req=True)
+        >>> thread = api.oc_list_banned_users(api_token, channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             channel_url (str):
 
         Keyword Args:
-            api_token (str): [optional]
             token (str): [optional]
             limit (int): [optional]
             _return_http_data_only (bool): response data without head status
@@ -1650,12 +1698,15 @@ class OpenChannelApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['channel_url'] = \
             channel_url
         return self.oc_list_banned_users_endpoint.call_with_http_info(**kwargs)
 
     def oc_list_channels(
         self,
+        api_token,
         **kwargs
     ):
         """List channels  # noqa: E501
@@ -1664,12 +1715,13 @@ class OpenChannelApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.oc_list_channels(async_req=True)
+        >>> thread = api.oc_list_channels(api_token, async_req=True)
         >>> result = thread.get()
 
+        Args:
+            api_token (str):
 
         Keyword Args:
-            api_token (str): [optional]
             token (str): [optional]
             limit (int): [optional]
             custom_types (str): [optional]
@@ -1727,10 +1779,13 @@ class OpenChannelApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         return self.oc_list_channels_endpoint.call_with_http_info(**kwargs)
 
     def oc_list_muted_users(
         self,
+        api_token,
         channel_url,
         **kwargs
     ):
@@ -1740,14 +1795,14 @@ class OpenChannelApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.oc_list_muted_users(channel_url, async_req=True)
+        >>> thread = api.oc_list_muted_users(api_token, channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             channel_url (str):
 
         Keyword Args:
-            api_token (str): [optional]
             token (str): [optional]
             limit (int): [optional]
             _return_http_data_only (bool): response data without head status
@@ -1799,12 +1854,15 @@ class OpenChannelApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['channel_url'] = \
             channel_url
         return self.oc_list_muted_users_endpoint.call_with_http_info(**kwargs)
 
     def oc_list_operators(
         self,
+        api_token,
         channel_url,
         **kwargs
     ):
@@ -1814,14 +1872,14 @@ class OpenChannelApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.oc_list_operators(channel_url, async_req=True)
+        >>> thread = api.oc_list_operators(api_token, channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             channel_url (str):
 
         Keyword Args:
-            api_token (str): [optional]
             token (str): [optional]
             limit (int): [optional]
             _return_http_data_only (bool): response data without head status
@@ -1873,12 +1931,15 @@ class OpenChannelApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['channel_url'] = \
             channel_url
         return self.oc_list_operators_endpoint.call_with_http_info(**kwargs)
 
     def oc_list_participants(
         self,
+        api_token,
         channel_url,
         **kwargs
     ):
@@ -1888,14 +1949,14 @@ class OpenChannelApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.oc_list_participants(channel_url, async_req=True)
+        >>> thread = api.oc_list_participants(api_token, channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             channel_url (str):
 
         Keyword Args:
-            api_token (str): [optional]
             token (str): [optional]
             limit (int): [optional]
             _return_http_data_only (bool): response data without head status
@@ -1947,12 +2008,15 @@ class OpenChannelApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['channel_url'] = \
             channel_url
         return self.oc_list_participants_endpoint.call_with_http_info(**kwargs)
 
     def oc_mute_user(
         self,
+        api_token,
         channel_url,
         **kwargs
     ):
@@ -1962,14 +2026,14 @@ class OpenChannelApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.oc_mute_user(channel_url, async_req=True)
+        >>> thread = api.oc_mute_user(api_token, channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             channel_url (str):
 
         Keyword Args:
-            api_token (str): [optional]
             oc_mute_user_data (OcMuteUserData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -2020,12 +2084,15 @@ class OpenChannelApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['channel_url'] = \
             channel_url
         return self.oc_mute_user_endpoint.call_with_http_info(**kwargs)
 
     def oc_register_operators(
         self,
+        api_token,
         channel_url,
         **kwargs
     ):
@@ -2035,14 +2102,14 @@ class OpenChannelApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.oc_register_operators(channel_url, async_req=True)
+        >>> thread = api.oc_register_operators(api_token, channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             channel_url (str):
 
         Keyword Args:
-            api_token (str): [optional]
             oc_register_operators_data (OcRegisterOperatorsData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -2068,7 +2135,7 @@ class OpenChannelApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            None
+            InlineResponse200
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2093,12 +2160,15 @@ class OpenChannelApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['channel_url'] = \
             channel_url
         return self.oc_register_operators_endpoint.call_with_http_info(**kwargs)
 
     def oc_unban_user_by_id(
         self,
+        api_token,
         channel_url,
         banned_user_id,
         **kwargs
@@ -2109,15 +2179,15 @@ class OpenChannelApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.oc_unban_user_by_id(channel_url, banned_user_id, async_req=True)
+        >>> thread = api.oc_unban_user_by_id(api_token, channel_url, banned_user_id, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             channel_url (str):
             banned_user_id (str):
 
         Keyword Args:
-            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -2142,7 +2212,7 @@ class OpenChannelApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            None
+            InlineResponse200
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2167,6 +2237,8 @@ class OpenChannelApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['channel_url'] = \
             channel_url
         kwargs['banned_user_id'] = \
@@ -2175,6 +2247,7 @@ class OpenChannelApi(object):
 
     def oc_unmute_user_by_id(
         self,
+        api_token,
         channel_url,
         muted_user_id,
         **kwargs
@@ -2185,15 +2258,15 @@ class OpenChannelApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.oc_unmute_user_by_id(channel_url, muted_user_id, async_req=True)
+        >>> thread = api.oc_unmute_user_by_id(api_token, channel_url, muted_user_id, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             channel_url (str):
             muted_user_id (str):
 
         Keyword Args:
-            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -2218,7 +2291,7 @@ class OpenChannelApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            None
+            InlineResponse200
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2243,6 +2316,8 @@ class OpenChannelApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['channel_url'] = \
             channel_url
         kwargs['muted_user_id'] = \
@@ -2251,6 +2326,7 @@ class OpenChannelApi(object):
 
     def oc_update_ban_by_id(
         self,
+        api_token,
         channel_url,
         banned_user_id,
         **kwargs
@@ -2261,15 +2337,15 @@ class OpenChannelApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.oc_update_ban_by_id(channel_url, banned_user_id, async_req=True)
+        >>> thread = api.oc_update_ban_by_id(api_token, channel_url, banned_user_id, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             channel_url (str):
             banned_user_id (str):
 
         Keyword Args:
-            api_token (str): [optional]
             oc_update_ban_by_id_data (OcUpdateBanByIdData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -2295,7 +2371,7 @@ class OpenChannelApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            SendBirdUser
+            OcUpdateBanByIdResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2320,6 +2396,8 @@ class OpenChannelApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['channel_url'] = \
             channel_url
         kwargs['banned_user_id'] = \
@@ -2328,6 +2406,7 @@ class OpenChannelApi(object):
 
     def oc_update_channel_by_url(
         self,
+        api_token,
         channel_url,
         **kwargs
     ):
@@ -2337,14 +2416,14 @@ class OpenChannelApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.oc_update_channel_by_url(channel_url, async_req=True)
+        >>> thread = api.oc_update_channel_by_url(api_token, channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             channel_url (str):
 
         Keyword Args:
-            api_token (str): [optional]
             oc_update_channel_by_url_data (OcUpdateChannelByUrlData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -2395,12 +2474,15 @@ class OpenChannelApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['channel_url'] = \
             channel_url
         return self.oc_update_channel_by_url_endpoint.call_with_http_info(**kwargs)
 
     def oc_view_ban_by_id(
         self,
+        api_token,
         channel_url,
         banned_user_id,
         **kwargs
@@ -2411,15 +2493,15 @@ class OpenChannelApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.oc_view_ban_by_id(channel_url, banned_user_id, async_req=True)
+        >>> thread = api.oc_view_ban_by_id(api_token, channel_url, banned_user_id, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             channel_url (str):
             banned_user_id (str):
 
         Keyword Args:
-            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -2444,7 +2526,7 @@ class OpenChannelApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            SendBirdUser
+            OcViewBanByIdResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2469,6 +2551,8 @@ class OpenChannelApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['channel_url'] = \
             channel_url
         kwargs['banned_user_id'] = \
@@ -2477,6 +2561,7 @@ class OpenChannelApi(object):
 
     def oc_view_channel_by_url(
         self,
+        api_token,
         channel_url,
         **kwargs
     ):
@@ -2486,14 +2571,14 @@ class OpenChannelApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.oc_view_channel_by_url(channel_url, async_req=True)
+        >>> thread = api.oc_view_channel_by_url(api_token, channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             channel_url (str):
 
         Keyword Args:
-            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -2543,12 +2628,15 @@ class OpenChannelApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['channel_url'] = \
             channel_url
         return self.oc_view_channel_by_url_endpoint.call_with_http_info(**kwargs)
 
     def oc_view_mute_by_id(
         self,
+        api_token,
         channel_url,
         muted_user_id,
         **kwargs
@@ -2559,15 +2647,15 @@ class OpenChannelApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.oc_view_mute_by_id(channel_url, muted_user_id, async_req=True)
+        >>> thread = api.oc_view_mute_by_id(api_token, channel_url, muted_user_id, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             channel_url (str):
             muted_user_id (str):
 
         Keyword Args:
-            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -2617,6 +2705,8 @@ class OpenChannelApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['channel_url'] = \
             channel_url
         kwargs['muted_user_id'] = \

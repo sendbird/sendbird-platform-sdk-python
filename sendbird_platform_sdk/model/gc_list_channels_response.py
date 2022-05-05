@@ -89,6 +89,7 @@ class GcListChannelsResponse(ModelNormal):
         return {
             'channels': ([SendBirdGroupChannel],),  # noqa: E501
             'next': (str,),  # noqa: E501
+            'ts': (float,),  # noqa: E501
         }
 
     @cached_property
@@ -99,6 +100,7 @@ class GcListChannelsResponse(ModelNormal):
     attribute_map = {
         'channels': 'channels',  # noqa: E501
         'next': 'next',  # noqa: E501
+        'ts': 'ts',  # noqa: E501
     }
 
     read_only_vars = {
@@ -144,6 +146,7 @@ class GcListChannelsResponse(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             channels ([SendBirdGroupChannel]): [optional]  # noqa: E501
             next (str): [optional]  # noqa: E501
+            ts (float): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -227,6 +230,7 @@ class GcListChannelsResponse(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             channels ([SendBirdGroupChannel]): [optional]  # noqa: E501
             next (str): [optional]  # noqa: E501
+            ts (float): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

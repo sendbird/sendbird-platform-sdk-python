@@ -33,7 +33,7 @@ Method | HTTP request | Description
 
 
 # **add_apns_push_configuration**
-> AddApnsPushConfigurationResponse add_apns_push_configuration()
+> AddApnsPushConfigurationResponse add_apns_push_configuration(api_token)
 
 Add an APNs push configuration
 
@@ -60,7 +60,7 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = application_api.ApplicationApi(api_client)
-    api_token = "{{API_TOKEN}}" # str |  (optional)
+    api_token = "{{API_TOKEN}}" # str | 
     add_apns_push_configuration_data = AddApnsPushConfigurationData(
         apns_cert=open('/path/to/file', 'rb'),
         apns_cert_env_type="apns_cert_env_type_example",
@@ -73,10 +73,18 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     ) # AddApnsPushConfigurationData |  (optional)
 
     # example passing only required values which don't have defaults set
+    try:
+        # Add an APNs push configuration
+        api_response = api_instance.add_apns_push_configuration(api_token)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling ApplicationApi->add_apns_push_configuration: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Add an APNs push configuration
-        api_response = api_instance.add_apns_push_configuration(api_token=api_token, add_apns_push_configuration_data=add_apns_push_configuration_data)
+        api_response = api_instance.add_apns_push_configuration(api_token, add_apns_push_configuration_data=add_apns_push_configuration_data)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ApplicationApi->add_apns_push_configuration: %s\n" % e)
@@ -87,7 +95,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  | [optional]
+ **api_token** | **str**|  |
  **add_apns_push_configuration_data** | [**AddApnsPushConfigurationData**](AddApnsPushConfigurationData.md)|  | [optional]
 
 ### Return type
@@ -113,7 +121,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **add_fcm_push_configuration**
-> AddFcmPushConfigurationResponse add_fcm_push_configuration()
+> AddFcmPushConfigurationResponse add_fcm_push_configuration(api_token)
 
 Add a FCM push configuration
 
@@ -140,17 +148,25 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = application_api.ApplicationApi(api_client)
-    api_token = "{{API_TOKEN}}" # str |  (optional)
+    api_token = "{{API_TOKEN}}" # str | 
     add_fcm_push_configuration_data = AddFcmPushConfigurationData(
         api_key="api_key_example",
         push_sound="push_sound_example",
     ) # AddFcmPushConfigurationData |  (optional)
 
     # example passing only required values which don't have defaults set
+    try:
+        # Add a FCM push configuration
+        api_response = api_instance.add_fcm_push_configuration(api_token)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling ApplicationApi->add_fcm_push_configuration: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Add a FCM push configuration
-        api_response = api_instance.add_fcm_push_configuration(api_token=api_token, add_fcm_push_configuration_data=add_fcm_push_configuration_data)
+        api_response = api_instance.add_fcm_push_configuration(api_token, add_fcm_push_configuration_data=add_fcm_push_configuration_data)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ApplicationApi->add_fcm_push_configuration: %s\n" % e)
@@ -161,7 +177,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  | [optional]
+ **api_token** | **str**|  |
  **add_fcm_push_configuration_data** | [**AddFcmPushConfigurationData**](AddFcmPushConfigurationData.md)|  | [optional]
 
 ### Return type
@@ -187,7 +203,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **add_hms_push_configuration**
-> AddHmsPushConfigurationResponse add_hms_push_configuration()
+> AddHmsPushConfigurationResponse add_hms_push_configuration(api_token)
 
 Add an HMS push configuration
 
@@ -214,7 +230,7 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = application_api.ApplicationApi(api_client)
-    api_token = "{{API_TOKEN}}" # str |  (optional)
+    api_token = "{{API_TOKEN}}" # str | 
     add_hms_push_configuration_data = AddHmsPushConfigurationData(
         huawei_app_id="huawei_app_id_example",
         huawei_app_secret="huawei_app_secret_example",
@@ -222,10 +238,18 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     ) # AddHmsPushConfigurationData |  (optional)
 
     # example passing only required values which don't have defaults set
+    try:
+        # Add an HMS push configuration
+        api_response = api_instance.add_hms_push_configuration(api_token)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling ApplicationApi->add_hms_push_configuration: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Add an HMS push configuration
-        api_response = api_instance.add_hms_push_configuration(api_token=api_token, add_hms_push_configuration_data=add_hms_push_configuration_data)
+        api_response = api_instance.add_hms_push_configuration(api_token, add_hms_push_configuration_data=add_hms_push_configuration_data)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ApplicationApi->add_hms_push_configuration: %s\n" % e)
@@ -236,7 +260,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  | [optional]
+ **api_token** | **str**|  |
  **add_hms_push_configuration_data** | [**AddHmsPushConfigurationData**](AddHmsPushConfigurationData.md)|  | [optional]
 
 ### Return type
@@ -262,7 +286,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **add_ip_to_whitelist**
-> AddIpToWhitelistResponse add_ip_to_whitelist()
+> AddIpToWhitelistResponse add_ip_to_whitelist(api_token)
 
 Add an IP to a whitelist
 
@@ -289,7 +313,7 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = application_api.ApplicationApi(api_client)
-    api_token = "{{API_TOKEN}}" # str |  (optional)
+    api_token = "{{API_TOKEN}}" # str | 
     add_ip_to_whitelist_data = AddIpToWhitelistData(
         ip_whitelist_addresses=[
             "ip_whitelist_addresses_example",
@@ -297,10 +321,18 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     ) # AddIpToWhitelistData |  (optional)
 
     # example passing only required values which don't have defaults set
+    try:
+        # Add an IP to a whitelist
+        api_response = api_instance.add_ip_to_whitelist(api_token)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling ApplicationApi->add_ip_to_whitelist: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Add an IP to a whitelist
-        api_response = api_instance.add_ip_to_whitelist(api_token=api_token, add_ip_to_whitelist_data=add_ip_to_whitelist_data)
+        api_response = api_instance.add_ip_to_whitelist(api_token, add_ip_to_whitelist_data=add_ip_to_whitelist_data)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ApplicationApi->add_ip_to_whitelist: %s\n" % e)
@@ -311,7 +343,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  | [optional]
+ **api_token** | **str**|  |
  **add_ip_to_whitelist_data** | [**AddIpToWhitelistData**](AddIpToWhitelistData.md)|  | [optional]
 
 ### Return type
@@ -337,7 +369,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_allowed_ips_from_whitelist**
-> DeleteAllowedIpsFromWhitelistResponse delete_allowed_ips_from_whitelist(ip_whitelist_addresses)
+> DeleteAllowedIpsFromWhitelistResponse delete_allowed_ips_from_whitelist(api_token, ip_whitelist_addresses)
 
 Delete allowed IPs from a whitelist
 
@@ -363,24 +395,15 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = application_api.ApplicationApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
     ip_whitelist_addresses = [
         "ip_whitelist_addresses_example",
     ] # [str] | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Delete allowed IPs from a whitelist
-        api_response = api_instance.delete_allowed_ips_from_whitelist(ip_whitelist_addresses)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling ApplicationApi->delete_allowed_ips_from_whitelist: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # Delete allowed IPs from a whitelist
-        api_response = api_instance.delete_allowed_ips_from_whitelist(ip_whitelist_addresses, api_token=api_token)
+        api_response = api_instance.delete_allowed_ips_from_whitelist(api_token, ip_whitelist_addresses)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ApplicationApi->delete_allowed_ips_from_whitelist: %s\n" % e)
@@ -391,8 +414,8 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
  **ip_whitelist_addresses** | **[str]**|  |
- **api_token** | **str**|  | [optional]
 
 ### Return type
 
@@ -417,7 +440,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_apns_certificate_by_id**
-> DeleteApnsCertificateByIdResponse delete_apns_certificate_by_id(provider_id)
+> DeleteApnsCertificateByIdResponse delete_apns_certificate_by_id(api_token, provider_id)
 
 Delete an APNs certificate
 
@@ -443,22 +466,13 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = application_api.ApplicationApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
     provider_id = "provider_id_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Delete an APNs certificate
-        api_response = api_instance.delete_apns_certificate_by_id(provider_id)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling ApplicationApi->delete_apns_certificate_by_id: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # Delete an APNs certificate
-        api_response = api_instance.delete_apns_certificate_by_id(provider_id, api_token=api_token)
+        api_response = api_instance.delete_apns_certificate_by_id(api_token, provider_id)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ApplicationApi->delete_apns_certificate_by_id: %s\n" % e)
@@ -469,8 +483,8 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
  **provider_id** | **str**|  |
- **api_token** | **str**|  | [optional]
 
 ### Return type
 
@@ -495,7 +509,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **generate_secondary_api_token**
-> GenerateSecondaryApiTokenResponse generate_secondary_api_token()
+> GenerateSecondaryApiTokenResponse generate_secondary_api_token(api_token)
 
 Generate a secondary API token
 
@@ -522,16 +536,24 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = application_api.ApplicationApi(api_client)
-    api_token = "{{API_TOKEN}}" # str |  (optional)
+    api_token = "{{API_TOKEN}}" # str | 
     generate_secondary_api_token_data = GenerateSecondaryApiTokenData(
         http_api_token="http_api_token_example",
     ) # GenerateSecondaryApiTokenData |  (optional)
 
     # example passing only required values which don't have defaults set
+    try:
+        # Generate a secondary API token
+        api_response = api_instance.generate_secondary_api_token(api_token)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling ApplicationApi->generate_secondary_api_token: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Generate a secondary API token
-        api_response = api_instance.generate_secondary_api_token(api_token=api_token, generate_secondary_api_token_data=generate_secondary_api_token_data)
+        api_response = api_instance.generate_secondary_api_token(api_token, generate_secondary_api_token_data=generate_secondary_api_token_data)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ApplicationApi->generate_secondary_api_token: %s\n" % e)
@@ -542,7 +564,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  | [optional]
+ **api_token** | **str**|  |
  **generate_secondary_api_token_data** | [**GenerateSecondaryApiTokenData**](GenerateSecondaryApiTokenData.md)|  | [optional]
 
 ### Return type
@@ -568,7 +590,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_push_configurations**
-> ListPushConfigurationsResponse list_push_configurations(push_type)
+> ListPushConfigurationsResponse list_push_configurations(api_token, push_type)
 
 List push configurations
 
@@ -594,22 +616,13 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = application_api.ApplicationApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
     push_type = "push_type_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # List push configurations
-        api_response = api_instance.list_push_configurations(push_type)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling ApplicationApi->list_push_configurations: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # List push configurations
-        api_response = api_instance.list_push_configurations(push_type, api_token=api_token)
+        api_response = api_instance.list_push_configurations(api_token, push_type)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ApplicationApi->list_push_configurations: %s\n" % e)
@@ -620,8 +633,8 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
  **push_type** | **str**|  |
- **api_token** | **str**|  | [optional]
 
 ### Return type
 
@@ -646,7 +659,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_push_notification_content_templates**
-> ListPushNotificationContentTemplatesResponse list_push_notification_content_templates()
+> ListPushNotificationContentTemplatesResponse list_push_notification_content_templates(api_token)
 
 List push notification content templates
 
@@ -672,13 +685,12 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = application_api.ApplicationApi(api_client)
-    api_token = "{{API_TOKEN}}" # str |  (optional)
+    api_token = "{{API_TOKEN}}" # str | 
 
     # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # List push notification content templates
-        api_response = api_instance.list_push_notification_content_templates(api_token=api_token)
+        api_response = api_instance.list_push_notification_content_templates(api_token)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ApplicationApi->list_push_notification_content_templates: %s\n" % e)
@@ -689,7 +701,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  | [optional]
+ **api_token** | **str**|  |
 
 ### Return type
 
@@ -714,7 +726,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_secondary_api_tokens**
-> ListSecondaryApiTokensResponse list_secondary_api_tokens()
+> ListSecondaryApiTokensResponse list_secondary_api_tokens(api_token)
 
 List secondary API tokens
 
@@ -740,13 +752,12 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = application_api.ApplicationApi(api_client)
-    api_token = "{{API_TOKEN}}" # str |  (optional)
+    api_token = "{{API_TOKEN}}" # str | 
 
     # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # List secondary API tokens
-        api_response = api_instance.list_secondary_api_tokens(api_token=api_token)
+        api_response = api_instance.list_secondary_api_tokens(api_token)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ApplicationApi->list_secondary_api_tokens: %s\n" % e)
@@ -757,7 +768,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  | [optional]
+ **api_token** | **str**|  |
 
 ### Return type
 
@@ -782,7 +793,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **remove_push_configuration_by_id**
-> RemovePushConfigurationByIdResponse remove_push_configuration_by_id(push_type, provider_id)
+> RemovePushConfigurationByIdResponse remove_push_configuration_by_id(api_token, push_type, provider_id)
 
 Remove a push configuration
 
@@ -808,23 +819,14 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = application_api.ApplicationApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
     push_type = "push_type_example" # str | 
     provider_id = "provider_id_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Remove a push configuration
-        api_response = api_instance.remove_push_configuration_by_id(push_type, provider_id)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling ApplicationApi->remove_push_configuration_by_id: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # Remove a push configuration
-        api_response = api_instance.remove_push_configuration_by_id(push_type, provider_id, api_token=api_token)
+        api_response = api_instance.remove_push_configuration_by_id(api_token, push_type, provider_id)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ApplicationApi->remove_push_configuration_by_id: %s\n" % e)
@@ -835,9 +837,9 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
  **push_type** | **str**|  |
  **provider_id** | **str**|  |
- **api_token** | **str**|  | [optional]
 
 ### Return type
 
@@ -862,7 +864,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **retrieve_ip_whitelist**
-> RetrieveIpWhitelistResponse retrieve_ip_whitelist()
+> RetrieveIpWhitelistResponse retrieve_ip_whitelist(api_token)
 
 Retrieve an IP whitelist
 
@@ -888,13 +890,12 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = application_api.ApplicationApi(api_client)
-    api_token = "{{API_TOKEN}}" # str |  (optional)
+    api_token = "{{API_TOKEN}}" # str | 
 
     # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # Retrieve an IP whitelist
-        api_response = api_instance.retrieve_ip_whitelist(api_token=api_token)
+        api_response = api_instance.retrieve_ip_whitelist(api_token)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ApplicationApi->retrieve_ip_whitelist: %s\n" % e)
@@ -905,7 +906,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  | [optional]
+ **api_token** | **str**|  |
 
 ### Return type
 
@@ -930,7 +931,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **revoke_secondary_api_token_by_token**
-> RevokeSecondaryApiTokenByTokenResponse revoke_secondary_api_token_by_token(api_token2)
+> RevokeSecondaryApiTokenByTokenResponse revoke_secondary_api_token_by_token(api_token, api_token2)
 
 Revoke a secondary API token
 
@@ -956,22 +957,13 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = application_api.ApplicationApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
     api_token2 = "api_token_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Revoke a secondary API token
-        api_response = api_instance.revoke_secondary_api_token_by_token(api_token2)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling ApplicationApi->revoke_secondary_api_token_by_token: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # Revoke a secondary API token
-        api_response = api_instance.revoke_secondary_api_token_by_token(api_token2, api_token=api_token)
+        api_response = api_instance.revoke_secondary_api_token_by_token(api_token, api_token2)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ApplicationApi->revoke_secondary_api_token_by_token: %s\n" % e)
@@ -982,8 +974,8 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
  **api_token2** | **str**|  |
- **api_token** | **str**|  | [optional]
 
 ### Return type
 
@@ -1008,7 +1000,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_apns_push_configuration_by_id**
-> UpdateApnsPushConfigurationByIdResponse update_apns_push_configuration_by_id(provider_id)
+> UpdateApnsPushConfigurationByIdResponse update_apns_push_configuration_by_id(api_token, provider_id)
 
 Update an APNs push configuration
 
@@ -1035,8 +1027,8 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = application_api.ApplicationApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
     provider_id = "provider_id_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
     update_apns_push_configuration_by_id_data = UpdateApnsPushConfigurationByIdData(
         provider_id="provider_id_example",
         apns_cert=open('/path/to/file', 'rb'),
@@ -1052,7 +1044,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Update an APNs push configuration
-        api_response = api_instance.update_apns_push_configuration_by_id(provider_id)
+        api_response = api_instance.update_apns_push_configuration_by_id(api_token, provider_id)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ApplicationApi->update_apns_push_configuration_by_id: %s\n" % e)
@@ -1061,7 +1053,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Update an APNs push configuration
-        api_response = api_instance.update_apns_push_configuration_by_id(provider_id, api_token=api_token, update_apns_push_configuration_by_id_data=update_apns_push_configuration_by_id_data)
+        api_response = api_instance.update_apns_push_configuration_by_id(api_token, provider_id, update_apns_push_configuration_by_id_data=update_apns_push_configuration_by_id_data)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ApplicationApi->update_apns_push_configuration_by_id: %s\n" % e)
@@ -1072,8 +1064,8 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
  **provider_id** | **str**|  |
- **api_token** | **str**|  | [optional]
  **update_apns_push_configuration_by_id_data** | [**UpdateApnsPushConfigurationByIdData**](UpdateApnsPushConfigurationByIdData.md)|  | [optional]
 
 ### Return type
@@ -1099,7 +1091,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_default_channel_invitation_preference**
-> UpdateDefaultChannelInvitationPreferenceResponse update_default_channel_invitation_preference()
+> UpdateDefaultChannelInvitationPreferenceResponse update_default_channel_invitation_preference(api_token)
 
 Update default channel invitation preference
 
@@ -1126,16 +1118,24 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = application_api.ApplicationApi(api_client)
-    api_token = "{{API_TOKEN}}" # str |  (optional)
+    api_token = "{{API_TOKEN}}" # str | 
     update_default_channel_invitation_preference_data = UpdateDefaultChannelInvitationPreferenceData(
         auto_accept=True,
     ) # UpdateDefaultChannelInvitationPreferenceData |  (optional)
 
     # example passing only required values which don't have defaults set
+    try:
+        # Update default channel invitation preference
+        api_response = api_instance.update_default_channel_invitation_preference(api_token)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling ApplicationApi->update_default_channel_invitation_preference: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Update default channel invitation preference
-        api_response = api_instance.update_default_channel_invitation_preference(api_token=api_token, update_default_channel_invitation_preference_data=update_default_channel_invitation_preference_data)
+        api_response = api_instance.update_default_channel_invitation_preference(api_token, update_default_channel_invitation_preference_data=update_default_channel_invitation_preference_data)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ApplicationApi->update_default_channel_invitation_preference: %s\n" % e)
@@ -1146,7 +1146,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  | [optional]
+ **api_token** | **str**|  |
  **update_default_channel_invitation_preference_data** | [**UpdateDefaultChannelInvitationPreferenceData**](UpdateDefaultChannelInvitationPreferenceData.md)|  | [optional]
 
 ### Return type
@@ -1172,7 +1172,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_fcm_push_configuration_by_id**
-> UpdateFcmPushConfigurationByIdResponse update_fcm_push_configuration_by_id(provider_id)
+> UpdateFcmPushConfigurationByIdResponse update_fcm_push_configuration_by_id(api_token, provider_id)
 
 Update a FCM push configuration
 
@@ -1199,8 +1199,8 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = application_api.ApplicationApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
     provider_id = "provider_id_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
     update_fcm_push_configuration_by_id_data = UpdateFcmPushConfigurationByIdData(
         provider_id="provider_id_example",
         api_key="api_key_example",
@@ -1210,7 +1210,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Update a FCM push configuration
-        api_response = api_instance.update_fcm_push_configuration_by_id(provider_id)
+        api_response = api_instance.update_fcm_push_configuration_by_id(api_token, provider_id)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ApplicationApi->update_fcm_push_configuration_by_id: %s\n" % e)
@@ -1219,7 +1219,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Update a FCM push configuration
-        api_response = api_instance.update_fcm_push_configuration_by_id(provider_id, api_token=api_token, update_fcm_push_configuration_by_id_data=update_fcm_push_configuration_by_id_data)
+        api_response = api_instance.update_fcm_push_configuration_by_id(api_token, provider_id, update_fcm_push_configuration_by_id_data=update_fcm_push_configuration_by_id_data)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ApplicationApi->update_fcm_push_configuration_by_id: %s\n" % e)
@@ -1230,8 +1230,8 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
  **provider_id** | **str**|  |
- **api_token** | **str**|  | [optional]
  **update_fcm_push_configuration_by_id_data** | [**UpdateFcmPushConfigurationByIdData**](UpdateFcmPushConfigurationByIdData.md)|  | [optional]
 
 ### Return type
@@ -1257,7 +1257,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_hms_push_configuration_by_id**
-> UpdateHmsPushConfigurationByIdResponse update_hms_push_configuration_by_id(provider_id)
+> UpdateHmsPushConfigurationByIdResponse update_hms_push_configuration_by_id(api_token, provider_id)
 
 Update an HMS push configuration
 
@@ -1284,8 +1284,8 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = application_api.ApplicationApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
     provider_id = "provider_id_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
     update_hms_push_configuration_by_id_data = UpdateHmsPushConfigurationByIdData(
         provider_id="provider_id_example",
         huawei_app_id="huawei_app_id_example",
@@ -1296,7 +1296,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Update an HMS push configuration
-        api_response = api_instance.update_hms_push_configuration_by_id(provider_id)
+        api_response = api_instance.update_hms_push_configuration_by_id(api_token, provider_id)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ApplicationApi->update_hms_push_configuration_by_id: %s\n" % e)
@@ -1305,7 +1305,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Update an HMS push configuration
-        api_response = api_instance.update_hms_push_configuration_by_id(provider_id, api_token=api_token, update_hms_push_configuration_by_id_data=update_hms_push_configuration_by_id_data)
+        api_response = api_instance.update_hms_push_configuration_by_id(api_token, provider_id, update_hms_push_configuration_by_id_data=update_hms_push_configuration_by_id_data)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ApplicationApi->update_hms_push_configuration_by_id: %s\n" % e)
@@ -1316,8 +1316,8 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
  **provider_id** | **str**|  |
- **api_token** | **str**|  | [optional]
  **update_hms_push_configuration_by_id_data** | [**UpdateHmsPushConfigurationByIdData**](UpdateHmsPushConfigurationByIdData.md)|  | [optional]
 
 ### Return type
@@ -1343,7 +1343,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_push_notification_content_template**
-> UpdatePushNotificationContentTemplateResponse update_push_notification_content_template(template_name)
+> UpdatePushNotificationContentTemplateResponse update_push_notification_content_template(api_token, template_name)
 
 Update a push notification content template
 
@@ -1370,8 +1370,8 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = application_api.ApplicationApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
     template_name = "template_name_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
     update_push_notification_content_template_data = UpdatePushNotificationContentTemplateData(
         template_name="template_name_example",
         template="template_example",
@@ -1383,7 +1383,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Update a push notification content template
-        api_response = api_instance.update_push_notification_content_template(template_name)
+        api_response = api_instance.update_push_notification_content_template(api_token, template_name)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ApplicationApi->update_push_notification_content_template: %s\n" % e)
@@ -1392,7 +1392,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Update a push notification content template
-        api_response = api_instance.update_push_notification_content_template(template_name, api_token=api_token, update_push_notification_content_template_data=update_push_notification_content_template_data)
+        api_response = api_instance.update_push_notification_content_template(api_token, template_name, update_push_notification_content_template_data=update_push_notification_content_template_data)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ApplicationApi->update_push_notification_content_template: %s\n" % e)
@@ -1403,8 +1403,8 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
  **template_name** | **str**|  |
- **api_token** | **str**|  | [optional]
  **update_push_notification_content_template_data** | [**UpdatePushNotificationContentTemplateData**](UpdatePushNotificationContentTemplateData.md)|  | [optional]
 
 ### Return type
@@ -1430,7 +1430,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **view_default_channel_invitation_preference**
-> ViewDefaultChannelInvitationPreferenceResponse view_default_channel_invitation_preference()
+> ViewDefaultChannelInvitationPreferenceResponse view_default_channel_invitation_preference(api_token)
 
 View default channel invitation preference
 
@@ -1456,13 +1456,12 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = application_api.ApplicationApi(api_client)
-    api_token = "{{API_TOKEN}}" # str |  (optional)
+    api_token = "{{API_TOKEN}}" # str | 
 
     # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # View default channel invitation preference
-        api_response = api_instance.view_default_channel_invitation_preference(api_token=api_token)
+        api_response = api_instance.view_default_channel_invitation_preference(api_token)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ApplicationApi->view_default_channel_invitation_preference: %s\n" % e)
@@ -1473,7 +1472,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  | [optional]
+ **api_token** | **str**|  |
 
 ### Return type
 
@@ -1498,7 +1497,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **view_number_of_concurrent_connections**
-> ViewNumberOfConcurrentConnectionsResponse view_number_of_concurrent_connections()
+> ViewNumberOfConcurrentConnectionsResponse view_number_of_concurrent_connections(api_token)
 
 View number of concurrent connections
 
@@ -1524,13 +1523,12 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = application_api.ApplicationApi(api_client)
-    api_token = "{{API_TOKEN}}" # str |  (optional)
+    api_token = "{{API_TOKEN}}" # str | 
 
     # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # View number of concurrent connections
-        api_response = api_instance.view_number_of_concurrent_connections(api_token=api_token)
+        api_response = api_instance.view_number_of_concurrent_connections(api_token)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ApplicationApi->view_number_of_concurrent_connections: %s\n" % e)
@@ -1541,7 +1539,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  | [optional]
+ **api_token** | **str**|  |
 
 ### Return type
 
@@ -1566,7 +1564,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **view_number_of_daily_active_users**
-> ViewNumberOfDailyActiveUsersResponse view_number_of_daily_active_users()
+> ViewNumberOfDailyActiveUsersResponse view_number_of_daily_active_users(api_token)
 
 View number of daily active users
 
@@ -1592,14 +1590,22 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = application_api.ApplicationApi(api_client)
-    api_token = "{{API_TOKEN}}" # str |  (optional)
+    api_token = "{{API_TOKEN}}" # str | 
     date = "date_example" # str |  (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # View number of daily active users
+        api_response = api_instance.view_number_of_daily_active_users(api_token)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling ApplicationApi->view_number_of_daily_active_users: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # View number of daily active users
-        api_response = api_instance.view_number_of_daily_active_users(api_token=api_token, date=date)
+        api_response = api_instance.view_number_of_daily_active_users(api_token, date=date)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ApplicationApi->view_number_of_daily_active_users: %s\n" % e)
@@ -1610,7 +1616,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  | [optional]
+ **api_token** | **str**|  |
  **date** | **str**|  | [optional]
 
 ### Return type
@@ -1636,7 +1642,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **view_number_of_monthly_active_users**
-> ViewNumberOfMonthlyActiveUsersResponse view_number_of_monthly_active_users()
+> ViewNumberOfMonthlyActiveUsersResponse view_number_of_monthly_active_users(api_token)
 
 View number of monthly active users
 
@@ -1662,14 +1668,22 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = application_api.ApplicationApi(api_client)
-    api_token = "{{API_TOKEN}}" # str |  (optional)
+    api_token = "{{API_TOKEN}}" # str | 
     date = "date_example" # str |  (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # View number of monthly active users
+        api_response = api_instance.view_number_of_monthly_active_users(api_token)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling ApplicationApi->view_number_of_monthly_active_users: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # View number of monthly active users
-        api_response = api_instance.view_number_of_monthly_active_users(api_token=api_token, date=date)
+        api_response = api_instance.view_number_of_monthly_active_users(api_token, date=date)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ApplicationApi->view_number_of_monthly_active_users: %s\n" % e)
@@ -1680,7 +1694,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  | [optional]
+ **api_token** | **str**|  |
  **date** | **str**|  | [optional]
 
 ### Return type
@@ -1706,7 +1720,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **view_number_of_peak_connections**
-> ViewNumberOfPeakConnectionsResponse view_number_of_peak_connections(time_dimension, start_year, start_month, end_year, end_month)
+> ViewNumberOfPeakConnectionsResponse view_number_of_peak_connections(api_token, time_dimension, start_year, start_month, end_year, end_month)
 
 View number of peak connections
 
@@ -1732,19 +1746,19 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = application_api.ApplicationApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
     time_dimension = "time_dimension_example" # str | 
     start_year = 1 # int | 
     start_month = 1 # int | 
     end_year = 1 # int | 
     end_month = 1 # int | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
     start_day = 1 # int |  (optional)
     end_day = 1 # int |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # View number of peak connections
-        api_response = api_instance.view_number_of_peak_connections(time_dimension, start_year, start_month, end_year, end_month)
+        api_response = api_instance.view_number_of_peak_connections(api_token, time_dimension, start_year, start_month, end_year, end_month)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ApplicationApi->view_number_of_peak_connections: %s\n" % e)
@@ -1753,7 +1767,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # View number of peak connections
-        api_response = api_instance.view_number_of_peak_connections(time_dimension, start_year, start_month, end_year, end_month, api_token=api_token, start_day=start_day, end_day=end_day)
+        api_response = api_instance.view_number_of_peak_connections(api_token, time_dimension, start_year, start_month, end_year, end_month, start_day=start_day, end_day=end_day)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ApplicationApi->view_number_of_peak_connections: %s\n" % e)
@@ -1764,12 +1778,12 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
  **time_dimension** | **str**|  |
  **start_year** | **int**|  |
  **start_month** | **int**|  |
  **end_year** | **int**|  |
  **end_month** | **int**|  |
- **api_token** | **str**|  | [optional]
  **start_day** | **int**|  | [optional]
  **end_day** | **int**|  | [optional]
 
@@ -1796,7 +1810,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **view_push_configuration_by_id**
-> ViewPushConfigurationByIdResponse view_push_configuration_by_id(push_type, provider_id)
+> ViewPushConfigurationByIdResponse view_push_configuration_by_id(api_token, push_type, provider_id)
 
 View a push configuration
 
@@ -1822,23 +1836,14 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = application_api.ApplicationApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
     push_type = "push_type_example" # str | 
     provider_id = "provider_id_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # View a push configuration
-        api_response = api_instance.view_push_configuration_by_id(push_type, provider_id)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling ApplicationApi->view_push_configuration_by_id: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # View a push configuration
-        api_response = api_instance.view_push_configuration_by_id(push_type, provider_id, api_token=api_token)
+        api_response = api_instance.view_push_configuration_by_id(api_token, push_type, provider_id)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ApplicationApi->view_push_configuration_by_id: %s\n" % e)
@@ -1849,9 +1854,9 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
  **push_type** | **str**|  |
  **provider_id** | **str**|  |
- **api_token** | **str**|  | [optional]
 
 ### Return type
 
@@ -1876,7 +1881,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **view_push_notification_content_template**
-> ViewPushNotificationContentTemplateResponse view_push_notification_content_template(template_name)
+> ViewPushNotificationContentTemplateResponse view_push_notification_content_template(api_token, template_name)
 
 View a push notification content template
 
@@ -1902,22 +1907,13 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = application_api.ApplicationApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
     template_name = "template_name_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # View a push notification content template
-        api_response = api_instance.view_push_notification_content_template(template_name)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling ApplicationApi->view_push_notification_content_template: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # View a push notification content template
-        api_response = api_instance.view_push_notification_content_template(template_name, api_token=api_token)
+        api_response = api_instance.view_push_notification_content_template(api_token, template_name)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ApplicationApi->view_push_notification_content_template: %s\n" % e)
@@ -1928,8 +1924,8 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
  **template_name** | **str**|  |
- **api_token** | **str**|  | [optional]
 
 ### Return type
 
@@ -1954,7 +1950,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **view_secondary_api_token_by_token**
-> ViewSecondaryApiTokenByTokenResponse view_secondary_api_token_by_token(api_token2)
+> ViewSecondaryApiTokenByTokenResponse view_secondary_api_token_by_token(api_token, api_token2)
 
 View a secondary API token
 
@@ -1980,22 +1976,13 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = application_api.ApplicationApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
     api_token2 = "api_token_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # View a secondary API token
-        api_response = api_instance.view_secondary_api_token_by_token(api_token2)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling ApplicationApi->view_secondary_api_token_by_token: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # View a secondary API token
-        api_response = api_instance.view_secondary_api_token_by_token(api_token2, api_token=api_token)
+        api_response = api_instance.view_secondary_api_token_by_token(api_token, api_token2)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ApplicationApi->view_secondary_api_token_by_token: %s\n" % e)
@@ -2006,8 +1993,8 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
  **api_token2** | **str**|  |
- **api_token** | **str**|  | [optional]
 
 ### Return type
 

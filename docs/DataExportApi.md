@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **list_data_exports_by_message_channel_or_user**
-> ListDataExportsByMessageChannelOrUserResponse list_data_exports_by_message_channel_or_user(data_type)
+> ListDataExportsByMessageChannelOrUserResponse list_data_exports_by_message_channel_or_user(api_token, data_type)
 
 List data exports by message, channel, or user
 
@@ -36,15 +36,15 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = data_export_api.DataExportApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
     data_type = "data_type_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
     token = "token_example" # str |  (optional)
     limit = 1 # int |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # List data exports by message, channel, or user
-        api_response = api_instance.list_data_exports_by_message_channel_or_user(data_type)
+        api_response = api_instance.list_data_exports_by_message_channel_or_user(api_token, data_type)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling DataExportApi->list_data_exports_by_message_channel_or_user: %s\n" % e)
@@ -53,7 +53,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # List data exports by message, channel, or user
-        api_response = api_instance.list_data_exports_by_message_channel_or_user(data_type, api_token=api_token, token=token, limit=limit)
+        api_response = api_instance.list_data_exports_by_message_channel_or_user(api_token, data_type, token=token, limit=limit)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling DataExportApi->list_data_exports_by_message_channel_or_user: %s\n" % e)
@@ -64,8 +64,8 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
  **data_type** | **str**|  |
- **api_token** | **str**|  | [optional]
  **token** | **str**|  | [optional]
  **limit** | **int**|  | [optional]
 
@@ -92,7 +92,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **register_and_schedule_data_export**
-> RegisterAndScheduleDataExportResponse register_and_schedule_data_export(data_type)
+> RegisterAndScheduleDataExportResponse register_and_schedule_data_export(api_token, data_type)
 
 Register and schedule a data export
 
@@ -119,8 +119,8 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = data_export_api.DataExportApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
     data_type = "data_type_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
     register_and_schedule_data_export_data = RegisterAndScheduleDataExportData(
         start_ts=1,
         end_ts=1,
@@ -150,7 +150,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Register and schedule a data export
-        api_response = api_instance.register_and_schedule_data_export(data_type)
+        api_response = api_instance.register_and_schedule_data_export(api_token, data_type)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling DataExportApi->register_and_schedule_data_export: %s\n" % e)
@@ -159,7 +159,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Register and schedule a data export
-        api_response = api_instance.register_and_schedule_data_export(data_type, api_token=api_token, register_and_schedule_data_export_data=register_and_schedule_data_export_data)
+        api_response = api_instance.register_and_schedule_data_export(api_token, data_type, register_and_schedule_data_export_data=register_and_schedule_data_export_data)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling DataExportApi->register_and_schedule_data_export: %s\n" % e)
@@ -170,8 +170,8 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
  **data_type** | **str**|  |
- **api_token** | **str**|  | [optional]
  **register_and_schedule_data_export_data** | [**RegisterAndScheduleDataExportData**](RegisterAndScheduleDataExportData.md)|  | [optional]
 
 ### Return type
@@ -197,7 +197,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **view_data_export_by_id**
-> ViewDataExportByIdResponse view_data_export_by_id(data_type, request_id)
+> ViewDataExportByIdResponse view_data_export_by_id(api_token, data_type, request_id)
 
 View a data export
 
@@ -223,23 +223,14 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = data_export_api.DataExportApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
     data_type = "data_type_example" # str | 
     request_id = "request_id_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # View a data export
-        api_response = api_instance.view_data_export_by_id(data_type, request_id)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling DataExportApi->view_data_export_by_id: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # View a data export
-        api_response = api_instance.view_data_export_by_id(data_type, request_id, api_token=api_token)
+        api_response = api_instance.view_data_export_by_id(api_token, data_type, request_id)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling DataExportApi->view_data_export_by_id: %s\n" % e)
@@ -250,9 +241,9 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
  **data_type** | **str**|  |
  **request_id** | **str**|  |
- **api_token** | **str**|  | [optional]
 
 ### Return type
 

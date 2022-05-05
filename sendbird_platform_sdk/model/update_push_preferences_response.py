@@ -81,6 +81,9 @@ class UpdatePushPreferencesResponse(ModelNormal):
                 and the value is attribute type.
         """
         return {
+            'block_push_from_bots': (bool,),  # noqa: E501
+            'enable_push_for_replies': (bool,),  # noqa: E501
+            'push_blocked_bot_ids': ([str],),  # noqa: E501
             'push_trigger_option': (str,),  # noqa: E501
             'do_not_disturb': (bool,),  # noqa: E501
             'start_hour': (float,),  # noqa: E501
@@ -100,6 +103,9 @@ class UpdatePushPreferencesResponse(ModelNormal):
 
 
     attribute_map = {
+        'block_push_from_bots': 'block_push_from_bots',  # noqa: E501
+        'enable_push_for_replies': 'enable_push_for_replies',  # noqa: E501
+        'push_blocked_bot_ids': 'push_blocked_bot_ids',  # noqa: E501
         'push_trigger_option': 'push_trigger_option',  # noqa: E501
         'do_not_disturb': 'do_not_disturb',  # noqa: E501
         'start_hour': 'start_hour',  # noqa: E501
@@ -154,6 +160,9 @@ class UpdatePushPreferencesResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            block_push_from_bots (bool): [optional]  # noqa: E501
+            enable_push_for_replies (bool): [optional]  # noqa: E501
+            push_blocked_bot_ids ([str]): [optional]  # noqa: E501
             push_trigger_option (str): [optional]  # noqa: E501
             do_not_disturb (bool): [optional]  # noqa: E501
             start_hour (float): [optional]  # noqa: E501
@@ -246,6 +255,9 @@ class UpdatePushPreferencesResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            block_push_from_bots (bool): [optional]  # noqa: E501
+            enable_push_for_replies (bool): [optional]  # noqa: E501
+            push_blocked_bot_ids ([str]): [optional]  # noqa: E501
             push_trigger_option (str): [optional]  # noqa: E501
             do_not_disturb (bool): [optional]  # noqa: E501
             start_hour (float): [optional]  # noqa: E501

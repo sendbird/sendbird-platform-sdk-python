@@ -81,11 +81,12 @@ class RemoveReactionFromAMessageResponse(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'user_id': (str,),  # noqa: E501
-            'operation': (str,),  # noqa: E501
-            'success': (bool,),  # noqa: E501
             'reaction': (str,),  # noqa: E501
+            'user_id': (float,),  # noqa: E501
+            'success': (bool,),  # noqa: E501
+            'msg_id': (float,),  # noqa: E501
             'updated_at': (float,),  # noqa: E501
+            'operation': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -94,11 +95,12 @@ class RemoveReactionFromAMessageResponse(ModelNormal):
 
 
     attribute_map = {
-        'user_id': 'user_id',  # noqa: E501
-        'operation': 'operation',  # noqa: E501
-        'success': 'success',  # noqa: E501
         'reaction': 'reaction',  # noqa: E501
+        'user_id': 'user_id',  # noqa: E501
+        'success': 'success',  # noqa: E501
+        'msg_id': 'msg_id',  # noqa: E501
         'updated_at': 'updated_at',  # noqa: E501
+        'operation': 'operation',  # noqa: E501
     }
 
     read_only_vars = {
@@ -142,11 +144,12 @@ class RemoveReactionFromAMessageResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            user_id (str): [optional]  # noqa: E501
-            operation (str): [optional]  # noqa: E501
-            success (bool): [optional]  # noqa: E501
             reaction (str): [optional]  # noqa: E501
+            user_id (float): [optional]  # noqa: E501
+            success (bool): [optional]  # noqa: E501
+            msg_id (float): [optional]  # noqa: E501
             updated_at (float): [optional]  # noqa: E501
+            operation (str): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -228,11 +231,12 @@ class RemoveReactionFromAMessageResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            user_id (str): [optional]  # noqa: E501
-            operation (str): [optional]  # noqa: E501
-            success (bool): [optional]  # noqa: E501
             reaction (str): [optional]  # noqa: E501
+            user_id (float): [optional]  # noqa: E501
+            success (bool): [optional]  # noqa: E501
+            msg_id (float): [optional]  # noqa: E501
             updated_at (float): [optional]  # noqa: E501
+            operation (str): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

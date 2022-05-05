@@ -84,6 +84,8 @@ class GetDetailedOpenStatusOfAnnouncementByIdResponseOpenStatus(ModelNormal):
             'user_id': (str,),  # noqa: E501
             'channel_url': (str,),  # noqa: E501
             'has_opened': (bool,),  # noqa: E501
+            'sent_at': (float,),  # noqa: E501
+            'open_at': (float,),  # noqa: E501
         }
 
     @cached_property
@@ -95,6 +97,8 @@ class GetDetailedOpenStatusOfAnnouncementByIdResponseOpenStatus(ModelNormal):
         'user_id': 'user_id',  # noqa: E501
         'channel_url': 'channel_url',  # noqa: E501
         'has_opened': 'has_opened',  # noqa: E501
+        'sent_at': 'sent_at',  # noqa: E501
+        'open_at': 'open_at',  # noqa: E501
     }
 
     read_only_vars = {
@@ -141,6 +145,8 @@ class GetDetailedOpenStatusOfAnnouncementByIdResponseOpenStatus(ModelNormal):
             user_id (str): [optional]  # noqa: E501
             channel_url (str): [optional]  # noqa: E501
             has_opened (bool): [optional]  # noqa: E501
+            sent_at (float): [optional]  # noqa: E501
+            open_at (float): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -225,6 +231,8 @@ class GetDetailedOpenStatusOfAnnouncementByIdResponseOpenStatus(ModelNormal):
             user_id (str): [optional]  # noqa: E501
             channel_url (str): [optional]  # noqa: E501
             has_opened (bool): [optional]  # noqa: E501
+            sent_at (float): [optional]  # noqa: E501
+            open_at (float): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

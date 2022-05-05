@@ -45,11 +45,12 @@ class MigrationApi(object):
             },
             params_map={
                 'all': [
-                    'target_channel_url',
                     'api_token',
+                    'target_channel_url',
                     'body',
                 ],
                 'required': [
+                    'api_token',
                     'target_channel_url',
                 ],
                 'nullable': [
@@ -65,20 +66,20 @@ class MigrationApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'target_channel_url':
-                        (str,),
                     'api_token':
+                        (str,),
+                    'target_channel_url':
                         (str,),
                     'body':
                         ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
                 },
                 'attribute_map': {
-                    'target_channel_url': 'target_channel_url',
                     'api_token': 'Api-Token',
+                    'target_channel_url': 'target_channel_url',
                 },
                 'location_map': {
-                    'target_channel_url': 'path',
                     'api_token': 'header',
+                    'target_channel_url': 'path',
                     'body': 'body',
                 },
                 'collection_format_map': {
@@ -95,6 +96,7 @@ class MigrationApi(object):
 
     def migrate_messages_by_url(
         self,
+        api_token,
         target_channel_url,
         **kwargs
     ):
@@ -104,14 +106,14 @@ class MigrationApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.migrate_messages_by_url(target_channel_url, async_req=True)
+        >>> thread = api.migrate_messages_by_url(api_token, target_channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             target_channel_url (str):
 
         Keyword Args:
-            api_token (str): [optional]
             body ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -162,6 +164,8 @@ class MigrationApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['target_channel_url'] = \
             target_channel_url
         return self.migrate_messages_by_url_endpoint.call_with_http_info(**kwargs)

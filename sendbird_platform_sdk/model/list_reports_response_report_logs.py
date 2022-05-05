@@ -91,6 +91,7 @@ class ListReportsResponseReportLogs(ModelNormal):
         """
         lazy_import()
         return {
+            'reporting_user': (SendBirdUser,),  # noqa: E501
             'report_type': (str,),  # noqa: E501
             'report_category': (str,),  # noqa: E501
             'offending_user': (SendBirdUser,),  # noqa: E501
@@ -106,6 +107,7 @@ class ListReportsResponseReportLogs(ModelNormal):
 
 
     attribute_map = {
+        'reporting_user': 'reporting_user',  # noqa: E501
         'report_type': 'report_type',  # noqa: E501
         'report_category': 'report_category',  # noqa: E501
         'offending_user': 'offending_user',  # noqa: E501
@@ -156,6 +158,7 @@ class ListReportsResponseReportLogs(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            reporting_user (SendBirdUser): [optional]  # noqa: E501
             report_type (str): [optional]  # noqa: E501
             report_category (str): [optional]  # noqa: E501
             offending_user (SendBirdUser): [optional]  # noqa: E501
@@ -244,6 +247,7 @@ class ListReportsResponseReportLogs(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            reporting_user (SendBirdUser): [optional]  # noqa: E501
             report_type (str): [optional]  # noqa: E501
             report_category (str): [optional]  # noqa: E501
             offending_user (SendBirdUser): [optional]  # noqa: E501

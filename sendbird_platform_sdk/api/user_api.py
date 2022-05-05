@@ -25,6 +25,7 @@ from sendbird_platform_sdk.model.add_registration_or_device_token_data import Ad
 from sendbird_platform_sdk.model.add_registration_or_device_token_response import AddRegistrationOrDeviceTokenResponse
 from sendbird_platform_sdk.model.ban_from_channels_with_custom_channel_types_data import BanFromChannelsWithCustomChannelTypesData
 from sendbird_platform_sdk.model.block_user_data import BlockUserData
+from sendbird_platform_sdk.model.block_user_response import BlockUserResponse
 from sendbird_platform_sdk.model.choose_push_notification_content_template_response import ChoosePushNotificationContentTemplateResponse
 from sendbird_platform_sdk.model.create_user_data import CreateUserData
 from sendbird_platform_sdk.model.leave_my_group_channels_data import LeaveMyGroupChannelsData
@@ -40,6 +41,7 @@ from sendbird_platform_sdk.model.register_as_operator_to_channels_with_custom_ch
 from sendbird_platform_sdk.model.remove_registration_or_device_token_by_token_response import RemoveRegistrationOrDeviceTokenByTokenResponse
 from sendbird_platform_sdk.model.remove_registration_or_device_token_from_owner_by_token_response import RemoveRegistrationOrDeviceTokenFromOwnerByTokenResponse
 from sendbird_platform_sdk.model.remove_registration_or_device_token_response import RemoveRegistrationOrDeviceTokenResponse
+from sendbird_platform_sdk.model.reset_push_preferences_response import ResetPushPreferencesResponse
 from sendbird_platform_sdk.model.send_bird_user import SendBirdUser
 from sendbird_platform_sdk.model.update_channel_invitation_preference_data import UpdateChannelInvitationPreferenceData
 from sendbird_platform_sdk.model.update_channel_invitation_preference_response import UpdateChannelInvitationPreferenceResponse
@@ -83,12 +85,13 @@ class UserApi(object):
             },
             params_map={
                 'all': [
+                    'api_token',
                     'user_id',
                     'token_type',
-                    'api_token',
                     'add_registration_or_device_token_data',
                 ],
                 'required': [
+                    'api_token',
                     'user_id',
                     'token_type',
                 ],
@@ -105,24 +108,24 @@ class UserApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
+                    'api_token':
+                        (str,),
                     'user_id':
                         (str,),
                     'token_type':
-                        (str,),
-                    'api_token':
                         (str,),
                     'add_registration_or_device_token_data':
                         (AddRegistrationOrDeviceTokenData,),
                 },
                 'attribute_map': {
+                    'api_token': 'Api-Token',
                     'user_id': 'user_id',
                     'token_type': 'token_type',
-                    'api_token': 'Api-Token',
                 },
                 'location_map': {
+                    'api_token': 'header',
                     'user_id': 'path',
                     'token_type': 'path',
-                    'api_token': 'header',
                     'add_registration_or_device_token_data': 'body',
                 },
                 'collection_format_map': {
@@ -140,7 +143,7 @@ class UserApi(object):
         )
         self.ban_from_channels_with_custom_channel_types_endpoint = _Endpoint(
             settings={
-                'response_type': None,
+                'response_type': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
                 'auth': [],
                 'endpoint_path': '/v3/users/{user_id}/banned_channel_custom_types',
                 'operation_id': 'ban_from_channels_with_custom_channel_types',
@@ -149,11 +152,12 @@ class UserApi(object):
             },
             params_map={
                 'all': [
-                    'user_id',
                     'api_token',
+                    'user_id',
                     'ban_from_channels_with_custom_channel_types_data',
                 ],
                 'required': [
+                    'api_token',
                     'user_id',
                 ],
                 'nullable': [
@@ -169,27 +173,29 @@ class UserApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'user_id':
-                        (str,),
                     'api_token':
+                        (str,),
+                    'user_id':
                         (str,),
                     'ban_from_channels_with_custom_channel_types_data':
                         (BanFromChannelsWithCustomChannelTypesData,),
                 },
                 'attribute_map': {
-                    'user_id': 'user_id',
                     'api_token': 'Api-Token',
+                    'user_id': 'user_id',
                 },
                 'location_map': {
-                    'user_id': 'path',
                     'api_token': 'header',
+                    'user_id': 'path',
                     'ban_from_channels_with_custom_channel_types_data': 'body',
                 },
                 'collection_format_map': {
                 }
             },
             headers_map={
-                'accept': [],
+                'accept': [
+                    'application/json'
+                ],
                 'content_type': [
                     'application/json'
                 ]
@@ -198,7 +204,7 @@ class UserApi(object):
         )
         self.block_user_endpoint = _Endpoint(
             settings={
-                'response_type': (SendBirdUser,),
+                'response_type': (BlockUserResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/users/{user_id}/block',
                 'operation_id': 'block_user',
@@ -207,11 +213,12 @@ class UserApi(object):
             },
             params_map={
                 'all': [
-                    'user_id',
                     'api_token',
+                    'user_id',
                     'block_user_data',
                 ],
                 'required': [
+                    'api_token',
                     'user_id',
                 ],
                 'nullable': [
@@ -227,20 +234,20 @@ class UserApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'user_id':
-                        (str,),
                     'api_token':
+                        (str,),
+                    'user_id':
                         (str,),
                     'block_user_data':
                         (BlockUserData,),
                 },
                 'attribute_map': {
-                    'user_id': 'user_id',
                     'api_token': 'Api-Token',
+                    'user_id': 'user_id',
                 },
                 'location_map': {
-                    'user_id': 'path',
                     'api_token': 'header',
+                    'user_id': 'path',
                     'block_user_data': 'body',
                 },
                 'collection_format_map': {
@@ -267,11 +274,12 @@ class UserApi(object):
             },
             params_map={
                 'all': [
-                    'user_id',
                     'api_token',
+                    'user_id',
                     'body',
                 ],
                 'required': [
+                    'api_token',
                     'user_id',
                 ],
                 'nullable': [
@@ -287,20 +295,20 @@ class UserApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'user_id':
-                        (str,),
                     'api_token':
+                        (str,),
+                    'user_id':
                         (str,),
                     'body':
                         ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
                 },
                 'attribute_map': {
-                    'user_id': 'user_id',
                     'api_token': 'Api-Token',
+                    'user_id': 'user_id',
                 },
                 'location_map': {
-                    'user_id': 'path',
                     'api_token': 'header',
+                    'user_id': 'path',
                     'body': 'body',
                 },
                 'collection_format_map': {
@@ -330,7 +338,9 @@ class UserApi(object):
                     'api_token',
                     'create_user_data',
                 ],
-                'required': [],
+                'required': [
+                    'api_token',
+                ],
                 'nullable': [
                 ],
                 'enum': [
@@ -371,7 +381,7 @@ class UserApi(object):
         )
         self.delete_user_by_id_endpoint = _Endpoint(
             settings={
-                'response_type': None,
+                'response_type': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
                 'auth': [],
                 'endpoint_path': '/v3/users/{user_id}',
                 'operation_id': 'delete_user_by_id',
@@ -380,10 +390,11 @@ class UserApi(object):
             },
             params_map={
                 'all': [
-                    'user_id',
                     'api_token',
+                    'user_id',
                 ],
                 'required': [
+                    'api_token',
                     'user_id',
                 ],
                 'nullable': [
@@ -399,31 +410,33 @@ class UserApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'user_id':
-                        (str,),
                     'api_token':
+                        (str,),
+                    'user_id':
                         (str,),
                 },
                 'attribute_map': {
-                    'user_id': 'user_id',
                     'api_token': 'Api-Token',
+                    'user_id': 'user_id',
                 },
                 'location_map': {
-                    'user_id': 'path',
                     'api_token': 'header',
+                    'user_id': 'path',
                 },
                 'collection_format_map': {
                 }
             },
             headers_map={
-                'accept': [],
+                'accept': [
+                    'application/json'
+                ],
                 'content_type': [],
             },
             api_client=api_client
         )
         self.leave_my_group_channels_endpoint = _Endpoint(
             settings={
-                'response_type': None,
+                'response_type': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
                 'auth': [],
                 'endpoint_path': '/v3/users/{user_id}/my_group_channels/leave',
                 'operation_id': 'leave_my_group_channels',
@@ -432,11 +445,12 @@ class UserApi(object):
             },
             params_map={
                 'all': [
-                    'user_id',
                     'api_token',
+                    'user_id',
                     'leave_my_group_channels_data',
                 ],
                 'required': [
+                    'api_token',
                     'user_id',
                 ],
                 'nullable': [
@@ -452,27 +466,29 @@ class UserApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'user_id':
-                        (str,),
                     'api_token':
+                        (str,),
+                    'user_id':
                         (str,),
                     'leave_my_group_channels_data':
                         (LeaveMyGroupChannelsData,),
                 },
                 'attribute_map': {
-                    'user_id': 'user_id',
                     'api_token': 'Api-Token',
+                    'user_id': 'user_id',
                 },
                 'location_map': {
-                    'user_id': 'path',
                     'api_token': 'header',
+                    'user_id': 'path',
                     'leave_my_group_channels_data': 'body',
                 },
                 'collection_format_map': {
                 }
             },
             headers_map={
-                'accept': [],
+                'accept': [
+                    'application/json'
+                ],
                 'content_type': [
                     'application/json'
                 ]
@@ -490,12 +506,13 @@ class UserApi(object):
             },
             params_map={
                 'all': [
-                    'user_id',
                     'api_token',
+                    'user_id',
                     'token',
                     'limit',
                 ],
                 'required': [
+                    'api_token',
                     'user_id',
                 ],
                 'nullable': [
@@ -511,9 +528,9 @@ class UserApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'user_id':
-                        (str,),
                     'api_token':
+                        (str,),
+                    'user_id':
                         (str,),
                     'token':
                         (str,),
@@ -521,14 +538,14 @@ class UserApi(object):
                         (int,),
                 },
                 'attribute_map': {
-                    'user_id': 'user_id',
                     'api_token': 'Api-Token',
+                    'user_id': 'user_id',
                     'token': 'token',
                     'limit': 'limit',
                 },
                 'location_map': {
-                    'user_id': 'path',
                     'api_token': 'header',
+                    'user_id': 'path',
                     'token': 'query',
                     'limit': 'query',
                 },
@@ -554,8 +571,8 @@ class UserApi(object):
             },
             params_map={
                 'all': [
-                    'user_id',
                     'api_token',
+                    'user_id',
                     'token',
                     'limit',
                     'user_ids',
@@ -563,6 +580,7 @@ class UserApi(object):
                     'metadatavalues_in',
                 ],
                 'required': [
+                    'api_token',
                     'user_id',
                 ],
                 'nullable': [
@@ -578,9 +596,9 @@ class UserApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'user_id':
-                        (str,),
                     'api_token':
+                        (str,),
+                    'user_id':
                         (str,),
                     'token':
                         (str,),
@@ -594,8 +612,8 @@ class UserApi(object):
                         (str,),
                 },
                 'attribute_map': {
-                    'user_id': 'user_id',
                     'api_token': 'Api-Token',
+                    'user_id': 'user_id',
                     'token': 'token',
                     'limit': 'limit',
                     'user_ids': 'user_ids',
@@ -603,8 +621,8 @@ class UserApi(object):
                     'metadatavalues_in': 'metadatavalues_in',
                 },
                 'location_map': {
-                    'user_id': 'path',
                     'api_token': 'header',
+                    'user_id': 'path',
                     'token': 'query',
                     'limit': 'query',
                     'user_ids': 'query',
@@ -633,12 +651,13 @@ class UserApi(object):
             },
             params_map={
                 'all': [
-                    'user_id',
                     'api_token',
+                    'user_id',
                     'token',
                     'limit',
                 ],
                 'required': [
+                    'api_token',
                     'user_id',
                 ],
                 'nullable': [
@@ -654,9 +673,9 @@ class UserApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'user_id':
-                        (str,),
                     'api_token':
+                        (str,),
+                    'user_id':
                         (str,),
                     'token':
                         (str,),
@@ -664,14 +683,14 @@ class UserApi(object):
                         (int,),
                 },
                 'attribute_map': {
-                    'user_id': 'user_id',
                     'api_token': 'Api-Token',
+                    'user_id': 'user_id',
                     'token': 'token',
                     'limit': 'limit',
                 },
                 'location_map': {
-                    'user_id': 'path',
                     'api_token': 'header',
+                    'user_id': 'path',
                     'token': 'query',
                     'limit': 'query',
                 },
@@ -697,8 +716,8 @@ class UserApi(object):
             },
             params_map={
                 'all': [
-                    'user_id',
                     'api_token',
+                    'user_id',
                     'token',
                     'limit',
                     'distinct_mode',
@@ -741,6 +760,7 @@ class UserApi(object):
                     'custom_type',
                 ],
                 'required': [
+                    'api_token',
                     'user_id',
                 ],
                 'nullable': [
@@ -756,9 +776,9 @@ class UserApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'user_id':
-                        (str,),
                     'api_token':
+                        (str,),
+                    'user_id':
                         (str,),
                     'token':
                         (str,),
@@ -842,8 +862,8 @@ class UserApi(object):
                         (str,),
                 },
                 'attribute_map': {
-                    'user_id': 'user_id',
                     'api_token': 'Api-Token',
+                    'user_id': 'user_id',
                     'token': 'token',
                     'limit': 'limit',
                     'distinct_mode': 'distinct_mode',
@@ -886,8 +906,8 @@ class UserApi(object):
                     'custom_type': 'custom_type',
                 },
                 'location_map': {
-                    'user_id': 'path',
                     'api_token': 'header',
+                    'user_id': 'path',
                     'token': 'query',
                     'limit': 'query',
                     'distinct_mode': 'query',
@@ -951,11 +971,12 @@ class UserApi(object):
             },
             params_map={
                 'all': [
+                    'api_token',
                     'user_id',
                     'token_type',
-                    'api_token',
                 ],
                 'required': [
+                    'api_token',
                     'user_id',
                     'token_type',
                 ],
@@ -972,22 +993,22 @@ class UserApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
+                    'api_token':
+                        (str,),
                     'user_id':
                         (str,),
                     'token_type':
                         (str,),
-                    'api_token':
-                        (str,),
                 },
                 'attribute_map': {
+                    'api_token': 'Api-Token',
                     'user_id': 'user_id',
                     'token_type': 'token_type',
-                    'api_token': 'Api-Token',
                 },
                 'location_map': {
+                    'api_token': 'header',
                     'user_id': 'path',
                     'token_type': 'path',
-                    'api_token': 'header',
                 },
                 'collection_format_map': {
                 }
@@ -1022,7 +1043,9 @@ class UserApi(object):
                     'metadatakey',
                     'metadatavalues_in',
                 ],
-                'required': [],
+                'required': [
+                    'api_token',
+                ],
                 'nullable': [
                 ],
                 'enum': [
@@ -1094,7 +1117,7 @@ class UserApi(object):
         )
         self.mark_all_messages_as_read_endpoint = _Endpoint(
             settings={
-                'response_type': None,
+                'response_type': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
                 'auth': [],
                 'endpoint_path': '/v3/users/{user_id}/mark_as_read_all',
                 'operation_id': 'mark_all_messages_as_read',
@@ -1103,11 +1126,12 @@ class UserApi(object):
             },
             params_map={
                 'all': [
-                    'user_id',
                     'api_token',
+                    'user_id',
                     'mark_all_messages_as_read_data',
                 ],
                 'required': [
+                    'api_token',
                     'user_id',
                 ],
                 'nullable': [
@@ -1123,27 +1147,29 @@ class UserApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'user_id':
-                        (str,),
                     'api_token':
+                        (str,),
+                    'user_id':
                         (str,),
                     'mark_all_messages_as_read_data':
                         (MarkAllMessagesAsReadData,),
                 },
                 'attribute_map': {
-                    'user_id': 'user_id',
                     'api_token': 'Api-Token',
+                    'user_id': 'user_id',
                 },
                 'location_map': {
-                    'user_id': 'path',
                     'api_token': 'header',
+                    'user_id': 'path',
                     'mark_all_messages_as_read_data': 'body',
                 },
                 'collection_format_map': {
                 }
             },
             headers_map={
-                'accept': [],
+                'accept': [
+                    'application/json'
+                ],
                 'content_type': [
                     'application/json'
                 ]
@@ -1152,7 +1178,7 @@ class UserApi(object):
         )
         self.mute_in_channels_with_custom_channel_types_endpoint = _Endpoint(
             settings={
-                'response_type': None,
+                'response_type': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
                 'auth': [],
                 'endpoint_path': '/v3/users/{user_id}/muted_channel_custom_types',
                 'operation_id': 'mute_in_channels_with_custom_channel_types',
@@ -1161,11 +1187,12 @@ class UserApi(object):
             },
             params_map={
                 'all': [
-                    'user_id',
                     'api_token',
+                    'user_id',
                     'mute_in_channels_with_custom_channel_types_data',
                 ],
                 'required': [
+                    'api_token',
                     'user_id',
                 ],
                 'nullable': [
@@ -1181,27 +1208,29 @@ class UserApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'user_id':
-                        (str,),
                     'api_token':
+                        (str,),
+                    'user_id':
                         (str,),
                     'mute_in_channels_with_custom_channel_types_data':
                         (MuteInChannelsWithCustomChannelTypesData,),
                 },
                 'attribute_map': {
-                    'user_id': 'user_id',
                     'api_token': 'Api-Token',
+                    'user_id': 'user_id',
                 },
                 'location_map': {
-                    'user_id': 'path',
                     'api_token': 'header',
+                    'user_id': 'path',
                     'mute_in_channels_with_custom_channel_types_data': 'body',
                 },
                 'collection_format_map': {
                 }
             },
             headers_map={
-                'accept': [],
+                'accept': [
+                    'application/json'
+                ],
                 'content_type': [
                     'application/json'
                 ]
@@ -1210,7 +1239,7 @@ class UserApi(object):
         )
         self.register_as_operator_to_channels_with_custom_channel_types_endpoint = _Endpoint(
             settings={
-                'response_type': None,
+                'response_type': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
                 'auth': [],
                 'endpoint_path': '/v3/users/{user_id}/operating_channel_custom_types',
                 'operation_id': 'register_as_operator_to_channels_with_custom_channel_types',
@@ -1219,11 +1248,12 @@ class UserApi(object):
             },
             params_map={
                 'all': [
-                    'user_id',
                     'api_token',
+                    'user_id',
                     'register_as_operator_to_channels_with_custom_channel_types_data',
                 ],
                 'required': [
+                    'api_token',
                     'user_id',
                 ],
                 'nullable': [
@@ -1239,27 +1269,29 @@ class UserApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'user_id':
-                        (str,),
                     'api_token':
+                        (str,),
+                    'user_id':
                         (str,),
                     'register_as_operator_to_channels_with_custom_channel_types_data':
                         (RegisterAsOperatorToChannelsWithCustomChannelTypesData,),
                 },
                 'attribute_map': {
-                    'user_id': 'user_id',
                     'api_token': 'Api-Token',
+                    'user_id': 'user_id',
                 },
                 'location_map': {
-                    'user_id': 'path',
                     'api_token': 'header',
+                    'user_id': 'path',
                     'register_as_operator_to_channels_with_custom_channel_types_data': 'body',
                 },
                 'collection_format_map': {
                 }
             },
             headers_map={
-                'accept': [],
+                'accept': [
+                    'application/json'
+                ],
                 'content_type': [
                     'application/json'
                 ]
@@ -1277,10 +1309,11 @@ class UserApi(object):
             },
             params_map={
                 'all': [
-                    'user_id',
                     'api_token',
+                    'user_id',
                 ],
                 'required': [
+                    'api_token',
                     'user_id',
                 ],
                 'nullable': [
@@ -1296,18 +1329,18 @@ class UserApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'user_id':
-                        (str,),
                     'api_token':
+                        (str,),
+                    'user_id':
                         (str,),
                 },
                 'attribute_map': {
-                    'user_id': 'user_id',
                     'api_token': 'Api-Token',
+                    'user_id': 'user_id',
                 },
                 'location_map': {
-                    'user_id': 'path',
                     'api_token': 'header',
+                    'user_id': 'path',
                 },
                 'collection_format_map': {
                 }
@@ -1331,12 +1364,13 @@ class UserApi(object):
             },
             params_map={
                 'all': [
+                    'api_token',
                     'user_id',
                     'token_type',
                     'token',
-                    'api_token',
                 ],
                 'required': [
+                    'api_token',
                     'user_id',
                     'token_type',
                     'token',
@@ -1354,26 +1388,26 @@ class UserApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
+                    'api_token':
+                        (str,),
                     'user_id':
                         (str,),
                     'token_type':
                         (str,),
                     'token':
                         (str,),
-                    'api_token':
-                        (str,),
                 },
                 'attribute_map': {
+                    'api_token': 'Api-Token',
                     'user_id': 'user_id',
                     'token_type': 'token_type',
                     'token': 'token',
-                    'api_token': 'Api-Token',
                 },
                 'location_map': {
+                    'api_token': 'header',
                     'user_id': 'path',
                     'token_type': 'path',
                     'token': 'path',
-                    'api_token': 'header',
                 },
                 'collection_format_map': {
                 }
@@ -1397,11 +1431,12 @@ class UserApi(object):
             },
             params_map={
                 'all': [
+                    'api_token',
                     'token_type',
                     'token',
-                    'api_token',
                 ],
                 'required': [
+                    'api_token',
                     'token_type',
                     'token',
                 ],
@@ -1418,22 +1453,22 @@ class UserApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
+                    'api_token':
+                        (str,),
                     'token_type':
                         (str,),
                     'token':
                         (str,),
-                    'api_token':
-                        (str,),
                 },
                 'attribute_map': {
+                    'api_token': 'Api-Token',
                     'token_type': 'token_type',
                     'token': 'token',
-                    'api_token': 'Api-Token',
                 },
                 'location_map': {
+                    'api_token': 'header',
                     'token_type': 'path',
                     'token': 'path',
-                    'api_token': 'header',
                 },
                 'collection_format_map': {
                 }
@@ -1448,7 +1483,7 @@ class UserApi(object):
         )
         self.reset_push_preferences_endpoint = _Endpoint(
             settings={
-                'response_type': None,
+                'response_type': (ResetPushPreferencesResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/users/{user_id}/push_preference',
                 'operation_id': 'reset_push_preferences',
@@ -1457,10 +1492,11 @@ class UserApi(object):
             },
             params_map={
                 'all': [
-                    'user_id',
                     'api_token',
+                    'user_id',
                 ],
                 'required': [
+                    'api_token',
                     'user_id',
                 ],
                 'nullable': [
@@ -1476,31 +1512,33 @@ class UserApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'user_id':
-                        (str,),
                     'api_token':
+                        (str,),
+                    'user_id':
                         (str,),
                 },
                 'attribute_map': {
-                    'user_id': 'user_id',
                     'api_token': 'Api-Token',
+                    'user_id': 'user_id',
                 },
                 'location_map': {
-                    'user_id': 'path',
                     'api_token': 'header',
+                    'user_id': 'path',
                 },
                 'collection_format_map': {
                 }
             },
             headers_map={
-                'accept': [],
+                'accept': [
+                    'application/json'
+                ],
                 'content_type': [],
             },
             api_client=api_client
         )
         self.unblock_user_by_id_endpoint = _Endpoint(
             settings={
-                'response_type': None,
+                'response_type': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
                 'auth': [],
                 'endpoint_path': '/v3/users/{user_id}/block/{target_id}',
                 'operation_id': 'unblock_user_by_id',
@@ -1509,11 +1547,12 @@ class UserApi(object):
             },
             params_map={
                 'all': [
+                    'api_token',
                     'user_id',
                     'target_id',
-                    'api_token',
                 ],
                 'required': [
+                    'api_token',
                     'user_id',
                     'target_id',
                 ],
@@ -1530,28 +1569,30 @@ class UserApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
+                    'api_token':
+                        (str,),
                     'user_id':
                         (str,),
                     'target_id':
                         (str,),
-                    'api_token':
-                        (str,),
                 },
                 'attribute_map': {
+                    'api_token': 'Api-Token',
                     'user_id': 'user_id',
                     'target_id': 'target_id',
-                    'api_token': 'Api-Token',
                 },
                 'location_map': {
+                    'api_token': 'header',
                     'user_id': 'path',
                     'target_id': 'path',
-                    'api_token': 'header',
                 },
                 'collection_format_map': {
                 }
             },
             headers_map={
-                'accept': [],
+                'accept': [
+                    'application/json'
+                ],
                 'content_type': [],
             },
             api_client=api_client
@@ -1567,11 +1608,12 @@ class UserApi(object):
             },
             params_map={
                 'all': [
-                    'user_id',
                     'api_token',
+                    'user_id',
                     'update_channel_invitation_preference_data',
                 ],
                 'required': [
+                    'api_token',
                     'user_id',
                 ],
                 'nullable': [
@@ -1587,20 +1629,20 @@ class UserApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'user_id':
-                        (str,),
                     'api_token':
+                        (str,),
+                    'user_id':
                         (str,),
                     'update_channel_invitation_preference_data':
                         (UpdateChannelInvitationPreferenceData,),
                 },
                 'attribute_map': {
-                    'user_id': 'user_id',
                     'api_token': 'Api-Token',
+                    'user_id': 'user_id',
                 },
                 'location_map': {
-                    'user_id': 'path',
                     'api_token': 'header',
+                    'user_id': 'path',
                     'update_channel_invitation_preference_data': 'body',
                 },
                 'collection_format_map': {
@@ -1627,12 +1669,13 @@ class UserApi(object):
             },
             params_map={
                 'all': [
+                    'api_token',
                     'user_id',
                     'channel_url',
-                    'api_token',
                     'update_count_preference_of_channel_by_url_data',
                 ],
                 'required': [
+                    'api_token',
                     'user_id',
                     'channel_url',
                 ],
@@ -1649,24 +1692,24 @@ class UserApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
+                    'api_token':
+                        (str,),
                     'user_id':
                         (str,),
                     'channel_url':
-                        (str,),
-                    'api_token':
                         (str,),
                     'update_count_preference_of_channel_by_url_data':
                         (UpdateCountPreferenceOfChannelByUrlData,),
                 },
                 'attribute_map': {
+                    'api_token': 'Api-Token',
                     'user_id': 'user_id',
                     'channel_url': 'channel_url',
-                    'api_token': 'Api-Token',
                 },
                 'location_map': {
+                    'api_token': 'header',
                     'user_id': 'path',
                     'channel_url': 'path',
-                    'api_token': 'header',
                     'update_count_preference_of_channel_by_url_data': 'body',
                 },
                 'collection_format_map': {
@@ -1693,11 +1736,12 @@ class UserApi(object):
             },
             params_map={
                 'all': [
-                    'user_id',
                     'api_token',
+                    'user_id',
                     'update_push_preferences_data',
                 ],
                 'required': [
+                    'api_token',
                     'user_id',
                 ],
                 'nullable': [
@@ -1713,20 +1757,20 @@ class UserApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'user_id':
-                        (str,),
                     'api_token':
+                        (str,),
+                    'user_id':
                         (str,),
                     'update_push_preferences_data':
                         (UpdatePushPreferencesData,),
                 },
                 'attribute_map': {
-                    'user_id': 'user_id',
                     'api_token': 'Api-Token',
+                    'user_id': 'user_id',
                 },
                 'location_map': {
-                    'user_id': 'path',
                     'api_token': 'header',
+                    'user_id': 'path',
                     'update_push_preferences_data': 'body',
                 },
                 'collection_format_map': {
@@ -1753,12 +1797,13 @@ class UserApi(object):
             },
             params_map={
                 'all': [
+                    'api_token',
                     'user_id',
                     'channel_url',
-                    'api_token',
                     'update_push_preferences_for_channel_by_url_data',
                 ],
                 'required': [
+                    'api_token',
                     'user_id',
                     'channel_url',
                 ],
@@ -1775,24 +1820,24 @@ class UserApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
+                    'api_token':
+                        (str,),
                     'user_id':
                         (str,),
                     'channel_url':
-                        (str,),
-                    'api_token':
                         (str,),
                     'update_push_preferences_for_channel_by_url_data':
                         (UpdatePushPreferencesForChannelByUrlData,),
                 },
                 'attribute_map': {
+                    'api_token': 'Api-Token',
                     'user_id': 'user_id',
                     'channel_url': 'channel_url',
-                    'api_token': 'Api-Token',
                 },
                 'location_map': {
+                    'api_token': 'header',
                     'user_id': 'path',
                     'channel_url': 'path',
-                    'api_token': 'header',
                     'update_push_preferences_for_channel_by_url_data': 'body',
                 },
                 'collection_format_map': {
@@ -1819,11 +1864,12 @@ class UserApi(object):
             },
             params_map={
                 'all': [
-                    'user_id',
                     'api_token',
+                    'user_id',
                     'update_user_by_id_data',
                 ],
                 'required': [
+                    'api_token',
                     'user_id',
                 ],
                 'nullable': [
@@ -1839,20 +1885,20 @@ class UserApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'user_id':
-                        (str,),
                     'api_token':
+                        (str,),
+                    'user_id':
                         (str,),
                     'update_user_by_id_data':
                         (UpdateUserByIdData,),
                 },
                 'attribute_map': {
-                    'user_id': 'user_id',
                     'api_token': 'Api-Token',
+                    'user_id': 'user_id',
                 },
                 'location_map': {
-                    'user_id': 'path',
                     'api_token': 'header',
+                    'user_id': 'path',
                     'update_user_by_id_data': 'body',
                 },
                 'collection_format_map': {
@@ -1879,10 +1925,11 @@ class UserApi(object):
             },
             params_map={
                 'all': [
-                    'user_id',
                     'api_token',
+                    'user_id',
                 ],
                 'required': [
+                    'api_token',
                     'user_id',
                 ],
                 'nullable': [
@@ -1898,18 +1945,18 @@ class UserApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'user_id':
-                        (str,),
                     'api_token':
+                        (str,),
+                    'user_id':
                         (str,),
                 },
                 'attribute_map': {
-                    'user_id': 'user_id',
                     'api_token': 'Api-Token',
+                    'user_id': 'user_id',
                 },
                 'location_map': {
-                    'user_id': 'path',
                     'api_token': 'header',
+                    'user_id': 'path',
                 },
                 'collection_format_map': {
                 }
@@ -1933,11 +1980,12 @@ class UserApi(object):
             },
             params_map={
                 'all': [
+                    'api_token',
                     'user_id',
                     'channel_url',
-                    'api_token',
                 ],
                 'required': [
+                    'api_token',
                     'user_id',
                     'channel_url',
                 ],
@@ -1954,22 +2002,22 @@ class UserApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
+                    'api_token':
+                        (str,),
                     'user_id':
                         (str,),
                     'channel_url':
                         (str,),
-                    'api_token':
-                        (str,),
                 },
                 'attribute_map': {
+                    'api_token': 'Api-Token',
                     'user_id': 'user_id',
                     'channel_url': 'channel_url',
-                    'api_token': 'Api-Token',
                 },
                 'location_map': {
+                    'api_token': 'header',
                     'user_id': 'path',
                     'channel_url': 'path',
-                    'api_token': 'header',
                 },
                 'collection_format_map': {
                 }
@@ -1993,11 +2041,12 @@ class UserApi(object):
             },
             params_map={
                 'all': [
-                    'user_id',
                     'api_token',
+                    'user_id',
                     'state',
                 ],
                 'required': [
+                    'api_token',
                     'user_id',
                 ],
                 'nullable': [
@@ -2013,21 +2062,21 @@ class UserApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'user_id':
-                        (str,),
                     'api_token':
+                        (str,),
+                    'user_id':
                         (str,),
                     'state':
                         (str,),
                 },
                 'attribute_map': {
-                    'user_id': 'user_id',
                     'api_token': 'Api-Token',
+                    'user_id': 'user_id',
                     'state': 'state',
                 },
                 'location_map': {
-                    'user_id': 'path',
                     'api_token': 'header',
+                    'user_id': 'path',
                     'state': 'query',
                 },
                 'collection_format_map': {
@@ -2052,12 +2101,13 @@ class UserApi(object):
             },
             params_map={
                 'all': [
-                    'user_id',
                     'api_token',
+                    'user_id',
                     'custom_types',
                     'super_mode',
                 ],
                 'required': [
+                    'api_token',
                     'user_id',
                 ],
                 'nullable': [
@@ -2073,9 +2123,9 @@ class UserApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'user_id':
-                        (str,),
                     'api_token':
+                        (str,),
+                    'user_id':
                         (str,),
                     'custom_types':
                         ([str],),
@@ -2083,14 +2133,14 @@ class UserApi(object):
                         (str,),
                 },
                 'attribute_map': {
-                    'user_id': 'user_id',
                     'api_token': 'Api-Token',
+                    'user_id': 'user_id',
                     'custom_types': 'custom_types',
                     'super_mode': 'super_mode',
                 },
                 'location_map': {
-                    'user_id': 'path',
                     'api_token': 'header',
+                    'user_id': 'path',
                     'custom_types': 'query',
                     'super_mode': 'query',
                 },
@@ -2117,12 +2167,13 @@ class UserApi(object):
             },
             params_map={
                 'all': [
-                    'user_id',
                     'api_token',
+                    'user_id',
                     'custom_type',
                     'item_keys',
                 ],
                 'required': [
+                    'api_token',
                     'user_id',
                 ],
                 'nullable': [
@@ -2138,9 +2189,9 @@ class UserApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'user_id':
-                        (str,),
                     'api_token':
+                        (str,),
+                    'user_id':
                         (str,),
                     'custom_type':
                         (str,),
@@ -2148,14 +2199,14 @@ class UserApi(object):
                         (str,),
                 },
                 'attribute_map': {
-                    'user_id': 'user_id',
                     'api_token': 'Api-Token',
+                    'user_id': 'user_id',
                     'custom_type': 'custom_type',
                     'item_keys': 'item_keys',
                 },
                 'location_map': {
-                    'user_id': 'path',
                     'api_token': 'header',
+                    'user_id': 'path',
                     'custom_type': 'query',
                     'item_keys': 'query',
                 },
@@ -2181,12 +2232,13 @@ class UserApi(object):
             },
             params_map={
                 'all': [
-                    'user_id',
                     'api_token',
+                    'user_id',
                     'custom_types',
                     'super_mode',
                 ],
                 'required': [
+                    'api_token',
                     'user_id',
                 ],
                 'nullable': [
@@ -2202,9 +2254,9 @@ class UserApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'user_id':
-                        (str,),
                     'api_token':
+                        (str,),
+                    'user_id':
                         (str,),
                     'custom_types':
                         (str,),
@@ -2212,14 +2264,14 @@ class UserApi(object):
                         (str,),
                 },
                 'attribute_map': {
-                    'user_id': 'user_id',
                     'api_token': 'Api-Token',
+                    'user_id': 'user_id',
                     'custom_types': 'custom_types',
                     'super_mode': 'super_mode',
                 },
                 'location_map': {
-                    'user_id': 'path',
                     'api_token': 'header',
+                    'user_id': 'path',
                     'custom_types': 'query',
                     'super_mode': 'query',
                 },
@@ -2245,10 +2297,11 @@ class UserApi(object):
             },
             params_map={
                 'all': [
-                    'user_id',
                     'api_token',
+                    'user_id',
                 ],
                 'required': [
+                    'api_token',
                     'user_id',
                 ],
                 'nullable': [
@@ -2264,18 +2317,18 @@ class UserApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'user_id':
-                        (str,),
                     'api_token':
+                        (str,),
+                    'user_id':
                         (str,),
                 },
                 'attribute_map': {
-                    'user_id': 'user_id',
                     'api_token': 'Api-Token',
+                    'user_id': 'user_id',
                 },
                 'location_map': {
-                    'user_id': 'path',
                     'api_token': 'header',
+                    'user_id': 'path',
                 },
                 'collection_format_map': {
                 }
@@ -2299,11 +2352,12 @@ class UserApi(object):
             },
             params_map={
                 'all': [
+                    'api_token',
                     'user_id',
                     'channel_url',
-                    'api_token',
                 ],
                 'required': [
+                    'api_token',
                     'user_id',
                     'channel_url',
                 ],
@@ -2320,22 +2374,22 @@ class UserApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
+                    'api_token':
+                        (str,),
                     'user_id':
                         (str,),
                     'channel_url':
                         (str,),
-                    'api_token':
-                        (str,),
                 },
                 'attribute_map': {
+                    'api_token': 'Api-Token',
                     'user_id': 'user_id',
                     'channel_url': 'channel_url',
-                    'api_token': 'Api-Token',
                 },
                 'location_map': {
+                    'api_token': 'header',
                     'user_id': 'path',
                     'channel_url': 'path',
-                    'api_token': 'header',
                 },
                 'collection_format_map': {
                 }
@@ -2359,13 +2413,14 @@ class UserApi(object):
             },
             params_map={
                 'all': [
-                    'user_id',
                     'api_token',
+                    'user_id',
                     'include_unread_count',
                     'custom_types',
                     'super_mode',
                 ],
                 'required': [
+                    'api_token',
                     'user_id',
                 ],
                 'nullable': [
@@ -2381,9 +2436,9 @@ class UserApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'user_id':
-                        (str,),
                     'api_token':
+                        (str,),
+                    'user_id':
                         (str,),
                     'include_unread_count':
                         (bool,),
@@ -2393,15 +2448,15 @@ class UserApi(object):
                         (str,),
                 },
                 'attribute_map': {
-                    'user_id': 'user_id',
                     'api_token': 'Api-Token',
+                    'user_id': 'user_id',
                     'include_unread_count': 'include_unread_count',
                     'custom_types': 'custom_types',
                     'super_mode': 'super_mode',
                 },
                 'location_map': {
-                    'user_id': 'path',
                     'api_token': 'header',
+                    'user_id': 'path',
                     'include_unread_count': 'query',
                     'custom_types': 'query',
                     'super_mode': 'query',
@@ -2428,11 +2483,12 @@ class UserApi(object):
             },
             params_map={
                 'all': [
+                    'api_token',
                     'token_type',
                     'token',
-                    'api_token',
                 ],
                 'required': [
+                    'api_token',
                     'token_type',
                     'token',
                 ],
@@ -2449,22 +2505,22 @@ class UserApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
+                    'api_token':
+                        (str,),
                     'token_type':
                         (str,),
                     'token':
                         (str,),
-                    'api_token':
-                        (str,),
                 },
                 'attribute_map': {
+                    'api_token': 'Api-Token',
                     'token_type': 'token_type',
                     'token': 'token',
-                    'api_token': 'Api-Token',
                 },
                 'location_map': {
+                    'api_token': 'header',
                     'token_type': 'path',
                     'token': 'path',
-                    'api_token': 'header',
                 },
                 'collection_format_map': {
                 }
@@ -2480,6 +2536,7 @@ class UserApi(object):
 
     def add_registration_or_device_token(
         self,
+        api_token,
         user_id,
         token_type,
         **kwargs
@@ -2490,15 +2547,15 @@ class UserApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.add_registration_or_device_token(user_id, token_type, async_req=True)
+        >>> thread = api.add_registration_or_device_token(api_token, user_id, token_type, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             user_id (str):
             token_type (str):
 
         Keyword Args:
-            api_token (str): [optional]
             add_registration_or_device_token_data (AddRegistrationOrDeviceTokenData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -2549,6 +2606,8 @@ class UserApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['user_id'] = \
             user_id
         kwargs['token_type'] = \
@@ -2557,6 +2616,7 @@ class UserApi(object):
 
     def ban_from_channels_with_custom_channel_types(
         self,
+        api_token,
         user_id,
         **kwargs
     ):
@@ -2566,14 +2626,14 @@ class UserApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.ban_from_channels_with_custom_channel_types(user_id, async_req=True)
+        >>> thread = api.ban_from_channels_with_custom_channel_types(api_token, user_id, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             user_id (str):
 
         Keyword Args:
-            api_token (str): [optional]
             ban_from_channels_with_custom_channel_types_data (BanFromChannelsWithCustomChannelTypesData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -2599,7 +2659,7 @@ class UserApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            None
+            {str: (bool, date, datetime, dict, float, int, list, str, none_type)}
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2624,12 +2684,15 @@ class UserApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['user_id'] = \
             user_id
         return self.ban_from_channels_with_custom_channel_types_endpoint.call_with_http_info(**kwargs)
 
     def block_user(
         self,
+        api_token,
         user_id,
         **kwargs
     ):
@@ -2639,14 +2702,14 @@ class UserApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.block_user(user_id, async_req=True)
+        >>> thread = api.block_user(api_token, user_id, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             user_id (str):
 
         Keyword Args:
-            api_token (str): [optional]
             block_user_data (BlockUserData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -2672,7 +2735,7 @@ class UserApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            SendBirdUser
+            BlockUserResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2697,12 +2760,15 @@ class UserApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['user_id'] = \
             user_id
         return self.block_user_endpoint.call_with_http_info(**kwargs)
 
     def choose_push_notification_content_template(
         self,
+        api_token,
         user_id,
         **kwargs
     ):
@@ -2712,14 +2778,14 @@ class UserApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.choose_push_notification_content_template(user_id, async_req=True)
+        >>> thread = api.choose_push_notification_content_template(api_token, user_id, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             user_id (str):
 
         Keyword Args:
-            api_token (str): [optional]
             body ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -2770,12 +2836,15 @@ class UserApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['user_id'] = \
             user_id
         return self.choose_push_notification_content_template_endpoint.call_with_http_info(**kwargs)
 
     def create_user(
         self,
+        api_token,
         **kwargs
     ):
         """Create a user  # noqa: E501
@@ -2784,12 +2853,13 @@ class UserApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.create_user(async_req=True)
+        >>> thread = api.create_user(api_token, async_req=True)
         >>> result = thread.get()
 
+        Args:
+            api_token (str):
 
         Keyword Args:
-            api_token (str): [optional]
             create_user_data (CreateUserData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -2840,10 +2910,13 @@ class UserApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         return self.create_user_endpoint.call_with_http_info(**kwargs)
 
     def delete_user_by_id(
         self,
+        api_token,
         user_id,
         **kwargs
     ):
@@ -2853,14 +2926,14 @@ class UserApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.delete_user_by_id(user_id, async_req=True)
+        >>> thread = api.delete_user_by_id(api_token, user_id, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             user_id (str):
 
         Keyword Args:
-            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -2885,7 +2958,7 @@ class UserApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            None
+            {str: (bool, date, datetime, dict, float, int, list, str, none_type)}
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2910,12 +2983,15 @@ class UserApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['user_id'] = \
             user_id
         return self.delete_user_by_id_endpoint.call_with_http_info(**kwargs)
 
     def leave_my_group_channels(
         self,
+        api_token,
         user_id,
         **kwargs
     ):
@@ -2925,14 +3001,14 @@ class UserApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.leave_my_group_channels(user_id, async_req=True)
+        >>> thread = api.leave_my_group_channels(api_token, user_id, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             user_id (str):
 
         Keyword Args:
-            api_token (str): [optional]
             leave_my_group_channels_data (LeaveMyGroupChannelsData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -2958,7 +3034,7 @@ class UserApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            None
+            {str: (bool, date, datetime, dict, float, int, list, str, none_type)}
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2983,12 +3059,15 @@ class UserApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['user_id'] = \
             user_id
         return self.leave_my_group_channels_endpoint.call_with_http_info(**kwargs)
 
     def list_banned_channels(
         self,
+        api_token,
         user_id,
         **kwargs
     ):
@@ -2998,14 +3077,14 @@ class UserApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.list_banned_channels(user_id, async_req=True)
+        >>> thread = api.list_banned_channels(api_token, user_id, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             user_id (str):
 
         Keyword Args:
-            api_token (str): [optional]
             token (str): [optional]
             limit (int): [optional]
             _return_http_data_only (bool): response data without head status
@@ -3057,12 +3136,15 @@ class UserApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['user_id'] = \
             user_id
         return self.list_banned_channels_endpoint.call_with_http_info(**kwargs)
 
     def list_blocked_users(
         self,
+        api_token,
         user_id,
         **kwargs
     ):
@@ -3072,14 +3154,14 @@ class UserApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.list_blocked_users(user_id, async_req=True)
+        >>> thread = api.list_blocked_users(api_token, user_id, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             user_id (str):
 
         Keyword Args:
-            api_token (str): [optional]
             token (str): [optional]
             limit (int): [optional]
             user_ids (str): [optional]
@@ -3134,12 +3216,15 @@ class UserApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['user_id'] = \
             user_id
         return self.list_blocked_users_endpoint.call_with_http_info(**kwargs)
 
     def list_muted_channels(
         self,
+        api_token,
         user_id,
         **kwargs
     ):
@@ -3149,14 +3234,14 @@ class UserApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.list_muted_channels(user_id, async_req=True)
+        >>> thread = api.list_muted_channels(api_token, user_id, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             user_id (str):
 
         Keyword Args:
-            api_token (str): [optional]
             token (str): [optional]
             limit (int): [optional]
             _return_http_data_only (bool): response data without head status
@@ -3208,12 +3293,15 @@ class UserApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['user_id'] = \
             user_id
         return self.list_muted_channels_endpoint.call_with_http_info(**kwargs)
 
     def list_my_group_channels(
         self,
+        api_token,
         user_id,
         **kwargs
     ):
@@ -3223,14 +3311,14 @@ class UserApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.list_my_group_channels(user_id, async_req=True)
+        >>> thread = api.list_my_group_channels(api_token, user_id, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             user_id (str):
 
         Keyword Args:
-            api_token (str): [optional]
             token (str): [optional]
             limit (int): [optional]
             distinct_mode (str): [optional]
@@ -3320,12 +3408,15 @@ class UserApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['user_id'] = \
             user_id
         return self.list_my_group_channels_endpoint.call_with_http_info(**kwargs)
 
     def list_registration_or_device_tokens(
         self,
+        api_token,
         user_id,
         token_type,
         **kwargs
@@ -3336,15 +3427,15 @@ class UserApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.list_registration_or_device_tokens(user_id, token_type, async_req=True)
+        >>> thread = api.list_registration_or_device_tokens(api_token, user_id, token_type, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             user_id (str):
             token_type (str):
 
         Keyword Args:
-            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -3394,6 +3485,8 @@ class UserApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['user_id'] = \
             user_id
         kwargs['token_type'] = \
@@ -3402,6 +3495,7 @@ class UserApi(object):
 
     def list_users(
         self,
+        api_token,
         **kwargs
     ):
         """List users  # noqa: E501
@@ -3410,12 +3504,13 @@ class UserApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.list_users(async_req=True)
+        >>> thread = api.list_users(api_token, async_req=True)
         >>> result = thread.get()
 
+        Args:
+            api_token (str):
 
         Keyword Args:
-            api_token (str): [optional]
             token (str): [optional]
             limit (int): [optional]
             active_mode (str): [optional]
@@ -3474,10 +3569,13 @@ class UserApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         return self.list_users_endpoint.call_with_http_info(**kwargs)
 
     def mark_all_messages_as_read(
         self,
+        api_token,
         user_id,
         **kwargs
     ):
@@ -3487,14 +3585,14 @@ class UserApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.mark_all_messages_as_read(user_id, async_req=True)
+        >>> thread = api.mark_all_messages_as_read(api_token, user_id, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             user_id (str):
 
         Keyword Args:
-            api_token (str): [optional]
             mark_all_messages_as_read_data (MarkAllMessagesAsReadData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -3520,7 +3618,7 @@ class UserApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            None
+            {str: (bool, date, datetime, dict, float, int, list, str, none_type)}
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -3545,12 +3643,15 @@ class UserApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['user_id'] = \
             user_id
         return self.mark_all_messages_as_read_endpoint.call_with_http_info(**kwargs)
 
     def mute_in_channels_with_custom_channel_types(
         self,
+        api_token,
         user_id,
         **kwargs
     ):
@@ -3560,14 +3661,14 @@ class UserApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.mute_in_channels_with_custom_channel_types(user_id, async_req=True)
+        >>> thread = api.mute_in_channels_with_custom_channel_types(api_token, user_id, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             user_id (str):
 
         Keyword Args:
-            api_token (str): [optional]
             mute_in_channels_with_custom_channel_types_data (MuteInChannelsWithCustomChannelTypesData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -3593,7 +3694,7 @@ class UserApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            None
+            {str: (bool, date, datetime, dict, float, int, list, str, none_type)}
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -3618,12 +3719,15 @@ class UserApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['user_id'] = \
             user_id
         return self.mute_in_channels_with_custom_channel_types_endpoint.call_with_http_info(**kwargs)
 
     def register_as_operator_to_channels_with_custom_channel_types(
         self,
+        api_token,
         user_id,
         **kwargs
     ):
@@ -3633,14 +3737,14 @@ class UserApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.register_as_operator_to_channels_with_custom_channel_types(user_id, async_req=True)
+        >>> thread = api.register_as_operator_to_channels_with_custom_channel_types(api_token, user_id, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             user_id (str):
 
         Keyword Args:
-            api_token (str): [optional]
             register_as_operator_to_channels_with_custom_channel_types_data (RegisterAsOperatorToChannelsWithCustomChannelTypesData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -3666,7 +3770,7 @@ class UserApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            None
+            {str: (bool, date, datetime, dict, float, int, list, str, none_type)}
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -3691,12 +3795,15 @@ class UserApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['user_id'] = \
             user_id
         return self.register_as_operator_to_channels_with_custom_channel_types_endpoint.call_with_http_info(**kwargs)
 
     def remove_registration_or_device_token(
         self,
+        api_token,
         user_id,
         **kwargs
     ):
@@ -3706,14 +3813,14 @@ class UserApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.remove_registration_or_device_token(user_id, async_req=True)
+        >>> thread = api.remove_registration_or_device_token(api_token, user_id, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             user_id (str):
 
         Keyword Args:
-            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -3763,12 +3870,15 @@ class UserApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['user_id'] = \
             user_id
         return self.remove_registration_or_device_token_endpoint.call_with_http_info(**kwargs)
 
     def remove_registration_or_device_token_by_token(
         self,
+        api_token,
         user_id,
         token_type,
         token,
@@ -3780,16 +3890,16 @@ class UserApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.remove_registration_or_device_token_by_token(user_id, token_type, token, async_req=True)
+        >>> thread = api.remove_registration_or_device_token_by_token(api_token, user_id, token_type, token, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             user_id (str):
             token_type (str):
             token (str):
 
         Keyword Args:
-            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -3839,6 +3949,8 @@ class UserApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['user_id'] = \
             user_id
         kwargs['token_type'] = \
@@ -3849,6 +3961,7 @@ class UserApi(object):
 
     def remove_registration_or_device_token_from_owner_by_token(
         self,
+        api_token,
         token_type,
         token,
         **kwargs
@@ -3859,15 +3972,15 @@ class UserApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.remove_registration_or_device_token_from_owner_by_token(token_type, token, async_req=True)
+        >>> thread = api.remove_registration_or_device_token_from_owner_by_token(api_token, token_type, token, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             token_type (str):
             token (str):
 
         Keyword Args:
-            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -3917,6 +4030,8 @@ class UserApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['token_type'] = \
             token_type
         kwargs['token'] = \
@@ -3925,6 +4040,7 @@ class UserApi(object):
 
     def reset_push_preferences(
         self,
+        api_token,
         user_id,
         **kwargs
     ):
@@ -3934,14 +4050,14 @@ class UserApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.reset_push_preferences(user_id, async_req=True)
+        >>> thread = api.reset_push_preferences(api_token, user_id, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             user_id (str):
 
         Keyword Args:
-            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -3966,7 +4082,7 @@ class UserApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            None
+            ResetPushPreferencesResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -3991,12 +4107,15 @@ class UserApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['user_id'] = \
             user_id
         return self.reset_push_preferences_endpoint.call_with_http_info(**kwargs)
 
     def unblock_user_by_id(
         self,
+        api_token,
         user_id,
         target_id,
         **kwargs
@@ -4007,15 +4126,15 @@ class UserApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.unblock_user_by_id(user_id, target_id, async_req=True)
+        >>> thread = api.unblock_user_by_id(api_token, user_id, target_id, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             user_id (str):
             target_id (str):
 
         Keyword Args:
-            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -4040,7 +4159,7 @@ class UserApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            None
+            {str: (bool, date, datetime, dict, float, int, list, str, none_type)}
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -4065,6 +4184,8 @@ class UserApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['user_id'] = \
             user_id
         kwargs['target_id'] = \
@@ -4073,6 +4194,7 @@ class UserApi(object):
 
     def update_channel_invitation_preference(
         self,
+        api_token,
         user_id,
         **kwargs
     ):
@@ -4082,14 +4204,14 @@ class UserApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.update_channel_invitation_preference(user_id, async_req=True)
+        >>> thread = api.update_channel_invitation_preference(api_token, user_id, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             user_id (str):
 
         Keyword Args:
-            api_token (str): [optional]
             update_channel_invitation_preference_data (UpdateChannelInvitationPreferenceData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -4140,12 +4262,15 @@ class UserApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['user_id'] = \
             user_id
         return self.update_channel_invitation_preference_endpoint.call_with_http_info(**kwargs)
 
     def update_count_preference_of_channel_by_url(
         self,
+        api_token,
         user_id,
         channel_url,
         **kwargs
@@ -4156,15 +4281,15 @@ class UserApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.update_count_preference_of_channel_by_url(user_id, channel_url, async_req=True)
+        >>> thread = api.update_count_preference_of_channel_by_url(api_token, user_id, channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             user_id (str):
             channel_url (str):
 
         Keyword Args:
-            api_token (str): [optional]
             update_count_preference_of_channel_by_url_data (UpdateCountPreferenceOfChannelByUrlData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -4215,6 +4340,8 @@ class UserApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['user_id'] = \
             user_id
         kwargs['channel_url'] = \
@@ -4223,6 +4350,7 @@ class UserApi(object):
 
     def update_push_preferences(
         self,
+        api_token,
         user_id,
         **kwargs
     ):
@@ -4232,14 +4360,14 @@ class UserApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.update_push_preferences(user_id, async_req=True)
+        >>> thread = api.update_push_preferences(api_token, user_id, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             user_id (str):
 
         Keyword Args:
-            api_token (str): [optional]
             update_push_preferences_data (UpdatePushPreferencesData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -4290,12 +4418,15 @@ class UserApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['user_id'] = \
             user_id
         return self.update_push_preferences_endpoint.call_with_http_info(**kwargs)
 
     def update_push_preferences_for_channel_by_url(
         self,
+        api_token,
         user_id,
         channel_url,
         **kwargs
@@ -4306,15 +4437,15 @@ class UserApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.update_push_preferences_for_channel_by_url(user_id, channel_url, async_req=True)
+        >>> thread = api.update_push_preferences_for_channel_by_url(api_token, user_id, channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             user_id (str):
             channel_url (str):
 
         Keyword Args:
-            api_token (str): [optional]
             update_push_preferences_for_channel_by_url_data (UpdatePushPreferencesForChannelByUrlData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -4365,6 +4496,8 @@ class UserApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['user_id'] = \
             user_id
         kwargs['channel_url'] = \
@@ -4373,6 +4506,7 @@ class UserApi(object):
 
     def update_user_by_id(
         self,
+        api_token,
         user_id,
         **kwargs
     ):
@@ -4382,14 +4516,14 @@ class UserApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.update_user_by_id(user_id, async_req=True)
+        >>> thread = api.update_user_by_id(api_token, user_id, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             user_id (str):
 
         Keyword Args:
-            api_token (str): [optional]
             update_user_by_id_data (UpdateUserByIdData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -4440,12 +4574,15 @@ class UserApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['user_id'] = \
             user_id
         return self.update_user_by_id_endpoint.call_with_http_info(**kwargs)
 
     def view_channel_invitation_preference(
         self,
+        api_token,
         user_id,
         **kwargs
     ):
@@ -4455,14 +4592,14 @@ class UserApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.view_channel_invitation_preference(user_id, async_req=True)
+        >>> thread = api.view_channel_invitation_preference(api_token, user_id, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             user_id (str):
 
         Keyword Args:
-            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -4512,12 +4649,15 @@ class UserApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['user_id'] = \
             user_id
         return self.view_channel_invitation_preference_endpoint.call_with_http_info(**kwargs)
 
     def view_count_preference_of_channel_by_url(
         self,
+        api_token,
         user_id,
         channel_url,
         **kwargs
@@ -4528,15 +4668,15 @@ class UserApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.view_count_preference_of_channel_by_url(user_id, channel_url, async_req=True)
+        >>> thread = api.view_count_preference_of_channel_by_url(api_token, user_id, channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             user_id (str):
             channel_url (str):
 
         Keyword Args:
-            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -4586,6 +4726,8 @@ class UserApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['user_id'] = \
             user_id
         kwargs['channel_url'] = \
@@ -4594,6 +4736,7 @@ class UserApi(object):
 
     def view_number_of_channels_by_join_status(
         self,
+        api_token,
         user_id,
         **kwargs
     ):
@@ -4603,14 +4746,14 @@ class UserApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.view_number_of_channels_by_join_status(user_id, async_req=True)
+        >>> thread = api.view_number_of_channels_by_join_status(api_token, user_id, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             user_id (str):
 
         Keyword Args:
-            api_token (str): [optional]
             state (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -4661,12 +4804,15 @@ class UserApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['user_id'] = \
             user_id
         return self.view_number_of_channels_by_join_status_endpoint.call_with_http_info(**kwargs)
 
     def view_number_of_channels_with_unread_messages(
         self,
+        api_token,
         user_id,
         **kwargs
     ):
@@ -4676,14 +4822,14 @@ class UserApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.view_number_of_channels_with_unread_messages(user_id, async_req=True)
+        >>> thread = api.view_number_of_channels_with_unread_messages(api_token, user_id, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             user_id (str):
 
         Keyword Args:
-            api_token (str): [optional]
             custom_types ([str]): [optional]
             super_mode (str): [optional]
             _return_http_data_only (bool): response data without head status
@@ -4735,12 +4881,15 @@ class UserApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['user_id'] = \
             user_id
         return self.view_number_of_channels_with_unread_messages_endpoint.call_with_http_info(**kwargs)
 
     def view_number_of_unread_items(
         self,
+        api_token,
         user_id,
         **kwargs
     ):
@@ -4750,14 +4899,14 @@ class UserApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.view_number_of_unread_items(user_id, async_req=True)
+        >>> thread = api.view_number_of_unread_items(api_token, user_id, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             user_id (str):
 
         Keyword Args:
-            api_token (str): [optional]
             custom_type (str): [optional]
             item_keys (str): [optional]
             _return_http_data_only (bool): response data without head status
@@ -4809,12 +4958,15 @@ class UserApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['user_id'] = \
             user_id
         return self.view_number_of_unread_items_endpoint.call_with_http_info(**kwargs)
 
     def view_number_of_unread_messages(
         self,
+        api_token,
         user_id,
         **kwargs
     ):
@@ -4824,14 +4976,14 @@ class UserApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.view_number_of_unread_messages(user_id, async_req=True)
+        >>> thread = api.view_number_of_unread_messages(api_token, user_id, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             user_id (str):
 
         Keyword Args:
-            api_token (str): [optional]
             custom_types (str): [optional]
             super_mode (str): [optional]
             _return_http_data_only (bool): response data without head status
@@ -4883,12 +5035,15 @@ class UserApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['user_id'] = \
             user_id
         return self.view_number_of_unread_messages_endpoint.call_with_http_info(**kwargs)
 
     def view_push_preferences(
         self,
+        api_token,
         user_id,
         **kwargs
     ):
@@ -4898,14 +5053,14 @@ class UserApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.view_push_preferences(user_id, async_req=True)
+        >>> thread = api.view_push_preferences(api_token, user_id, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             user_id (str):
 
         Keyword Args:
-            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -4955,12 +5110,15 @@ class UserApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['user_id'] = \
             user_id
         return self.view_push_preferences_endpoint.call_with_http_info(**kwargs)
 
     def view_push_preferences_for_channel_by_url(
         self,
+        api_token,
         user_id,
         channel_url,
         **kwargs
@@ -4971,15 +5129,15 @@ class UserApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.view_push_preferences_for_channel_by_url(user_id, channel_url, async_req=True)
+        >>> thread = api.view_push_preferences_for_channel_by_url(api_token, user_id, channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             user_id (str):
             channel_url (str):
 
         Keyword Args:
-            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -5029,6 +5187,8 @@ class UserApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['user_id'] = \
             user_id
         kwargs['channel_url'] = \
@@ -5037,6 +5197,7 @@ class UserApi(object):
 
     def view_user_by_id(
         self,
+        api_token,
         user_id,
         **kwargs
     ):
@@ -5046,14 +5207,14 @@ class UserApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.view_user_by_id(user_id, async_req=True)
+        >>> thread = api.view_user_by_id(api_token, user_id, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             user_id (str):
 
         Keyword Args:
-            api_token (str): [optional]
             include_unread_count (bool): [optional]
             custom_types (str): [optional]
             super_mode (str): [optional]
@@ -5106,12 +5267,15 @@ class UserApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['user_id'] = \
             user_id
         return self.view_user_by_id_endpoint.call_with_http_info(**kwargs)
 
     def view_who_owns_registration_or_device_token_by_token(
         self,
+        api_token,
         token_type,
         token,
         **kwargs
@@ -5122,15 +5286,15 @@ class UserApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.view_who_owns_registration_or_device_token_by_token(token_type, token, async_req=True)
+        >>> thread = api.view_who_owns_registration_or_device_token_by_token(api_token, token_type, token, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             token_type (str):
             token (str):
 
         Keyword Args:
-            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -5180,6 +5344,8 @@ class UserApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['token_type'] = \
             token_type
         kwargs['token'] = \

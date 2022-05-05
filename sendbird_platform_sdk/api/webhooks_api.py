@@ -51,7 +51,9 @@ class WebhooksApi(object):
                     'api_token',
                     'choose_which_events_to_subscribe_to_data',
                 ],
-                'required': [],
+                'required': [
+                    'api_token',
+                ],
                 'nullable': [
                 ],
                 'enum': [
@@ -104,7 +106,9 @@ class WebhooksApi(object):
                     'api_token',
                     'display_all_webhook_categories',
                 ],
-                'required': [],
+                'required': [
+                    'api_token',
+                ],
                 'nullable': [
                 ],
                 'enum': [
@@ -145,6 +149,7 @@ class WebhooksApi(object):
 
     def choose_which_events_to_subscribe_to(
         self,
+        api_token,
         **kwargs
     ):
         """Choose which events to subscribe to  # noqa: E501
@@ -153,12 +158,13 @@ class WebhooksApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.choose_which_events_to_subscribe_to(async_req=True)
+        >>> thread = api.choose_which_events_to_subscribe_to(api_token, async_req=True)
         >>> result = thread.get()
 
+        Args:
+            api_token (str):
 
         Keyword Args:
-            api_token (str): [optional]
             choose_which_events_to_subscribe_to_data (ChooseWhichEventsToSubscribeToData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -209,10 +215,13 @@ class WebhooksApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         return self.choose_which_events_to_subscribe_to_endpoint.call_with_http_info(**kwargs)
 
     def retrieve_list_of_subscribed_events(
         self,
+        api_token,
         **kwargs
     ):
         """Retrieve a list of subscribed events  # noqa: E501
@@ -221,12 +230,13 @@ class WebhooksApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.retrieve_list_of_subscribed_events(async_req=True)
+        >>> thread = api.retrieve_list_of_subscribed_events(api_token, async_req=True)
         >>> result = thread.get()
 
+        Args:
+            api_token (str):
 
         Keyword Args:
-            api_token (str): [optional]
             display_all_webhook_categories (bool): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -277,5 +287,7 @@ class WebhooksApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         return self.retrieve_list_of_subscribed_events_endpoint.call_with_http_info(**kwargs)
 

@@ -4,6 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**reporting_user** | [**SendBirdUser**](SendBirdUser.md) |  | [optional] 
 **report_type** | **str** |  | [optional] 
 **report_category** | **str** |  | [optional] 
 **offending_user** | [**SendBirdUser**](SendBirdUser.md) |  | [optional] 

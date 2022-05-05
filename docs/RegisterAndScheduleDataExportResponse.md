@@ -4,6 +4,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**channel_custom_types** | **[str]** |  | [optional] 
+**data_type** | **str** |  | [optional] 
 **request_id** | **str** |  | [optional] 
 **status** | **str** |  | [optional] 
 **format** | **str** |  | [optional] 

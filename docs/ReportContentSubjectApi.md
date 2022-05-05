@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 
 # **list_reports**
-> ListReportsResponse list_reports()
+> ListReportsResponse list_reports(api_token)
 
 List reports
 
@@ -41,17 +41,25 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = report_content__subject_api.ReportContentSubjectApi(api_client)
-    api_token = "{{API_TOKEN}}" # str |  (optional)
+    api_token = "{{API_TOKEN}}" # str | 
     token = "token_example" # str |  (optional)
     limit = 1 # int |  (optional)
     start_ts = 1 # int |  (optional)
     end_ts = 1 # int |  (optional)
 
     # example passing only required values which don't have defaults set
+    try:
+        # List reports
+        api_response = api_instance.list_reports(api_token)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling ReportContentSubjectApi->list_reports: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
     # and optional values
     try:
         # List reports
-        api_response = api_instance.list_reports(api_token=api_token, token=token, limit=limit, start_ts=start_ts, end_ts=end_ts)
+        api_response = api_instance.list_reports(api_token, token=token, limit=limit, start_ts=start_ts, end_ts=end_ts)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ReportContentSubjectApi->list_reports: %s\n" % e)
@@ -62,7 +70,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  | [optional]
+ **api_token** | **str**|  |
  **token** | **str**|  | [optional]
  **limit** | **int**|  | [optional]
  **start_ts** | **int**|  | [optional]
@@ -91,7 +99,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_reports_on_channel_by_url**
-> ListReportsOnChannelByUrlResponse list_reports_on_channel_by_url(channel_type, channel_url)
+> ListReportsOnChannelByUrlResponse list_reports_on_channel_by_url(api_token, channel_type, channel_url)
 
 List reports on a channel
 
@@ -117,16 +125,16 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = report_content__subject_api.ReportContentSubjectApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
     channel_type = "channel_type_example" # str | 
     channel_url = "channel_url_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
     token = "token_example" # str |  (optional)
     limit = 1 # int |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # List reports on a channel
-        api_response = api_instance.list_reports_on_channel_by_url(channel_type, channel_url)
+        api_response = api_instance.list_reports_on_channel_by_url(api_token, channel_type, channel_url)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ReportContentSubjectApi->list_reports_on_channel_by_url: %s\n" % e)
@@ -135,7 +143,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # List reports on a channel
-        api_response = api_instance.list_reports_on_channel_by_url(channel_type, channel_url, api_token=api_token, token=token, limit=limit)
+        api_response = api_instance.list_reports_on_channel_by_url(api_token, channel_type, channel_url, token=token, limit=limit)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ReportContentSubjectApi->list_reports_on_channel_by_url: %s\n" % e)
@@ -146,9 +154,9 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
  **channel_type** | **str**|  |
  **channel_url** | **str**|  |
- **api_token** | **str**|  | [optional]
  **token** | **str**|  | [optional]
  **limit** | **int**|  | [optional]
 
@@ -175,7 +183,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_reports_on_message_by_id**
-> ListReportsOnMessageByIdResponse list_reports_on_message_by_id(channel_type, channel_url, message_id)
+> ListReportsOnMessageByIdResponse list_reports_on_message_by_id(api_token, channel_type, channel_url, message_id)
 
 List reports on a message
 
@@ -201,17 +209,17 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = report_content__subject_api.ReportContentSubjectApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
     channel_type = "channel_type_example" # str | 
     channel_url = "channel_url_example" # str | 
     message_id = "message_id_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
     token = "token_example" # str |  (optional)
     limit = 1 # int |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # List reports on a message
-        api_response = api_instance.list_reports_on_message_by_id(channel_type, channel_url, message_id)
+        api_response = api_instance.list_reports_on_message_by_id(api_token, channel_type, channel_url, message_id)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ReportContentSubjectApi->list_reports_on_message_by_id: %s\n" % e)
@@ -220,7 +228,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # List reports on a message
-        api_response = api_instance.list_reports_on_message_by_id(channel_type, channel_url, message_id, api_token=api_token, token=token, limit=limit)
+        api_response = api_instance.list_reports_on_message_by_id(api_token, channel_type, channel_url, message_id, token=token, limit=limit)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ReportContentSubjectApi->list_reports_on_message_by_id: %s\n" % e)
@@ -231,10 +239,10 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
  **channel_type** | **str**|  |
  **channel_url** | **str**|  |
  **message_id** | **str**|  |
- **api_token** | **str**|  | [optional]
  **token** | **str**|  | [optional]
  **limit** | **int**|  | [optional]
 
@@ -261,7 +269,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_reports_on_user_by_id**
-> ListReportsOnUserByIdResponse list_reports_on_user_by_id(offending_user_id)
+> ListReportsOnUserByIdResponse list_reports_on_user_by_id(api_token, offending_user_id)
 
 List reports on a user
 
@@ -287,15 +295,15 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = report_content__subject_api.ReportContentSubjectApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
     offending_user_id = "offending_user_id_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
     token = "token_example" # str |  (optional)
     limit = 1 # int |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # List reports on a user
-        api_response = api_instance.list_reports_on_user_by_id(offending_user_id)
+        api_response = api_instance.list_reports_on_user_by_id(api_token, offending_user_id)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ReportContentSubjectApi->list_reports_on_user_by_id: %s\n" % e)
@@ -304,7 +312,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # List reports on a user
-        api_response = api_instance.list_reports_on_user_by_id(offending_user_id, api_token=api_token, token=token, limit=limit)
+        api_response = api_instance.list_reports_on_user_by_id(api_token, offending_user_id, token=token, limit=limit)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ReportContentSubjectApi->list_reports_on_user_by_id: %s\n" % e)
@@ -315,8 +323,8 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
  **offending_user_id** | **str**|  |
- **api_token** | **str**|  | [optional]
  **token** | **str**|  | [optional]
  **limit** | **int**|  | [optional]
 
@@ -343,7 +351,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **report_channel_by_url**
-> ReportChannelByUrlResponse report_channel_by_url(channel_type, channel_url)
+> ReportChannelByUrlResponse report_channel_by_url(api_token, channel_type, channel_url)
 
 Report a channel
 
@@ -370,9 +378,9 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = report_content__subject_api.ReportContentSubjectApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
     channel_type = "channel_type_example" # str | 
     channel_url = "channel_url_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
     report_channel_by_url_data = ReportChannelByUrlData(
         channel_type="channel_type_example",
         channel_url="channel_url_example",
@@ -384,7 +392,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Report a channel
-        api_response = api_instance.report_channel_by_url(channel_type, channel_url)
+        api_response = api_instance.report_channel_by_url(api_token, channel_type, channel_url)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ReportContentSubjectApi->report_channel_by_url: %s\n" % e)
@@ -393,7 +401,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Report a channel
-        api_response = api_instance.report_channel_by_url(channel_type, channel_url, api_token=api_token, report_channel_by_url_data=report_channel_by_url_data)
+        api_response = api_instance.report_channel_by_url(api_token, channel_type, channel_url, report_channel_by_url_data=report_channel_by_url_data)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ReportContentSubjectApi->report_channel_by_url: %s\n" % e)
@@ -404,9 +412,9 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
  **channel_type** | **str**|  |
  **channel_url** | **str**|  |
- **api_token** | **str**|  | [optional]
  **report_channel_by_url_data** | [**ReportChannelByUrlData**](ReportChannelByUrlData.md)|  | [optional]
 
 ### Return type
@@ -432,7 +440,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **report_message_by_id**
-> ReportMessageByIdResponse report_message_by_id(channel_type, channel_url, message_id)
+> ReportMessageByIdResponse report_message_by_id(api_token, channel_type, channel_url, message_id)
 
 Report a message
 
@@ -459,10 +467,10 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = report_content__subject_api.ReportContentSubjectApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
     channel_type = "channel_type_example" # str | 
     channel_url = "channel_url_example" # str | 
     message_id = "message_id_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
     report_message_by_id_data = ReportMessageByIdData(
         channel_type="channel_type_example",
         channel_url="channel_url_example",
@@ -476,7 +484,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Report a message
-        api_response = api_instance.report_message_by_id(channel_type, channel_url, message_id)
+        api_response = api_instance.report_message_by_id(api_token, channel_type, channel_url, message_id)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ReportContentSubjectApi->report_message_by_id: %s\n" % e)
@@ -485,7 +493,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Report a message
-        api_response = api_instance.report_message_by_id(channel_type, channel_url, message_id, api_token=api_token, report_message_by_id_data=report_message_by_id_data)
+        api_response = api_instance.report_message_by_id(api_token, channel_type, channel_url, message_id, report_message_by_id_data=report_message_by_id_data)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ReportContentSubjectApi->report_message_by_id: %s\n" % e)
@@ -496,10 +504,10 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
  **channel_type** | **str**|  |
  **channel_url** | **str**|  |
  **message_id** | **str**|  |
- **api_token** | **str**|  | [optional]
  **report_message_by_id_data** | [**ReportMessageByIdData**](ReportMessageByIdData.md)|  | [optional]
 
 ### Return type
@@ -525,7 +533,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **report_user_by_id**
-> ReportUserByIdResponse report_user_by_id(offending_user_id)
+> ReportUserByIdResponse report_user_by_id(api_token, offending_user_id)
 
 Report a user
 
@@ -552,8 +560,8 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = report_content__subject_api.ReportContentSubjectApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
     offending_user_id = "offending_user_id_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
     report_user_by_id_data = ReportUserByIdData(
         offending_user_id="offending_user_id_example",
         channel_type="channel_type_example",
@@ -566,7 +574,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Report a user
-        api_response = api_instance.report_user_by_id(offending_user_id)
+        api_response = api_instance.report_user_by_id(api_token, offending_user_id)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ReportContentSubjectApi->report_user_by_id: %s\n" % e)
@@ -575,7 +583,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Report a user
-        api_response = api_instance.report_user_by_id(offending_user_id, api_token=api_token, report_user_by_id_data=report_user_by_id_data)
+        api_response = api_instance.report_user_by_id(api_token, offending_user_id, report_user_by_id_data=report_user_by_id_data)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ReportContentSubjectApi->report_user_by_id: %s\n" % e)
@@ -586,8 +594,8 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
  **offending_user_id** | **str**|  |
- **api_token** | **str**|  | [optional]
  **report_user_by_id_data** | [**ReportUserByIdData**](ReportUserByIdData.md)|  | [optional]
 
 ### Return type
@@ -613,7 +621,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **view_moderated_message_by_id**
-> ViewModeratedMessageByIdResponse view_moderated_message_by_id(channel_type, channel_url, message_id)
+> ViewModeratedMessageByIdResponse view_moderated_message_by_id(api_token, channel_type, channel_url, message_id)
 
 View a moderated message
 
@@ -638,24 +646,15 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = report_content__subject_api.ReportContentSubjectApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
     channel_type = "channel_type_example" # str | 
     channel_url = "channel_url_example" # str | 
     message_id = "message_id_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # View a moderated message
-        api_response = api_instance.view_moderated_message_by_id(channel_type, channel_url, message_id)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling ReportContentSubjectApi->view_moderated_message_by_id: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # View a moderated message
-        api_response = api_instance.view_moderated_message_by_id(channel_type, channel_url, message_id, api_token=api_token)
+        api_response = api_instance.view_moderated_message_by_id(api_token, channel_type, channel_url, message_id)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ReportContentSubjectApi->view_moderated_message_by_id: %s\n" % e)
@@ -666,10 +665,10 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
  **channel_type** | **str**|  |
  **channel_url** | **str**|  |
  **message_id** | **str**|  |
- **api_token** | **str**|  | [optional]
 
 ### Return type
 

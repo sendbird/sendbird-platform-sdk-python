@@ -48,7 +48,9 @@ class AdvancedAnalyticsApi(object):
                 'all': [
                     'api_token',
                 ],
-                'required': [],
+                'required': [
+                    'api_token',
+                ],
                 'nullable': [
                 ],
                 'enum': [
@@ -85,6 +87,7 @@ class AdvancedAnalyticsApi(object):
 
     def retrieve_advanced_analytics_metrics(
         self,
+        api_token,
         **kwargs
     ):
         """Retrieve Advanced analytics metrics  # noqa: E501
@@ -93,12 +96,13 @@ class AdvancedAnalyticsApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.retrieve_advanced_analytics_metrics(async_req=True)
+        >>> thread = api.retrieve_advanced_analytics_metrics(api_token, async_req=True)
         >>> result = thread.get()
 
+        Args:
+            api_token (str):
 
         Keyword Args:
-            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -148,5 +152,7 @@ class AdvancedAnalyticsApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         return self.retrieve_advanced_analytics_metrics_endpoint.call_with_http_info(**kwargs)
 

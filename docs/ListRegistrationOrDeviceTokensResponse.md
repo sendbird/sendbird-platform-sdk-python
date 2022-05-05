@@ -4,6 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**token** | **[str]** |  | [optional] 
 **tokens** | **[str]** |  | [optional] 
 **type** | **str** |  | [optional] 
 **user** | [**SendBirdUser**](SendBirdUser.md) |  | [optional] 

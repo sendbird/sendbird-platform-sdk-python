@@ -30,7 +30,9 @@ from sendbird_platform_sdk.exceptions import ApiAttributeError
 
 
 def lazy_import():
+    from sendbird_platform_sdk.model.schedule_announcement_response_create_channel_options import ScheduleAnnouncementResponseCreateChannelOptions
     from sendbird_platform_sdk.model.schedule_announcement_response_message import ScheduleAnnouncementResponseMessage
+    globals()['ScheduleAnnouncementResponseCreateChannelOptions'] = ScheduleAnnouncementResponseCreateChannelOptions
     globals()['ScheduleAnnouncementResponseMessage'] = ScheduleAnnouncementResponseMessage
 
 
@@ -102,6 +104,13 @@ class ViewAnnouncementByIdResponse(ModelNormal):
             'sent_user_count': (float,),  # noqa: E501
             'open_count': (float,),  # noqa: E501
             'open_rate': (float,),  # noqa: E501
+            'create_channel': (bool,),  # noqa: E501
+            'create_channel_options': (ScheduleAnnouncementResponseCreateChannelOptions,),  # noqa: E501
+            'end_at': (float,),  # noqa: E501
+            'mark_as_read': (bool,),  # noqa: E501
+            'sent_channel_count': (float,),  # noqa: E501
+            'target_channel_type': (str,),  # noqa: E501
+            'target_custom_type': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -125,6 +134,13 @@ class ViewAnnouncementByIdResponse(ModelNormal):
         'sent_user_count': 'sent_user_count',  # noqa: E501
         'open_count': 'open_count',  # noqa: E501
         'open_rate': 'open_rate',  # noqa: E501
+        'create_channel': 'create_channel',  # noqa: E501
+        'create_channel_options': 'create_channel_options',  # noqa: E501
+        'end_at': 'end_at',  # noqa: E501
+        'mark_as_read': 'mark_as_read',  # noqa: E501
+        'sent_channel_count': 'sent_channel_count',  # noqa: E501
+        'target_channel_type': 'target_channel_type',  # noqa: E501
+        'target_custom_type': 'target_custom_type',  # noqa: E501
     }
 
     read_only_vars = {
@@ -183,6 +199,13 @@ class ViewAnnouncementByIdResponse(ModelNormal):
             sent_user_count (float): [optional]  # noqa: E501
             open_count (float): [optional]  # noqa: E501
             open_rate (float): [optional]  # noqa: E501
+            create_channel (bool): [optional]  # noqa: E501
+            create_channel_options (ScheduleAnnouncementResponseCreateChannelOptions): [optional]  # noqa: E501
+            end_at (float): [optional]  # noqa: E501
+            mark_as_read (bool): [optional]  # noqa: E501
+            sent_channel_count (float): [optional]  # noqa: E501
+            target_channel_type (str): [optional]  # noqa: E501
+            target_custom_type (str): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -279,6 +302,13 @@ class ViewAnnouncementByIdResponse(ModelNormal):
             sent_user_count (float): [optional]  # noqa: E501
             open_count (float): [optional]  # noqa: E501
             open_rate (float): [optional]  # noqa: E501
+            create_channel (bool): [optional]  # noqa: E501
+            create_channel_options (ScheduleAnnouncementResponseCreateChannelOptions): [optional]  # noqa: E501
+            end_at (float): [optional]  # noqa: E501
+            mark_as_read (bool): [optional]  # noqa: E501
+            sent_channel_count (float): [optional]  # noqa: E501
+            target_channel_type (str): [optional]  # noqa: E501
+            target_custom_type (str): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

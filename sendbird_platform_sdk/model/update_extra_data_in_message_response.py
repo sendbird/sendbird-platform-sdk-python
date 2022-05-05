@@ -30,8 +30,8 @@ from sendbird_platform_sdk.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from sendbird_platform_sdk.model.list_messages_response_sorted_metaarray import ListMessagesResponseSortedMetaarray
-    globals()['ListMessagesResponseSortedMetaarray'] = ListMessagesResponseSortedMetaarray
+    from sendbird_platform_sdk.model.update_extra_data_in_message_response_sorted_metaarray import UpdateExtraDataInMessageResponseSortedMetaarray
+    globals()['UpdateExtraDataInMessageResponseSortedMetaarray'] = UpdateExtraDataInMessageResponseSortedMetaarray
 
 
 class UpdateExtraDataInMessageResponse(ModelNormal):
@@ -87,7 +87,7 @@ class UpdateExtraDataInMessageResponse(ModelNormal):
         """
         lazy_import()
         return {
-            'sorted_metaarray': ([ListMessagesResponseSortedMetaarray],),  # noqa: E501
+            'sorted_metaarray': ([UpdateExtraDataInMessageResponseSortedMetaarray],),  # noqa: E501
         }
 
     @cached_property
@@ -140,7 +140,7 @@ class UpdateExtraDataInMessageResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            sorted_metaarray ([ListMessagesResponseSortedMetaarray]): [optional]  # noqa: E501
+            sorted_metaarray ([UpdateExtraDataInMessageResponseSortedMetaarray]): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -222,7 +222,7 @@ class UpdateExtraDataInMessageResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            sorted_metaarray ([ListMessagesResponseSortedMetaarray]): [optional]  # noqa: E501
+            sorted_metaarray ([UpdateExtraDataInMessageResponseSortedMetaarray]): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

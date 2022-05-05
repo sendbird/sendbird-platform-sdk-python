@@ -81,17 +81,20 @@ class ViewPushPreferencesResponse(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'push_trigger_option': (str,),  # noqa: E501
-            'do_not_disturb': (bool,),  # noqa: E501
+            'snooze_start_ts': (str,),  # noqa: E501
             'start_hour': (float,),  # noqa: E501
-            'start_min': (float,),  # noqa: E501
-            'end_hour': (float,),  # noqa: E501
-            'end_min': (float,),  # noqa: E501
             'snooze_enabled': (bool,),  # noqa: E501
-            'snooze_start_ts': (float,),  # noqa: E501
-            'snooze_end_ts': (float,),  # noqa: E501
+            'end_min': (float,),  # noqa: E501
             'timezone': (str,),  # noqa: E501
+            'block_push_from_bots': (bool,),  # noqa: E501
+            'push_blocked_bot_ids': ([str],),  # noqa: E501
+            'start_min': (float,),  # noqa: E501
+            'snooze_end_ts': (str,),  # noqa: E501
+            'do_not_disturb': (bool,),  # noqa: E501
+            'end_hour': (float,),  # noqa: E501
+            'enable_push_for_replies': (bool,),  # noqa: E501
             'push_sound': (str,),  # noqa: E501
+            'push_trigger_option': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -100,17 +103,20 @@ class ViewPushPreferencesResponse(ModelNormal):
 
 
     attribute_map = {
-        'push_trigger_option': 'push_trigger_option',  # noqa: E501
-        'do_not_disturb': 'do_not_disturb',  # noqa: E501
-        'start_hour': 'start_hour',  # noqa: E501
-        'start_min': 'start_min',  # noqa: E501
-        'end_hour': 'end_hour',  # noqa: E501
-        'end_min': 'end_min',  # noqa: E501
-        'snooze_enabled': 'snooze_enabled',  # noqa: E501
         'snooze_start_ts': 'snooze_start_ts',  # noqa: E501
-        'snooze_end_ts': 'snooze_end_ts',  # noqa: E501
+        'start_hour': 'start_hour',  # noqa: E501
+        'snooze_enabled': 'snooze_enabled',  # noqa: E501
+        'end_min': 'end_min',  # noqa: E501
         'timezone': 'timezone',  # noqa: E501
+        'block_push_from_bots': 'block_push_from_bots',  # noqa: E501
+        'push_blocked_bot_ids': 'push_blocked_bot_ids',  # noqa: E501
+        'start_min': 'start_min',  # noqa: E501
+        'snooze_end_ts': 'snooze_end_ts',  # noqa: E501
+        'do_not_disturb': 'do_not_disturb',  # noqa: E501
+        'end_hour': 'end_hour',  # noqa: E501
+        'enable_push_for_replies': 'enable_push_for_replies',  # noqa: E501
         'push_sound': 'push_sound',  # noqa: E501
+        'push_trigger_option': 'push_trigger_option',  # noqa: E501
     }
 
     read_only_vars = {
@@ -154,17 +160,20 @@ class ViewPushPreferencesResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            push_trigger_option (str): [optional]  # noqa: E501
-            do_not_disturb (bool): [optional]  # noqa: E501
+            snooze_start_ts (str): [optional]  # noqa: E501
             start_hour (float): [optional]  # noqa: E501
-            start_min (float): [optional]  # noqa: E501
-            end_hour (float): [optional]  # noqa: E501
-            end_min (float): [optional]  # noqa: E501
             snooze_enabled (bool): [optional]  # noqa: E501
-            snooze_start_ts (float): [optional]  # noqa: E501
-            snooze_end_ts (float): [optional]  # noqa: E501
+            end_min (float): [optional]  # noqa: E501
             timezone (str): [optional]  # noqa: E501
+            block_push_from_bots (bool): [optional]  # noqa: E501
+            push_blocked_bot_ids ([str]): [optional]  # noqa: E501
+            start_min (float): [optional]  # noqa: E501
+            snooze_end_ts (str): [optional]  # noqa: E501
+            do_not_disturb (bool): [optional]  # noqa: E501
+            end_hour (float): [optional]  # noqa: E501
+            enable_push_for_replies (bool): [optional]  # noqa: E501
             push_sound (str): [optional]  # noqa: E501
+            push_trigger_option (str): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -246,17 +255,20 @@ class ViewPushPreferencesResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            push_trigger_option (str): [optional]  # noqa: E501
-            do_not_disturb (bool): [optional]  # noqa: E501
+            snooze_start_ts (str): [optional]  # noqa: E501
             start_hour (float): [optional]  # noqa: E501
-            start_min (float): [optional]  # noqa: E501
-            end_hour (float): [optional]  # noqa: E501
-            end_min (float): [optional]  # noqa: E501
             snooze_enabled (bool): [optional]  # noqa: E501
-            snooze_start_ts (float): [optional]  # noqa: E501
-            snooze_end_ts (float): [optional]  # noqa: E501
+            end_min (float): [optional]  # noqa: E501
             timezone (str): [optional]  # noqa: E501
+            block_push_from_bots (bool): [optional]  # noqa: E501
+            push_blocked_bot_ids ([str]): [optional]  # noqa: E501
+            start_min (float): [optional]  # noqa: E501
+            snooze_end_ts (str): [optional]  # noqa: E501
+            do_not_disturb (bool): [optional]  # noqa: E501
+            end_hour (float): [optional]  # noqa: E501
+            enable_push_for_replies (bool): [optional]  # noqa: E501
             push_sound (str): [optional]  # noqa: E501
+            push_trigger_option (str): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

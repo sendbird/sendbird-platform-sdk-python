@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **migrate_messages_by_url**
-> migrate_messages_by_url(target_channel_url)
+> migrate_messages_by_url(api_token, target_channel_url)
 
 Migrate messages
 
@@ -33,14 +33,14 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = migration_api.MigrationApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
     target_channel_url = "target_channel_url_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
     body = {} # {str: (bool, date, datetime, dict, float, int, list, str, none_type)} |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Migrate messages
-        api_instance.migrate_messages_by_url(target_channel_url)
+        api_instance.migrate_messages_by_url(api_token, target_channel_url)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling MigrationApi->migrate_messages_by_url: %s\n" % e)
 
@@ -48,7 +48,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Migrate messages
-        api_instance.migrate_messages_by_url(target_channel_url, api_token=api_token, body=body)
+        api_instance.migrate_messages_by_url(api_token, target_channel_url, body=body)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling MigrationApi->migrate_messages_by_url: %s\n" % e)
 ```
@@ -58,8 +58,8 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
  **target_channel_url** | **str**|  |
- **api_token** | **str**|  | [optional]
  **body** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}**|  | [optional]
 
 ### Return type

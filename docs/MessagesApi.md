@@ -23,7 +23,7 @@ Method | HTTP request | Description
 
 
 # **add_extra_data_to_message**
-> AddExtraDataToMessageResponse add_extra_data_to_message(channel_type, channel_url, message_id)
+> AddExtraDataToMessageResponse add_extra_data_to_message(api_token, channel_type, channel_url, message_id)
 
 Add extra data to a message
 
@@ -50,10 +50,10 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = messages_api.MessagesApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
     channel_type = "channel_type_example" # str | 
     channel_url = "channel_url_example" # str | 
     message_id = "message_id_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
     add_extra_data_to_message_data = AddExtraDataToMessageData(
         channel_type="channel_type_example",
         channel_url="channel_url_example",
@@ -64,7 +64,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Add extra data to a message
-        api_response = api_instance.add_extra_data_to_message(channel_type, channel_url, message_id)
+        api_response = api_instance.add_extra_data_to_message(api_token, channel_type, channel_url, message_id)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling MessagesApi->add_extra_data_to_message: %s\n" % e)
@@ -73,7 +73,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Add extra data to a message
-        api_response = api_instance.add_extra_data_to_message(channel_type, channel_url, message_id, api_token=api_token, add_extra_data_to_message_data=add_extra_data_to_message_data)
+        api_response = api_instance.add_extra_data_to_message(api_token, channel_type, channel_url, message_id, add_extra_data_to_message_data=add_extra_data_to_message_data)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling MessagesApi->add_extra_data_to_message: %s\n" % e)
@@ -84,10 +84,10 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
  **channel_type** | **str**|  |
  **channel_url** | **str**|  |
  **message_id** | **str**|  |
- **api_token** | **str**|  | [optional]
  **add_extra_data_to_message_data** | [**AddExtraDataToMessageData**](AddExtraDataToMessageData.md)|  | [optional]
 
 ### Return type
@@ -113,7 +113,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **add_reaction_to_a_message**
-> AddReactionToAMessageResponse add_reaction_to_a_message(channel_type, channel_url, message_id)
+> AddReactionToAMessageResponse add_reaction_to_a_message(api_token, channel_type, channel_url, message_id)
 
 Add a reaction to a message
 
@@ -140,10 +140,10 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = messages_api.MessagesApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
     channel_type = "channel_type_example" # str | 
     channel_url = "channel_url_example" # str | 
     message_id = "message_id_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
     add_reaction_to_a_message_data = AddReactionToAMessageData(
         channel_type="channel_type_example",
         channel_url="channel_url_example",
@@ -155,7 +155,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Add a reaction to a message
-        api_response = api_instance.add_reaction_to_a_message(channel_type, channel_url, message_id)
+        api_response = api_instance.add_reaction_to_a_message(api_token, channel_type, channel_url, message_id)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling MessagesApi->add_reaction_to_a_message: %s\n" % e)
@@ -164,7 +164,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Add a reaction to a message
-        api_response = api_instance.add_reaction_to_a_message(channel_type, channel_url, message_id, api_token=api_token, add_reaction_to_a_message_data=add_reaction_to_a_message_data)
+        api_response = api_instance.add_reaction_to_a_message(api_token, channel_type, channel_url, message_id, add_reaction_to_a_message_data=add_reaction_to_a_message_data)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling MessagesApi->add_reaction_to_a_message: %s\n" % e)
@@ -175,10 +175,10 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
  **channel_type** | **str**|  |
  **channel_url** | **str**|  |
  **message_id** | **str**|  |
- **api_token** | **str**|  | [optional]
  **add_reaction_to_a_message_data** | [**AddReactionToAMessageData**](AddReactionToAMessageData.md)|  | [optional]
 
 ### Return type
@@ -204,7 +204,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_message_by_id**
-> delete_message_by_id(channel_type, channel_url, message_id)
+> {str: (bool, date, datetime, dict, float, int, list, str, none_type)} delete_message_by_id(api_token, channel_type, channel_url, message_id)
 
 Delete a message
 
@@ -229,23 +229,16 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = messages_api.MessagesApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
     channel_type = "channel_type_example" # str | 
     channel_url = "channel_url_example" # str | 
     message_id = "message_id_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Delete a message
-        api_instance.delete_message_by_id(channel_type, channel_url, message_id)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling MessagesApi->delete_message_by_id: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # Delete a message
-        api_instance.delete_message_by_id(channel_type, channel_url, message_id, api_token=api_token)
+        api_response = api_instance.delete_message_by_id(api_token, channel_type, channel_url, message_id)
+        pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling MessagesApi->delete_message_by_id: %s\n" % e)
 ```
@@ -255,14 +248,14 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
  **channel_type** | **str**|  |
  **channel_url** | **str**|  |
  **message_id** | **str**|  |
- **api_token** | **str**|  | [optional]
 
 ### Return type
 
-void (empty response body)
+**{str: (bool, date, datetime, dict, float, int, list, str, none_type)}**
 
 ### Authorization
 
@@ -271,7 +264,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -283,7 +276,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **gc_mark_all_messages_as_delivered**
-> GcMarkAllMessagesAsDeliveredResponse gc_mark_all_messages_as_delivered(channel_url)
+> GcMarkAllMessagesAsDeliveredResponse gc_mark_all_messages_as_delivered(api_token, channel_url)
 
 Mark all messages as delivered
 
@@ -310,8 +303,8 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = messages_api.MessagesApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
     channel_url = "channel_url_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
     gc_mark_all_messages_as_delivered_data = GcMarkAllMessagesAsDeliveredData(
         application_id="application_id_example",
         channel_url="channel_url_example",
@@ -321,7 +314,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Mark all messages as delivered
-        api_response = api_instance.gc_mark_all_messages_as_delivered(channel_url)
+        api_response = api_instance.gc_mark_all_messages_as_delivered(api_token, channel_url)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling MessagesApi->gc_mark_all_messages_as_delivered: %s\n" % e)
@@ -330,7 +323,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Mark all messages as delivered
-        api_response = api_instance.gc_mark_all_messages_as_delivered(channel_url, api_token=api_token, gc_mark_all_messages_as_delivered_data=gc_mark_all_messages_as_delivered_data)
+        api_response = api_instance.gc_mark_all_messages_as_delivered(api_token, channel_url, gc_mark_all_messages_as_delivered_data=gc_mark_all_messages_as_delivered_data)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling MessagesApi->gc_mark_all_messages_as_delivered: %s\n" % e)
@@ -341,8 +334,8 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
  **channel_url** | **str**|  |
- **api_token** | **str**|  | [optional]
  **gc_mark_all_messages_as_delivered_data** | [**GcMarkAllMessagesAsDeliveredData**](GcMarkAllMessagesAsDeliveredData.md)|  | [optional]
 
 ### Return type
@@ -368,7 +361,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **gc_mark_all_messages_as_read**
-> gc_mark_all_messages_as_read(channel_url)
+> {str: (bool, date, datetime, dict, float, int, list, str, none_type)} gc_mark_all_messages_as_read(api_token, channel_url)
 
 Mark all messages as read
 
@@ -394,8 +387,8 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = messages_api.MessagesApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
     channel_url = "channel_url_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
     gc_mark_all_messages_as_read_data = GcMarkAllMessagesAsReadData(
         channel_url="channel_url_example",
         user_id="user_id_example",
@@ -405,7 +398,8 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Mark all messages as read
-        api_instance.gc_mark_all_messages_as_read(channel_url)
+        api_response = api_instance.gc_mark_all_messages_as_read(api_token, channel_url)
+        pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling MessagesApi->gc_mark_all_messages_as_read: %s\n" % e)
 
@@ -413,7 +407,8 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Mark all messages as read
-        api_instance.gc_mark_all_messages_as_read(channel_url, api_token=api_token, gc_mark_all_messages_as_read_data=gc_mark_all_messages_as_read_data)
+        api_response = api_instance.gc_mark_all_messages_as_read(api_token, channel_url, gc_mark_all_messages_as_read_data=gc_mark_all_messages_as_read_data)
+        pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling MessagesApi->gc_mark_all_messages_as_read: %s\n" % e)
 ```
@@ -423,13 +418,13 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
  **channel_url** | **str**|  |
- **api_token** | **str**|  | [optional]
  **gc_mark_all_messages_as_read_data** | [**GcMarkAllMessagesAsReadData**](GcMarkAllMessagesAsReadData.md)|  | [optional]
 
 ### Return type
 
-void (empty response body)
+**{str: (bool, date, datetime, dict, float, int, list, str, none_type)}**
 
 ### Authorization
 
@@ -438,7 +433,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -450,7 +445,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **gc_view_number_of_each_members_unread_messages**
-> GcViewNumberOfEachMembersUnreadMessagesResponse gc_view_number_of_each_members_unread_messages(channel_url)
+> GcViewNumberOfEachMembersUnreadMessagesResponse gc_view_number_of_each_members_unread_messages(api_token, channel_url)
 
 View number of each member's unread messages
 
@@ -476,14 +471,14 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = messages_api.MessagesApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
     channel_url = "channel_url_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
     user_ids = "user_ids_example" # str |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # View number of each member's unread messages
-        api_response = api_instance.gc_view_number_of_each_members_unread_messages(channel_url)
+        api_response = api_instance.gc_view_number_of_each_members_unread_messages(api_token, channel_url)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling MessagesApi->gc_view_number_of_each_members_unread_messages: %s\n" % e)
@@ -492,7 +487,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # View number of each member's unread messages
-        api_response = api_instance.gc_view_number_of_each_members_unread_messages(channel_url, api_token=api_token, user_ids=user_ids)
+        api_response = api_instance.gc_view_number_of_each_members_unread_messages(api_token, channel_url, user_ids=user_ids)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling MessagesApi->gc_view_number_of_each_members_unread_messages: %s\n" % e)
@@ -503,8 +498,8 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
  **channel_url** | **str**|  |
- **api_token** | **str**|  | [optional]
  **user_ids** | **str**|  | [optional]
 
 ### Return type
@@ -530,7 +525,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_messages**
-> ListMessagesResponse list_messages(channel_type, channel_url, message_ts, message_id)
+> ListMessagesResponse list_messages(api_token, channel_type, channel_url)
 
 List messages
 
@@ -556,11 +551,11 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = messages_api.MessagesApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
     channel_type = "channel_type_example" # str | 
     channel_url = "channel_url_example" # str | 
-    message_ts = 1 # int | 
-    message_id = 1 # int | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
+    message_ts = 1 # int |  (optional)
+    message_id = 1 # int |  (optional)
     prev_limit = 1 # int |  (optional)
     next_limit = 1 # int |  (optional)
     include = True # bool |  (optional)
@@ -581,7 +576,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # List messages
-        api_response = api_instance.list_messages(channel_type, channel_url, message_ts, message_id)
+        api_response = api_instance.list_messages(api_token, channel_type, channel_url)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling MessagesApi->list_messages: %s\n" % e)
@@ -590,7 +585,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # List messages
-        api_response = api_instance.list_messages(channel_type, channel_url, message_ts, message_id, api_token=api_token, prev_limit=prev_limit, next_limit=next_limit, include=include, reverse=reverse, sender_id=sender_id, sender_ids=sender_ids, operator_filter=operator_filter, custom_types=custom_types, message_type=message_type, including_removed=including_removed, include_reactions=include_reactions, with_sorted_meta_array=with_sorted_meta_array, show_subchannel_messages_only=show_subchannel_messages_only, user_id=user_id, custom_type=custom_type, with_meta_array=with_meta_array)
+        api_response = api_instance.list_messages(api_token, channel_type, channel_url, message_ts=message_ts, message_id=message_id, prev_limit=prev_limit, next_limit=next_limit, include=include, reverse=reverse, sender_id=sender_id, sender_ids=sender_ids, operator_filter=operator_filter, custom_types=custom_types, message_type=message_type, including_removed=including_removed, include_reactions=include_reactions, with_sorted_meta_array=with_sorted_meta_array, show_subchannel_messages_only=show_subchannel_messages_only, user_id=user_id, custom_type=custom_type, with_meta_array=with_meta_array)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling MessagesApi->list_messages: %s\n" % e)
@@ -601,11 +596,11 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
  **channel_type** | **str**|  |
  **channel_url** | **str**|  |
- **message_ts** | **int**|  |
- **message_id** | **int**|  |
- **api_token** | **str**|  | [optional]
+ **message_ts** | **int**|  | [optional]
+ **message_id** | **int**|  | [optional]
  **prev_limit** | **int**|  | [optional]
  **next_limit** | **int**|  | [optional]
  **include** | **bool**|  | [optional]
@@ -646,7 +641,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_reactions_of_message**
-> ListReactionsOfMessageResponse list_reactions_of_message(channel_type, channel_url, message_id)
+> ListReactionsOfMessageResponse list_reactions_of_message(api_token, channel_type, channel_url, message_id)
 
 List reactions of a message
 
@@ -672,16 +667,16 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = messages_api.MessagesApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
     channel_type = "channel_type_example" # str | 
     channel_url = "channel_url_example" # str | 
     message_id = "message_id_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
     list_users = True # bool |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # List reactions of a message
-        api_response = api_instance.list_reactions_of_message(channel_type, channel_url, message_id)
+        api_response = api_instance.list_reactions_of_message(api_token, channel_type, channel_url, message_id)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling MessagesApi->list_reactions_of_message: %s\n" % e)
@@ -690,7 +685,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # List reactions of a message
-        api_response = api_instance.list_reactions_of_message(channel_type, channel_url, message_id, api_token=api_token, list_users=list_users)
+        api_response = api_instance.list_reactions_of_message(api_token, channel_type, channel_url, message_id, list_users=list_users)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling MessagesApi->list_reactions_of_message: %s\n" % e)
@@ -701,10 +696,10 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
  **channel_type** | **str**|  |
  **channel_url** | **str**|  |
  **message_id** | **str**|  |
- **api_token** | **str**|  | [optional]
  **list_users** | **bool**|  | [optional]
 
 ### Return type
@@ -730,7 +725,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **remove_extra_data_from_message**
-> remove_extra_data_from_message(channel_type, channel_url, message_id)
+> {str: (bool, date, datetime, dict, float, int, list, str, none_type)} remove_extra_data_from_message(api_token, channel_type, channel_url, message_id)
 
 Remove extra data from a message
 
@@ -755,10 +750,10 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = messages_api.MessagesApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
     channel_type = "channel_type_example" # str | 
     channel_url = "channel_url_example" # str | 
     message_id = "message_id_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
     keys = [
         "keys_example",
     ] # [str] |  (optional)
@@ -766,7 +761,8 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Remove extra data from a message
-        api_instance.remove_extra_data_from_message(channel_type, channel_url, message_id)
+        api_response = api_instance.remove_extra_data_from_message(api_token, channel_type, channel_url, message_id)
+        pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling MessagesApi->remove_extra_data_from_message: %s\n" % e)
 
@@ -774,7 +770,8 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Remove extra data from a message
-        api_instance.remove_extra_data_from_message(channel_type, channel_url, message_id, api_token=api_token, keys=keys)
+        api_response = api_instance.remove_extra_data_from_message(api_token, channel_type, channel_url, message_id, keys=keys)
+        pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling MessagesApi->remove_extra_data_from_message: %s\n" % e)
 ```
@@ -784,15 +781,15 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
  **channel_type** | **str**|  |
  **channel_url** | **str**|  |
  **message_id** | **str**|  |
- **api_token** | **str**|  | [optional]
  **keys** | **[str]**|  | [optional]
 
 ### Return type
 
-void (empty response body)
+**{str: (bool, date, datetime, dict, float, int, list, str, none_type)}**
 
 ### Authorization
 
@@ -801,7 +798,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -813,7 +810,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **remove_reaction_from_a_message**
-> RemoveReactionFromAMessageResponse remove_reaction_from_a_message(channel_type, channel_url, message_id)
+> RemoveReactionFromAMessageResponse remove_reaction_from_a_message(api_token, channel_type, channel_url, message_id)
 
 Remove a reaction from a message
 
@@ -839,17 +836,17 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = messages_api.MessagesApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
     channel_type = "channel_type_example" # str | 
     channel_url = "channel_url_example" # str | 
     message_id = "message_id_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
     user_id = "user_id_example" # str |  (optional)
     reaction = "reaction_example" # str |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Remove a reaction from a message
-        api_response = api_instance.remove_reaction_from_a_message(channel_type, channel_url, message_id)
+        api_response = api_instance.remove_reaction_from_a_message(api_token, channel_type, channel_url, message_id)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling MessagesApi->remove_reaction_from_a_message: %s\n" % e)
@@ -858,7 +855,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Remove a reaction from a message
-        api_response = api_instance.remove_reaction_from_a_message(channel_type, channel_url, message_id, api_token=api_token, user_id=user_id, reaction=reaction)
+        api_response = api_instance.remove_reaction_from_a_message(api_token, channel_type, channel_url, message_id, user_id=user_id, reaction=reaction)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling MessagesApi->remove_reaction_from_a_message: %s\n" % e)
@@ -869,10 +866,10 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
  **channel_type** | **str**|  |
  **channel_url** | **str**|  |
  **message_id** | **str**|  |
- **api_token** | **str**|  | [optional]
  **user_id** | **str**|  | [optional]
  **reaction** | **str**|  | [optional]
 
@@ -899,7 +896,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **send_message**
-> SendBirdMessageResponse send_message(channel_type, channel_url)
+> SendBirdMessageResponse send_message(api_token, channel_type, channel_url)
 
 Send a message
 
@@ -926,9 +923,9 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = messages_api.MessagesApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
     channel_type = "channel_type_example" # str | 
     channel_url = "channel_url_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
     send_message_data = SendMessageData(
         user_id="user_id_example",
         channel_type="channel_type_example",
@@ -954,7 +951,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Send a message
-        api_response = api_instance.send_message(channel_type, channel_url)
+        api_response = api_instance.send_message(api_token, channel_type, channel_url)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling MessagesApi->send_message: %s\n" % e)
@@ -963,7 +960,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Send a message
-        api_response = api_instance.send_message(channel_type, channel_url, api_token=api_token, send_message_data=send_message_data)
+        api_response = api_instance.send_message(api_token, channel_type, channel_url, send_message_data=send_message_data)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling MessagesApi->send_message: %s\n" % e)
@@ -974,9 +971,9 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
  **channel_type** | **str**|  |
  **channel_url** | **str**|  |
- **api_token** | **str**|  | [optional]
  **send_message_data** | [**SendMessageData**](SendMessageData.md)|  | [optional]
 
 ### Return type
@@ -1002,7 +999,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **translate_message_into_other_languages**
-> SendBirdMessageResponse translate_message_into_other_languages(channel_type, channel_url, message_id)
+> SendBirdMessageResponse translate_message_into_other_languages(api_token, channel_type, channel_url, message_id)
 
 Translate a message into other languages
 
@@ -1028,16 +1025,16 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = messages_api.MessagesApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
     channel_type = "channel_type_example" # str | 
     channel_url = "channel_url_example" # str | 
     message_id = "message_id_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
     body = {} # {str: (bool, date, datetime, dict, float, int, list, str, none_type)} |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Translate a message into other languages
-        api_response = api_instance.translate_message_into_other_languages(channel_type, channel_url, message_id)
+        api_response = api_instance.translate_message_into_other_languages(api_token, channel_type, channel_url, message_id)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling MessagesApi->translate_message_into_other_languages: %s\n" % e)
@@ -1046,7 +1043,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Translate a message into other languages
-        api_response = api_instance.translate_message_into_other_languages(channel_type, channel_url, message_id, api_token=api_token, body=body)
+        api_response = api_instance.translate_message_into_other_languages(api_token, channel_type, channel_url, message_id, body=body)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling MessagesApi->translate_message_into_other_languages: %s\n" % e)
@@ -1057,10 +1054,10 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
  **channel_type** | **str**|  |
  **channel_url** | **str**|  |
  **message_id** | **str**|  |
- **api_token** | **str**|  | [optional]
  **body** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}**|  | [optional]
 
 ### Return type
@@ -1086,7 +1083,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_extra_data_in_message**
-> UpdateExtraDataInMessageResponse update_extra_data_in_message(channel_type, channel_url, message_id)
+> UpdateExtraDataInMessageResponse update_extra_data_in_message(api_token, channel_type, channel_url, message_id)
 
 Update extra data in a message
 
@@ -1113,10 +1110,10 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = messages_api.MessagesApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
     channel_type = "channel_type_example" # str | 
     channel_url = "channel_url_example" # str | 
     message_id = "message_id_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
     update_extra_data_in_message_data = UpdateExtraDataInMessageData(
         channel_type="channel_type_example",
         channel_url="channel_url_example",
@@ -1129,7 +1126,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Update extra data in a message
-        api_response = api_instance.update_extra_data_in_message(channel_type, channel_url, message_id)
+        api_response = api_instance.update_extra_data_in_message(api_token, channel_type, channel_url, message_id)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling MessagesApi->update_extra_data_in_message: %s\n" % e)
@@ -1138,7 +1135,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Update extra data in a message
-        api_response = api_instance.update_extra_data_in_message(channel_type, channel_url, message_id, api_token=api_token, update_extra_data_in_message_data=update_extra_data_in_message_data)
+        api_response = api_instance.update_extra_data_in_message(api_token, channel_type, channel_url, message_id, update_extra_data_in_message_data=update_extra_data_in_message_data)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling MessagesApi->update_extra_data_in_message: %s\n" % e)
@@ -1149,10 +1146,10 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
  **channel_type** | **str**|  |
  **channel_url** | **str**|  |
  **message_id** | **str**|  |
- **api_token** | **str**|  | [optional]
  **update_extra_data_in_message_data** | [**UpdateExtraDataInMessageData**](UpdateExtraDataInMessageData.md)|  | [optional]
 
 ### Return type
@@ -1178,7 +1175,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_message_by_id**
-> SendBirdMessageResponse update_message_by_id(channel_type, channel_url, message_id)
+> SendBirdMessageResponse update_message_by_id(api_token, channel_type, channel_url, message_id)
 
 Update a message
 
@@ -1205,10 +1202,10 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = messages_api.MessagesApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
     channel_type = "channel_type_example" # str | 
     channel_url = "channel_url_example" # str | 
     message_id = "message_id_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
     update_message_by_id_data = UpdateMessageByIdData(
         channel_type="channel_type_example",
         channel_url="channel_url_example",
@@ -1226,7 +1223,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Update a message
-        api_response = api_instance.update_message_by_id(channel_type, channel_url, message_id)
+        api_response = api_instance.update_message_by_id(api_token, channel_type, channel_url, message_id)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling MessagesApi->update_message_by_id: %s\n" % e)
@@ -1235,7 +1232,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Update a message
-        api_response = api_instance.update_message_by_id(channel_type, channel_url, message_id, api_token=api_token, update_message_by_id_data=update_message_by_id_data)
+        api_response = api_instance.update_message_by_id(api_token, channel_type, channel_url, message_id, update_message_by_id_data=update_message_by_id_data)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling MessagesApi->update_message_by_id: %s\n" % e)
@@ -1246,10 +1243,10 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
  **channel_type** | **str**|  |
  **channel_url** | **str**|  |
  **message_id** | **str**|  |
- **api_token** | **str**|  | [optional]
  **update_message_by_id_data** | [**UpdateMessageByIdData**](UpdateMessageByIdData.md)|  | [optional]
 
 ### Return type
@@ -1275,7 +1272,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **view_message_by_id**
-> SendBirdMessageResponse view_message_by_id(channel_type, channel_url, message_id)
+> SendBirdMessageResponse view_message_by_id(api_token, channel_type, channel_url, message_id)
 
 View a message
 
@@ -1301,17 +1298,17 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = messages_api.MessagesApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
     channel_type = "channel_type_example" # str | 
     channel_url = "channel_url_example" # str | 
     message_id = "message_id_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
     with_sorted_meta_array = True # bool |  (optional)
     with_meta_array = True # bool |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # View a message
-        api_response = api_instance.view_message_by_id(channel_type, channel_url, message_id)
+        api_response = api_instance.view_message_by_id(api_token, channel_type, channel_url, message_id)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling MessagesApi->view_message_by_id: %s\n" % e)
@@ -1320,7 +1317,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # View a message
-        api_response = api_instance.view_message_by_id(channel_type, channel_url, message_id, api_token=api_token, with_sorted_meta_array=with_sorted_meta_array, with_meta_array=with_meta_array)
+        api_response = api_instance.view_message_by_id(api_token, channel_type, channel_url, message_id, with_sorted_meta_array=with_sorted_meta_array, with_meta_array=with_meta_array)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling MessagesApi->view_message_by_id: %s\n" % e)
@@ -1331,10 +1328,10 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
  **channel_type** | **str**|  |
  **channel_url** | **str**|  |
  **message_id** | **str**|  |
- **api_token** | **str**|  | [optional]
  **with_sorted_meta_array** | **bool**|  | [optional]
  **with_meta_array** | **bool**|  | [optional]
 
@@ -1361,7 +1358,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **view_total_number_of_messages_in_channel**
-> ViewTotalNumberOfMessagesInChannelResponse view_total_number_of_messages_in_channel(channel_type, channel_url)
+> ViewTotalNumberOfMessagesInChannelResponse view_total_number_of_messages_in_channel(api_token, channel_type, channel_url)
 
 View total number of messages in a channel
 
@@ -1387,23 +1384,14 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = messages_api.MessagesApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
     channel_type = "channel_type_example" # str | 
     channel_url = "channel_url_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # View total number of messages in a channel
-        api_response = api_instance.view_total_number_of_messages_in_channel(channel_type, channel_url)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling MessagesApi->view_total_number_of_messages_in_channel: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # View total number of messages in a channel
-        api_response = api_instance.view_total_number_of_messages_in_channel(channel_type, channel_url, api_token=api_token)
+        api_response = api_instance.view_total_number_of_messages_in_channel(api_token, channel_type, channel_url)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling MessagesApi->view_total_number_of_messages_in_channel: %s\n" % e)
@@ -1414,9 +1402,9 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
  **channel_type** | **str**|  |
  **channel_url** | **str**|  |
- **api_token** | **str**|  | [optional]
 
 ### Return type
 

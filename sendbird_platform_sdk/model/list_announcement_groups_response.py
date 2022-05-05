@@ -81,7 +81,7 @@ class ListAnnouncementGroupsResponse(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'announcement_group': ([str],),  # noqa: E501
+            'announcement_groups': ([str],),  # noqa: E501
             'next': (str,),  # noqa: E501
         }
 
@@ -91,7 +91,7 @@ class ListAnnouncementGroupsResponse(ModelNormal):
 
 
     attribute_map = {
-        'announcement_group': 'announcement_group',  # noqa: E501
+        'announcement_groups': 'announcement_groups',  # noqa: E501
         'next': 'next',  # noqa: E501
     }
 
@@ -136,7 +136,7 @@ class ListAnnouncementGroupsResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            announcement_group ([str]): [optional]  # noqa: E501
+            announcement_groups ([str]): [optional]  # noqa: E501
             next (str): [optional]  # noqa: E501
         """
 
@@ -219,7 +219,7 @@ class ListAnnouncementGroupsResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            announcement_group ([str]): [optional]  # noqa: E501
+            announcement_groups ([str]): [optional]  # noqa: E501
             next (str): [optional]  # noqa: E501
         """
 

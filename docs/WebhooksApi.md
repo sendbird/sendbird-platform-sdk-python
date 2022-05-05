@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **choose_which_events_to_subscribe_to**
-> ChooseWhichEventsToSubscribeToResponse choose_which_events_to_subscribe_to()
+> ChooseWhichEventsToSubscribeToResponse choose_which_events_to_subscribe_to(api_token)
 
 Choose which events to subscribe to
 
@@ -36,7 +36,7 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = webhooks_api.WebhooksApi(api_client)
-    api_token = "{{API_TOKEN}}" # str |  (optional)
+    api_token = "{{API_TOKEN}}" # str | 
     choose_which_events_to_subscribe_to_data = ChooseWhichEventsToSubscribeToData(
         enabled=True,
         url="url_example",
@@ -47,10 +47,18 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     ) # ChooseWhichEventsToSubscribeToData |  (optional)
 
     # example passing only required values which don't have defaults set
+    try:
+        # Choose which events to subscribe to
+        api_response = api_instance.choose_which_events_to_subscribe_to(api_token)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling WebhooksApi->choose_which_events_to_subscribe_to: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Choose which events to subscribe to
-        api_response = api_instance.choose_which_events_to_subscribe_to(api_token=api_token, choose_which_events_to_subscribe_to_data=choose_which_events_to_subscribe_to_data)
+        api_response = api_instance.choose_which_events_to_subscribe_to(api_token, choose_which_events_to_subscribe_to_data=choose_which_events_to_subscribe_to_data)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling WebhooksApi->choose_which_events_to_subscribe_to: %s\n" % e)
@@ -61,7 +69,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  | [optional]
+ **api_token** | **str**|  |
  **choose_which_events_to_subscribe_to_data** | [**ChooseWhichEventsToSubscribeToData**](ChooseWhichEventsToSubscribeToData.md)|  | [optional]
 
 ### Return type
@@ -87,7 +95,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **retrieve_list_of_subscribed_events**
-> RetrieveListOfSubscribedEventsResponse retrieve_list_of_subscribed_events()
+> RetrieveListOfSubscribedEventsResponse retrieve_list_of_subscribed_events(api_token)
 
 Retrieve a list of subscribed events
 
@@ -113,14 +121,22 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = webhooks_api.WebhooksApi(api_client)
-    api_token = "{{API_TOKEN}}" # str |  (optional)
+    api_token = "{{API_TOKEN}}" # str | 
     display_all_webhook_categories = True # bool |  (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Retrieve a list of subscribed events
+        api_response = api_instance.retrieve_list_of_subscribed_events(api_token)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling WebhooksApi->retrieve_list_of_subscribed_events: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Retrieve a list of subscribed events
-        api_response = api_instance.retrieve_list_of_subscribed_events(api_token=api_token, display_all_webhook_categories=display_all_webhook_categories)
+        api_response = api_instance.retrieve_list_of_subscribed_events(api_token, display_all_webhook_categories=display_all_webhook_categories)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling WebhooksApi->retrieve_list_of_subscribed_events: %s\n" % e)
@@ -131,7 +147,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  | [optional]
+ **api_token** | **str**|  |
  **display_all_webhook_categories** | **bool**|  | [optional]
 
 ### Return type

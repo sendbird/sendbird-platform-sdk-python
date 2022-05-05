@@ -82,6 +82,7 @@ class GcCheckIfMemberByIdResponse(ModelNormal):
         """
         return {
             'is_member': (bool,),  # noqa: E501
+            'state': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -91,6 +92,7 @@ class GcCheckIfMemberByIdResponse(ModelNormal):
 
     attribute_map = {
         'is_member': 'is_member',  # noqa: E501
+        'state': 'state',  # noqa: E501
     }
 
     read_only_vars = {
@@ -135,6 +137,7 @@ class GcCheckIfMemberByIdResponse(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             is_member (bool): [optional]  # noqa: E501
+            state (str): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -217,6 +220,7 @@ class GcCheckIfMemberByIdResponse(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             is_member (bool): [optional]  # noqa: E501
+            state (str): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

@@ -19,7 +19,7 @@ Method | HTTP request | Description
 
 
 # **add_emoji_categories**
-> AddEmojiCategoriesResponse add_emoji_categories()
+> AddEmojiCategoriesResponse add_emoji_categories(api_token)
 
 Add emoji categories
 
@@ -45,14 +45,22 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = emojis_api.EmojisApi(api_client)
-    api_token = "{{API_TOKEN}}" # str |  (optional)
+    api_token = "{{API_TOKEN}}" # str | 
     body = {} # {str: (bool, date, datetime, dict, float, int, list, str, none_type)} |  (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Add emoji categories
+        api_response = api_instance.add_emoji_categories(api_token)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling EmojisApi->add_emoji_categories: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Add emoji categories
-        api_response = api_instance.add_emoji_categories(api_token=api_token, body=body)
+        api_response = api_instance.add_emoji_categories(api_token, body=body)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling EmojisApi->add_emoji_categories: %s\n" % e)
@@ -63,7 +71,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  | [optional]
+ **api_token** | **str**|  |
  **body** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}**|  | [optional]
 
 ### Return type
@@ -89,7 +97,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **add_emojis**
-> AddEmojisResponse add_emojis()
+> AddEmojisResponse add_emojis(api_token)
 
 Add emojis
 
@@ -116,7 +124,7 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = emojis_api.EmojisApi(api_client)
-    api_token = "{{API_TOKEN}}" # str |  (optional)
+    api_token = "{{API_TOKEN}}" # str | 
     add_emojis_data = AddEmojisData(
         emoji_category_id=1,
         emojis=[
@@ -125,10 +133,18 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     ) # AddEmojisData |  (optional)
 
     # example passing only required values which don't have defaults set
+    try:
+        # Add emojis
+        api_response = api_instance.add_emojis(api_token)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling EmojisApi->add_emojis: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Add emojis
-        api_response = api_instance.add_emojis(api_token=api_token, add_emojis_data=add_emojis_data)
+        api_response = api_instance.add_emojis(api_token, add_emojis_data=add_emojis_data)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling EmojisApi->add_emojis: %s\n" % e)
@@ -139,7 +155,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  | [optional]
+ **api_token** | **str**|  |
  **add_emojis_data** | [**AddEmojisData**](AddEmojisData.md)|  | [optional]
 
 ### Return type
@@ -165,7 +181,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_emoji_by_key**
-> delete_emoji_by_key(emoji_key)
+> delete_emoji_by_key(api_token, emoji_key)
 
 Delete an emoji
 
@@ -190,21 +206,13 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = emojis_api.EmojisApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
     emoji_key = "emoji_key_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Delete an emoji
-        api_instance.delete_emoji_by_key(emoji_key)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling EmojisApi->delete_emoji_by_key: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # Delete an emoji
-        api_instance.delete_emoji_by_key(emoji_key, api_token=api_token)
+        api_instance.delete_emoji_by_key(api_token, emoji_key)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling EmojisApi->delete_emoji_by_key: %s\n" % e)
 ```
@@ -214,8 +222,8 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
  **emoji_key** | **str**|  |
- **api_token** | **str**|  | [optional]
 
 ### Return type
 
@@ -240,7 +248,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_emoji_category_by_id**
-> delete_emoji_category_by_id(emoji_category_id)
+> {str: (bool, date, datetime, dict, float, int, list, str, none_type)} delete_emoji_category_by_id(api_token, emoji_category_id)
 
 Delete an emoji category
 
@@ -265,21 +273,14 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = emojis_api.EmojisApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
     emoji_category_id = "emoji_category_id_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Delete an emoji category
-        api_instance.delete_emoji_category_by_id(emoji_category_id)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling EmojisApi->delete_emoji_category_by_id: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # Delete an emoji category
-        api_instance.delete_emoji_category_by_id(emoji_category_id, api_token=api_token)
+        api_response = api_instance.delete_emoji_category_by_id(api_token, emoji_category_id)
+        pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling EmojisApi->delete_emoji_category_by_id: %s\n" % e)
 ```
@@ -289,12 +290,12 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
  **emoji_category_id** | **str**|  |
- **api_token** | **str**|  | [optional]
 
 ### Return type
 
-void (empty response body)
+**{str: (bool, date, datetime, dict, float, int, list, str, none_type)}**
 
 ### Authorization
 
@@ -303,7 +304,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -315,7 +316,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **enable_reactions**
-> EnableReactionsResponse enable_reactions()
+> EnableReactionsResponse enable_reactions(api_token)
 
 Enable reactions
 
@@ -342,16 +343,24 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = emojis_api.EmojisApi(api_client)
-    api_token = "{{API_TOKEN}}" # str |  (optional)
+    api_token = "{{API_TOKEN}}" # str | 
     enable_reactions_data = EnableReactionsData(
         enabled=True,
     ) # EnableReactionsData |  (optional)
 
     # example passing only required values which don't have defaults set
+    try:
+        # Enable reactions
+        api_response = api_instance.enable_reactions(api_token)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling EmojisApi->enable_reactions: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Enable reactions
-        api_response = api_instance.enable_reactions(api_token=api_token, enable_reactions_data=enable_reactions_data)
+        api_response = api_instance.enable_reactions(api_token, enable_reactions_data=enable_reactions_data)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling EmojisApi->enable_reactions: %s\n" % e)
@@ -362,7 +371,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  | [optional]
+ **api_token** | **str**|  |
  **enable_reactions_data** | [**EnableReactionsData**](EnableReactionsData.md)|  | [optional]
 
 ### Return type
@@ -388,7 +397,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_emoji_by_key**
-> SendBirdEmoji get_emoji_by_key(emoji_key)
+> SendBirdEmoji get_emoji_by_key(api_token, emoji_key)
 
 Get an emoji
 
@@ -414,22 +423,13 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = emojis_api.EmojisApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
     emoji_key = "emoji_key_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Get an emoji
-        api_response = api_instance.get_emoji_by_key(emoji_key)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling EmojisApi->get_emoji_by_key: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # Get an emoji
-        api_response = api_instance.get_emoji_by_key(emoji_key, api_token=api_token)
+        api_response = api_instance.get_emoji_by_key(api_token, emoji_key)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling EmojisApi->get_emoji_by_key: %s\n" % e)
@@ -440,8 +440,8 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
  **emoji_key** | **str**|  |
- **api_token** | **str**|  | [optional]
 
 ### Return type
 
@@ -466,7 +466,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_emoji_category_by_id**
-> SendBirdEmojiCategory get_emoji_category_by_id(emoji_category_id)
+> SendBirdEmojiCategory get_emoji_category_by_id(api_token, emoji_category_id)
 
 Get an emoji category
 
@@ -492,22 +492,13 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = emojis_api.EmojisApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
     emoji_category_id = "emoji_category_id_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Get an emoji category
-        api_response = api_instance.get_emoji_category_by_id(emoji_category_id)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling EmojisApi->get_emoji_category_by_id: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # Get an emoji category
-        api_response = api_instance.get_emoji_category_by_id(emoji_category_id, api_token=api_token)
+        api_response = api_instance.get_emoji_category_by_id(api_token, emoji_category_id)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling EmojisApi->get_emoji_category_by_id: %s\n" % e)
@@ -518,8 +509,8 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
  **emoji_category_id** | **str**|  |
- **api_token** | **str**|  | [optional]
 
 ### Return type
 
@@ -544,7 +535,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_all_emojis_and_emoji_categories**
-> ListAllEmojisAndEmojiCategoriesResponse list_all_emojis_and_emoji_categories()
+> ListAllEmojisAndEmojiCategoriesResponse list_all_emojis_and_emoji_categories(api_token)
 
 List all emojis and emoji categories
 
@@ -570,13 +561,12 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = emojis_api.EmojisApi(api_client)
-    api_token = "{{API_TOKEN}}" # str |  (optional)
+    api_token = "{{API_TOKEN}}" # str | 
 
     # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # List all emojis and emoji categories
-        api_response = api_instance.list_all_emojis_and_emoji_categories(api_token=api_token)
+        api_response = api_instance.list_all_emojis_and_emoji_categories(api_token)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling EmojisApi->list_all_emojis_and_emoji_categories: %s\n" % e)
@@ -587,7 +577,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  | [optional]
+ **api_token** | **str**|  |
 
 ### Return type
 
@@ -612,7 +602,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_emojis**
-> ListEmojisResponse list_emojis()
+> ListEmojisResponse list_emojis(api_token)
 
 List emojis
 
@@ -638,13 +628,12 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = emojis_api.EmojisApi(api_client)
-    api_token = "{{API_TOKEN}}" # str |  (optional)
+    api_token = "{{API_TOKEN}}" # str | 
 
     # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # List emojis
-        api_response = api_instance.list_emojis(api_token=api_token)
+        api_response = api_instance.list_emojis(api_token)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling EmojisApi->list_emojis: %s\n" % e)
@@ -655,7 +644,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  | [optional]
+ **api_token** | **str**|  |
 
 ### Return type
 
@@ -680,7 +669,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_emoji_category_url_by_id**
-> SendBirdEmojiCategory update_emoji_category_url_by_id(emoji_category_id)
+> SendBirdEmojiCategory update_emoji_category_url_by_id(api_token, emoji_category_id)
 
 Update an emoji category URL
 
@@ -707,8 +696,8 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = emojis_api.EmojisApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
     emoji_category_id = "emoji_category_id_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
     update_emoji_category_url_by_id_data = UpdateEmojiCategoryUrlByIdData(
         emoji_category_id=1,
         url="url_example",
@@ -717,7 +706,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Update an emoji category URL
-        api_response = api_instance.update_emoji_category_url_by_id(emoji_category_id)
+        api_response = api_instance.update_emoji_category_url_by_id(api_token, emoji_category_id)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling EmojisApi->update_emoji_category_url_by_id: %s\n" % e)
@@ -726,7 +715,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Update an emoji category URL
-        api_response = api_instance.update_emoji_category_url_by_id(emoji_category_id, api_token=api_token, update_emoji_category_url_by_id_data=update_emoji_category_url_by_id_data)
+        api_response = api_instance.update_emoji_category_url_by_id(api_token, emoji_category_id, update_emoji_category_url_by_id_data=update_emoji_category_url_by_id_data)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling EmojisApi->update_emoji_category_url_by_id: %s\n" % e)
@@ -737,8 +726,8 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
  **emoji_category_id** | **str**|  |
- **api_token** | **str**|  | [optional]
  **update_emoji_category_url_by_id_data** | [**UpdateEmojiCategoryUrlByIdData**](UpdateEmojiCategoryUrlByIdData.md)|  | [optional]
 
 ### Return type
@@ -764,7 +753,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_emoji_url_by_key**
-> SendBirdEmoji update_emoji_url_by_key(emoji_key)
+> SendBirdEmoji update_emoji_url_by_key(api_token, emoji_key)
 
 Update an emoji URL
 
@@ -791,8 +780,8 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = emojis_api.EmojisApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
     emoji_key = "emoji_key_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
     update_emoji_url_by_key_data = UpdateEmojiUrlByKeyData(
         emoji_key="emoji_key_example",
         url="url_example",
@@ -801,7 +790,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Update an emoji URL
-        api_response = api_instance.update_emoji_url_by_key(emoji_key)
+        api_response = api_instance.update_emoji_url_by_key(api_token, emoji_key)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling EmojisApi->update_emoji_url_by_key: %s\n" % e)
@@ -810,7 +799,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Update an emoji URL
-        api_response = api_instance.update_emoji_url_by_key(emoji_key, api_token=api_token, update_emoji_url_by_key_data=update_emoji_url_by_key_data)
+        api_response = api_instance.update_emoji_url_by_key(api_token, emoji_key, update_emoji_url_by_key_data=update_emoji_url_by_key_data)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling EmojisApi->update_emoji_url_by_key: %s\n" % e)
@@ -821,8 +810,8 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
  **emoji_key** | **str**|  |
- **api_token** | **str**|  | [optional]
  **update_emoji_url_by_key_data** | [**UpdateEmojiUrlByKeyData**](UpdateEmojiUrlByKeyData.md)|  | [optional]
 
 ### Return type
@@ -848,7 +837,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **use_default_emojis**
-> UseDefaultEmojisResponse use_default_emojis()
+> UseDefaultEmojisResponse use_default_emojis(api_token)
 
 Use default emojis
 
@@ -875,16 +864,24 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = emojis_api.EmojisApi(api_client)
-    api_token = "{{API_TOKEN}}" # str |  (optional)
+    api_token = "{{API_TOKEN}}" # str | 
     use_default_emojis_data = UseDefaultEmojisData(
         use_default_emoji=True,
     ) # UseDefaultEmojisData |  (optional)
 
     # example passing only required values which don't have defaults set
+    try:
+        # Use default emojis
+        api_response = api_instance.use_default_emojis(api_token)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling EmojisApi->use_default_emojis: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Use default emojis
-        api_response = api_instance.use_default_emojis(api_token=api_token, use_default_emojis_data=use_default_emojis_data)
+        api_response = api_instance.use_default_emojis(api_token, use_default_emojis_data=use_default_emojis_data)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling EmojisApi->use_default_emojis: %s\n" % e)
@@ -895,7 +892,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  | [optional]
+ **api_token** | **str**|  |
  **use_default_emojis_data** | [**UseDefaultEmojisData**](UseDefaultEmojisData.md)|  | [optional]
 
 ### Return type

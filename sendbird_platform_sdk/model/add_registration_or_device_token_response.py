@@ -87,7 +87,8 @@ class AddRegistrationOrDeviceTokenResponse(ModelNormal):
         """
         lazy_import()
         return {
-            'token': (str,),  # noqa: E501
+            'tokens': ([str],),  # noqa: E501
+            'token': ([str],),  # noqa: E501
             'type': (str,),  # noqa: E501
             'user': (SendBirdUser,),  # noqa: E501
         }
@@ -98,6 +99,7 @@ class AddRegistrationOrDeviceTokenResponse(ModelNormal):
 
 
     attribute_map = {
+        'tokens': 'tokens',  # noqa: E501
         'token': 'token',  # noqa: E501
         'type': 'type',  # noqa: E501
         'user': 'user',  # noqa: E501
@@ -144,7 +146,8 @@ class AddRegistrationOrDeviceTokenResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            token (str): [optional]  # noqa: E501
+            tokens ([str]): [optional]  # noqa: E501
+            token ([str]): [optional]  # noqa: E501
             type (str): [optional]  # noqa: E501
             user (SendBirdUser): [optional]  # noqa: E501
         """
@@ -228,7 +231,8 @@ class AddRegistrationOrDeviceTokenResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            token (str): [optional]  # noqa: E501
+            tokens ([str]): [optional]  # noqa: E501
+            token ([str]): [optional]  # noqa: E501
             type (str): [optional]  # noqa: E501
             user (SendBirdUser): [optional]  # noqa: E501
         """

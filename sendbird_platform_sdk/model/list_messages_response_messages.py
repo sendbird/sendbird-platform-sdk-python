@@ -32,10 +32,12 @@ from sendbird_platform_sdk.exceptions import ApiAttributeError
 def lazy_import():
     from sendbird_platform_sdk.model.list_messages_response_og_tag import ListMessagesResponseOgTag
     from sendbird_platform_sdk.model.list_messages_response_sorted_metaarray import ListMessagesResponseSortedMetaarray
-    from sendbird_platform_sdk.model.list_messages_response_user import ListMessagesResponseUser
+    from sendbird_platform_sdk.model.send_bird_message_response_mentioned_users import SendBirdMessageResponseMentionedUsers
+    from sendbird_platform_sdk.model.send_bird_message_response_user import SendBirdMessageResponseUser
     globals()['ListMessagesResponseOgTag'] = ListMessagesResponseOgTag
     globals()['ListMessagesResponseSortedMetaarray'] = ListMessagesResponseSortedMetaarray
-    globals()['ListMessagesResponseUser'] = ListMessagesResponseUser
+    globals()['SendBirdMessageResponseMentionedUsers'] = SendBirdMessageResponseMentionedUsers
+    globals()['SendBirdMessageResponseUser'] = SendBirdMessageResponseUser
 
 
 class ListMessagesResponseMessages(ModelNormal):
@@ -91,22 +93,28 @@ class ListMessagesResponseMessages(ModelNormal):
         """
         lazy_import()
         return {
-            'message_id': (float,),  # noqa: E501
-            'type': (str,),  # noqa: E501
+            'message_survival_seconds': (float,),  # noqa: E501
             'custom_type': (str,),  # noqa: E501
-            'channel_url': (str,),  # noqa: E501
-            'user': (ListMessagesResponseUser,),  # noqa: E501
-            'mention_type': (str,),  # noqa: E501
-            'mentioned_users': ([ListMessagesResponseUser],),  # noqa: E501
-            'is_removed': (bool,),  # noqa: E501
-            'message': (str,),  # noqa: E501
+            'mentioned_users': ([SendBirdMessageResponseMentionedUsers],),  # noqa: E501
             'translations': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),  # noqa: E501
+            'updated_at': (float,),  # noqa: E501
+            'is_op_msg': (bool,),  # noqa: E501
+            'is_removed': (bool,),  # noqa: E501
+            'user': (SendBirdMessageResponseUser,),  # noqa: E501
+            'file': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),  # noqa: E501
+            'message': (str,),  # noqa: E501
             'data': (str,),  # noqa: E501
+            'message_retention_hour': (float,),  # noqa: E501
+            'silent': (bool,),  # noqa: E501
+            'type': (str,),  # noqa: E501
+            'created_at': (float,),  # noqa: E501
+            'channel_type': (str,),  # noqa: E501
+            'req_id': (str,),  # noqa: E501
+            'mention_type': (str,),  # noqa: E501
+            'channel_url': (str,),  # noqa: E501
+            'message_id': (float,),  # noqa: E501
             'sorted_metaarray': ([ListMessagesResponseSortedMetaarray],),  # noqa: E501
             'og_tag': (ListMessagesResponseOgTag,),  # noqa: E501
-            'created_at': (float,),  # noqa: E501
-            'updated_at': (float,),  # noqa: E501
-            'file': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),  # noqa: E501
         }
 
     @cached_property
@@ -115,22 +123,28 @@ class ListMessagesResponseMessages(ModelNormal):
 
 
     attribute_map = {
-        'message_id': 'message_id',  # noqa: E501
-        'type': 'type',  # noqa: E501
+        'message_survival_seconds': 'message_survival_seconds',  # noqa: E501
         'custom_type': 'custom_type',  # noqa: E501
-        'channel_url': 'channel_url',  # noqa: E501
-        'user': 'user',  # noqa: E501
-        'mention_type': 'mention_type',  # noqa: E501
         'mentioned_users': 'mentioned_users',  # noqa: E501
-        'is_removed': 'is_removed',  # noqa: E501
-        'message': 'message',  # noqa: E501
         'translations': 'translations',  # noqa: E501
+        'updated_at': 'updated_at',  # noqa: E501
+        'is_op_msg': 'is_op_msg',  # noqa: E501
+        'is_removed': 'is_removed',  # noqa: E501
+        'user': 'user',  # noqa: E501
+        'file': 'file',  # noqa: E501
+        'message': 'message',  # noqa: E501
         'data': 'data',  # noqa: E501
+        'message_retention_hour': 'message_retention_hour',  # noqa: E501
+        'silent': 'silent',  # noqa: E501
+        'type': 'type',  # noqa: E501
+        'created_at': 'created_at',  # noqa: E501
+        'channel_type': 'channel_type',  # noqa: E501
+        'req_id': 'req_id',  # noqa: E501
+        'mention_type': 'mention_type',  # noqa: E501
+        'channel_url': 'channel_url',  # noqa: E501
+        'message_id': 'message_id',  # noqa: E501
         'sorted_metaarray': 'sorted_metaarray',  # noqa: E501
         'og_tag': 'og_tag',  # noqa: E501
-        'created_at': 'created_at',  # noqa: E501
-        'updated_at': 'updated_at',  # noqa: E501
-        'file': 'file',  # noqa: E501
     }
 
     read_only_vars = {
@@ -174,22 +188,28 @@ class ListMessagesResponseMessages(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            message_id (float): [optional]  # noqa: E501
-            type (str): [optional]  # noqa: E501
+            message_survival_seconds (float): [optional]  # noqa: E501
             custom_type (str): [optional]  # noqa: E501
-            channel_url (str): [optional]  # noqa: E501
-            user (ListMessagesResponseUser): [optional]  # noqa: E501
-            mention_type (str): [optional]  # noqa: E501
-            mentioned_users ([ListMessagesResponseUser]): [optional]  # noqa: E501
-            is_removed (bool): [optional]  # noqa: E501
-            message (str): [optional]  # noqa: E501
+            mentioned_users ([SendBirdMessageResponseMentionedUsers]): [optional]  # noqa: E501
             translations ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]  # noqa: E501
+            updated_at (float): [optional]  # noqa: E501
+            is_op_msg (bool): [optional]  # noqa: E501
+            is_removed (bool): [optional]  # noqa: E501
+            user (SendBirdMessageResponseUser): [optional]  # noqa: E501
+            file ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]  # noqa: E501
+            message (str): [optional]  # noqa: E501
             data (str): [optional]  # noqa: E501
+            message_retention_hour (float): [optional]  # noqa: E501
+            silent (bool): [optional]  # noqa: E501
+            type (str): [optional]  # noqa: E501
+            created_at (float): [optional]  # noqa: E501
+            channel_type (str): [optional]  # noqa: E501
+            req_id (str): [optional]  # noqa: E501
+            mention_type (str): [optional]  # noqa: E501
+            channel_url (str): [optional]  # noqa: E501
+            message_id (float): [optional]  # noqa: E501
             sorted_metaarray ([ListMessagesResponseSortedMetaarray]): [optional]  # noqa: E501
             og_tag (ListMessagesResponseOgTag): [optional]  # noqa: E501
-            created_at (float): [optional]  # noqa: E501
-            updated_at (float): [optional]  # noqa: E501
-            file ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -271,22 +291,28 @@ class ListMessagesResponseMessages(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            message_id (float): [optional]  # noqa: E501
-            type (str): [optional]  # noqa: E501
+            message_survival_seconds (float): [optional]  # noqa: E501
             custom_type (str): [optional]  # noqa: E501
-            channel_url (str): [optional]  # noqa: E501
-            user (ListMessagesResponseUser): [optional]  # noqa: E501
-            mention_type (str): [optional]  # noqa: E501
-            mentioned_users ([ListMessagesResponseUser]): [optional]  # noqa: E501
-            is_removed (bool): [optional]  # noqa: E501
-            message (str): [optional]  # noqa: E501
+            mentioned_users ([SendBirdMessageResponseMentionedUsers]): [optional]  # noqa: E501
             translations ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]  # noqa: E501
+            updated_at (float): [optional]  # noqa: E501
+            is_op_msg (bool): [optional]  # noqa: E501
+            is_removed (bool): [optional]  # noqa: E501
+            user (SendBirdMessageResponseUser): [optional]  # noqa: E501
+            file ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]  # noqa: E501
+            message (str): [optional]  # noqa: E501
             data (str): [optional]  # noqa: E501
+            message_retention_hour (float): [optional]  # noqa: E501
+            silent (bool): [optional]  # noqa: E501
+            type (str): [optional]  # noqa: E501
+            created_at (float): [optional]  # noqa: E501
+            channel_type (str): [optional]  # noqa: E501
+            req_id (str): [optional]  # noqa: E501
+            mention_type (str): [optional]  # noqa: E501
+            channel_url (str): [optional]  # noqa: E501
+            message_id (float): [optional]  # noqa: E501
             sorted_metaarray ([ListMessagesResponseSortedMetaarray]): [optional]  # noqa: E501
             og_tag (ListMessagesResponseOgTag): [optional]  # noqa: E501
-            created_at (float): [optional]  # noqa: E501
-            updated_at (float): [optional]  # noqa: E501
-            file ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

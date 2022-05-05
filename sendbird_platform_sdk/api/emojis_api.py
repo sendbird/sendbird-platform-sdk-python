@@ -61,7 +61,9 @@ class EmojisApi(object):
                     'api_token',
                     'body',
                 ],
-                'required': [],
+                'required': [
+                    'api_token',
+                ],
                 'nullable': [
                 ],
                 'enum': [
@@ -114,7 +116,9 @@ class EmojisApi(object):
                     'api_token',
                     'add_emojis_data',
                 ],
-                'required': [],
+                'required': [
+                    'api_token',
+                ],
                 'nullable': [
                 ],
                 'enum': [
@@ -164,10 +168,11 @@ class EmojisApi(object):
             },
             params_map={
                 'all': [
-                    'emoji_key',
                     'api_token',
+                    'emoji_key',
                 ],
                 'required': [
+                    'api_token',
                     'emoji_key',
                 ],
                 'nullable': [
@@ -183,18 +188,18 @@ class EmojisApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'emoji_key':
-                        (str,),
                     'api_token':
+                        (str,),
+                    'emoji_key':
                         (str,),
                 },
                 'attribute_map': {
-                    'emoji_key': 'emoji_key',
                     'api_token': 'Api-Token',
+                    'emoji_key': 'emoji_key',
                 },
                 'location_map': {
-                    'emoji_key': 'path',
                     'api_token': 'header',
+                    'emoji_key': 'path',
                 },
                 'collection_format_map': {
                 }
@@ -207,7 +212,7 @@ class EmojisApi(object):
         )
         self.delete_emoji_category_by_id_endpoint = _Endpoint(
             settings={
-                'response_type': None,
+                'response_type': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
                 'auth': [],
                 'endpoint_path': '/v3/emoji_categories/{emoji_category_id}',
                 'operation_id': 'delete_emoji_category_by_id',
@@ -216,10 +221,11 @@ class EmojisApi(object):
             },
             params_map={
                 'all': [
-                    'emoji_category_id',
                     'api_token',
+                    'emoji_category_id',
                 ],
                 'required': [
+                    'api_token',
                     'emoji_category_id',
                 ],
                 'nullable': [
@@ -235,24 +241,26 @@ class EmojisApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'emoji_category_id':
-                        (str,),
                     'api_token':
+                        (str,),
+                    'emoji_category_id':
                         (str,),
                 },
                 'attribute_map': {
-                    'emoji_category_id': 'emoji_category_id',
                     'api_token': 'Api-Token',
+                    'emoji_category_id': 'emoji_category_id',
                 },
                 'location_map': {
-                    'emoji_category_id': 'path',
                     'api_token': 'header',
+                    'emoji_category_id': 'path',
                 },
                 'collection_format_map': {
                 }
             },
             headers_map={
-                'accept': [],
+                'accept': [
+                    'application/json'
+                ],
                 'content_type': [],
             },
             api_client=api_client
@@ -271,7 +279,9 @@ class EmojisApi(object):
                     'api_token',
                     'enable_reactions_data',
                 ],
-                'required': [],
+                'required': [
+                    'api_token',
+                ],
                 'nullable': [
                 ],
                 'enum': [
@@ -321,10 +331,11 @@ class EmojisApi(object):
             },
             params_map={
                 'all': [
-                    'emoji_key',
                     'api_token',
+                    'emoji_key',
                 ],
                 'required': [
+                    'api_token',
                     'emoji_key',
                 ],
                 'nullable': [
@@ -340,18 +351,18 @@ class EmojisApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'emoji_key':
-                        (str,),
                     'api_token':
+                        (str,),
+                    'emoji_key':
                         (str,),
                 },
                 'attribute_map': {
-                    'emoji_key': 'emoji_key',
                     'api_token': 'Api-Token',
+                    'emoji_key': 'emoji_key',
                 },
                 'location_map': {
-                    'emoji_key': 'path',
                     'api_token': 'header',
+                    'emoji_key': 'path',
                 },
                 'collection_format_map': {
                 }
@@ -375,10 +386,11 @@ class EmojisApi(object):
             },
             params_map={
                 'all': [
-                    'emoji_category_id',
                     'api_token',
+                    'emoji_category_id',
                 ],
                 'required': [
+                    'api_token',
                     'emoji_category_id',
                 ],
                 'nullable': [
@@ -394,18 +406,18 @@ class EmojisApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'emoji_category_id':
-                        (str,),
                     'api_token':
+                        (str,),
+                    'emoji_category_id':
                         (str,),
                 },
                 'attribute_map': {
-                    'emoji_category_id': 'emoji_category_id',
                     'api_token': 'Api-Token',
+                    'emoji_category_id': 'emoji_category_id',
                 },
                 'location_map': {
-                    'emoji_category_id': 'path',
                     'api_token': 'header',
+                    'emoji_category_id': 'path',
                 },
                 'collection_format_map': {
                 }
@@ -431,7 +443,9 @@ class EmojisApi(object):
                 'all': [
                     'api_token',
                 ],
-                'required': [],
+                'required': [
+                    'api_token',
+                ],
                 'nullable': [
                 ],
                 'enum': [
@@ -478,7 +492,9 @@ class EmojisApi(object):
                 'all': [
                     'api_token',
                 ],
-                'required': [],
+                'required': [
+                    'api_token',
+                ],
                 'nullable': [
                 ],
                 'enum': [
@@ -523,11 +539,12 @@ class EmojisApi(object):
             },
             params_map={
                 'all': [
-                    'emoji_category_id',
                     'api_token',
+                    'emoji_category_id',
                     'update_emoji_category_url_by_id_data',
                 ],
                 'required': [
+                    'api_token',
                     'emoji_category_id',
                 ],
                 'nullable': [
@@ -543,20 +560,20 @@ class EmojisApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'emoji_category_id':
-                        (str,),
                     'api_token':
+                        (str,),
+                    'emoji_category_id':
                         (str,),
                     'update_emoji_category_url_by_id_data':
                         (UpdateEmojiCategoryUrlByIdData,),
                 },
                 'attribute_map': {
-                    'emoji_category_id': 'emoji_category_id',
                     'api_token': 'Api-Token',
+                    'emoji_category_id': 'emoji_category_id',
                 },
                 'location_map': {
-                    'emoji_category_id': 'path',
                     'api_token': 'header',
+                    'emoji_category_id': 'path',
                     'update_emoji_category_url_by_id_data': 'body',
                 },
                 'collection_format_map': {
@@ -583,11 +600,12 @@ class EmojisApi(object):
             },
             params_map={
                 'all': [
-                    'emoji_key',
                     'api_token',
+                    'emoji_key',
                     'update_emoji_url_by_key_data',
                 ],
                 'required': [
+                    'api_token',
                     'emoji_key',
                 ],
                 'nullable': [
@@ -603,20 +621,20 @@ class EmojisApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'emoji_key':
-                        (str,),
                     'api_token':
+                        (str,),
+                    'emoji_key':
                         (str,),
                     'update_emoji_url_by_key_data':
                         (UpdateEmojiUrlByKeyData,),
                 },
                 'attribute_map': {
-                    'emoji_key': 'emoji_key',
                     'api_token': 'Api-Token',
+                    'emoji_key': 'emoji_key',
                 },
                 'location_map': {
-                    'emoji_key': 'path',
                     'api_token': 'header',
+                    'emoji_key': 'path',
                     'update_emoji_url_by_key_data': 'body',
                 },
                 'collection_format_map': {
@@ -646,7 +664,9 @@ class EmojisApi(object):
                     'api_token',
                     'use_default_emojis_data',
                 ],
-                'required': [],
+                'required': [
+                    'api_token',
+                ],
                 'nullable': [
                 ],
                 'enum': [
@@ -688,6 +708,7 @@ class EmojisApi(object):
 
     def add_emoji_categories(
         self,
+        api_token,
         **kwargs
     ):
         """Add emoji categories  # noqa: E501
@@ -696,12 +717,13 @@ class EmojisApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.add_emoji_categories(async_req=True)
+        >>> thread = api.add_emoji_categories(api_token, async_req=True)
         >>> result = thread.get()
 
+        Args:
+            api_token (str):
 
         Keyword Args:
-            api_token (str): [optional]
             body ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -752,10 +774,13 @@ class EmojisApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         return self.add_emoji_categories_endpoint.call_with_http_info(**kwargs)
 
     def add_emojis(
         self,
+        api_token,
         **kwargs
     ):
         """Add emojis  # noqa: E501
@@ -764,12 +789,13 @@ class EmojisApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.add_emojis(async_req=True)
+        >>> thread = api.add_emojis(api_token, async_req=True)
         >>> result = thread.get()
 
+        Args:
+            api_token (str):
 
         Keyword Args:
-            api_token (str): [optional]
             add_emojis_data (AddEmojisData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -820,10 +846,13 @@ class EmojisApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         return self.add_emojis_endpoint.call_with_http_info(**kwargs)
 
     def delete_emoji_by_key(
         self,
+        api_token,
         emoji_key,
         **kwargs
     ):
@@ -833,14 +862,14 @@ class EmojisApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.delete_emoji_by_key(emoji_key, async_req=True)
+        >>> thread = api.delete_emoji_by_key(api_token, emoji_key, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             emoji_key (str):
 
         Keyword Args:
-            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -890,12 +919,15 @@ class EmojisApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['emoji_key'] = \
             emoji_key
         return self.delete_emoji_by_key_endpoint.call_with_http_info(**kwargs)
 
     def delete_emoji_category_by_id(
         self,
+        api_token,
         emoji_category_id,
         **kwargs
     ):
@@ -905,14 +937,14 @@ class EmojisApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.delete_emoji_category_by_id(emoji_category_id, async_req=True)
+        >>> thread = api.delete_emoji_category_by_id(api_token, emoji_category_id, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             emoji_category_id (str):
 
         Keyword Args:
-            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -937,7 +969,7 @@ class EmojisApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            None
+            {str: (bool, date, datetime, dict, float, int, list, str, none_type)}
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -962,12 +994,15 @@ class EmojisApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['emoji_category_id'] = \
             emoji_category_id
         return self.delete_emoji_category_by_id_endpoint.call_with_http_info(**kwargs)
 
     def enable_reactions(
         self,
+        api_token,
         **kwargs
     ):
         """Enable reactions  # noqa: E501
@@ -976,12 +1011,13 @@ class EmojisApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.enable_reactions(async_req=True)
+        >>> thread = api.enable_reactions(api_token, async_req=True)
         >>> result = thread.get()
 
+        Args:
+            api_token (str):
 
         Keyword Args:
-            api_token (str): [optional]
             enable_reactions_data (EnableReactionsData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -1032,10 +1068,13 @@ class EmojisApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         return self.enable_reactions_endpoint.call_with_http_info(**kwargs)
 
     def get_emoji_by_key(
         self,
+        api_token,
         emoji_key,
         **kwargs
     ):
@@ -1045,14 +1084,14 @@ class EmojisApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.get_emoji_by_key(emoji_key, async_req=True)
+        >>> thread = api.get_emoji_by_key(api_token, emoji_key, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             emoji_key (str):
 
         Keyword Args:
-            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -1102,12 +1141,15 @@ class EmojisApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['emoji_key'] = \
             emoji_key
         return self.get_emoji_by_key_endpoint.call_with_http_info(**kwargs)
 
     def get_emoji_category_by_id(
         self,
+        api_token,
         emoji_category_id,
         **kwargs
     ):
@@ -1117,14 +1159,14 @@ class EmojisApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.get_emoji_category_by_id(emoji_category_id, async_req=True)
+        >>> thread = api.get_emoji_category_by_id(api_token, emoji_category_id, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             emoji_category_id (str):
 
         Keyword Args:
-            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -1174,12 +1216,15 @@ class EmojisApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['emoji_category_id'] = \
             emoji_category_id
         return self.get_emoji_category_by_id_endpoint.call_with_http_info(**kwargs)
 
     def list_all_emojis_and_emoji_categories(
         self,
+        api_token,
         **kwargs
     ):
         """List all emojis and emoji categories  # noqa: E501
@@ -1188,12 +1233,13 @@ class EmojisApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.list_all_emojis_and_emoji_categories(async_req=True)
+        >>> thread = api.list_all_emojis_and_emoji_categories(api_token, async_req=True)
         >>> result = thread.get()
 
+        Args:
+            api_token (str):
 
         Keyword Args:
-            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -1243,10 +1289,13 @@ class EmojisApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         return self.list_all_emojis_and_emoji_categories_endpoint.call_with_http_info(**kwargs)
 
     def list_emojis(
         self,
+        api_token,
         **kwargs
     ):
         """List emojis  # noqa: E501
@@ -1255,12 +1304,13 @@ class EmojisApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.list_emojis(async_req=True)
+        >>> thread = api.list_emojis(api_token, async_req=True)
         >>> result = thread.get()
 
+        Args:
+            api_token (str):
 
         Keyword Args:
-            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -1310,10 +1360,13 @@ class EmojisApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         return self.list_emojis_endpoint.call_with_http_info(**kwargs)
 
     def update_emoji_category_url_by_id(
         self,
+        api_token,
         emoji_category_id,
         **kwargs
     ):
@@ -1323,14 +1376,14 @@ class EmojisApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.update_emoji_category_url_by_id(emoji_category_id, async_req=True)
+        >>> thread = api.update_emoji_category_url_by_id(api_token, emoji_category_id, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             emoji_category_id (str):
 
         Keyword Args:
-            api_token (str): [optional]
             update_emoji_category_url_by_id_data (UpdateEmojiCategoryUrlByIdData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -1381,12 +1434,15 @@ class EmojisApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['emoji_category_id'] = \
             emoji_category_id
         return self.update_emoji_category_url_by_id_endpoint.call_with_http_info(**kwargs)
 
     def update_emoji_url_by_key(
         self,
+        api_token,
         emoji_key,
         **kwargs
     ):
@@ -1396,14 +1452,14 @@ class EmojisApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.update_emoji_url_by_key(emoji_key, async_req=True)
+        >>> thread = api.update_emoji_url_by_key(api_token, emoji_key, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             emoji_key (str):
 
         Keyword Args:
-            api_token (str): [optional]
             update_emoji_url_by_key_data (UpdateEmojiUrlByKeyData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -1454,12 +1510,15 @@ class EmojisApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['emoji_key'] = \
             emoji_key
         return self.update_emoji_url_by_key_endpoint.call_with_http_info(**kwargs)
 
     def use_default_emojis(
         self,
+        api_token,
         **kwargs
     ):
         """Use default emojis  # noqa: E501
@@ -1468,12 +1527,13 @@ class EmojisApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.use_default_emojis(async_req=True)
+        >>> thread = api.use_default_emojis(api_token, async_req=True)
         >>> result = thread.get()
 
+        Args:
+            api_token (str):
 
         Keyword Args:
-            api_token (str): [optional]
             use_default_emojis_data (UseDefaultEmojisData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -1524,5 +1584,7 @@ class EmojisApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         return self.use_default_emojis_endpoint.call_with_http_info(**kwargs)
 

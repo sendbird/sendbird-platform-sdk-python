@@ -85,6 +85,7 @@ class ChooseWhichEventsToSubscribeToResponseWebhook(ModelNormal):
             'url': (str,),  # noqa: E501
             'include_members': (bool,),  # noqa: E501
             'enabled_events': ([str],),  # noqa: E501
+            'include_unread_count': (bool,),  # noqa: E501
         }
 
     @cached_property
@@ -97,6 +98,7 @@ class ChooseWhichEventsToSubscribeToResponseWebhook(ModelNormal):
         'url': 'url',  # noqa: E501
         'include_members': 'include_members',  # noqa: E501
         'enabled_events': 'enabled_events',  # noqa: E501
+        'include_unread_count': 'include_unread_count',  # noqa: E501
     }
 
     read_only_vars = {
@@ -144,6 +146,7 @@ class ChooseWhichEventsToSubscribeToResponseWebhook(ModelNormal):
             url (str): [optional]  # noqa: E501
             include_members (bool): [optional]  # noqa: E501
             enabled_events ([str]): [optional]  # noqa: E501
+            include_unread_count (bool): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -229,6 +232,7 @@ class ChooseWhichEventsToSubscribeToResponseWebhook(ModelNormal):
             url (str): [optional]  # noqa: E501
             include_members (bool): [optional]  # noqa: E501
             enabled_events ([str]): [optional]  # noqa: E501
+            include_unread_count (bool): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

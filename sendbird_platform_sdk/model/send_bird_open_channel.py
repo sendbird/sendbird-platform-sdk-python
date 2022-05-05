@@ -87,17 +87,20 @@ class SendBirdOpenChannel(ModelNormal):
         """
         lazy_import()
         return {
-            'cover_url': (str,),  # noqa: E501
-            'created_at': (float,),  # noqa: E501
-            'creator': (SendBirdUser,),  # noqa: E501
+            'name': (str,),  # noqa: E501
             'custom_type': (str,),  # noqa: E501
+            'channel_url': (str,),  # noqa: E501
+            'created_at': (float,),  # noqa: E501
+            'cover_url': (str,),  # noqa: E501
+            'creator': (SendBirdUser,),  # noqa: E501
             'data': (str,),  # noqa: E501
+            'is_dynamic_partitioned': (bool,),  # noqa: E501
             'is_ephemeral': (bool,),  # noqa: E501
             'is_frozen': (bool,),  # noqa: E501
-            'name': (str,),  # noqa: E501
+            'max_length_message': (float,),  # noqa: E501
             'operators': ([SendBirdUser],),  # noqa: E501
             'participant_count': (float,),  # noqa: E501
-            'channel_url': (str,),  # noqa: E501
+            'freeze': (bool,),  # noqa: E501
         }
 
     @cached_property
@@ -106,17 +109,20 @@ class SendBirdOpenChannel(ModelNormal):
 
 
     attribute_map = {
-        'cover_url': 'cover_url',  # noqa: E501
-        'created_at': 'created_at',  # noqa: E501
-        'creator': 'creator',  # noqa: E501
+        'name': 'name',  # noqa: E501
         'custom_type': 'custom_type',  # noqa: E501
+        'channel_url': 'channel_url',  # noqa: E501
+        'created_at': 'created_at',  # noqa: E501
+        'cover_url': 'cover_url',  # noqa: E501
+        'creator': 'creator',  # noqa: E501
         'data': 'data',  # noqa: E501
+        'is_dynamic_partitioned': 'is_dynamic_partitioned',  # noqa: E501
         'is_ephemeral': 'is_ephemeral',  # noqa: E501
         'is_frozen': 'is_frozen',  # noqa: E501
-        'name': 'name',  # noqa: E501
+        'max_length_message': 'max_length_message',  # noqa: E501
         'operators': 'operators',  # noqa: E501
         'participant_count': 'participant_count',  # noqa: E501
-        'channel_url': 'channel_url',  # noqa: E501
+        'freeze': 'freeze',  # noqa: E501
     }
 
     read_only_vars = {
@@ -160,17 +166,20 @@ class SendBirdOpenChannel(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            cover_url (str): [optional]  # noqa: E501
-            created_at (float): [optional]  # noqa: E501
-            creator (SendBirdUser): [optional]  # noqa: E501
+            name (str): [optional]  # noqa: E501
             custom_type (str): [optional]  # noqa: E501
+            channel_url (str): [optional]  # noqa: E501
+            created_at (float): [optional]  # noqa: E501
+            cover_url (str): [optional]  # noqa: E501
+            creator (SendBirdUser): [optional]  # noqa: E501
             data (str): [optional]  # noqa: E501
+            is_dynamic_partitioned (bool): [optional]  # noqa: E501
             is_ephemeral (bool): [optional]  # noqa: E501
             is_frozen (bool): [optional]  # noqa: E501
-            name (str): [optional]  # noqa: E501
+            max_length_message (float): [optional]  # noqa: E501
             operators ([SendBirdUser]): [optional]  # noqa: E501
             participant_count (float): [optional]  # noqa: E501
-            channel_url (str): [optional]  # noqa: E501
+            freeze (bool): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -252,17 +261,20 @@ class SendBirdOpenChannel(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            cover_url (str): [optional]  # noqa: E501
-            created_at (float): [optional]  # noqa: E501
-            creator (SendBirdUser): [optional]  # noqa: E501
+            name (str): [optional]  # noqa: E501
             custom_type (str): [optional]  # noqa: E501
+            channel_url (str): [optional]  # noqa: E501
+            created_at (float): [optional]  # noqa: E501
+            cover_url (str): [optional]  # noqa: E501
+            creator (SendBirdUser): [optional]  # noqa: E501
             data (str): [optional]  # noqa: E501
+            is_dynamic_partitioned (bool): [optional]  # noqa: E501
             is_ephemeral (bool): [optional]  # noqa: E501
             is_frozen (bool): [optional]  # noqa: E501
-            name (str): [optional]  # noqa: E501
+            max_length_message (float): [optional]  # noqa: E501
             operators ([SendBirdUser]): [optional]  # noqa: E501
             participant_count (float): [optional]  # noqa: E501
-            channel_url (str): [optional]  # noqa: E501
+            freeze (bool): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

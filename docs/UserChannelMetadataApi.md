@@ -28,7 +28,7 @@ Method | HTTP request | Description
 
 
 # **create_channel_metacounter**
-> CreateChannelMetacounterResponse create_channel_metacounter(channel_type, channel_url)
+> CreateChannelMetacounterResponse create_channel_metacounter(api_token, channel_type, channel_url)
 
 Create a channel metacounter
 
@@ -55,9 +55,9 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = user__channel_metadata_api.UserChannelMetadataApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
     channel_type = "channel_type_example" # str | 
     channel_url = "channel_url_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
     create_channel_metacounter_data = CreateChannelMetacounterData(
         channel_type="channel_type_example",
         channel_url="channel_url_example",
@@ -67,7 +67,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Create a channel metacounter
-        api_response = api_instance.create_channel_metacounter(channel_type, channel_url)
+        api_response = api_instance.create_channel_metacounter(api_token, channel_type, channel_url)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserChannelMetadataApi->create_channel_metacounter: %s\n" % e)
@@ -76,7 +76,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Create a channel metacounter
-        api_response = api_instance.create_channel_metacounter(channel_type, channel_url, api_token=api_token, create_channel_metacounter_data=create_channel_metacounter_data)
+        api_response = api_instance.create_channel_metacounter(api_token, channel_type, channel_url, create_channel_metacounter_data=create_channel_metacounter_data)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserChannelMetadataApi->create_channel_metacounter: %s\n" % e)
@@ -87,9 +87,9 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
  **channel_type** | **str**|  |
  **channel_url** | **str**|  |
- **api_token** | **str**|  | [optional]
  **create_channel_metacounter_data** | [**CreateChannelMetacounterData**](CreateChannelMetacounterData.md)|  | [optional]
 
 ### Return type
@@ -115,7 +115,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_channel_metadata**
-> CreateChannelMetadataResponse create_channel_metadata(channel_type, channel_url)
+> CreateChannelMetadataResponse create_channel_metadata(api_token, channel_type, channel_url)
 
 Create a channel metadata
 
@@ -142,9 +142,9 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = user__channel_metadata_api.UserChannelMetadataApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
     channel_type = "channel_type_example" # str | 
     channel_url = "channel_url_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
     create_channel_metadata_data = CreateChannelMetadataData(
         channel_type="channel_type_example",
         channel_url="channel_url_example",
@@ -155,7 +155,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Create a channel metadata
-        api_response = api_instance.create_channel_metadata(channel_type, channel_url)
+        api_response = api_instance.create_channel_metadata(api_token, channel_type, channel_url)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserChannelMetadataApi->create_channel_metadata: %s\n" % e)
@@ -164,7 +164,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Create a channel metadata
-        api_response = api_instance.create_channel_metadata(channel_type, channel_url, api_token=api_token, create_channel_metadata_data=create_channel_metadata_data)
+        api_response = api_instance.create_channel_metadata(api_token, channel_type, channel_url, create_channel_metadata_data=create_channel_metadata_data)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserChannelMetadataApi->create_channel_metadata: %s\n" % e)
@@ -175,9 +175,9 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
  **channel_type** | **str**|  |
  **channel_url** | **str**|  |
- **api_token** | **str**|  | [optional]
  **create_channel_metadata_data** | [**CreateChannelMetadataData**](CreateChannelMetadataData.md)|  | [optional]
 
 ### Return type
@@ -203,7 +203,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_user_metadata**
-> CreateUserMetadataResponse create_user_metadata(user_id)
+> CreateUserMetadataResponse create_user_metadata(api_token, user_id)
 
 Create a user metadata
 
@@ -230,8 +230,8 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = user__channel_metadata_api.UserChannelMetadataApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
     user_id = "user_id_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
     create_user_metadata_data = CreateUserMetadataData(
         user_id="user_id_example",
         metadata="metadata_example",
@@ -240,7 +240,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Create a user metadata
-        api_response = api_instance.create_user_metadata(user_id)
+        api_response = api_instance.create_user_metadata(api_token, user_id)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserChannelMetadataApi->create_user_metadata: %s\n" % e)
@@ -249,7 +249,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Create a user metadata
-        api_response = api_instance.create_user_metadata(user_id, api_token=api_token, create_user_metadata_data=create_user_metadata_data)
+        api_response = api_instance.create_user_metadata(api_token, user_id, create_user_metadata_data=create_user_metadata_data)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserChannelMetadataApi->create_user_metadata: %s\n" % e)
@@ -260,8 +260,8 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
  **user_id** | **str**|  |
- **api_token** | **str**|  | [optional]
  **create_user_metadata_data** | [**CreateUserMetadataData**](CreateUserMetadataData.md)|  | [optional]
 
 ### Return type
@@ -287,7 +287,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_channel_metacounter**
-> delete_channel_metacounter(channel_type, channel_url)
+> delete_channel_metacounter(api_token, channel_type, channel_url)
 
 Delete a channel metacounter - When deleting all items of a channel metacounter
 
@@ -312,22 +312,14 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = user__channel_metadata_api.UserChannelMetadataApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
     channel_type = "channel_type_example" # str | 
     channel_url = "channel_url_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Delete a channel metacounter - When deleting all items of a channel metacounter
-        api_instance.delete_channel_metacounter(channel_type, channel_url)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling UserChannelMetadataApi->delete_channel_metacounter: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # Delete a channel metacounter - When deleting all items of a channel metacounter
-        api_instance.delete_channel_metacounter(channel_type, channel_url, api_token=api_token)
+        api_instance.delete_channel_metacounter(api_token, channel_type, channel_url)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserChannelMetadataApi->delete_channel_metacounter: %s\n" % e)
 ```
@@ -337,9 +329,9 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
  **channel_type** | **str**|  |
  **channel_url** | **str**|  |
- **api_token** | **str**|  | [optional]
 
 ### Return type
 
@@ -364,7 +356,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_channel_metacounter_by_key**
-> delete_channel_metacounter_by_key(channel_type, channel_url, key)
+> delete_channel_metacounter_by_key(api_token, channel_type, channel_url, key)
 
 Delete a channel metacounter - When deleting a specific item of a channel metacounter by its key
 
@@ -389,23 +381,15 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = user__channel_metadata_api.UserChannelMetadataApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
     channel_type = "channel_type_example" # str | 
     channel_url = "channel_url_example" # str | 
     key = "key_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Delete a channel metacounter - When deleting a specific item of a channel metacounter by its key
-        api_instance.delete_channel_metacounter_by_key(channel_type, channel_url, key)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling UserChannelMetadataApi->delete_channel_metacounter_by_key: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # Delete a channel metacounter - When deleting a specific item of a channel metacounter by its key
-        api_instance.delete_channel_metacounter_by_key(channel_type, channel_url, key, api_token=api_token)
+        api_instance.delete_channel_metacounter_by_key(api_token, channel_type, channel_url, key)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserChannelMetadataApi->delete_channel_metacounter_by_key: %s\n" % e)
 ```
@@ -415,10 +399,10 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
  **channel_type** | **str**|  |
  **channel_url** | **str**|  |
  **key** | **str**|  |
- **api_token** | **str**|  | [optional]
 
 ### Return type
 
@@ -443,7 +427,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_channel_metadata**
-> delete_channel_metadata(channel_type, channel_url)
+> delete_channel_metadata(api_token, channel_type, channel_url)
 
 Delete a channel metadata - When deleting all items of a channel metadata
 
@@ -468,15 +452,15 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = user__channel_metadata_api.UserChannelMetadataApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
     channel_type = "channel_type_example" # str | 
     channel_url = "channel_url_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
     key = "key_example" # str |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Delete a channel metadata - When deleting all items of a channel metadata
-        api_instance.delete_channel_metadata(channel_type, channel_url)
+        api_instance.delete_channel_metadata(api_token, channel_type, channel_url)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserChannelMetadataApi->delete_channel_metadata: %s\n" % e)
 
@@ -484,7 +468,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Delete a channel metadata - When deleting all items of a channel metadata
-        api_instance.delete_channel_metadata(channel_type, channel_url, api_token=api_token, key=key)
+        api_instance.delete_channel_metadata(api_token, channel_type, channel_url, key=key)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserChannelMetadataApi->delete_channel_metadata: %s\n" % e)
 ```
@@ -494,9 +478,9 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
  **channel_type** | **str**|  |
  **channel_url** | **str**|  |
- **api_token** | **str**|  | [optional]
  **key** | **str**|  | [optional]
 
 ### Return type
@@ -522,7 +506,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_channel_metadata_by_key**
-> delete_channel_metadata_by_key(channel_type, channel_url, key)
+> delete_channel_metadata_by_key(api_token, channel_type, channel_url, key)
 
 Delete a channel metadata - When deleting a specific item of a channel metadata by its key
 
@@ -547,23 +531,15 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = user__channel_metadata_api.UserChannelMetadataApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
     channel_type = "channel_type_example" # str | 
     channel_url = "channel_url_example" # str | 
     key = "key_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Delete a channel metadata - When deleting a specific item of a channel metadata by its key
-        api_instance.delete_channel_metadata_by_key(channel_type, channel_url, key)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling UserChannelMetadataApi->delete_channel_metadata_by_key: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # Delete a channel metadata - When deleting a specific item of a channel metadata by its key
-        api_instance.delete_channel_metadata_by_key(channel_type, channel_url, key, api_token=api_token)
+        api_instance.delete_channel_metadata_by_key(api_token, channel_type, channel_url, key)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserChannelMetadataApi->delete_channel_metadata_by_key: %s\n" % e)
 ```
@@ -573,10 +549,10 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
  **channel_type** | **str**|  |
  **channel_url** | **str**|  |
  **key** | **str**|  |
- **api_token** | **str**|  | [optional]
 
 ### Return type
 
@@ -601,7 +577,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_user_metadata**
-> delete_user_metadata(user_id)
+> delete_user_metadata(api_token, user_id)
 
 Delete a user metadata - When deleting all items of a user metadata
 
@@ -626,14 +602,14 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = user__channel_metadata_api.UserChannelMetadataApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
     user_id = "user_id_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
     key = "key_example" # str |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Delete a user metadata - When deleting all items of a user metadata
-        api_instance.delete_user_metadata(user_id)
+        api_instance.delete_user_metadata(api_token, user_id)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserChannelMetadataApi->delete_user_metadata: %s\n" % e)
 
@@ -641,7 +617,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Delete a user metadata - When deleting all items of a user metadata
-        api_instance.delete_user_metadata(user_id, api_token=api_token, key=key)
+        api_instance.delete_user_metadata(api_token, user_id, key=key)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserChannelMetadataApi->delete_user_metadata: %s\n" % e)
 ```
@@ -651,8 +627,8 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
  **user_id** | **str**|  |
- **api_token** | **str**|  | [optional]
  **key** | **str**|  | [optional]
 
 ### Return type
@@ -678,7 +654,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_user_metadata_by_key**
-> delete_user_metadata_by_key(user_id, key)
+> delete_user_metadata_by_key(api_token, user_id, key)
 
 Delete a user metadata - When deleting a specific item of a user metadata by its key
 
@@ -703,22 +679,14 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = user__channel_metadata_api.UserChannelMetadataApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
     user_id = "user_id_example" # str | 
     key = "key_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Delete a user metadata - When deleting a specific item of a user metadata by its key
-        api_instance.delete_user_metadata_by_key(user_id, key)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling UserChannelMetadataApi->delete_user_metadata_by_key: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # Delete a user metadata - When deleting a specific item of a user metadata by its key
-        api_instance.delete_user_metadata_by_key(user_id, key, api_token=api_token)
+        api_instance.delete_user_metadata_by_key(api_token, user_id, key)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserChannelMetadataApi->delete_user_metadata_by_key: %s\n" % e)
 ```
@@ -728,9 +696,9 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
  **user_id** | **str**|  |
  **key** | **str**|  |
- **api_token** | **str**|  | [optional]
 
 ### Return type
 
@@ -755,7 +723,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_channel_metacounter**
-> UpdateChannelMetacounterResponse update_channel_metacounter(channel_type, channel_url)
+> UpdateChannelMetacounterResponse update_channel_metacounter(api_token, channel_type, channel_url)
 
 Update a channel metacounter - When updating existing items of a channel metacounter by their keys or adding new items to the metacounter
 
@@ -782,9 +750,9 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = user__channel_metadata_api.UserChannelMetadataApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
     channel_type = "channel_type_example" # str | 
     channel_url = "channel_url_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
     update_channel_metacounter_data = UpdateChannelMetacounterData(
         metacounter="metacounter_example",
         mode="mode_example",
@@ -794,7 +762,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Update a channel metacounter - When updating existing items of a channel metacounter by their keys or adding new items to the metacounter
-        api_response = api_instance.update_channel_metacounter(channel_type, channel_url)
+        api_response = api_instance.update_channel_metacounter(api_token, channel_type, channel_url)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserChannelMetadataApi->update_channel_metacounter: %s\n" % e)
@@ -803,7 +771,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Update a channel metacounter - When updating existing items of a channel metacounter by their keys or adding new items to the metacounter
-        api_response = api_instance.update_channel_metacounter(channel_type, channel_url, api_token=api_token, update_channel_metacounter_data=update_channel_metacounter_data)
+        api_response = api_instance.update_channel_metacounter(api_token, channel_type, channel_url, update_channel_metacounter_data=update_channel_metacounter_data)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserChannelMetadataApi->update_channel_metacounter: %s\n" % e)
@@ -814,9 +782,9 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
  **channel_type** | **str**|  |
  **channel_url** | **str**|  |
- **api_token** | **str**|  | [optional]
  **update_channel_metacounter_data** | [**UpdateChannelMetacounterData**](UpdateChannelMetacounterData.md)|  | [optional]
 
 ### Return type
@@ -842,7 +810,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_channel_metacounter_by_key**
-> UpdateChannelMetacounterByKeyResponse update_channel_metacounter_by_key(channel_type, channel_url, key)
+> UpdateChannelMetacounterByKeyResponse update_channel_metacounter_by_key(api_token, channel_type, channel_url, key)
 
 Update a channel metacounter - When updating a specific item of a channel metacounter by its key
 
@@ -867,16 +835,16 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = user__channel_metadata_api.UserChannelMetadataApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
     channel_type = "channel_type_example" # str | 
     channel_url = "channel_url_example" # str | 
     key = "key_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
     body = {} # {str: (bool, date, datetime, dict, float, int, list, str, none_type)} |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Update a channel metacounter - When updating a specific item of a channel metacounter by its key
-        api_response = api_instance.update_channel_metacounter_by_key(channel_type, channel_url, key)
+        api_response = api_instance.update_channel_metacounter_by_key(api_token, channel_type, channel_url, key)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserChannelMetadataApi->update_channel_metacounter_by_key: %s\n" % e)
@@ -885,7 +853,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Update a channel metacounter - When updating a specific item of a channel metacounter by its key
-        api_response = api_instance.update_channel_metacounter_by_key(channel_type, channel_url, key, api_token=api_token, body=body)
+        api_response = api_instance.update_channel_metacounter_by_key(api_token, channel_type, channel_url, key, body=body)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserChannelMetadataApi->update_channel_metacounter_by_key: %s\n" % e)
@@ -896,10 +864,10 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
  **channel_type** | **str**|  |
  **channel_url** | **str**|  |
  **key** | **str**|  |
- **api_token** | **str**|  | [optional]
  **body** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}**|  | [optional]
 
 ### Return type
@@ -925,7 +893,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_channel_metadata**
-> UpdateChannelMetadataResponse update_channel_metadata(channel_type, channel_url)
+> UpdateChannelMetadataResponse update_channel_metadata(api_token, channel_type, channel_url)
 
 Update a channel metadata - When updating existing items of a channel metadata by their keys or adding new items to the metadata
 
@@ -951,9 +919,9 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = user__channel_metadata_api.UserChannelMetadataApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
     channel_type = "channel_type_example" # str | 
     channel_url = "channel_url_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
     update_channel_metadata_data = UpdateChannelMetadataData(
         metadata="metadata_example",
         upsert=True,
@@ -962,7 +930,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Update a channel metadata - When updating existing items of a channel metadata by their keys or adding new items to the metadata
-        api_response = api_instance.update_channel_metadata(channel_type, channel_url)
+        api_response = api_instance.update_channel_metadata(api_token, channel_type, channel_url)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserChannelMetadataApi->update_channel_metadata: %s\n" % e)
@@ -971,7 +939,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Update a channel metadata - When updating existing items of a channel metadata by their keys or adding new items to the metadata
-        api_response = api_instance.update_channel_metadata(channel_type, channel_url, api_token=api_token, update_channel_metadata_data=update_channel_metadata_data)
+        api_response = api_instance.update_channel_metadata(api_token, channel_type, channel_url, update_channel_metadata_data=update_channel_metadata_data)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserChannelMetadataApi->update_channel_metadata: %s\n" % e)
@@ -982,9 +950,9 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
  **channel_type** | **str**|  |
  **channel_url** | **str**|  |
- **api_token** | **str**|  | [optional]
  **update_channel_metadata_data** | [**UpdateChannelMetadataData**](UpdateChannelMetadataData.md)|  | [optional]
 
 ### Return type
@@ -1010,7 +978,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_channel_metadata_by_key**
-> UpdateChannelMetadataByKeyResponse update_channel_metadata_by_key(channel_type, channel_url, key)
+> UpdateChannelMetadataByKeyResponse update_channel_metadata_by_key(api_token, channel_type, channel_url, key)
 
 Update a channel metadata - When updating a specific item of a channel metadata by its key
 
@@ -1035,16 +1003,16 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = user__channel_metadata_api.UserChannelMetadataApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
     channel_type = "channel_type_example" # str | 
     channel_url = "channel_url_example" # str | 
     key = "key_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
     body = {} # {str: (bool, date, datetime, dict, float, int, list, str, none_type)} |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Update a channel metadata - When updating a specific item of a channel metadata by its key
-        api_response = api_instance.update_channel_metadata_by_key(channel_type, channel_url, key)
+        api_response = api_instance.update_channel_metadata_by_key(api_token, channel_type, channel_url, key)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserChannelMetadataApi->update_channel_metadata_by_key: %s\n" % e)
@@ -1053,7 +1021,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Update a channel metadata - When updating a specific item of a channel metadata by its key
-        api_response = api_instance.update_channel_metadata_by_key(channel_type, channel_url, key, api_token=api_token, body=body)
+        api_response = api_instance.update_channel_metadata_by_key(api_token, channel_type, channel_url, key, body=body)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserChannelMetadataApi->update_channel_metadata_by_key: %s\n" % e)
@@ -1064,10 +1032,10 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
  **channel_type** | **str**|  |
  **channel_url** | **str**|  |
  **key** | **str**|  |
- **api_token** | **str**|  | [optional]
  **body** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}**|  | [optional]
 
 ### Return type
@@ -1093,7 +1061,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_user_metadata**
-> UpdateUserMetadataResponse update_user_metadata(user_id)
+> UpdateUserMetadataResponse update_user_metadata(api_token, user_id)
 
 Update a user metadata - When updating existing items of a user metadata by their keys or adding new items to the metadata
 
@@ -1120,8 +1088,8 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = user__channel_metadata_api.UserChannelMetadataApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
     user_id = "user_id_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
     update_user_metadata_data = UpdateUserMetadataData(
         metadata="metadata_example",
         upsert=True,
@@ -1130,7 +1098,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Update a user metadata - When updating existing items of a user metadata by their keys or adding new items to the metadata
-        api_response = api_instance.update_user_metadata(user_id)
+        api_response = api_instance.update_user_metadata(api_token, user_id)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserChannelMetadataApi->update_user_metadata: %s\n" % e)
@@ -1139,7 +1107,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Update a user metadata - When updating existing items of a user metadata by their keys or adding new items to the metadata
-        api_response = api_instance.update_user_metadata(user_id, api_token=api_token, update_user_metadata_data=update_user_metadata_data)
+        api_response = api_instance.update_user_metadata(api_token, user_id, update_user_metadata_data=update_user_metadata_data)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserChannelMetadataApi->update_user_metadata: %s\n" % e)
@@ -1150,8 +1118,8 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
  **user_id** | **str**|  |
- **api_token** | **str**|  | [optional]
  **update_user_metadata_data** | [**UpdateUserMetadataData**](UpdateUserMetadataData.md)|  | [optional]
 
 ### Return type
@@ -1177,7 +1145,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_user_metadata_by_key**
-> UpdateUserMetadataByKeyResponse update_user_metadata_by_key(user_id, key)
+> UpdateUserMetadataByKeyResponse update_user_metadata_by_key(api_token, user_id, key)
 
 Update a user metadata - When updating a specific item of a user metadata by its key
 
@@ -1202,15 +1170,15 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = user__channel_metadata_api.UserChannelMetadataApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
     user_id = "user_id_example" # str | 
     key = "key_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
     body = {} # {str: (bool, date, datetime, dict, float, int, list, str, none_type)} |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Update a user metadata - When updating a specific item of a user metadata by its key
-        api_response = api_instance.update_user_metadata_by_key(user_id, key)
+        api_response = api_instance.update_user_metadata_by_key(api_token, user_id, key)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserChannelMetadataApi->update_user_metadata_by_key: %s\n" % e)
@@ -1219,7 +1187,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Update a user metadata - When updating a specific item of a user metadata by its key
-        api_response = api_instance.update_user_metadata_by_key(user_id, key, api_token=api_token, body=body)
+        api_response = api_instance.update_user_metadata_by_key(api_token, user_id, key, body=body)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserChannelMetadataApi->update_user_metadata_by_key: %s\n" % e)
@@ -1230,9 +1198,9 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
  **user_id** | **str**|  |
  **key** | **str**|  |
- **api_token** | **str**|  | [optional]
  **body** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}**|  | [optional]
 
 ### Return type
@@ -1258,7 +1226,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **view_channel_metacounter**
-> ViewChannelMetacounterResponse view_channel_metacounter(channel_type, channel_url)
+> ViewChannelMetacounterResponse view_channel_metacounter(api_token, channel_type, channel_url)
 
 View a channel metacounter - When retrieving all items of a channel metacounter
 
@@ -1284,9 +1252,9 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = user__channel_metadata_api.UserChannelMetadataApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
     channel_type = "channel_type_example" # str | 
     channel_url = "channel_url_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
     key = "key_example" # str |  (optional)
     keys = [
         "keys_example",
@@ -1295,7 +1263,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # View a channel metacounter - When retrieving all items of a channel metacounter
-        api_response = api_instance.view_channel_metacounter(channel_type, channel_url)
+        api_response = api_instance.view_channel_metacounter(api_token, channel_type, channel_url)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserChannelMetadataApi->view_channel_metacounter: %s\n" % e)
@@ -1304,7 +1272,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # View a channel metacounter - When retrieving all items of a channel metacounter
-        api_response = api_instance.view_channel_metacounter(channel_type, channel_url, api_token=api_token, key=key, keys=keys)
+        api_response = api_instance.view_channel_metacounter(api_token, channel_type, channel_url, key=key, keys=keys)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserChannelMetadataApi->view_channel_metacounter: %s\n" % e)
@@ -1315,9 +1283,9 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
  **channel_type** | **str**|  |
  **channel_url** | **str**|  |
- **api_token** | **str**|  | [optional]
  **key** | **str**|  | [optional]
  **keys** | **[str]**|  | [optional]
 
@@ -1344,7 +1312,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **view_channel_metacounter_by_key**
-> ViewChannelMetacounterByKeyResponse view_channel_metacounter_by_key(channel_type, channel_url, key)
+> ViewChannelMetacounterByKeyResponse view_channel_metacounter_by_key(api_token, channel_type, channel_url, key)
 
 View a channel metacounter - When retrieving a specific item of a channel metacounter by its key
 
@@ -1370,24 +1338,15 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = user__channel_metadata_api.UserChannelMetadataApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
     channel_type = "channel_type_example" # str | 
     channel_url = "channel_url_example" # str | 
     key = "key_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # View a channel metacounter - When retrieving a specific item of a channel metacounter by its key
-        api_response = api_instance.view_channel_metacounter_by_key(channel_type, channel_url, key)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling UserChannelMetadataApi->view_channel_metacounter_by_key: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # View a channel metacounter - When retrieving a specific item of a channel metacounter by its key
-        api_response = api_instance.view_channel_metacounter_by_key(channel_type, channel_url, key, api_token=api_token)
+        api_response = api_instance.view_channel_metacounter_by_key(api_token, channel_type, channel_url, key)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserChannelMetadataApi->view_channel_metacounter_by_key: %s\n" % e)
@@ -1398,10 +1357,10 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
  **channel_type** | **str**|  |
  **channel_url** | **str**|  |
  **key** | **str**|  |
- **api_token** | **str**|  | [optional]
 
 ### Return type
 
@@ -1426,7 +1385,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **view_channel_metadata**
-> ViewChannelMetadataResponse view_channel_metadata(channel_type, channel_url)
+> ViewChannelMetadataResponse view_channel_metadata(api_token, channel_type, channel_url)
 
 View a channel metadata - When retrieving all items of a channel metadata
 
@@ -1451,9 +1410,9 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = user__channel_metadata_api.UserChannelMetadataApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
     channel_type = "channel_type_example" # str | 
     channel_url = "channel_url_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
     key = "key_example" # str |  (optional)
     keys = [
         "keys_example",
@@ -1462,7 +1421,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # View a channel metadata - When retrieving all items of a channel metadata
-        api_response = api_instance.view_channel_metadata(channel_type, channel_url)
+        api_response = api_instance.view_channel_metadata(api_token, channel_type, channel_url)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserChannelMetadataApi->view_channel_metadata: %s\n" % e)
@@ -1471,7 +1430,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # View a channel metadata - When retrieving all items of a channel metadata
-        api_response = api_instance.view_channel_metadata(channel_type, channel_url, api_token=api_token, key=key, keys=keys)
+        api_response = api_instance.view_channel_metadata(api_token, channel_type, channel_url, key=key, keys=keys)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserChannelMetadataApi->view_channel_metadata: %s\n" % e)
@@ -1482,9 +1441,9 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
  **channel_type** | **str**|  |
  **channel_url** | **str**|  |
- **api_token** | **str**|  | [optional]
  **key** | **str**|  | [optional]
  **keys** | **[str]**|  | [optional]
 
@@ -1511,7 +1470,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **view_channel_metadata_by_key**
-> ViewChannelMetadataByKeyResponse view_channel_metadata_by_key(channel_type, channel_url, key)
+> ViewChannelMetadataByKeyResponse view_channel_metadata_by_key(api_token, channel_type, channel_url, key)
 
 View a channel metadata - When retrieving a specific item of a channel metadata by its key
 
@@ -1536,24 +1495,15 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = user__channel_metadata_api.UserChannelMetadataApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
     channel_type = "channel_type_example" # str | 
     channel_url = "channel_url_example" # str | 
     key = "key_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # View a channel metadata - When retrieving a specific item of a channel metadata by its key
-        api_response = api_instance.view_channel_metadata_by_key(channel_type, channel_url, key)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling UserChannelMetadataApi->view_channel_metadata_by_key: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # View a channel metadata - When retrieving a specific item of a channel metadata by its key
-        api_response = api_instance.view_channel_metadata_by_key(channel_type, channel_url, key, api_token=api_token)
+        api_response = api_instance.view_channel_metadata_by_key(api_token, channel_type, channel_url, key)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserChannelMetadataApi->view_channel_metadata_by_key: %s\n" % e)
@@ -1564,10 +1514,10 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
  **channel_type** | **str**|  |
  **channel_url** | **str**|  |
  **key** | **str**|  |
- **api_token** | **str**|  | [optional]
 
 ### Return type
 
@@ -1592,7 +1542,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **view_user_metadata**
-> ViewUserMetadataResponse view_user_metadata(user_id)
+> ViewUserMetadataResponse view_user_metadata(api_token, user_id)
 
 View a user metadata - When retrieving all items of a user metadata
 
@@ -1618,8 +1568,8 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = user__channel_metadata_api.UserChannelMetadataApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
     user_id = "user_id_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
     key = "key_example" # str |  (optional)
     keys = [
         "keys_example",
@@ -1628,7 +1578,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # View a user metadata - When retrieving all items of a user metadata
-        api_response = api_instance.view_user_metadata(user_id)
+        api_response = api_instance.view_user_metadata(api_token, user_id)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserChannelMetadataApi->view_user_metadata: %s\n" % e)
@@ -1637,7 +1587,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # View a user metadata - When retrieving all items of a user metadata
-        api_response = api_instance.view_user_metadata(user_id, api_token=api_token, key=key, keys=keys)
+        api_response = api_instance.view_user_metadata(api_token, user_id, key=key, keys=keys)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserChannelMetadataApi->view_user_metadata: %s\n" % e)
@@ -1648,8 +1598,8 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
  **user_id** | **str**|  |
- **api_token** | **str**|  | [optional]
  **key** | **str**|  | [optional]
  **keys** | **[str]**|  | [optional]
 
@@ -1676,7 +1626,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **view_user_metadata_by_key**
-> ViewUserMetadataByKeyResponse view_user_metadata_by_key(user_id, key)
+> ViewUserMetadataByKeyResponse view_user_metadata_by_key(api_token, user_id, key)
 
 View a user metadata - When retrieving a specific item of a user metadata by its key
 
@@ -1701,23 +1651,14 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = user__channel_metadata_api.UserChannelMetadataApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
     user_id = "user_id_example" # str | 
     key = "key_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # View a user metadata - When retrieving a specific item of a user metadata by its key
-        api_response = api_instance.view_user_metadata_by_key(user_id, key)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling UserChannelMetadataApi->view_user_metadata_by_key: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # View a user metadata - When retrieving a specific item of a user metadata by its key
-        api_response = api_instance.view_user_metadata_by_key(user_id, key, api_token=api_token)
+        api_response = api_instance.view_user_metadata_by_key(api_token, user_id, key)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserChannelMetadataApi->view_user_metadata_by_key: %s\n" % e)
@@ -1728,9 +1669,9 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
  **user_id** | **str**|  |
  **key** | **str**|  |
- **api_token** | **str**|  | [optional]
 
 ### Return type
 

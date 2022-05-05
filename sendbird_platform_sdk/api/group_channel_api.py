@@ -41,11 +41,14 @@ from sendbird_platform_sdk.model.gc_mute_user_data import GcMuteUserData
 from sendbird_platform_sdk.model.gc_register_operators_data import GcRegisterOperatorsData
 from sendbird_platform_sdk.model.gc_register_operators_response import GcRegisterOperatorsResponse
 from sendbird_platform_sdk.model.gc_reset_chat_history_data import GcResetChatHistoryData
+from sendbird_platform_sdk.model.gc_reset_chat_history_response import GcResetChatHistoryResponse
 from sendbird_platform_sdk.model.gc_update_ban_by_id_data import GcUpdateBanByIdData
+from sendbird_platform_sdk.model.gc_update_ban_by_id_response import GcUpdateBanByIdResponse
 from sendbird_platform_sdk.model.gc_update_channel_by_url_data import GcUpdateChannelByUrlData
+from sendbird_platform_sdk.model.gc_view_ban_by_id_response import GcViewBanByIdResponse
 from sendbird_platform_sdk.model.gc_view_mute_by_id_response import GcViewMuteByIdResponse
+from sendbird_platform_sdk.model.inline_response200 import InlineResponse200
 from sendbird_platform_sdk.model.send_bird_group_channel import SendBirdGroupChannel
-from sendbird_platform_sdk.model.send_bird_user import SendBirdUser
 
 
 class GroupChannelApi(object):
@@ -70,11 +73,12 @@ class GroupChannelApi(object):
             },
             params_map={
                 'all': [
-                    'channel_url',
                     'api_token',
+                    'channel_url',
                     'gc_accept_invitation_data',
                 ],
                 'required': [
+                    'api_token',
                     'channel_url',
                 ],
                 'nullable': [
@@ -90,20 +94,20 @@ class GroupChannelApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'channel_url':
-                        (str,),
                     'api_token':
+                        (str,),
+                    'channel_url':
                         (str,),
                     'gc_accept_invitation_data':
                         (GcAcceptInvitationData,),
                 },
                 'attribute_map': {
-                    'channel_url': 'channel_url',
                     'api_token': 'Api-Token',
+                    'channel_url': 'channel_url',
                 },
                 'location_map': {
-                    'channel_url': 'path',
                     'api_token': 'header',
+                    'channel_url': 'path',
                     'gc_accept_invitation_data': 'body',
                 },
                 'collection_format_map': {
@@ -130,11 +134,12 @@ class GroupChannelApi(object):
             },
             params_map={
                 'all': [
-                    'channel_url',
                     'api_token',
+                    'channel_url',
                     'gc_ban_user_data',
                 ],
                 'required': [
+                    'api_token',
                     'channel_url',
                 ],
                 'nullable': [
@@ -150,20 +155,20 @@ class GroupChannelApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'channel_url':
-                        (str,),
                     'api_token':
+                        (str,),
+                    'channel_url':
                         (str,),
                     'gc_ban_user_data':
                         (GcBanUserData,),
                 },
                 'attribute_map': {
-                    'channel_url': 'channel_url',
                     'api_token': 'Api-Token',
+                    'channel_url': 'channel_url',
                 },
                 'location_map': {
-                    'channel_url': 'path',
                     'api_token': 'header',
+                    'channel_url': 'path',
                     'gc_ban_user_data': 'body',
                 },
                 'collection_format_map': {
@@ -181,7 +186,7 @@ class GroupChannelApi(object):
         )
         self.gc_cancel_the_registration_of_operators_endpoint = _Endpoint(
             settings={
-                'response_type': None,
+                'response_type': (InlineResponse200,),
                 'auth': [],
                 'endpoint_path': '/v3/group_channels/{channel_url}/operators',
                 'operation_id': 'gc_cancel_the_registration_of_operators',
@@ -190,12 +195,13 @@ class GroupChannelApi(object):
             },
             params_map={
                 'all': [
+                    'api_token',
                     'channel_url',
                     'operator_ids',
-                    'api_token',
                     'delete_all',
                 ],
                 'required': [
+                    'api_token',
                     'channel_url',
                     'operator_ids',
                 ],
@@ -212,25 +218,25 @@ class GroupChannelApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
+                    'api_token':
+                        (str,),
                     'channel_url':
                         (str,),
                     'operator_ids':
                         ([str],),
-                    'api_token':
-                        (str,),
                     'delete_all':
                         (bool,),
                 },
                 'attribute_map': {
+                    'api_token': 'Api-Token',
                     'channel_url': 'channel_url',
                     'operator_ids': 'operator_ids',
-                    'api_token': 'Api-Token',
                     'delete_all': 'delete_all',
                 },
                 'location_map': {
+                    'api_token': 'header',
                     'channel_url': 'path',
                     'operator_ids': 'query',
-                    'api_token': 'header',
                     'delete_all': 'query',
                 },
                 'collection_format_map': {
@@ -238,7 +244,9 @@ class GroupChannelApi(object):
                 }
             },
             headers_map={
-                'accept': [],
+                'accept': [
+                    'application/json'
+                ],
                 'content_type': [],
             },
             api_client=api_client
@@ -254,11 +262,12 @@ class GroupChannelApi(object):
             },
             params_map={
                 'all': [
+                    'api_token',
                     'channel_url',
                     'user_id',
-                    'api_token',
                 ],
                 'required': [
+                    'api_token',
                     'channel_url',
                     'user_id',
                 ],
@@ -275,22 +284,22 @@ class GroupChannelApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
+                    'api_token':
+                        (str,),
                     'channel_url':
                         (str,),
                     'user_id':
                         (str,),
-                    'api_token':
-                        (str,),
                 },
                 'attribute_map': {
+                    'api_token': 'Api-Token',
                     'channel_url': 'channel_url',
                     'user_id': 'user_id',
-                    'api_token': 'Api-Token',
                 },
                 'location_map': {
+                    'api_token': 'header',
                     'channel_url': 'path',
                     'user_id': 'path',
-                    'api_token': 'header',
                 },
                 'collection_format_map': {
                 }
@@ -317,7 +326,9 @@ class GroupChannelApi(object):
                     'api_token',
                     'gc_create_channel_data',
                 ],
-                'required': [],
+                'required': [
+                    'api_token',
+                ],
                 'nullable': [
                 ],
                 'enum': [
@@ -358,7 +369,7 @@ class GroupChannelApi(object):
         )
         self.gc_decline_invitation_endpoint = _Endpoint(
             settings={
-                'response_type': None,
+                'response_type': (InlineResponse200,),
                 'auth': [],
                 'endpoint_path': '/v3/group_channels/{channel_url}/decline',
                 'operation_id': 'gc_decline_invitation',
@@ -367,11 +378,12 @@ class GroupChannelApi(object):
             },
             params_map={
                 'all': [
-                    'channel_url',
                     'api_token',
+                    'channel_url',
                     'gc_decline_invitation_data',
                 ],
                 'required': [
+                    'api_token',
                     'channel_url',
                 ],
                 'nullable': [
@@ -387,27 +399,29 @@ class GroupChannelApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'channel_url':
-                        (str,),
                     'api_token':
+                        (str,),
+                    'channel_url':
                         (str,),
                     'gc_decline_invitation_data':
                         (GcDeclineInvitationData,),
                 },
                 'attribute_map': {
-                    'channel_url': 'channel_url',
                     'api_token': 'Api-Token',
+                    'channel_url': 'channel_url',
                 },
                 'location_map': {
-                    'channel_url': 'path',
                     'api_token': 'header',
+                    'channel_url': 'path',
                     'gc_decline_invitation_data': 'body',
                 },
                 'collection_format_map': {
                 }
             },
             headers_map={
-                'accept': [],
+                'accept': [
+                    'application/json'
+                ],
                 'content_type': [
                     'application/json'
                 ]
@@ -416,7 +430,7 @@ class GroupChannelApi(object):
         )
         self.gc_delete_channel_by_url_endpoint = _Endpoint(
             settings={
-                'response_type': None,
+                'response_type': (InlineResponse200,),
                 'auth': [],
                 'endpoint_path': '/v3/group_channels/{channel_url}',
                 'operation_id': 'gc_delete_channel_by_url',
@@ -425,10 +439,11 @@ class GroupChannelApi(object):
             },
             params_map={
                 'all': [
-                    'channel_url',
                     'api_token',
+                    'channel_url',
                 ],
                 'required': [
+                    'api_token',
                     'channel_url',
                 ],
                 'nullable': [
@@ -444,24 +459,26 @@ class GroupChannelApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'channel_url':
-                        (str,),
                     'api_token':
+                        (str,),
+                    'channel_url':
                         (str,),
                 },
                 'attribute_map': {
-                    'channel_url': 'channel_url',
                     'api_token': 'Api-Token',
+                    'channel_url': 'channel_url',
                 },
                 'location_map': {
-                    'channel_url': 'path',
                     'api_token': 'header',
+                    'channel_url': 'path',
                 },
                 'collection_format_map': {
                 }
             },
             headers_map={
-                'accept': [],
+                'accept': [
+                    'application/json'
+                ],
                 'content_type': [],
             },
             api_client=api_client
@@ -477,11 +494,12 @@ class GroupChannelApi(object):
             },
             params_map={
                 'all': [
-                    'channel_url',
                     'api_token',
+                    'channel_url',
                     'gc_freeze_channel_data',
                 ],
                 'required': [
+                    'api_token',
                     'channel_url',
                 ],
                 'nullable': [
@@ -497,20 +515,20 @@ class GroupChannelApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'channel_url':
-                        (str,),
                     'api_token':
+                        (str,),
+                    'channel_url':
                         (str,),
                     'gc_freeze_channel_data':
                         (GcFreezeChannelData,),
                 },
                 'attribute_map': {
-                    'channel_url': 'channel_url',
                     'api_token': 'Api-Token',
+                    'channel_url': 'channel_url',
                 },
                 'location_map': {
-                    'channel_url': 'path',
                     'api_token': 'header',
+                    'channel_url': 'path',
                     'gc_freeze_channel_data': 'body',
                 },
                 'collection_format_map': {
@@ -528,7 +546,7 @@ class GroupChannelApi(object):
         )
         self.gc_hide_or_archive_channel_endpoint = _Endpoint(
             settings={
-                'response_type': None,
+                'response_type': (InlineResponse200,),
                 'auth': [],
                 'endpoint_path': '/v3/group_channels/{channel_url}/hide',
                 'operation_id': 'gc_hide_or_archive_channel',
@@ -537,11 +555,12 @@ class GroupChannelApi(object):
             },
             params_map={
                 'all': [
-                    'channel_url',
                     'api_token',
+                    'channel_url',
                     'gc_hide_or_archive_channel_data',
                 ],
                 'required': [
+                    'api_token',
                     'channel_url',
                 ],
                 'nullable': [
@@ -557,27 +576,29 @@ class GroupChannelApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'channel_url':
-                        (str,),
                     'api_token':
+                        (str,),
+                    'channel_url':
                         (str,),
                     'gc_hide_or_archive_channel_data':
                         (GcHideOrArchiveChannelData,),
                 },
                 'attribute_map': {
-                    'channel_url': 'channel_url',
                     'api_token': 'Api-Token',
+                    'channel_url': 'channel_url',
                 },
                 'location_map': {
-                    'channel_url': 'path',
                     'api_token': 'header',
+                    'channel_url': 'path',
                     'gc_hide_or_archive_channel_data': 'body',
                 },
                 'collection_format_map': {
                 }
             },
             headers_map={
-                'accept': [],
+                'accept': [
+                    'application/json'
+                ],
                 'content_type': [
                     'application/json'
                 ]
@@ -595,11 +616,12 @@ class GroupChannelApi(object):
             },
             params_map={
                 'all': [
-                    'channel_url',
                     'api_token',
+                    'channel_url',
                     'gc_invite_as_members_data',
                 ],
                 'required': [
+                    'api_token',
                     'channel_url',
                 ],
                 'nullable': [
@@ -615,20 +637,20 @@ class GroupChannelApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'channel_url':
-                        (str,),
                     'api_token':
+                        (str,),
+                    'channel_url':
                         (str,),
                     'gc_invite_as_members_data':
                         (GcInviteAsMembersData,),
                 },
                 'attribute_map': {
-                    'channel_url': 'channel_url',
                     'api_token': 'Api-Token',
+                    'channel_url': 'channel_url',
                 },
                 'location_map': {
-                    'channel_url': 'path',
                     'api_token': 'header',
+                    'channel_url': 'path',
                     'gc_invite_as_members_data': 'body',
                 },
                 'collection_format_map': {
@@ -655,11 +677,12 @@ class GroupChannelApi(object):
             },
             params_map={
                 'all': [
-                    'channel_url',
                     'api_token',
+                    'channel_url',
                     'gc_join_channel_data',
                 ],
                 'required': [
+                    'api_token',
                     'channel_url',
                 ],
                 'nullable': [
@@ -675,20 +698,20 @@ class GroupChannelApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'channel_url':
-                        (str,),
                     'api_token':
+                        (str,),
+                    'channel_url':
                         (str,),
                     'gc_join_channel_data':
                         (GcJoinChannelData,),
                 },
                 'attribute_map': {
-                    'channel_url': 'channel_url',
                     'api_token': 'Api-Token',
+                    'channel_url': 'channel_url',
                 },
                 'location_map': {
-                    'channel_url': 'path',
                     'api_token': 'header',
+                    'channel_url': 'path',
                     'gc_join_channel_data': 'body',
                 },
                 'collection_format_map': {
@@ -704,7 +727,7 @@ class GroupChannelApi(object):
         )
         self.gc_leave_channel_endpoint = _Endpoint(
             settings={
-                'response_type': None,
+                'response_type': (InlineResponse200,),
                 'auth': [],
                 'endpoint_path': '/v3/group_channels/{channel_url}/leave',
                 'operation_id': 'gc_leave_channel',
@@ -713,11 +736,12 @@ class GroupChannelApi(object):
             },
             params_map={
                 'all': [
-                    'channel_url',
                     'api_token',
+                    'channel_url',
                     'gc_leave_channel_data',
                 ],
                 'required': [
+                    'api_token',
                     'channel_url',
                 ],
                 'nullable': [
@@ -733,27 +757,29 @@ class GroupChannelApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'channel_url':
-                        (str,),
                     'api_token':
+                        (str,),
+                    'channel_url':
                         (str,),
                     'gc_leave_channel_data':
                         (GcLeaveChannelData,),
                 },
                 'attribute_map': {
-                    'channel_url': 'channel_url',
                     'api_token': 'Api-Token',
+                    'channel_url': 'channel_url',
                 },
                 'location_map': {
-                    'channel_url': 'path',
                     'api_token': 'header',
+                    'channel_url': 'path',
                     'gc_leave_channel_data': 'body',
                 },
                 'collection_format_map': {
                 }
             },
             headers_map={
-                'accept': [],
+                'accept': [
+                    'application/json'
+                ],
                 'content_type': [
                     'application/json'
                 ]
@@ -771,12 +797,13 @@ class GroupChannelApi(object):
             },
             params_map={
                 'all': [
-                    'channel_url',
                     'api_token',
+                    'channel_url',
                     'token',
                     'limit',
                 ],
                 'required': [
+                    'api_token',
                     'channel_url',
                 ],
                 'nullable': [
@@ -792,9 +819,9 @@ class GroupChannelApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'channel_url':
-                        (str,),
                     'api_token':
+                        (str,),
+                    'channel_url':
                         (str,),
                     'token':
                         (str,),
@@ -802,14 +829,14 @@ class GroupChannelApi(object):
                         (int,),
                 },
                 'attribute_map': {
-                    'channel_url': 'channel_url',
                     'api_token': 'Api-Token',
+                    'channel_url': 'channel_url',
                     'token': 'token',
                     'limit': 'limit',
                 },
                 'location_map': {
-                    'channel_url': 'path',
                     'api_token': 'header',
+                    'channel_url': 'path',
                     'token': 'query',
                     'limit': 'query',
                 },
@@ -879,7 +906,9 @@ class GroupChannelApi(object):
                     'members_in',
                     'user_id',
                 ],
-                'required': [],
+                'required': [
+                    'api_token',
+                ],
                 'nullable': [
                 ],
                 'enum': [
@@ -1092,8 +1121,8 @@ class GroupChannelApi(object):
             },
             params_map={
                 'all': [
-                    'channel_url',
                     'api_token',
+                    'channel_url',
                     'token',
                     'limit',
                     'show_delivery_receipt',
@@ -1105,6 +1134,7 @@ class GroupChannelApi(object):
                     'nickname_startswith',
                 ],
                 'required': [
+                    'api_token',
                     'channel_url',
                 ],
                 'nullable': [
@@ -1120,9 +1150,9 @@ class GroupChannelApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'channel_url':
-                        (str,),
                     'api_token':
+                        (str,),
+                    'channel_url':
                         (str,),
                     'token':
                         (str,),
@@ -1144,8 +1174,8 @@ class GroupChannelApi(object):
                         (str,),
                 },
                 'attribute_map': {
-                    'channel_url': 'channel_url',
                     'api_token': 'Api-Token',
+                    'channel_url': 'channel_url',
                     'token': 'token',
                     'limit': 'limit',
                     'show_delivery_receipt': 'show_delivery_receipt',
@@ -1157,8 +1187,8 @@ class GroupChannelApi(object):
                     'nickname_startswith': 'nickname_startswith',
                 },
                 'location_map': {
-                    'channel_url': 'path',
                     'api_token': 'header',
+                    'channel_url': 'path',
                     'token': 'query',
                     'limit': 'query',
                     'show_delivery_receipt': 'query',
@@ -1191,12 +1221,13 @@ class GroupChannelApi(object):
             },
             params_map={
                 'all': [
-                    'channel_url',
                     'api_token',
+                    'channel_url',
                     'token',
                     'limit',
                 ],
                 'required': [
+                    'api_token',
                     'channel_url',
                 ],
                 'nullable': [
@@ -1212,9 +1243,9 @@ class GroupChannelApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'channel_url':
-                        (str,),
                     'api_token':
+                        (str,),
+                    'channel_url':
                         (str,),
                     'token':
                         (str,),
@@ -1222,14 +1253,14 @@ class GroupChannelApi(object):
                         (int,),
                 },
                 'attribute_map': {
-                    'channel_url': 'channel_url',
                     'api_token': 'Api-Token',
+                    'channel_url': 'channel_url',
                     'token': 'token',
                     'limit': 'limit',
                 },
                 'location_map': {
-                    'channel_url': 'path',
                     'api_token': 'header',
+                    'channel_url': 'path',
                     'token': 'query',
                     'limit': 'query',
                 },
@@ -1255,12 +1286,13 @@ class GroupChannelApi(object):
             },
             params_map={
                 'all': [
-                    'channel_url',
                     'api_token',
+                    'channel_url',
                     'token',
                     'limit',
                 ],
                 'required': [
+                    'api_token',
                     'channel_url',
                 ],
                 'nullable': [
@@ -1276,9 +1308,9 @@ class GroupChannelApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'channel_url':
-                        (str,),
                     'api_token':
+                        (str,),
+                    'channel_url':
                         (str,),
                     'token':
                         (str,),
@@ -1286,14 +1318,14 @@ class GroupChannelApi(object):
                         (int,),
                 },
                 'attribute_map': {
-                    'channel_url': 'channel_url',
                     'api_token': 'Api-Token',
+                    'channel_url': 'channel_url',
                     'token': 'token',
                     'limit': 'limit',
                 },
                 'location_map': {
-                    'channel_url': 'path',
                     'api_token': 'header',
+                    'channel_url': 'path',
                     'token': 'query',
                     'limit': 'query',
                 },
@@ -1319,11 +1351,12 @@ class GroupChannelApi(object):
             },
             params_map={
                 'all': [
-                    'channel_url',
                     'api_token',
+                    'channel_url',
                     'gc_mute_user_data',
                 ],
                 'required': [
+                    'api_token',
                     'channel_url',
                 ],
                 'nullable': [
@@ -1339,20 +1372,20 @@ class GroupChannelApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'channel_url':
-                        (str,),
                     'api_token':
+                        (str,),
+                    'channel_url':
                         (str,),
                     'gc_mute_user_data':
                         (GcMuteUserData,),
                 },
                 'attribute_map': {
-                    'channel_url': 'channel_url',
                     'api_token': 'Api-Token',
+                    'channel_url': 'channel_url',
                 },
                 'location_map': {
-                    'channel_url': 'path',
                     'api_token': 'header',
+                    'channel_url': 'path',
                     'gc_mute_user_data': 'body',
                 },
                 'collection_format_map': {
@@ -1379,11 +1412,12 @@ class GroupChannelApi(object):
             },
             params_map={
                 'all': [
-                    'channel_url',
                     'api_token',
+                    'channel_url',
                     'gc_register_operators_data',
                 ],
                 'required': [
+                    'api_token',
                     'channel_url',
                 ],
                 'nullable': [
@@ -1399,20 +1433,20 @@ class GroupChannelApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'channel_url':
-                        (str,),
                     'api_token':
+                        (str,),
+                    'channel_url':
                         (str,),
                     'gc_register_operators_data':
                         (GcRegisterOperatorsData,),
                 },
                 'attribute_map': {
-                    'channel_url': 'channel_url',
                     'api_token': 'Api-Token',
+                    'channel_url': 'channel_url',
                 },
                 'location_map': {
-                    'channel_url': 'path',
                     'api_token': 'header',
+                    'channel_url': 'path',
                     'gc_register_operators_data': 'body',
                 },
                 'collection_format_map': {
@@ -1430,7 +1464,7 @@ class GroupChannelApi(object):
         )
         self.gc_reset_chat_history_endpoint = _Endpoint(
             settings={
-                'response_type': None,
+                'response_type': (GcResetChatHistoryResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/group_channels/{channel_url}/reset_user_history',
                 'operation_id': 'gc_reset_chat_history',
@@ -1439,11 +1473,12 @@ class GroupChannelApi(object):
             },
             params_map={
                 'all': [
-                    'channel_url',
                     'api_token',
+                    'channel_url',
                     'gc_reset_chat_history_data',
                 ],
                 'required': [
+                    'api_token',
                     'channel_url',
                 ],
                 'nullable': [
@@ -1459,27 +1494,29 @@ class GroupChannelApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'channel_url':
-                        (str,),
                     'api_token':
+                        (str,),
+                    'channel_url':
                         (str,),
                     'gc_reset_chat_history_data':
                         (GcResetChatHistoryData,),
                 },
                 'attribute_map': {
-                    'channel_url': 'channel_url',
                     'api_token': 'Api-Token',
+                    'channel_url': 'channel_url',
                 },
                 'location_map': {
-                    'channel_url': 'path',
                     'api_token': 'header',
+                    'channel_url': 'path',
                     'gc_reset_chat_history_data': 'body',
                 },
                 'collection_format_map': {
                 }
             },
             headers_map={
-                'accept': [],
+                'accept': [
+                    'application/json'
+                ],
                 'content_type': [
                     'application/json'
                 ]
@@ -1488,7 +1525,7 @@ class GroupChannelApi(object):
         )
         self.gc_unban_user_by_id_endpoint = _Endpoint(
             settings={
-                'response_type': None,
+                'response_type': (InlineResponse200,),
                 'auth': [],
                 'endpoint_path': '/v3/group_channels/{channel_url}/ban/{banned_user_id}',
                 'operation_id': 'gc_unban_user_by_id',
@@ -1497,11 +1534,12 @@ class GroupChannelApi(object):
             },
             params_map={
                 'all': [
+                    'api_token',
                     'channel_url',
                     'banned_user_id',
-                    'api_token',
                 ],
                 'required': [
+                    'api_token',
                     'channel_url',
                     'banned_user_id',
                 ],
@@ -1518,35 +1556,37 @@ class GroupChannelApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
+                    'api_token':
+                        (str,),
                     'channel_url':
                         (str,),
                     'banned_user_id':
                         (str,),
-                    'api_token':
-                        (str,),
                 },
                 'attribute_map': {
+                    'api_token': 'Api-Token',
                     'channel_url': 'channel_url',
                     'banned_user_id': 'banned_user_id',
-                    'api_token': 'Api-Token',
                 },
                 'location_map': {
+                    'api_token': 'header',
                     'channel_url': 'path',
                     'banned_user_id': 'path',
-                    'api_token': 'header',
                 },
                 'collection_format_map': {
                 }
             },
             headers_map={
-                'accept': [],
+                'accept': [
+                    'application/json'
+                ],
                 'content_type': [],
             },
             api_client=api_client
         )
         self.gc_unhide_or_unarchive_channel_endpoint = _Endpoint(
             settings={
-                'response_type': None,
+                'response_type': (InlineResponse200,),
                 'auth': [],
                 'endpoint_path': '/v3/group_channels/{channel_url}/hide',
                 'operation_id': 'gc_unhide_or_unarchive_channel',
@@ -1555,12 +1595,13 @@ class GroupChannelApi(object):
             },
             params_map={
                 'all': [
+                    'api_token',
                     'channel_url',
                     'user_id',
-                    'api_token',
                     'should_unhide_all',
                 ],
                 'required': [
+                    'api_token',
                     'channel_url',
                     'user_id',
                 ],
@@ -1577,39 +1618,41 @@ class GroupChannelApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
+                    'api_token':
+                        (str,),
                     'channel_url':
                         (str,),
                     'user_id':
-                        (str,),
-                    'api_token':
                         (str,),
                     'should_unhide_all':
                         (bool,),
                 },
                 'attribute_map': {
+                    'api_token': 'Api-Token',
                     'channel_url': 'channel_url',
                     'user_id': 'user_id',
-                    'api_token': 'Api-Token',
                     'should_unhide_all': 'should_unhide_all',
                 },
                 'location_map': {
+                    'api_token': 'header',
                     'channel_url': 'path',
                     'user_id': 'query',
-                    'api_token': 'header',
                     'should_unhide_all': 'query',
                 },
                 'collection_format_map': {
                 }
             },
             headers_map={
-                'accept': [],
+                'accept': [
+                    'application/json'
+                ],
                 'content_type': [],
             },
             api_client=api_client
         )
         self.gc_unmute_user_by_id_endpoint = _Endpoint(
             settings={
-                'response_type': None,
+                'response_type': (InlineResponse200,),
                 'auth': [],
                 'endpoint_path': '/v3/group_channels/{channel_url}/mute/{muted_user_id}',
                 'operation_id': 'gc_unmute_user_by_id',
@@ -1618,11 +1661,12 @@ class GroupChannelApi(object):
             },
             params_map={
                 'all': [
+                    'api_token',
                     'channel_url',
                     'muted_user_id',
-                    'api_token',
                 ],
                 'required': [
+                    'api_token',
                     'channel_url',
                     'muted_user_id',
                 ],
@@ -1639,35 +1683,37 @@ class GroupChannelApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
+                    'api_token':
+                        (str,),
                     'channel_url':
                         (str,),
                     'muted_user_id':
                         (str,),
-                    'api_token':
-                        (str,),
                 },
                 'attribute_map': {
+                    'api_token': 'Api-Token',
                     'channel_url': 'channel_url',
                     'muted_user_id': 'muted_user_id',
-                    'api_token': 'Api-Token',
                 },
                 'location_map': {
+                    'api_token': 'header',
                     'channel_url': 'path',
                     'muted_user_id': 'path',
-                    'api_token': 'header',
                 },
                 'collection_format_map': {
                 }
             },
             headers_map={
-                'accept': [],
+                'accept': [
+                    'application/json'
+                ],
                 'content_type': [],
             },
             api_client=api_client
         )
         self.gc_update_ban_by_id_endpoint = _Endpoint(
             settings={
-                'response_type': (SendBirdUser,),
+                'response_type': (GcUpdateBanByIdResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/group_channels/{channel_url}/ban/{banned_user_id}',
                 'operation_id': 'gc_update_ban_by_id',
@@ -1676,12 +1722,13 @@ class GroupChannelApi(object):
             },
             params_map={
                 'all': [
+                    'api_token',
                     'channel_url',
                     'banned_user_id',
-                    'api_token',
                     'gc_update_ban_by_id_data',
                 ],
                 'required': [
+                    'api_token',
                     'channel_url',
                     'banned_user_id',
                 ],
@@ -1698,24 +1745,24 @@ class GroupChannelApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
+                    'api_token':
+                        (str,),
                     'channel_url':
                         (str,),
                     'banned_user_id':
-                        (str,),
-                    'api_token':
                         (str,),
                     'gc_update_ban_by_id_data':
                         (GcUpdateBanByIdData,),
                 },
                 'attribute_map': {
+                    'api_token': 'Api-Token',
                     'channel_url': 'channel_url',
                     'banned_user_id': 'banned_user_id',
-                    'api_token': 'Api-Token',
                 },
                 'location_map': {
+                    'api_token': 'header',
                     'channel_url': 'path',
                     'banned_user_id': 'path',
-                    'api_token': 'header',
                     'gc_update_ban_by_id_data': 'body',
                 },
                 'collection_format_map': {
@@ -1742,11 +1789,12 @@ class GroupChannelApi(object):
             },
             params_map={
                 'all': [
-                    'channel_url',
                     'api_token',
+                    'channel_url',
                     'gc_update_channel_by_url_data',
                 ],
                 'required': [
+                    'api_token',
                     'channel_url',
                 ],
                 'nullable': [
@@ -1762,20 +1810,20 @@ class GroupChannelApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'channel_url':
-                        (str,),
                     'api_token':
+                        (str,),
+                    'channel_url':
                         (str,),
                     'gc_update_channel_by_url_data':
                         (GcUpdateChannelByUrlData,),
                 },
                 'attribute_map': {
-                    'channel_url': 'channel_url',
                     'api_token': 'Api-Token',
+                    'channel_url': 'channel_url',
                 },
                 'location_map': {
-                    'channel_url': 'path',
                     'api_token': 'header',
+                    'channel_url': 'path',
                     'gc_update_channel_by_url_data': 'body',
                 },
                 'collection_format_map': {
@@ -1793,7 +1841,7 @@ class GroupChannelApi(object):
         )
         self.gc_view_ban_by_id_endpoint = _Endpoint(
             settings={
-                'response_type': (SendBirdUser,),
+                'response_type': (GcViewBanByIdResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/group_channels/{channel_url}/ban/{banned_user_id}',
                 'operation_id': 'gc_view_ban_by_id',
@@ -1802,11 +1850,12 @@ class GroupChannelApi(object):
             },
             params_map={
                 'all': [
+                    'api_token',
                     'channel_url',
                     'banned_user_id',
-                    'api_token',
                 ],
                 'required': [
+                    'api_token',
                     'channel_url',
                     'banned_user_id',
                 ],
@@ -1823,22 +1872,22 @@ class GroupChannelApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
+                    'api_token':
+                        (str,),
                     'channel_url':
                         (str,),
                     'banned_user_id':
                         (str,),
-                    'api_token':
-                        (str,),
                 },
                 'attribute_map': {
+                    'api_token': 'Api-Token',
                     'channel_url': 'channel_url',
                     'banned_user_id': 'banned_user_id',
-                    'api_token': 'Api-Token',
                 },
                 'location_map': {
+                    'api_token': 'header',
                     'channel_url': 'path',
                     'banned_user_id': 'path',
-                    'api_token': 'header',
                 },
                 'collection_format_map': {
                 }
@@ -1862,8 +1911,8 @@ class GroupChannelApi(object):
             },
             params_map={
                 'all': [
-                    'channel_url',
                     'api_token',
+                    'channel_url',
                     'show_delivery_receipt',
                     'show_read_receipt',
                     'show_member',
@@ -1871,6 +1920,7 @@ class GroupChannelApi(object):
                     'member',
                 ],
                 'required': [
+                    'api_token',
                     'channel_url',
                 ],
                 'nullable': [
@@ -1886,9 +1936,9 @@ class GroupChannelApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'channel_url':
-                        (str,),
                     'api_token':
+                        (str,),
+                    'channel_url':
                         (str,),
                     'show_delivery_receipt':
                         (bool,),
@@ -1902,8 +1952,8 @@ class GroupChannelApi(object):
                         (bool,),
                 },
                 'attribute_map': {
-                    'channel_url': 'channel_url',
                     'api_token': 'Api-Token',
+                    'channel_url': 'channel_url',
                     'show_delivery_receipt': 'show_delivery_receipt',
                     'show_read_receipt': 'show_read_receipt',
                     'show_member': 'show_member',
@@ -1911,8 +1961,8 @@ class GroupChannelApi(object):
                     'member': 'member',
                 },
                 'location_map': {
-                    'channel_url': 'path',
                     'api_token': 'header',
+                    'channel_url': 'path',
                     'show_delivery_receipt': 'query',
                     'show_read_receipt': 'query',
                     'show_member': 'query',
@@ -1941,11 +1991,12 @@ class GroupChannelApi(object):
             },
             params_map={
                 'all': [
+                    'api_token',
                     'channel_url',
                     'muted_user_id',
-                    'api_token',
                 ],
                 'required': [
+                    'api_token',
                     'channel_url',
                     'muted_user_id',
                 ],
@@ -1962,22 +2013,22 @@ class GroupChannelApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
+                    'api_token':
+                        (str,),
                     'channel_url':
                         (str,),
                     'muted_user_id':
                         (str,),
-                    'api_token':
-                        (str,),
                 },
                 'attribute_map': {
+                    'api_token': 'Api-Token',
                     'channel_url': 'channel_url',
                     'muted_user_id': 'muted_user_id',
-                    'api_token': 'Api-Token',
                 },
                 'location_map': {
+                    'api_token': 'header',
                     'channel_url': 'path',
                     'muted_user_id': 'path',
-                    'api_token': 'header',
                 },
                 'collection_format_map': {
                 }
@@ -1993,6 +2044,7 @@ class GroupChannelApi(object):
 
     def gc_accept_invitation(
         self,
+        api_token,
         channel_url,
         **kwargs
     ):
@@ -2002,14 +2054,14 @@ class GroupChannelApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.gc_accept_invitation(channel_url, async_req=True)
+        >>> thread = api.gc_accept_invitation(api_token, channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             channel_url (str):
 
         Keyword Args:
-            api_token (str): [optional]
             gc_accept_invitation_data (GcAcceptInvitationData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -2060,12 +2112,15 @@ class GroupChannelApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['channel_url'] = \
             channel_url
         return self.gc_accept_invitation_endpoint.call_with_http_info(**kwargs)
 
     def gc_ban_user(
         self,
+        api_token,
         channel_url,
         **kwargs
     ):
@@ -2075,14 +2130,14 @@ class GroupChannelApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.gc_ban_user(channel_url, async_req=True)
+        >>> thread = api.gc_ban_user(api_token, channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             channel_url (str):
 
         Keyword Args:
-            api_token (str): [optional]
             gc_ban_user_data (GcBanUserData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -2133,12 +2188,15 @@ class GroupChannelApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['channel_url'] = \
             channel_url
         return self.gc_ban_user_endpoint.call_with_http_info(**kwargs)
 
     def gc_cancel_the_registration_of_operators(
         self,
+        api_token,
         channel_url,
         operator_ids,
         **kwargs
@@ -2149,15 +2207,15 @@ class GroupChannelApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.gc_cancel_the_registration_of_operators(channel_url, operator_ids, async_req=True)
+        >>> thread = api.gc_cancel_the_registration_of_operators(api_token, channel_url, operator_ids, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             channel_url (str):
             operator_ids ([str]):
 
         Keyword Args:
-            api_token (str): [optional]
             delete_all (bool): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -2183,7 +2241,7 @@ class GroupChannelApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            None
+            InlineResponse200
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2208,6 +2266,8 @@ class GroupChannelApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['channel_url'] = \
             channel_url
         kwargs['operator_ids'] = \
@@ -2216,6 +2276,7 @@ class GroupChannelApi(object):
 
     def gc_check_if_member_by_id(
         self,
+        api_token,
         channel_url,
         user_id,
         **kwargs
@@ -2226,15 +2287,15 @@ class GroupChannelApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.gc_check_if_member_by_id(channel_url, user_id, async_req=True)
+        >>> thread = api.gc_check_if_member_by_id(api_token, channel_url, user_id, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             channel_url (str):
             user_id (str):
 
         Keyword Args:
-            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -2284,6 +2345,8 @@ class GroupChannelApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['channel_url'] = \
             channel_url
         kwargs['user_id'] = \
@@ -2292,6 +2355,7 @@ class GroupChannelApi(object):
 
     def gc_create_channel(
         self,
+        api_token,
         **kwargs
     ):
         """Create a channel  # noqa: E501
@@ -2300,12 +2364,13 @@ class GroupChannelApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.gc_create_channel(async_req=True)
+        >>> thread = api.gc_create_channel(api_token, async_req=True)
         >>> result = thread.get()
 
+        Args:
+            api_token (str):
 
         Keyword Args:
-            api_token (str): [optional]
             gc_create_channel_data (GcCreateChannelData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -2356,10 +2421,13 @@ class GroupChannelApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         return self.gc_create_channel_endpoint.call_with_http_info(**kwargs)
 
     def gc_decline_invitation(
         self,
+        api_token,
         channel_url,
         **kwargs
     ):
@@ -2369,14 +2437,14 @@ class GroupChannelApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.gc_decline_invitation(channel_url, async_req=True)
+        >>> thread = api.gc_decline_invitation(api_token, channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             channel_url (str):
 
         Keyword Args:
-            api_token (str): [optional]
             gc_decline_invitation_data (GcDeclineInvitationData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -2402,7 +2470,7 @@ class GroupChannelApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            None
+            InlineResponse200
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2427,12 +2495,15 @@ class GroupChannelApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['channel_url'] = \
             channel_url
         return self.gc_decline_invitation_endpoint.call_with_http_info(**kwargs)
 
     def gc_delete_channel_by_url(
         self,
+        api_token,
         channel_url,
         **kwargs
     ):
@@ -2442,14 +2513,14 @@ class GroupChannelApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.gc_delete_channel_by_url(channel_url, async_req=True)
+        >>> thread = api.gc_delete_channel_by_url(api_token, channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             channel_url (str):
 
         Keyword Args:
-            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -2474,7 +2545,7 @@ class GroupChannelApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            None
+            InlineResponse200
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2499,12 +2570,15 @@ class GroupChannelApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['channel_url'] = \
             channel_url
         return self.gc_delete_channel_by_url_endpoint.call_with_http_info(**kwargs)
 
     def gc_freeze_channel(
         self,
+        api_token,
         channel_url,
         **kwargs
     ):
@@ -2514,14 +2588,14 @@ class GroupChannelApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.gc_freeze_channel(channel_url, async_req=True)
+        >>> thread = api.gc_freeze_channel(api_token, channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             channel_url (str):
 
         Keyword Args:
-            api_token (str): [optional]
             gc_freeze_channel_data (GcFreezeChannelData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -2572,12 +2646,15 @@ class GroupChannelApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['channel_url'] = \
             channel_url
         return self.gc_freeze_channel_endpoint.call_with_http_info(**kwargs)
 
     def gc_hide_or_archive_channel(
         self,
+        api_token,
         channel_url,
         **kwargs
     ):
@@ -2587,14 +2664,14 @@ class GroupChannelApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.gc_hide_or_archive_channel(channel_url, async_req=True)
+        >>> thread = api.gc_hide_or_archive_channel(api_token, channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             channel_url (str):
 
         Keyword Args:
-            api_token (str): [optional]
             gc_hide_or_archive_channel_data (GcHideOrArchiveChannelData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -2620,7 +2697,7 @@ class GroupChannelApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            None
+            InlineResponse200
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2645,12 +2722,15 @@ class GroupChannelApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['channel_url'] = \
             channel_url
         return self.gc_hide_or_archive_channel_endpoint.call_with_http_info(**kwargs)
 
     def gc_invite_as_members(
         self,
+        api_token,
         channel_url,
         **kwargs
     ):
@@ -2660,14 +2740,14 @@ class GroupChannelApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.gc_invite_as_members(channel_url, async_req=True)
+        >>> thread = api.gc_invite_as_members(api_token, channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             channel_url (str):
 
         Keyword Args:
-            api_token (str): [optional]
             gc_invite_as_members_data (GcInviteAsMembersData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -2718,12 +2798,15 @@ class GroupChannelApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['channel_url'] = \
             channel_url
         return self.gc_invite_as_members_endpoint.call_with_http_info(**kwargs)
 
     def gc_join_channel(
         self,
+        api_token,
         channel_url,
         **kwargs
     ):
@@ -2733,14 +2816,14 @@ class GroupChannelApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.gc_join_channel(channel_url, async_req=True)
+        >>> thread = api.gc_join_channel(api_token, channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             channel_url (str):
 
         Keyword Args:
-            api_token (str): [optional]
             gc_join_channel_data (GcJoinChannelData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -2791,12 +2874,15 @@ class GroupChannelApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['channel_url'] = \
             channel_url
         return self.gc_join_channel_endpoint.call_with_http_info(**kwargs)
 
     def gc_leave_channel(
         self,
+        api_token,
         channel_url,
         **kwargs
     ):
@@ -2806,14 +2892,14 @@ class GroupChannelApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.gc_leave_channel(channel_url, async_req=True)
+        >>> thread = api.gc_leave_channel(api_token, channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             channel_url (str):
 
         Keyword Args:
-            api_token (str): [optional]
             gc_leave_channel_data (GcLeaveChannelData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -2839,7 +2925,7 @@ class GroupChannelApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            None
+            InlineResponse200
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2864,12 +2950,15 @@ class GroupChannelApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['channel_url'] = \
             channel_url
         return self.gc_leave_channel_endpoint.call_with_http_info(**kwargs)
 
     def gc_list_banned_users(
         self,
+        api_token,
         channel_url,
         **kwargs
     ):
@@ -2879,14 +2968,14 @@ class GroupChannelApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.gc_list_banned_users(channel_url, async_req=True)
+        >>> thread = api.gc_list_banned_users(api_token, channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             channel_url (str):
 
         Keyword Args:
-            api_token (str): [optional]
             token (str): [optional]
             limit (int): [optional]
             _return_http_data_only (bool): response data without head status
@@ -2938,12 +3027,15 @@ class GroupChannelApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['channel_url'] = \
             channel_url
         return self.gc_list_banned_users_endpoint.call_with_http_info(**kwargs)
 
     def gc_list_channels(
         self,
+        api_token,
         **kwargs
     ):
         """List channels  # noqa: E501
@@ -2952,12 +3044,13 @@ class GroupChannelApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.gc_list_channels(async_req=True)
+        >>> thread = api.gc_list_channels(api_token, async_req=True)
         >>> result = thread.get()
 
+        Args:
+            api_token (str):
 
         Keyword Args:
-            api_token (str): [optional]
             token (str): [optional]
             limit (int): [optional]
             distinct_mode (str): [optional]
@@ -3049,10 +3142,13 @@ class GroupChannelApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         return self.gc_list_channels_endpoint.call_with_http_info(**kwargs)
 
     def gc_list_members(
         self,
+        api_token,
         channel_url,
         **kwargs
     ):
@@ -3062,14 +3158,14 @@ class GroupChannelApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.gc_list_members(channel_url, async_req=True)
+        >>> thread = api.gc_list_members(api_token, channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             channel_url (str):
 
         Keyword Args:
-            api_token (str): [optional]
             token (str): [optional]
             limit (int): [optional]
             show_delivery_receipt (bool): [optional]
@@ -3128,12 +3224,15 @@ class GroupChannelApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['channel_url'] = \
             channel_url
         return self.gc_list_members_endpoint.call_with_http_info(**kwargs)
 
     def gc_list_muted_users(
         self,
+        api_token,
         channel_url,
         **kwargs
     ):
@@ -3143,14 +3242,14 @@ class GroupChannelApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.gc_list_muted_users(channel_url, async_req=True)
+        >>> thread = api.gc_list_muted_users(api_token, channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             channel_url (str):
 
         Keyword Args:
-            api_token (str): [optional]
             token (str): [optional]
             limit (int): [optional]
             _return_http_data_only (bool): response data without head status
@@ -3202,12 +3301,15 @@ class GroupChannelApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['channel_url'] = \
             channel_url
         return self.gc_list_muted_users_endpoint.call_with_http_info(**kwargs)
 
     def gc_list_operators(
         self,
+        api_token,
         channel_url,
         **kwargs
     ):
@@ -3217,14 +3319,14 @@ class GroupChannelApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.gc_list_operators(channel_url, async_req=True)
+        >>> thread = api.gc_list_operators(api_token, channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             channel_url (str):
 
         Keyword Args:
-            api_token (str): [optional]
             token (str): [optional]
             limit (int): [optional]
             _return_http_data_only (bool): response data without head status
@@ -3276,12 +3378,15 @@ class GroupChannelApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['channel_url'] = \
             channel_url
         return self.gc_list_operators_endpoint.call_with_http_info(**kwargs)
 
     def gc_mute_user(
         self,
+        api_token,
         channel_url,
         **kwargs
     ):
@@ -3291,14 +3396,14 @@ class GroupChannelApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.gc_mute_user(channel_url, async_req=True)
+        >>> thread = api.gc_mute_user(api_token, channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             channel_url (str):
 
         Keyword Args:
-            api_token (str): [optional]
             gc_mute_user_data (GcMuteUserData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -3349,12 +3454,15 @@ class GroupChannelApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['channel_url'] = \
             channel_url
         return self.gc_mute_user_endpoint.call_with_http_info(**kwargs)
 
     def gc_register_operators(
         self,
+        api_token,
         channel_url,
         **kwargs
     ):
@@ -3364,14 +3472,14 @@ class GroupChannelApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.gc_register_operators(channel_url, async_req=True)
+        >>> thread = api.gc_register_operators(api_token, channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             channel_url (str):
 
         Keyword Args:
-            api_token (str): [optional]
             gc_register_operators_data (GcRegisterOperatorsData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -3422,12 +3530,15 @@ class GroupChannelApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['channel_url'] = \
             channel_url
         return self.gc_register_operators_endpoint.call_with_http_info(**kwargs)
 
     def gc_reset_chat_history(
         self,
+        api_token,
         channel_url,
         **kwargs
     ):
@@ -3437,14 +3548,14 @@ class GroupChannelApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.gc_reset_chat_history(channel_url, async_req=True)
+        >>> thread = api.gc_reset_chat_history(api_token, channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             channel_url (str):
 
         Keyword Args:
-            api_token (str): [optional]
             gc_reset_chat_history_data (GcResetChatHistoryData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -3470,7 +3581,7 @@ class GroupChannelApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            None
+            GcResetChatHistoryResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -3495,12 +3606,15 @@ class GroupChannelApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['channel_url'] = \
             channel_url
         return self.gc_reset_chat_history_endpoint.call_with_http_info(**kwargs)
 
     def gc_unban_user_by_id(
         self,
+        api_token,
         channel_url,
         banned_user_id,
         **kwargs
@@ -3511,15 +3625,15 @@ class GroupChannelApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.gc_unban_user_by_id(channel_url, banned_user_id, async_req=True)
+        >>> thread = api.gc_unban_user_by_id(api_token, channel_url, banned_user_id, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             channel_url (str):
             banned_user_id (str):
 
         Keyword Args:
-            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -3544,7 +3658,7 @@ class GroupChannelApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            None
+            InlineResponse200
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -3569,6 +3683,8 @@ class GroupChannelApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['channel_url'] = \
             channel_url
         kwargs['banned_user_id'] = \
@@ -3577,6 +3693,7 @@ class GroupChannelApi(object):
 
     def gc_unhide_or_unarchive_channel(
         self,
+        api_token,
         channel_url,
         user_id,
         **kwargs
@@ -3587,15 +3704,15 @@ class GroupChannelApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.gc_unhide_or_unarchive_channel(channel_url, user_id, async_req=True)
+        >>> thread = api.gc_unhide_or_unarchive_channel(api_token, channel_url, user_id, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             channel_url (str):
             user_id (str):
 
         Keyword Args:
-            api_token (str): [optional]
             should_unhide_all (bool): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -3621,7 +3738,7 @@ class GroupChannelApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            None
+            InlineResponse200
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -3646,6 +3763,8 @@ class GroupChannelApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['channel_url'] = \
             channel_url
         kwargs['user_id'] = \
@@ -3654,6 +3773,7 @@ class GroupChannelApi(object):
 
     def gc_unmute_user_by_id(
         self,
+        api_token,
         channel_url,
         muted_user_id,
         **kwargs
@@ -3664,15 +3784,15 @@ class GroupChannelApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.gc_unmute_user_by_id(channel_url, muted_user_id, async_req=True)
+        >>> thread = api.gc_unmute_user_by_id(api_token, channel_url, muted_user_id, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             channel_url (str):
             muted_user_id (str):
 
         Keyword Args:
-            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -3697,7 +3817,7 @@ class GroupChannelApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            None
+            InlineResponse200
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -3722,6 +3842,8 @@ class GroupChannelApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['channel_url'] = \
             channel_url
         kwargs['muted_user_id'] = \
@@ -3730,6 +3852,7 @@ class GroupChannelApi(object):
 
     def gc_update_ban_by_id(
         self,
+        api_token,
         channel_url,
         banned_user_id,
         **kwargs
@@ -3740,15 +3863,15 @@ class GroupChannelApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.gc_update_ban_by_id(channel_url, banned_user_id, async_req=True)
+        >>> thread = api.gc_update_ban_by_id(api_token, channel_url, banned_user_id, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             channel_url (str):
             banned_user_id (str):
 
         Keyword Args:
-            api_token (str): [optional]
             gc_update_ban_by_id_data (GcUpdateBanByIdData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -3774,7 +3897,7 @@ class GroupChannelApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            SendBirdUser
+            GcUpdateBanByIdResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -3799,6 +3922,8 @@ class GroupChannelApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['channel_url'] = \
             channel_url
         kwargs['banned_user_id'] = \
@@ -3807,6 +3932,7 @@ class GroupChannelApi(object):
 
     def gc_update_channel_by_url(
         self,
+        api_token,
         channel_url,
         **kwargs
     ):
@@ -3816,14 +3942,14 @@ class GroupChannelApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.gc_update_channel_by_url(channel_url, async_req=True)
+        >>> thread = api.gc_update_channel_by_url(api_token, channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             channel_url (str):
 
         Keyword Args:
-            api_token (str): [optional]
             gc_update_channel_by_url_data (GcUpdateChannelByUrlData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -3874,12 +4000,15 @@ class GroupChannelApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['channel_url'] = \
             channel_url
         return self.gc_update_channel_by_url_endpoint.call_with_http_info(**kwargs)
 
     def gc_view_ban_by_id(
         self,
+        api_token,
         channel_url,
         banned_user_id,
         **kwargs
@@ -3890,15 +4019,15 @@ class GroupChannelApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.gc_view_ban_by_id(channel_url, banned_user_id, async_req=True)
+        >>> thread = api.gc_view_ban_by_id(api_token, channel_url, banned_user_id, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             channel_url (str):
             banned_user_id (str):
 
         Keyword Args:
-            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -3923,7 +4052,7 @@ class GroupChannelApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            SendBirdUser
+            GcViewBanByIdResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -3948,6 +4077,8 @@ class GroupChannelApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['channel_url'] = \
             channel_url
         kwargs['banned_user_id'] = \
@@ -3956,6 +4087,7 @@ class GroupChannelApi(object):
 
     def gc_view_channel_by_url(
         self,
+        api_token,
         channel_url,
         **kwargs
     ):
@@ -3965,14 +4097,14 @@ class GroupChannelApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.gc_view_channel_by_url(channel_url, async_req=True)
+        >>> thread = api.gc_view_channel_by_url(api_token, channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             channel_url (str):
 
         Keyword Args:
-            api_token (str): [optional]
             show_delivery_receipt (bool): [optional]
             show_read_receipt (bool): [optional]
             show_member (bool): [optional]
@@ -4027,12 +4159,15 @@ class GroupChannelApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['channel_url'] = \
             channel_url
         return self.gc_view_channel_by_url_endpoint.call_with_http_info(**kwargs)
 
     def gc_view_mute_by_id(
         self,
+        api_token,
         channel_url,
         muted_user_id,
         **kwargs
@@ -4043,15 +4178,15 @@ class GroupChannelApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.gc_view_mute_by_id(channel_url, muted_user_id, async_req=True)
+        >>> thread = api.gc_view_mute_by_id(api_token, channel_url, muted_user_id, async_req=True)
         >>> result = thread.get()
 
         Args:
+            api_token (str):
             channel_url (str):
             muted_user_id (str):
 
         Keyword Args:
-            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -4101,6 +4236,8 @@ class GroupChannelApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
         kwargs['channel_url'] = \
             channel_url
         kwargs['muted_user_id'] = \
