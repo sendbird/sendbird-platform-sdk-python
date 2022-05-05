@@ -69,20 +69,3 @@ All the documentation for this project lives in the /docs directory of this repo
 | Webhooks | [docs/UserApi.md](docs/WebhooksApi.md)  |
 
 
-# 👀 Examples
-### User Management 
-TODO
-### Authentication
-TODO
-### Authentication
-TODO
-### Unread counts
-TODO
-### Scheduling Announcements
-TODO
-### Channel Automation
-TODO
-### Automatic Message
-TODO
- 
-# 🙄 Gotchas
