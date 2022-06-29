@@ -22,32 +22,22 @@ from sendbird_platform_sdk.model_utils import (  # noqa: F401
     validate_and_convert_types
 )
 from sendbird_platform_sdk.model.gc_accept_invitation_data import GcAcceptInvitationData
-from sendbird_platform_sdk.model.gc_ban_user_data import GcBanUserData
-from sendbird_platform_sdk.model.gc_ban_user_response import GcBanUserResponse
 from sendbird_platform_sdk.model.gc_check_if_member_by_id_response import GcCheckIfMemberByIdResponse
 from sendbird_platform_sdk.model.gc_create_channel_data import GcCreateChannelData
 from sendbird_platform_sdk.model.gc_decline_invitation_data import GcDeclineInvitationData
-from sendbird_platform_sdk.model.gc_freeze_channel_data import GcFreezeChannelData
 from sendbird_platform_sdk.model.gc_hide_or_archive_channel_data import GcHideOrArchiveChannelData
 from sendbird_platform_sdk.model.gc_invite_as_members_data import GcInviteAsMembersData
 from sendbird_platform_sdk.model.gc_join_channel_data import GcJoinChannelData
 from sendbird_platform_sdk.model.gc_leave_channel_data import GcLeaveChannelData
-from sendbird_platform_sdk.model.gc_list_banned_users_response import GcListBannedUsersResponse
 from sendbird_platform_sdk.model.gc_list_channels_response import GcListChannelsResponse
 from sendbird_platform_sdk.model.gc_list_members_response import GcListMembersResponse
-from sendbird_platform_sdk.model.gc_list_muted_users_response import GcListMutedUsersResponse
 from sendbird_platform_sdk.model.gc_list_operators_response import GcListOperatorsResponse
-from sendbird_platform_sdk.model.gc_mute_user_data import GcMuteUserData
 from sendbird_platform_sdk.model.gc_register_operators_data import GcRegisterOperatorsData
 from sendbird_platform_sdk.model.gc_register_operators_response import GcRegisterOperatorsResponse
 from sendbird_platform_sdk.model.gc_reset_chat_history_data import GcResetChatHistoryData
 from sendbird_platform_sdk.model.gc_reset_chat_history_response import GcResetChatHistoryResponse
-from sendbird_platform_sdk.model.gc_update_ban_by_id_data import GcUpdateBanByIdData
-from sendbird_platform_sdk.model.gc_update_ban_by_id_response import GcUpdateBanByIdResponse
 from sendbird_platform_sdk.model.gc_update_channel_by_url_data import GcUpdateChannelByUrlData
-from sendbird_platform_sdk.model.gc_view_ban_by_id_response import GcViewBanByIdResponse
-from sendbird_platform_sdk.model.gc_view_mute_by_id_response import GcViewMuteByIdResponse
-from sendbird_platform_sdk.model.inline_response200 import InlineResponse200
+from sendbird_platform_sdk.model.inline_response2001 import InlineResponse2001
 from sendbird_platform_sdk.model.send_bird_group_channel import SendBirdGroupChannel
 
 
@@ -123,70 +113,9 @@ class GroupChannelApi(object):
             },
             api_client=api_client
         )
-        self.gc_ban_user_endpoint = _Endpoint(
-            settings={
-                'response_type': (GcBanUserResponse,),
-                'auth': [],
-                'endpoint_path': '/v3/group_channels/{channel_url}/ban',
-                'operation_id': 'gc_ban_user',
-                'http_method': 'POST',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'api_token',
-                    'channel_url',
-                    'gc_ban_user_data',
-                ],
-                'required': [
-                    'api_token',
-                    'channel_url',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'api_token':
-                        (str,),
-                    'channel_url':
-                        (str,),
-                    'gc_ban_user_data':
-                        (GcBanUserData,),
-                },
-                'attribute_map': {
-                    'api_token': 'Api-Token',
-                    'channel_url': 'channel_url',
-                },
-                'location_map': {
-                    'api_token': 'header',
-                    'channel_url': 'path',
-                    'gc_ban_user_data': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
-            api_client=api_client
-        )
         self.gc_cancel_the_registration_of_operators_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse200,),
+                'response_type': (InlineResponse2001,),
                 'auth': [],
                 'endpoint_path': '/v3/group_channels/{channel_url}/operators',
                 'operation_id': 'gc_cancel_the_registration_of_operators',
@@ -369,7 +298,7 @@ class GroupChannelApi(object):
         )
         self.gc_decline_invitation_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse200,),
+                'response_type': (InlineResponse2001,),
                 'auth': [],
                 'endpoint_path': '/v3/group_channels/{channel_url}/decline',
                 'operation_id': 'gc_decline_invitation',
@@ -430,7 +359,7 @@ class GroupChannelApi(object):
         )
         self.gc_delete_channel_by_url_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse200,),
+                'response_type': (InlineResponse2001,),
                 'auth': [],
                 'endpoint_path': '/v3/group_channels/{channel_url}',
                 'operation_id': 'gc_delete_channel_by_url',
@@ -483,70 +412,9 @@ class GroupChannelApi(object):
             },
             api_client=api_client
         )
-        self.gc_freeze_channel_endpoint = _Endpoint(
-            settings={
-                'response_type': (SendBirdGroupChannel,),
-                'auth': [],
-                'endpoint_path': '/v3/group_channels/{channel_url}/freeze',
-                'operation_id': 'gc_freeze_channel',
-                'http_method': 'PUT',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'api_token',
-                    'channel_url',
-                    'gc_freeze_channel_data',
-                ],
-                'required': [
-                    'api_token',
-                    'channel_url',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'api_token':
-                        (str,),
-                    'channel_url':
-                        (str,),
-                    'gc_freeze_channel_data':
-                        (GcFreezeChannelData,),
-                },
-                'attribute_map': {
-                    'api_token': 'Api-Token',
-                    'channel_url': 'channel_url',
-                },
-                'location_map': {
-                    'api_token': 'header',
-                    'channel_url': 'path',
-                    'gc_freeze_channel_data': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
-            api_client=api_client
-        )
         self.gc_hide_or_archive_channel_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse200,),
+                'response_type': (InlineResponse2001,),
                 'auth': [],
                 'endpoint_path': '/v3/group_channels/{channel_url}/hide',
                 'operation_id': 'gc_hide_or_archive_channel',
@@ -727,7 +595,7 @@ class GroupChannelApi(object):
         )
         self.gc_leave_channel_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse200,),
+                'response_type': (InlineResponse2001,),
                 'auth': [],
                 'endpoint_path': '/v3/group_channels/{channel_url}/leave',
                 'operation_id': 'gc_leave_channel',
@@ -783,71 +651,6 @@ class GroupChannelApi(object):
                 'content_type': [
                     'application/json'
                 ]
-            },
-            api_client=api_client
-        )
-        self.gc_list_banned_users_endpoint = _Endpoint(
-            settings={
-                'response_type': (GcListBannedUsersResponse,),
-                'auth': [],
-                'endpoint_path': '/v3/group_channels/{channel_url}/ban',
-                'operation_id': 'gc_list_banned_users',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'api_token',
-                    'channel_url',
-                    'token',
-                    'limit',
-                ],
-                'required': [
-                    'api_token',
-                    'channel_url',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'api_token':
-                        (str,),
-                    'channel_url':
-                        (str,),
-                    'token':
-                        (str,),
-                    'limit':
-                        (int,),
-                },
-                'attribute_map': {
-                    'api_token': 'Api-Token',
-                    'channel_url': 'channel_url',
-                    'token': 'token',
-                    'limit': 'limit',
-                },
-                'location_map': {
-                    'api_token': 'header',
-                    'channel_url': 'path',
-                    'token': 'query',
-                    'limit': 'query',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
             },
             api_client=api_client
         )
@@ -1210,71 +1013,6 @@ class GroupChannelApi(object):
             },
             api_client=api_client
         )
-        self.gc_list_muted_users_endpoint = _Endpoint(
-            settings={
-                'response_type': (GcListMutedUsersResponse,),
-                'auth': [],
-                'endpoint_path': '/v3/group_channels/{channel_url}/mute',
-                'operation_id': 'gc_list_muted_users',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'api_token',
-                    'channel_url',
-                    'token',
-                    'limit',
-                ],
-                'required': [
-                    'api_token',
-                    'channel_url',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'api_token':
-                        (str,),
-                    'channel_url':
-                        (str,),
-                    'token':
-                        (str,),
-                    'limit':
-                        (int,),
-                },
-                'attribute_map': {
-                    'api_token': 'Api-Token',
-                    'channel_url': 'channel_url',
-                    'token': 'token',
-                    'limit': 'limit',
-                },
-                'location_map': {
-                    'api_token': 'header',
-                    'channel_url': 'path',
-                    'token': 'query',
-                    'limit': 'query',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
         self.gc_list_operators_endpoint = _Endpoint(
             settings={
                 'response_type': (GcListOperatorsResponse,),
@@ -1337,67 +1075,6 @@ class GroupChannelApi(object):
                     'application/json'
                 ],
                 'content_type': [],
-            },
-            api_client=api_client
-        )
-        self.gc_mute_user_endpoint = _Endpoint(
-            settings={
-                'response_type': (SendBirdGroupChannel,),
-                'auth': [],
-                'endpoint_path': '/v3/group_channels/{channel_url}/mute',
-                'operation_id': 'gc_mute_user',
-                'http_method': 'POST',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'api_token',
-                    'channel_url',
-                    'gc_mute_user_data',
-                ],
-                'required': [
-                    'api_token',
-                    'channel_url',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'api_token':
-                        (str,),
-                    'channel_url':
-                        (str,),
-                    'gc_mute_user_data':
-                        (GcMuteUserData,),
-                },
-                'attribute_map': {
-                    'api_token': 'Api-Token',
-                    'channel_url': 'channel_url',
-                },
-                'location_map': {
-                    'api_token': 'header',
-                    'channel_url': 'path',
-                    'gc_mute_user_data': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
             },
             api_client=api_client
         )
@@ -1523,70 +1200,9 @@ class GroupChannelApi(object):
             },
             api_client=api_client
         )
-        self.gc_unban_user_by_id_endpoint = _Endpoint(
-            settings={
-                'response_type': (InlineResponse200,),
-                'auth': [],
-                'endpoint_path': '/v3/group_channels/{channel_url}/ban/{banned_user_id}',
-                'operation_id': 'gc_unban_user_by_id',
-                'http_method': 'DELETE',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'api_token',
-                    'channel_url',
-                    'banned_user_id',
-                ],
-                'required': [
-                    'api_token',
-                    'channel_url',
-                    'banned_user_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'api_token':
-                        (str,),
-                    'channel_url':
-                        (str,),
-                    'banned_user_id':
-                        (str,),
-                },
-                'attribute_map': {
-                    'api_token': 'Api-Token',
-                    'channel_url': 'channel_url',
-                    'banned_user_id': 'banned_user_id',
-                },
-                'location_map': {
-                    'api_token': 'header',
-                    'channel_url': 'path',
-                    'banned_user_id': 'path',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
         self.gc_unhide_or_unarchive_channel_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse200,),
+                'response_type': (InlineResponse2001,),
                 'auth': [],
                 'endpoint_path': '/v3/group_channels/{channel_url}/hide',
                 'operation_id': 'gc_unhide_or_unarchive_channel',
@@ -1650,134 +1266,6 @@ class GroupChannelApi(object):
             },
             api_client=api_client
         )
-        self.gc_unmute_user_by_id_endpoint = _Endpoint(
-            settings={
-                'response_type': (InlineResponse200,),
-                'auth': [],
-                'endpoint_path': '/v3/group_channels/{channel_url}/mute/{muted_user_id}',
-                'operation_id': 'gc_unmute_user_by_id',
-                'http_method': 'DELETE',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'api_token',
-                    'channel_url',
-                    'muted_user_id',
-                ],
-                'required': [
-                    'api_token',
-                    'channel_url',
-                    'muted_user_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'api_token':
-                        (str,),
-                    'channel_url':
-                        (str,),
-                    'muted_user_id':
-                        (str,),
-                },
-                'attribute_map': {
-                    'api_token': 'Api-Token',
-                    'channel_url': 'channel_url',
-                    'muted_user_id': 'muted_user_id',
-                },
-                'location_map': {
-                    'api_token': 'header',
-                    'channel_url': 'path',
-                    'muted_user_id': 'path',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
-        self.gc_update_ban_by_id_endpoint = _Endpoint(
-            settings={
-                'response_type': (GcUpdateBanByIdResponse,),
-                'auth': [],
-                'endpoint_path': '/v3/group_channels/{channel_url}/ban/{banned_user_id}',
-                'operation_id': 'gc_update_ban_by_id',
-                'http_method': 'PUT',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'api_token',
-                    'channel_url',
-                    'banned_user_id',
-                    'gc_update_ban_by_id_data',
-                ],
-                'required': [
-                    'api_token',
-                    'channel_url',
-                    'banned_user_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'api_token':
-                        (str,),
-                    'channel_url':
-                        (str,),
-                    'banned_user_id':
-                        (str,),
-                    'gc_update_ban_by_id_data':
-                        (GcUpdateBanByIdData,),
-                },
-                'attribute_map': {
-                    'api_token': 'Api-Token',
-                    'channel_url': 'channel_url',
-                    'banned_user_id': 'banned_user_id',
-                },
-                'location_map': {
-                    'api_token': 'header',
-                    'channel_url': 'path',
-                    'banned_user_id': 'path',
-                    'gc_update_ban_by_id_data': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
-            api_client=api_client
-        )
         self.gc_update_channel_by_url_endpoint = _Endpoint(
             settings={
                 'response_type': (SendBirdGroupChannel,),
@@ -1836,67 +1324,6 @@ class GroupChannelApi(object):
                 'content_type': [
                     'application/json'
                 ]
-            },
-            api_client=api_client
-        )
-        self.gc_view_ban_by_id_endpoint = _Endpoint(
-            settings={
-                'response_type': (GcViewBanByIdResponse,),
-                'auth': [],
-                'endpoint_path': '/v3/group_channels/{channel_url}/ban/{banned_user_id}',
-                'operation_id': 'gc_view_ban_by_id',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'api_token',
-                    'channel_url',
-                    'banned_user_id',
-                ],
-                'required': [
-                    'api_token',
-                    'channel_url',
-                    'banned_user_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'api_token':
-                        (str,),
-                    'channel_url':
-                        (str,),
-                    'banned_user_id':
-                        (str,),
-                },
-                'attribute_map': {
-                    'api_token': 'Api-Token',
-                    'channel_url': 'channel_url',
-                    'banned_user_id': 'banned_user_id',
-                },
-                'location_map': {
-                    'api_token': 'header',
-                    'channel_url': 'path',
-                    'banned_user_id': 'path',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
             },
             api_client=api_client
         )
@@ -1968,67 +1395,6 @@ class GroupChannelApi(object):
                     'show_member': 'query',
                     'read_receipt': 'query',
                     'member': 'query',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
-        self.gc_view_mute_by_id_endpoint = _Endpoint(
-            settings={
-                'response_type': (GcViewMuteByIdResponse,),
-                'auth': [],
-                'endpoint_path': '/v3/group_channels/{channel_url}/mute/{muted_user_id}',
-                'operation_id': 'gc_view_mute_by_id',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'api_token',
-                    'channel_url',
-                    'muted_user_id',
-                ],
-                'required': [
-                    'api_token',
-                    'channel_url',
-                    'muted_user_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'api_token':
-                        (str,),
-                    'channel_url':
-                        (str,),
-                    'muted_user_id':
-                        (str,),
-                },
-                'attribute_map': {
-                    'api_token': 'Api-Token',
-                    'channel_url': 'channel_url',
-                    'muted_user_id': 'muted_user_id',
-                },
-                'location_map': {
-                    'api_token': 'header',
-                    'channel_url': 'path',
-                    'muted_user_id': 'path',
                 },
                 'collection_format_map': {
                 }
@@ -2118,82 +1484,6 @@ class GroupChannelApi(object):
             channel_url
         return self.gc_accept_invitation_endpoint.call_with_http_info(**kwargs)
 
-    def gc_ban_user(
-        self,
-        api_token,
-        channel_url,
-        **kwargs
-    ):
-        """Ban a user  # noqa: E501
-
-        ## Ban a user  Bans a user from a group channel. A banned user is immediately expelled from a channel and allowed to join the channel again after a set time period.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-ban-a-user ----------------------------  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.gc_ban_user(api_token, channel_url, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            api_token (str):
-            channel_url (str):
-
-        Keyword Args:
-            gc_ban_user_data (GcBanUserData): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            GcBanUserResponse
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['api_token'] = \
-            api_token
-        kwargs['channel_url'] = \
-            channel_url
-        return self.gc_ban_user_endpoint.call_with_http_info(**kwargs)
-
     def gc_cancel_the_registration_of_operators(
         self,
         api_token,
@@ -2241,7 +1531,7 @@ class GroupChannelApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse200
+            InlineResponse2001
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2470,7 +1760,7 @@ class GroupChannelApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse200
+            InlineResponse2001
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2545,7 +1835,7 @@ class GroupChannelApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse200
+            InlineResponse2001
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2575,82 +1865,6 @@ class GroupChannelApi(object):
         kwargs['channel_url'] = \
             channel_url
         return self.gc_delete_channel_by_url_endpoint.call_with_http_info(**kwargs)
-
-    def gc_freeze_channel(
-        self,
-        api_token,
-        channel_url,
-        **kwargs
-    ):
-        """Freeze a channel  # noqa: E501
-
-        ## Freeze a channel  Freezes or unfreezes a group channel.  > __Note__: Only users designated as channel operators are allowed to talk when a channel is frozen.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-freeze-a-channel ----------------------------  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.gc_freeze_channel(api_token, channel_url, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            api_token (str):
-            channel_url (str):
-
-        Keyword Args:
-            gc_freeze_channel_data (GcFreezeChannelData): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            SendBirdGroupChannel
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['api_token'] = \
-            api_token
-        kwargs['channel_url'] = \
-            channel_url
-        return self.gc_freeze_channel_endpoint.call_with_http_info(**kwargs)
 
     def gc_hide_or_archive_channel(
         self,
@@ -2697,7 +1911,7 @@ class GroupChannelApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse200
+            InlineResponse2001
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2925,7 +2139,7 @@ class GroupChannelApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse200
+            InlineResponse2001
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2955,83 +2169,6 @@ class GroupChannelApi(object):
         kwargs['channel_url'] = \
             channel_url
         return self.gc_leave_channel_endpoint.call_with_http_info(**kwargs)
-
-    def gc_list_banned_users(
-        self,
-        api_token,
-        channel_url,
-        **kwargs
-    ):
-        """List banned users  # noqa: E501
-
-        ## List banned users  Retrieves a list of the banned users from a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-list-banned-users ----------------------------   `channel_url`      Type: string      Description: Specifies the URL of the channel where to retrieve a list of banned users.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.gc_list_banned_users(api_token, channel_url, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            api_token (str):
-            channel_url (str):
-
-        Keyword Args:
-            token (str): [optional]
-            limit (int): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            GcListBannedUsersResponse
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['api_token'] = \
-            api_token
-        kwargs['channel_url'] = \
-            channel_url
-        return self.gc_list_banned_users_endpoint.call_with_http_info(**kwargs)
 
     def gc_list_channels(
         self,
@@ -3230,83 +2367,6 @@ class GroupChannelApi(object):
             channel_url
         return self.gc_list_members_endpoint.call_with_http_info(**kwargs)
 
-    def gc_list_muted_users(
-        self,
-        api_token,
-        channel_url,
-        **kwargs
-    ):
-        """List muted users  # noqa: E501
-
-        ## List muted users  Retrieves a list of the muted users in a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-list-muted-users ----------------------------   `channel_url`      Type: string      Description: Specifies the URL of the channel to retrieve a list of muted users.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.gc_list_muted_users(api_token, channel_url, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            api_token (str):
-            channel_url (str):
-
-        Keyword Args:
-            token (str): [optional]
-            limit (int): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            GcListMutedUsersResponse
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['api_token'] = \
-            api_token
-        kwargs['channel_url'] = \
-            channel_url
-        return self.gc_list_muted_users_endpoint.call_with_http_info(**kwargs)
-
     def gc_list_operators(
         self,
         api_token,
@@ -3383,82 +2443,6 @@ class GroupChannelApi(object):
         kwargs['channel_url'] = \
             channel_url
         return self.gc_list_operators_endpoint.call_with_http_info(**kwargs)
-
-    def gc_mute_user(
-        self,
-        api_token,
-        channel_url,
-        **kwargs
-    ):
-        """Mute a user  # noqa: E501
-
-        ## Mute a user  Mutes a user in a group channel. A muted user remains in the channel and is allowed to view the messages, but can't send any messages until unmuted.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-mute-a-user ----------------------------  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.gc_mute_user(api_token, channel_url, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            api_token (str):
-            channel_url (str):
-
-        Keyword Args:
-            gc_mute_user_data (GcMuteUserData): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            SendBirdGroupChannel
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['api_token'] = \
-            api_token
-        kwargs['channel_url'] = \
-            channel_url
-        return self.gc_mute_user_endpoint.call_with_http_info(**kwargs)
 
     def gc_register_operators(
         self,
@@ -3612,85 +2596,6 @@ class GroupChannelApi(object):
             channel_url
         return self.gc_reset_chat_history_endpoint.call_with_http_info(**kwargs)
 
-    def gc_unban_user_by_id(
-        self,
-        api_token,
-        channel_url,
-        banned_user_id,
-        **kwargs
-    ):
-        """Unban a user  # noqa: E501
-
-        ## Unban a user  Unbans a user from a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-unban-a-user ----------------------------  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.gc_unban_user_by_id(api_token, channel_url, banned_user_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            api_token (str):
-            channel_url (str):
-            banned_user_id (str):
-
-        Keyword Args:
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            InlineResponse200
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['api_token'] = \
-            api_token
-        kwargs['channel_url'] = \
-            channel_url
-        kwargs['banned_user_id'] = \
-            banned_user_id
-        return self.gc_unban_user_by_id_endpoint.call_with_http_info(**kwargs)
-
     def gc_unhide_or_unarchive_channel(
         self,
         api_token,
@@ -3738,7 +2643,7 @@ class GroupChannelApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse200
+            InlineResponse2001
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -3770,165 +2675,6 @@ class GroupChannelApi(object):
         kwargs['user_id'] = \
             user_id
         return self.gc_unhide_or_unarchive_channel_endpoint.call_with_http_info(**kwargs)
-
-    def gc_unmute_user_by_id(
-        self,
-        api_token,
-        channel_url,
-        muted_user_id,
-        **kwargs
-    ):
-        """Unmute a user  # noqa: E501
-
-        ## Unmute a user  Unmutes a user within a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-unmute-a-user ----------------------------  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.gc_unmute_user_by_id(api_token, channel_url, muted_user_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            api_token (str):
-            channel_url (str):
-            muted_user_id (str):
-
-        Keyword Args:
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            InlineResponse200
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['api_token'] = \
-            api_token
-        kwargs['channel_url'] = \
-            channel_url
-        kwargs['muted_user_id'] = \
-            muted_user_id
-        return self.gc_unmute_user_by_id_endpoint.call_with_http_info(**kwargs)
-
-    def gc_update_ban_by_id(
-        self,
-        api_token,
-        channel_url,
-        banned_user_id,
-        **kwargs
-    ):
-        """Update a ban  # noqa: E501
-
-        ## Update a ban  Updates details of a ban imposed on a user. You can change the length of the ban with this action, and also provide an updated description.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-update-a-ban ----------------------------  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.gc_update_ban_by_id(api_token, channel_url, banned_user_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            api_token (str):
-            channel_url (str):
-            banned_user_id (str):
-
-        Keyword Args:
-            gc_update_ban_by_id_data (GcUpdateBanByIdData): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            GcUpdateBanByIdResponse
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['api_token'] = \
-            api_token
-        kwargs['channel_url'] = \
-            channel_url
-        kwargs['banned_user_id'] = \
-            banned_user_id
-        return self.gc_update_ban_by_id_endpoint.call_with_http_info(**kwargs)
 
     def gc_update_channel_by_url(
         self,
@@ -4005,85 +2751,6 @@ class GroupChannelApi(object):
         kwargs['channel_url'] = \
             channel_url
         return self.gc_update_channel_by_url_endpoint.call_with_http_info(**kwargs)
-
-    def gc_view_ban_by_id(
-        self,
-        api_token,
-        channel_url,
-        banned_user_id,
-        **kwargs
-    ):
-        """View a ban  # noqa: E501
-
-        ## View a ban  Retrieves details of a ban imposed on a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-view-a-ban ----------------------------  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.gc_view_ban_by_id(api_token, channel_url, banned_user_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            api_token (str):
-            channel_url (str):
-            banned_user_id (str):
-
-        Keyword Args:
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            GcViewBanByIdResponse
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['api_token'] = \
-            api_token
-        kwargs['channel_url'] = \
-            channel_url
-        kwargs['banned_user_id'] = \
-            banned_user_id
-        return self.gc_view_ban_by_id_endpoint.call_with_http_info(**kwargs)
 
     def gc_view_channel_by_url(
         self,
@@ -4164,83 +2831,4 @@ class GroupChannelApi(object):
         kwargs['channel_url'] = \
             channel_url
         return self.gc_view_channel_by_url_endpoint.call_with_http_info(**kwargs)
-
-    def gc_view_mute_by_id(
-        self,
-        api_token,
-        channel_url,
-        muted_user_id,
-        **kwargs
-    ):
-        """View a mute  # noqa: E501
-
-        ## View a mute  Checks if a user is muted in a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-view-a-mute ----------------------------  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.gc_view_mute_by_id(api_token, channel_url, muted_user_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            api_token (str):
-            channel_url (str):
-            muted_user_id (str):
-
-        Keyword Args:
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            GcViewMuteByIdResponse
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['api_token'] = \
-            api_token
-        kwargs['channel_url'] = \
-            channel_url
-        kwargs['muted_user_id'] = \
-            muted_user_id
-        return self.gc_view_mute_by_id_endpoint.call_with_http_info(**kwargs)
 

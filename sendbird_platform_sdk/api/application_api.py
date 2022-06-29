@@ -29,16 +29,22 @@ from sendbird_platform_sdk.model.add_hms_push_configuration_data import AddHmsPu
 from sendbird_platform_sdk.model.add_hms_push_configuration_response import AddHmsPushConfigurationResponse
 from sendbird_platform_sdk.model.add_ip_to_whitelist_data import AddIpToWhitelistData
 from sendbird_platform_sdk.model.add_ip_to_whitelist_response import AddIpToWhitelistResponse
+from sendbird_platform_sdk.model.ban_users_in_channels_with_custom_channel_type_data import BanUsersInChannelsWithCustomChannelTypeData
+from sendbird_platform_sdk.model.custom_type_list_banned_users_response import CustomTypeListBannedUsersResponse
 from sendbird_platform_sdk.model.delete_allowed_ips_from_whitelist_response import DeleteAllowedIpsFromWhitelistResponse
 from sendbird_platform_sdk.model.delete_apns_certificate_by_id_response import DeleteApnsCertificateByIdResponse
 from sendbird_platform_sdk.model.generate_secondary_api_token_data import GenerateSecondaryApiTokenData
 from sendbird_platform_sdk.model.generate_secondary_api_token_response import GenerateSecondaryApiTokenResponse
+from sendbird_platform_sdk.model.inline_response200 import InlineResponse200
 from sendbird_platform_sdk.model.list_push_configurations_response import ListPushConfigurationsResponse
 from sendbird_platform_sdk.model.list_push_notification_content_templates_response import ListPushNotificationContentTemplatesResponse
 from sendbird_platform_sdk.model.list_secondary_api_tokens_response import ListSecondaryApiTokensResponse
+from sendbird_platform_sdk.model.mute_users_in_channels_with_custom_channel_type_data import MuteUsersInChannelsWithCustomChannelTypeData
 from sendbird_platform_sdk.model.remove_push_configuration_by_id_response import RemovePushConfigurationByIdResponse
 from sendbird_platform_sdk.model.retrieve_ip_whitelist_response import RetrieveIpWhitelistResponse
 from sendbird_platform_sdk.model.revoke_secondary_api_token_by_token_response import RevokeSecondaryApiTokenByTokenResponse
+from sendbird_platform_sdk.model.send_bird_channel_response import SendBirdChannelResponse
+from sendbird_platform_sdk.model.set_domain_filter_data import SetDomainFilterData
 from sendbird_platform_sdk.model.update_apns_push_configuration_by_id_data import UpdateApnsPushConfigurationByIdData
 from sendbird_platform_sdk.model.update_apns_push_configuration_by_id_response import UpdateApnsPushConfigurationByIdResponse
 from sendbird_platform_sdk.model.update_default_channel_invitation_preference_data import UpdateDefaultChannelInvitationPreferenceData
@@ -50,10 +56,6 @@ from sendbird_platform_sdk.model.update_hms_push_configuration_by_id_response im
 from sendbird_platform_sdk.model.update_push_notification_content_template_data import UpdatePushNotificationContentTemplateData
 from sendbird_platform_sdk.model.update_push_notification_content_template_response import UpdatePushNotificationContentTemplateResponse
 from sendbird_platform_sdk.model.view_default_channel_invitation_preference_response import ViewDefaultChannelInvitationPreferenceResponse
-from sendbird_platform_sdk.model.view_number_of_concurrent_connections_response import ViewNumberOfConcurrentConnectionsResponse
-from sendbird_platform_sdk.model.view_number_of_daily_active_users_response import ViewNumberOfDailyActiveUsersResponse
-from sendbird_platform_sdk.model.view_number_of_monthly_active_users_response import ViewNumberOfMonthlyActiveUsersResponse
-from sendbird_platform_sdk.model.view_number_of_peak_connections_response import ViewNumberOfPeakConnectionsResponse
 from sendbird_platform_sdk.model.view_push_configuration_by_id_response import ViewPushConfigurationByIdResponse
 from sendbird_platform_sdk.model.view_push_notification_content_template_response import ViewPushNotificationContentTemplateResponse
 from sendbird_platform_sdk.model.view_secondary_api_token_by_token_response import ViewSecondaryApiTokenByTokenResponse
@@ -290,6 +292,67 @@ class ApplicationApi(object):
             },
             api_client=api_client
         )
+        self.ban_users_in_channels_with_custom_channel_type_endpoint = _Endpoint(
+            settings={
+                'response_type': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
+                'auth': [],
+                'endpoint_path': '/v3/applications/settings_by_channel_custom_type/{custom_type}/ban',
+                'operation_id': 'ban_users_in_channels_with_custom_channel_type',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'api_token',
+                    'custom_type',
+                    'ban_users_in_channels_with_custom_channel_type_data',
+                ],
+                'required': [
+                    'api_token',
+                    'custom_type',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'api_token':
+                        (str,),
+                    'custom_type':
+                        (str,),
+                    'ban_users_in_channels_with_custom_channel_type_data':
+                        (BanUsersInChannelsWithCustomChannelTypeData,),
+                },
+                'attribute_map': {
+                    'api_token': 'Api-Token',
+                    'custom_type': 'custom_type',
+                },
+                'location_map': {
+                    'api_token': 'header',
+                    'custom_type': 'path',
+                    'ban_users_in_channels_with_custom_channel_type_data': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client
+        )
         self.delete_allowed_ips_from_whitelist_endpoint = _Endpoint(
             settings={
                 'response_type': (DeleteAllowedIpsFromWhitelistResponse,),
@@ -456,6 +519,136 @@ class ApplicationApi(object):
             },
             api_client=api_client
         )
+        self.list_banned_users_in_channels_with_custom_channel_type_endpoint = _Endpoint(
+            settings={
+                'response_type': (CustomTypeListBannedUsersResponse,),
+                'auth': [],
+                'endpoint_path': '/v3/applications/settings_by_channel_custom_type/{custom_type}/ban',
+                'operation_id': 'list_banned_users_in_channels_with_custom_channel_type',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'api_token',
+                    'custom_type',
+                    'token',
+                    'limit',
+                ],
+                'required': [
+                    'api_token',
+                    'custom_type',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'api_token':
+                        (str,),
+                    'custom_type':
+                        (str,),
+                    'token':
+                        (str,),
+                    'limit':
+                        (int,),
+                },
+                'attribute_map': {
+                    'api_token': 'Api-Token',
+                    'custom_type': 'custom_type',
+                    'token': 'token',
+                    'limit': 'limit',
+                },
+                'location_map': {
+                    'api_token': 'header',
+                    'custom_type': 'path',
+                    'token': 'query',
+                    'limit': 'query',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.list_muted_users_in_channels_with_custom_channel_type_endpoint = _Endpoint(
+            settings={
+                'response_type': (InlineResponse200,),
+                'auth': [],
+                'endpoint_path': '/v3/applications/settings_by_channel_custom_type/{custom_type}/mute',
+                'operation_id': 'list_muted_users_in_channels_with_custom_channel_type',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'api_token',
+                    'custom_type',
+                    'token',
+                    'limit',
+                ],
+                'required': [
+                    'api_token',
+                    'custom_type',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'api_token':
+                        (str,),
+                    'custom_type':
+                        (str,),
+                    'token':
+                        (str,),
+                    'limit':
+                        (int,),
+                },
+                'attribute_map': {
+                    'api_token': 'Api-Token',
+                    'custom_type': 'custom_type',
+                    'token': 'token',
+                    'limit': 'limit',
+                },
+                'location_map': {
+                    'api_token': 'header',
+                    'custom_type': 'path',
+                    'token': 'query',
+                    'limit': 'query',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
         self.list_push_configurations_endpoint = _Endpoint(
             settings={
                 'response_type': (ListPushConfigurationsResponse,),
@@ -606,6 +799,67 @@ class ApplicationApi(object):
                     'application/json'
                 ],
                 'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.mute_users_in_channels_with_custom_channel_type_endpoint = _Endpoint(
+            settings={
+                'response_type': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
+                'auth': [],
+                'endpoint_path': '/v3/applications/settings_by_channel_custom_type/{custom_type}/mute',
+                'operation_id': 'mute_users_in_channels_with_custom_channel_type',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'api_token',
+                    'custom_type',
+                    'mute_users_in_channels_with_custom_channel_type_data',
+                ],
+                'required': [
+                    'api_token',
+                    'custom_type',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'api_token':
+                        (str,),
+                    'custom_type':
+                        (str,),
+                    'mute_users_in_channels_with_custom_channel_type_data':
+                        (MuteUsersInChannelsWithCustomChannelTypeData,),
+                },
+                'attribute_map': {
+                    'api_token': 'Api-Token',
+                    'custom_type': 'custom_type',
+                },
+                'location_map': {
+                    'api_token': 'header',
+                    'custom_type': 'path',
+                    'mute_users_in_channels_with_custom_channel_type_data': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
             },
             api_client=api_client
         )
@@ -764,6 +1018,191 @@ class ApplicationApi(object):
                     'api_token2': 'path',
                 },
                 'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.set_domain_filter_endpoint = _Endpoint(
+            settings={
+                'response_type': (SendBirdChannelResponse,),
+                'auth': [],
+                'endpoint_path': '/v3/applications/settings_global/{custom_type}',
+                'operation_id': 'set_domain_filter',
+                'http_method': 'PUT',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'api_token',
+                    'custom_type',
+                    'set_domain_filter_data',
+                ],
+                'required': [
+                    'api_token',
+                    'custom_type',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'api_token':
+                        (str,),
+                    'custom_type':
+                        (str,),
+                    'set_domain_filter_data':
+                        (SetDomainFilterData,),
+                },
+                'attribute_map': {
+                    'api_token': 'Api-Token',
+                    'custom_type': 'custom_type',
+                },
+                'location_map': {
+                    'api_token': 'header',
+                    'custom_type': 'path',
+                    'set_domain_filter_data': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client
+        )
+        self.unban_users_in_channels_with_custom_channel_type_endpoint = _Endpoint(
+            settings={
+                'response_type': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
+                'auth': [],
+                'endpoint_path': '/v3/applications/settings_by_channel_custom_type/{custom_type}/ban',
+                'operation_id': 'unban_users_in_channels_with_custom_channel_type',
+                'http_method': 'DELETE',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'api_token',
+                    'custom_type',
+                    'user_ids',
+                ],
+                'required': [
+                    'api_token',
+                    'custom_type',
+                    'user_ids',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'api_token':
+                        (str,),
+                    'custom_type':
+                        (str,),
+                    'user_ids':
+                        ([str],),
+                },
+                'attribute_map': {
+                    'api_token': 'Api-Token',
+                    'custom_type': 'custom_type',
+                    'user_ids': 'user_ids',
+                },
+                'location_map': {
+                    'api_token': 'header',
+                    'custom_type': 'path',
+                    'user_ids': 'query',
+                },
+                'collection_format_map': {
+                    'user_ids': 'multi',
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.unmute_users_in_channels_with_custom_channel_type_endpoint = _Endpoint(
+            settings={
+                'response_type': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
+                'auth': [],
+                'endpoint_path': '/v3/applications/settings_by_channel_custom_type/{custom_type}/mute',
+                'operation_id': 'unmute_users_in_channels_with_custom_channel_type',
+                'http_method': 'DELETE',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'api_token',
+                    'custom_type',
+                    'user_ids',
+                ],
+                'required': [
+                    'api_token',
+                    'custom_type',
+                    'user_ids',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'api_token':
+                        (str,),
+                    'custom_type':
+                        (str,),
+                    'user_ids':
+                        ([str],),
+                },
+                'attribute_map': {
+                    'api_token': 'Api-Token',
+                    'custom_type': 'custom_type',
+                    'user_ids': 'user_ids',
+                },
+                'location_map': {
+                    'api_token': 'header',
+                    'custom_type': 'path',
+                    'user_ids': 'query',
+                },
+                'collection_format_map': {
+                    'user_ids': 'multi',
                 }
             },
             headers_map={
@@ -1110,252 +1549,6 @@ class ApplicationApi(object):
                 },
                 'location_map': {
                     'api_token': 'header',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
-        self.view_number_of_concurrent_connections_endpoint = _Endpoint(
-            settings={
-                'response_type': (ViewNumberOfConcurrentConnectionsResponse,),
-                'auth': [],
-                'endpoint_path': '/v3/applications/ccu',
-                'operation_id': 'view_number_of_concurrent_connections',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'api_token',
-                ],
-                'required': [
-                    'api_token',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'api_token':
-                        (str,),
-                },
-                'attribute_map': {
-                    'api_token': 'Api-Token',
-                },
-                'location_map': {
-                    'api_token': 'header',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
-        self.view_number_of_daily_active_users_endpoint = _Endpoint(
-            settings={
-                'response_type': (ViewNumberOfDailyActiveUsersResponse,),
-                'auth': [],
-                'endpoint_path': '/v3/applications/dau',
-                'operation_id': 'view_number_of_daily_active_users',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'api_token',
-                    'date',
-                ],
-                'required': [
-                    'api_token',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'api_token':
-                        (str,),
-                    'date':
-                        (str,),
-                },
-                'attribute_map': {
-                    'api_token': 'Api-Token',
-                    'date': 'date',
-                },
-                'location_map': {
-                    'api_token': 'header',
-                    'date': 'query',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
-        self.view_number_of_monthly_active_users_endpoint = _Endpoint(
-            settings={
-                'response_type': (ViewNumberOfMonthlyActiveUsersResponse,),
-                'auth': [],
-                'endpoint_path': '/v3/applications/mau',
-                'operation_id': 'view_number_of_monthly_active_users',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'api_token',
-                    'date',
-                ],
-                'required': [
-                    'api_token',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'api_token':
-                        (str,),
-                    'date':
-                        (str,),
-                },
-                'attribute_map': {
-                    'api_token': 'Api-Token',
-                    'date': 'date',
-                },
-                'location_map': {
-                    'api_token': 'header',
-                    'date': 'query',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
-        self.view_number_of_peak_connections_endpoint = _Endpoint(
-            settings={
-                'response_type': (ViewNumberOfPeakConnectionsResponse,),
-                'auth': [],
-                'endpoint_path': '/v3/applications/peak_connections',
-                'operation_id': 'view_number_of_peak_connections',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'api_token',
-                    'time_dimension',
-                    'start_year',
-                    'start_month',
-                    'end_year',
-                    'end_month',
-                    'start_day',
-                    'end_day',
-                ],
-                'required': [
-                    'api_token',
-                    'time_dimension',
-                    'start_year',
-                    'start_month',
-                    'end_year',
-                    'end_month',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'api_token':
-                        (str,),
-                    'time_dimension':
-                        (str,),
-                    'start_year':
-                        (int,),
-                    'start_month':
-                        (int,),
-                    'end_year':
-                        (int,),
-                    'end_month':
-                        (int,),
-                    'start_day':
-                        (int,),
-                    'end_day':
-                        (int,),
-                },
-                'attribute_map': {
-                    'api_token': 'Api-Token',
-                    'time_dimension': 'time_dimension',
-                    'start_year': 'start_year',
-                    'start_month': 'start_month',
-                    'end_year': 'end_year',
-                    'end_month': 'end_month',
-                    'start_day': 'start_day',
-                    'end_day': 'end_day',
-                },
-                'location_map': {
-                    'api_token': 'header',
-                    'time_dimension': 'query',
-                    'start_year': 'query',
-                    'start_month': 'query',
-                    'end_year': 'query',
-                    'end_month': 'query',
-                    'start_day': 'query',
-                    'end_day': 'query',
                 },
                 'collection_format_map': {
                 }
@@ -1828,6 +2021,82 @@ class ApplicationApi(object):
             api_token
         return self.add_ip_to_whitelist_endpoint.call_with_http_info(**kwargs)
 
+    def ban_users_in_channels_with_custom_channel_type(
+        self,
+        api_token,
+        custom_type,
+        **kwargs
+    ):
+        """Ban users in channels with a custom channel type  # noqa: E501
+
+        ## Ban specified users in channels with a custom channel type at once.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.ban_users_in_channels_with_custom_channel_type(api_token, custom_type, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            api_token (str):
+            custom_type (str):
+
+        Keyword Args:
+            ban_users_in_channels_with_custom_channel_type_data (BanUsersInChannelsWithCustomChannelTypeData): [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            {str: (bool, date, datetime, dict, float, int, list, str, none_type)}
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
+        kwargs['custom_type'] = \
+            custom_type
+        return self.ban_users_in_channels_with_custom_channel_type_endpoint.call_with_http_info(**kwargs)
+
     def delete_allowed_ips_from_whitelist(
         self,
         api_token,
@@ -2050,6 +2319,160 @@ class ApplicationApi(object):
             api_token
         return self.generate_secondary_api_token_endpoint.call_with_http_info(**kwargs)
 
+    def list_banned_users_in_channels_with_custom_channel_type(
+        self,
+        api_token,
+        custom_type,
+        **kwargs
+    ):
+        """List banned users in channels with a custom channel type  # noqa: E501
+
+        ## Retrieves a list of users banned from channels with the specified custom channel type.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.list_banned_users_in_channels_with_custom_channel_type(api_token, custom_type, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            api_token (str):
+            custom_type (str):
+
+        Keyword Args:
+            token (str): [optional]
+            limit (int): [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            CustomTypeListBannedUsersResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
+        kwargs['custom_type'] = \
+            custom_type
+        return self.list_banned_users_in_channels_with_custom_channel_type_endpoint.call_with_http_info(**kwargs)
+
+    def list_muted_users_in_channels_with_custom_channel_type(
+        self,
+        api_token,
+        custom_type,
+        **kwargs
+    ):
+        """List muted users in channels with a custom channel type  # noqa: E501
+
+        ## Retrieves a list of the muted users in channels with a custom channel type.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.list_muted_users_in_channels_with_custom_channel_type(api_token, custom_type, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            api_token (str):
+            custom_type (str):
+
+        Keyword Args:
+            token (str): [optional]
+            limit (int): [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            InlineResponse200
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
+        kwargs['custom_type'] = \
+            custom_type
+        return self.list_muted_users_in_channels_with_custom_channel_type_endpoint.call_with_http_info(**kwargs)
+
     def list_push_configurations(
         self,
         api_token,
@@ -2266,6 +2689,82 @@ class ApplicationApi(object):
         kwargs['api_token'] = \
             api_token
         return self.list_secondary_api_tokens_endpoint.call_with_http_info(**kwargs)
+
+    def mute_users_in_channels_with_custom_channel_type(
+        self,
+        api_token,
+        custom_type,
+        **kwargs
+    ):
+        """Mute users in channels with a custom channel type  # noqa: E501
+
+        ## Mutes specified users in channels with a custom channel type at once.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.mute_users_in_channels_with_custom_channel_type(api_token, custom_type, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            api_token (str):
+            custom_type (str):
+
+        Keyword Args:
+            mute_users_in_channels_with_custom_channel_type_data (MuteUsersInChannelsWithCustomChannelTypeData): [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            {str: (bool, date, datetime, dict, float, int, list, str, none_type)}
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
+        kwargs['custom_type'] = \
+            custom_type
+        return self.mute_users_in_channels_with_custom_channel_type_endpoint.call_with_http_info(**kwargs)
 
     def remove_push_configuration_by_id(
         self,
@@ -2491,6 +2990,240 @@ class ApplicationApi(object):
         kwargs['api_token2'] = \
             api_token2
         return self.revoke_secondary_api_token_by_token_endpoint.call_with_http_info(**kwargs)
+
+    def set_domain_filter(
+        self,
+        api_token,
+        custom_type,
+        **kwargs
+    ):
+        """Message moderation  # noqa: E501
+
+        ##   # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.set_domain_filter(api_token, custom_type, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            api_token (str):
+            custom_type (str):
+
+        Keyword Args:
+            set_domain_filter_data (SetDomainFilterData): [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            SendBirdChannelResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
+        kwargs['custom_type'] = \
+            custom_type
+        return self.set_domain_filter_endpoint.call_with_http_info(**kwargs)
+
+    def unban_users_in_channels_with_custom_channel_type(
+        self,
+        api_token,
+        custom_type,
+        user_ids,
+        **kwargs
+    ):
+        """Unban users in channels with a custom channel type  # noqa: E501
+
+        ## Unban specified users in channels with a custom channel type at once.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.unban_users_in_channels_with_custom_channel_type(api_token, custom_type, user_ids, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            api_token (str):
+            custom_type (str):
+            user_ids ([str]):
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            {str: (bool, date, datetime, dict, float, int, list, str, none_type)}
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
+        kwargs['custom_type'] = \
+            custom_type
+        kwargs['user_ids'] = \
+            user_ids
+        return self.unban_users_in_channels_with_custom_channel_type_endpoint.call_with_http_info(**kwargs)
+
+    def unmute_users_in_channels_with_custom_channel_type(
+        self,
+        api_token,
+        custom_type,
+        user_ids,
+        **kwargs
+    ):
+        """Unmute users in channels with a custom channel type  # noqa: E501
+
+        ## Unmute specified users in channels with a custom channel type at once.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.unmute_users_in_channels_with_custom_channel_type(api_token, custom_type, user_ids, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            api_token (str):
+            custom_type (str):
+            user_ids ([str]):
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            {str: (bool, date, datetime, dict, float, int, list, str, none_type)}
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
+        kwargs['custom_type'] = \
+            custom_type
+        kwargs['user_ids'] = \
+            user_ids
+        return self.unmute_users_in_channels_with_custom_channel_type_endpoint.call_with_http_info(**kwargs)
 
     def update_apns_push_configuration_by_id(
         self,
@@ -2938,314 +3671,6 @@ class ApplicationApi(object):
         kwargs['api_token'] = \
             api_token
         return self.view_default_channel_invitation_preference_endpoint.call_with_http_info(**kwargs)
-
-    def view_number_of_concurrent_connections(
-        self,
-        api_token,
-        **kwargs
-    ):
-        """View number of concurrent connections  # noqa: E501
-
-        ## View number of concurrent connections  Retrieves the number of devices and opened browser tabs which are currently connected to Sendbird server.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-view-number-of-concurrent-connections  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.view_number_of_concurrent_connections(api_token, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            api_token (str):
-
-        Keyword Args:
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            ViewNumberOfConcurrentConnectionsResponse
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['api_token'] = \
-            api_token
-        return self.view_number_of_concurrent_connections_endpoint.call_with_http_info(**kwargs)
-
-    def view_number_of_daily_active_users(
-        self,
-        api_token,
-        **kwargs
-    ):
-        """View number of daily active users  # noqa: E501
-
-        ## View number of daily active users  Retrieves the number of daily active users of the application (DAU).  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-view-number-of-daily-active-users ----------------------------  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.view_number_of_daily_active_users(api_token, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            api_token (str):
-
-        Keyword Args:
-            date (str): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            ViewNumberOfDailyActiveUsersResponse
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['api_token'] = \
-            api_token
-        return self.view_number_of_daily_active_users_endpoint.call_with_http_info(**kwargs)
-
-    def view_number_of_monthly_active_users(
-        self,
-        api_token,
-        **kwargs
-    ):
-        """View number of monthly active users  # noqa: E501
-
-        ## View number of monthly active users  Retrieves the number of monthly active users of the application (MAU).  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-view-number-of-monthly-active-users ----------------------------  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.view_number_of_monthly_active_users(api_token, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            api_token (str):
-
-        Keyword Args:
-            date (str): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            ViewNumberOfMonthlyActiveUsersResponse
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['api_token'] = \
-            api_token
-        return self.view_number_of_monthly_active_users_endpoint.call_with_http_info(**kwargs)
-
-    def view_number_of_peak_connections(
-        self,
-        api_token,
-        time_dimension,
-        start_year,
-        start_month,
-        end_year,
-        end_month,
-        **kwargs
-    ):
-        """View number of peak connections  # noqa: E501
-
-        ## View number of peak connections  Retrieves the number of concurrently connected devices to Sendbird server during the requested time period.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-view-number-of-peak-connections ----------------------------  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.view_number_of_peak_connections(api_token, time_dimension, start_year, start_month, end_year, end_month, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            api_token (str):
-            time_dimension (str):
-            start_year (int):
-            start_month (int):
-            end_year (int):
-            end_month (int):
-
-        Keyword Args:
-            start_day (int): [optional]
-            end_day (int): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            ViewNumberOfPeakConnectionsResponse
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['api_token'] = \
-            api_token
-        kwargs['time_dimension'] = \
-            time_dimension
-        kwargs['start_year'] = \
-            start_year
-        kwargs['start_month'] = \
-            start_month
-        kwargs['end_year'] = \
-            end_year
-        kwargs['end_month'] = \
-            end_month
-        return self.view_number_of_peak_connections_endpoint.call_with_http_info(**kwargs)
 
     def view_push_configuration_by_id(
         self,

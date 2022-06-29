@@ -23,28 +23,29 @@ from sendbird_platform_sdk.model_utils import (  # noqa: F401
 )
 from sendbird_platform_sdk.model.add_registration_or_device_token_data import AddRegistrationOrDeviceTokenData
 from sendbird_platform_sdk.model.add_registration_or_device_token_response import AddRegistrationOrDeviceTokenResponse
-from sendbird_platform_sdk.model.ban_from_channels_with_custom_channel_types_data import BanFromChannelsWithCustomChannelTypesData
-from sendbird_platform_sdk.model.block_user_data import BlockUserData
-from sendbird_platform_sdk.model.block_user_response import BlockUserResponse
 from sendbird_platform_sdk.model.choose_push_notification_content_template_response import ChoosePushNotificationContentTemplateResponse
+from sendbird_platform_sdk.model.create_channel_metacounter_data import CreateChannelMetacounterData
+from sendbird_platform_sdk.model.create_channel_metadata_data import CreateChannelMetadataData
+from sendbird_platform_sdk.model.create_channel_metadata_response import CreateChannelMetadataResponse
 from sendbird_platform_sdk.model.create_user_data import CreateUserData
+from sendbird_platform_sdk.model.create_user_metadata_data import CreateUserMetadataData
+from sendbird_platform_sdk.model.create_user_metadata_response import CreateUserMetadataResponse
 from sendbird_platform_sdk.model.leave_my_group_channels_data import LeaveMyGroupChannelsData
-from sendbird_platform_sdk.model.list_banned_channels_response import ListBannedChannelsResponse
-from sendbird_platform_sdk.model.list_blocked_users_response import ListBlockedUsersResponse
-from sendbird_platform_sdk.model.list_muted_channels_response import ListMutedChannelsResponse
 from sendbird_platform_sdk.model.list_my_group_channels_response import ListMyGroupChannelsResponse
 from sendbird_platform_sdk.model.list_registration_or_device_tokens_response import ListRegistrationOrDeviceTokensResponse
 from sendbird_platform_sdk.model.list_users_response import ListUsersResponse
 from sendbird_platform_sdk.model.mark_all_messages_as_read_data import MarkAllMessagesAsReadData
-from sendbird_platform_sdk.model.mute_in_channels_with_custom_channel_types_data import MuteInChannelsWithCustomChannelTypesData
 from sendbird_platform_sdk.model.register_as_operator_to_channels_with_custom_channel_types_data import RegisterAsOperatorToChannelsWithCustomChannelTypesData
 from sendbird_platform_sdk.model.remove_registration_or_device_token_by_token_response import RemoveRegistrationOrDeviceTokenByTokenResponse
 from sendbird_platform_sdk.model.remove_registration_or_device_token_from_owner_by_token_response import RemoveRegistrationOrDeviceTokenFromOwnerByTokenResponse
 from sendbird_platform_sdk.model.remove_registration_or_device_token_response import RemoveRegistrationOrDeviceTokenResponse
 from sendbird_platform_sdk.model.reset_push_preferences_response import ResetPushPreferencesResponse
+from sendbird_platform_sdk.model.send_bird_additional_properties import SendBirdAdditionalProperties
 from sendbird_platform_sdk.model.send_bird_user import SendBirdUser
 from sendbird_platform_sdk.model.update_channel_invitation_preference_data import UpdateChannelInvitationPreferenceData
 from sendbird_platform_sdk.model.update_channel_invitation_preference_response import UpdateChannelInvitationPreferenceResponse
+from sendbird_platform_sdk.model.update_channel_metacounter_data import UpdateChannelMetacounterData
+from sendbird_platform_sdk.model.update_channel_metadata_data import UpdateChannelMetadataData
 from sendbird_platform_sdk.model.update_count_preference_of_channel_by_url_data import UpdateCountPreferenceOfChannelByUrlData
 from sendbird_platform_sdk.model.update_count_preference_of_channel_by_url_response import UpdateCountPreferenceOfChannelByUrlResponse
 from sendbird_platform_sdk.model.update_push_preferences_data import UpdatePushPreferencesData
@@ -52,6 +53,8 @@ from sendbird_platform_sdk.model.update_push_preferences_for_channel_by_url_data
 from sendbird_platform_sdk.model.update_push_preferences_for_channel_by_url_response import UpdatePushPreferencesForChannelByUrlResponse
 from sendbird_platform_sdk.model.update_push_preferences_response import UpdatePushPreferencesResponse
 from sendbird_platform_sdk.model.update_user_by_id_data import UpdateUserByIdData
+from sendbird_platform_sdk.model.update_user_metadata_data import UpdateUserMetadataData
+from sendbird_platform_sdk.model.update_user_metadata_response import UpdateUserMetadataResponse
 from sendbird_platform_sdk.model.view_channel_invitation_preference_response import ViewChannelInvitationPreferenceResponse
 from sendbird_platform_sdk.model.view_count_preference_of_channel_by_url_response import ViewCountPreferenceOfChannelByUrlResponse
 from sendbird_platform_sdk.model.view_number_of_channels_by_join_status_response import ViewNumberOfChannelsByJoinStatusResponse
@@ -141,128 +144,6 @@ class UserApi(object):
             },
             api_client=api_client
         )
-        self.ban_from_channels_with_custom_channel_types_endpoint = _Endpoint(
-            settings={
-                'response_type': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
-                'auth': [],
-                'endpoint_path': '/v3/users/{user_id}/banned_channel_custom_types',
-                'operation_id': 'ban_from_channels_with_custom_channel_types',
-                'http_method': 'POST',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'api_token',
-                    'user_id',
-                    'ban_from_channels_with_custom_channel_types_data',
-                ],
-                'required': [
-                    'api_token',
-                    'user_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'api_token':
-                        (str,),
-                    'user_id':
-                        (str,),
-                    'ban_from_channels_with_custom_channel_types_data':
-                        (BanFromChannelsWithCustomChannelTypesData,),
-                },
-                'attribute_map': {
-                    'api_token': 'Api-Token',
-                    'user_id': 'user_id',
-                },
-                'location_map': {
-                    'api_token': 'header',
-                    'user_id': 'path',
-                    'ban_from_channels_with_custom_channel_types_data': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
-            api_client=api_client
-        )
-        self.block_user_endpoint = _Endpoint(
-            settings={
-                'response_type': (BlockUserResponse,),
-                'auth': [],
-                'endpoint_path': '/v3/users/{user_id}/block',
-                'operation_id': 'block_user',
-                'http_method': 'POST',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'api_token',
-                    'user_id',
-                    'block_user_data',
-                ],
-                'required': [
-                    'api_token',
-                    'user_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'api_token':
-                        (str,),
-                    'user_id':
-                        (str,),
-                    'block_user_data':
-                        (BlockUserData,),
-                },
-                'attribute_map': {
-                    'api_token': 'Api-Token',
-                    'user_id': 'user_id',
-                },
-                'location_map': {
-                    'api_token': 'header',
-                    'user_id': 'path',
-                    'block_user_data': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
-            api_client=api_client
-        )
         self.choose_push_notification_content_template_endpoint = _Endpoint(
             settings={
                 'response_type': (ChoosePushNotificationContentTemplateResponse,),
@@ -310,6 +191,140 @@ class UserApi(object):
                     'api_token': 'header',
                     'user_id': 'path',
                     'body': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client
+        )
+        self.create_channel_metacounter_endpoint = _Endpoint(
+            settings={
+                'response_type': (CreateChannelMetacounterResponse,),
+                'auth': [],
+                'endpoint_path': '/v3/{channel_type}/{channel_url}/metacounter',
+                'operation_id': 'create_channel_metacounter',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'api_token',
+                    'channel_type',
+                    'channel_url',
+                    'create_channel_metacounter_data',
+                ],
+                'required': [
+                    'api_token',
+                    'channel_type',
+                    'channel_url',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'api_token':
+                        (str,),
+                    'channel_type':
+                        (str,),
+                    'channel_url':
+                        (str,),
+                    'create_channel_metacounter_data':
+                        (CreateChannelMetacounterData,),
+                },
+                'attribute_map': {
+                    'api_token': 'Api-Token',
+                    'channel_type': 'channel_type',
+                    'channel_url': 'channel_url',
+                },
+                'location_map': {
+                    'api_token': 'header',
+                    'channel_type': 'path',
+                    'channel_url': 'path',
+                    'create_channel_metacounter_data': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client
+        )
+        self.create_channel_metadata_endpoint = _Endpoint(
+            settings={
+                'response_type': (CreateChannelMetadataResponse,),
+                'auth': [],
+                'endpoint_path': '/v3/{channel_type}/{channel_url}/metadata',
+                'operation_id': 'create_channel_metadata',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'api_token',
+                    'channel_type',
+                    'channel_url',
+                    'create_channel_metadata_data',
+                ],
+                'required': [
+                    'api_token',
+                    'channel_type',
+                    'channel_url',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'api_token':
+                        (str,),
+                    'channel_type':
+                        (str,),
+                    'channel_url':
+                        (str,),
+                    'create_channel_metadata_data':
+                        (CreateChannelMetadataData,),
+                },
+                'attribute_map': {
+                    'api_token': 'Api-Token',
+                    'channel_type': 'channel_type',
+                    'channel_url': 'channel_url',
+                },
+                'location_map': {
+                    'api_token': 'header',
+                    'channel_type': 'path',
+                    'channel_url': 'path',
+                    'create_channel_metadata_data': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -379,6 +394,320 @@ class UserApi(object):
             },
             api_client=api_client
         )
+        self.create_user_metadata_endpoint = _Endpoint(
+            settings={
+                'response_type': (CreateUserMetadataResponse,),
+                'auth': [],
+                'endpoint_path': '/v3/users/{user_id}/metadata',
+                'operation_id': 'create_user_metadata',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'api_token',
+                    'user_id',
+                    'create_user_metadata_data',
+                ],
+                'required': [
+                    'api_token',
+                    'user_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'api_token':
+                        (str,),
+                    'user_id':
+                        (str,),
+                    'create_user_metadata_data':
+                        (CreateUserMetadataData,),
+                },
+                'attribute_map': {
+                    'api_token': 'Api-Token',
+                    'user_id': 'user_id',
+                },
+                'location_map': {
+                    'api_token': 'header',
+                    'user_id': 'path',
+                    'create_user_metadata_data': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client
+        )
+        self.delete_channel_metacounter_endpoint = _Endpoint(
+            settings={
+                'response_type': None,
+                'auth': [],
+                'endpoint_path': '/v3/{channel_type}/{channel_url}/metacounter',
+                'operation_id': 'delete_channel_metacounter',
+                'http_method': 'DELETE',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'api_token',
+                    'channel_type',
+                    'channel_url',
+                ],
+                'required': [
+                    'api_token',
+                    'channel_type',
+                    'channel_url',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'api_token':
+                        (str,),
+                    'channel_type':
+                        (str,),
+                    'channel_url':
+                        (str,),
+                },
+                'attribute_map': {
+                    'api_token': 'Api-Token',
+                    'channel_type': 'channel_type',
+                    'channel_url': 'channel_url',
+                },
+                'location_map': {
+                    'api_token': 'header',
+                    'channel_type': 'path',
+                    'channel_url': 'path',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.delete_channel_metacounter_by_key_endpoint = _Endpoint(
+            settings={
+                'response_type': None,
+                'auth': [],
+                'endpoint_path': '/v3/{channel_type}/{channel_url}/metacounter/{key}',
+                'operation_id': 'delete_channel_metacounter_by_key',
+                'http_method': 'DELETE',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'api_token',
+                    'channel_type',
+                    'channel_url',
+                    'key',
+                ],
+                'required': [
+                    'api_token',
+                    'channel_type',
+                    'channel_url',
+                    'key',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'api_token':
+                        (str,),
+                    'channel_type':
+                        (str,),
+                    'channel_url':
+                        (str,),
+                    'key':
+                        (str,),
+                },
+                'attribute_map': {
+                    'api_token': 'Api-Token',
+                    'channel_type': 'channel_type',
+                    'channel_url': 'channel_url',
+                    'key': 'key',
+                },
+                'location_map': {
+                    'api_token': 'header',
+                    'channel_type': 'path',
+                    'channel_url': 'path',
+                    'key': 'path',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.delete_channel_metadata_endpoint = _Endpoint(
+            settings={
+                'response_type': None,
+                'auth': [],
+                'endpoint_path': '/v3/{channel_type}/{channel_url}/metadata',
+                'operation_id': 'delete_channel_metadata',
+                'http_method': 'DELETE',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'api_token',
+                    'channel_type',
+                    'channel_url',
+                    'key',
+                ],
+                'required': [
+                    'api_token',
+                    'channel_type',
+                    'channel_url',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'api_token':
+                        (str,),
+                    'channel_type':
+                        (str,),
+                    'channel_url':
+                        (str,),
+                    'key':
+                        (str,),
+                },
+                'attribute_map': {
+                    'api_token': 'Api-Token',
+                    'channel_type': 'channel_type',
+                    'channel_url': 'channel_url',
+                    'key': 'key',
+                },
+                'location_map': {
+                    'api_token': 'header',
+                    'channel_type': 'path',
+                    'channel_url': 'path',
+                    'key': 'query',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.delete_channel_metadata_by_key_endpoint = _Endpoint(
+            settings={
+                'response_type': None,
+                'auth': [],
+                'endpoint_path': '/v3/{channel_type}/{channel_url}/metadata/{key}',
+                'operation_id': 'delete_channel_metadata_by_key',
+                'http_method': 'DELETE',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'api_token',
+                    'channel_type',
+                    'channel_url',
+                    'key',
+                ],
+                'required': [
+                    'api_token',
+                    'channel_type',
+                    'channel_url',
+                    'key',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'api_token':
+                        (str,),
+                    'channel_type':
+                        (str,),
+                    'channel_url':
+                        (str,),
+                    'key':
+                        (str,),
+                },
+                'attribute_map': {
+                    'api_token': 'Api-Token',
+                    'channel_type': 'channel_type',
+                    'channel_url': 'channel_url',
+                    'key': 'key',
+                },
+                'location_map': {
+                    'api_token': 'header',
+                    'channel_type': 'path',
+                    'channel_url': 'path',
+                    'key': 'path',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
         self.delete_user_by_id_endpoint = _Endpoint(
             settings={
                 'response_type': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
@@ -430,6 +759,123 @@ class UserApi(object):
                 'accept': [
                     'application/json'
                 ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.delete_user_metadata_endpoint = _Endpoint(
+            settings={
+                'response_type': None,
+                'auth': [],
+                'endpoint_path': '/v3/users/{user_id}/metadata',
+                'operation_id': 'delete_user_metadata',
+                'http_method': 'DELETE',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'api_token',
+                    'user_id',
+                    'key',
+                ],
+                'required': [
+                    'api_token',
+                    'user_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'api_token':
+                        (str,),
+                    'user_id':
+                        (str,),
+                    'key':
+                        (str,),
+                },
+                'attribute_map': {
+                    'api_token': 'Api-Token',
+                    'user_id': 'user_id',
+                    'key': 'key',
+                },
+                'location_map': {
+                    'api_token': 'header',
+                    'user_id': 'path',
+                    'key': 'query',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.delete_user_metadata_by_key_endpoint = _Endpoint(
+            settings={
+                'response_type': None,
+                'auth': [],
+                'endpoint_path': '/v3/users/{user_id}/metadata/{key}',
+                'operation_id': 'delete_user_metadata_by_key',
+                'http_method': 'DELETE',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'api_token',
+                    'user_id',
+                    'key',
+                ],
+                'required': [
+                    'api_token',
+                    'user_id',
+                    'key',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'api_token':
+                        (str,),
+                    'user_id':
+                        (str,),
+                    'key':
+                        (str,),
+                },
+                'attribute_map': {
+                    'api_token': 'Api-Token',
+                    'user_id': 'user_id',
+                    'key': 'key',
+                },
+                'location_map': {
+                    'api_token': 'header',
+                    'user_id': 'path',
+                    'key': 'path',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [],
                 'content_type': [],
             },
             api_client=api_client
@@ -492,216 +938,6 @@ class UserApi(object):
                 'content_type': [
                     'application/json'
                 ]
-            },
-            api_client=api_client
-        )
-        self.list_banned_channels_endpoint = _Endpoint(
-            settings={
-                'response_type': (ListBannedChannelsResponse,),
-                'auth': [],
-                'endpoint_path': '/v3/users/{user_id}/ban',
-                'operation_id': 'list_banned_channels',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'api_token',
-                    'user_id',
-                    'token',
-                    'limit',
-                ],
-                'required': [
-                    'api_token',
-                    'user_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'api_token':
-                        (str,),
-                    'user_id':
-                        (str,),
-                    'token':
-                        (str,),
-                    'limit':
-                        (int,),
-                },
-                'attribute_map': {
-                    'api_token': 'Api-Token',
-                    'user_id': 'user_id',
-                    'token': 'token',
-                    'limit': 'limit',
-                },
-                'location_map': {
-                    'api_token': 'header',
-                    'user_id': 'path',
-                    'token': 'query',
-                    'limit': 'query',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
-        self.list_blocked_users_endpoint = _Endpoint(
-            settings={
-                'response_type': (ListBlockedUsersResponse,),
-                'auth': [],
-                'endpoint_path': '/v3/users/{user_id}/block',
-                'operation_id': 'list_blocked_users',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'api_token',
-                    'user_id',
-                    'token',
-                    'limit',
-                    'user_ids',
-                    'metadatakey',
-                    'metadatavalues_in',
-                ],
-                'required': [
-                    'api_token',
-                    'user_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'api_token':
-                        (str,),
-                    'user_id':
-                        (str,),
-                    'token':
-                        (str,),
-                    'limit':
-                        (int,),
-                    'user_ids':
-                        (str,),
-                    'metadatakey':
-                        (str,),
-                    'metadatavalues_in':
-                        (str,),
-                },
-                'attribute_map': {
-                    'api_token': 'Api-Token',
-                    'user_id': 'user_id',
-                    'token': 'token',
-                    'limit': 'limit',
-                    'user_ids': 'user_ids',
-                    'metadatakey': 'metadatakey',
-                    'metadatavalues_in': 'metadatavalues_in',
-                },
-                'location_map': {
-                    'api_token': 'header',
-                    'user_id': 'path',
-                    'token': 'query',
-                    'limit': 'query',
-                    'user_ids': 'query',
-                    'metadatakey': 'query',
-                    'metadatavalues_in': 'query',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
-        self.list_muted_channels_endpoint = _Endpoint(
-            settings={
-                'response_type': (ListMutedChannelsResponse,),
-                'auth': [],
-                'endpoint_path': '/v3/users/{user_id}/mute',
-                'operation_id': 'list_muted_channels',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'api_token',
-                    'user_id',
-                    'token',
-                    'limit',
-                ],
-                'required': [
-                    'api_token',
-                    'user_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'api_token':
-                        (str,),
-                    'user_id':
-                        (str,),
-                    'token':
-                        (str,),
-                    'limit':
-                        (int,),
-                },
-                'attribute_map': {
-                    'api_token': 'Api-Token',
-                    'user_id': 'user_id',
-                    'token': 'token',
-                    'limit': 'limit',
-                },
-                'location_map': {
-                    'api_token': 'header',
-                    'user_id': 'path',
-                    'token': 'query',
-                    'limit': 'query',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
             },
             api_client=api_client
         )
@@ -1176,67 +1412,6 @@ class UserApi(object):
             },
             api_client=api_client
         )
-        self.mute_in_channels_with_custom_channel_types_endpoint = _Endpoint(
-            settings={
-                'response_type': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
-                'auth': [],
-                'endpoint_path': '/v3/users/{user_id}/muted_channel_custom_types',
-                'operation_id': 'mute_in_channels_with_custom_channel_types',
-                'http_method': 'POST',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'api_token',
-                    'user_id',
-                    'mute_in_channels_with_custom_channel_types_data',
-                ],
-                'required': [
-                    'api_token',
-                    'user_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'api_token':
-                        (str,),
-                    'user_id':
-                        (str,),
-                    'mute_in_channels_with_custom_channel_types_data':
-                        (MuteInChannelsWithCustomChannelTypesData,),
-                },
-                'attribute_map': {
-                    'api_token': 'Api-Token',
-                    'user_id': 'user_id',
-                },
-                'location_map': {
-                    'api_token': 'header',
-                    'user_id': 'path',
-                    'mute_in_channels_with_custom_channel_types_data': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
-            api_client=api_client
-        )
         self.register_as_operator_to_channels_with_custom_channel_types_endpoint = _Endpoint(
             settings={
                 'response_type': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
@@ -1536,67 +1711,6 @@ class UserApi(object):
             },
             api_client=api_client
         )
-        self.unblock_user_by_id_endpoint = _Endpoint(
-            settings={
-                'response_type': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
-                'auth': [],
-                'endpoint_path': '/v3/users/{user_id}/block/{target_id}',
-                'operation_id': 'unblock_user_by_id',
-                'http_method': 'DELETE',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'api_token',
-                    'user_id',
-                    'target_id',
-                ],
-                'required': [
-                    'api_token',
-                    'user_id',
-                    'target_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'api_token':
-                        (str,),
-                    'user_id':
-                        (str,),
-                    'target_id':
-                        (str,),
-                },
-                'attribute_map': {
-                    'api_token': 'Api-Token',
-                    'user_id': 'user_id',
-                    'target_id': 'target_id',
-                },
-                'location_map': {
-                    'api_token': 'header',
-                    'user_id': 'path',
-                    'target_id': 'path',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
         self.update_channel_invitation_preference_endpoint = _Endpoint(
             settings={
                 'response_type': (UpdateChannelInvitationPreferenceResponse,),
@@ -1644,6 +1758,286 @@ class UserApi(object):
                     'api_token': 'header',
                     'user_id': 'path',
                     'update_channel_invitation_preference_data': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client
+        )
+        self.update_channel_metacounter_endpoint = _Endpoint(
+            settings={
+                'response_type': (UpdateChannelMetacounterResponse,),
+                'auth': [],
+                'endpoint_path': '/v3/{channel_type}/{channel_url}/metacounter',
+                'operation_id': 'update_channel_metacounter',
+                'http_method': 'PUT',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'api_token',
+                    'channel_type',
+                    'channel_url',
+                    'update_channel_metacounter_data',
+                ],
+                'required': [
+                    'api_token',
+                    'channel_type',
+                    'channel_url',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'api_token':
+                        (str,),
+                    'channel_type':
+                        (str,),
+                    'channel_url':
+                        (str,),
+                    'update_channel_metacounter_data':
+                        (UpdateChannelMetacounterData,),
+                },
+                'attribute_map': {
+                    'api_token': 'Api-Token',
+                    'channel_type': 'channel_type',
+                    'channel_url': 'channel_url',
+                },
+                'location_map': {
+                    'api_token': 'header',
+                    'channel_type': 'path',
+                    'channel_url': 'path',
+                    'update_channel_metacounter_data': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client
+        )
+        self.update_channel_metacounter_by_key_endpoint = _Endpoint(
+            settings={
+                'response_type': (UpdateChannelMetacounterByKeyResponse,),
+                'auth': [],
+                'endpoint_path': '/v3/{channel_type}/{channel_url}/metacounter/{key}',
+                'operation_id': 'update_channel_metacounter_by_key',
+                'http_method': 'PUT',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'api_token',
+                    'channel_type',
+                    'channel_url',
+                    'key',
+                    'body',
+                ],
+                'required': [
+                    'api_token',
+                    'channel_type',
+                    'channel_url',
+                    'key',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'api_token':
+                        (str,),
+                    'channel_type':
+                        (str,),
+                    'channel_url':
+                        (str,),
+                    'key':
+                        (str,),
+                    'body':
+                        ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
+                },
+                'attribute_map': {
+                    'api_token': 'Api-Token',
+                    'channel_type': 'channel_type',
+                    'channel_url': 'channel_url',
+                    'key': 'key',
+                },
+                'location_map': {
+                    'api_token': 'header',
+                    'channel_type': 'path',
+                    'channel_url': 'path',
+                    'key': 'path',
+                    'body': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client
+        )
+        self.update_channel_metadata_endpoint = _Endpoint(
+            settings={
+                'response_type': (UpdateChannelMetadataResponse,),
+                'auth': [],
+                'endpoint_path': '/v3/{channel_type}/{channel_url}/metadata',
+                'operation_id': 'update_channel_metadata',
+                'http_method': 'PUT',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'api_token',
+                    'channel_type',
+                    'channel_url',
+                    'update_channel_metadata_data',
+                ],
+                'required': [
+                    'api_token',
+                    'channel_type',
+                    'channel_url',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'api_token':
+                        (str,),
+                    'channel_type':
+                        (str,),
+                    'channel_url':
+                        (str,),
+                    'update_channel_metadata_data':
+                        (UpdateChannelMetadataData,),
+                },
+                'attribute_map': {
+                    'api_token': 'Api-Token',
+                    'channel_type': 'channel_type',
+                    'channel_url': 'channel_url',
+                },
+                'location_map': {
+                    'api_token': 'header',
+                    'channel_type': 'path',
+                    'channel_url': 'path',
+                    'update_channel_metadata_data': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client
+        )
+        self.update_channel_metadata_by_key_endpoint = _Endpoint(
+            settings={
+                'response_type': (UpdateChannelMetadataByKeyResponse,),
+                'auth': [],
+                'endpoint_path': '/v3/{channel_type}/{channel_url}/metadata/{key}',
+                'operation_id': 'update_channel_metadata_by_key',
+                'http_method': 'PUT',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'api_token',
+                    'channel_type',
+                    'channel_url',
+                    'key',
+                    'body',
+                ],
+                'required': [
+                    'api_token',
+                    'channel_type',
+                    'channel_url',
+                    'key',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'api_token':
+                        (str,),
+                    'channel_type':
+                        (str,),
+                    'channel_url':
+                        (str,),
+                    'key':
+                        (str,),
+                    'body':
+                        ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
+                },
+                'attribute_map': {
+                    'api_token': 'Api-Token',
+                    'channel_type': 'channel_type',
+                    'channel_url': 'channel_url',
+                    'key': 'key',
+                },
+                'location_map': {
+                    'api_token': 'header',
+                    'channel_type': 'path',
+                    'channel_url': 'path',
+                    'key': 'path',
+                    'body': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -1900,6 +2294,134 @@ class UserApi(object):
                     'api_token': 'header',
                     'user_id': 'path',
                     'update_user_by_id_data': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client
+        )
+        self.update_user_metadata_endpoint = _Endpoint(
+            settings={
+                'response_type': (UpdateUserMetadataResponse,),
+                'auth': [],
+                'endpoint_path': '/v3/users/{user_id}/metadata',
+                'operation_id': 'update_user_metadata',
+                'http_method': 'PUT',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'api_token',
+                    'user_id',
+                    'update_user_metadata_data',
+                ],
+                'required': [
+                    'api_token',
+                    'user_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'api_token':
+                        (str,),
+                    'user_id':
+                        (str,),
+                    'update_user_metadata_data':
+                        (UpdateUserMetadataData,),
+                },
+                'attribute_map': {
+                    'api_token': 'Api-Token',
+                    'user_id': 'user_id',
+                },
+                'location_map': {
+                    'api_token': 'header',
+                    'user_id': 'path',
+                    'update_user_metadata_data': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client
+        )
+        self.update_user_metadata_by_key_endpoint = _Endpoint(
+            settings={
+                'response_type': (UpdateUserMetadataByKeyResponse,),
+                'auth': [],
+                'endpoint_path': '/v3/users/{user_id}/metadata/{key}',
+                'operation_id': 'update_user_metadata_by_key',
+                'http_method': 'PUT',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'api_token',
+                    'user_id',
+                    'key',
+                    'body',
+                ],
+                'required': [
+                    'api_token',
+                    'user_id',
+                    'key',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'api_token':
+                        (str,),
+                    'user_id':
+                        (str,),
+                    'key':
+                        (str,),
+                    'body':
+                        ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
+                },
+                'attribute_map': {
+                    'api_token': 'Api-Token',
+                    'user_id': 'user_id',
+                    'key': 'key',
+                },
+                'location_map': {
+                    'api_token': 'header',
+                    'user_id': 'path',
+                    'key': 'path',
+                    'body': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -2614,158 +3136,6 @@ class UserApi(object):
             token_type
         return self.add_registration_or_device_token_endpoint.call_with_http_info(**kwargs)
 
-    def ban_from_channels_with_custom_channel_types(
-        self,
-        api_token,
-        user_id,
-        **kwargs
-    ):
-        """Ban from channels with custom channel types  # noqa: E501
-
-        ## Ban from channels with custom channel types  Bans a user from channels with particular custom channel types.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-ban-from-channels-with-custom-channel-types ----------------------------  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.ban_from_channels_with_custom_channel_types(api_token, user_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            api_token (str):
-            user_id (str):
-
-        Keyword Args:
-            ban_from_channels_with_custom_channel_types_data (BanFromChannelsWithCustomChannelTypesData): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            {str: (bool, date, datetime, dict, float, int, list, str, none_type)}
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['api_token'] = \
-            api_token
-        kwargs['user_id'] = \
-            user_id
-        return self.ban_from_channels_with_custom_channel_types_endpoint.call_with_http_info(**kwargs)
-
-    def block_user(
-        self,
-        api_token,
-        user_id,
-        **kwargs
-    ):
-        """Block a user  # noqa: E501
-
-        ## Block a user  Allows a user to block another user. A user doesn't receive messages from someone they have blocked anymore. Also, blocking someone doesn't alert them that they have been blocked. Blocked users still can send messages as normal in the channel: however, they can't receive any messages from the users who have blocked them.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-block-a-user ----------------------------  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.block_user(api_token, user_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            api_token (str):
-            user_id (str):
-
-        Keyword Args:
-            block_user_data (BlockUserData): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            BlockUserResponse
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['api_token'] = \
-            api_token
-        kwargs['user_id'] = \
-            user_id
-        return self.block_user_endpoint.call_with_http_info(**kwargs)
-
     def choose_push_notification_content_template(
         self,
         api_token,
@@ -2842,6 +3212,166 @@ class UserApi(object):
             user_id
         return self.choose_push_notification_content_template_endpoint.call_with_http_info(**kwargs)
 
+    def create_channel_metacounter(
+        self,
+        api_token,
+        channel_type,
+        channel_url,
+        **kwargs
+    ):
+        """Create a channel metacounter  # noqa: E501
+
+        ## Create a channel metacounter  Creates a channel metacounter's items to store in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-create-a-channel-metacounter ----------------------------  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.create_channel_metacounter(api_token, channel_type, channel_url, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            api_token (str):
+            channel_type (str):
+            channel_url (str):
+
+        Keyword Args:
+            create_channel_metacounter_data (CreateChannelMetacounterData): [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            CreateChannelMetacounterResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
+        kwargs['channel_type'] = \
+            channel_type
+        kwargs['channel_url'] = \
+            channel_url
+        return self.create_channel_metacounter_endpoint.call_with_http_info(**kwargs)
+
+    def create_channel_metadata(
+        self,
+        api_token,
+        channel_type,
+        channel_url,
+        **kwargs
+    ):
+        """Create a channel metadata  # noqa: E501
+
+        ## Create a channel metadata  Creates a channel metadata's items to store in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-create-a-channel-metadata ----------------------------  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.create_channel_metadata(api_token, channel_type, channel_url, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            api_token (str):
+            channel_type (str):
+            channel_url (str):
+
+        Keyword Args:
+            create_channel_metadata_data (CreateChannelMetadataData): [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            CreateChannelMetadataResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
+        kwargs['channel_type'] = \
+            channel_type
+        kwargs['channel_url'] = \
+            channel_url
+        return self.create_channel_metadata_endpoint.call_with_http_info(**kwargs)
+
     def create_user(
         self,
         api_token,
@@ -2913,6 +3443,407 @@ class UserApi(object):
         kwargs['api_token'] = \
             api_token
         return self.create_user_endpoint.call_with_http_info(**kwargs)
+
+    def create_user_metadata(
+        self,
+        api_token,
+        user_id,
+        **kwargs
+    ):
+        """Create a user metadata  # noqa: E501
+
+        ## Create a user metadata  Creates a user metadata's items to store in a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-create-a-user-metadata ----------------------------  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.create_user_metadata(api_token, user_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            api_token (str):
+            user_id (str):
+
+        Keyword Args:
+            create_user_metadata_data (CreateUserMetadataData): [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            CreateUserMetadataResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
+        kwargs['user_id'] = \
+            user_id
+        return self.create_user_metadata_endpoint.call_with_http_info(**kwargs)
+
+    def delete_channel_metacounter(
+        self,
+        api_token,
+        channel_type,
+        channel_url,
+        **kwargs
+    ):
+        """Delete a channel metacounter - When deleting all items of a channel metacounter  # noqa: E501
+
+        ## Delete a channel metacounter  Deletes a channel metacounter's item that is stored in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-delete-a-channel-metacounter ----------------------------   `channel_type`      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  `channel_url`      Type: string      Description: Specifies the URL of the channel which has the metacounter to delete.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.delete_channel_metacounter(api_token, channel_type, channel_url, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            api_token (str):
+            channel_type (str):
+            channel_url (str):
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            None
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
+        kwargs['channel_type'] = \
+            channel_type
+        kwargs['channel_url'] = \
+            channel_url
+        return self.delete_channel_metacounter_endpoint.call_with_http_info(**kwargs)
+
+    def delete_channel_metacounter_by_key(
+        self,
+        api_token,
+        channel_type,
+        channel_url,
+        key,
+        **kwargs
+    ):
+        """Delete a channel metacounter - When deleting a specific item of a channel metacounter by its key  # noqa: E501
+
+        ## Delete a channel metacounter  Deletes a channel metacounter's item that is stored in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-delete-a-channel-metacounter ----------------------------   `channel_type`      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  `channel_url`      Type: string      Description: Specifies the URL of the channel which has the metacounter to delete.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.delete_channel_metacounter_by_key(api_token, channel_type, channel_url, key, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            api_token (str):
+            channel_type (str):
+            channel_url (str):
+            key (str):
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            None
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
+        kwargs['channel_type'] = \
+            channel_type
+        kwargs['channel_url'] = \
+            channel_url
+        kwargs['key'] = \
+            key
+        return self.delete_channel_metacounter_by_key_endpoint.call_with_http_info(**kwargs)
+
+    def delete_channel_metadata(
+        self,
+        api_token,
+        channel_type,
+        channel_url,
+        **kwargs
+    ):
+        """Delete a channel metadata - When deleting all items of a channel metadata  # noqa: E501
+
+        ## Delete a channel metadata  Deletes a channel metadata's one or all items that are stored in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-delete-a-channel-metadata ----------------------------   `channel_type`      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  `channel_url`      Type: string      Description: Specifies the URL of the channel which has the metadata to delete.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.delete_channel_metadata(api_token, channel_type, channel_url, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            api_token (str):
+            channel_type (str):
+            channel_url (str):
+
+        Keyword Args:
+            key (str): [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            None
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
+        kwargs['channel_type'] = \
+            channel_type
+        kwargs['channel_url'] = \
+            channel_url
+        return self.delete_channel_metadata_endpoint.call_with_http_info(**kwargs)
+
+    def delete_channel_metadata_by_key(
+        self,
+        api_token,
+        channel_type,
+        channel_url,
+        key,
+        **kwargs
+    ):
+        """Delete a channel metadata - When deleting a specific item of a channel metadata by its key  # noqa: E501
+
+        ## Delete a channel metadata  Deletes a channel metadata's one or all items that are stored in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-delete-a-channel-metadata ----------------------------   `channel_type`      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  `channel_url`      Type: string      Description: Specifies the URL of the channel which has the metadata to delete.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.delete_channel_metadata_by_key(api_token, channel_type, channel_url, key, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            api_token (str):
+            channel_type (str):
+            channel_url (str):
+            key (str):
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            None
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
+        kwargs['channel_type'] = \
+            channel_type
+        kwargs['channel_url'] = \
+            channel_url
+        kwargs['key'] = \
+            key
+        return self.delete_channel_metadata_by_key_endpoint.call_with_http_info(**kwargs)
 
     def delete_user_by_id(
         self,
@@ -2989,6 +3920,161 @@ class UserApi(object):
             user_id
         return self.delete_user_by_id_endpoint.call_with_http_info(**kwargs)
 
+    def delete_user_metadata(
+        self,
+        api_token,
+        user_id,
+        **kwargs
+    ):
+        """Delete a user metadata - When deleting all items of a user metadata  # noqa: E501
+
+        ## Delete a user metadata  Deletes a user metadata's one or all items that are stored in a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-delete-a-user-metadata ----------------------------   `user_id`      Type: string      Description: Specifies the ID of the user who has the metadata to delete.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.delete_user_metadata(api_token, user_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            api_token (str):
+            user_id (str):
+
+        Keyword Args:
+            key (str): [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            None
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
+        kwargs['user_id'] = \
+            user_id
+        return self.delete_user_metadata_endpoint.call_with_http_info(**kwargs)
+
+    def delete_user_metadata_by_key(
+        self,
+        api_token,
+        user_id,
+        key,
+        **kwargs
+    ):
+        """Delete a user metadata - When deleting a specific item of a user metadata by its key  # noqa: E501
+
+        ## Delete a user metadata  Deletes a user metadata's one or all items that are stored in a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-delete-a-user-metadata ----------------------------   `user_id`      Type: string      Description: Specifies the ID of the user who has the metadata to delete.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.delete_user_metadata_by_key(api_token, user_id, key, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            api_token (str):
+            user_id (str):
+            key (str):
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            None
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
+        kwargs['user_id'] = \
+            user_id
+        kwargs['key'] = \
+            key
+        return self.delete_user_metadata_by_key_endpoint.call_with_http_info(**kwargs)
+
     def leave_my_group_channels(
         self,
         api_token,
@@ -3064,240 +4150,6 @@ class UserApi(object):
         kwargs['user_id'] = \
             user_id
         return self.leave_my_group_channels_endpoint.call_with_http_info(**kwargs)
-
-    def list_banned_channels(
-        self,
-        api_token,
-        user_id,
-        **kwargs
-    ):
-        """List banned channels  # noqa: E501
-
-        ## List banned channels  Retrieves a list of open and group channels with additional information where a user is banned.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-list-banned-channels ----------------------------   `user_id`      Type: string      Description: Specifies the unique ID of the target user.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.list_banned_channels(api_token, user_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            api_token (str):
-            user_id (str):
-
-        Keyword Args:
-            token (str): [optional]
-            limit (int): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            ListBannedChannelsResponse
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['api_token'] = \
-            api_token
-        kwargs['user_id'] = \
-            user_id
-        return self.list_banned_channels_endpoint.call_with_http_info(**kwargs)
-
-    def list_blocked_users(
-        self,
-        api_token,
-        user_id,
-        **kwargs
-    ):
-        """List blocked users  # noqa: E501
-
-        ## List blocked users  Retrieves a list of other users that a user has blocked.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-list-blocked-users ----------------------------   `user_id`      Type: string      Description: Specifies the unique ID of the target user.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.list_blocked_users(api_token, user_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            api_token (str):
-            user_id (str):
-
-        Keyword Args:
-            token (str): [optional]
-            limit (int): [optional]
-            user_ids (str): [optional]
-            metadatakey (str): [optional]
-            metadatavalues_in (str): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            ListBlockedUsersResponse
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['api_token'] = \
-            api_token
-        kwargs['user_id'] = \
-            user_id
-        return self.list_blocked_users_endpoint.call_with_http_info(**kwargs)
-
-    def list_muted_channels(
-        self,
-        api_token,
-        user_id,
-        **kwargs
-    ):
-        """List muted channels  # noqa: E501
-
-        ## List muted channels  Retrieves a list of open and group channels with additional information where a user is muted.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-list-muted-channels ----------------------------   `user_id`      Type: string      Description: Specifies the unique ID of the target user.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.list_muted_channels(api_token, user_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            api_token (str):
-            user_id (str):
-
-        Keyword Args:
-            token (str): [optional]
-            limit (int): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            ListMutedChannelsResponse
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['api_token'] = \
-            api_token
-        kwargs['user_id'] = \
-            user_id
-        return self.list_muted_channels_endpoint.call_with_http_info(**kwargs)
 
     def list_my_group_channels(
         self,
@@ -3648,82 +4500,6 @@ class UserApi(object):
         kwargs['user_id'] = \
             user_id
         return self.mark_all_messages_as_read_endpoint.call_with_http_info(**kwargs)
-
-    def mute_in_channels_with_custom_channel_types(
-        self,
-        api_token,
-        user_id,
-        **kwargs
-    ):
-        """Mute in channels with custom channel types  # noqa: E501
-
-        ## Mute in channels with custom channel types  Mutes a user in channels with particular custom channel types.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-mute-in-channels-with-custom-channel-types ----------------------------  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.mute_in_channels_with_custom_channel_types(api_token, user_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            api_token (str):
-            user_id (str):
-
-        Keyword Args:
-            mute_in_channels_with_custom_channel_types_data (MuteInChannelsWithCustomChannelTypesData): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            {str: (bool, date, datetime, dict, float, int, list, str, none_type)}
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['api_token'] = \
-            api_token
-        kwargs['user_id'] = \
-            user_id
-        return self.mute_in_channels_with_custom_channel_types_endpoint.call_with_http_info(**kwargs)
 
     def register_as_operator_to_channels_with_custom_channel_types(
         self,
@@ -4113,85 +4889,6 @@ class UserApi(object):
             user_id
         return self.reset_push_preferences_endpoint.call_with_http_info(**kwargs)
 
-    def unblock_user_by_id(
-        self,
-        api_token,
-        user_id,
-        target_id,
-        **kwargs
-    ):
-        """Unblock a user  # noqa: E501
-
-        ## Unblock a user  Unblocks the user.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-unblock-a-user ----------------------------  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.unblock_user_by_id(api_token, user_id, target_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            api_token (str):
-            user_id (str):
-            target_id (str):
-
-        Keyword Args:
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            {str: (bool, date, datetime, dict, float, int, list, str, none_type)}
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['api_token'] = \
-            api_token
-        kwargs['user_id'] = \
-            user_id
-        kwargs['target_id'] = \
-            target_id
-        return self.unblock_user_by_id_endpoint.call_with_http_info(**kwargs)
-
     def update_channel_invitation_preference(
         self,
         api_token,
@@ -4267,6 +4964,334 @@ class UserApi(object):
         kwargs['user_id'] = \
             user_id
         return self.update_channel_invitation_preference_endpoint.call_with_http_info(**kwargs)
+
+    def update_channel_metacounter(
+        self,
+        api_token,
+        channel_type,
+        channel_url,
+        **kwargs
+    ):
+        """Update a channel metacounter - When updating existing items of a channel metacounter by their keys or adding new items to the metacounter  # noqa: E501
+
+        ## Update a channel metacounter  Updates existing items of a channel metacounter by their keys, or adds new items to the metacounter.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-update-a-channel-metacounter ----------------------------   `channel_type`      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  `channel_url`      Type: string      Description: Specifies the URL of the target channel.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.update_channel_metacounter(api_token, channel_type, channel_url, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            api_token (str):
+            channel_type (str):
+            channel_url (str):
+
+        Keyword Args:
+            update_channel_metacounter_data (UpdateChannelMetacounterData): [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            UpdateChannelMetacounterResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
+        kwargs['channel_type'] = \
+            channel_type
+        kwargs['channel_url'] = \
+            channel_url
+        return self.update_channel_metacounter_endpoint.call_with_http_info(**kwargs)
+
+    def update_channel_metacounter_by_key(
+        self,
+        api_token,
+        channel_type,
+        channel_url,
+        key,
+        **kwargs
+    ):
+        """Update a channel metacounter - When updating a specific item of a channel metacounter by its key  # noqa: E501
+
+        ## Update a channel metacounter  Updates existing items of a channel metacounter by their keys, or adds new items to the metacounter.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-update-a-channel-metacounter ----------------------------   `channel_type`      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  `channel_url`      Type: string      Description: Specifies the URL of the target channel.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.update_channel_metacounter_by_key(api_token, channel_type, channel_url, key, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            api_token (str):
+            channel_type (str):
+            channel_url (str):
+            key (str):
+
+        Keyword Args:
+            body ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            UpdateChannelMetacounterByKeyResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
+        kwargs['channel_type'] = \
+            channel_type
+        kwargs['channel_url'] = \
+            channel_url
+        kwargs['key'] = \
+            key
+        return self.update_channel_metacounter_by_key_endpoint.call_with_http_info(**kwargs)
+
+    def update_channel_metadata(
+        self,
+        api_token,
+        channel_type,
+        channel_url,
+        **kwargs
+    ):
+        """Update a channel metadata - When updating existing items of a channel metadata by their keys or adding new items to the metadata  # noqa: E501
+
+        ## Update a channel metadata  Updates existing items of a channel metadata by their keys, or adds new items to the metadata.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-update-a-channel-metadata ----------------------------   `channel_type`      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  `channel_url`      Type: string      Description: Specifies the URL of the target channel.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.update_channel_metadata(api_token, channel_type, channel_url, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            api_token (str):
+            channel_type (str):
+            channel_url (str):
+
+        Keyword Args:
+            update_channel_metadata_data (UpdateChannelMetadataData): [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            UpdateChannelMetadataResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
+        kwargs['channel_type'] = \
+            channel_type
+        kwargs['channel_url'] = \
+            channel_url
+        return self.update_channel_metadata_endpoint.call_with_http_info(**kwargs)
+
+    def update_channel_metadata_by_key(
+        self,
+        api_token,
+        channel_type,
+        channel_url,
+        key,
+        **kwargs
+    ):
+        """Update a channel metadata - When updating a specific item of a channel metadata by its key  # noqa: E501
+
+        ## Update a channel metadata  Updates existing items of a channel metadata by their keys, or adds new items to the metadata.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-update-a-channel-metadata ----------------------------   `channel_type`      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  `channel_url`      Type: string      Description: Specifies the URL of the target channel.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.update_channel_metadata_by_key(api_token, channel_type, channel_url, key, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            api_token (str):
+            channel_type (str):
+            channel_url (str):
+            key (str):
+
+        Keyword Args:
+            body ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            UpdateChannelMetadataByKeyResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
+        kwargs['channel_type'] = \
+            channel_type
+        kwargs['channel_url'] = \
+            channel_url
+        kwargs['key'] = \
+            key
+        return self.update_channel_metadata_by_key_endpoint.call_with_http_info(**kwargs)
 
     def update_count_preference_of_channel_by_url(
         self,
@@ -4579,6 +5604,162 @@ class UserApi(object):
         kwargs['user_id'] = \
             user_id
         return self.update_user_by_id_endpoint.call_with_http_info(**kwargs)
+
+    def update_user_metadata(
+        self,
+        api_token,
+        user_id,
+        **kwargs
+    ):
+        """Update a user metadata - When updating existing items of a user metadata by their keys or adding new items to the metadata  # noqa: E501
+
+        ## Update a user metadata  Updates existing items of a user metadata by their keys, or adds new items to the metadata.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-update-a-user-metadata ----------------------------   `user_id`      Type: string      Description: Specifies the ID of the user to update the metadata in.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.update_user_metadata(api_token, user_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            api_token (str):
+            user_id (str):
+
+        Keyword Args:
+            update_user_metadata_data (UpdateUserMetadataData): [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            UpdateUserMetadataResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
+        kwargs['user_id'] = \
+            user_id
+        return self.update_user_metadata_endpoint.call_with_http_info(**kwargs)
+
+    def update_user_metadata_by_key(
+        self,
+        api_token,
+        user_id,
+        key,
+        **kwargs
+    ):
+        """Update a user metadata - When updating a specific item of a user metadata by its key  # noqa: E501
+
+        ## Update a user metadata  Updates existing items of a user metadata by their keys, or adds new items to the metadata.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-update-a-user-metadata ----------------------------   `user_id`      Type: string      Description: Specifies the ID of the user to update the metadata in.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.update_user_metadata_by_key(api_token, user_id, key, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            api_token (str):
+            user_id (str):
+            key (str):
+
+        Keyword Args:
+            body ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            UpdateUserMetadataByKeyResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['api_token'] = \
+            api_token
+        kwargs['user_id'] = \
+            user_id
+        kwargs['key'] = \
+            key
+        return self.update_user_metadata_by_key_endpoint.call_with_http_info(**kwargs)
 
     def view_channel_invitation_preference(
         self,

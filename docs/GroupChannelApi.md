@@ -5,33 +5,23 @@ All URIs are relative to *https://api-APP_ID.sendbird.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**gc_accept_invitation**](GroupChannelApi.md#gc_accept_invitation) | **PUT** /v3/group_channels/{channel_url}/accept | Accept an invitation
-[**gc_ban_user**](GroupChannelApi.md#gc_ban_user) | **POST** /v3/group_channels/{channel_url}/ban | Ban a user
 [**gc_cancel_the_registration_of_operators**](GroupChannelApi.md#gc_cancel_the_registration_of_operators) | **DELETE** /v3/group_channels/{channel_url}/operators | Cancel the registration of operators
 [**gc_check_if_member_by_id**](GroupChannelApi.md#gc_check_if_member_by_id) | **GET** /v3/group_channels/{channel_url}/members/{user_id} | Check if member
 [**gc_create_channel**](GroupChannelApi.md#gc_create_channel) | **POST** /v3/group_channels | Create a channel
 [**gc_decline_invitation**](GroupChannelApi.md#gc_decline_invitation) | **PUT** /v3/group_channels/{channel_url}/decline | Decline an invitation
 [**gc_delete_channel_by_url**](GroupChannelApi.md#gc_delete_channel_by_url) | **DELETE** /v3/group_channels/{channel_url} | Delete a channel
-[**gc_freeze_channel**](GroupChannelApi.md#gc_freeze_channel) | **PUT** /v3/group_channels/{channel_url}/freeze | Freeze a channel
 [**gc_hide_or_archive_channel**](GroupChannelApi.md#gc_hide_or_archive_channel) | **PUT** /v3/group_channels/{channel_url}/hide | Hide or archive a channel
 [**gc_invite_as_members**](GroupChannelApi.md#gc_invite_as_members) | **POST** /v3/group_channels/{channel_url}/invite | Invite as members
 [**gc_join_channel**](GroupChannelApi.md#gc_join_channel) | **PUT** /v3/group_channels/{channel_url}/join | Join a channel
 [**gc_leave_channel**](GroupChannelApi.md#gc_leave_channel) | **PUT** /v3/group_channels/{channel_url}/leave | Leave a channel
-[**gc_list_banned_users**](GroupChannelApi.md#gc_list_banned_users) | **GET** /v3/group_channels/{channel_url}/ban | List banned users
 [**gc_list_channels**](GroupChannelApi.md#gc_list_channels) | **GET** /v3/group_channels | List channels
 [**gc_list_members**](GroupChannelApi.md#gc_list_members) | **GET** /v3/group_channels/{channel_url}/members | List members
-[**gc_list_muted_users**](GroupChannelApi.md#gc_list_muted_users) | **GET** /v3/group_channels/{channel_url}/mute | List muted users
 [**gc_list_operators**](GroupChannelApi.md#gc_list_operators) | **GET** /v3/group_channels/{channel_url}/operators | List operators
-[**gc_mute_user**](GroupChannelApi.md#gc_mute_user) | **POST** /v3/group_channels/{channel_url}/mute | Mute a user
 [**gc_register_operators**](GroupChannelApi.md#gc_register_operators) | **POST** /v3/group_channels/{channel_url}/operators | Register operators
 [**gc_reset_chat_history**](GroupChannelApi.md#gc_reset_chat_history) | **PUT** /v3/group_channels/{channel_url}/reset_user_history | Reset chat history
-[**gc_unban_user_by_id**](GroupChannelApi.md#gc_unban_user_by_id) | **DELETE** /v3/group_channels/{channel_url}/ban/{banned_user_id} | Unban a user
 [**gc_unhide_or_unarchive_channel**](GroupChannelApi.md#gc_unhide_or_unarchive_channel) | **DELETE** /v3/group_channels/{channel_url}/hide | Unhide or unarchive a channel
-[**gc_unmute_user_by_id**](GroupChannelApi.md#gc_unmute_user_by_id) | **DELETE** /v3/group_channels/{channel_url}/mute/{muted_user_id} | Unmute a user
-[**gc_update_ban_by_id**](GroupChannelApi.md#gc_update_ban_by_id) | **PUT** /v3/group_channels/{channel_url}/ban/{banned_user_id} | Update a ban
 [**gc_update_channel_by_url**](GroupChannelApi.md#gc_update_channel_by_url) | **PUT** /v3/group_channels/{channel_url} | Update a channel
-[**gc_view_ban_by_id**](GroupChannelApi.md#gc_view_ban_by_id) | **GET** /v3/group_channels/{channel_url}/ban/{banned_user_id} | View a ban
 [**gc_view_channel_by_url**](GroupChannelApi.md#gc_view_channel_by_url) | **GET** /v3/group_channels/{channel_url} | View a channel
-[**gc_view_mute_by_id**](GroupChannelApi.md#gc_view_mute_by_id) | **GET** /v3/group_channels/{channel_url}/mute/{muted_user_id} | View a mute
 
 
 # **gc_accept_invitation**
@@ -119,95 +109,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **gc_ban_user**
-> GcBanUserResponse gc_ban_user(api_token, channel_url)
-
-Ban a user
-
-## Ban a user  Bans a user from a group channel. A banned user is immediately expelled from a channel and allowed to join the channel again after a set time period.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-ban-a-user ----------------------------
-
-### Example
-
-
-```python
-import time
-import sendbird_platform_sdk
-from sendbird_platform_sdk.api import group_channel_api
-from sendbird_platform_sdk.model.gc_ban_user_data import GcBanUserData
-from sendbird_platform_sdk.model.gc_ban_user_response import GcBanUserResponse
-from pprint import pprint
-# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird_platform_sdk.Configuration(
-    host = "https://api-APP_ID.sendbird.com"
-)
-
-
-# Enter a context with an instance of the API client
-with sendbird_platform_sdk.ApiClient() as api_client:
-    # Create an instance of the API class
-    api_instance = group_channel_api.GroupChannelApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
-    channel_url = "channel_url_example" # str | 
-    gc_ban_user_data = GcBanUserData(
-        channel_url="channel_url_example",
-        user_id="user_id_example",
-        agent_id="agent_id_example",
-        seconds=1,
-        description="description_example",
-    ) # GcBanUserData |  (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        # Ban a user
-        api_response = api_instance.gc_ban_user(api_token, channel_url)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling GroupChannelApi->gc_ban_user: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # Ban a user
-        api_response = api_instance.gc_ban_user(api_token, channel_url, gc_ban_user_data=gc_ban_user_data)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling GroupChannelApi->gc_ban_user: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
- **channel_url** | **str**|  |
- **gc_ban_user_data** | [**GcBanUserData**](GcBanUserData.md)|  | [optional]
-
-### Return type
-
-[**GcBanUserResponse**](GcBanUserResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful response |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **gc_cancel_the_registration_of_operators**
-> InlineResponse200 gc_cancel_the_registration_of_operators(api_token, channel_url, operator_ids)
+> InlineResponse2001 gc_cancel_the_registration_of_operators(api_token, channel_url, operator_ids)
 
 Cancel the registration of operators
 
@@ -220,7 +123,7 @@ Cancel the registration of operators
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import group_channel_api
-from sendbird_platform_sdk.model.inline_response200 import InlineResponse200
+from sendbird_platform_sdk.model.inline_response2001 import InlineResponse2001
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -270,7 +173,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse200**](InlineResponse200.md)
+[**InlineResponse2001**](InlineResponse2001.md)
 
 ### Authorization
 
@@ -471,7 +374,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **gc_decline_invitation**
-> InlineResponse200 gc_decline_invitation(api_token, channel_url)
+> InlineResponse2001 gc_decline_invitation(api_token, channel_url)
 
 Decline an invitation
 
@@ -485,7 +388,7 @@ import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import group_channel_api
 from sendbird_platform_sdk.model.gc_decline_invitation_data import GcDeclineInvitationData
-from sendbird_platform_sdk.model.inline_response200 import InlineResponse200
+from sendbird_platform_sdk.model.inline_response2001 import InlineResponse2001
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -534,7 +437,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse200**](InlineResponse200.md)
+[**InlineResponse2001**](InlineResponse2001.md)
 
 ### Authorization
 
@@ -555,7 +458,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **gc_delete_channel_by_url**
-> InlineResponse200 gc_delete_channel_by_url(api_token, channel_url)
+> InlineResponse2001 gc_delete_channel_by_url(api_token, channel_url)
 
 Delete a channel
 
@@ -568,7 +471,7 @@ Delete a channel
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import group_channel_api
-from sendbird_platform_sdk.model.inline_response200 import InlineResponse200
+from sendbird_platform_sdk.model.inline_response2001 import InlineResponse2001
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -603,7 +506,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse200**](InlineResponse200.md)
+[**InlineResponse2001**](InlineResponse2001.md)
 
 ### Authorization
 
@@ -623,92 +526,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **gc_freeze_channel**
-> SendBirdGroupChannel gc_freeze_channel(api_token, channel_url)
-
-Freeze a channel
-
-## Freeze a channel  Freezes or unfreezes a group channel.  > __Note__: Only users designated as channel operators are allowed to talk when a channel is frozen.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-freeze-a-channel ----------------------------
-
-### Example
-
-
-```python
-import time
-import sendbird_platform_sdk
-from sendbird_platform_sdk.api import group_channel_api
-from sendbird_platform_sdk.model.gc_freeze_channel_data import GcFreezeChannelData
-from sendbird_platform_sdk.model.send_bird_group_channel import SendBirdGroupChannel
-from pprint import pprint
-# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird_platform_sdk.Configuration(
-    host = "https://api-APP_ID.sendbird.com"
-)
-
-
-# Enter a context with an instance of the API client
-with sendbird_platform_sdk.ApiClient() as api_client:
-    # Create an instance of the API class
-    api_instance = group_channel_api.GroupChannelApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
-    channel_url = "channel_url_example" # str | 
-    gc_freeze_channel_data = GcFreezeChannelData(
-        channel_url="channel_url_example",
-        freeze=True,
-    ) # GcFreezeChannelData |  (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        # Freeze a channel
-        api_response = api_instance.gc_freeze_channel(api_token, channel_url)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling GroupChannelApi->gc_freeze_channel: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # Freeze a channel
-        api_response = api_instance.gc_freeze_channel(api_token, channel_url, gc_freeze_channel_data=gc_freeze_channel_data)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling GroupChannelApi->gc_freeze_channel: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
- **channel_url** | **str**|  |
- **gc_freeze_channel_data** | [**GcFreezeChannelData**](GcFreezeChannelData.md)|  | [optional]
-
-### Return type
-
-[**SendBirdGroupChannel**](SendBirdGroupChannel.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful response |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **gc_hide_or_archive_channel**
-> InlineResponse200 gc_hide_or_archive_channel(api_token, channel_url)
+> InlineResponse2001 gc_hide_or_archive_channel(api_token, channel_url)
 
 Hide or archive a channel
 
@@ -721,8 +540,8 @@ Hide or archive a channel
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import group_channel_api
-from sendbird_platform_sdk.model.inline_response200 import InlineResponse200
 from sendbird_platform_sdk.model.gc_hide_or_archive_channel_data import GcHideOrArchiveChannelData
+from sendbird_platform_sdk.model.inline_response2001 import InlineResponse2001
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -774,7 +593,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse200**](InlineResponse200.md)
+[**InlineResponse2001**](InlineResponse2001.md)
 
 ### Authorization
 
@@ -972,7 +791,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **gc_leave_channel**
-> InlineResponse200 gc_leave_channel(api_token, channel_url)
+> InlineResponse2001 gc_leave_channel(api_token, channel_url)
 
 Leave a channel
 
@@ -985,8 +804,8 @@ Leave a channel
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import group_channel_api
-from sendbird_platform_sdk.model.inline_response200 import InlineResponse200
 from sendbird_platform_sdk.model.gc_leave_channel_data import GcLeaveChannelData
+from sendbird_platform_sdk.model.inline_response2001 import InlineResponse2001
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1038,7 +857,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse200**](InlineResponse200.md)
+[**InlineResponse2001**](InlineResponse2001.md)
 
 ### Authorization
 
@@ -1047,88 +866,6 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful response |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **gc_list_banned_users**
-> GcListBannedUsersResponse gc_list_banned_users(api_token, channel_url)
-
-List banned users
-
-## List banned users  Retrieves a list of the banned users from a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-list-banned-users ----------------------------   `channel_url`      Type: string      Description: Specifies the URL of the channel where to retrieve a list of banned users.
-
-### Example
-
-
-```python
-import time
-import sendbird_platform_sdk
-from sendbird_platform_sdk.api import group_channel_api
-from sendbird_platform_sdk.model.gc_list_banned_users_response import GcListBannedUsersResponse
-from pprint import pprint
-# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird_platform_sdk.Configuration(
-    host = "https://api-APP_ID.sendbird.com"
-)
-
-
-# Enter a context with an instance of the API client
-with sendbird_platform_sdk.ApiClient() as api_client:
-    # Create an instance of the API class
-    api_instance = group_channel_api.GroupChannelApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
-    channel_url = "channel_url_example" # str | 
-    token = "token_example" # str |  (optional)
-    limit = 1 # int |  (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        # List banned users
-        api_response = api_instance.gc_list_banned_users(api_token, channel_url)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling GroupChannelApi->gc_list_banned_users: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # List banned users
-        api_response = api_instance.gc_list_banned_users(api_token, channel_url, token=token, limit=limit)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling GroupChannelApi->gc_list_banned_users: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
- **channel_url** | **str**|  |
- **token** | **str**|  | [optional]
- **limit** | **int**|  | [optional]
-
-### Return type
-
-[**GcListBannedUsersResponse**](GcListBannedUsersResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -1396,88 +1133,6 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **gc_list_muted_users**
-> GcListMutedUsersResponse gc_list_muted_users(api_token, channel_url)
-
-List muted users
-
-## List muted users  Retrieves a list of the muted users in a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-list-muted-users ----------------------------   `channel_url`      Type: string      Description: Specifies the URL of the channel to retrieve a list of muted users.
-
-### Example
-
-
-```python
-import time
-import sendbird_platform_sdk
-from sendbird_platform_sdk.api import group_channel_api
-from sendbird_platform_sdk.model.gc_list_muted_users_response import GcListMutedUsersResponse
-from pprint import pprint
-# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird_platform_sdk.Configuration(
-    host = "https://api-APP_ID.sendbird.com"
-)
-
-
-# Enter a context with an instance of the API client
-with sendbird_platform_sdk.ApiClient() as api_client:
-    # Create an instance of the API class
-    api_instance = group_channel_api.GroupChannelApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
-    channel_url = "channel_url_example" # str | 
-    token = "token_example" # str |  (optional)
-    limit = 1 # int |  (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        # List muted users
-        api_response = api_instance.gc_list_muted_users(api_token, channel_url)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling GroupChannelApi->gc_list_muted_users: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # List muted users
-        api_response = api_instance.gc_list_muted_users(api_token, channel_url, token=token, limit=limit)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling GroupChannelApi->gc_list_muted_users: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
- **channel_url** | **str**|  |
- **token** | **str**|  | [optional]
- **limit** | **int**|  | [optional]
-
-### Return type
-
-[**GcListMutedUsersResponse**](GcListMutedUsersResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful response |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **gc_list_operators**
 > GcListOperatorsResponse gc_list_operators(api_token, channel_url)
 
@@ -1549,92 +1204,6 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful response |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **gc_mute_user**
-> SendBirdGroupChannel gc_mute_user(api_token, channel_url)
-
-Mute a user
-
-## Mute a user  Mutes a user in a group channel. A muted user remains in the channel and is allowed to view the messages, but can't send any messages until unmuted.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-mute-a-user ----------------------------
-
-### Example
-
-
-```python
-import time
-import sendbird_platform_sdk
-from sendbird_platform_sdk.api import group_channel_api
-from sendbird_platform_sdk.model.gc_mute_user_data import GcMuteUserData
-from sendbird_platform_sdk.model.send_bird_group_channel import SendBirdGroupChannel
-from pprint import pprint
-# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird_platform_sdk.Configuration(
-    host = "https://api-APP_ID.sendbird.com"
-)
-
-
-# Enter a context with an instance of the API client
-with sendbird_platform_sdk.ApiClient() as api_client:
-    # Create an instance of the API class
-    api_instance = group_channel_api.GroupChannelApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
-    channel_url = "channel_url_example" # str | 
-    gc_mute_user_data = GcMuteUserData(
-        channel_url="channel_url_example",
-        user_id="user_id_example",
-        seconds=1,
-        description="description_example",
-    ) # GcMuteUserData |  (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        # Mute a user
-        api_response = api_instance.gc_mute_user(api_token, channel_url)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling GroupChannelApi->gc_mute_user: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # Mute a user
-        api_response = api_instance.gc_mute_user(api_token, channel_url, gc_mute_user_data=gc_mute_user_data)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling GroupChannelApi->gc_mute_user: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
- **channel_url** | **str**|  |
- **gc_mute_user_data** | [**GcMuteUserData**](GcMuteUserData.md)|  | [optional]
-
-### Return type
-
-[**SendBirdGroupChannel**](SendBirdGroupChannel.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
  - **Accept**: application/json
 
 
@@ -1817,79 +1386,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **gc_unban_user_by_id**
-> InlineResponse200 gc_unban_user_by_id(api_token, channel_url, banned_user_id)
-
-Unban a user
-
-## Unban a user  Unbans a user from a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-unban-a-user ----------------------------
-
-### Example
-
-
-```python
-import time
-import sendbird_platform_sdk
-from sendbird_platform_sdk.api import group_channel_api
-from sendbird_platform_sdk.model.inline_response200 import InlineResponse200
-from pprint import pprint
-# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird_platform_sdk.Configuration(
-    host = "https://api-APP_ID.sendbird.com"
-)
-
-
-# Enter a context with an instance of the API client
-with sendbird_platform_sdk.ApiClient() as api_client:
-    # Create an instance of the API class
-    api_instance = group_channel_api.GroupChannelApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
-    channel_url = "channel_url_example" # str | 
-    banned_user_id = "banned_user_id_example" # str | 
-
-    # example passing only required values which don't have defaults set
-    try:
-        # Unban a user
-        api_response = api_instance.gc_unban_user_by_id(api_token, channel_url, banned_user_id)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling GroupChannelApi->gc_unban_user_by_id: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
- **channel_url** | **str**|  |
- **banned_user_id** | **str**|  |
-
-### Return type
-
-[**InlineResponse200**](InlineResponse200.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful response |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **gc_unhide_or_unarchive_channel**
-> InlineResponse200 gc_unhide_or_unarchive_channel(api_token, channel_url, user_id)
+> InlineResponse2001 gc_unhide_or_unarchive_channel(api_token, channel_url, user_id)
 
 Unhide or unarchive a channel
 
@@ -1902,7 +1400,7 @@ Unhide or unarchive a channel
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import group_channel_api
-from sendbird_platform_sdk.model.inline_response200 import InlineResponse200
+from sendbird_platform_sdk.model.inline_response2001 import InlineResponse2001
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1950,7 +1448,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse200**](InlineResponse200.md)
+[**InlineResponse2001**](InlineResponse2001.md)
 
 ### Authorization
 
@@ -1959,165 +1457,6 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful response |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **gc_unmute_user_by_id**
-> InlineResponse200 gc_unmute_user_by_id(api_token, channel_url, muted_user_id)
-
-Unmute a user
-
-## Unmute a user  Unmutes a user within a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-unmute-a-user ----------------------------
-
-### Example
-
-
-```python
-import time
-import sendbird_platform_sdk
-from sendbird_platform_sdk.api import group_channel_api
-from sendbird_platform_sdk.model.inline_response200 import InlineResponse200
-from pprint import pprint
-# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird_platform_sdk.Configuration(
-    host = "https://api-APP_ID.sendbird.com"
-)
-
-
-# Enter a context with an instance of the API client
-with sendbird_platform_sdk.ApiClient() as api_client:
-    # Create an instance of the API class
-    api_instance = group_channel_api.GroupChannelApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
-    channel_url = "channel_url_example" # str | 
-    muted_user_id = "muted_user_id_example" # str | 
-
-    # example passing only required values which don't have defaults set
-    try:
-        # Unmute a user
-        api_response = api_instance.gc_unmute_user_by_id(api_token, channel_url, muted_user_id)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling GroupChannelApi->gc_unmute_user_by_id: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
- **channel_url** | **str**|  |
- **muted_user_id** | **str**|  |
-
-### Return type
-
-[**InlineResponse200**](InlineResponse200.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful response |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **gc_update_ban_by_id**
-> GcUpdateBanByIdResponse gc_update_ban_by_id(api_token, channel_url, banned_user_id)
-
-Update a ban
-
-## Update a ban  Updates details of a ban imposed on a user. You can change the length of the ban with this action, and also provide an updated description.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-update-a-ban ----------------------------
-
-### Example
-
-
-```python
-import time
-import sendbird_platform_sdk
-from sendbird_platform_sdk.api import group_channel_api
-from sendbird_platform_sdk.model.gc_update_ban_by_id_data import GcUpdateBanByIdData
-from sendbird_platform_sdk.model.gc_update_ban_by_id_response import GcUpdateBanByIdResponse
-from pprint import pprint
-# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird_platform_sdk.Configuration(
-    host = "https://api-APP_ID.sendbird.com"
-)
-
-
-# Enter a context with an instance of the API client
-with sendbird_platform_sdk.ApiClient() as api_client:
-    # Create an instance of the API class
-    api_instance = group_channel_api.GroupChannelApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
-    channel_url = "channel_url_example" # str | 
-    banned_user_id = "banned_user_id_example" # str | 
-    gc_update_ban_by_id_data = GcUpdateBanByIdData(
-        channel_url="channel_url_example",
-        banned_user_id="banned_user_id_example",
-        seconds=1,
-        description="description_example",
-    ) # GcUpdateBanByIdData |  (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        # Update a ban
-        api_response = api_instance.gc_update_ban_by_id(api_token, channel_url, banned_user_id)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling GroupChannelApi->gc_update_ban_by_id: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # Update a ban
-        api_response = api_instance.gc_update_ban_by_id(api_token, channel_url, banned_user_id, gc_update_ban_by_id_data=gc_update_ban_by_id_data)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling GroupChannelApi->gc_update_ban_by_id: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
- **channel_url** | **str**|  |
- **banned_user_id** | **str**|  |
- **gc_update_ban_by_id_data** | [**GcUpdateBanByIdData**](GcUpdateBanByIdData.md)|  | [optional]
-
-### Return type
-
-[**GcUpdateBanByIdResponse**](GcUpdateBanByIdResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
  - **Accept**: application/json
 
 
@@ -2223,77 +1562,6 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **gc_view_ban_by_id**
-> GcViewBanByIdResponse gc_view_ban_by_id(api_token, channel_url, banned_user_id)
-
-View a ban
-
-## View a ban  Retrieves details of a ban imposed on a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-view-a-ban ----------------------------
-
-### Example
-
-
-```python
-import time
-import sendbird_platform_sdk
-from sendbird_platform_sdk.api import group_channel_api
-from sendbird_platform_sdk.model.gc_view_ban_by_id_response import GcViewBanByIdResponse
-from pprint import pprint
-# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird_platform_sdk.Configuration(
-    host = "https://api-APP_ID.sendbird.com"
-)
-
-
-# Enter a context with an instance of the API client
-with sendbird_platform_sdk.ApiClient() as api_client:
-    # Create an instance of the API class
-    api_instance = group_channel_api.GroupChannelApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
-    channel_url = "channel_url_example" # str | 
-    banned_user_id = "banned_user_id_example" # str | 
-
-    # example passing only required values which don't have defaults set
-    try:
-        # View a ban
-        api_response = api_instance.gc_view_ban_by_id(api_token, channel_url, banned_user_id)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling GroupChannelApi->gc_view_ban_by_id: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
- **channel_url** | **str**|  |
- **banned_user_id** | **str**|  |
-
-### Return type
-
-[**GcViewBanByIdResponse**](GcViewBanByIdResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful response |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **gc_view_channel_by_url**
 > SendBirdGroupChannel gc_view_channel_by_url(api_token, channel_url)
 
@@ -2363,77 +1631,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**SendBirdGroupChannel**](SendBirdGroupChannel.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful response |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **gc_view_mute_by_id**
-> GcViewMuteByIdResponse gc_view_mute_by_id(api_token, channel_url, muted_user_id)
-
-View a mute
-
-## View a mute  Checks if a user is muted in a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-view-a-mute ----------------------------
-
-### Example
-
-
-```python
-import time
-import sendbird_platform_sdk
-from sendbird_platform_sdk.api import group_channel_api
-from sendbird_platform_sdk.model.gc_view_mute_by_id_response import GcViewMuteByIdResponse
-from pprint import pprint
-# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird_platform_sdk.Configuration(
-    host = "https://api-APP_ID.sendbird.com"
-)
-
-
-# Enter a context with an instance of the API client
-with sendbird_platform_sdk.ApiClient() as api_client:
-    # Create an instance of the API class
-    api_instance = group_channel_api.GroupChannelApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
-    channel_url = "channel_url_example" # str | 
-    muted_user_id = "muted_user_id_example" # str | 
-
-    # example passing only required values which don't have defaults set
-    try:
-        # View a mute
-        api_response = api_instance.gc_view_mute_by_id(api_token, channel_url, muted_user_id)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling GroupChannelApi->gc_view_mute_by_id: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
- **channel_url** | **str**|  |
- **muted_user_id** | **str**|  |
-
-### Return type
-
-[**GcViewMuteByIdResponse**](GcViewMuteByIdResponse.md)
 
 ### Authorization
 

@@ -30,9 +30,9 @@ from sendbird_platform_sdk.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from sendbird_platform_sdk.model.inline_response200 import InlineResponse200
+    from sendbird_platform_sdk.model.inline_response2001 import InlineResponse2001
     from sendbird_platform_sdk.model.send_bird_user import SendBirdUser
-    globals()['InlineResponse200'] = InlineResponse200
+    globals()['InlineResponse2001'] = InlineResponse2001
     globals()['SendBirdUser'] = SendBirdUser
 
 
@@ -95,10 +95,10 @@ class OcBanUserResponse(ModelNormal):
             'user_id': (str,),  # noqa: E501
             'user': (SendBirdUser,),  # noqa: E501
             'next_url': (str,),  # noqa: E501
-            'require_auth_for_profile_image': (Boolean,),  # noqa: E501
+            'require_auth_for_profile_image': (bool,),  # noqa: E501
             'nickname': (str,),  # noqa: E501
             'profile_url': (str,),  # noqa: E501
-            'metadata': (InlineResponse200,),  # noqa: E501
+            'metadata': (InlineResponse2001,),  # noqa: E501
         }
 
     @cached_property
@@ -166,10 +166,10 @@ class OcBanUserResponse(ModelNormal):
             user_id (str): [optional]  # noqa: E501
             user (SendBirdUser): [optional]  # noqa: E501
             next_url (str): [optional]  # noqa: E501
-            require_auth_for_profile_image (Boolean): [optional]  # noqa: E501
+            require_auth_for_profile_image (bool): [optional]  # noqa: E501
             nickname (str): [optional]  # noqa: E501
             profile_url (str): [optional]  # noqa: E501
-            metadata (InlineResponse200): [optional]  # noqa: E501
+            metadata (InlineResponse2001): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -257,10 +257,10 @@ class OcBanUserResponse(ModelNormal):
             user_id (str): [optional]  # noqa: E501
             user (SendBirdUser): [optional]  # noqa: E501
             next_url (str): [optional]  # noqa: E501
-            require_auth_for_profile_image (Boolean): [optional]  # noqa: E501
+            require_auth_for_profile_image (bool): [optional]  # noqa: E501
             nickname (str): [optional]  # noqa: E501
             profile_url (str): [optional]  # noqa: E501
-            metadata (InlineResponse200): [optional]  # noqa: E501
+            metadata (InlineResponse2001): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**user** | [**SendbirdUser**](SendbirdUser.md) |  | [optional] 
+**user** | [**SendBirdUser**](SendBirdUser.md) |  | [optional] 
 **description** | **str** |  | [optional] 
 **end_at** | **float** |  | [optional] 
 **start_at** | **float** |  | [optional] 

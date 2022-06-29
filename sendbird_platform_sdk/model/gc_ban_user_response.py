@@ -30,9 +30,9 @@ from sendbird_platform_sdk.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from sendbird_platform_sdk.model.inline_response200 import InlineResponse200
+    from sendbird_platform_sdk.model.inline_response2001 import InlineResponse2001
     from sendbird_platform_sdk.model.send_bird_user import SendBirdUser
-    globals()['InlineResponse200'] = InlineResponse200
+    globals()['InlineResponse2001'] = InlineResponse2001
     globals()['SendBirdUser'] = SendBirdUser
 
 
@@ -93,7 +93,7 @@ class GcBanUserResponse(ModelNormal):
             'start_at': (float,),  # noqa: E501
             'end_at': (float,),  # noqa: E501
             'description': (str,),  # noqa: E501
-            'metadata': (InlineResponse200,),  # noqa: E501
+            'metadata': (InlineResponse2001,),  # noqa: E501
             'next_url': (str,),  # noqa: E501
             'nickname': (str,),  # noqa: E501
             'profile_url': (str,),  # noqa: E501
@@ -164,7 +164,7 @@ class GcBanUserResponse(ModelNormal):
             start_at (float): [optional]  # noqa: E501
             end_at (float): [optional]  # noqa: E501
             description (str): [optional]  # noqa: E501
-            metadata (InlineResponse200): [optional]  # noqa: E501
+            metadata (InlineResponse2001): [optional]  # noqa: E501
             next_url (str): [optional]  # noqa: E501
             nickname (str): [optional]  # noqa: E501
             profile_url (str): [optional]  # noqa: E501
@@ -255,7 +255,7 @@ class GcBanUserResponse(ModelNormal):
             start_at (float): [optional]  # noqa: E501
             end_at (float): [optional]  # noqa: E501
             description (str): [optional]  # noqa: E501
-            metadata (InlineResponse200): [optional]  # noqa: E501
+            metadata (InlineResponse2001): [optional]  # noqa: E501
             next_url (str): [optional]  # noqa: E501
             nickname (str): [optional]  # noqa: E501
             profile_url (str): [optional]  # noqa: E501

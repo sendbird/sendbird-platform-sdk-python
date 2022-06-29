@@ -30,8 +30,8 @@ from sendbird_platform_sdk.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from sendbird_platform_sdk.model.sendbird_user import SendbirdUser
-    globals()['SendbirdUser'] = SendbirdUser
+    from sendbird_platform_sdk.model.send_bird_user import SendBirdUser
+    globals()['SendBirdUser'] = SendBirdUser
 
 
 class OcUpdateBanByIdResponse(ModelNormal):
@@ -87,7 +87,7 @@ class OcUpdateBanByIdResponse(ModelNormal):
         """
         lazy_import()
         return {
-            'user': (SendbirdUser,),  # noqa: E501
+            'user': (SendBirdUser,),  # noqa: E501
             'description': (str,),  # noqa: E501
             'end_at': (float,),  # noqa: E501
             'start_at': (float,),  # noqa: E501
@@ -146,7 +146,7 @@ class OcUpdateBanByIdResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            user (SendbirdUser): [optional]  # noqa: E501
+            user (SendBirdUser): [optional]  # noqa: E501
             description (str): [optional]  # noqa: E501
             end_at (float): [optional]  # noqa: E501
             start_at (float): [optional]  # noqa: E501
@@ -231,7 +231,7 @@ class OcUpdateBanByIdResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            user (SendbirdUser): [optional]  # noqa: E501
+            user (SendBirdUser): [optional]  # noqa: E501
             description (str): [optional]  # noqa: E501
             end_at (float): [optional]  # noqa: E501
             start_at (float): [optional]  # noqa: E501

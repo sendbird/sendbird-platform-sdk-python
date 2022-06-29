@@ -8,25 +8,28 @@ Method | HTTP request | Description
 [**add_fcm_push_configuration**](ApplicationApi.md#add_fcm_push_configuration) | **POST** /v3/applications/push/fcm | Add a FCM push configuration
 [**add_hms_push_configuration**](ApplicationApi.md#add_hms_push_configuration) | **POST** /v3/applications/push/hms | Add an HMS push configuration
 [**add_ip_to_whitelist**](ApplicationApi.md#add_ip_to_whitelist) | **PUT** /v3/applications/settings/ip_whitelist | Add an IP to a whitelist
+[**ban_users_in_channels_with_custom_channel_type**](ApplicationApi.md#ban_users_in_channels_with_custom_channel_type) | **POST** /v3/applications/settings_by_channel_custom_type/{custom_type}/ban | Ban users in channels with a custom channel type
 [**delete_allowed_ips_from_whitelist**](ApplicationApi.md#delete_allowed_ips_from_whitelist) | **DELETE** /v3/applications/settings/ip_whitelist | Delete allowed IPs from a whitelist
 [**delete_apns_certificate_by_id**](ApplicationApi.md#delete_apns_certificate_by_id) | **DELETE** /v3/applications/push/apns/cert/{provider_id} | Delete an APNs certificate
 [**generate_secondary_api_token**](ApplicationApi.md#generate_secondary_api_token) | **POST** /v3/applications/api_tokens | Generate a secondary API token
+[**list_banned_users_in_channels_with_custom_channel_type**](ApplicationApi.md#list_banned_users_in_channels_with_custom_channel_type) | **GET** /v3/applications/settings_by_channel_custom_type/{custom_type}/ban | List banned users in channels with a custom channel type
+[**list_muted_users_in_channels_with_custom_channel_type**](ApplicationApi.md#list_muted_users_in_channels_with_custom_channel_type) | **GET** /v3/applications/settings_by_channel_custom_type/{custom_type}/mute | List muted users in channels with a custom channel type
 [**list_push_configurations**](ApplicationApi.md#list_push_configurations) | **GET** /v3/applications/push/{push_type} | List push configurations
 [**list_push_notification_content_templates**](ApplicationApi.md#list_push_notification_content_templates) | **GET** /v3/applications/push/message_templates | List push notification content templates
 [**list_secondary_api_tokens**](ApplicationApi.md#list_secondary_api_tokens) | **GET** /v3/applications/api_tokens | List secondary API tokens
+[**mute_users_in_channels_with_custom_channel_type**](ApplicationApi.md#mute_users_in_channels_with_custom_channel_type) | **POST** /v3/applications/settings_by_channel_custom_type/{custom_type}/mute | Mute users in channels with a custom channel type
 [**remove_push_configuration_by_id**](ApplicationApi.md#remove_push_configuration_by_id) | **DELETE** /v3/applications/push/{push_type}/{provider_id} | Remove a push configuration
 [**retrieve_ip_whitelist**](ApplicationApi.md#retrieve_ip_whitelist) | **GET** /v3/applications/settings/ip_whitelist | Retrieve an IP whitelist
 [**revoke_secondary_api_token_by_token**](ApplicationApi.md#revoke_secondary_api_token_by_token) | **DELETE** /v3/applications/api_tokens/{api_token} | Revoke a secondary API token
+[**set_domain_filter**](ApplicationApi.md#set_domain_filter) | **PUT** /v3/applications/settings_global/{custom_type} | Message moderation
+[**unban_users_in_channels_with_custom_channel_type**](ApplicationApi.md#unban_users_in_channels_with_custom_channel_type) | **DELETE** /v3/applications/settings_by_channel_custom_type/{custom_type}/ban | Unban users in channels with a custom channel type
+[**unmute_users_in_channels_with_custom_channel_type**](ApplicationApi.md#unmute_users_in_channels_with_custom_channel_type) | **DELETE** /v3/applications/settings_by_channel_custom_type/{custom_type}/mute | Unmute users in channels with a custom channel type
 [**update_apns_push_configuration_by_id**](ApplicationApi.md#update_apns_push_configuration_by_id) | **PUT** /v3/applications/push/apns/{provider_id} | Update an APNs push configuration
 [**update_default_channel_invitation_preference**](ApplicationApi.md#update_default_channel_invitation_preference) | **PUT** /v3/applications/default_channel_invitation_preference | Update default channel invitation preference
 [**update_fcm_push_configuration_by_id**](ApplicationApi.md#update_fcm_push_configuration_by_id) | **PUT** /v3/applications/push/fcm/{provider_id} | Update a FCM push configuration
 [**update_hms_push_configuration_by_id**](ApplicationApi.md#update_hms_push_configuration_by_id) | **PUT** /v3/applications/push/hms/{provider_id} | Update an HMS push configuration
 [**update_push_notification_content_template**](ApplicationApi.md#update_push_notification_content_template) | **PUT** /v3/applications/push/message_templates/{template_name} | Update a push notification content template
 [**view_default_channel_invitation_preference**](ApplicationApi.md#view_default_channel_invitation_preference) | **GET** /v3/applications/default_channel_invitation_preference | View default channel invitation preference
-[**view_number_of_concurrent_connections**](ApplicationApi.md#view_number_of_concurrent_connections) | **GET** /v3/applications/ccu | View number of concurrent connections
-[**view_number_of_daily_active_users**](ApplicationApi.md#view_number_of_daily_active_users) | **GET** /v3/applications/dau | View number of daily active users
-[**view_number_of_monthly_active_users**](ApplicationApi.md#view_number_of_monthly_active_users) | **GET** /v3/applications/mau | View number of monthly active users
-[**view_number_of_peak_connections**](ApplicationApi.md#view_number_of_peak_connections) | **GET** /v3/applications/peak_connections | View number of peak connections
 [**view_push_configuration_by_id**](ApplicationApi.md#view_push_configuration_by_id) | **GET** /v3/applications/push/{push_type}/{provider_id} | View a push configuration
 [**view_push_notification_content_template**](ApplicationApi.md#view_push_notification_content_template) | **GET** /v3/applications/push/message_templates/{template_name} | View a push notification content template
 [**view_secondary_api_token_by_token**](ApplicationApi.md#view_secondary_api_token_by_token) | **GET** /v3/applications/api_tokens/{api_token} | View a secondary API token
@@ -368,6 +371,95 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **ban_users_in_channels_with_custom_channel_type**
+> {str: (bool, date, datetime, dict, float, int, list, str, none_type)} ban_users_in_channels_with_custom_channel_type(api_token, custom_type)
+
+Ban users in channels with a custom channel type
+
+## Ban specified users in channels with a custom channel type at once.
+
+### Example
+
+
+```python
+import time
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import application_api
+from sendbird_platform_sdk.model.ban_users_in_channels_with_custom_channel_type_data import BanUsersInChannelsWithCustomChannelTypeData
+from pprint import pprint
+# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = sendbird_platform_sdk.Configuration(
+    host = "https://api-APP_ID.sendbird.com"
+)
+
+
+# Enter a context with an instance of the API client
+with sendbird_platform_sdk.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = application_api.ApplicationApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
+    custom_type = "custom_type_example" # str | 
+    ban_users_in_channels_with_custom_channel_type_data = BanUsersInChannelsWithCustomChannelTypeData(
+        banned_list=[
+            V3ApplicationsSettingsByChannelCustomTypeCustomTypeBanBannedList(
+                user_id="user_id_example",
+                seconds=3.14,
+                description="description_example",
+            ),
+        ],
+        on_demand_upsert=True,
+    ) # BanUsersInChannelsWithCustomChannelTypeData |  (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Ban users in channels with a custom channel type
+        api_response = api_instance.ban_users_in_channels_with_custom_channel_type(api_token, custom_type)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling ApplicationApi->ban_users_in_channels_with_custom_channel_type: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Ban users in channels with a custom channel type
+        api_response = api_instance.ban_users_in_channels_with_custom_channel_type(api_token, custom_type, ban_users_in_channels_with_custom_channel_type_data=ban_users_in_channels_with_custom_channel_type_data)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling ApplicationApi->ban_users_in_channels_with_custom_channel_type: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
+ **custom_type** | **str**|  |
+ **ban_users_in_channels_with_custom_channel_type_data** | [**BanUsersInChannelsWithCustomChannelTypeData**](BanUsersInChannelsWithCustomChannelTypeData.md)|  | [optional]
+
+### Return type
+
+**{str: (bool, date, datetime, dict, float, int, list, str, none_type)}**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **delete_allowed_ips_from_whitelist**
 > DeleteAllowedIpsFromWhitelistResponse delete_allowed_ips_from_whitelist(api_token, ip_whitelist_addresses)
 
@@ -589,6 +681,170 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **list_banned_users_in_channels_with_custom_channel_type**
+> CustomTypeListBannedUsersResponse list_banned_users_in_channels_with_custom_channel_type(api_token, custom_type)
+
+List banned users in channels with a custom channel type
+
+## Retrieves a list of users banned from channels with the specified custom channel type.
+
+### Example
+
+
+```python
+import time
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import application_api
+from sendbird_platform_sdk.model.custom_type_list_banned_users_response import CustomTypeListBannedUsersResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = sendbird_platform_sdk.Configuration(
+    host = "https://api-APP_ID.sendbird.com"
+)
+
+
+# Enter a context with an instance of the API client
+with sendbird_platform_sdk.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = application_api.ApplicationApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
+    custom_type = "custom_type_example" # str | 
+    token = "token_example" # str |  (optional)
+    limit = 1 # int |  (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # List banned users in channels with a custom channel type
+        api_response = api_instance.list_banned_users_in_channels_with_custom_channel_type(api_token, custom_type)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling ApplicationApi->list_banned_users_in_channels_with_custom_channel_type: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # List banned users in channels with a custom channel type
+        api_response = api_instance.list_banned_users_in_channels_with_custom_channel_type(api_token, custom_type, token=token, limit=limit)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling ApplicationApi->list_banned_users_in_channels_with_custom_channel_type: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
+ **custom_type** | **str**|  |
+ **token** | **str**|  | [optional]
+ **limit** | **int**|  | [optional]
+
+### Return type
+
+[**CustomTypeListBannedUsersResponse**](CustomTypeListBannedUsersResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **list_muted_users_in_channels_with_custom_channel_type**
+> InlineResponse200 list_muted_users_in_channels_with_custom_channel_type(api_token, custom_type)
+
+List muted users in channels with a custom channel type
+
+## Retrieves a list of the muted users in channels with a custom channel type.
+
+### Example
+
+
+```python
+import time
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import application_api
+from sendbird_platform_sdk.model.inline_response200 import InlineResponse200
+from pprint import pprint
+# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = sendbird_platform_sdk.Configuration(
+    host = "https://api-APP_ID.sendbird.com"
+)
+
+
+# Enter a context with an instance of the API client
+with sendbird_platform_sdk.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = application_api.ApplicationApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
+    custom_type = "custom_type_example" # str | 
+    token = "token_example" # str |  (optional)
+    limit = 1 # int |  (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # List muted users in channels with a custom channel type
+        api_response = api_instance.list_muted_users_in_channels_with_custom_channel_type(api_token, custom_type)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling ApplicationApi->list_muted_users_in_channels_with_custom_channel_type: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # List muted users in channels with a custom channel type
+        api_response = api_instance.list_muted_users_in_channels_with_custom_channel_type(api_token, custom_type, token=token, limit=limit)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling ApplicationApi->list_muted_users_in_channels_with_custom_channel_type: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
+ **custom_type** | **str**|  |
+ **token** | **str**|  | [optional]
+ **limit** | **int**|  | [optional]
+
+### Return type
+
+[**InlineResponse200**](InlineResponse200.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **list_push_configurations**
 > ListPushConfigurationsResponse list_push_configurations(api_token, push_type)
 
@@ -792,6 +1048,93 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **mute_users_in_channels_with_custom_channel_type**
+> {str: (bool, date, datetime, dict, float, int, list, str, none_type)} mute_users_in_channels_with_custom_channel_type(api_token, custom_type)
+
+Mute users in channels with a custom channel type
+
+## Mutes specified users in channels with a custom channel type at once.
+
+### Example
+
+
+```python
+import time
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import application_api
+from sendbird_platform_sdk.model.mute_users_in_channels_with_custom_channel_type_data import MuteUsersInChannelsWithCustomChannelTypeData
+from pprint import pprint
+# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = sendbird_platform_sdk.Configuration(
+    host = "https://api-APP_ID.sendbird.com"
+)
+
+
+# Enter a context with an instance of the API client
+with sendbird_platform_sdk.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = application_api.ApplicationApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
+    custom_type = "custom_type_example" # str | 
+    mute_users_in_channels_with_custom_channel_type_data = MuteUsersInChannelsWithCustomChannelTypeData(
+        user_ids=[
+            "user_ids_example",
+        ],
+        seconds=3.14,
+        description="description_example",
+        on_demand_upsert=True,
+    ) # MuteUsersInChannelsWithCustomChannelTypeData |  (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Mute users in channels with a custom channel type
+        api_response = api_instance.mute_users_in_channels_with_custom_channel_type(api_token, custom_type)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling ApplicationApi->mute_users_in_channels_with_custom_channel_type: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Mute users in channels with a custom channel type
+        api_response = api_instance.mute_users_in_channels_with_custom_channel_type(api_token, custom_type, mute_users_in_channels_with_custom_channel_type_data=mute_users_in_channels_with_custom_channel_type_data)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling ApplicationApi->mute_users_in_channels_with_custom_channel_type: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
+ **custom_type** | **str**|  |
+ **mute_users_in_channels_with_custom_channel_type_data** | [**MuteUsersInChannelsWithCustomChannelTypeData**](MuteUsersInChannelsWithCustomChannelTypeData.md)|  | [optional]
+
+### Return type
+
+**{str: (bool, date, datetime, dict, float, int, list, str, none_type)}**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **remove_push_configuration_by_id**
 > RemovePushConfigurationByIdResponse remove_push_configuration_by_id(api_token, push_type, provider_id)
 
@@ -980,6 +1323,268 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**RevokeSecondaryApiTokenByTokenResponse**](RevokeSecondaryApiTokenByTokenResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **set_domain_filter**
+> SendBirdChannelResponse set_domain_filter(api_token, custom_type)
+
+Message moderation
+
+## 
+
+### Example
+
+
+```python
+import time
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import application_api
+from sendbird_platform_sdk.model.set_domain_filter_data import SetDomainFilterData
+from sendbird_platform_sdk.model.send_bird_channel_response import SendBirdChannelResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = sendbird_platform_sdk.Configuration(
+    host = "https://api-APP_ID.sendbird.com"
+)
+
+
+# Enter a context with an instance of the API client
+with sendbird_platform_sdk.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = application_api.ApplicationApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
+    custom_type = "custom_type_example" # str | 
+    set_domain_filter_data = SetDomainFilterData(
+        domain_filter=V3ApplicationsSettingsGlobalCustomTypeDomainFilter(
+            domains=[
+                "domains_example",
+            ],
+            type=1,
+            should_check_global=True,
+        ),
+        profanity_filter=V3ApplicationsSettingsGlobalCustomTypeProfanityFilter(
+            keywords=[
+                "keywords_example",
+            ],
+            regex_filters=[
+                V3ApplicationsSettingsGlobalCustomTypeProfanityFilterRegexFilters(
+                    regex="regex_example",
+                ),
+            ],
+            type=1,
+            should_check_global=True,
+        ),
+        profanity_triggered_moderation=V3ApplicationsSettingsGlobalCustomTypeProfanityTriggeredModeration(
+            count=1,
+            duration=1,
+            action=1,
+        ),
+        image_moderation=V3ApplicationsSettingsGlobalCustomTypeImageModeration(
+            type=1,
+            soft_block=True,
+            limits=V3ApplicationsSettingsGlobalCustomTypeImageModerationLimits(
+                adult=1,
+                spoof=1,
+                medical=1,
+                violence=1,
+                racy=1,
+            ),
+            check_urls=True,
+        ),
+    ) # SetDomainFilterData |  (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Message moderation
+        api_response = api_instance.set_domain_filter(api_token, custom_type)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling ApplicationApi->set_domain_filter: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Message moderation
+        api_response = api_instance.set_domain_filter(api_token, custom_type, set_domain_filter_data=set_domain_filter_data)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling ApplicationApi->set_domain_filter: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
+ **custom_type** | **str**|  |
+ **set_domain_filter_data** | [**SetDomainFilterData**](SetDomainFilterData.md)|  | [optional]
+
+### Return type
+
+[**SendBirdChannelResponse**](SendBirdChannelResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **unban_users_in_channels_with_custom_channel_type**
+> {str: (bool, date, datetime, dict, float, int, list, str, none_type)} unban_users_in_channels_with_custom_channel_type(api_token, custom_type, user_ids)
+
+Unban users in channels with a custom channel type
+
+## Unban specified users in channels with a custom channel type at once.
+
+### Example
+
+
+```python
+import time
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import application_api
+from pprint import pprint
+# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = sendbird_platform_sdk.Configuration(
+    host = "https://api-APP_ID.sendbird.com"
+)
+
+
+# Enter a context with an instance of the API client
+with sendbird_platform_sdk.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = application_api.ApplicationApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
+    custom_type = "custom_type_example" # str | 
+    user_ids = [
+        "user_ids_example",
+    ] # [str] | 
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Unban users in channels with a custom channel type
+        api_response = api_instance.unban_users_in_channels_with_custom_channel_type(api_token, custom_type, user_ids)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling ApplicationApi->unban_users_in_channels_with_custom_channel_type: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
+ **custom_type** | **str**|  |
+ **user_ids** | **[str]**|  |
+
+### Return type
+
+**{str: (bool, date, datetime, dict, float, int, list, str, none_type)}**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **unmute_users_in_channels_with_custom_channel_type**
+> {str: (bool, date, datetime, dict, float, int, list, str, none_type)} unmute_users_in_channels_with_custom_channel_type(api_token, custom_type, user_ids)
+
+Unmute users in channels with a custom channel type
+
+## Unmute specified users in channels with a custom channel type at once.
+
+### Example
+
+
+```python
+import time
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import application_api
+from pprint import pprint
+# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = sendbird_platform_sdk.Configuration(
+    host = "https://api-APP_ID.sendbird.com"
+)
+
+
+# Enter a context with an instance of the API client
+with sendbird_platform_sdk.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = application_api.ApplicationApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
+    custom_type = "custom_type_example" # str | 
+    user_ids = [
+        "user_ids_example",
+    ] # [str] | 
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Unmute users in channels with a custom channel type
+        api_response = api_instance.unmute_users_in_channels_with_custom_channel_type(api_token, custom_type, user_ids)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling ApplicationApi->unmute_users_in_channels_with_custom_channel_type: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
+ **custom_type** | **str**|  |
+ **user_ids** | **[str]**|  |
+
+### Return type
+
+**{str: (bool, date, datetime, dict, float, int, list, str, none_type)}**
 
 ### Authorization
 
@@ -1477,319 +2082,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ViewDefaultChannelInvitationPreferenceResponse**](ViewDefaultChannelInvitationPreferenceResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful response |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **view_number_of_concurrent_connections**
-> ViewNumberOfConcurrentConnectionsResponse view_number_of_concurrent_connections(api_token)
-
-View number of concurrent connections
-
-## View number of concurrent connections  Retrieves the number of devices and opened browser tabs which are currently connected to Sendbird server.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-view-number-of-concurrent-connections
-
-### Example
-
-
-```python
-import time
-import sendbird_platform_sdk
-from sendbird_platform_sdk.api import application_api
-from sendbird_platform_sdk.model.view_number_of_concurrent_connections_response import ViewNumberOfConcurrentConnectionsResponse
-from pprint import pprint
-# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird_platform_sdk.Configuration(
-    host = "https://api-APP_ID.sendbird.com"
-)
-
-
-# Enter a context with an instance of the API client
-with sendbird_platform_sdk.ApiClient() as api_client:
-    # Create an instance of the API class
-    api_instance = application_api.ApplicationApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
-
-    # example passing only required values which don't have defaults set
-    try:
-        # View number of concurrent connections
-        api_response = api_instance.view_number_of_concurrent_connections(api_token)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling ApplicationApi->view_number_of_concurrent_connections: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
-
-### Return type
-
-[**ViewNumberOfConcurrentConnectionsResponse**](ViewNumberOfConcurrentConnectionsResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful response |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **view_number_of_daily_active_users**
-> ViewNumberOfDailyActiveUsersResponse view_number_of_daily_active_users(api_token)
-
-View number of daily active users
-
-## View number of daily active users  Retrieves the number of daily active users of the application (DAU).  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-view-number-of-daily-active-users ----------------------------
-
-### Example
-
-
-```python
-import time
-import sendbird_platform_sdk
-from sendbird_platform_sdk.api import application_api
-from sendbird_platform_sdk.model.view_number_of_daily_active_users_response import ViewNumberOfDailyActiveUsersResponse
-from pprint import pprint
-# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird_platform_sdk.Configuration(
-    host = "https://api-APP_ID.sendbird.com"
-)
-
-
-# Enter a context with an instance of the API client
-with sendbird_platform_sdk.ApiClient() as api_client:
-    # Create an instance of the API class
-    api_instance = application_api.ApplicationApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
-    date = "date_example" # str |  (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        # View number of daily active users
-        api_response = api_instance.view_number_of_daily_active_users(api_token)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling ApplicationApi->view_number_of_daily_active_users: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # View number of daily active users
-        api_response = api_instance.view_number_of_daily_active_users(api_token, date=date)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling ApplicationApi->view_number_of_daily_active_users: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
- **date** | **str**|  | [optional]
-
-### Return type
-
-[**ViewNumberOfDailyActiveUsersResponse**](ViewNumberOfDailyActiveUsersResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful response |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **view_number_of_monthly_active_users**
-> ViewNumberOfMonthlyActiveUsersResponse view_number_of_monthly_active_users(api_token)
-
-View number of monthly active users
-
-## View number of monthly active users  Retrieves the number of monthly active users of the application (MAU).  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-view-number-of-monthly-active-users ----------------------------
-
-### Example
-
-
-```python
-import time
-import sendbird_platform_sdk
-from sendbird_platform_sdk.api import application_api
-from sendbird_platform_sdk.model.view_number_of_monthly_active_users_response import ViewNumberOfMonthlyActiveUsersResponse
-from pprint import pprint
-# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird_platform_sdk.Configuration(
-    host = "https://api-APP_ID.sendbird.com"
-)
-
-
-# Enter a context with an instance of the API client
-with sendbird_platform_sdk.ApiClient() as api_client:
-    # Create an instance of the API class
-    api_instance = application_api.ApplicationApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
-    date = "date_example" # str |  (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        # View number of monthly active users
-        api_response = api_instance.view_number_of_monthly_active_users(api_token)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling ApplicationApi->view_number_of_monthly_active_users: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # View number of monthly active users
-        api_response = api_instance.view_number_of_monthly_active_users(api_token, date=date)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling ApplicationApi->view_number_of_monthly_active_users: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
- **date** | **str**|  | [optional]
-
-### Return type
-
-[**ViewNumberOfMonthlyActiveUsersResponse**](ViewNumberOfMonthlyActiveUsersResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful response |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **view_number_of_peak_connections**
-> ViewNumberOfPeakConnectionsResponse view_number_of_peak_connections(api_token, time_dimension, start_year, start_month, end_year, end_month)
-
-View number of peak connections
-
-## View number of peak connections  Retrieves the number of concurrently connected devices to Sendbird server during the requested time period.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-view-number-of-peak-connections ----------------------------
-
-### Example
-
-
-```python
-import time
-import sendbird_platform_sdk
-from sendbird_platform_sdk.api import application_api
-from sendbird_platform_sdk.model.view_number_of_peak_connections_response import ViewNumberOfPeakConnectionsResponse
-from pprint import pprint
-# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird_platform_sdk.Configuration(
-    host = "https://api-APP_ID.sendbird.com"
-)
-
-
-# Enter a context with an instance of the API client
-with sendbird_platform_sdk.ApiClient() as api_client:
-    # Create an instance of the API class
-    api_instance = application_api.ApplicationApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
-    time_dimension = "time_dimension_example" # str | 
-    start_year = 1 # int | 
-    start_month = 1 # int | 
-    end_year = 1 # int | 
-    end_month = 1 # int | 
-    start_day = 1 # int |  (optional)
-    end_day = 1 # int |  (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        # View number of peak connections
-        api_response = api_instance.view_number_of_peak_connections(api_token, time_dimension, start_year, start_month, end_year, end_month)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling ApplicationApi->view_number_of_peak_connections: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # View number of peak connections
-        api_response = api_instance.view_number_of_peak_connections(api_token, time_dimension, start_year, start_month, end_year, end_month, start_day=start_day, end_day=end_day)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling ApplicationApi->view_number_of_peak_connections: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
- **time_dimension** | **str**|  |
- **start_year** | **int**|  |
- **start_month** | **int**|  |
- **end_year** | **int**|  |
- **end_month** | **int**|  |
- **start_day** | **int**|  | [optional]
- **end_day** | **int**|  | [optional]
-
-### Return type
-
-[**ViewNumberOfPeakConnectionsResponse**](ViewNumberOfPeakConnectionsResponse.md)
 
 ### Authorization
 

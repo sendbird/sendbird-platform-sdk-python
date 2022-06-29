@@ -5,31 +5,39 @@ All URIs are relative to *https://api-APP_ID.sendbird.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**add_registration_or_device_token**](UserApi.md#add_registration_or_device_token) | **POST** /v3/users/{user_id}/push/{token_type} | Add a registration or device token
-[**ban_from_channels_with_custom_channel_types**](UserApi.md#ban_from_channels_with_custom_channel_types) | **POST** /v3/users/{user_id}/banned_channel_custom_types | Ban from channels with custom channel types
-[**block_user**](UserApi.md#block_user) | **POST** /v3/users/{user_id}/block | Block a user
 [**choose_push_notification_content_template**](UserApi.md#choose_push_notification_content_template) | **PUT** /v3/users/{user_id}/push/template | Choose a push notification content template
+[**create_channel_metacounter**](UserApi.md#create_channel_metacounter) | **POST** /v3/{channel_type}/{channel_url}/metacounter | Create a channel metacounter
+[**create_channel_metadata**](UserApi.md#create_channel_metadata) | **POST** /v3/{channel_type}/{channel_url}/metadata | Create a channel metadata
 [**create_user**](UserApi.md#create_user) | **POST** /v3/users | Create a user
+[**create_user_metadata**](UserApi.md#create_user_metadata) | **POST** /v3/users/{user_id}/metadata | Create a user metadata
+[**delete_channel_metacounter**](UserApi.md#delete_channel_metacounter) | **DELETE** /v3/{channel_type}/{channel_url}/metacounter | Delete a channel metacounter - When deleting all items of a channel metacounter
+[**delete_channel_metacounter_by_key**](UserApi.md#delete_channel_metacounter_by_key) | **DELETE** /v3/{channel_type}/{channel_url}/metacounter/{key} | Delete a channel metacounter - When deleting a specific item of a channel metacounter by its key
+[**delete_channel_metadata**](UserApi.md#delete_channel_metadata) | **DELETE** /v3/{channel_type}/{channel_url}/metadata | Delete a channel metadata - When deleting all items of a channel metadata
+[**delete_channel_metadata_by_key**](UserApi.md#delete_channel_metadata_by_key) | **DELETE** /v3/{channel_type}/{channel_url}/metadata/{key} | Delete a channel metadata - When deleting a specific item of a channel metadata by its key
 [**delete_user_by_id**](UserApi.md#delete_user_by_id) | **DELETE** /v3/users/{user_id} | Delete a user
+[**delete_user_metadata**](UserApi.md#delete_user_metadata) | **DELETE** /v3/users/{user_id}/metadata | Delete a user metadata - When deleting all items of a user metadata
+[**delete_user_metadata_by_key**](UserApi.md#delete_user_metadata_by_key) | **DELETE** /v3/users/{user_id}/metadata/{key} | Delete a user metadata - When deleting a specific item of a user metadata by its key
 [**leave_my_group_channels**](UserApi.md#leave_my_group_channels) | **PUT** /v3/users/{user_id}/my_group_channels/leave | Leave my group channels
-[**list_banned_channels**](UserApi.md#list_banned_channels) | **GET** /v3/users/{user_id}/ban | List banned channels
-[**list_blocked_users**](UserApi.md#list_blocked_users) | **GET** /v3/users/{user_id}/block | List blocked users
-[**list_muted_channels**](UserApi.md#list_muted_channels) | **GET** /v3/users/{user_id}/mute | List muted channels
 [**list_my_group_channels**](UserApi.md#list_my_group_channels) | **GET** /v3/users/{user_id}/my_group_channels | List my group channels
 [**list_registration_or_device_tokens**](UserApi.md#list_registration_or_device_tokens) | **GET** /v3/users/{user_id}/push/{token_type} | List registration or device tokens
 [**list_users**](UserApi.md#list_users) | **GET** /v3/users | List users
 [**mark_all_messages_as_read**](UserApi.md#mark_all_messages_as_read) | **PUT** /v3/users/{user_id}/mark_as_read_all | Mark all messages as read
-[**mute_in_channels_with_custom_channel_types**](UserApi.md#mute_in_channels_with_custom_channel_types) | **POST** /v3/users/{user_id}/muted_channel_custom_types | Mute in channels with custom channel types
 [**register_as_operator_to_channels_with_custom_channel_types**](UserApi.md#register_as_operator_to_channels_with_custom_channel_types) | **POST** /v3/users/{user_id}/operating_channel_custom_types | Register as an operator to channels with custom channel types
 [**remove_registration_or_device_token**](UserApi.md#remove_registration_or_device_token) | **DELETE** /v3/users/{user_id}/push | Remove a registration or device token - When unregistering all device tokens
 [**remove_registration_or_device_token_by_token**](UserApi.md#remove_registration_or_device_token_by_token) | **DELETE** /v3/users/{user_id}/push/{token_type}/{token} | Remove a registration or device token - When unregistering a specific token
 [**remove_registration_or_device_token_from_owner_by_token**](UserApi.md#remove_registration_or_device_token_from_owner_by_token) | **DELETE** /v3/push/device_tokens/{token_type}/{token} | Remove a registration or device token from an owner
 [**reset_push_preferences**](UserApi.md#reset_push_preferences) | **DELETE** /v3/users/{user_id}/push_preference | Reset push preferences
-[**unblock_user_by_id**](UserApi.md#unblock_user_by_id) | **DELETE** /v3/users/{user_id}/block/{target_id} | Unblock a user
 [**update_channel_invitation_preference**](UserApi.md#update_channel_invitation_preference) | **PUT** /v3/users/{user_id}/channel_invitation_preference | Update channel invitation preference
+[**update_channel_metacounter**](UserApi.md#update_channel_metacounter) | **PUT** /v3/{channel_type}/{channel_url}/metacounter | Update a channel metacounter - When updating existing items of a channel metacounter by their keys or adding new items to the metacounter
+[**update_channel_metacounter_by_key**](UserApi.md#update_channel_metacounter_by_key) | **PUT** /v3/{channel_type}/{channel_url}/metacounter/{key} | Update a channel metacounter - When updating a specific item of a channel metacounter by its key
+[**update_channel_metadata**](UserApi.md#update_channel_metadata) | **PUT** /v3/{channel_type}/{channel_url}/metadata | Update a channel metadata - When updating existing items of a channel metadata by their keys or adding new items to the metadata
+[**update_channel_metadata_by_key**](UserApi.md#update_channel_metadata_by_key) | **PUT** /v3/{channel_type}/{channel_url}/metadata/{key} | Update a channel metadata - When updating a specific item of a channel metadata by its key
 [**update_count_preference_of_channel_by_url**](UserApi.md#update_count_preference_of_channel_by_url) | **PUT** /v3/users/{user_id}/count_preference/{channel_url} | Update count preference of a channel
 [**update_push_preferences**](UserApi.md#update_push_preferences) | **PUT** /v3/users/{user_id}/push_preference | Update push preferences
 [**update_push_preferences_for_channel_by_url**](UserApi.md#update_push_preferences_for_channel_by_url) | **PUT** /v3/users/{user_id}/push_preference/{channel_url} | Update push preferences for a channel
 [**update_user_by_id**](UserApi.md#update_user_by_id) | **PUT** /v3/users/{user_id} | Update a user
+[**update_user_metadata**](UserApi.md#update_user_metadata) | **PUT** /v3/users/{user_id}/metadata | Update a user metadata - When updating existing items of a user metadata by their keys or adding new items to the metadata
+[**update_user_metadata_by_key**](UserApi.md#update_user_metadata_by_key) | **PUT** /v3/users/{user_id}/metadata/{key} | Update a user metadata - When updating a specific item of a user metadata by its key
 [**view_channel_invitation_preference**](UserApi.md#view_channel_invitation_preference) | **GET** /v3/users/{user_id}/channel_invitation_preference | View channel invitation preference
 [**view_count_preference_of_channel_by_url**](UserApi.md#view_count_preference_of_channel_by_url) | **GET** /v3/users/{user_id}/count_preference/{channel_url} | View count preference of a channel
 [**view_number_of_channels_by_join_status**](UserApi.md#view_number_of_channels_by_join_status) | **GET** /v3/users/{user_id}/group_channel_count | View number of channels by join status
@@ -129,180 +137,6 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ban_from_channels_with_custom_channel_types**
-> {str: (bool, date, datetime, dict, float, int, list, str, none_type)} ban_from_channels_with_custom_channel_types(api_token, user_id)
-
-Ban from channels with custom channel types
-
-## Ban from channels with custom channel types  Bans a user from channels with particular custom channel types.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-ban-from-channels-with-custom-channel-types ----------------------------
-
-### Example
-
-
-```python
-import time
-import sendbird_platform_sdk
-from sendbird_platform_sdk.api import user_api
-from sendbird_platform_sdk.model.ban_from_channels_with_custom_channel_types_data import BanFromChannelsWithCustomChannelTypesData
-from pprint import pprint
-# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird_platform_sdk.Configuration(
-    host = "https://api-APP_ID.sendbird.com"
-)
-
-
-# Enter a context with an instance of the API client
-with sendbird_platform_sdk.ApiClient() as api_client:
-    # Create an instance of the API class
-    api_instance = user_api.UserApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
-    user_id = "user_id_example" # str | 
-    ban_from_channels_with_custom_channel_types_data = BanFromChannelsWithCustomChannelTypesData(
-        channel_custom_types=[
-            "channel_custom_types_example",
-        ],
-    ) # BanFromChannelsWithCustomChannelTypesData |  (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        # Ban from channels with custom channel types
-        api_response = api_instance.ban_from_channels_with_custom_channel_types(api_token, user_id)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling UserApi->ban_from_channels_with_custom_channel_types: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # Ban from channels with custom channel types
-        api_response = api_instance.ban_from_channels_with_custom_channel_types(api_token, user_id, ban_from_channels_with_custom_channel_types_data=ban_from_channels_with_custom_channel_types_data)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling UserApi->ban_from_channels_with_custom_channel_types: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
- **user_id** | **str**|  |
- **ban_from_channels_with_custom_channel_types_data** | [**BanFromChannelsWithCustomChannelTypesData**](BanFromChannelsWithCustomChannelTypesData.md)|  | [optional]
-
-### Return type
-
-**{str: (bool, date, datetime, dict, float, int, list, str, none_type)}**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful response |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **block_user**
-> BlockUserResponse block_user(api_token, user_id)
-
-Block a user
-
-## Block a user  Allows a user to block another user. A user doesn't receive messages from someone they have blocked anymore. Also, blocking someone doesn't alert them that they have been blocked. Blocked users still can send messages as normal in the channel: however, they can't receive any messages from the users who have blocked them.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-block-a-user ----------------------------
-
-### Example
-
-
-```python
-import time
-import sendbird_platform_sdk
-from sendbird_platform_sdk.api import user_api
-from sendbird_platform_sdk.model.block_user_response import BlockUserResponse
-from sendbird_platform_sdk.model.block_user_data import BlockUserData
-from pprint import pprint
-# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird_platform_sdk.Configuration(
-    host = "https://api-APP_ID.sendbird.com"
-)
-
-
-# Enter a context with an instance of the API client
-with sendbird_platform_sdk.ApiClient() as api_client:
-    # Create an instance of the API class
-    api_instance = user_api.UserApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
-    user_id = "user_id_example" # str | 
-    block_user_data = BlockUserData(
-        user_id="user_id_example",
-        target_id="target_id_example",
-        user_ids=[
-            1,
-        ],
-        users=[
-            1,
-        ],
-    ) # BlockUserData |  (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        # Block a user
-        api_response = api_instance.block_user(api_token, user_id)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling UserApi->block_user: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # Block a user
-        api_response = api_instance.block_user(api_token, user_id, block_user_data=block_user_data)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling UserApi->block_user: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
- **user_id** | **str**|  |
- **block_user_data** | [**BlockUserData**](BlockUserData.md)|  | [optional]
-
-### Return type
-
-[**BlockUserResponse**](BlockUserResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful response |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **choose_push_notification_content_template**
 > ChoosePushNotificationContentTemplateResponse choose_push_notification_content_template(api_token, user_id)
 
@@ -364,6 +198,181 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ChoosePushNotificationContentTemplateResponse**](ChoosePushNotificationContentTemplateResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_channel_metacounter**
+> CreateChannelMetacounterResponse create_channel_metacounter(api_token, channel_type, channel_url)
+
+Create a channel metacounter
+
+## Create a channel metacounter  Creates a channel metacounter's items to store in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-create-a-channel-metacounter ----------------------------
+
+### Example
+
+
+```python
+import time
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import user_api
+from sendbird_platform_sdk.model.create_channel_metacounter_data import CreateChannelMetacounterData
+from sendbird_platform_sdk.model.send_bird_additional_properties import SendBirdAdditionalProperties
+from pprint import pprint
+# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = sendbird_platform_sdk.Configuration(
+    host = "https://api-APP_ID.sendbird.com"
+)
+
+
+# Enter a context with an instance of the API client
+with sendbird_platform_sdk.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = user_api.UserApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
+    channel_type = "channel_type_example" # str | 
+    channel_url = "channel_url_example" # str | 
+    create_channel_metacounter_data = CreateChannelMetacounterData(
+        channel_type="channel_type_example",
+        channel_url="channel_url_example",
+        metacounter="metacounter_example",
+    ) # CreateChannelMetacounterData |  (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Create a channel metacounter
+        api_response = api_instance.create_channel_metacounter(api_token, channel_type, channel_url)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling UserApi->create_channel_metacounter: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Create a channel metacounter
+        api_response = api_instance.create_channel_metacounter(api_token, channel_type, channel_url, create_channel_metacounter_data=create_channel_metacounter_data)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling UserApi->create_channel_metacounter: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
+ **channel_type** | **str**|  |
+ **channel_url** | **str**|  |
+ **create_channel_metacounter_data** | [**CreateChannelMetacounterData**](CreateChannelMetacounterData.md)|  | [optional]
+
+### Return type
+
+[**CreateChannelMetacounterResponse**](SendBirdAdditionalProperties.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_channel_metadata**
+> CreateChannelMetadataResponse create_channel_metadata(api_token, channel_type, channel_url)
+
+Create a channel metadata
+
+## Create a channel metadata  Creates a channel metadata's items to store in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-create-a-channel-metadata ----------------------------
+
+### Example
+
+
+```python
+import time
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import user_api
+from sendbird_platform_sdk.model.create_channel_metadata_response import CreateChannelMetadataResponse
+from sendbird_platform_sdk.model.create_channel_metadata_data import CreateChannelMetadataData
+from pprint import pprint
+# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = sendbird_platform_sdk.Configuration(
+    host = "https://api-APP_ID.sendbird.com"
+)
+
+
+# Enter a context with an instance of the API client
+with sendbird_platform_sdk.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = user_api.UserApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
+    channel_type = "channel_type_example" # str | 
+    channel_url = "channel_url_example" # str | 
+    create_channel_metadata_data = CreateChannelMetadataData(
+        channel_type="channel_type_example",
+        channel_url="channel_url_example",
+        metadata="metadata_example",
+        include_ts=True,
+    ) # CreateChannelMetadataData |  (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Create a channel metadata
+        api_response = api_instance.create_channel_metadata(api_token, channel_type, channel_url)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling UserApi->create_channel_metadata: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Create a channel metadata
+        api_response = api_instance.create_channel_metadata(api_token, channel_type, channel_url, create_channel_metadata_data=create_channel_metadata_data)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling UserApi->create_channel_metadata: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
+ **channel_type** | **str**|  |
+ **channel_url** | **str**|  |
+ **create_channel_metadata_data** | [**CreateChannelMetadataData**](CreateChannelMetadataData.md)|  | [optional]
+
+### Return type
+
+[**CreateChannelMetadataResponse**](CreateChannelMetadataResponse.md)
 
 ### Authorization
 
@@ -472,6 +481,380 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **create_user_metadata**
+> CreateUserMetadataResponse create_user_metadata(api_token, user_id)
+
+Create a user metadata
+
+## Create a user metadata  Creates a user metadata's items to store in a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-create-a-user-metadata ----------------------------
+
+### Example
+
+
+```python
+import time
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import user_api
+from sendbird_platform_sdk.model.create_user_metadata_response import CreateUserMetadataResponse
+from sendbird_platform_sdk.model.create_user_metadata_data import CreateUserMetadataData
+from pprint import pprint
+# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = sendbird_platform_sdk.Configuration(
+    host = "https://api-APP_ID.sendbird.com"
+)
+
+
+# Enter a context with an instance of the API client
+with sendbird_platform_sdk.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = user_api.UserApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
+    user_id = "user_id_example" # str | 
+    create_user_metadata_data = CreateUserMetadataData(
+        user_id="user_id_example",
+        metadata="metadata_example",
+    ) # CreateUserMetadataData |  (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Create a user metadata
+        api_response = api_instance.create_user_metadata(api_token, user_id)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling UserApi->create_user_metadata: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Create a user metadata
+        api_response = api_instance.create_user_metadata(api_token, user_id, create_user_metadata_data=create_user_metadata_data)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling UserApi->create_user_metadata: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
+ **user_id** | **str**|  |
+ **create_user_metadata_data** | [**CreateUserMetadataData**](CreateUserMetadataData.md)|  | [optional]
+
+### Return type
+
+[**CreateUserMetadataResponse**](CreateUserMetadataResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **delete_channel_metacounter**
+> delete_channel_metacounter(api_token, channel_type, channel_url)
+
+Delete a channel metacounter - When deleting all items of a channel metacounter
+
+## Delete a channel metacounter  Deletes a channel metacounter's item that is stored in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-delete-a-channel-metacounter ----------------------------   `channel_type`      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  `channel_url`      Type: string      Description: Specifies the URL of the channel which has the metacounter to delete.
+
+### Example
+
+
+```python
+import time
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import user_api
+from pprint import pprint
+# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = sendbird_platform_sdk.Configuration(
+    host = "https://api-APP_ID.sendbird.com"
+)
+
+
+# Enter a context with an instance of the API client
+with sendbird_platform_sdk.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = user_api.UserApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
+    channel_type = "channel_type_example" # str | 
+    channel_url = "channel_url_example" # str | 
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Delete a channel metacounter - When deleting all items of a channel metacounter
+        api_instance.delete_channel_metacounter(api_token, channel_type, channel_url)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling UserApi->delete_channel_metacounter: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
+ **channel_type** | **str**|  |
+ **channel_url** | **str**|  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **delete_channel_metacounter_by_key**
+> delete_channel_metacounter_by_key(api_token, channel_type, channel_url, key)
+
+Delete a channel metacounter - When deleting a specific item of a channel metacounter by its key
+
+## Delete a channel metacounter  Deletes a channel metacounter's item that is stored in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-delete-a-channel-metacounter ----------------------------   `channel_type`      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  `channel_url`      Type: string      Description: Specifies the URL of the channel which has the metacounter to delete.
+
+### Example
+
+
+```python
+import time
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import user_api
+from pprint import pprint
+# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = sendbird_platform_sdk.Configuration(
+    host = "https://api-APP_ID.sendbird.com"
+)
+
+
+# Enter a context with an instance of the API client
+with sendbird_platform_sdk.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = user_api.UserApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
+    channel_type = "channel_type_example" # str | 
+    channel_url = "channel_url_example" # str | 
+    key = "key_example" # str | 
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Delete a channel metacounter - When deleting a specific item of a channel metacounter by its key
+        api_instance.delete_channel_metacounter_by_key(api_token, channel_type, channel_url, key)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling UserApi->delete_channel_metacounter_by_key: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
+ **channel_type** | **str**|  |
+ **channel_url** | **str**|  |
+ **key** | **str**|  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **delete_channel_metadata**
+> delete_channel_metadata(api_token, channel_type, channel_url)
+
+Delete a channel metadata - When deleting all items of a channel metadata
+
+## Delete a channel metadata  Deletes a channel metadata's one or all items that are stored in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-delete-a-channel-metadata ----------------------------   `channel_type`      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  `channel_url`      Type: string      Description: Specifies the URL of the channel which has the metadata to delete.
+
+### Example
+
+
+```python
+import time
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import user_api
+from pprint import pprint
+# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = sendbird_platform_sdk.Configuration(
+    host = "https://api-APP_ID.sendbird.com"
+)
+
+
+# Enter a context with an instance of the API client
+with sendbird_platform_sdk.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = user_api.UserApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
+    channel_type = "channel_type_example" # str | 
+    channel_url = "channel_url_example" # str | 
+    key = "key_example" # str |  (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Delete a channel metadata - When deleting all items of a channel metadata
+        api_instance.delete_channel_metadata(api_token, channel_type, channel_url)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling UserApi->delete_channel_metadata: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Delete a channel metadata - When deleting all items of a channel metadata
+        api_instance.delete_channel_metadata(api_token, channel_type, channel_url, key=key)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling UserApi->delete_channel_metadata: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
+ **channel_type** | **str**|  |
+ **channel_url** | **str**|  |
+ **key** | **str**|  | [optional]
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **delete_channel_metadata_by_key**
+> delete_channel_metadata_by_key(api_token, channel_type, channel_url, key)
+
+Delete a channel metadata - When deleting a specific item of a channel metadata by its key
+
+## Delete a channel metadata  Deletes a channel metadata's one or all items that are stored in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-delete-a-channel-metadata ----------------------------   `channel_type`      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  `channel_url`      Type: string      Description: Specifies the URL of the channel which has the metadata to delete.
+
+### Example
+
+
+```python
+import time
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import user_api
+from pprint import pprint
+# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = sendbird_platform_sdk.Configuration(
+    host = "https://api-APP_ID.sendbird.com"
+)
+
+
+# Enter a context with an instance of the API client
+with sendbird_platform_sdk.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = user_api.UserApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
+    channel_type = "channel_type_example" # str | 
+    channel_url = "channel_url_example" # str | 
+    key = "key_example" # str | 
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Delete a channel metadata - When deleting a specific item of a channel metadata by its key
+        api_instance.delete_channel_metadata_by_key(api_token, channel_type, channel_url, key)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling UserApi->delete_channel_metadata_by_key: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
+ **channel_type** | **str**|  |
+ **channel_url** | **str**|  |
+ **key** | **str**|  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **delete_user_by_id**
 > {str: (bool, date, datetime, dict, float, int, list, str, none_type)} delete_user_by_id(api_token, user_id)
 
@@ -530,6 +913,152 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **delete_user_metadata**
+> delete_user_metadata(api_token, user_id)
+
+Delete a user metadata - When deleting all items of a user metadata
+
+## Delete a user metadata  Deletes a user metadata's one or all items that are stored in a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-delete-a-user-metadata ----------------------------   `user_id`      Type: string      Description: Specifies the ID of the user who has the metadata to delete.
+
+### Example
+
+
+```python
+import time
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import user_api
+from pprint import pprint
+# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = sendbird_platform_sdk.Configuration(
+    host = "https://api-APP_ID.sendbird.com"
+)
+
+
+# Enter a context with an instance of the API client
+with sendbird_platform_sdk.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = user_api.UserApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
+    user_id = "user_id_example" # str | 
+    key = "key_example" # str |  (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Delete a user metadata - When deleting all items of a user metadata
+        api_instance.delete_user_metadata(api_token, user_id)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling UserApi->delete_user_metadata: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Delete a user metadata - When deleting all items of a user metadata
+        api_instance.delete_user_metadata(api_token, user_id, key=key)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling UserApi->delete_user_metadata: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
+ **user_id** | **str**|  |
+ **key** | **str**|  | [optional]
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **delete_user_metadata_by_key**
+> delete_user_metadata_by_key(api_token, user_id, key)
+
+Delete a user metadata - When deleting a specific item of a user metadata by its key
+
+## Delete a user metadata  Deletes a user metadata's one or all items that are stored in a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-delete-a-user-metadata ----------------------------   `user_id`      Type: string      Description: Specifies the ID of the user who has the metadata to delete.
+
+### Example
+
+
+```python
+import time
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import user_api
+from pprint import pprint
+# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = sendbird_platform_sdk.Configuration(
+    host = "https://api-APP_ID.sendbird.com"
+)
+
+
+# Enter a context with an instance of the API client
+with sendbird_platform_sdk.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = user_api.UserApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
+    user_id = "user_id_example" # str | 
+    key = "key_example" # str | 
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Delete a user metadata - When deleting a specific item of a user metadata by its key
+        api_instance.delete_user_metadata_by_key(api_token, user_id, key)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling UserApi->delete_user_metadata_by_key: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
+ **user_id** | **str**|  |
+ **key** | **str**|  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 
 ### HTTP response details
@@ -612,258 +1141,6 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful response |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **list_banned_channels**
-> ListBannedChannelsResponse list_banned_channels(api_token, user_id)
-
-List banned channels
-
-## List banned channels  Retrieves a list of open and group channels with additional information where a user is banned.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-list-banned-channels ----------------------------   `user_id`      Type: string      Description: Specifies the unique ID of the target user.
-
-### Example
-
-
-```python
-import time
-import sendbird_platform_sdk
-from sendbird_platform_sdk.api import user_api
-from sendbird_platform_sdk.model.list_banned_channels_response import ListBannedChannelsResponse
-from pprint import pprint
-# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird_platform_sdk.Configuration(
-    host = "https://api-APP_ID.sendbird.com"
-)
-
-
-# Enter a context with an instance of the API client
-with sendbird_platform_sdk.ApiClient() as api_client:
-    # Create an instance of the API class
-    api_instance = user_api.UserApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
-    user_id = "user_id_example" # str | 
-    token = "token_example" # str |  (optional)
-    limit = 1 # int |  (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        # List banned channels
-        api_response = api_instance.list_banned_channels(api_token, user_id)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling UserApi->list_banned_channels: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # List banned channels
-        api_response = api_instance.list_banned_channels(api_token, user_id, token=token, limit=limit)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling UserApi->list_banned_channels: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
- **user_id** | **str**|  |
- **token** | **str**|  | [optional]
- **limit** | **int**|  | [optional]
-
-### Return type
-
-[**ListBannedChannelsResponse**](ListBannedChannelsResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful response |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **list_blocked_users**
-> ListBlockedUsersResponse list_blocked_users(api_token, user_id)
-
-List blocked users
-
-## List blocked users  Retrieves a list of other users that a user has blocked.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-list-blocked-users ----------------------------   `user_id`      Type: string      Description: Specifies the unique ID of the target user.
-
-### Example
-
-
-```python
-import time
-import sendbird_platform_sdk
-from sendbird_platform_sdk.api import user_api
-from sendbird_platform_sdk.model.list_blocked_users_response import ListBlockedUsersResponse
-from pprint import pprint
-# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird_platform_sdk.Configuration(
-    host = "https://api-APP_ID.sendbird.com"
-)
-
-
-# Enter a context with an instance of the API client
-with sendbird_platform_sdk.ApiClient() as api_client:
-    # Create an instance of the API class
-    api_instance = user_api.UserApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
-    user_id = "user_id_example" # str | 
-    token = "token_example" # str |  (optional)
-    limit = 1 # int |  (optional)
-    user_ids = "user_ids_example" # str |  (optional)
-    metadatakey = "metadatakey_example" # str |  (optional)
-    metadatavalues_in = "metadatavalues_in_example" # str |  (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        # List blocked users
-        api_response = api_instance.list_blocked_users(api_token, user_id)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling UserApi->list_blocked_users: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # List blocked users
-        api_response = api_instance.list_blocked_users(api_token, user_id, token=token, limit=limit, user_ids=user_ids, metadatakey=metadatakey, metadatavalues_in=metadatavalues_in)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling UserApi->list_blocked_users: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
- **user_id** | **str**|  |
- **token** | **str**|  | [optional]
- **limit** | **int**|  | [optional]
- **user_ids** | **str**|  | [optional]
- **metadatakey** | **str**|  | [optional]
- **metadatavalues_in** | **str**|  | [optional]
-
-### Return type
-
-[**ListBlockedUsersResponse**](ListBlockedUsersResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful response |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **list_muted_channels**
-> ListMutedChannelsResponse list_muted_channels(api_token, user_id)
-
-List muted channels
-
-## List muted channels  Retrieves a list of open and group channels with additional information where a user is muted.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-list-muted-channels ----------------------------   `user_id`      Type: string      Description: Specifies the unique ID of the target user.
-
-### Example
-
-
-```python
-import time
-import sendbird_platform_sdk
-from sendbird_platform_sdk.api import user_api
-from sendbird_platform_sdk.model.list_muted_channels_response import ListMutedChannelsResponse
-from pprint import pprint
-# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird_platform_sdk.Configuration(
-    host = "https://api-APP_ID.sendbird.com"
-)
-
-
-# Enter a context with an instance of the API client
-with sendbird_platform_sdk.ApiClient() as api_client:
-    # Create an instance of the API class
-    api_instance = user_api.UserApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
-    user_id = "user_id_example" # str | 
-    token = "token_example" # str |  (optional)
-    limit = 1 # int |  (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        # List muted channels
-        api_response = api_instance.list_muted_channels(api_token, user_id)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling UserApi->list_muted_channels: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # List muted channels
-        api_response = api_instance.list_muted_channels(api_token, user_id, token=token, limit=limit)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling UserApi->list_muted_channels: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
- **user_id** | **str**|  |
- **token** | **str**|  | [optional]
- **limit** | **int**|  | [optional]
-
-### Return type
-
-[**ListMutedChannelsResponse**](ListMutedChannelsResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -1283,90 +1560,6 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **mute_in_channels_with_custom_channel_types**
-> {str: (bool, date, datetime, dict, float, int, list, str, none_type)} mute_in_channels_with_custom_channel_types(api_token, user_id)
-
-Mute in channels with custom channel types
-
-## Mute in channels with custom channel types  Mutes a user in channels with particular custom channel types.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-mute-in-channels-with-custom-channel-types ----------------------------
-
-### Example
-
-
-```python
-import time
-import sendbird_platform_sdk
-from sendbird_platform_sdk.api import user_api
-from sendbird_platform_sdk.model.mute_in_channels_with_custom_channel_types_data import MuteInChannelsWithCustomChannelTypesData
-from pprint import pprint
-# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird_platform_sdk.Configuration(
-    host = "https://api-APP_ID.sendbird.com"
-)
-
-
-# Enter a context with an instance of the API client
-with sendbird_platform_sdk.ApiClient() as api_client:
-    # Create an instance of the API class
-    api_instance = user_api.UserApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
-    user_id = "user_id_example" # str | 
-    mute_in_channels_with_custom_channel_types_data = MuteInChannelsWithCustomChannelTypesData(
-        channel_custom_types=[
-            "channel_custom_types_example",
-        ],
-    ) # MuteInChannelsWithCustomChannelTypesData |  (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        # Mute in channels with custom channel types
-        api_response = api_instance.mute_in_channels_with_custom_channel_types(api_token, user_id)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling UserApi->mute_in_channels_with_custom_channel_types: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # Mute in channels with custom channel types
-        api_response = api_instance.mute_in_channels_with_custom_channel_types(api_token, user_id, mute_in_channels_with_custom_channel_types_data=mute_in_channels_with_custom_channel_types_data)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling UserApi->mute_in_channels_with_custom_channel_types: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
- **user_id** | **str**|  |
- **mute_in_channels_with_custom_channel_types_data** | [**MuteInChannelsWithCustomChannelTypesData**](MuteInChannelsWithCustomChannelTypesData.md)|  | [optional]
-
-### Return type
-
-**{str: (bool, date, datetime, dict, float, int, list, str, none_type)}**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful response |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **register_as_operator_to_channels_with_custom_channel_types**
 > {str: (bool, date, datetime, dict, float, int, list, str, none_type)} register_as_operator_to_channels_with_custom_channel_types(api_token, user_id)
 
@@ -1733,76 +1926,6 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **unblock_user_by_id**
-> {str: (bool, date, datetime, dict, float, int, list, str, none_type)} unblock_user_by_id(api_token, user_id, target_id)
-
-Unblock a user
-
-## Unblock a user  Unblocks the user.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-unblock-a-user ----------------------------
-
-### Example
-
-
-```python
-import time
-import sendbird_platform_sdk
-from sendbird_platform_sdk.api import user_api
-from pprint import pprint
-# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird_platform_sdk.Configuration(
-    host = "https://api-APP_ID.sendbird.com"
-)
-
-
-# Enter a context with an instance of the API client
-with sendbird_platform_sdk.ApiClient() as api_client:
-    # Create an instance of the API class
-    api_instance = user_api.UserApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
-    user_id = "user_id_example" # str | 
-    target_id = "target_id_example" # str | 
-
-    # example passing only required values which don't have defaults set
-    try:
-        # Unblock a user
-        api_response = api_instance.unblock_user_by_id(api_token, user_id, target_id)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling UserApi->unblock_user_by_id: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
- **user_id** | **str**|  |
- **target_id** | **str**|  |
-
-### Return type
-
-**{str: (bool, date, datetime, dict, float, int, list, str, none_type)}**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful response |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **update_channel_invitation_preference**
 > UpdateChannelInvitationPreferenceResponse update_channel_invitation_preference(api_token, user_id)
 
@@ -1867,6 +1990,344 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**UpdateChannelInvitationPreferenceResponse**](UpdateChannelInvitationPreferenceResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_channel_metacounter**
+> UpdateChannelMetacounterResponse update_channel_metacounter(api_token, channel_type, channel_url)
+
+Update a channel metacounter - When updating existing items of a channel metacounter by their keys or adding new items to the metacounter
+
+## Update a channel metacounter  Updates existing items of a channel metacounter by their keys, or adds new items to the metacounter.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-update-a-channel-metacounter ----------------------------   `channel_type`      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  `channel_url`      Type: string      Description: Specifies the URL of the target channel.
+
+### Example
+
+
+```python
+import time
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import user_api
+from sendbird_platform_sdk.model.send_bird_additional_properties import SendBirdAdditionalProperties
+from sendbird_platform_sdk.model.update_channel_metacounter_data import UpdateChannelMetacounterData
+from pprint import pprint
+# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = sendbird_platform_sdk.Configuration(
+    host = "https://api-APP_ID.sendbird.com"
+)
+
+
+# Enter a context with an instance of the API client
+with sendbird_platform_sdk.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = user_api.UserApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
+    channel_type = "channel_type_example" # str | 
+    channel_url = "channel_url_example" # str | 
+    update_channel_metacounter_data = UpdateChannelMetacounterData(
+        metacounter="metacounter_example",
+        mode="mode_example",
+        upsert=True,
+    ) # UpdateChannelMetacounterData |  (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Update a channel metacounter - When updating existing items of a channel metacounter by their keys or adding new items to the metacounter
+        api_response = api_instance.update_channel_metacounter(api_token, channel_type, channel_url)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling UserApi->update_channel_metacounter: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Update a channel metacounter - When updating existing items of a channel metacounter by their keys or adding new items to the metacounter
+        api_response = api_instance.update_channel_metacounter(api_token, channel_type, channel_url, update_channel_metacounter_data=update_channel_metacounter_data)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling UserApi->update_channel_metacounter: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
+ **channel_type** | **str**|  |
+ **channel_url** | **str**|  |
+ **update_channel_metacounter_data** | [**UpdateChannelMetacounterData**](UpdateChannelMetacounterData.md)|  | [optional]
+
+### Return type
+
+[**UpdateChannelMetacounterResponse**](SendBirdAdditionalProperties.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_channel_metacounter_by_key**
+> UpdateChannelMetacounterByKeyResponse update_channel_metacounter_by_key(api_token, channel_type, channel_url, key)
+
+Update a channel metacounter - When updating a specific item of a channel metacounter by its key
+
+## Update a channel metacounter  Updates existing items of a channel metacounter by their keys, or adds new items to the metacounter.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-update-a-channel-metacounter ----------------------------   `channel_type`      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  `channel_url`      Type: string      Description: Specifies the URL of the target channel.
+
+### Example
+
+
+```python
+import time
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import user_api
+from pprint import pprint
+# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = sendbird_platform_sdk.Configuration(
+    host = "https://api-APP_ID.sendbird.com"
+)
+
+
+# Enter a context with an instance of the API client
+with sendbird_platform_sdk.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = user_api.UserApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
+    channel_type = "channel_type_example" # str | 
+    channel_url = "channel_url_example" # str | 
+    key = "key_example" # str | 
+    body = {} # {str: (bool, date, datetime, dict, float, int, list, str, none_type)} |  (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Update a channel metacounter - When updating a specific item of a channel metacounter by its key
+        api_response = api_instance.update_channel_metacounter_by_key(api_token, channel_type, channel_url, key)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling UserApi->update_channel_metacounter_by_key: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Update a channel metacounter - When updating a specific item of a channel metacounter by its key
+        api_response = api_instance.update_channel_metacounter_by_key(api_token, channel_type, channel_url, key, body=body)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling UserApi->update_channel_metacounter_by_key: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
+ **channel_type** | **str**|  |
+ **channel_url** | **str**|  |
+ **key** | **str**|  |
+ **body** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}**|  | [optional]
+
+### Return type
+
+**UpdateChannelMetacounterByKeyResponse**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_channel_metadata**
+> UpdateChannelMetadataResponse update_channel_metadata(api_token, channel_type, channel_url)
+
+Update a channel metadata - When updating existing items of a channel metadata by their keys or adding new items to the metadata
+
+## Update a channel metadata  Updates existing items of a channel metadata by their keys, or adds new items to the metadata.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-update-a-channel-metadata ----------------------------   `channel_type`      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  `channel_url`      Type: string      Description: Specifies the URL of the target channel.
+
+### Example
+
+
+```python
+import time
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import user_api
+from sendbird_platform_sdk.model.update_channel_metadata_data import UpdateChannelMetadataData
+from pprint import pprint
+# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = sendbird_platform_sdk.Configuration(
+    host = "https://api-APP_ID.sendbird.com"
+)
+
+
+# Enter a context with an instance of the API client
+with sendbird_platform_sdk.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = user_api.UserApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
+    channel_type = "channel_type_example" # str | 
+    channel_url = "channel_url_example" # str | 
+    update_channel_metadata_data = UpdateChannelMetadataData(
+        metadata="metadata_example",
+        upsert=True,
+    ) # UpdateChannelMetadataData |  (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Update a channel metadata - When updating existing items of a channel metadata by their keys or adding new items to the metadata
+        api_response = api_instance.update_channel_metadata(api_token, channel_type, channel_url)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling UserApi->update_channel_metadata: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Update a channel metadata - When updating existing items of a channel metadata by their keys or adding new items to the metadata
+        api_response = api_instance.update_channel_metadata(api_token, channel_type, channel_url, update_channel_metadata_data=update_channel_metadata_data)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling UserApi->update_channel_metadata: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
+ **channel_type** | **str**|  |
+ **channel_url** | **str**|  |
+ **update_channel_metadata_data** | [**UpdateChannelMetadataData**](UpdateChannelMetadataData.md)|  | [optional]
+
+### Return type
+
+**UpdateChannelMetadataResponse**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_channel_metadata_by_key**
+> UpdateChannelMetadataByKeyResponse update_channel_metadata_by_key(api_token, channel_type, channel_url, key)
+
+Update a channel metadata - When updating a specific item of a channel metadata by its key
+
+## Update a channel metadata  Updates existing items of a channel metadata by their keys, or adds new items to the metadata.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-update-a-channel-metadata ----------------------------   `channel_type`      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  `channel_url`      Type: string      Description: Specifies the URL of the target channel.
+
+### Example
+
+
+```python
+import time
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import user_api
+from pprint import pprint
+# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = sendbird_platform_sdk.Configuration(
+    host = "https://api-APP_ID.sendbird.com"
+)
+
+
+# Enter a context with an instance of the API client
+with sendbird_platform_sdk.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = user_api.UserApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
+    channel_type = "channel_type_example" # str | 
+    channel_url = "channel_url_example" # str | 
+    key = "key_example" # str | 
+    body = {} # {str: (bool, date, datetime, dict, float, int, list, str, none_type)} |  (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Update a channel metadata - When updating a specific item of a channel metadata by its key
+        api_response = api_instance.update_channel_metadata_by_key(api_token, channel_type, channel_url, key)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling UserApi->update_channel_metadata_by_key: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Update a channel metadata - When updating a specific item of a channel metadata by its key
+        api_response = api_instance.update_channel_metadata_by_key(api_token, channel_type, channel_url, key, body=body)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling UserApi->update_channel_metadata_by_key: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
+ **channel_type** | **str**|  |
+ **channel_url** | **str**|  |
+ **key** | **str**|  |
+ **body** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}**|  | [optional]
+
+### Return type
+
+**UpdateChannelMetadataByKeyResponse**
 
 ### Authorization
 
@@ -2235,6 +2696,171 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**SendBirdUser**](SendBirdUser.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_user_metadata**
+> UpdateUserMetadataResponse update_user_metadata(api_token, user_id)
+
+Update a user metadata - When updating existing items of a user metadata by their keys or adding new items to the metadata
+
+## Update a user metadata  Updates existing items of a user metadata by their keys, or adds new items to the metadata.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-update-a-user-metadata ----------------------------   `user_id`      Type: string      Description: Specifies the ID of the user to update the metadata in.
+
+### Example
+
+
+```python
+import time
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import user_api
+from sendbird_platform_sdk.model.update_user_metadata_response import UpdateUserMetadataResponse
+from sendbird_platform_sdk.model.update_user_metadata_data import UpdateUserMetadataData
+from pprint import pprint
+# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = sendbird_platform_sdk.Configuration(
+    host = "https://api-APP_ID.sendbird.com"
+)
+
+
+# Enter a context with an instance of the API client
+with sendbird_platform_sdk.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = user_api.UserApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
+    user_id = "user_id_example" # str | 
+    update_user_metadata_data = UpdateUserMetadataData(
+        metadata="metadata_example",
+        upsert=True,
+    ) # UpdateUserMetadataData |  (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Update a user metadata - When updating existing items of a user metadata by their keys or adding new items to the metadata
+        api_response = api_instance.update_user_metadata(api_token, user_id)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling UserApi->update_user_metadata: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Update a user metadata - When updating existing items of a user metadata by their keys or adding new items to the metadata
+        api_response = api_instance.update_user_metadata(api_token, user_id, update_user_metadata_data=update_user_metadata_data)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling UserApi->update_user_metadata: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
+ **user_id** | **str**|  |
+ **update_user_metadata_data** | [**UpdateUserMetadataData**](UpdateUserMetadataData.md)|  | [optional]
+
+### Return type
+
+[**UpdateUserMetadataResponse**](UpdateUserMetadataResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_user_metadata_by_key**
+> UpdateUserMetadataByKeyResponse update_user_metadata_by_key(api_token, user_id, key)
+
+Update a user metadata - When updating a specific item of a user metadata by its key
+
+## Update a user metadata  Updates existing items of a user metadata by their keys, or adds new items to the metadata.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-update-a-user-metadata ----------------------------   `user_id`      Type: string      Description: Specifies the ID of the user to update the metadata in.
+
+### Example
+
+
+```python
+import time
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import user_api
+from pprint import pprint
+# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = sendbird_platform_sdk.Configuration(
+    host = "https://api-APP_ID.sendbird.com"
+)
+
+
+# Enter a context with an instance of the API client
+with sendbird_platform_sdk.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = user_api.UserApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
+    user_id = "user_id_example" # str | 
+    key = "key_example" # str | 
+    body = {} # {str: (bool, date, datetime, dict, float, int, list, str, none_type)} |  (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Update a user metadata - When updating a specific item of a user metadata by its key
+        api_response = api_instance.update_user_metadata_by_key(api_token, user_id, key)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling UserApi->update_user_metadata_by_key: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Update a user metadata - When updating a specific item of a user metadata by its key
+        api_response = api_instance.update_user_metadata_by_key(api_token, user_id, key, body=body)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling UserApi->update_user_metadata_by_key: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
+ **user_id** | **str**|  |
+ **key** | **str**|  |
+ **body** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}**|  | [optional]
+
+### Return type
+
+**UpdateUserMetadataByKeyResponse**
 
 ### Authorization
 
