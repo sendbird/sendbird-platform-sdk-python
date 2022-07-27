@@ -30,9 +30,9 @@ from sendbird_platform_sdk.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from sendbird_platform_sdk.model.inline_response2001 import InlineResponse2001
+    from sendbird_platform_sdk.model.oc_delete_channel_by_url200_response import OcDeleteChannelByUrl200Response
     from sendbird_platform_sdk.model.send_bird_user import SendBirdUser
-    globals()['InlineResponse2001'] = InlineResponse2001
+    globals()['OcDeleteChannelByUrl200Response'] = OcDeleteChannelByUrl200Response
     globals()['SendBirdUser'] = SendBirdUser
 
 
@@ -93,7 +93,7 @@ class GcBanUserResponse(ModelNormal):
             'start_at': (float,),  # noqa: E501
             'end_at': (float,),  # noqa: E501
             'description': (str,),  # noqa: E501
-            'metadata': (InlineResponse2001,),  # noqa: E501
+            'metadata': (OcDeleteChannelByUrl200Response,),  # noqa: E501
             'next_url': (str,),  # noqa: E501
             'nickname': (str,),  # noqa: E501
             'profile_url': (str,),  # noqa: E501
@@ -164,7 +164,7 @@ class GcBanUserResponse(ModelNormal):
             start_at (float): [optional]  # noqa: E501
             end_at (float): [optional]  # noqa: E501
             description (str): [optional]  # noqa: E501
-            metadata (InlineResponse2001): [optional]  # noqa: E501
+            metadata (OcDeleteChannelByUrl200Response): [optional]  # noqa: E501
             next_url (str): [optional]  # noqa: E501
             nickname (str): [optional]  # noqa: E501
             profile_url (str): [optional]  # noqa: E501
@@ -173,7 +173,7 @@ class GcBanUserResponse(ModelNormal):
         """
 
         _check_type = kwargs.pop('_check_type', True)
-        _spec_property_naming = kwargs.pop('_spec_property_naming', False)
+        _spec_property_naming = kwargs.pop('_spec_property_naming', True)
         _path_to_item = kwargs.pop('_path_to_item', ())
         _configuration = kwargs.pop('_configuration', None)
         _visited_composed_classes = kwargs.pop('_visited_composed_classes', ())
@@ -181,14 +181,18 @@ class GcBanUserResponse(ModelNormal):
         self = super(OpenApiModel, cls).__new__(cls)
 
         if args:
-            raise ApiTypeError(
-                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
-                    args,
-                    self.__class__.__name__,
-                ),
-                path_to_item=_path_to_item,
-                valid_classes=(self.__class__,),
-            )
+            for arg in args:
+                if isinstance(arg, dict):
+                    kwargs.update(arg)
+                else:
+                    raise ApiTypeError(
+                        "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
+                            args,
+                            self.__class__.__name__,
+                        ),
+                        path_to_item=_path_to_item,
+                        valid_classes=(self.__class__,),
+                    )
 
         self._data_store = {}
         self._check_type = _check_type
@@ -255,7 +259,7 @@ class GcBanUserResponse(ModelNormal):
             start_at (float): [optional]  # noqa: E501
             end_at (float): [optional]  # noqa: E501
             description (str): [optional]  # noqa: E501
-            metadata (InlineResponse2001): [optional]  # noqa: E501
+            metadata (OcDeleteChannelByUrl200Response): [optional]  # noqa: E501
             next_url (str): [optional]  # noqa: E501
             nickname (str): [optional]  # noqa: E501
             profile_url (str): [optional]  # noqa: E501
@@ -270,14 +274,18 @@ class GcBanUserResponse(ModelNormal):
         _visited_composed_classes = kwargs.pop('_visited_composed_classes', ())
 
         if args:
-            raise ApiTypeError(
-                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
-                    args,
-                    self.__class__.__name__,
-                ),
-                path_to_item=_path_to_item,
-                valid_classes=(self.__class__,),
-            )
+            for arg in args:
+                if isinstance(arg, dict):
+                    kwargs.update(arg)
+                else:
+                    raise ApiTypeError(
+                        "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
+                            args,
+                            self.__class__.__name__,
+                        ),
+                        path_to_item=_path_to_item,
+                        valid_classes=(self.__class__,),
+                    )
 
         self._data_store = {}
         self._check_type = _check_type

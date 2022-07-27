@@ -12,8 +12,8 @@ import sys
 import unittest
 
 import sendbird_platform_sdk
-from sendbird_platform_sdk.model.list_announcements_response_announcements import ListAnnouncementsResponseAnnouncements
-globals()['ListAnnouncementsResponseAnnouncements'] = ListAnnouncementsResponseAnnouncements
+from sendbird_platform_sdk.model.list_announcements_response_announcements_inner import ListAnnouncementsResponseAnnouncementsInner
+globals()['ListAnnouncementsResponseAnnouncementsInner'] = ListAnnouncementsResponseAnnouncementsInner
 from sendbird_platform_sdk.model.list_announcements_response import ListAnnouncementsResponse
 
 

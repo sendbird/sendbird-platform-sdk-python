@@ -12,8 +12,8 @@ import sys
 import unittest
 
 import sendbird_platform_sdk
-from sendbird_platform_sdk.model.list_messages_response_sorted_metaarray import ListMessagesResponseSortedMetaarray
-globals()['ListMessagesResponseSortedMetaarray'] = ListMessagesResponseSortedMetaarray
+from sendbird_platform_sdk.model.update_extra_data_in_message_response_sorted_metaarray_inner import UpdateExtraDataInMessageResponseSortedMetaarrayInner
+globals()['UpdateExtraDataInMessageResponseSortedMetaarrayInner'] = UpdateExtraDataInMessageResponseSortedMetaarrayInner
 from sendbird_platform_sdk.model.update_extra_data_in_message_response import UpdateExtraDataInMessageResponse
 
 

@@ -12,8 +12,8 @@ import sys
 import unittest
 
 import sendbird_platform_sdk
-from sendbird_platform_sdk.model.add_emoji_categories_response_emoji_categories import AddEmojiCategoriesResponseEmojiCategories
-globals()['AddEmojiCategoriesResponseEmojiCategories'] = AddEmojiCategoriesResponseEmojiCategories
+from sendbird_platform_sdk.model.add_emoji_categories_response_emoji_categories_inner import AddEmojiCategoriesResponseEmojiCategoriesInner
+globals()['AddEmojiCategoriesResponseEmojiCategoriesInner'] = AddEmojiCategoriesResponseEmojiCategoriesInner
 from sendbird_platform_sdk.model.add_emoji_categories_response import AddEmojiCategoriesResponse
 
 

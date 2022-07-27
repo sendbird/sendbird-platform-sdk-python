@@ -30,8 +30,8 @@ from sendbird_platform_sdk.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from sendbird_platform_sdk.model.list_data_exports_by_message_channel_or_user_response_file import ListDataExportsByMessageChannelOrUserResponseFile
-    globals()['ListDataExportsByMessageChannelOrUserResponseFile'] = ListDataExportsByMessageChannelOrUserResponseFile
+    from sendbird_platform_sdk.model.list_data_exports_by_message_channel_or_user_response_exported_data_inner_file import ListDataExportsByMessageChannelOrUserResponseExportedDataInnerFile
+    globals()['ListDataExportsByMessageChannelOrUserResponseExportedDataInnerFile'] = ListDataExportsByMessageChannelOrUserResponseExportedDataInnerFile
 
 
 class ViewGdprRequestByIdResponse(ModelNormal):
@@ -91,7 +91,7 @@ class ViewGdprRequestByIdResponse(ModelNormal):
             'action': (str,),  # noqa: E501
             'status': (str,),  # noqa: E501
             'user_id': (str,),  # noqa: E501
-            'files': (ListDataExportsByMessageChannelOrUserResponseFile,),  # noqa: E501
+            'files': (ListDataExportsByMessageChannelOrUserResponseExportedDataInnerFile,),  # noqa: E501
             'user_ids': ([str],),  # noqa: E501
             'channel_delete_option': (str,),  # noqa: E501
             'created_at': (float,),  # noqa: E501
@@ -158,14 +158,14 @@ class ViewGdprRequestByIdResponse(ModelNormal):
             action (str): [optional]  # noqa: E501
             status (str): [optional]  # noqa: E501
             user_id (str): [optional]  # noqa: E501
-            files (ListDataExportsByMessageChannelOrUserResponseFile): [optional]  # noqa: E501
+            files (ListDataExportsByMessageChannelOrUserResponseExportedDataInnerFile): [optional]  # noqa: E501
             user_ids ([str]): [optional]  # noqa: E501
             channel_delete_option (str): [optional]  # noqa: E501
             created_at (float): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
-        _spec_property_naming = kwargs.pop('_spec_property_naming', False)
+        _spec_property_naming = kwargs.pop('_spec_property_naming', True)
         _path_to_item = kwargs.pop('_path_to_item', ())
         _configuration = kwargs.pop('_configuration', None)
         _visited_composed_classes = kwargs.pop('_visited_composed_classes', ())
@@ -173,14 +173,18 @@ class ViewGdprRequestByIdResponse(ModelNormal):
         self = super(OpenApiModel, cls).__new__(cls)
 
         if args:
-            raise ApiTypeError(
-                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
-                    args,
-                    self.__class__.__name__,
-                ),
-                path_to_item=_path_to_item,
-                valid_classes=(self.__class__,),
-            )
+            for arg in args:
+                if isinstance(arg, dict):
+                    kwargs.update(arg)
+                else:
+                    raise ApiTypeError(
+                        "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
+                            args,
+                            self.__class__.__name__,
+                        ),
+                        path_to_item=_path_to_item,
+                        valid_classes=(self.__class__,),
+                    )
 
         self._data_store = {}
         self._check_type = _check_type
@@ -247,7 +251,7 @@ class ViewGdprRequestByIdResponse(ModelNormal):
             action (str): [optional]  # noqa: E501
             status (str): [optional]  # noqa: E501
             user_id (str): [optional]  # noqa: E501
-            files (ListDataExportsByMessageChannelOrUserResponseFile): [optional]  # noqa: E501
+            files (ListDataExportsByMessageChannelOrUserResponseExportedDataInnerFile): [optional]  # noqa: E501
             user_ids ([str]): [optional]  # noqa: E501
             channel_delete_option (str): [optional]  # noqa: E501
             created_at (float): [optional]  # noqa: E501
@@ -260,14 +264,18 @@ class ViewGdprRequestByIdResponse(ModelNormal):
         _visited_composed_classes = kwargs.pop('_visited_composed_classes', ())
 
         if args:
-            raise ApiTypeError(
-                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
-                    args,
-                    self.__class__.__name__,
-                ),
-                path_to_item=_path_to_item,
-                valid_classes=(self.__class__,),
-            )
+            for arg in args:
+                if isinstance(arg, dict):
+                    kwargs.update(arg)
+                else:
+                    raise ApiTypeError(
+                        "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
+                            args,
+                            self.__class__.__name__,
+                        ),
+                        path_to_item=_path_to_item,
+                        valid_classes=(self.__class__,),
+                    )
 
         self._data_store = {}
         self._check_type = _check_type

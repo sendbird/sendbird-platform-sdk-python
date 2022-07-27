@@ -30,20 +30,6 @@ class TestUserApi(unittest.TestCase):
         """
         pass
 
-    def test_ban_from_channels_with_custom_channel_types(self):
-        """Test case for ban_from_channels_with_custom_channel_types
-
-        Ban from channels with custom channel types  # noqa: E501
-        """
-        pass
-
-    def test_block_user(self):
-        """Test case for block_user
-
-        Block a user  # noqa: E501
-        """
-        pass
-
     def test_choose_push_notification_content_template(self):
         """Test case for choose_push_notification_content_template
 
@@ -72,27 +58,6 @@ class TestUserApi(unittest.TestCase):
         """
         pass
 
-    def test_list_banned_channels(self):
-        """Test case for list_banned_channels
-
-        List banned channels  # noqa: E501
-        """
-        pass
-
-    def test_list_blocked_users(self):
-        """Test case for list_blocked_users
-
-        List blocked users  # noqa: E501
-        """
-        pass
-
-    def test_list_muted_channels(self):
-        """Test case for list_muted_channels
-
-        List muted channels  # noqa: E501
-        """
-        pass
-
     def test_list_my_group_channels(self):
         """Test case for list_my_group_channels
 
@@ -118,13 +83,6 @@ class TestUserApi(unittest.TestCase):
         """Test case for mark_all_messages_as_read
 
         Mark all messages as read  # noqa: E501
-        """
-        pass
-
-    def test_mute_in_channels_with_custom_channel_types(self):
-        """Test case for mute_in_channels_with_custom_channel_types
-
-        Mute in channels with custom channel types  # noqa: E501
         """
         pass
 
@@ -160,13 +118,6 @@ class TestUserApi(unittest.TestCase):
         """Test case for reset_push_preferences
 
         Reset push preferences  # noqa: E501
-        """
-        pass
-
-    def test_unblock_user_by_id(self):
-        """Test case for unblock_user_by_id
-
-        Unblock a user  # noqa: E501
         """
         pass
 

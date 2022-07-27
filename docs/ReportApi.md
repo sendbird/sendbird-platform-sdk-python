@@ -621,7 +621,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **view_moderated_message_by_id**
-> ViewModeratedMessageByIdResponse view_moderated_message_by_id(api_token, channel_type, channel_url, message_id)
+> {str: (bool, date, datetime, dict, float, int, list, str, none_type)} view_moderated_message_by_id(api_token, channel_type, channel_url, message_id)
 
 View a moderated message
 
@@ -672,7 +672,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**ViewModeratedMessageByIdResponse**
+**{str: (bool, date, datetime, dict, float, int, list, str, none_type)}**
 
 ### Authorization
 

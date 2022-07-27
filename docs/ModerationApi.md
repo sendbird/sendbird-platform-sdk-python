@@ -151,10 +151,10 @@ with sendbird_platform_sdk.ApiClient() as api_client:
         user_id="user_id_example",
         target_id="target_id_example",
         user_ids=[
-            1,
+            "user_ids_example",
         ],
         users=[
-            1,
+            "users_example",
         ],
     ) # BlockUserData |  (optional)
 
@@ -629,7 +629,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **gc_unban_user_by_id**
-> InlineResponse2001 gc_unban_user_by_id(api_token, channel_url, banned_user_id)
+> OcDeleteChannelByUrl200Response gc_unban_user_by_id(api_token, channel_url, banned_user_id)
 
 Unban a user
 
@@ -642,7 +642,7 @@ Unban a user
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import moderation_api
-from sendbird_platform_sdk.model.inline_response2001 import InlineResponse2001
+from sendbird_platform_sdk.model.oc_delete_channel_by_url200_response import OcDeleteChannelByUrl200Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -679,7 +679,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**OcDeleteChannelByUrl200Response**](OcDeleteChannelByUrl200Response.md)
 
 ### Authorization
 
@@ -700,7 +700,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **gc_unmute_user_by_id**
-> InlineResponse2001 gc_unmute_user_by_id(api_token, channel_url, muted_user_id)
+> OcDeleteChannelByUrl200Response gc_unmute_user_by_id(api_token, channel_url, muted_user_id)
 
 Unmute a user
 
@@ -713,7 +713,7 @@ Unmute a user
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import moderation_api
-from sendbird_platform_sdk.model.inline_response2001 import InlineResponse2001
+from sendbird_platform_sdk.model.oc_delete_channel_by_url200_response import OcDeleteChannelByUrl200Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -750,7 +750,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**OcDeleteChannelByUrl200Response**](OcDeleteChannelByUrl200Response.md)
 
 ### Authorization
 
@@ -1757,7 +1757,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **oc_unban_user_by_id**
-> InlineResponse2001 oc_unban_user_by_id(api_token, channel_url, banned_user_id)
+> OcDeleteChannelByUrl200Response oc_unban_user_by_id(api_token, channel_url, banned_user_id)
 
 Unban a user
 
@@ -1770,7 +1770,7 @@ Unban a user
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import moderation_api
-from sendbird_platform_sdk.model.inline_response2001 import InlineResponse2001
+from sendbird_platform_sdk.model.oc_delete_channel_by_url200_response import OcDeleteChannelByUrl200Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1807,7 +1807,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**OcDeleteChannelByUrl200Response**](OcDeleteChannelByUrl200Response.md)
 
 ### Authorization
 
@@ -1828,7 +1828,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **oc_unmute_user_by_id**
-> InlineResponse2001 oc_unmute_user_by_id(api_token, channel_url, muted_user_id)
+> OcDeleteChannelByUrl200Response oc_unmute_user_by_id(api_token, channel_url, muted_user_id)
 
 Unmute a user
 
@@ -1841,7 +1841,7 @@ Unmute a user
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import moderation_api
-from sendbird_platform_sdk.model.inline_response2001 import InlineResponse2001
+from sendbird_platform_sdk.model.oc_delete_channel_by_url200_response import OcDeleteChannelByUrl200Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1878,7 +1878,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**OcDeleteChannelByUrl200Response**](OcDeleteChannelByUrl200Response.md)
 
 ### Authorization
 

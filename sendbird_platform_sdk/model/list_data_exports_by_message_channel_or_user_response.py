@@ -30,8 +30,8 @@ from sendbird_platform_sdk.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from sendbird_platform_sdk.model.list_data_exports_by_message_channel_or_user_response_exported_data import ListDataExportsByMessageChannelOrUserResponseExportedData
-    globals()['ListDataExportsByMessageChannelOrUserResponseExportedData'] = ListDataExportsByMessageChannelOrUserResponseExportedData
+    from sendbird_platform_sdk.model.list_data_exports_by_message_channel_or_user_response_exported_data_inner import ListDataExportsByMessageChannelOrUserResponseExportedDataInner
+    globals()['ListDataExportsByMessageChannelOrUserResponseExportedDataInner'] = ListDataExportsByMessageChannelOrUserResponseExportedDataInner
 
 
 class ListDataExportsByMessageChannelOrUserResponse(ModelNormal):
@@ -87,7 +87,7 @@ class ListDataExportsByMessageChannelOrUserResponse(ModelNormal):
         """
         lazy_import()
         return {
-            'exported_data': ([ListDataExportsByMessageChannelOrUserResponseExportedData],),  # noqa: E501
+            'exported_data': ([ListDataExportsByMessageChannelOrUserResponseExportedDataInner],),  # noqa: E501
             'next': (str,),  # noqa: E501
         }
 
@@ -142,12 +142,12 @@ class ListDataExportsByMessageChannelOrUserResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            exported_data ([ListDataExportsByMessageChannelOrUserResponseExportedData]): [optional]  # noqa: E501
+            exported_data ([ListDataExportsByMessageChannelOrUserResponseExportedDataInner]): [optional]  # noqa: E501
             next (str): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
-        _spec_property_naming = kwargs.pop('_spec_property_naming', False)
+        _spec_property_naming = kwargs.pop('_spec_property_naming', True)
         _path_to_item = kwargs.pop('_path_to_item', ())
         _configuration = kwargs.pop('_configuration', None)
         _visited_composed_classes = kwargs.pop('_visited_composed_classes', ())
@@ -155,14 +155,18 @@ class ListDataExportsByMessageChannelOrUserResponse(ModelNormal):
         self = super(OpenApiModel, cls).__new__(cls)
 
         if args:
-            raise ApiTypeError(
-                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
-                    args,
-                    self.__class__.__name__,
-                ),
-                path_to_item=_path_to_item,
-                valid_classes=(self.__class__,),
-            )
+            for arg in args:
+                if isinstance(arg, dict):
+                    kwargs.update(arg)
+                else:
+                    raise ApiTypeError(
+                        "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
+                            args,
+                            self.__class__.__name__,
+                        ),
+                        path_to_item=_path_to_item,
+                        valid_classes=(self.__class__,),
+                    )
 
         self._data_store = {}
         self._check_type = _check_type
@@ -225,7 +229,7 @@ class ListDataExportsByMessageChannelOrUserResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            exported_data ([ListDataExportsByMessageChannelOrUserResponseExportedData]): [optional]  # noqa: E501
+            exported_data ([ListDataExportsByMessageChannelOrUserResponseExportedDataInner]): [optional]  # noqa: E501
             next (str): [optional]  # noqa: E501
         """
 
@@ -236,14 +240,18 @@ class ListDataExportsByMessageChannelOrUserResponse(ModelNormal):
         _visited_composed_classes = kwargs.pop('_visited_composed_classes', ())
 
         if args:
-            raise ApiTypeError(
-                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
-                    args,
-                    self.__class__.__name__,
-                ),
-                path_to_item=_path_to_item,
-                valid_classes=(self.__class__,),
-            )
+            for arg in args:
+                if isinstance(arg, dict):
+                    kwargs.update(arg)
+                else:
+                    raise ApiTypeError(
+                        "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
+                            args,
+                            self.__class__.__name__,
+                        ),
+                        path_to_item=_path_to_item,
+                        valid_classes=(self.__class__,),
+                    )
 
         self._data_store = {}
         self._check_type = _check_type

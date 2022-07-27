@@ -12,8 +12,8 @@ import sys
 import unittest
 
 import sendbird_platform_sdk
-from sendbird_platform_sdk.model.get_statistics_daily_response_statistics import GetStatisticsDailyResponseStatistics
-globals()['GetStatisticsDailyResponseStatistics'] = GetStatisticsDailyResponseStatistics
+from sendbird_platform_sdk.model.get_statistics_daily_response_statistics_inner import GetStatisticsDailyResponseStatisticsInner
+globals()['GetStatisticsDailyResponseStatisticsInner'] = GetStatisticsDailyResponseStatisticsInner
 from sendbird_platform_sdk.model.get_statistics_monthly_response import GetStatisticsMonthlyResponse
 
 

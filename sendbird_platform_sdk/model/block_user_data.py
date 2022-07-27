@@ -83,8 +83,8 @@ class BlockUserData(ModelNormal):
         return {
             'user_id': (str,),  # noqa: E501
             'target_id': (str,),  # noqa: E501
-            'user_ids': ([int],),  # noqa: E501
-            'users': ([int],),  # noqa: E501
+            'user_ids': ([str],),  # noqa: E501
+            'users': ([str],),  # noqa: E501
         }
 
     @cached_property
@@ -112,8 +112,8 @@ class BlockUserData(ModelNormal):
         Args:
             user_id (str): Specifies the unique ID of the user to block.
             target_id (str): Specifies the ID of the user to be blocked.
-            user_ids ([int]): Specifies an array of the IDs of the users to be blocked at a time. (for bulk mode)
-            users ([int]): Specifies an array of the IDs of the users to be blocked at a time. The user_ids above and this property can be used interchangeably. (for bulk mode)
+            user_ids ([str]): Specifies an array of the IDs of the users to be blocked at a time. (for bulk mode)
+            users ([str]): Specifies an array of the IDs of the users to be blocked at a time. The user_ids above and this property can be used interchangeably. (for bulk mode)
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -149,7 +149,7 @@ class BlockUserData(ModelNormal):
         """
 
         _check_type = kwargs.pop('_check_type', True)
-        _spec_property_naming = kwargs.pop('_spec_property_naming', False)
+        _spec_property_naming = kwargs.pop('_spec_property_naming', True)
         _path_to_item = kwargs.pop('_path_to_item', ())
         _configuration = kwargs.pop('_configuration', None)
         _visited_composed_classes = kwargs.pop('_visited_composed_classes', ())
@@ -157,14 +157,18 @@ class BlockUserData(ModelNormal):
         self = super(OpenApiModel, cls).__new__(cls)
 
         if args:
-            raise ApiTypeError(
-                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
-                    args,
-                    self.__class__.__name__,
-                ),
-                path_to_item=_path_to_item,
-                valid_classes=(self.__class__,),
-            )
+            for arg in args:
+                if isinstance(arg, dict):
+                    kwargs.update(arg)
+                else:
+                    raise ApiTypeError(
+                        "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
+                            args,
+                            self.__class__.__name__,
+                        ),
+                        path_to_item=_path_to_item,
+                        valid_classes=(self.__class__,),
+                    )
 
         self._data_store = {}
         self._check_type = _check_type
@@ -203,8 +207,8 @@ class BlockUserData(ModelNormal):
         Args:
             user_id (str): Specifies the unique ID of the user to block.
             target_id (str): Specifies the ID of the user to be blocked.
-            user_ids ([int]): Specifies an array of the IDs of the users to be blocked at a time. (for bulk mode)
-            users ([int]): Specifies an array of the IDs of the users to be blocked at a time. The user_ids above and this property can be used interchangeably. (for bulk mode)
+            user_ids ([str]): Specifies an array of the IDs of the users to be blocked at a time. (for bulk mode)
+            users ([str]): Specifies an array of the IDs of the users to be blocked at a time. The user_ids above and this property can be used interchangeably. (for bulk mode)
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -246,14 +250,18 @@ class BlockUserData(ModelNormal):
         _visited_composed_classes = kwargs.pop('_visited_composed_classes', ())
 
         if args:
-            raise ApiTypeError(
-                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
-                    args,
-                    self.__class__.__name__,
-                ),
-                path_to_item=_path_to_item,
-                valid_classes=(self.__class__,),
-            )
+            for arg in args:
+                if isinstance(arg, dict):
+                    kwargs.update(arg)
+                else:
+                    raise ApiTypeError(
+                        "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
+                            args,
+                            self.__class__.__name__,
+                        ),
+                        path_to_item=_path_to_item,
+                        valid_classes=(self.__class__,),
+                    )
 
         self._data_store = {}
         self._check_type = _check_type

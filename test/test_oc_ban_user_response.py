@@ -12,7 +12,9 @@ import sys
 import unittest
 
 import sendbird_platform_sdk
+from sendbird_platform_sdk.model.oc_delete_channel_by_url200_response import OcDeleteChannelByUrl200Response
 from sendbird_platform_sdk.model.send_bird_user import SendBirdUser
+globals()['OcDeleteChannelByUrl200Response'] = OcDeleteChannelByUrl200Response
 globals()['SendBirdUser'] = SendBirdUser
 from sendbird_platform_sdk.model.oc_ban_user_response import OcBanUserResponse
 

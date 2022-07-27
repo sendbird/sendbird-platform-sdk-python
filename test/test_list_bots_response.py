@@ -12,8 +12,8 @@ import sys
 import unittest
 
 import sendbird_platform_sdk
-from sendbird_platform_sdk.model.list_bots_response_bots import ListBotsResponseBots
-globals()['ListBotsResponseBots'] = ListBotsResponseBots
+from sendbird_platform_sdk.model.list_bots_response_bots_inner import ListBotsResponseBotsInner
+globals()['ListBotsResponseBotsInner'] = ListBotsResponseBotsInner
 from sendbird_platform_sdk.model.list_bots_response import ListBotsResponse
 
 

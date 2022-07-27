@@ -12,9 +12,15 @@ import sys
 import unittest
 
 import sendbird_platform_sdk
+from sendbird_platform_sdk.model.send_bird_group_channel_created_by import SendBirdGroupChannelCreatedBy
+from sendbird_platform_sdk.model.send_bird_group_channel_disappearing_message import SendBirdGroupChannelDisappearingMessage
+from sendbird_platform_sdk.model.send_bird_group_channel_sms_fallback import SendBirdGroupChannelSmsFallback
 from sendbird_platform_sdk.model.send_bird_member import SendBirdMember
 from sendbird_platform_sdk.model.send_bird_message_response import SendBirdMessageResponse
 from sendbird_platform_sdk.model.send_bird_user import SendBirdUser
+globals()['SendBirdGroupChannelCreatedBy'] = SendBirdGroupChannelCreatedBy
+globals()['SendBirdGroupChannelDisappearingMessage'] = SendBirdGroupChannelDisappearingMessage
+globals()['SendBirdGroupChannelSmsFallback'] = SendBirdGroupChannelSmsFallback
 globals()['SendBirdMember'] = SendBirdMember
 globals()['SendBirdMessageResponse'] = SendBirdMessageResponse
 globals()['SendBirdUser'] = SendBirdUser

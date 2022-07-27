@@ -81,7 +81,6 @@ class LeaveMyGroupChannelsData(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'user_id': (str,),  # noqa: E501
             'custom_type': (str,),  # noqa: E501
         }
 
@@ -91,7 +90,6 @@ class LeaveMyGroupChannelsData(ModelNormal):
 
 
     attribute_map = {
-        'user_id': 'user_id',  # noqa: E501
         'custom_type': 'custom_type',  # noqa: E501
     }
 
@@ -102,11 +100,10 @@ class LeaveMyGroupChannelsData(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, user_id, custom_type, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, custom_type, *args, **kwargs):  # noqa: E501
         """LeaveMyGroupChannelsData - a model defined in OpenAPI
 
         Args:
-            user_id (str): Specifies the unique ID of the user to leave all joined group channels.
             custom_type (str): Specifies the custom channel type to make the user leave joined group channels with the corresponding type.
 
         Keyword Args:
@@ -143,7 +140,7 @@ class LeaveMyGroupChannelsData(ModelNormal):
         """
 
         _check_type = kwargs.pop('_check_type', True)
-        _spec_property_naming = kwargs.pop('_spec_property_naming', False)
+        _spec_property_naming = kwargs.pop('_spec_property_naming', True)
         _path_to_item = kwargs.pop('_path_to_item', ())
         _configuration = kwargs.pop('_configuration', None)
         _visited_composed_classes = kwargs.pop('_visited_composed_classes', ())
@@ -151,14 +148,18 @@ class LeaveMyGroupChannelsData(ModelNormal):
         self = super(OpenApiModel, cls).__new__(cls)
 
         if args:
-            raise ApiTypeError(
-                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
-                    args,
-                    self.__class__.__name__,
-                ),
-                path_to_item=_path_to_item,
-                valid_classes=(self.__class__,),
-            )
+            for arg in args:
+                if isinstance(arg, dict):
+                    kwargs.update(arg)
+                else:
+                    raise ApiTypeError(
+                        "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
+                            args,
+                            self.__class__.__name__,
+                        ),
+                        path_to_item=_path_to_item,
+                        valid_classes=(self.__class__,),
+                    )
 
         self._data_store = {}
         self._check_type = _check_type
@@ -167,7 +168,6 @@ class LeaveMyGroupChannelsData(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.user_id = user_id
         self.custom_type = custom_type
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
@@ -189,11 +189,10 @@ class LeaveMyGroupChannelsData(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, user_id, custom_type, *args, **kwargs):  # noqa: E501
+    def __init__(self, custom_type, *args, **kwargs):  # noqa: E501
         """LeaveMyGroupChannelsData - a model defined in OpenAPI
 
         Args:
-            user_id (str): Specifies the unique ID of the user to leave all joined group channels.
             custom_type (str): Specifies the custom channel type to make the user leave joined group channels with the corresponding type.
 
         Keyword Args:
@@ -236,14 +235,18 @@ class LeaveMyGroupChannelsData(ModelNormal):
         _visited_composed_classes = kwargs.pop('_visited_composed_classes', ())
 
         if args:
-            raise ApiTypeError(
-                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
-                    args,
-                    self.__class__.__name__,
-                ),
-                path_to_item=_path_to_item,
-                valid_classes=(self.__class__,),
-            )
+            for arg in args:
+                if isinstance(arg, dict):
+                    kwargs.update(arg)
+                else:
+                    raise ApiTypeError(
+                        "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
+                            args,
+                            self.__class__.__name__,
+                        ),
+                        path_to_item=_path_to_item,
+                        valid_classes=(self.__class__,),
+                    )
 
         self._data_store = {}
         self._check_type = _check_type
@@ -252,7 +255,6 @@ class LeaveMyGroupChannelsData(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.user_id = user_id
         self.custom_type = custom_type
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \

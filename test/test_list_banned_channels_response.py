@@ -12,8 +12,8 @@ import sys
 import unittest
 
 import sendbird_platform_sdk
-from sendbird_platform_sdk.model.list_banned_channels_response_banned_channels import ListBannedChannelsResponseBannedChannels
-globals()['ListBannedChannelsResponseBannedChannels'] = ListBannedChannelsResponseBannedChannels
+from sendbird_platform_sdk.model.list_banned_channels_response_banned_channels_inner import ListBannedChannelsResponseBannedChannelsInner
+globals()['ListBannedChannelsResponseBannedChannelsInner'] = ListBannedChannelsResponseBannedChannelsInner
 from sendbird_platform_sdk.model.list_banned_channels_response import ListBannedChannelsResponse
 
 

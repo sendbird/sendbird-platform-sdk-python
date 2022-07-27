@@ -86,11 +86,11 @@ class RegisterAndScheduleDataExportData(ModelNormal):
             'format': (str,),  # noqa: E501
             'csv_delimiter': (str,),  # noqa: E501
             'timezone': (str,),  # noqa: E501
-            'sender_ids': ([int],),  # noqa: E501
-            'exclude_sender_ids': ([int],),  # noqa: E501
+            'sender_ids': ([str],),  # noqa: E501
+            'exclude_sender_ids': ([str],),  # noqa: E501
             'channel_urls': ([str],),  # noqa: E501
             'exclude_channel_urls': ([str],),  # noqa: E501
-            'user_ids': ([int],),  # noqa: E501
+            'user_ids': ([str],),  # noqa: E501
             'show_read_receipt': (bool,),  # noqa: E501
             'show_channel_metadata': (bool,),  # noqa: E501
             'neighboring_message_limit': (int,),  # noqa: E501
@@ -165,18 +165,18 @@ class RegisterAndScheduleDataExportData(ModelNormal):
             format (str): Specifies the format of the file to export the messages to. Acceptable values are json and csv. (Default: json). [optional]  # noqa: E501
             csv_delimiter (str): Sets a single character delimiter to separate the values in each row of the csv file which stores two-dimensional arrays of the exported message data. Either English alphabets or special characters can be used as a delimiter, including a horizontal tab (\\t), a line feed (\\n), a vertical bar (\\. [optional]  # noqa: E501
             timezone (str): Specifies the timezone to be applied to the timestamp of the exported messages. For example, US/Pacific, Asia/Seoul, Europe/London, etc. (Default: UTC). [optional]  # noqa: E501
-            sender_ids ([int]): Specifies an array of the IDs of the users which are used to filter the messages by its sender for the export. This property is effective only when the data_type parameter is set to messages, and can be specified up to 10 IDs in the request. (Default: all messages sent by any user). [optional]  # noqa: E501
-            exclude_sender_ids ([int]): Specifies an array of the IDs of the users which are used to exclude their sent messages from the export. This property is effective only when the data_type parameter is set to messages, and can be specified up to 10 IDs. (Default: all messages sent by any user). [optional]  # noqa: E501
+            sender_ids ([str]): Specifies an array of the IDs of the users which are used to filter the messages by its sender for the export. This property is effective only when the data_type parameter is set to messages, and can be specified up to 10 IDs in the request. (Default: all messages sent by any user). [optional]  # noqa: E501
+            exclude_sender_ids ([str]): Specifies an array of the IDs of the users which are used to exclude their sent messages from the export. This property is effective only when the data_type parameter is set to messages, and can be specified up to 10 IDs. (Default: all messages sent by any user). [optional]  # noqa: E501
             channel_urls ([str]): Specifies an array of one or more URLs of channels to export the messages from. This property is effective only when the data_type parameter is set to messages or channels. (Default: all channels). [optional]  # noqa: E501
             exclude_channel_urls ([str]): Specifies an array of one or more URLs of channels to exclude when exporting the messages. This property is effective only when the data_type parameter is set to messages or channels. (Default: include all channels). [optional]  # noqa: E501
-            user_ids ([int]): Specifies an array of the IDs of the users to export their information. This property is effective only when the data_type parameter is set to users. (Default: all users). [optional]  # noqa: E501
+            user_ids ([str]): Specifies an array of the IDs of the users to export their information. This property is effective only when the data_type parameter is set to users. (Default: all users). [optional]  # noqa: E501
             show_read_receipt (bool): Determines whether to include information about the read receipts of each channel in the exported data. The read receipt indicates the timestamps of when each user has last read the messages in the channel, in [Unix milliseconds](/docs/chat/v3/platform-api/guides/miscellaneous#2-timestamps). (Default: true). [optional]  # noqa: E501
             show_channel_metadata (bool): Determines whether to include [channel metadata](/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-view-a-channel-metadata) in the result files.. [optional]  # noqa: E501
             neighboring_message_limit (int): Specifies the maximum number of other users' messages to be exported, which took place after the specified message of a user filtered by the sender_ids property. Even if there may be more messages that took place, if the quantity exceeds the number of the neighboring_message_limit, they are omitted. Only the messages that took place right after the specified message will be counted and exported. This can be used to better analyze the context. Acceptable values are 1 to 10, inclusive. (Default: 0). [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
-        _spec_property_naming = kwargs.pop('_spec_property_naming', False)
+        _spec_property_naming = kwargs.pop('_spec_property_naming', True)
         _path_to_item = kwargs.pop('_path_to_item', ())
         _configuration = kwargs.pop('_configuration', None)
         _visited_composed_classes = kwargs.pop('_visited_composed_classes', ())
@@ -184,14 +184,18 @@ class RegisterAndScheduleDataExportData(ModelNormal):
         self = super(OpenApiModel, cls).__new__(cls)
 
         if args:
-            raise ApiTypeError(
-                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
-                    args,
-                    self.__class__.__name__,
-                ),
-                path_to_item=_path_to_item,
-                valid_classes=(self.__class__,),
-            )
+            for arg in args:
+                if isinstance(arg, dict):
+                    kwargs.update(arg)
+                else:
+                    raise ApiTypeError(
+                        "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
+                            args,
+                            self.__class__.__name__,
+                        ),
+                        path_to_item=_path_to_item,
+                        valid_classes=(self.__class__,),
+                    )
 
         self._data_store = {}
         self._check_type = _check_type
@@ -263,11 +267,11 @@ class RegisterAndScheduleDataExportData(ModelNormal):
             format (str): Specifies the format of the file to export the messages to. Acceptable values are json and csv. (Default: json). [optional]  # noqa: E501
             csv_delimiter (str): Sets a single character delimiter to separate the values in each row of the csv file which stores two-dimensional arrays of the exported message data. Either English alphabets or special characters can be used as a delimiter, including a horizontal tab (\\t), a line feed (\\n), a vertical bar (\\. [optional]  # noqa: E501
             timezone (str): Specifies the timezone to be applied to the timestamp of the exported messages. For example, US/Pacific, Asia/Seoul, Europe/London, etc. (Default: UTC). [optional]  # noqa: E501
-            sender_ids ([int]): Specifies an array of the IDs of the users which are used to filter the messages by its sender for the export. This property is effective only when the data_type parameter is set to messages, and can be specified up to 10 IDs in the request. (Default: all messages sent by any user). [optional]  # noqa: E501
-            exclude_sender_ids ([int]): Specifies an array of the IDs of the users which are used to exclude their sent messages from the export. This property is effective only when the data_type parameter is set to messages, and can be specified up to 10 IDs. (Default: all messages sent by any user). [optional]  # noqa: E501
+            sender_ids ([str]): Specifies an array of the IDs of the users which are used to filter the messages by its sender for the export. This property is effective only when the data_type parameter is set to messages, and can be specified up to 10 IDs in the request. (Default: all messages sent by any user). [optional]  # noqa: E501
+            exclude_sender_ids ([str]): Specifies an array of the IDs of the users which are used to exclude their sent messages from the export. This property is effective only when the data_type parameter is set to messages, and can be specified up to 10 IDs. (Default: all messages sent by any user). [optional]  # noqa: E501
             channel_urls ([str]): Specifies an array of one or more URLs of channels to export the messages from. This property is effective only when the data_type parameter is set to messages or channels. (Default: all channels). [optional]  # noqa: E501
             exclude_channel_urls ([str]): Specifies an array of one or more URLs of channels to exclude when exporting the messages. This property is effective only when the data_type parameter is set to messages or channels. (Default: include all channels). [optional]  # noqa: E501
-            user_ids ([int]): Specifies an array of the IDs of the users to export their information. This property is effective only when the data_type parameter is set to users. (Default: all users). [optional]  # noqa: E501
+            user_ids ([str]): Specifies an array of the IDs of the users to export their information. This property is effective only when the data_type parameter is set to users. (Default: all users). [optional]  # noqa: E501
             show_read_receipt (bool): Determines whether to include information about the read receipts of each channel in the exported data. The read receipt indicates the timestamps of when each user has last read the messages in the channel, in [Unix milliseconds](/docs/chat/v3/platform-api/guides/miscellaneous#2-timestamps). (Default: true). [optional]  # noqa: E501
             show_channel_metadata (bool): Determines whether to include [channel metadata](/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-view-a-channel-metadata) in the result files.. [optional]  # noqa: E501
             neighboring_message_limit (int): Specifies the maximum number of other users' messages to be exported, which took place after the specified message of a user filtered by the sender_ids property. Even if there may be more messages that took place, if the quantity exceeds the number of the neighboring_message_limit, they are omitted. Only the messages that took place right after the specified message will be counted and exported. This can be used to better analyze the context. Acceptable values are 1 to 10, inclusive. (Default: 0). [optional]  # noqa: E501
@@ -280,14 +284,18 @@ class RegisterAndScheduleDataExportData(ModelNormal):
         _visited_composed_classes = kwargs.pop('_visited_composed_classes', ())
 
         if args:
-            raise ApiTypeError(
-                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
-                    args,
-                    self.__class__.__name__,
-                ),
-                path_to_item=_path_to_item,
-                valid_classes=(self.__class__,),
-            )
+            for arg in args:
+                if isinstance(arg, dict):
+                    kwargs.update(arg)
+                else:
+                    raise ApiTypeError(
+                        "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
+                            args,
+                            self.__class__.__name__,
+                        ),
+                        path_to_item=_path_to_item,
+                        valid_classes=(self.__class__,),
+                    )
 
         self._data_store = {}
         self._check_type = _check_type

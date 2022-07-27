@@ -12,6 +12,8 @@ import sys
 import unittest
 
 import sendbird_platform_sdk
+from sendbird_platform_sdk.model.send_bird_user import SendBirdUser
+globals()['SendBirdUser'] = SendBirdUser
 from sendbird_platform_sdk.model.gc_view_ban_by_id_response import GcViewBanByIdResponse
 
 

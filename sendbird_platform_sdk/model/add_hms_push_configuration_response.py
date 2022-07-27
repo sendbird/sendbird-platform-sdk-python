@@ -30,8 +30,8 @@ from sendbird_platform_sdk.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from sendbird_platform_sdk.model.add_hms_push_configuration_response_push_configurations import AddHmsPushConfigurationResponsePushConfigurations
-    globals()['AddHmsPushConfigurationResponsePushConfigurations'] = AddHmsPushConfigurationResponsePushConfigurations
+    from sendbird_platform_sdk.model.add_hms_push_configuration_response_push_configurations_inner import AddHmsPushConfigurationResponsePushConfigurationsInner
+    globals()['AddHmsPushConfigurationResponsePushConfigurationsInner'] = AddHmsPushConfigurationResponsePushConfigurationsInner
 
 
 class AddHmsPushConfigurationResponse(ModelNormal):
@@ -87,7 +87,7 @@ class AddHmsPushConfigurationResponse(ModelNormal):
         """
         lazy_import()
         return {
-            'push_configurations': ([AddHmsPushConfigurationResponsePushConfigurations],),  # noqa: E501
+            'push_configurations': ([AddHmsPushConfigurationResponsePushConfigurationsInner],),  # noqa: E501
         }
 
     @cached_property
@@ -140,11 +140,11 @@ class AddHmsPushConfigurationResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            push_configurations ([AddHmsPushConfigurationResponsePushConfigurations]): [optional]  # noqa: E501
+            push_configurations ([AddHmsPushConfigurationResponsePushConfigurationsInner]): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
-        _spec_property_naming = kwargs.pop('_spec_property_naming', False)
+        _spec_property_naming = kwargs.pop('_spec_property_naming', True)
         _path_to_item = kwargs.pop('_path_to_item', ())
         _configuration = kwargs.pop('_configuration', None)
         _visited_composed_classes = kwargs.pop('_visited_composed_classes', ())
@@ -152,14 +152,18 @@ class AddHmsPushConfigurationResponse(ModelNormal):
         self = super(OpenApiModel, cls).__new__(cls)
 
         if args:
-            raise ApiTypeError(
-                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
-                    args,
-                    self.__class__.__name__,
-                ),
-                path_to_item=_path_to_item,
-                valid_classes=(self.__class__,),
-            )
+            for arg in args:
+                if isinstance(arg, dict):
+                    kwargs.update(arg)
+                else:
+                    raise ApiTypeError(
+                        "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
+                            args,
+                            self.__class__.__name__,
+                        ),
+                        path_to_item=_path_to_item,
+                        valid_classes=(self.__class__,),
+                    )
 
         self._data_store = {}
         self._check_type = _check_type
@@ -222,7 +226,7 @@ class AddHmsPushConfigurationResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            push_configurations ([AddHmsPushConfigurationResponsePushConfigurations]): [optional]  # noqa: E501
+            push_configurations ([AddHmsPushConfigurationResponsePushConfigurationsInner]): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -232,14 +236,18 @@ class AddHmsPushConfigurationResponse(ModelNormal):
         _visited_composed_classes = kwargs.pop('_visited_composed_classes', ())
 
         if args:
-            raise ApiTypeError(
-                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
-                    args,
-                    self.__class__.__name__,
-                ),
-                path_to_item=_path_to_item,
-                valid_classes=(self.__class__,),
-            )
+            for arg in args:
+                if isinstance(arg, dict):
+                    kwargs.update(arg)
+                else:
+                    raise ApiTypeError(
+                        "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
+                            args,
+                            self.__class__.__name__,
+                        ),
+                        path_to_item=_path_to_item,
+                        valid_classes=(self.__class__,),
+                    )
 
         self._data_store = {}
         self._check_type = _check_type

@@ -135,7 +135,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
         is_ephemeral=True,
         is_dynamic_partitioned_2_how_dynamic_partitioning_works=True,
         operator_ids=[
-            1,
+            "operator_ids_example",
         ],
         operators=[
             "operators_example",
@@ -191,7 +191,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **oc_delete_channel_by_url**
-> InlineResponse2001 oc_delete_channel_by_url(api_token, channel_url)
+> OcDeleteChannelByUrl200Response oc_delete_channel_by_url(api_token, channel_url)
 
 Delete a channel
 
@@ -204,7 +204,7 @@ Delete a channel
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import open_channel_api
-from sendbird_platform_sdk.model.inline_response2001 import InlineResponse2001
+from sendbird_platform_sdk.model.oc_delete_channel_by_url200_response import OcDeleteChannelByUrl200Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -239,7 +239,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**OcDeleteChannelByUrl200Response**](OcDeleteChannelByUrl200Response.md)
 
 ### Authorization
 
@@ -516,7 +516,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **oc_register_operators**
-> InlineResponse2001 oc_register_operators(api_token, channel_url)
+> OcDeleteChannelByUrl200Response oc_register_operators(api_token, channel_url)
 
 Register operators
 
@@ -530,7 +530,7 @@ import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import open_channel_api
 from sendbird_platform_sdk.model.oc_register_operators_data import OcRegisterOperatorsData
-from sendbird_platform_sdk.model.inline_response2001 import InlineResponse2001
+from sendbird_platform_sdk.model.oc_delete_channel_by_url200_response import OcDeleteChannelByUrl200Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -548,7 +548,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     oc_register_operators_data = OcRegisterOperatorsData(
         channel_url="channel_url_example",
         operator_ids=[
-            1,
+            "operator_ids_example",
         ],
     ) # OcRegisterOperatorsData |  (optional)
 
@@ -581,7 +581,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**OcDeleteChannelByUrl200Response**](OcDeleteChannelByUrl200Response.md)
 
 ### Authorization
 
@@ -639,7 +639,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
         custom_type="custom_type_example",
         data="data_example",
         operator_ids=[
-            1,
+            "operator_ids_example",
         ],
         operators=[
             "operators_example",

@@ -82,7 +82,7 @@ class AddEmojisData(ModelNormal):
         """
         return {
             'emoji_category_id': (int,),  # noqa: E501
-            'emojis': ([str],),  # noqa: E501
+            'emojis': ([{str: (bool, date, datetime, dict, float, int, list, str, none_type)}],),  # noqa: E501
         }
 
     @cached_property
@@ -107,7 +107,7 @@ class AddEmojisData(ModelNormal):
 
         Args:
             emoji_category_id (int): Specifies the unique ID of the emoji category that a list of new emojis belong to.
-            emojis ([str]): Specifies a list of one or more new emojis to register.
+            emojis ([{str: (bool, date, datetime, dict, float, int, list, str, none_type)}]): Specifies a list of one or more new emojis to register.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -143,7 +143,7 @@ class AddEmojisData(ModelNormal):
         """
 
         _check_type = kwargs.pop('_check_type', True)
-        _spec_property_naming = kwargs.pop('_spec_property_naming', False)
+        _spec_property_naming = kwargs.pop('_spec_property_naming', True)
         _path_to_item = kwargs.pop('_path_to_item', ())
         _configuration = kwargs.pop('_configuration', None)
         _visited_composed_classes = kwargs.pop('_visited_composed_classes', ())
@@ -151,14 +151,18 @@ class AddEmojisData(ModelNormal):
         self = super(OpenApiModel, cls).__new__(cls)
 
         if args:
-            raise ApiTypeError(
-                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
-                    args,
-                    self.__class__.__name__,
-                ),
-                path_to_item=_path_to_item,
-                valid_classes=(self.__class__,),
-            )
+            for arg in args:
+                if isinstance(arg, dict):
+                    kwargs.update(arg)
+                else:
+                    raise ApiTypeError(
+                        "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
+                            args,
+                            self.__class__.__name__,
+                        ),
+                        path_to_item=_path_to_item,
+                        valid_classes=(self.__class__,),
+                    )
 
         self._data_store = {}
         self._check_type = _check_type
@@ -194,7 +198,7 @@ class AddEmojisData(ModelNormal):
 
         Args:
             emoji_category_id (int): Specifies the unique ID of the emoji category that a list of new emojis belong to.
-            emojis ([str]): Specifies a list of one or more new emojis to register.
+            emojis ([{str: (bool, date, datetime, dict, float, int, list, str, none_type)}]): Specifies a list of one or more new emojis to register.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -236,14 +240,18 @@ class AddEmojisData(ModelNormal):
         _visited_composed_classes = kwargs.pop('_visited_composed_classes', ())
 
         if args:
-            raise ApiTypeError(
-                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
-                    args,
-                    self.__class__.__name__,
-                ),
-                path_to_item=_path_to_item,
-                valid_classes=(self.__class__,),
-            )
+            for arg in args:
+                if isinstance(arg, dict):
+                    kwargs.update(arg)
+                else:
+                    raise ApiTypeError(
+                        "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
+                            args,
+                            self.__class__.__name__,
+                        ),
+                        path_to_item=_path_to_item,
+                        valid_classes=(self.__class__,),
+                    )
 
         self._data_store = {}
         self._check_type = _check_type

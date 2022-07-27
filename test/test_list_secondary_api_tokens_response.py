@@ -12,8 +12,8 @@ import sys
 import unittest
 
 import sendbird_platform_sdk
-from sendbird_platform_sdk.model.list_secondary_api_tokens_response_api_tokens import ListSecondaryApiTokensResponseApiTokens
-globals()['ListSecondaryApiTokensResponseApiTokens'] = ListSecondaryApiTokensResponseApiTokens
+from sendbird_platform_sdk.model.list_secondary_api_tokens_response_api_tokens_inner import ListSecondaryApiTokensResponseApiTokensInner
+globals()['ListSecondaryApiTokensResponseApiTokensInner'] = ListSecondaryApiTokensResponseApiTokensInner
 from sendbird_platform_sdk.model.list_secondary_api_tokens_response import ListSecondaryApiTokensResponse
 
 

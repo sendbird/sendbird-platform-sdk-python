@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **action** | **str** |  | [optional] 
 **status** | **str** |  | [optional] 
 **user_id** | **str** |  | [optional] 
-**files** | [**ListDataExportsByMessageChannelOrUserResponseFile**](ListDataExportsByMessageChannelOrUserResponseFile.md) |  | [optional] 
+**files** | [**ListDataExportsByMessageChannelOrUserResponseExportedDataInnerFile**](ListDataExportsByMessageChannelOrUserResponseExportedDataInnerFile.md) |  | [optional] 
 **user_ids** | **[str]** |  | [optional] 
 **channel_delete_option** | **str** |  | [optional] 
 **created_at** | **float** |  | [optional] 

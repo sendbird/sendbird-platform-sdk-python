@@ -12,6 +12,8 @@ import sys
 import unittest
 
 import sendbird_platform_sdk
+from sendbird_platform_sdk.model.send_bird_group_channel import SendBirdGroupChannel
+globals()['SendBirdGroupChannel'] = SendBirdGroupChannel
 from sendbird_platform_sdk.model.join_channels_response import JoinChannelsResponse
 
 

@@ -30,14 +30,14 @@ from sendbird_platform_sdk.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from sendbird_platform_sdk.model.v3_applications_settings_global_custom_type_domain_filter import V3ApplicationsSettingsGlobalCustomTypeDomainFilter
-    from sendbird_platform_sdk.model.v3_applications_settings_global_custom_type_image_moderation import V3ApplicationsSettingsGlobalCustomTypeImageModeration
-    from sendbird_platform_sdk.model.v3_applications_settings_global_custom_type_profanity_filter import V3ApplicationsSettingsGlobalCustomTypeProfanityFilter
-    from sendbird_platform_sdk.model.v3_applications_settings_global_custom_type_profanity_triggered_moderation import V3ApplicationsSettingsGlobalCustomTypeProfanityTriggeredModeration
-    globals()['V3ApplicationsSettingsGlobalCustomTypeDomainFilter'] = V3ApplicationsSettingsGlobalCustomTypeDomainFilter
-    globals()['V3ApplicationsSettingsGlobalCustomTypeImageModeration'] = V3ApplicationsSettingsGlobalCustomTypeImageModeration
-    globals()['V3ApplicationsSettingsGlobalCustomTypeProfanityFilter'] = V3ApplicationsSettingsGlobalCustomTypeProfanityFilter
-    globals()['V3ApplicationsSettingsGlobalCustomTypeProfanityTriggeredModeration'] = V3ApplicationsSettingsGlobalCustomTypeProfanityTriggeredModeration
+    from sendbird_platform_sdk.model.set_domain_filter_data_domain_filter import SetDomainFilterDataDomainFilter
+    from sendbird_platform_sdk.model.set_domain_filter_data_image_moderation import SetDomainFilterDataImageModeration
+    from sendbird_platform_sdk.model.set_domain_filter_data_profanity_filter import SetDomainFilterDataProfanityFilter
+    from sendbird_platform_sdk.model.set_domain_filter_data_profanity_triggered_moderation import SetDomainFilterDataProfanityTriggeredModeration
+    globals()['SetDomainFilterDataDomainFilter'] = SetDomainFilterDataDomainFilter
+    globals()['SetDomainFilterDataImageModeration'] = SetDomainFilterDataImageModeration
+    globals()['SetDomainFilterDataProfanityFilter'] = SetDomainFilterDataProfanityFilter
+    globals()['SetDomainFilterDataProfanityTriggeredModeration'] = SetDomainFilterDataProfanityTriggeredModeration
 
 
 class SetDomainFilterData(ModelNormal):
@@ -93,10 +93,10 @@ class SetDomainFilterData(ModelNormal):
         """
         lazy_import()
         return {
-            'domain_filter': (V3ApplicationsSettingsGlobalCustomTypeDomainFilter,),  # noqa: E501
-            'profanity_filter': (V3ApplicationsSettingsGlobalCustomTypeProfanityFilter,),  # noqa: E501
-            'profanity_triggered_moderation': (V3ApplicationsSettingsGlobalCustomTypeProfanityTriggeredModeration,),  # noqa: E501
-            'image_moderation': (V3ApplicationsSettingsGlobalCustomTypeImageModeration,),  # noqa: E501
+            'domain_filter': (SetDomainFilterDataDomainFilter,),  # noqa: E501
+            'profanity_filter': (SetDomainFilterDataProfanityFilter,),  # noqa: E501
+            'profanity_triggered_moderation': (SetDomainFilterDataProfanityTriggeredModeration,),  # noqa: E501
+            'image_moderation': (SetDomainFilterDataImageModeration,),  # noqa: E501
         }
 
     @cached_property
@@ -152,14 +152,14 @@ class SetDomainFilterData(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            domain_filter (V3ApplicationsSettingsGlobalCustomTypeDomainFilter): [optional]  # noqa: E501
-            profanity_filter (V3ApplicationsSettingsGlobalCustomTypeProfanityFilter): [optional]  # noqa: E501
-            profanity_triggered_moderation (V3ApplicationsSettingsGlobalCustomTypeProfanityTriggeredModeration): [optional]  # noqa: E501
-            image_moderation (V3ApplicationsSettingsGlobalCustomTypeImageModeration): [optional]  # noqa: E501
+            domain_filter (SetDomainFilterDataDomainFilter): [optional]  # noqa: E501
+            profanity_filter (SetDomainFilterDataProfanityFilter): [optional]  # noqa: E501
+            profanity_triggered_moderation (SetDomainFilterDataProfanityTriggeredModeration): [optional]  # noqa: E501
+            image_moderation (SetDomainFilterDataImageModeration): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
-        _spec_property_naming = kwargs.pop('_spec_property_naming', False)
+        _spec_property_naming = kwargs.pop('_spec_property_naming', True)
         _path_to_item = kwargs.pop('_path_to_item', ())
         _configuration = kwargs.pop('_configuration', None)
         _visited_composed_classes = kwargs.pop('_visited_composed_classes', ())
@@ -167,14 +167,18 @@ class SetDomainFilterData(ModelNormal):
         self = super(OpenApiModel, cls).__new__(cls)
 
         if args:
-            raise ApiTypeError(
-                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
-                    args,
-                    self.__class__.__name__,
-                ),
-                path_to_item=_path_to_item,
-                valid_classes=(self.__class__,),
-            )
+            for arg in args:
+                if isinstance(arg, dict):
+                    kwargs.update(arg)
+                else:
+                    raise ApiTypeError(
+                        "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
+                            args,
+                            self.__class__.__name__,
+                        ),
+                        path_to_item=_path_to_item,
+                        valid_classes=(self.__class__,),
+                    )
 
         self._data_store = {}
         self._check_type = _check_type
@@ -237,10 +241,10 @@ class SetDomainFilterData(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            domain_filter (V3ApplicationsSettingsGlobalCustomTypeDomainFilter): [optional]  # noqa: E501
-            profanity_filter (V3ApplicationsSettingsGlobalCustomTypeProfanityFilter): [optional]  # noqa: E501
-            profanity_triggered_moderation (V3ApplicationsSettingsGlobalCustomTypeProfanityTriggeredModeration): [optional]  # noqa: E501
-            image_moderation (V3ApplicationsSettingsGlobalCustomTypeImageModeration): [optional]  # noqa: E501
+            domain_filter (SetDomainFilterDataDomainFilter): [optional]  # noqa: E501
+            profanity_filter (SetDomainFilterDataProfanityFilter): [optional]  # noqa: E501
+            profanity_triggered_moderation (SetDomainFilterDataProfanityTriggeredModeration): [optional]  # noqa: E501
+            image_moderation (SetDomainFilterDataImageModeration): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -250,14 +254,18 @@ class SetDomainFilterData(ModelNormal):
         _visited_composed_classes = kwargs.pop('_visited_composed_classes', ())
 
         if args:
-            raise ApiTypeError(
-                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
-                    args,
-                    self.__class__.__name__,
-                ),
-                path_to_item=_path_to_item,
-                valid_classes=(self.__class__,),
-            )
+            for arg in args:
+                if isinstance(arg, dict):
+                    kwargs.update(arg)
+                else:
+                    raise ApiTypeError(
+                        "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
+                            args,
+                            self.__class__.__name__,
+                        ),
+                        path_to_item=_path_to_item,
+                        valid_classes=(self.__class__,),
+                    )
 
         self._data_store = {}
         self._check_type = _check_type

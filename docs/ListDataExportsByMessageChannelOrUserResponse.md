@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**exported_data** | [**[ListDataExportsByMessageChannelOrUserResponseExportedData]**](ListDataExportsByMessageChannelOrUserResponseExportedData.md) |  | [optional] 
+**exported_data** | [**[ListDataExportsByMessageChannelOrUserResponseExportedDataInner]**](ListDataExportsByMessageChannelOrUserResponseExportedDataInner.md) |  | [optional] 
 **next** | **str** |  | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 

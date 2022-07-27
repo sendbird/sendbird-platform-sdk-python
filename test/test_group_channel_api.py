@@ -30,13 +30,6 @@ class TestGroupChannelApi(unittest.TestCase):
         """
         pass
 
-    def test_gc_ban_user(self):
-        """Test case for gc_ban_user
-
-        Ban a user  # noqa: E501
-        """
-        pass
-
     def test_gc_cancel_the_registration_of_operators(self):
         """Test case for gc_cancel_the_registration_of_operators
 
@@ -72,13 +65,6 @@ class TestGroupChannelApi(unittest.TestCase):
         """
         pass
 
-    def test_gc_freeze_channel(self):
-        """Test case for gc_freeze_channel
-
-        Freeze a channel  # noqa: E501
-        """
-        pass
-
     def test_gc_hide_or_archive_channel(self):
         """Test case for gc_hide_or_archive_channel
 
@@ -107,13 +93,6 @@ class TestGroupChannelApi(unittest.TestCase):
         """
         pass
 
-    def test_gc_list_banned_users(self):
-        """Test case for gc_list_banned_users
-
-        List banned users  # noqa: E501
-        """
-        pass
-
     def test_gc_list_channels(self):
         """Test case for gc_list_channels
 
@@ -128,24 +107,10 @@ class TestGroupChannelApi(unittest.TestCase):
         """
         pass
 
-    def test_gc_list_muted_users(self):
-        """Test case for gc_list_muted_users
-
-        List muted users  # noqa: E501
-        """
-        pass
-
     def test_gc_list_operators(self):
         """Test case for gc_list_operators
 
         List operators  # noqa: E501
-        """
-        pass
-
-    def test_gc_mute_user(self):
-        """Test case for gc_mute_user
-
-        Mute a user  # noqa: E501
         """
         pass
 
@@ -163,31 +128,10 @@ class TestGroupChannelApi(unittest.TestCase):
         """
         pass
 
-    def test_gc_unban_user_by_id(self):
-        """Test case for gc_unban_user_by_id
-
-        Unban a user  # noqa: E501
-        """
-        pass
-
     def test_gc_unhide_or_unarchive_channel(self):
         """Test case for gc_unhide_or_unarchive_channel
 
         Unhide or unarchive a channel  # noqa: E501
-        """
-        pass
-
-    def test_gc_unmute_user_by_id(self):
-        """Test case for gc_unmute_user_by_id
-
-        Unmute a user  # noqa: E501
-        """
-        pass
-
-    def test_gc_update_ban_by_id(self):
-        """Test case for gc_update_ban_by_id
-
-        Update a ban  # noqa: E501
         """
         pass
 
@@ -198,24 +142,10 @@ class TestGroupChannelApi(unittest.TestCase):
         """
         pass
 
-    def test_gc_view_ban_by_id(self):
-        """Test case for gc_view_ban_by_id
-
-        View a ban  # noqa: E501
-        """
-        pass
-
     def test_gc_view_channel_by_url(self):
         """Test case for gc_view_channel_by_url
 
         View a channel  # noqa: E501
-        """
-        pass
-
-    def test_gc_view_mute_by_id(self):
-        """Test case for gc_view_mute_by_id
-
-        View a mute  # noqa: E501
         """
         pass
 

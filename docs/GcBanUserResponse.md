@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **start_at** | **float** |  | [optional] 
 **end_at** | **float** |  | [optional] 
 **description** | **str** |  | [optional] 
-**metadata** | [**InlineResponse2001**](InlineResponse2001.md) |  | [optional] 
+**metadata** | [**OcDeleteChannelByUrl200Response**](OcDeleteChannelByUrl200Response.md) |  | [optional] 
 **next_url** | **str** |  | [optional] 
 **nickname** | **str** |  | [optional] 
 **profile_url** | **str** |  | [optional] 

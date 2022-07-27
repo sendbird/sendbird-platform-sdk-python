@@ -30,8 +30,8 @@ from sendbird_platform_sdk.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from sendbird_platform_sdk.model.v3_applications_settings_by_channel_custom_type_custom_type_ban_banned_list import V3ApplicationsSettingsByChannelCustomTypeCustomTypeBanBannedList
-    globals()['V3ApplicationsSettingsByChannelCustomTypeCustomTypeBanBannedList'] = V3ApplicationsSettingsByChannelCustomTypeCustomTypeBanBannedList
+    from sendbird_platform_sdk.model.ban_users_in_channels_with_custom_channel_type_data_banned_list_inner import BanUsersInChannelsWithCustomChannelTypeDataBannedListInner
+    globals()['BanUsersInChannelsWithCustomChannelTypeDataBannedListInner'] = BanUsersInChannelsWithCustomChannelTypeDataBannedListInner
 
 
 class BanUsersInChannelsWithCustomChannelTypeData(ModelNormal):
@@ -87,7 +87,7 @@ class BanUsersInChannelsWithCustomChannelTypeData(ModelNormal):
         """
         lazy_import()
         return {
-            'banned_list': ([V3ApplicationsSettingsByChannelCustomTypeCustomTypeBanBannedList],),  # noqa: E501
+            'banned_list': ([BanUsersInChannelsWithCustomChannelTypeDataBannedListInner],),  # noqa: E501
             'on_demand_upsert': (bool,),  # noqa: E501
         }
 
@@ -112,7 +112,7 @@ class BanUsersInChannelsWithCustomChannelTypeData(ModelNormal):
         """BanUsersInChannelsWithCustomChannelTypeData - a model defined in OpenAPI
 
         Args:
-            banned_list ([V3ApplicationsSettingsByChannelCustomTypeCustomTypeBanBannedList]):
+            banned_list ([BanUsersInChannelsWithCustomChannelTypeDataBannedListInner]):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -149,7 +149,7 @@ class BanUsersInChannelsWithCustomChannelTypeData(ModelNormal):
         """
 
         _check_type = kwargs.pop('_check_type', True)
-        _spec_property_naming = kwargs.pop('_spec_property_naming', False)
+        _spec_property_naming = kwargs.pop('_spec_property_naming', True)
         _path_to_item = kwargs.pop('_path_to_item', ())
         _configuration = kwargs.pop('_configuration', None)
         _visited_composed_classes = kwargs.pop('_visited_composed_classes', ())
@@ -157,14 +157,18 @@ class BanUsersInChannelsWithCustomChannelTypeData(ModelNormal):
         self = super(OpenApiModel, cls).__new__(cls)
 
         if args:
-            raise ApiTypeError(
-                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
-                    args,
-                    self.__class__.__name__,
-                ),
-                path_to_item=_path_to_item,
-                valid_classes=(self.__class__,),
-            )
+            for arg in args:
+                if isinstance(arg, dict):
+                    kwargs.update(arg)
+                else:
+                    raise ApiTypeError(
+                        "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
+                            args,
+                            self.__class__.__name__,
+                        ),
+                        path_to_item=_path_to_item,
+                        valid_classes=(self.__class__,),
+                    )
 
         self._data_store = {}
         self._check_type = _check_type
@@ -198,7 +202,7 @@ class BanUsersInChannelsWithCustomChannelTypeData(ModelNormal):
         """BanUsersInChannelsWithCustomChannelTypeData - a model defined in OpenAPI
 
         Args:
-            banned_list ([V3ApplicationsSettingsByChannelCustomTypeCustomTypeBanBannedList]):
+            banned_list ([BanUsersInChannelsWithCustomChannelTypeDataBannedListInner]):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -241,14 +245,18 @@ class BanUsersInChannelsWithCustomChannelTypeData(ModelNormal):
         _visited_composed_classes = kwargs.pop('_visited_composed_classes', ())
 
         if args:
-            raise ApiTypeError(
-                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
-                    args,
-                    self.__class__.__name__,
-                ),
-                path_to_item=_path_to_item,
-                valid_classes=(self.__class__,),
-            )
+            for arg in args:
+                if isinstance(arg, dict):
+                    kwargs.update(arg)
+                else:
+                    raise ApiTypeError(
+                        "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
+                            args,
+                            self.__class__.__name__,
+                        ),
+                        path_to_item=_path_to_item,
+                        valid_classes=(self.__class__,),
+                    )
 
         self._data_store = {}
         self._check_type = _check_type

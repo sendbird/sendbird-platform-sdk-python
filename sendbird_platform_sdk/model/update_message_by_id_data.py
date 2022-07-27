@@ -89,7 +89,7 @@ class UpdateMessageByIdData(ModelNormal):
             'custom_type': (str,),  # noqa: E501
             'data': (str,),  # noqa: E501
             'mention_type': (str,),  # noqa: E501
-            'mentioned_user_ids': ([int],),  # noqa: E501
+            'mentioned_user_ids': ([str],),  # noqa: E501
         }
 
     @cached_property
@@ -160,11 +160,11 @@ class UpdateMessageByIdData(ModelNormal):
             custom_type (str): Specifies a custom message type which is used for message grouping. The length is limited to 128 characters.<br /><br /> Custom types are also used within Sendbird's [Advanced analytics](/docs/chat/v3/platform-api/guides/advanced-analytics) to segment metrics, which enables the sub-classification of data views.. [optional]  # noqa: E501
             data (str): Specifies additional message information such as custom font size, font type or `JSON` formatted string.. [optional]  # noqa: E501
             mention_type (str): Specifies the mentioning method which indicates the user scope who will get a notification for the message. Acceptable values are users and channel. If set to users, only the specified users with the mentioned_users property below will get notified. If set to channel, all users in the channel will get notified. (Default: users). [optional]  # noqa: E501
-            mentioned_user_ids ([int]): Specifies an array of one or more IDs of the users who will get a notification for the message.. [optional]  # noqa: E501
+            mentioned_user_ids ([str]): Specifies an array of one or more IDs of the users who will get a notification for the message.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
-        _spec_property_naming = kwargs.pop('_spec_property_naming', False)
+        _spec_property_naming = kwargs.pop('_spec_property_naming', True)
         _path_to_item = kwargs.pop('_path_to_item', ())
         _configuration = kwargs.pop('_configuration', None)
         _visited_composed_classes = kwargs.pop('_visited_composed_classes', ())
@@ -172,14 +172,18 @@ class UpdateMessageByIdData(ModelNormal):
         self = super(OpenApiModel, cls).__new__(cls)
 
         if args:
-            raise ApiTypeError(
-                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
-                    args,
-                    self.__class__.__name__,
-                ),
-                path_to_item=_path_to_item,
-                valid_classes=(self.__class__,),
-            )
+            for arg in args:
+                if isinstance(arg, dict):
+                    kwargs.update(arg)
+                else:
+                    raise ApiTypeError(
+                        "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
+                            args,
+                            self.__class__.__name__,
+                        ),
+                        path_to_item=_path_to_item,
+                        valid_classes=(self.__class__,),
+                    )
 
         self._data_store = {}
         self._check_type = _check_type
@@ -253,7 +257,7 @@ class UpdateMessageByIdData(ModelNormal):
             custom_type (str): Specifies a custom message type which is used for message grouping. The length is limited to 128 characters.<br /><br /> Custom types are also used within Sendbird's [Advanced analytics](/docs/chat/v3/platform-api/guides/advanced-analytics) to segment metrics, which enables the sub-classification of data views.. [optional]  # noqa: E501
             data (str): Specifies additional message information such as custom font size, font type or `JSON` formatted string.. [optional]  # noqa: E501
             mention_type (str): Specifies the mentioning method which indicates the user scope who will get a notification for the message. Acceptable values are users and channel. If set to users, only the specified users with the mentioned_users property below will get notified. If set to channel, all users in the channel will get notified. (Default: users). [optional]  # noqa: E501
-            mentioned_user_ids ([int]): Specifies an array of one or more IDs of the users who will get a notification for the message.. [optional]  # noqa: E501
+            mentioned_user_ids ([str]): Specifies an array of one or more IDs of the users who will get a notification for the message.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -263,14 +267,18 @@ class UpdateMessageByIdData(ModelNormal):
         _visited_composed_classes = kwargs.pop('_visited_composed_classes', ())
 
         if args:
-            raise ApiTypeError(
-                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
-                    args,
-                    self.__class__.__name__,
-                ),
-                path_to_item=_path_to_item,
-                valid_classes=(self.__class__,),
-            )
+            for arg in args:
+                if isinstance(arg, dict):
+                    kwargs.update(arg)
+                else:
+                    raise ApiTypeError(
+                        "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
+                            args,
+                            self.__class__.__name__,
+                        ),
+                        path_to_item=_path_to_item,
+                        valid_classes=(self.__class__,),
+                    )
 
         self._data_store = {}
         self._check_type = _check_type

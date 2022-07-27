@@ -522,7 +522,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
         data="data_example",
         send_push=True,
         mentioned=[
-            1,
+            "mentioned_example",
         ],
         mark_as_read=True,
         dedup_id="dedup_id_example",

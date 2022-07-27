@@ -83,7 +83,7 @@ class CreateChannelMetadataData(ModelNormal):
         return {
             'channel_type': (str,),  # noqa: E501
             'channel_url': (str,),  # noqa: E501
-            'metadata': (str,),  # noqa: E501
+            'metadata': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),  # noqa: E501
             'include_ts': (bool,),  # noqa: E501
         }
 
@@ -112,7 +112,7 @@ class CreateChannelMetadataData(ModelNormal):
         Args:
             channel_type (str): Specifies the type of the channel. Either open_channels or group_channels.
             channel_url (str): Specifies the URL of the channel to store the metadata in.
-            metadata (str): Specifies a `JSON` object that stores key-value items. The key must not have a comma (,) and its length is limited to 128 characters. The value must be a string and its length is limited to 190 characters. This property can have up to 5 items.
+            metadata ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): Specifies a `JSON` object that stores key-value items. The key must not have a comma (,) and its length is limited to 128 characters. The value must be a string and its length is limited to 190 characters. This property can have up to 5 items.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -149,7 +149,7 @@ class CreateChannelMetadataData(ModelNormal):
         """
 
         _check_type = kwargs.pop('_check_type', True)
-        _spec_property_naming = kwargs.pop('_spec_property_naming', False)
+        _spec_property_naming = kwargs.pop('_spec_property_naming', True)
         _path_to_item = kwargs.pop('_path_to_item', ())
         _configuration = kwargs.pop('_configuration', None)
         _visited_composed_classes = kwargs.pop('_visited_composed_classes', ())
@@ -157,14 +157,18 @@ class CreateChannelMetadataData(ModelNormal):
         self = super(OpenApiModel, cls).__new__(cls)
 
         if args:
-            raise ApiTypeError(
-                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
-                    args,
-                    self.__class__.__name__,
-                ),
-                path_to_item=_path_to_item,
-                valid_classes=(self.__class__,),
-            )
+            for arg in args:
+                if isinstance(arg, dict):
+                    kwargs.update(arg)
+                else:
+                    raise ApiTypeError(
+                        "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
+                            args,
+                            self.__class__.__name__,
+                        ),
+                        path_to_item=_path_to_item,
+                        valid_classes=(self.__class__,),
+                    )
 
         self._data_store = {}
         self._check_type = _check_type
@@ -202,7 +206,7 @@ class CreateChannelMetadataData(ModelNormal):
         Args:
             channel_type (str): Specifies the type of the channel. Either open_channels or group_channels.
             channel_url (str): Specifies the URL of the channel to store the metadata in.
-            metadata (str): Specifies a `JSON` object that stores key-value items. The key must not have a comma (,) and its length is limited to 128 characters. The value must be a string and its length is limited to 190 characters. This property can have up to 5 items.
+            metadata ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): Specifies a `JSON` object that stores key-value items. The key must not have a comma (,) and its length is limited to 128 characters. The value must be a string and its length is limited to 190 characters. This property can have up to 5 items.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -245,14 +249,18 @@ class CreateChannelMetadataData(ModelNormal):
         _visited_composed_classes = kwargs.pop('_visited_composed_classes', ())
 
         if args:
-            raise ApiTypeError(
-                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
-                    args,
-                    self.__class__.__name__,
-                ),
-                path_to_item=_path_to_item,
-                valid_classes=(self.__class__,),
-            )
+            for arg in args:
+                if isinstance(arg, dict):
+                    kwargs.update(arg)
+                else:
+                    raise ApiTypeError(
+                        "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
+                            args,
+                            self.__class__.__name__,
+                        ),
+                        path_to_item=_path_to_item,
+                        valid_classes=(self.__class__,),
+                    )
 
         self._data_store = {}
         self._check_type = _check_type

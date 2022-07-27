@@ -12,8 +12,8 @@ import sys
 import unittest
 
 import sendbird_platform_sdk
-from sendbird_platform_sdk.model.oc_list_banned_users_response_banned_list import OcListBannedUsersResponseBannedList
-globals()['OcListBannedUsersResponseBannedList'] = OcListBannedUsersResponseBannedList
+from sendbird_platform_sdk.model.oc_list_banned_users_response_banned_list_inner import OcListBannedUsersResponseBannedListInner
+globals()['OcListBannedUsersResponseBannedListInner'] = OcListBannedUsersResponseBannedListInner
 from sendbird_platform_sdk.model.oc_list_banned_users_response import OcListBannedUsersResponse
 
 

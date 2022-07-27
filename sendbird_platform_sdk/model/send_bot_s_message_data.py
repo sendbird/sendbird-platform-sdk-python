@@ -86,7 +86,7 @@ class SendBotSMessageData(ModelNormal):
             'custom_type': (str,),  # noqa: E501
             'data': (str,),  # noqa: E501
             'send_push': (bool,),  # noqa: E501
-            'mentioned': ([int],),  # noqa: E501
+            'mentioned': ([str],),  # noqa: E501
             'mark_as_read': (bool,),  # noqa: E501
             'dedup_id': (str,),  # noqa: E501
             'created_at': (int,),  # noqa: E501
@@ -157,14 +157,14 @@ class SendBotSMessageData(ModelNormal):
             custom_type (str): Specifies a custom message type which is used for message grouping. The length is limited to 128 characters.. [optional]  # noqa: E501
             data (str): Specifies additional message information such as custom font size, font type or `JSON` formatted string.. [optional]  # noqa: E501
             send_push (bool): Determines whether to send a push notification for the message to the members of the channel (Default: true). [optional]  # noqa: E501
-            mentioned ([int]): Specifies an array of one or more IDs of the users who get a notification for the message.. [optional]  # noqa: E501
+            mentioned ([str]): Specifies an array of one or more IDs of the users who get a notification for the message.. [optional]  # noqa: E501
             mark_as_read (bool): Determines whether to mark the message as read for the bot. If set to false, the bot's unread_count and read_receipt remain unchanged after the message is sent. (Default: true). [optional]  # noqa: E501
             dedup_id (str): Specifies the unique ID for the message to prevent the same message data from getting sent to the channel.. [optional]  # noqa: E501
             created_at (int): Specifies the time that the message was sent, in [Unix milliseconds](/docs/chat/v3/platform-api/guides/miscellaneous#2-timestamps) format.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
-        _spec_property_naming = kwargs.pop('_spec_property_naming', False)
+        _spec_property_naming = kwargs.pop('_spec_property_naming', True)
         _path_to_item = kwargs.pop('_path_to_item', ())
         _configuration = kwargs.pop('_configuration', None)
         _visited_composed_classes = kwargs.pop('_visited_composed_classes', ())
@@ -172,14 +172,18 @@ class SendBotSMessageData(ModelNormal):
         self = super(OpenApiModel, cls).__new__(cls)
 
         if args:
-            raise ApiTypeError(
-                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
-                    args,
-                    self.__class__.__name__,
-                ),
-                path_to_item=_path_to_item,
-                valid_classes=(self.__class__,),
-            )
+            for arg in args:
+                if isinstance(arg, dict):
+                    kwargs.update(arg)
+                else:
+                    raise ApiTypeError(
+                        "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
+                            args,
+                            self.__class__.__name__,
+                        ),
+                        path_to_item=_path_to_item,
+                        valid_classes=(self.__class__,),
+                    )
 
         self._data_store = {}
         self._check_type = _check_type
@@ -251,7 +255,7 @@ class SendBotSMessageData(ModelNormal):
             custom_type (str): Specifies a custom message type which is used for message grouping. The length is limited to 128 characters.. [optional]  # noqa: E501
             data (str): Specifies additional message information such as custom font size, font type or `JSON` formatted string.. [optional]  # noqa: E501
             send_push (bool): Determines whether to send a push notification for the message to the members of the channel (Default: true). [optional]  # noqa: E501
-            mentioned ([int]): Specifies an array of one or more IDs of the users who get a notification for the message.. [optional]  # noqa: E501
+            mentioned ([str]): Specifies an array of one or more IDs of the users who get a notification for the message.. [optional]  # noqa: E501
             mark_as_read (bool): Determines whether to mark the message as read for the bot. If set to false, the bot's unread_count and read_receipt remain unchanged after the message is sent. (Default: true). [optional]  # noqa: E501
             dedup_id (str): Specifies the unique ID for the message to prevent the same message data from getting sent to the channel.. [optional]  # noqa: E501
             created_at (int): Specifies the time that the message was sent, in [Unix milliseconds](/docs/chat/v3/platform-api/guides/miscellaneous#2-timestamps) format.. [optional]  # noqa: E501
@@ -264,14 +268,18 @@ class SendBotSMessageData(ModelNormal):
         _visited_composed_classes = kwargs.pop('_visited_composed_classes', ())
 
         if args:
-            raise ApiTypeError(
-                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
-                    args,
-                    self.__class__.__name__,
-                ),
-                path_to_item=_path_to_item,
-                valid_classes=(self.__class__,),
-            )
+            for arg in args:
+                if isinstance(arg, dict):
+                    kwargs.update(arg)
+                else:
+                    raise ApiTypeError(
+                        "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
+                            args,
+                            self.__class__.__name__,
+                        ),
+                        path_to_item=_path_to_item,
+                        valid_classes=(self.__class__,),
+                    )
 
         self._data_store = {}
         self._check_type = _check_type

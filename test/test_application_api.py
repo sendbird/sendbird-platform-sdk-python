@@ -51,6 +51,13 @@ class TestApplicationApi(unittest.TestCase):
         """
         pass
 
+    def test_ban_users_in_channels_with_custom_channel_type(self):
+        """Test case for ban_users_in_channels_with_custom_channel_type
+
+        Ban users in channels with a custom channel type  # noqa: E501
+        """
+        pass
+
     def test_delete_allowed_ips_from_whitelist(self):
         """Test case for delete_allowed_ips_from_whitelist
 
@@ -69,6 +76,20 @@ class TestApplicationApi(unittest.TestCase):
         """Test case for generate_secondary_api_token
 
         Generate a secondary API token  # noqa: E501
+        """
+        pass
+
+    def test_list_banned_users_in_channels_with_custom_channel_type(self):
+        """Test case for list_banned_users_in_channels_with_custom_channel_type
+
+        List banned users in channels with a custom channel type  # noqa: E501
+        """
+        pass
+
+    def test_list_muted_users_in_channels_with_custom_channel_type(self):
+        """Test case for list_muted_users_in_channels_with_custom_channel_type
+
+        List muted users in channels with a custom channel type  # noqa: E501
         """
         pass
 
@@ -93,6 +114,13 @@ class TestApplicationApi(unittest.TestCase):
         """
         pass
 
+    def test_mute_users_in_channels_with_custom_channel_type(self):
+        """Test case for mute_users_in_channels_with_custom_channel_type
+
+        Mute users in channels with a custom channel type  # noqa: E501
+        """
+        pass
+
     def test_remove_push_configuration_by_id(self):
         """Test case for remove_push_configuration_by_id
 
@@ -111,6 +139,27 @@ class TestApplicationApi(unittest.TestCase):
         """Test case for revoke_secondary_api_token_by_token
 
         Revoke a secondary API token  # noqa: E501
+        """
+        pass
+
+    def test_set_domain_filter(self):
+        """Test case for set_domain_filter
+
+        Message moderation  # noqa: E501
+        """
+        pass
+
+    def test_unban_users_in_channels_with_custom_channel_type(self):
+        """Test case for unban_users_in_channels_with_custom_channel_type
+
+        Unban users in channels with a custom channel type  # noqa: E501
+        """
+        pass
+
+    def test_unmute_users_in_channels_with_custom_channel_type(self):
+        """Test case for unmute_users_in_channels_with_custom_channel_type
+
+        Unmute users in channels with a custom channel type  # noqa: E501
         """
         pass
 
@@ -153,34 +202,6 @@ class TestApplicationApi(unittest.TestCase):
         """Test case for view_default_channel_invitation_preference
 
         View default channel invitation preference  # noqa: E501
-        """
-        pass
-
-    def test_view_number_of_concurrent_connections(self):
-        """Test case for view_number_of_concurrent_connections
-
-        View number of concurrent connections  # noqa: E501
-        """
-        pass
-
-    def test_view_number_of_daily_active_users(self):
-        """Test case for view_number_of_daily_active_users
-
-        View number of daily active users  # noqa: E501
-        """
-        pass
-
-    def test_view_number_of_monthly_active_users(self):
-        """Test case for view_number_of_monthly_active_users
-
-        View number of monthly active users  # noqa: E501
-        """
-        pass
-
-    def test_view_number_of_peak_connections(self):
-        """Test case for view_number_of_peak_connections
-
-        View number of peak connections  # noqa: E501
         """
         pass
 

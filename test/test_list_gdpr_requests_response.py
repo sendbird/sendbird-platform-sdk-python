@@ -12,8 +12,8 @@ import sys
 import unittest
 
 import sendbird_platform_sdk
-from sendbird_platform_sdk.model.list_gdpr_requests_response_requests import ListGdprRequestsResponseRequests
-globals()['ListGdprRequestsResponseRequests'] = ListGdprRequestsResponseRequests
+from sendbird_platform_sdk.model.list_gdpr_requests_response_requests_inner import ListGdprRequestsResponseRequestsInner
+globals()['ListGdprRequestsResponseRequestsInner'] = ListGdprRequestsResponseRequestsInner
 from sendbird_platform_sdk.model.list_gdpr_requests_response import ListGdprRequestsResponse
 
 

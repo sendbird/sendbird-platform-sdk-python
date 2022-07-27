@@ -12,7 +12,9 @@ import sys
 import unittest
 
 import sendbird_platform_sdk
+from sendbird_platform_sdk.model.schedule_announcement_response_create_channel_options import ScheduleAnnouncementResponseCreateChannelOptions
 from sendbird_platform_sdk.model.schedule_announcement_response_message import ScheduleAnnouncementResponseMessage
+globals()['ScheduleAnnouncementResponseCreateChannelOptions'] = ScheduleAnnouncementResponseCreateChannelOptions
 globals()['ScheduleAnnouncementResponseMessage'] = ScheduleAnnouncementResponseMessage
 from sendbird_platform_sdk.model.view_announcement_by_id_response import ViewAnnouncementByIdResponse
 

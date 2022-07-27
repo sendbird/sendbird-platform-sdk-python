@@ -82,7 +82,7 @@ class GcLeaveChannelData(ModelNormal):
         """
         return {
             'channel_url': (str,),  # noqa: E501
-            'user_ids': ([int],),  # noqa: E501
+            'user_ids': ([str],),  # noqa: E501
             'should_leave_all': (bool,),  # noqa: E501
         }
 
@@ -109,7 +109,7 @@ class GcLeaveChannelData(ModelNormal):
 
         Args:
             channel_url (str): Specifies the URL of the channel to leave.
-            user_ids ([int]): Specifies an array of one or more IDs of the users to leave the channel.
+            user_ids ([str]): Specifies an array of one or more IDs of the users to leave the channel.
             should_leave_all (bool): Determines whether to make all members leave the channel. (Default: false)
 
         Keyword Args:
@@ -146,7 +146,7 @@ class GcLeaveChannelData(ModelNormal):
         """
 
         _check_type = kwargs.pop('_check_type', True)
-        _spec_property_naming = kwargs.pop('_spec_property_naming', False)
+        _spec_property_naming = kwargs.pop('_spec_property_naming', True)
         _path_to_item = kwargs.pop('_path_to_item', ())
         _configuration = kwargs.pop('_configuration', None)
         _visited_composed_classes = kwargs.pop('_visited_composed_classes', ())
@@ -154,14 +154,18 @@ class GcLeaveChannelData(ModelNormal):
         self = super(OpenApiModel, cls).__new__(cls)
 
         if args:
-            raise ApiTypeError(
-                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
-                    args,
-                    self.__class__.__name__,
-                ),
-                path_to_item=_path_to_item,
-                valid_classes=(self.__class__,),
-            )
+            for arg in args:
+                if isinstance(arg, dict):
+                    kwargs.update(arg)
+                else:
+                    raise ApiTypeError(
+                        "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
+                            args,
+                            self.__class__.__name__,
+                        ),
+                        path_to_item=_path_to_item,
+                        valid_classes=(self.__class__,),
+                    )
 
         self._data_store = {}
         self._check_type = _check_type
@@ -198,7 +202,7 @@ class GcLeaveChannelData(ModelNormal):
 
         Args:
             channel_url (str): Specifies the URL of the channel to leave.
-            user_ids ([int]): Specifies an array of one or more IDs of the users to leave the channel.
+            user_ids ([str]): Specifies an array of one or more IDs of the users to leave the channel.
             should_leave_all (bool): Determines whether to make all members leave the channel. (Default: false)
 
         Keyword Args:
@@ -241,14 +245,18 @@ class GcLeaveChannelData(ModelNormal):
         _visited_composed_classes = kwargs.pop('_visited_composed_classes', ())
 
         if args:
-            raise ApiTypeError(
-                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
-                    args,
-                    self.__class__.__name__,
-                ),
-                path_to_item=_path_to_item,
-                valid_classes=(self.__class__,),
-            )
+            for arg in args:
+                if isinstance(arg, dict):
+                    kwargs.update(arg)
+                else:
+                    raise ApiTypeError(
+                        "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
+                            args,
+                            self.__class__.__name__,
+                        ),
+                        path_to_item=_path_to_item,
+                        valid_classes=(self.__class__,),
+                    )
 
         self._data_store = {}
         self._check_type = _check_type

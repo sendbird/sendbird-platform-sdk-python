@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **require_auth** | **bool** |  | [optional] 
 **message_survival_seconds** | **float** |  | [optional] 
 **custom_type** | **str** |  | [optional] 
-**mentioned_users** | [**[SendBirdMessageResponseMentionedUsers]**](SendBirdMessageResponseMentionedUsers.md) |  | [optional] 
+**mentioned_users** | [**[SendBirdMessageResponseMentionedUsersInner]**](SendBirdMessageResponseMentionedUsersInner.md) |  | [optional] 
 **translations** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}** |  | [optional] 
 **updated_at** | **float** |  | [optional] 
 **is_op_msg** | **bool** |  | [optional] 

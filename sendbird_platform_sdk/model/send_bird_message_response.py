@@ -30,9 +30,9 @@ from sendbird_platform_sdk.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from sendbird_platform_sdk.model.send_bird_message_response_mentioned_users import SendBirdMessageResponseMentionedUsers
+    from sendbird_platform_sdk.model.send_bird_message_response_mentioned_users_inner import SendBirdMessageResponseMentionedUsersInner
     from sendbird_platform_sdk.model.send_bird_message_response_user import SendBirdMessageResponseUser
-    globals()['SendBirdMessageResponseMentionedUsers'] = SendBirdMessageResponseMentionedUsers
+    globals()['SendBirdMessageResponseMentionedUsersInner'] = SendBirdMessageResponseMentionedUsersInner
     globals()['SendBirdMessageResponseUser'] = SendBirdMessageResponseUser
 
 
@@ -92,7 +92,7 @@ class SendBirdMessageResponse(ModelNormal):
             'require_auth': (bool,),  # noqa: E501
             'message_survival_seconds': (float,),  # noqa: E501
             'custom_type': (str,),  # noqa: E501
-            'mentioned_users': ([SendBirdMessageResponseMentionedUsers],),  # noqa: E501
+            'mentioned_users': ([SendBirdMessageResponseMentionedUsersInner],),  # noqa: E501
             'translations': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),  # noqa: E501
             'updated_at': (float,),  # noqa: E501
             'is_op_msg': (bool,),  # noqa: E501
@@ -197,7 +197,7 @@ class SendBirdMessageResponse(ModelNormal):
             require_auth (bool): [optional]  # noqa: E501
             message_survival_seconds (float): [optional]  # noqa: E501
             custom_type (str): [optional]  # noqa: E501
-            mentioned_users ([SendBirdMessageResponseMentionedUsers]): [optional]  # noqa: E501
+            mentioned_users ([SendBirdMessageResponseMentionedUsersInner]): [optional]  # noqa: E501
             translations ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]  # noqa: E501
             updated_at (float): [optional]  # noqa: E501
             is_op_msg (bool): [optional]  # noqa: E501
@@ -224,7 +224,7 @@ class SendBirdMessageResponse(ModelNormal):
         """
 
         _check_type = kwargs.pop('_check_type', True)
-        _spec_property_naming = kwargs.pop('_spec_property_naming', False)
+        _spec_property_naming = kwargs.pop('_spec_property_naming', True)
         _path_to_item = kwargs.pop('_path_to_item', ())
         _configuration = kwargs.pop('_configuration', None)
         _visited_composed_classes = kwargs.pop('_visited_composed_classes', ())
@@ -232,14 +232,18 @@ class SendBirdMessageResponse(ModelNormal):
         self = super(OpenApiModel, cls).__new__(cls)
 
         if args:
-            raise ApiTypeError(
-                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
-                    args,
-                    self.__class__.__name__,
-                ),
-                path_to_item=_path_to_item,
-                valid_classes=(self.__class__,),
-            )
+            for arg in args:
+                if isinstance(arg, dict):
+                    kwargs.update(arg)
+                else:
+                    raise ApiTypeError(
+                        "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
+                            args,
+                            self.__class__.__name__,
+                        ),
+                        path_to_item=_path_to_item,
+                        valid_classes=(self.__class__,),
+                    )
 
         self._data_store = {}
         self._check_type = _check_type
@@ -305,7 +309,7 @@ class SendBirdMessageResponse(ModelNormal):
             require_auth (bool): [optional]  # noqa: E501
             message_survival_seconds (float): [optional]  # noqa: E501
             custom_type (str): [optional]  # noqa: E501
-            mentioned_users ([SendBirdMessageResponseMentionedUsers]): [optional]  # noqa: E501
+            mentioned_users ([SendBirdMessageResponseMentionedUsersInner]): [optional]  # noqa: E501
             translations ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]  # noqa: E501
             updated_at (float): [optional]  # noqa: E501
             is_op_msg (bool): [optional]  # noqa: E501
@@ -338,14 +342,18 @@ class SendBirdMessageResponse(ModelNormal):
         _visited_composed_classes = kwargs.pop('_visited_composed_classes', ())
 
         if args:
-            raise ApiTypeError(
-                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
-                    args,
-                    self.__class__.__name__,
-                ),
-                path_to_item=_path_to_item,
-                valid_classes=(self.__class__,),
-            )
+            for arg in args:
+                if isinstance(arg, dict):
+                    kwargs.update(arg)
+                else:
+                    raise ApiTypeError(
+                        "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
+                            args,
+                            self.__class__.__name__,
+                        ),
+                        path_to_item=_path_to_item,
+                        valid_classes=(self.__class__,),
+                    )
 
         self._data_store = {}
         self._check_type = _check_type

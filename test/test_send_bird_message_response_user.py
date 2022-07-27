@@ -12,8 +12,8 @@ import sys
 import unittest
 
 import sendbird_platform_sdk
-from sendbird_platform_sdk.model.inline_response200 import InlineResponse200
-globals()['InlineResponse200'] = InlineResponse200
+from sendbird_platform_sdk.model.oc_delete_channel_by_url200_response import OcDeleteChannelByUrl200Response
+globals()['OcDeleteChannelByUrl200Response'] = OcDeleteChannelByUrl200Response
 from sendbird_platform_sdk.model.send_bird_message_response_user import SendBirdMessageResponseUser
 
 

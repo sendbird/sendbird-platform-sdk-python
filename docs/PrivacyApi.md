@@ -189,7 +189,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     register_gdpr_request_data = RegisterGdprRequestData(
         action="action_example",
         user_ids=[
-            1,
+            "user_ids_example",
         ],
         channel_delete_option="channel_delete_option_example",
         user_id="user_id_example",

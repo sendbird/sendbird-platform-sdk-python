@@ -152,7 +152,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     add_emojis_data = AddEmojisData(
         emoji_category_id=1,
         emojis=[
-            "emojis_example",
+            {},
         ],
     ) # AddEmojisData |  (optional)
 
@@ -2256,6 +2256,7 @@ import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import message_api
 from sendbird_platform_sdk.model.send_bird_message_response import SendBirdMessageResponse
+from sendbird_platform_sdk.model.translate_message_into_other_languages_data import TranslateMessageIntoOtherLanguagesData
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -2272,7 +2273,11 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     channel_type = "channel_type_example" # str | 
     channel_url = "channel_url_example" # str | 
     message_id = "message_id_example" # str | 
-    body = {} # {str: (bool, date, datetime, dict, float, int, list, str, none_type)} |  (optional)
+    translate_message_into_other_languages_data = TranslateMessageIntoOtherLanguagesData(
+        target_langs=[
+            "target_langs_example",
+        ],
+    ) # TranslateMessageIntoOtherLanguagesData |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -2286,7 +2291,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Translate a message into other languages
-        api_response = api_instance.translate_message_into_other_languages(api_token, channel_type, channel_url, message_id, body=body)
+        api_response = api_instance.translate_message_into_other_languages(api_token, channel_type, channel_url, message_id, translate_message_into_other_languages_data=translate_message_into_other_languages_data)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling MessageApi->translate_message_into_other_languages: %s\n" % e)
@@ -2301,7 +2306,7 @@ Name | Type | Description  | Notes
  **channel_type** | **str**|  |
  **channel_url** | **str**|  |
  **message_id** | **str**|  |
- **body** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}**|  | [optional]
+ **translate_message_into_other_languages_data** | [**TranslateMessageIntoOtherLanguagesData**](TranslateMessageIntoOtherLanguagesData.md)|  | [optional]
 
 ### Return type
 
@@ -2726,7 +2731,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
         data="data_example",
         mention_type="mention_type_example",
         mentioned_user_ids=[
-            1,
+            "mentioned_user_ids_example",
         ],
     ) # UpdateMessageByIdData |  (optional)
 

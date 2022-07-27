@@ -128,10 +128,10 @@ with sendbird_platform_sdk.ApiClient() as api_client:
         csv_delimiter="csv_delimiter_example",
         timezone="timezone_example",
         sender_ids=[
-            1,
+            "sender_ids_example",
         ],
         exclude_sender_ids=[
-            1,
+            "exclude_sender_ids_example",
         ],
         channel_urls=[
             "channel_urls_example",
@@ -140,7 +140,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
             "exclude_channel_urls_example",
         ],
         user_ids=[
-            1,
+            "user_ids_example",
         ],
         show_read_receipt=True,
         show_channel_metadata=True,

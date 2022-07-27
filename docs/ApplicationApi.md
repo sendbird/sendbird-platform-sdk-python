@@ -402,7 +402,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     custom_type = "custom_type_example" # str | 
     ban_users_in_channels_with_custom_channel_type_data = BanUsersInChannelsWithCustomChannelTypeData(
         banned_list=[
-            V3ApplicationsSettingsByChannelCustomTypeCustomTypeBanBannedList(
+            BanUsersInChannelsWithCustomChannelTypeDataBannedListInner(
                 user_id="user_id_example",
                 seconds=3.14,
                 description="description_example",
@@ -764,7 +764,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_muted_users_in_channels_with_custom_channel_type**
-> InlineResponse200 list_muted_users_in_channels_with_custom_channel_type(api_token, custom_type)
+> ListMutedUsersInChannelsWithCustomChannelType200Response list_muted_users_in_channels_with_custom_channel_type(api_token, custom_type)
 
 List muted users in channels with a custom channel type
 
@@ -777,7 +777,7 @@ List muted users in channels with a custom channel type
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import application_api
-from sendbird_platform_sdk.model.inline_response200 import InlineResponse200
+from sendbird_platform_sdk.model.list_muted_users_in_channels_with_custom_channel_type200_response import ListMutedUsersInChannelsWithCustomChannelType200Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -825,7 +825,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse200**](InlineResponse200.md)
+[**ListMutedUsersInChannelsWithCustomChannelType200Response**](ListMutedUsersInChannelsWithCustomChannelType200Response.md)
 
 ### Authorization
 
@@ -1373,34 +1373,34 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     api_token = "{{API_TOKEN}}" # str | 
     custom_type = "custom_type_example" # str | 
     set_domain_filter_data = SetDomainFilterData(
-        domain_filter=V3ApplicationsSettingsGlobalCustomTypeDomainFilter(
+        domain_filter=SetDomainFilterDataDomainFilter(
             domains=[
                 "domains_example",
             ],
             type=1,
             should_check_global=True,
         ),
-        profanity_filter=V3ApplicationsSettingsGlobalCustomTypeProfanityFilter(
+        profanity_filter=SetDomainFilterDataProfanityFilter(
             keywords=[
                 "keywords_example",
             ],
             regex_filters=[
-                V3ApplicationsSettingsGlobalCustomTypeProfanityFilterRegexFilters(
+                SetDomainFilterDataProfanityFilterRegexFiltersInner(
                     regex="regex_example",
                 ),
             ],
             type=1,
             should_check_global=True,
         ),
-        profanity_triggered_moderation=V3ApplicationsSettingsGlobalCustomTypeProfanityTriggeredModeration(
+        profanity_triggered_moderation=SetDomainFilterDataProfanityTriggeredModeration(
             count=1,
             duration=1,
             action=1,
         ),
-        image_moderation=V3ApplicationsSettingsGlobalCustomTypeImageModeration(
+        image_moderation=SetDomainFilterDataImageModeration(
             type=1,
             soft_block=True,
-            limits=V3ApplicationsSettingsGlobalCustomTypeImageModerationLimits(
+            limits=SetDomainFilterDataImageModerationLimits(
                 adult=1,
                 spoof=1,
                 medical=1,

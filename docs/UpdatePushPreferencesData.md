@@ -4,7 +4,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**user_id** | **str** | Specifies the unique ID of the target user. | 
 **push_trigger_option** | **str** | Determines the type of push notification trigger to apply to the user&#39;s joined group channels. Valid values are the following:&lt;br /&gt;- all (default): when disconnected from Sendbird server, the user receives notifications for all new messages including mentioned messages the user has been mentioned in.&lt;br /&gt;- mention_only: when disconnected from Sendbird server, the user only receives notifications for messages the user has been mentioned in.&lt;br /&gt;- off: the user doesn&#39;t receive any notifications. | 
 **do_not_disturb** | **bool** | Determines whether to pause notification messages for the user during a specific time of day. (Default: false) | 
 **start_hour** | **int** | Specifies the hour to start pausing the notifications for Do Not Disturb of the user. | 

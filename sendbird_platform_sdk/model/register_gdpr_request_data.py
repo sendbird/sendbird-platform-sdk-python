@@ -82,7 +82,7 @@ class RegisterGdprRequestData(ModelNormal):
         """
         return {
             'action': (str,),  # noqa: E501
-            'user_ids': ([int],),  # noqa: E501
+            'user_ids': ([str],),  # noqa: E501
             'channel_delete_option': (str,),  # noqa: E501
             'user_id': (str,),  # noqa: E501
         }
@@ -111,7 +111,7 @@ class RegisterGdprRequestData(ModelNormal):
 
         Args:
             action (str): Determines the type of a GDPR request. Acceptable values are limited to access and delete. If set to access, Sendbird server generates a downloadable zip file containing the data of the specified user with the user_id property to comply with GDPR's [right to access](https://gdpr-info.eu/art-15-gdpr/) of the data subject. If set to delete, the specified users with the user_ids property will be permanently deleted from your Sendbird application to comply with GDPR's [right to erasure](https://gdpr-info.eu/art-17-gdpr/) of the data subject. (Default: delete)
-            user_ids ([int]): Specifies an array of the IDs of the users to delete in order to meet the GDPR's requirements. The maximum number of users to be processed at once is 100. This should be specified when the value of the action property is delete.
+            user_ids ([str]): Specifies an array of the IDs of the users to delete in order to meet the GDPR's requirements. The maximum number of users to be processed at once is 100. This should be specified when the value of the action property is delete.
             channel_delete_option (str): Determines the scope of group channels to delete in addition to deleting the specified users with the user_ids property. Acceptable values are limited to the following:<br />- do_not_delete (default): the users will be deleted but their joined group channels will remain.<br />- 1_on_1: only 1-on-1 group channels of the users will be deleted. (This option can be useful when eliminating spam users) <br />- all: all joined group channels of the users will be deleted.<br /><br /> This only works when the value of the action property is delete.
             user_id (str): Specifies the ID of the user to meet the GDPR's requirements.
 
@@ -149,7 +149,7 @@ class RegisterGdprRequestData(ModelNormal):
         """
 
         _check_type = kwargs.pop('_check_type', True)
-        _spec_property_naming = kwargs.pop('_spec_property_naming', False)
+        _spec_property_naming = kwargs.pop('_spec_property_naming', True)
         _path_to_item = kwargs.pop('_path_to_item', ())
         _configuration = kwargs.pop('_configuration', None)
         _visited_composed_classes = kwargs.pop('_visited_composed_classes', ())
@@ -157,14 +157,18 @@ class RegisterGdprRequestData(ModelNormal):
         self = super(OpenApiModel, cls).__new__(cls)
 
         if args:
-            raise ApiTypeError(
-                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
-                    args,
-                    self.__class__.__name__,
-                ),
-                path_to_item=_path_to_item,
-                valid_classes=(self.__class__,),
-            )
+            for arg in args:
+                if isinstance(arg, dict):
+                    kwargs.update(arg)
+                else:
+                    raise ApiTypeError(
+                        "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
+                            args,
+                            self.__class__.__name__,
+                        ),
+                        path_to_item=_path_to_item,
+                        valid_classes=(self.__class__,),
+                    )
 
         self._data_store = {}
         self._check_type = _check_type
@@ -202,7 +206,7 @@ class RegisterGdprRequestData(ModelNormal):
 
         Args:
             action (str): Determines the type of a GDPR request. Acceptable values are limited to access and delete. If set to access, Sendbird server generates a downloadable zip file containing the data of the specified user with the user_id property to comply with GDPR's [right to access](https://gdpr-info.eu/art-15-gdpr/) of the data subject. If set to delete, the specified users with the user_ids property will be permanently deleted from your Sendbird application to comply with GDPR's [right to erasure](https://gdpr-info.eu/art-17-gdpr/) of the data subject. (Default: delete)
-            user_ids ([int]): Specifies an array of the IDs of the users to delete in order to meet the GDPR's requirements. The maximum number of users to be processed at once is 100. This should be specified when the value of the action property is delete.
+            user_ids ([str]): Specifies an array of the IDs of the users to delete in order to meet the GDPR's requirements. The maximum number of users to be processed at once is 100. This should be specified when the value of the action property is delete.
             channel_delete_option (str): Determines the scope of group channels to delete in addition to deleting the specified users with the user_ids property. Acceptable values are limited to the following:<br />- do_not_delete (default): the users will be deleted but their joined group channels will remain.<br />- 1_on_1: only 1-on-1 group channels of the users will be deleted. (This option can be useful when eliminating spam users) <br />- all: all joined group channels of the users will be deleted.<br /><br /> This only works when the value of the action property is delete.
             user_id (str): Specifies the ID of the user to meet the GDPR's requirements.
 
@@ -246,14 +250,18 @@ class RegisterGdprRequestData(ModelNormal):
         _visited_composed_classes = kwargs.pop('_visited_composed_classes', ())
 
         if args:
-            raise ApiTypeError(
-                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
-                    args,
-                    self.__class__.__name__,
-                ),
-                path_to_item=_path_to_item,
-                valid_classes=(self.__class__,),
-            )
+            for arg in args:
+                if isinstance(arg, dict):
+                    kwargs.update(arg)
+                else:
+                    raise ApiTypeError(
+                        "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
+                            args,
+                            self.__class__.__name__,
+                        ),
+                        path_to_item=_path_to_item,
+                        valid_classes=(self.__class__,),
+                    )
 
         self._data_store = {}
         self._check_type = _check_type

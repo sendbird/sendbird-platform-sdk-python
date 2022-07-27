@@ -30,8 +30,8 @@ from sendbird_platform_sdk.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from sendbird_platform_sdk.model.oc_list_banned_users_response_banned_list import OcListBannedUsersResponseBannedList
-    globals()['OcListBannedUsersResponseBannedList'] = OcListBannedUsersResponseBannedList
+    from sendbird_platform_sdk.model.oc_list_banned_users_response_banned_list_inner import OcListBannedUsersResponseBannedListInner
+    globals()['OcListBannedUsersResponseBannedListInner'] = OcListBannedUsersResponseBannedListInner
 
 
 class GcListBannedUsersResponse(ModelNormal):
@@ -87,7 +87,7 @@ class GcListBannedUsersResponse(ModelNormal):
         """
         lazy_import()
         return {
-            'banned_list': ([OcListBannedUsersResponseBannedList],),  # noqa: E501
+            'banned_list': ([OcListBannedUsersResponseBannedListInner],),  # noqa: E501
             'total_ban_count': (float,),  # noqa: E501
             'next': (str,),  # noqa: E501
         }
@@ -144,13 +144,13 @@ class GcListBannedUsersResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            banned_list ([OcListBannedUsersResponseBannedList]): [optional]  # noqa: E501
+            banned_list ([OcListBannedUsersResponseBannedListInner]): [optional]  # noqa: E501
             total_ban_count (float): [optional]  # noqa: E501
             next (str): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
-        _spec_property_naming = kwargs.pop('_spec_property_naming', False)
+        _spec_property_naming = kwargs.pop('_spec_property_naming', True)
         _path_to_item = kwargs.pop('_path_to_item', ())
         _configuration = kwargs.pop('_configuration', None)
         _visited_composed_classes = kwargs.pop('_visited_composed_classes', ())
@@ -158,14 +158,18 @@ class GcListBannedUsersResponse(ModelNormal):
         self = super(OpenApiModel, cls).__new__(cls)
 
         if args:
-            raise ApiTypeError(
-                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
-                    args,
-                    self.__class__.__name__,
-                ),
-                path_to_item=_path_to_item,
-                valid_classes=(self.__class__,),
-            )
+            for arg in args:
+                if isinstance(arg, dict):
+                    kwargs.update(arg)
+                else:
+                    raise ApiTypeError(
+                        "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
+                            args,
+                            self.__class__.__name__,
+                        ),
+                        path_to_item=_path_to_item,
+                        valid_classes=(self.__class__,),
+                    )
 
         self._data_store = {}
         self._check_type = _check_type
@@ -228,7 +232,7 @@ class GcListBannedUsersResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            banned_list ([OcListBannedUsersResponseBannedList]): [optional]  # noqa: E501
+            banned_list ([OcListBannedUsersResponseBannedListInner]): [optional]  # noqa: E501
             total_ban_count (float): [optional]  # noqa: E501
             next (str): [optional]  # noqa: E501
         """
@@ -240,14 +244,18 @@ class GcListBannedUsersResponse(ModelNormal):
         _visited_composed_classes = kwargs.pop('_visited_composed_classes', ())
 
         if args:
-            raise ApiTypeError(
-                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
-                    args,
-                    self.__class__.__name__,
-                ),
-                path_to_item=_path_to_item,
-                valid_classes=(self.__class__,),
-            )
+            for arg in args:
+                if isinstance(arg, dict):
+                    kwargs.update(arg)
+                else:
+                    raise ApiTypeError(
+                        "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
+                            args,
+                            self.__class__.__name__,
+                        ),
+                        path_to_item=_path_to_item,
+                        valid_classes=(self.__class__,),
+                    )
 
         self._data_store = {}
         self._check_type = _check_type

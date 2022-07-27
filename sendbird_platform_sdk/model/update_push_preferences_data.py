@@ -81,7 +81,6 @@ class UpdatePushPreferencesData(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'user_id': (str,),  # noqa: E501
             'push_trigger_option': (str,),  # noqa: E501
             'do_not_disturb': (bool,),  # noqa: E501
             'start_hour': (int,),  # noqa: E501
@@ -103,7 +102,6 @@ class UpdatePushPreferencesData(ModelNormal):
 
 
     attribute_map = {
-        'user_id': 'user_id',  # noqa: E501
         'push_trigger_option': 'push_trigger_option',  # noqa: E501
         'do_not_disturb': 'do_not_disturb',  # noqa: E501
         'start_hour': 'start_hour',  # noqa: E501
@@ -126,11 +124,10 @@ class UpdatePushPreferencesData(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, user_id, push_trigger_option, do_not_disturb, start_hour, start_min, end_hour, end_min, snooze_enabled, snooze_start_ts, snooze_end_ts, block_push_from_bots, push_blocked_bot_ids, timezone, push_sound, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, push_trigger_option, do_not_disturb, start_hour, start_min, end_hour, end_min, snooze_enabled, snooze_start_ts, snooze_end_ts, block_push_from_bots, push_blocked_bot_ids, timezone, push_sound, *args, **kwargs):  # noqa: E501
         """UpdatePushPreferencesData - a model defined in OpenAPI
 
         Args:
-            user_id (str): Specifies the unique ID of the target user.
             push_trigger_option (str): Determines the type of push notification trigger to apply to the user's joined group channels. Valid values are the following:<br />- all (default): when disconnected from Sendbird server, the user receives notifications for all new messages including mentioned messages the user has been mentioned in.<br />- mention_only: when disconnected from Sendbird server, the user only receives notifications for messages the user has been mentioned in.<br />- off: the user doesn't receive any notifications.
             do_not_disturb (bool): Determines whether to pause notification messages for the user during a specific time of day. (Default: false)
             start_hour (int): Specifies the hour to start pausing the notifications for Do Not Disturb of the user.
@@ -179,7 +176,7 @@ class UpdatePushPreferencesData(ModelNormal):
         """
 
         _check_type = kwargs.pop('_check_type', True)
-        _spec_property_naming = kwargs.pop('_spec_property_naming', False)
+        _spec_property_naming = kwargs.pop('_spec_property_naming', True)
         _path_to_item = kwargs.pop('_path_to_item', ())
         _configuration = kwargs.pop('_configuration', None)
         _visited_composed_classes = kwargs.pop('_visited_composed_classes', ())
@@ -187,14 +184,18 @@ class UpdatePushPreferencesData(ModelNormal):
         self = super(OpenApiModel, cls).__new__(cls)
 
         if args:
-            raise ApiTypeError(
-                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
-                    args,
-                    self.__class__.__name__,
-                ),
-                path_to_item=_path_to_item,
-                valid_classes=(self.__class__,),
-            )
+            for arg in args:
+                if isinstance(arg, dict):
+                    kwargs.update(arg)
+                else:
+                    raise ApiTypeError(
+                        "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
+                            args,
+                            self.__class__.__name__,
+                        ),
+                        path_to_item=_path_to_item,
+                        valid_classes=(self.__class__,),
+                    )
 
         self._data_store = {}
         self._check_type = _check_type
@@ -203,7 +204,6 @@ class UpdatePushPreferencesData(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.user_id = user_id
         self.push_trigger_option = push_trigger_option
         self.do_not_disturb = do_not_disturb
         self.start_hour = start_hour
@@ -237,11 +237,10 @@ class UpdatePushPreferencesData(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, user_id, push_trigger_option, do_not_disturb, start_hour, start_min, end_hour, end_min, snooze_enabled, snooze_start_ts, snooze_end_ts, block_push_from_bots, push_blocked_bot_ids, timezone, push_sound, *args, **kwargs):  # noqa: E501
+    def __init__(self, push_trigger_option, do_not_disturb, start_hour, start_min, end_hour, end_min, snooze_enabled, snooze_start_ts, snooze_end_ts, block_push_from_bots, push_blocked_bot_ids, timezone, push_sound, *args, **kwargs):  # noqa: E501
         """UpdatePushPreferencesData - a model defined in OpenAPI
 
         Args:
-            user_id (str): Specifies the unique ID of the target user.
             push_trigger_option (str): Determines the type of push notification trigger to apply to the user's joined group channels. Valid values are the following:<br />- all (default): when disconnected from Sendbird server, the user receives notifications for all new messages including mentioned messages the user has been mentioned in.<br />- mention_only: when disconnected from Sendbird server, the user only receives notifications for messages the user has been mentioned in.<br />- off: the user doesn't receive any notifications.
             do_not_disturb (bool): Determines whether to pause notification messages for the user during a specific time of day. (Default: false)
             start_hour (int): Specifies the hour to start pausing the notifications for Do Not Disturb of the user.
@@ -296,14 +295,18 @@ class UpdatePushPreferencesData(ModelNormal):
         _visited_composed_classes = kwargs.pop('_visited_composed_classes', ())
 
         if args:
-            raise ApiTypeError(
-                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
-                    args,
-                    self.__class__.__name__,
-                ),
-                path_to_item=_path_to_item,
-                valid_classes=(self.__class__,),
-            )
+            for arg in args:
+                if isinstance(arg, dict):
+                    kwargs.update(arg)
+                else:
+                    raise ApiTypeError(
+                        "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
+                            args,
+                            self.__class__.__name__,
+                        ),
+                        path_to_item=_path_to_item,
+                        valid_classes=(self.__class__,),
+                    )
 
         self._data_store = {}
         self._check_type = _check_type
@@ -312,7 +315,6 @@ class UpdatePushPreferencesData(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.user_id = user_id
         self.push_trigger_option = push_trigger_option
         self.do_not_disturb = do_not_disturb
         self.start_hour = start_hour

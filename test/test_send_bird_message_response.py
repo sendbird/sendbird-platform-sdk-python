@@ -12,6 +12,10 @@ import sys
 import unittest
 
 import sendbird_platform_sdk
+from sendbird_platform_sdk.model.send_bird_message_response_mentioned_users_inner import SendBirdMessageResponseMentionedUsersInner
+from sendbird_platform_sdk.model.send_bird_message_response_user import SendBirdMessageResponseUser
+globals()['SendBirdMessageResponseMentionedUsersInner'] = SendBirdMessageResponseMentionedUsersInner
+globals()['SendBirdMessageResponseUser'] = SendBirdMessageResponseUser
 from sendbird_platform_sdk.model.send_bird_message_response import SendBirdMessageResponse
 
 

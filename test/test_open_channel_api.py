@@ -23,13 +23,6 @@ class TestOpenChannelApi(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def test_oc_ban_user(self):
-        """Test case for oc_ban_user
-
-        Ban a user  # noqa: E501
-        """
-        pass
-
     def test_oc_cancel_the_registration_of_operators(self):
         """Test case for oc_cancel_the_registration_of_operators
 
@@ -51,31 +44,10 @@ class TestOpenChannelApi(unittest.TestCase):
         """
         pass
 
-    def test_oc_freeze_channel(self):
-        """Test case for oc_freeze_channel
-
-        Freeze a channel  # noqa: E501
-        """
-        pass
-
-    def test_oc_list_banned_users(self):
-        """Test case for oc_list_banned_users
-
-        List banned users  # noqa: E501
-        """
-        pass
-
     def test_oc_list_channels(self):
         """Test case for oc_list_channels
 
         List channels  # noqa: E501
-        """
-        pass
-
-    def test_oc_list_muted_users(self):
-        """Test case for oc_list_muted_users
-
-        List muted users  # noqa: E501
         """
         pass
 
@@ -93,38 +65,10 @@ class TestOpenChannelApi(unittest.TestCase):
         """
         pass
 
-    def test_oc_mute_user(self):
-        """Test case for oc_mute_user
-
-        Mute a user  # noqa: E501
-        """
-        pass
-
     def test_oc_register_operators(self):
         """Test case for oc_register_operators
 
         Register operators  # noqa: E501
-        """
-        pass
-
-    def test_oc_unban_user_by_id(self):
-        """Test case for oc_unban_user_by_id
-
-        Unban a user  # noqa: E501
-        """
-        pass
-
-    def test_oc_unmute_user_by_id(self):
-        """Test case for oc_unmute_user_by_id
-
-        Unmute a user  # noqa: E501
-        """
-        pass
-
-    def test_oc_update_ban_by_id(self):
-        """Test case for oc_update_ban_by_id
-
-        Update a ban  # noqa: E501
         """
         pass
 
@@ -135,24 +79,10 @@ class TestOpenChannelApi(unittest.TestCase):
         """
         pass
 
-    def test_oc_view_ban_by_id(self):
-        """Test case for oc_view_ban_by_id
-
-        View a ban  # noqa: E501
-        """
-        pass
-
     def test_oc_view_channel_by_url(self):
         """Test case for oc_view_channel_by_url
 
         View a channel  # noqa: E501
-        """
-        pass
-
-    def test_oc_view_mute_by_id(self):
-        """Test case for oc_view_mute_by_id
-
-        View a mute  # noqa: E501
         """
         pass
 

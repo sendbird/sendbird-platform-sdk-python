@@ -110,7 +110,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **gc_cancel_the_registration_of_operators**
-> InlineResponse2001 gc_cancel_the_registration_of_operators(api_token, channel_url, operator_ids)
+> OcDeleteChannelByUrl200Response gc_cancel_the_registration_of_operators(api_token, channel_url, operator_ids)
 
 Cancel the registration of operators
 
@@ -123,7 +123,7 @@ Cancel the registration of operators
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import group_channel_api
-from sendbird_platform_sdk.model.inline_response2001 import InlineResponse2001
+from sendbird_platform_sdk.model.oc_delete_channel_by_url200_response import OcDeleteChannelByUrl200Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -173,7 +173,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**OcDeleteChannelByUrl200Response**](OcDeleteChannelByUrl200Response.md)
 
 ### Authorization
 
@@ -295,10 +295,10 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     api_token = "{{API_TOKEN}}" # str | 
     gc_create_channel_data = GcCreateChannelData(
         user_ids=[
-            1,
+            "user_ids_example",
         ],
         users=[
-            1,
+            "users_example",
         ],
         name="name_example",
         channel_url="channel_url_example",
@@ -313,14 +313,10 @@ with sendbird_platform_sdk.ApiClient() as api_client:
         access_code="access_code_example",
         inviter_id="inviter_id_example",
         strict=True,
-        invitation_status=[
-            "invitation_status_example",
-        ],
-        hidden_status=[
-            "hidden_status_example",
-        ],
+        invitation_status={},
+        hidden_status={},
         operator_ids=[
-            1,
+            "operator_ids_example",
         ],
         block_sdk_user_channel_join=True,
     ) # GcCreateChannelData |  (optional)
@@ -374,7 +370,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **gc_decline_invitation**
-> InlineResponse2001 gc_decline_invitation(api_token, channel_url)
+> OcDeleteChannelByUrl200Response gc_decline_invitation(api_token, channel_url)
 
 Decline an invitation
 
@@ -388,7 +384,7 @@ import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import group_channel_api
 from sendbird_platform_sdk.model.gc_decline_invitation_data import GcDeclineInvitationData
-from sendbird_platform_sdk.model.inline_response2001 import InlineResponse2001
+from sendbird_platform_sdk.model.oc_delete_channel_by_url200_response import OcDeleteChannelByUrl200Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -437,7 +433,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**OcDeleteChannelByUrl200Response**](OcDeleteChannelByUrl200Response.md)
 
 ### Authorization
 
@@ -458,7 +454,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **gc_delete_channel_by_url**
-> InlineResponse2001 gc_delete_channel_by_url(api_token, channel_url)
+> OcDeleteChannelByUrl200Response gc_delete_channel_by_url(api_token, channel_url)
 
 Delete a channel
 
@@ -471,7 +467,7 @@ Delete a channel
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import group_channel_api
-from sendbird_platform_sdk.model.inline_response2001 import InlineResponse2001
+from sendbird_platform_sdk.model.oc_delete_channel_by_url200_response import OcDeleteChannelByUrl200Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -506,7 +502,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**OcDeleteChannelByUrl200Response**](OcDeleteChannelByUrl200Response.md)
 
 ### Authorization
 
@@ -527,7 +523,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **gc_hide_or_archive_channel**
-> InlineResponse2001 gc_hide_or_archive_channel(api_token, channel_url)
+> OcDeleteChannelByUrl200Response gc_hide_or_archive_channel(api_token, channel_url)
 
 Hide or archive a channel
 
@@ -541,7 +537,7 @@ import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import group_channel_api
 from sendbird_platform_sdk.model.gc_hide_or_archive_channel_data import GcHideOrArchiveChannelData
-from sendbird_platform_sdk.model.inline_response2001 import InlineResponse2001
+from sendbird_platform_sdk.model.oc_delete_channel_by_url200_response import OcDeleteChannelByUrl200Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -593,7 +589,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**OcDeleteChannelByUrl200Response**](OcDeleteChannelByUrl200Response.md)
 
 ### Authorization
 
@@ -646,17 +642,13 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     gc_invite_as_members_data = GcInviteAsMembersData(
         channel_url="channel_url_example",
         user_ids=[
-            1,
+            "user_ids_example",
         ],
         users=[
-            1,
+            "users_example",
         ],
-        invitation_status=[
-            "invitation_status_example",
-        ],
-        hidden_status=[
-            "hidden_status_example",
-        ],
+        invitation_status={},
+        hidden_status={},
     ) # GcInviteAsMembersData |  (optional)
 
     # example passing only required values which don't have defaults set
@@ -791,7 +783,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **gc_leave_channel**
-> InlineResponse2001 gc_leave_channel(api_token, channel_url)
+> OcDeleteChannelByUrl200Response gc_leave_channel(api_token, channel_url)
 
 Leave a channel
 
@@ -805,7 +797,7 @@ import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import group_channel_api
 from sendbird_platform_sdk.model.gc_leave_channel_data import GcLeaveChannelData
-from sendbird_platform_sdk.model.inline_response2001 import InlineResponse2001
+from sendbird_platform_sdk.model.oc_delete_channel_by_url200_response import OcDeleteChannelByUrl200Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -823,7 +815,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     gc_leave_channel_data = GcLeaveChannelData(
         channel_url="channel_url_example",
         user_ids=[
-            1,
+            "user_ids_example",
         ],
         should_leave_all=True,
     ) # GcLeaveChannelData |  (optional)
@@ -857,7 +849,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**OcDeleteChannelByUrl200Response**](OcDeleteChannelByUrl200Response.md)
 
 ### Authorization
 
@@ -1248,7 +1240,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     gc_register_operators_data = GcRegisterOperatorsData(
         channel_url="channel_url_example",
         operator_ids=[
-            1,
+            "operator_ids_example",
         ],
     ) # GcRegisterOperatorsData |  (optional)
 
@@ -1387,7 +1379,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **gc_unhide_or_unarchive_channel**
-> InlineResponse2001 gc_unhide_or_unarchive_channel(api_token, channel_url, user_id)
+> OcDeleteChannelByUrl200Response gc_unhide_or_unarchive_channel(api_token, channel_url, user_id)
 
 Unhide or unarchive a channel
 
@@ -1400,7 +1392,7 @@ Unhide or unarchive a channel
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import group_channel_api
-from sendbird_platform_sdk.model.inline_response2001 import InlineResponse2001
+from sendbird_platform_sdk.model.oc_delete_channel_by_url200_response import OcDeleteChannelByUrl200Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1448,7 +1440,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**OcDeleteChannelByUrl200Response**](OcDeleteChannelByUrl200Response.md)
 
 ### Authorization
 
@@ -1509,7 +1501,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
         is_public=True,
         access_code="access_code_example",
         operator_ids=[
-            1,
+            "operator_ids_example",
         ],
     ) # GcUpdateChannelByUrlData |  (optional)
 

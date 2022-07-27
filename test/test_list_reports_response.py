@@ -12,8 +12,8 @@ import sys
 import unittest
 
 import sendbird_platform_sdk
-from sendbird_platform_sdk.model.list_reports_response_report_logs import ListReportsResponseReportLogs
-globals()['ListReportsResponseReportLogs'] = ListReportsResponseReportLogs
+from sendbird_platform_sdk.model.list_reports_response_report_logs_inner import ListReportsResponseReportLogsInner
+globals()['ListReportsResponseReportLogsInner'] = ListReportsResponseReportLogsInner
 from sendbird_platform_sdk.model.list_reports_response import ListReportsResponse
 
 

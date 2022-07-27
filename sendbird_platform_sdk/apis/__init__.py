@@ -6,7 +6,7 @@
 # raise a `RecursionError`.
 # In order to avoid this, import only the API that you directly need like:
 #
-#   from .api.announcement_api import AnnouncementApi
+#   from sendbird_platform_sdk.api.announcement_api import AnnouncementApi
 #
 # or import this package, but before doing it, use:
 #
@@ -27,4 +27,4 @@ from sendbird_platform_sdk.api.privacy_api import PrivacyApi
 from sendbird_platform_sdk.api.report_api import ReportApi
 from sendbird_platform_sdk.api.statistics_api import StatisticsApi
 from sendbird_platform_sdk.api.user_api import UserApi
-from sendbird_platform_sdk.api.webhooks_api import WebhooksApi
+from sendbird_platform_sdk.api.webhook_api import WebhookApi

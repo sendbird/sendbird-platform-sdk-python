@@ -12,8 +12,8 @@ import sys
 import unittest
 
 import sendbird_platform_sdk
-from sendbird_platform_sdk.model.list_messages_response_messages import ListMessagesResponseMessages
-globals()['ListMessagesResponseMessages'] = ListMessagesResponseMessages
+from sendbird_platform_sdk.model.list_messages_response_messages_inner import ListMessagesResponseMessagesInner
+globals()['ListMessagesResponseMessagesInner'] = ListMessagesResponseMessagesInner
 from sendbird_platform_sdk.model.list_messages_response import ListMessagesResponse
 
 
