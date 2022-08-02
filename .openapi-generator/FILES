@@ -217,6 +217,7 @@ docs/SendBirdEmoji.md
 docs/SendBirdEmojiCategory.md
 docs/SendBirdFileMessageParams.md
 docs/SendBirdGroupChannel.md
+docs/SendBirdGroupChannelChannel.md
 docs/SendBirdGroupChannelCollection.md
 docs/SendBirdGroupChannelCreatedBy.md
 docs/SendBirdGroupChannelDisappearingMessage.md
@@ -552,6 +553,7 @@ sendbird_platform_sdk/model/send_bird_emoji.py
 sendbird_platform_sdk/model/send_bird_emoji_category.py
 sendbird_platform_sdk/model/send_bird_file_message_params.py
 sendbird_platform_sdk/model/send_bird_group_channel.py
+sendbird_platform_sdk/model/send_bird_group_channel_channel.py
 sendbird_platform_sdk/model/send_bird_group_channel_collection.py
 sendbird_platform_sdk/model/send_bird_group_channel_created_by.py
 sendbird_platform_sdk/model/send_bird_group_channel_disappearing_message.py
@@ -879,6 +881,7 @@ test/test_send_bird_emoji.py
 test/test_send_bird_emoji_category.py
 test/test_send_bird_file_message_params.py
 test/test_send_bird_group_channel.py
+test/test_send_bird_group_channel_channel.py
 test/test_send_bird_group_channel_collection.py
 test/test_send_bird_group_channel_created_by.py
 test/test_send_bird_group_channel_disappearing_message.py

@@ -136,29 +136,11 @@ class GcCreateChannelData(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, user_ids, users, name, channel_url, cover_url, cover_file, custom_type, data, is_distinct, is_public, is_super, is_ephemeral, access_code, inviter_id, strict, invitation_status, hidden_status, operator_ids, block_sdk_user_channel_join, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, user_ids, *args, **kwargs):  # noqa: E501
         """GcCreateChannelData - a model defined in OpenAPI
 
         Args:
             user_ids ([str]): Specifies an array of one or more IDs of users to invite to the channel. The maximum number of users to be invited at once is 100. The users below and this property can be used interchangeably.
-            users ([str]): Specifies an array of one or more IDs of users to invite to the channel. The maximum number of users to be invited at once is 100. The user_ids above and this property can be used interchangeably.
-            name (str): Specifies the name of the channel, or the channel topic. The length is limited to 191 characters. (Default: group channel)
-            channel_url (str): Specifies the URL of the channel. Only numbers, characters, and underscores are allowed. The length is 4 to 100 characters, inclusive. If not specified, a URL is automatically generated.
-            cover_url (str): Specifies the URL of the cover image for the channel. The length is limited to 2,048 characters.
-            cover_file (file_type): Uploads the cover image file for the channel.
-            custom_type (str): Specifies the custom channel type which is used for channel grouping. The length is limited to 128 characters.<br /><br /> Custom types are also used within Sendbird's [Advanced analytics](/docs/chat/v3/platform-api/guides/advanced-analytics) to segment metrics, which enables the sub-classification of data views.
-            data (str): Specifies additional channel information such as a long description of the channel or `JSON` formatted string.
-            is_distinct (bool): Determines whether to reuse an existing channel or create a new channel. If set to true, returns a channel with the same users in the user_ids or users property or creates a new channel if no match is found. Sendbird server can also use the custom channel type in the custom_type property if specified along with the users to return the corresponding channel. If set to false, Sendbird server always creates a new channel with a combination of the users as well as the channel custom type if specified. (Default: false)<br /><br /> Under this property, Sendbird server does not distinguish channels based on other properties such as channel URL or channel name.
-            is_public (bool): Determines whether to allow a user to join the channel without an invitation. (Default: false)
-            is_super (bool): Determines whether to allow the channel to accommodate more than 2,000 members. (Default: false) <br/><br/> Supergroup channels are not supported with the is_distinct property and the property is false by default.
-            is_ephemeral (bool): Determines whether to preserve the messages in the channel for the purpose of retrieving chat history. (Default: false)
-            access_code (str): This parameter can only be used when the channel operator creates a public group channel. They can set an access code for the corresponding type of channel. The channel then requires the specified access code to a user who attempts to join. If specified, the is_access_code_required property of the channel resource is set to true.
-            inviter_id (str): Specifies the ID of the user who has invited other users as members of the channel. The inviter is not automatically registered to the channel as a member, so you should specify the ID of the inviter in the user_ids property below if needed.
-            strict (bool): Determines whether to receive a `400111` error and cease channel creation when there is at least one non-existing user in the specified user_ids or users property above. If set to false, the channel will be created excluding the non-existing users without receiving the mentioned error. (Default: false)
-            invitation_status ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): Specifies one or more key-value pair items which set the invitation status of each user invited to the channel. The key should be a user_id and the value should be their joining status. Acceptable values are joined, invited_by_friend, and invited_by_non_friend. (Default: joined)
-            hidden_status ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): Specifies one or more key-value pair items which set the channel's hidden status for each user. The key should be a user_id and the value should be their hidden status. Acceptable values are limited to the following:<br />- unhidden (default): the channel is included in when retrieving a list of group channels.<br />- hidden_allow_auto_unhide: the channel automatically gets unhidden when receiving a new message.<br />- hidden_prevent_auto_unhide: the channel keeps hidden though receiving a new message.
-            operator_ids ([str]): Specifies an array of one or more IDs of users to register as operators of the channel. You should also include these IDs in the user_ids property to invite them to the channel as members. They can delete any messages in the channel, and also view all messages without any filtering or throttling. The maximum allowed number of operators per channel is 100.
-            block_sdk_user_channel_join (bool): Determines whether to block users from joining the channel through the Chat SDK. This parameter can be used in order to restrict the ways for users to join the channel, and only using the [join a channel](#2-join-a-channel) action can add a user to the channel. (Default: false)
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -191,6 +173,24 @@ class GcCreateChannelData(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            users ([str]): Specifies an array of one or more IDs of users to invite to the channel. The maximum number of users to be invited at once is 100. The user_ids above and this property can be used interchangeably.. [optional]  # noqa: E501
+            name (str): Specifies the name of the channel, or the channel topic. The length is limited to 191 characters. (Default: group channel). [optional]  # noqa: E501
+            channel_url (str): Specifies the URL of the channel. Only numbers, characters, and underscores are allowed. The length is 4 to 100 characters, inclusive. If not specified, a URL is automatically generated.. [optional]  # noqa: E501
+            cover_url (str): Specifies the URL of the cover image for the channel. The length is limited to 2,048 characters.. [optional]  # noqa: E501
+            cover_file (file_type): Uploads the cover image file for the channel.. [optional]  # noqa: E501
+            custom_type (str): Specifies the custom channel type which is used for channel grouping. The length is limited to 128 characters.<br /><br /> Custom types are also used within Sendbird's [Advanced analytics](/docs/chat/v3/platform-api/guides/advanced-analytics) to segment metrics, which enables the sub-classification of data views.. [optional]  # noqa: E501
+            data (str): Specifies additional channel information such as a long description of the channel or `JSON` formatted string.. [optional]  # noqa: E501
+            is_distinct (bool): Determines whether to reuse an existing channel or create a new channel. If set to true, returns a channel with the same users in the user_ids or users property or creates a new channel if no match is found. Sendbird server can also use the custom channel type in the custom_type property if specified along with the users to return the corresponding channel. If set to false, Sendbird server always creates a new channel with a combination of the users as well as the channel custom type if specified. (Default: false)<br /><br /> Under this property, Sendbird server does not distinguish channels based on other properties such as channel URL or channel name.. [optional]  # noqa: E501
+            is_public (bool): Determines whether to allow a user to join the channel without an invitation. (Default: false). [optional]  # noqa: E501
+            is_super (bool): Determines whether to allow the channel to accommodate more than 2,000 members. (Default: false) <br/><br/> Supergroup channels are not supported with the is_distinct property and the property is false by default.. [optional]  # noqa: E501
+            is_ephemeral (bool): Determines whether to preserve the messages in the channel for the purpose of retrieving chat history. (Default: false). [optional]  # noqa: E501
+            access_code (str): This parameter can only be used when the channel operator creates a public group channel. They can set an access code for the corresponding type of channel. The channel then requires the specified access code to a user who attempts to join. If specified, the is_access_code_required property of the channel resource is set to true.. [optional]  # noqa: E501
+            inviter_id (str): Specifies the ID of the user who has invited other users as members of the channel. The inviter is not automatically registered to the channel as a member, so you should specify the ID of the inviter in the user_ids property below if needed.. [optional]  # noqa: E501
+            strict (bool): Determines whether to receive a `400111` error and cease channel creation when there is at least one non-existing user in the specified user_ids or users property above. If set to false, the channel will be created excluding the non-existing users without receiving the mentioned error. (Default: false). [optional]  # noqa: E501
+            invitation_status ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): Specifies one or more key-value pair items which set the invitation status of each user invited to the channel. The key should be a user_id and the value should be their joining status. Acceptable values are joined, invited_by_friend, and invited_by_non_friend. (Default: joined). [optional]  # noqa: E501
+            hidden_status ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): Specifies one or more key-value pair items which set the channel's hidden status for each user. The key should be a user_id and the value should be their hidden status. Acceptable values are limited to the following:<br />- unhidden (default): the channel is included in when retrieving a list of group channels.<br />- hidden_allow_auto_unhide: the channel automatically gets unhidden when receiving a new message.<br />- hidden_prevent_auto_unhide: the channel keeps hidden though receiving a new message.. [optional]  # noqa: E501
+            operator_ids ([str]): Specifies an array of one or more IDs of users to register as operators of the channel. You should also include these IDs in the user_ids property to invite them to the channel as members. They can delete any messages in the channel, and also view all messages without any filtering or throttling. The maximum allowed number of operators per channel is 100.. [optional]  # noqa: E501
+            block_sdk_user_channel_join (bool): Determines whether to block users from joining the channel through the Chat SDK. This parameter can be used in order to restrict the ways for users to join the channel, and only using the [join a channel](#2-join-a-channel) action can add a user to the channel. (Default: false). [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -223,24 +223,6 @@ class GcCreateChannelData(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         self.user_ids = user_ids
-        self.users = users
-        self.name = name
-        self.channel_url = channel_url
-        self.cover_url = cover_url
-        self.cover_file = cover_file
-        self.custom_type = custom_type
-        self.data = data
-        self.is_distinct = is_distinct
-        self.is_public = is_public
-        self.is_super = is_super
-        self.is_ephemeral = is_ephemeral
-        self.access_code = access_code
-        self.inviter_id = inviter_id
-        self.strict = strict
-        self.invitation_status = invitation_status
-        self.hidden_status = hidden_status
-        self.operator_ids = operator_ids
-        self.block_sdk_user_channel_join = block_sdk_user_channel_join
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -261,29 +243,11 @@ class GcCreateChannelData(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, user_ids, users, name, channel_url, cover_url, cover_file, custom_type, data, is_distinct, is_public, is_super, is_ephemeral, access_code, inviter_id, strict, invitation_status, hidden_status, operator_ids, block_sdk_user_channel_join, *args, **kwargs):  # noqa: E501
+    def __init__(self, user_ids, *args, **kwargs):  # noqa: E501
         """GcCreateChannelData - a model defined in OpenAPI
 
         Args:
             user_ids ([str]): Specifies an array of one or more IDs of users to invite to the channel. The maximum number of users to be invited at once is 100. The users below and this property can be used interchangeably.
-            users ([str]): Specifies an array of one or more IDs of users to invite to the channel. The maximum number of users to be invited at once is 100. The user_ids above and this property can be used interchangeably.
-            name (str): Specifies the name of the channel, or the channel topic. The length is limited to 191 characters. (Default: group channel)
-            channel_url (str): Specifies the URL of the channel. Only numbers, characters, and underscores are allowed. The length is 4 to 100 characters, inclusive. If not specified, a URL is automatically generated.
-            cover_url (str): Specifies the URL of the cover image for the channel. The length is limited to 2,048 characters.
-            cover_file (file_type): Uploads the cover image file for the channel.
-            custom_type (str): Specifies the custom channel type which is used for channel grouping. The length is limited to 128 characters.<br /><br /> Custom types are also used within Sendbird's [Advanced analytics](/docs/chat/v3/platform-api/guides/advanced-analytics) to segment metrics, which enables the sub-classification of data views.
-            data (str): Specifies additional channel information such as a long description of the channel or `JSON` formatted string.
-            is_distinct (bool): Determines whether to reuse an existing channel or create a new channel. If set to true, returns a channel with the same users in the user_ids or users property or creates a new channel if no match is found. Sendbird server can also use the custom channel type in the custom_type property if specified along with the users to return the corresponding channel. If set to false, Sendbird server always creates a new channel with a combination of the users as well as the channel custom type if specified. (Default: false)<br /><br /> Under this property, Sendbird server does not distinguish channels based on other properties such as channel URL or channel name.
-            is_public (bool): Determines whether to allow a user to join the channel without an invitation. (Default: false)
-            is_super (bool): Determines whether to allow the channel to accommodate more than 2,000 members. (Default: false) <br/><br/> Supergroup channels are not supported with the is_distinct property and the property is false by default.
-            is_ephemeral (bool): Determines whether to preserve the messages in the channel for the purpose of retrieving chat history. (Default: false)
-            access_code (str): This parameter can only be used when the channel operator creates a public group channel. They can set an access code for the corresponding type of channel. The channel then requires the specified access code to a user who attempts to join. If specified, the is_access_code_required property of the channel resource is set to true.
-            inviter_id (str): Specifies the ID of the user who has invited other users as members of the channel. The inviter is not automatically registered to the channel as a member, so you should specify the ID of the inviter in the user_ids property below if needed.
-            strict (bool): Determines whether to receive a `400111` error and cease channel creation when there is at least one non-existing user in the specified user_ids or users property above. If set to false, the channel will be created excluding the non-existing users without receiving the mentioned error. (Default: false)
-            invitation_status ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): Specifies one or more key-value pair items which set the invitation status of each user invited to the channel. The key should be a user_id and the value should be their joining status. Acceptable values are joined, invited_by_friend, and invited_by_non_friend. (Default: joined)
-            hidden_status ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): Specifies one or more key-value pair items which set the channel's hidden status for each user. The key should be a user_id and the value should be their hidden status. Acceptable values are limited to the following:<br />- unhidden (default): the channel is included in when retrieving a list of group channels.<br />- hidden_allow_auto_unhide: the channel automatically gets unhidden when receiving a new message.<br />- hidden_prevent_auto_unhide: the channel keeps hidden though receiving a new message.
-            operator_ids ([str]): Specifies an array of one or more IDs of users to register as operators of the channel. You should also include these IDs in the user_ids property to invite them to the channel as members. They can delete any messages in the channel, and also view all messages without any filtering or throttling. The maximum allowed number of operators per channel is 100.
-            block_sdk_user_channel_join (bool): Determines whether to block users from joining the channel through the Chat SDK. This parameter can be used in order to restrict the ways for users to join the channel, and only using the [join a channel](#2-join-a-channel) action can add a user to the channel. (Default: false)
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -316,6 +280,24 @@ class GcCreateChannelData(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            users ([str]): Specifies an array of one or more IDs of users to invite to the channel. The maximum number of users to be invited at once is 100. The user_ids above and this property can be used interchangeably.. [optional]  # noqa: E501
+            name (str): Specifies the name of the channel, or the channel topic. The length is limited to 191 characters. (Default: group channel). [optional]  # noqa: E501
+            channel_url (str): Specifies the URL of the channel. Only numbers, characters, and underscores are allowed. The length is 4 to 100 characters, inclusive. If not specified, a URL is automatically generated.. [optional]  # noqa: E501
+            cover_url (str): Specifies the URL of the cover image for the channel. The length is limited to 2,048 characters.. [optional]  # noqa: E501
+            cover_file (file_type): Uploads the cover image file for the channel.. [optional]  # noqa: E501
+            custom_type (str): Specifies the custom channel type which is used for channel grouping. The length is limited to 128 characters.<br /><br /> Custom types are also used within Sendbird's [Advanced analytics](/docs/chat/v3/platform-api/guides/advanced-analytics) to segment metrics, which enables the sub-classification of data views.. [optional]  # noqa: E501
+            data (str): Specifies additional channel information such as a long description of the channel or `JSON` formatted string.. [optional]  # noqa: E501
+            is_distinct (bool): Determines whether to reuse an existing channel or create a new channel. If set to true, returns a channel with the same users in the user_ids or users property or creates a new channel if no match is found. Sendbird server can also use the custom channel type in the custom_type property if specified along with the users to return the corresponding channel. If set to false, Sendbird server always creates a new channel with a combination of the users as well as the channel custom type if specified. (Default: false)<br /><br /> Under this property, Sendbird server does not distinguish channels based on other properties such as channel URL or channel name.. [optional]  # noqa: E501
+            is_public (bool): Determines whether to allow a user to join the channel without an invitation. (Default: false). [optional]  # noqa: E501
+            is_super (bool): Determines whether to allow the channel to accommodate more than 2,000 members. (Default: false) <br/><br/> Supergroup channels are not supported with the is_distinct property and the property is false by default.. [optional]  # noqa: E501
+            is_ephemeral (bool): Determines whether to preserve the messages in the channel for the purpose of retrieving chat history. (Default: false). [optional]  # noqa: E501
+            access_code (str): This parameter can only be used when the channel operator creates a public group channel. They can set an access code for the corresponding type of channel. The channel then requires the specified access code to a user who attempts to join. If specified, the is_access_code_required property of the channel resource is set to true.. [optional]  # noqa: E501
+            inviter_id (str): Specifies the ID of the user who has invited other users as members of the channel. The inviter is not automatically registered to the channel as a member, so you should specify the ID of the inviter in the user_ids property below if needed.. [optional]  # noqa: E501
+            strict (bool): Determines whether to receive a `400111` error and cease channel creation when there is at least one non-existing user in the specified user_ids or users property above. If set to false, the channel will be created excluding the non-existing users without receiving the mentioned error. (Default: false). [optional]  # noqa: E501
+            invitation_status ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): Specifies one or more key-value pair items which set the invitation status of each user invited to the channel. The key should be a user_id and the value should be their joining status. Acceptable values are joined, invited_by_friend, and invited_by_non_friend. (Default: joined). [optional]  # noqa: E501
+            hidden_status ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): Specifies one or more key-value pair items which set the channel's hidden status for each user. The key should be a user_id and the value should be their hidden status. Acceptable values are limited to the following:<br />- unhidden (default): the channel is included in when retrieving a list of group channels.<br />- hidden_allow_auto_unhide: the channel automatically gets unhidden when receiving a new message.<br />- hidden_prevent_auto_unhide: the channel keeps hidden though receiving a new message.. [optional]  # noqa: E501
+            operator_ids ([str]): Specifies an array of one or more IDs of users to register as operators of the channel. You should also include these IDs in the user_ids property to invite them to the channel as members. They can delete any messages in the channel, and also view all messages without any filtering or throttling. The maximum allowed number of operators per channel is 100.. [optional]  # noqa: E501
+            block_sdk_user_channel_join (bool): Determines whether to block users from joining the channel through the Chat SDK. This parameter can be used in order to restrict the ways for users to join the channel, and only using the [join a channel](#2-join-a-channel) action can add a user to the channel. (Default: false). [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -346,24 +328,6 @@ class GcCreateChannelData(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         self.user_ids = user_ids
-        self.users = users
-        self.name = name
-        self.channel_url = channel_url
-        self.cover_url = cover_url
-        self.cover_file = cover_file
-        self.custom_type = custom_type
-        self.data = data
-        self.is_distinct = is_distinct
-        self.is_public = is_public
-        self.is_super = is_super
-        self.is_ephemeral = is_ephemeral
-        self.access_code = access_code
-        self.inviter_id = inviter_id
-        self.strict = strict
-        self.invitation_status = invitation_status
-        self.hidden_status = hidden_status
-        self.operator_ids = operator_ids
-        self.block_sdk_user_channel_join = block_sdk_user_channel_join
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

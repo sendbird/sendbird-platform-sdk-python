@@ -30,12 +30,14 @@ from sendbird_platform_sdk.exceptions import ApiAttributeError
 
 
 def lazy_import():
+    from sendbird_platform_sdk.model.send_bird_group_channel_channel import SendBirdGroupChannelChannel
     from sendbird_platform_sdk.model.send_bird_group_channel_created_by import SendBirdGroupChannelCreatedBy
     from sendbird_platform_sdk.model.send_bird_group_channel_disappearing_message import SendBirdGroupChannelDisappearingMessage
     from sendbird_platform_sdk.model.send_bird_group_channel_sms_fallback import SendBirdGroupChannelSmsFallback
     from sendbird_platform_sdk.model.send_bird_member import SendBirdMember
     from sendbird_platform_sdk.model.send_bird_message_response import SendBirdMessageResponse
     from sendbird_platform_sdk.model.send_bird_user import SendBirdUser
+    globals()['SendBirdGroupChannelChannel'] = SendBirdGroupChannelChannel
     globals()['SendBirdGroupChannelCreatedBy'] = SendBirdGroupChannelCreatedBy
     globals()['SendBirdGroupChannelDisappearingMessage'] = SendBirdGroupChannelDisappearingMessage
     globals()['SendBirdGroupChannelSmsFallback'] = SendBirdGroupChannelSmsFallback
@@ -164,6 +166,7 @@ class SendBirdGroupChannel(ModelNormal):
             'sms_fallback': (SendBirdGroupChannelSmsFallback,),  # noqa: E501
             'unread_mention_count': (float,),  # noqa: E501
             'unread_message_count': (float,),  # noqa: E501
+            'channel': (SendBirdGroupChannelChannel,),  # noqa: E501
         }
 
     @cached_property
@@ -215,6 +218,7 @@ class SendBirdGroupChannel(ModelNormal):
         'sms_fallback': 'sms_fallback',  # noqa: E501
         'unread_mention_count': 'unread_mention_count',  # noqa: E501
         'unread_message_count': 'unread_message_count',  # noqa: E501
+        'channel': 'channel',  # noqa: E501
     }
 
     read_only_vars = {
@@ -301,6 +305,7 @@ class SendBirdGroupChannel(ModelNormal):
             sms_fallback (SendBirdGroupChannelSmsFallback): [optional]  # noqa: E501
             unread_mention_count (float): [optional]  # noqa: E501
             unread_message_count (float): [optional]  # noqa: E501
+            channel (SendBirdGroupChannelChannel): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -429,6 +434,7 @@ class SendBirdGroupChannel(ModelNormal):
             sms_fallback (SendBirdGroupChannelSmsFallback): [optional]  # noqa: E501
             unread_mention_count (float): [optional]  # noqa: E501
             unread_message_count (float): [optional]  # noqa: E501
+            channel (SendBirdGroupChannelChannel): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

@@ -31,6 +31,7 @@ from sendbird_platform_sdk.exceptions import ApiAttributeError
 
 def lazy_import():
     from sendbird_platform_sdk.model.send_bird_group_channel import SendBirdGroupChannel
+    from sendbird_platform_sdk.model.send_bird_group_channel_channel import SendBirdGroupChannelChannel
     from sendbird_platform_sdk.model.send_bird_group_channel_created_by import SendBirdGroupChannelCreatedBy
     from sendbird_platform_sdk.model.send_bird_group_channel_disappearing_message import SendBirdGroupChannelDisappearingMessage
     from sendbird_platform_sdk.model.send_bird_group_channel_sms_fallback import SendBirdGroupChannelSmsFallback
@@ -39,6 +40,7 @@ def lazy_import():
     from sendbird_platform_sdk.model.send_bird_open_channel import SendBirdOpenChannel
     from sendbird_platform_sdk.model.send_bird_user import SendBirdUser
     globals()['SendBirdGroupChannel'] = SendBirdGroupChannel
+    globals()['SendBirdGroupChannelChannel'] = SendBirdGroupChannelChannel
     globals()['SendBirdGroupChannelCreatedBy'] = SendBirdGroupChannelCreatedBy
     globals()['SendBirdGroupChannelDisappearingMessage'] = SendBirdGroupChannelDisappearingMessage
     globals()['SendBirdGroupChannelSmsFallback'] = SendBirdGroupChannelSmsFallback
@@ -168,6 +170,7 @@ class SendBirdChannelResponse(ModelComposed):
             'sms_fallback': (SendBirdGroupChannelSmsFallback,),  # noqa: E501
             'unread_mention_count': (float,),  # noqa: E501
             'unread_message_count': (float,),  # noqa: E501
+            'channel': (SendBirdGroupChannelChannel,),  # noqa: E501
             'is_dynamic_partitioned': (bool,),  # noqa: E501
             'participant_count': (float,),  # noqa: E501
         }
@@ -221,6 +224,7 @@ class SendBirdChannelResponse(ModelComposed):
         'sms_fallback': 'sms_fallback',  # noqa: E501
         'unread_mention_count': 'unread_mention_count',  # noqa: E501
         'unread_message_count': 'unread_message_count',  # noqa: E501
+        'channel': 'channel',  # noqa: E501
         'is_dynamic_partitioned': 'is_dynamic_partitioned',  # noqa: E501
         'participant_count': 'participant_count',  # noqa: E501
     }
@@ -307,6 +311,7 @@ class SendBirdChannelResponse(ModelComposed):
             sms_fallback (SendBirdGroupChannelSmsFallback): [optional]  # noqa: E501
             unread_mention_count (float): [optional]  # noqa: E501
             unread_message_count (float): [optional]  # noqa: E501
+            channel (SendBirdGroupChannelChannel): [optional]  # noqa: E501
             is_dynamic_partitioned (bool): [optional]  # noqa: E501
             participant_count (float): [optional]  # noqa: E501
         """
@@ -455,6 +460,7 @@ class SendBirdChannelResponse(ModelComposed):
             sms_fallback (SendBirdGroupChannelSmsFallback): [optional]  # noqa: E501
             unread_mention_count (float): [optional]  # noqa: E501
             unread_message_count (float): [optional]  # noqa: E501
+            channel (SendBirdGroupChannelChannel): [optional]  # noqa: E501
             is_dynamic_partitioned (bool): [optional]  # noqa: E501
             participant_count (float): [optional]  # noqa: E501
         """
