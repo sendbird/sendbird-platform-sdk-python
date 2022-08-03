@@ -62,6 +62,7 @@ class SendBirdMember(ModelNormal):
 
     allowed_values = {
         ('role',): {
+            'None': None,
             'NONE': "none",
             'OPERATOR': "operator",
         },
@@ -101,8 +102,6 @@ class SendBirdMember(ModelNormal):
             'friend_discovery_key': (str,),  # noqa: E501
             'friend_name': (str,),  # noqa: E501
             'is_active': (bool,),  # noqa: E501
-            'is_blocked_by_me': (bool,),  # noqa: E501
-            'is_blocking_me': (bool,),  # noqa: E501
             'is_muted': (bool,),  # noqa: E501
             'last_seen_at': (int,),  # noqa: E501
             'meta_data': (SBObject,),  # noqa: E501
@@ -111,8 +110,13 @@ class SendBirdMember(ModelNormal):
             'preferred_languages': ([str],),  # noqa: E501
             'profile_url': (str,),  # noqa: E501
             'require_auth': (bool,),  # noqa: E501
+            'require_auth_for_profile_image': (bool,),  # noqa: E501
+            'metadata': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),  # noqa: E501
+            'is_online': (bool,),  # noqa: E501
+            'muted_end_at': (float,),  # noqa: E501
+            'muted_description': (str,),  # noqa: E501
             'restriction_info': (SendBirdRestrictionInfo,),  # noqa: E501
-            'role': (str,),  # noqa: E501
+            'role': (str, none_type,),  # noqa: E501
             'state': (str,),  # noqa: E501
             'user_id': (str,),  # noqa: E501
         }
@@ -127,8 +131,6 @@ class SendBirdMember(ModelNormal):
         'friend_discovery_key': 'friend_discovery_key',  # noqa: E501
         'friend_name': 'friend_name',  # noqa: E501
         'is_active': 'is_active',  # noqa: E501
-        'is_blocked_by_me': 'is_blocked_by_me',  # noqa: E501
-        'is_blocking_me': 'is_blocking_me',  # noqa: E501
         'is_muted': 'is_muted',  # noqa: E501
         'last_seen_at': 'last_seen_at',  # noqa: E501
         'meta_data': 'meta_data',  # noqa: E501
@@ -137,6 +139,11 @@ class SendBirdMember(ModelNormal):
         'preferred_languages': 'preferred_languages',  # noqa: E501
         'profile_url': 'profile_url',  # noqa: E501
         'require_auth': 'require_auth',  # noqa: E501
+        'require_auth_for_profile_image': 'require_auth_for_profile_image',  # noqa: E501
+        'metadata': 'metadata',  # noqa: E501
+        'is_online': 'is_online',  # noqa: E501
+        'muted_end_at': 'muted_end_at',  # noqa: E501
+        'muted_description': 'muted_description',  # noqa: E501
         'restriction_info': 'restriction_info',  # noqa: E501
         'role': 'role',  # noqa: E501
         'state': 'state',  # noqa: E501
@@ -188,8 +195,6 @@ class SendBirdMember(ModelNormal):
             friend_discovery_key (str): [optional]  # noqa: E501
             friend_name (str): [optional]  # noqa: E501
             is_active (bool): [optional]  # noqa: E501
-            is_blocked_by_me (bool): [optional]  # noqa: E501
-            is_blocking_me (bool): [optional]  # noqa: E501
             is_muted (bool): [optional]  # noqa: E501
             last_seen_at (int): [optional]  # noqa: E501
             meta_data (SBObject): [optional]  # noqa: E501
@@ -198,8 +203,13 @@ class SendBirdMember(ModelNormal):
             preferred_languages ([str]): [optional]  # noqa: E501
             profile_url (str): [optional]  # noqa: E501
             require_auth (bool): [optional]  # noqa: E501
+            require_auth_for_profile_image (bool): [optional]  # noqa: E501
+            metadata ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]  # noqa: E501
+            is_online (bool): [optional]  # noqa: E501
+            muted_end_at (float): [optional]  # noqa: E501
+            muted_description (str): [optional]  # noqa: E501
             restriction_info (SendBirdRestrictionInfo): [optional]  # noqa: E501
-            role (str): [optional]  # noqa: E501
+            role (str, none_type): [optional]  # noqa: E501
             state (str): [optional]  # noqa: E501
             user_id (str): [optional]  # noqa: E501
         """
@@ -291,8 +301,6 @@ class SendBirdMember(ModelNormal):
             friend_discovery_key (str): [optional]  # noqa: E501
             friend_name (str): [optional]  # noqa: E501
             is_active (bool): [optional]  # noqa: E501
-            is_blocked_by_me (bool): [optional]  # noqa: E501
-            is_blocking_me (bool): [optional]  # noqa: E501
             is_muted (bool): [optional]  # noqa: E501
             last_seen_at (int): [optional]  # noqa: E501
             meta_data (SBObject): [optional]  # noqa: E501
@@ -301,8 +309,13 @@ class SendBirdMember(ModelNormal):
             preferred_languages ([str]): [optional]  # noqa: E501
             profile_url (str): [optional]  # noqa: E501
             require_auth (bool): [optional]  # noqa: E501
+            require_auth_for_profile_image (bool): [optional]  # noqa: E501
+            metadata ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]  # noqa: E501
+            is_online (bool): [optional]  # noqa: E501
+            muted_end_at (float): [optional]  # noqa: E501
+            muted_description (str): [optional]  # noqa: E501
             restriction_info (SendBirdRestrictionInfo): [optional]  # noqa: E501
-            role (str): [optional]  # noqa: E501
+            role (str, none_type): [optional]  # noqa: E501
             state (str): [optional]  # noqa: E501
             user_id (str): [optional]  # noqa: E501
         """

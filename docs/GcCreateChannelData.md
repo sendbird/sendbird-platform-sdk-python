@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **user_ids** | **[str]** | Specifies an array of one or more IDs of users to invite to the channel. The maximum number of users to be invited at once is 100. The users below and this property can be used interchangeably. | 
-**users** | **[str]** | Specifies an array of one or more IDs of users to invite to the channel. The maximum number of users to be invited at once is 100. The user_ids above and this property can be used interchangeably. | [optional] 
+**users** | [**[SendBirdUser]**](SendBirdUser.md) | Specifies an array of one or more IDs of users to invite to the channel. The maximum number of users to be invited at once is 100. The user_ids above and this property can be used interchangeably. | [optional] 
 **name** | **str** | Specifies the name of the channel, or the channel topic. The length is limited to 191 characters. (Default: group channel) | [optional] 
 **channel_url** | **str** | Specifies the URL of the channel. Only numbers, characters, and underscores are allowed. The length is 4 to 100 characters, inclusive. If not specified, a URL is automatically generated. | [optional] 
 **cover_url** | **str** | Specifies the URL of the cover image for the channel. The length is limited to 2,048 characters. | [optional] 
