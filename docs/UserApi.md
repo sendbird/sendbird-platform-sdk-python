@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**add_registration_or_device_token**](UserApi.md#add_registration_or_device_token) | **POST** /v3/users/{user_id}/push/{token_type} | Add a registration or device token
 [**choose_push_notification_content_template**](UserApi.md#choose_push_notification_content_template) | **PUT** /v3/users/{user_id}/push/template | Choose a push notification content template
 [**create_user**](UserApi.md#create_user) | **POST** /v3/users | Create a user
+[**create_user_token**](UserApi.md#create_user_token) | **POST** /v3/users/{user_id}/token | Create user token
 [**delete_user_by_id**](UserApi.md#delete_user_by_id) | **DELETE** /v3/users/{user_id} | Delete a user
 [**leave_my_group_channels**](UserApi.md#leave_my_group_channels) | **PUT** /v3/users/{user_id}/my_group_channels/leave | Leave my group channels
 [**list_my_group_channels**](UserApi.md#list_my_group_channels) | **GET** /v3/users/{user_id}/my_group_channels | List my group channels
@@ -272,6 +273,89 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**SendBirdUser**](SendBirdUser.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_user_token**
+> CreateUserTokenResponse create_user_token(api_token, user_id)
+
+Create user token
+
+## Create user token
+
+### Example
+
+
+```python
+import time
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import user_api
+from sendbird_platform_sdk.model.create_user_token_data import CreateUserTokenData
+from sendbird_platform_sdk.model.create_user_token_response import CreateUserTokenResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = sendbird_platform_sdk.Configuration(
+    host = "https://api-APP_ID.sendbird.com"
+)
+
+
+# Enter a context with an instance of the API client
+with sendbird_platform_sdk.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = user_api.UserApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
+    user_id = "user_id_example" # str | 
+    create_user_token_data = CreateUserTokenData(
+        expires_at=3.14,
+    ) # CreateUserTokenData |  (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Create user token
+        api_response = api_instance.create_user_token(api_token, user_id)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling UserApi->create_user_token: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Create user token
+        api_response = api_instance.create_user_token(api_token, user_id, create_user_token_data=create_user_token_data)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling UserApi->create_user_token: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
+ **user_id** | **str**|  |
+ **create_user_token_data** | [**CreateUserTokenData**](CreateUserTokenData.md)|  | [optional]
+
+### Return type
+
+[**CreateUserTokenResponse**](CreateUserTokenResponse.md)
 
 ### Authorization
 

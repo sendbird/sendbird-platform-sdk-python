@@ -44,6 +44,13 @@ class TestUserApi(unittest.TestCase):
         """
         pass
 
+    def test_create_user_token(self):
+        """Test case for create_user_token
+
+        Create user token  # noqa: E501
+        """
+        pass
+
     def test_delete_user_by_id(self):
         """Test case for delete_user_by_id
 

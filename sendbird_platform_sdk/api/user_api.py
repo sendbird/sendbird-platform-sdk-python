@@ -25,6 +25,8 @@ from sendbird_platform_sdk.model.add_registration_or_device_token_data import Ad
 from sendbird_platform_sdk.model.add_registration_or_device_token_response import AddRegistrationOrDeviceTokenResponse
 from sendbird_platform_sdk.model.choose_push_notification_content_template_response import ChoosePushNotificationContentTemplateResponse
 from sendbird_platform_sdk.model.create_user_data import CreateUserData
+from sendbird_platform_sdk.model.create_user_token_data import CreateUserTokenData
+from sendbird_platform_sdk.model.create_user_token_response import CreateUserTokenResponse
 from sendbird_platform_sdk.model.leave_my_group_channels_data import LeaveMyGroupChannelsData
 from sendbird_platform_sdk.model.list_my_group_channels_response import ListMyGroupChannelsResponse
 from sendbird_platform_sdk.model.list_registration_or_device_tokens_response import ListRegistrationOrDeviceTokensResponse
@@ -236,6 +238,67 @@ class UserApi(object):
                 'location_map': {
                     'api_token': 'header',
                     'create_user_data': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client
+        )
+        self.create_user_token_endpoint = _Endpoint(
+            settings={
+                'response_type': (CreateUserTokenResponse,),
+                'auth': [],
+                'endpoint_path': '/v3/users/{user_id}/token',
+                'operation_id': 'create_user_token',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'api_token',
+                    'user_id',
+                    'create_user_token_data',
+                ],
+                'required': [
+                    'api_token',
+                    'user_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'api_token':
+                        (str,),
+                    'user_id':
+                        (str,),
+                    'create_user_token_data':
+                        (CreateUserTokenData,),
+                },
+                'attribute_map': {
+                    'api_token': 'Api-Token',
+                    'user_id': 'user_id',
+                },
+                'location_map': {
+                    'api_token': 'header',
+                    'user_id': 'path',
+                    'create_user_token_data': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -2336,6 +2399,94 @@ class UserApi(object):
         kwargs['api_token'] = \
             api_token
         return self.create_user_endpoint.call_with_http_info(**kwargs)
+
+    def create_user_token(
+        self,
+        api_token,
+        user_id,
+        **kwargs
+    ):
+        """Create user token  # noqa: E501
+
+        ## Create user token  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.create_user_token(api_token, user_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            api_token (str):
+            user_id (str):
+
+        Keyword Args:
+            create_user_token_data (CreateUserTokenData): [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            CreateUserTokenResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['api_token'] = \
+            api_token
+        kwargs['user_id'] = \
+            user_id
+        return self.create_user_token_endpoint.call_with_http_info(**kwargs)
 
     def delete_user_by_id(
         self,

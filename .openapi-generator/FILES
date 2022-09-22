@@ -47,6 +47,8 @@ docs/CreateUserData.md
 docs/CreateUserMetadataData.md
 docs/CreateUserMetadataResponse.md
 docs/CreateUserResponse.md
+docs/CreateUserTokenData.md
+docs/CreateUserTokenResponse.md
 docs/CustomTypeListBannedUsersResponse.md
 docs/DataExportApi.md
 docs/DeleteAllowedIpsFromWhitelistResponse.md
@@ -391,6 +393,8 @@ sendbird_platform_sdk/model/create_user_data.py
 sendbird_platform_sdk/model/create_user_metadata_data.py
 sendbird_platform_sdk/model/create_user_metadata_response.py
 sendbird_platform_sdk/model/create_user_response.py
+sendbird_platform_sdk/model/create_user_token_data.py
+sendbird_platform_sdk/model/create_user_token_response.py
 sendbird_platform_sdk/model/custom_type_list_banned_users_response.py
 sendbird_platform_sdk/model/delete_allowed_ips_from_whitelist_response.py
 sendbird_platform_sdk/model/delete_apns_certificate_by_id_response.py
@@ -711,6 +715,8 @@ test/test_create_user_data.py
 test/test_create_user_metadata_data.py
 test/test_create_user_metadata_response.py
 test/test_create_user_response.py
+test/test_create_user_token_data.py
+test/test_create_user_token_response.py
 test/test_custom_type_list_banned_users_response.py
 test/test_data_export_api.py
 test/test_delete_allowed_ips_from_whitelist_response.py

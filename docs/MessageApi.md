@@ -1614,7 +1614,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     api_token = "{{API_TOKEN}}" # str | 
     channel_type = "channel_type_example" # str | 
     channel_url = "channel_url_example" # str | 
-    message_ts = 1 # int |  (optional)
+    message_ts = "message_ts_example" # str |  (optional)
     message_id = 1 # int |  (optional)
     prev_limit = 1 # int |  (optional)
     next_limit = 1 # int |  (optional)
@@ -1659,7 +1659,7 @@ Name | Type | Description  | Notes
  **api_token** | **str**|  |
  **channel_type** | **str**|  |
  **channel_url** | **str**|  |
- **message_ts** | **int**|  | [optional]
+ **message_ts** | **str**|  | [optional]
  **message_id** | **int**|  | [optional]
  **prev_limit** | **int**|  | [optional]
  **next_limit** | **int**|  | [optional]

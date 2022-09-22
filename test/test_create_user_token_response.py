@@ -12,13 +12,11 @@ import sys
 import unittest
 
 import sendbird_platform_sdk
-from sendbird_platform_sdk.model.send_bird_restriction_info import SendBirdRestrictionInfo
-globals()['SendBirdRestrictionInfo'] = SendBirdRestrictionInfo
-from sendbird_platform_sdk.model.send_bird_member import SendBirdMember
+from sendbird_platform_sdk.model.create_user_token_response import CreateUserTokenResponse
 
 
-class TestSendBirdMember(unittest.TestCase):
-    """SendBirdMember unit test stubs"""
+class TestCreateUserTokenResponse(unittest.TestCase):
+    """CreateUserTokenResponse unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,10 +24,10 @@ class TestSendBirdMember(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testSendBirdMember(self):
-        """Test SendBirdMember"""
+    def testCreateUserTokenResponse(self):
+        """Test CreateUserTokenResponse"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = SendBirdMember()  # noqa: E501
+        # model = CreateUserTokenResponse()  # noqa: E501
         pass
 
 

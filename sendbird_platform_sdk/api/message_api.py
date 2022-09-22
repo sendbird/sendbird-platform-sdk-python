@@ -1329,7 +1329,7 @@ class MessageApi(object):
                     'channel_url':
                         (str,),
                     'message_ts':
-                        (int,),
+                        (str,),
                     'message_id':
                         (int,),
                     'prev_limit':
@@ -4207,7 +4207,7 @@ class MessageApi(object):
             channel_url (str):
 
         Keyword Args:
-            message_ts (int): [optional]
+            message_ts (str): [optional]
             message_id (int): [optional]
             prev_limit (int): [optional]
             next_limit (int): [optional]

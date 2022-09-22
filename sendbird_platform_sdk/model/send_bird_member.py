@@ -30,9 +30,7 @@ from sendbird_platform_sdk.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from sendbird_platform_sdk.model.sb_object import SBObject
     from sendbird_platform_sdk.model.send_bird_restriction_info import SendBirdRestrictionInfo
-    globals()['SBObject'] = SBObject
     globals()['SendBirdRestrictionInfo'] = SendBirdRestrictionInfo
 
 
@@ -63,10 +61,13 @@ class SendBirdMember(ModelNormal):
     allowed_values = {
         ('role',): {
             'None': None,
+            'EMPTY': "",
             'NONE': "none",
             'OPERATOR': "operator",
         },
         ('state',): {
+            'None': None,
+            'EMPTY': "",
             'INVITED': "invited",
             'JOINED': "joined",
         },
@@ -104,7 +105,6 @@ class SendBirdMember(ModelNormal):
             'is_active': (bool,),  # noqa: E501
             'is_muted': (bool,),  # noqa: E501
             'last_seen_at': (int,),  # noqa: E501
-            'meta_data': (SBObject,),  # noqa: E501
             'nickname': (str,),  # noqa: E501
             'plain_profile_url': (str,),  # noqa: E501
             'preferred_languages': ([str],),  # noqa: E501
@@ -117,7 +117,7 @@ class SendBirdMember(ModelNormal):
             'muted_description': (str,),  # noqa: E501
             'restriction_info': (SendBirdRestrictionInfo,),  # noqa: E501
             'role': (str, none_type,),  # noqa: E501
-            'state': (str,),  # noqa: E501
+            'state': (str, none_type,),  # noqa: E501
             'user_id': (str,),  # noqa: E501
         }
 
@@ -133,7 +133,6 @@ class SendBirdMember(ModelNormal):
         'is_active': 'is_active',  # noqa: E501
         'is_muted': 'is_muted',  # noqa: E501
         'last_seen_at': 'last_seen_at',  # noqa: E501
-        'meta_data': 'meta_data',  # noqa: E501
         'nickname': 'nickname',  # noqa: E501
         'plain_profile_url': 'plain_profile_url',  # noqa: E501
         'preferred_languages': 'preferred_languages',  # noqa: E501
@@ -197,7 +196,6 @@ class SendBirdMember(ModelNormal):
             is_active (bool): [optional]  # noqa: E501
             is_muted (bool): [optional]  # noqa: E501
             last_seen_at (int): [optional]  # noqa: E501
-            meta_data (SBObject): [optional]  # noqa: E501
             nickname (str): [optional]  # noqa: E501
             plain_profile_url (str): [optional]  # noqa: E501
             preferred_languages ([str]): [optional]  # noqa: E501
@@ -210,7 +208,7 @@ class SendBirdMember(ModelNormal):
             muted_description (str): [optional]  # noqa: E501
             restriction_info (SendBirdRestrictionInfo): [optional]  # noqa: E501
             role (str, none_type): [optional]  # noqa: E501
-            state (str): [optional]  # noqa: E501
+            state (str, none_type): [optional]  # noqa: E501
             user_id (str): [optional]  # noqa: E501
         """
 
@@ -303,7 +301,6 @@ class SendBirdMember(ModelNormal):
             is_active (bool): [optional]  # noqa: E501
             is_muted (bool): [optional]  # noqa: E501
             last_seen_at (int): [optional]  # noqa: E501
-            meta_data (SBObject): [optional]  # noqa: E501
             nickname (str): [optional]  # noqa: E501
             plain_profile_url (str): [optional]  # noqa: E501
             preferred_languages ([str]): [optional]  # noqa: E501
@@ -316,7 +313,7 @@ class SendBirdMember(ModelNormal):
             muted_description (str): [optional]  # noqa: E501
             restriction_info (SendBirdRestrictionInfo): [optional]  # noqa: E501
             role (str, none_type): [optional]  # noqa: E501
-            state (str): [optional]  # noqa: E501
+            state (str, none_type): [optional]  # noqa: E501
             user_id (str): [optional]  # noqa: E501
         """
 

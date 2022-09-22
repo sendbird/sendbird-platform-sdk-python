@@ -311,7 +311,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
                     "discovery_keys_example",
                 ],
                 session_tokens=[
-                    "session_tokens_example",
+                    {},
                 ],
                 preferred_languages=[
                     "preferred_languages_example",
@@ -324,14 +324,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
                 is_hide_me_from_friends=True,
                 is_shadow_blocked=True,
                 is_created=True,
-                metadata=SBObject(
-                    constructor=Function(
-                        arguments=None,
-                        caller=Function(),
-                        length=3.14,
-                        prototype=None,
-                    ),
-                ),
+                metadata={},
                 description="description_example",
                 end_at=3.14,
                 start_at=3.14,
