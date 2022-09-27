@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **connection_status** | **str** |  | [optional] 
-**friend_discovery_key** | **str** |  | [optional] 
-**friend_name** | **str** |  | [optional] 
+**friend_discovery_key** | **str, none_type** |  | [optional] 
+**friend_name** | **str, none_type** |  | [optional] 
 **is_active** | **bool** |  | [optional] 
 **is_muted** | **bool** |  | [optional] 
 **last_seen_at** | **int** |  | [optional] 

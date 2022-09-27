@@ -16,6 +16,7 @@ from sendbird_platform_sdk.model.send_bird_group_channel import SendBirdGroupCha
 from sendbird_platform_sdk.model.send_bird_group_channel_channel import SendBirdGroupChannelChannel
 from sendbird_platform_sdk.model.send_bird_group_channel_created_by import SendBirdGroupChannelCreatedBy
 from sendbird_platform_sdk.model.send_bird_group_channel_disappearing_message import SendBirdGroupChannelDisappearingMessage
+from sendbird_platform_sdk.model.send_bird_group_channel_inviter import SendBirdGroupChannelInviter
 from sendbird_platform_sdk.model.send_bird_group_channel_sms_fallback import SendBirdGroupChannelSmsFallback
 from sendbird_platform_sdk.model.send_bird_member import SendBirdMember
 from sendbird_platform_sdk.model.send_bird_message_response import SendBirdMessageResponse
@@ -25,6 +26,7 @@ globals()['SendBirdGroupChannel'] = SendBirdGroupChannel
 globals()['SendBirdGroupChannelChannel'] = SendBirdGroupChannelChannel
 globals()['SendBirdGroupChannelCreatedBy'] = SendBirdGroupChannelCreatedBy
 globals()['SendBirdGroupChannelDisappearingMessage'] = SendBirdGroupChannelDisappearingMessage
+globals()['SendBirdGroupChannelInviter'] = SendBirdGroupChannelInviter
 globals()['SendBirdGroupChannelSmsFallback'] = SendBirdGroupChannelSmsFallback
 globals()['SendBirdMember'] = SendBirdMember
 globals()['SendBirdMessageResponse'] = SendBirdMessageResponse

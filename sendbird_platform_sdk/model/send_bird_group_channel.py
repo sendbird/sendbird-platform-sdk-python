@@ -33,16 +33,18 @@ def lazy_import():
     from sendbird_platform_sdk.model.send_bird_group_channel_channel import SendBirdGroupChannelChannel
     from sendbird_platform_sdk.model.send_bird_group_channel_created_by import SendBirdGroupChannelCreatedBy
     from sendbird_platform_sdk.model.send_bird_group_channel_disappearing_message import SendBirdGroupChannelDisappearingMessage
+    from sendbird_platform_sdk.model.send_bird_group_channel_inviter import SendBirdGroupChannelInviter
+    from sendbird_platform_sdk.model.send_bird_group_channel_last_message import SendBirdGroupChannelLastMessage
     from sendbird_platform_sdk.model.send_bird_group_channel_sms_fallback import SendBirdGroupChannelSmsFallback
     from sendbird_platform_sdk.model.send_bird_member import SendBirdMember
-    from sendbird_platform_sdk.model.send_bird_message_response import SendBirdMessageResponse
     from sendbird_platform_sdk.model.send_bird_user import SendBirdUser
     globals()['SendBirdGroupChannelChannel'] = SendBirdGroupChannelChannel
     globals()['SendBirdGroupChannelCreatedBy'] = SendBirdGroupChannelCreatedBy
     globals()['SendBirdGroupChannelDisappearingMessage'] = SendBirdGroupChannelDisappearingMessage
+    globals()['SendBirdGroupChannelInviter'] = SendBirdGroupChannelInviter
+    globals()['SendBirdGroupChannelLastMessage'] = SendBirdGroupChannelLastMessage
     globals()['SendBirdGroupChannelSmsFallback'] = SendBirdGroupChannelSmsFallback
     globals()['SendBirdMember'] = SendBirdMember
-    globals()['SendBirdMessageResponse'] = SendBirdMessageResponse
     globals()['SendBirdUser'] = SendBirdUser
 
 
@@ -92,6 +94,7 @@ class SendBirdGroupChannel(ModelNormal):
             'FALSE': "false",
         },
         ('my_role',): {
+            'EMPTY': "",
             'NONE': "none",
             'OPERATOR': "operator",
         },
@@ -135,7 +138,7 @@ class SendBirdGroupChannel(ModelNormal):
             'ignore_profanity_filter': (bool,),  # noqa: E501
             'hidden_state': (str,),  # noqa: E501
             'invited_at': (float,),  # noqa: E501
-            'inviter': (SendBirdUser,),  # noqa: E501
+            'inviter': (SendBirdGroupChannelInviter,),  # noqa: E501
             'is_access_code_required': (bool,),  # noqa: E501
             'is_broadcast': (bool,),  # noqa: E501
             'is_created': (bool,),  # noqa: E501
@@ -149,7 +152,7 @@ class SendBirdGroupChannel(ModelNormal):
             'is_super': (bool,),  # noqa: E501
             'joined_at': (float,),  # noqa: E501
             'joined_member_count': (float,),  # noqa: E501
-            'last_message': (SendBirdMessageResponse,),  # noqa: E501
+            'last_message': (SendBirdGroupChannelLastMessage,),  # noqa: E501
             'max_length_message': (float,),  # noqa: E501
             'member_count': (float,),  # noqa: E501
             'members': ([SendBirdMember],),  # noqa: E501
@@ -162,7 +165,7 @@ class SendBirdGroupChannel(ModelNormal):
             'my_push_trigger_option': (str,),  # noqa: E501
             'my_role': (str,),  # noqa: E501
             'name': (str,),  # noqa: E501
-            'operators': ([str],),  # noqa: E501
+            'operators': ([{str: (bool, date, datetime, dict, float, int, list, str, none_type)}],),  # noqa: E501
             'sms_fallback': (SendBirdGroupChannelSmsFallback,),  # noqa: E501
             'unread_mention_count': (float,),  # noqa: E501
             'unread_message_count': (float,),  # noqa: E501
@@ -274,7 +277,7 @@ class SendBirdGroupChannel(ModelNormal):
             ignore_profanity_filter (bool): [optional]  # noqa: E501
             hidden_state (str): [optional]  # noqa: E501
             invited_at (float): [optional]  # noqa: E501
-            inviter (SendBirdUser): [optional]  # noqa: E501
+            inviter (SendBirdGroupChannelInviter): [optional]  # noqa: E501
             is_access_code_required (bool): [optional]  # noqa: E501
             is_broadcast (bool): [optional]  # noqa: E501
             is_created (bool): [optional]  # noqa: E501
@@ -288,7 +291,7 @@ class SendBirdGroupChannel(ModelNormal):
             is_super (bool): [optional]  # noqa: E501
             joined_at (float): [optional]  # noqa: E501
             joined_member_count (float): [optional]  # noqa: E501
-            last_message (SendBirdMessageResponse): [optional]  # noqa: E501
+            last_message (SendBirdGroupChannelLastMessage): [optional]  # noqa: E501
             max_length_message (float): [optional]  # noqa: E501
             member_count (float): [optional]  # noqa: E501
             members ([SendBirdMember]): [optional]  # noqa: E501
@@ -301,7 +304,7 @@ class SendBirdGroupChannel(ModelNormal):
             my_push_trigger_option (str): [optional]  # noqa: E501
             my_role (str): [optional]  # noqa: E501
             name (str): [optional]  # noqa: E501
-            operators ([str]): [optional]  # noqa: E501
+            operators ([{str: (bool, date, datetime, dict, float, int, list, str, none_type)}]): [optional]  # noqa: E501
             sms_fallback (SendBirdGroupChannelSmsFallback): [optional]  # noqa: E501
             unread_mention_count (float): [optional]  # noqa: E501
             unread_message_count (float): [optional]  # noqa: E501
@@ -403,7 +406,7 @@ class SendBirdGroupChannel(ModelNormal):
             ignore_profanity_filter (bool): [optional]  # noqa: E501
             hidden_state (str): [optional]  # noqa: E501
             invited_at (float): [optional]  # noqa: E501
-            inviter (SendBirdUser): [optional]  # noqa: E501
+            inviter (SendBirdGroupChannelInviter): [optional]  # noqa: E501
             is_access_code_required (bool): [optional]  # noqa: E501
             is_broadcast (bool): [optional]  # noqa: E501
             is_created (bool): [optional]  # noqa: E501
@@ -417,7 +420,7 @@ class SendBirdGroupChannel(ModelNormal):
             is_super (bool): [optional]  # noqa: E501
             joined_at (float): [optional]  # noqa: E501
             joined_member_count (float): [optional]  # noqa: E501
-            last_message (SendBirdMessageResponse): [optional]  # noqa: E501
+            last_message (SendBirdGroupChannelLastMessage): [optional]  # noqa: E501
             max_length_message (float): [optional]  # noqa: E501
             member_count (float): [optional]  # noqa: E501
             members ([SendBirdMember]): [optional]  # noqa: E501
@@ -430,7 +433,7 @@ class SendBirdGroupChannel(ModelNormal):
             my_push_trigger_option (str): [optional]  # noqa: E501
             my_role (str): [optional]  # noqa: E501
             name (str): [optional]  # noqa: E501
-            operators ([str]): [optional]  # noqa: E501
+            operators ([{str: (bool, date, datetime, dict, float, int, list, str, none_type)}]): [optional]  # noqa: E501
             sms_fallback (SendBirdGroupChannelSmsFallback): [optional]  # noqa: E501
             unread_mention_count (float): [optional]  # noqa: E501
             unread_message_count (float): [optional]  # noqa: E501

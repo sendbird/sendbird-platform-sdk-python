@@ -100,8 +100,8 @@ class SendBirdMember(ModelNormal):
         lazy_import()
         return {
             'connection_status': (str,),  # noqa: E501
-            'friend_discovery_key': (str,),  # noqa: E501
-            'friend_name': (str,),  # noqa: E501
+            'friend_discovery_key': (str, none_type,),  # noqa: E501
+            'friend_name': (str, none_type,),  # noqa: E501
             'is_active': (bool,),  # noqa: E501
             'is_muted': (bool,),  # noqa: E501
             'last_seen_at': (int,),  # noqa: E501
@@ -191,8 +191,8 @@ class SendBirdMember(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             connection_status (str): [optional]  # noqa: E501
-            friend_discovery_key (str): [optional]  # noqa: E501
-            friend_name (str): [optional]  # noqa: E501
+            friend_discovery_key (str, none_type): [optional]  # noqa: E501
+            friend_name (str, none_type): [optional]  # noqa: E501
             is_active (bool): [optional]  # noqa: E501
             is_muted (bool): [optional]  # noqa: E501
             last_seen_at (int): [optional]  # noqa: E501
@@ -296,8 +296,8 @@ class SendBirdMember(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             connection_status (str): [optional]  # noqa: E501
-            friend_discovery_key (str): [optional]  # noqa: E501
-            friend_name (str): [optional]  # noqa: E501
+            friend_discovery_key (str, none_type): [optional]  # noqa: E501
+            friend_name (str, none_type): [optional]  # noqa: E501
             is_active (bool): [optional]  # noqa: E501
             is_muted (bool): [optional]  # noqa: E501
             last_seen_at (int): [optional]  # noqa: E501
