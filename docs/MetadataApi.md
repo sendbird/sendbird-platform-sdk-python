@@ -807,7 +807,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_channel_metacounter_by_key**
-> {str: (bool, date, datetime, dict, float, int, list, str, none_type)} update_channel_metacounter_by_key(api_token, channel_type, channel_url, key)
+> UpdateChannelMetacounterByKeyResponse update_channel_metacounter_by_key(api_token, channel_type, channel_url, key)
 
 Update a channel metacounter - When updating a specific item of a channel metacounter by its key
 
@@ -820,6 +820,7 @@ Update a channel metacounter - When updating a specific item of a channel metaco
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import metadata_api
+from sendbird_platform_sdk.model.update_channel_metacounter_by_key_response import UpdateChannelMetacounterByKeyResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -869,7 +870,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**{str: (bool, date, datetime, dict, float, int, list, str, none_type)}**
+[**UpdateChannelMetacounterByKeyResponse**](UpdateChannelMetacounterByKeyResponse.md)
 
 ### Authorization
 
@@ -890,7 +891,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_channel_metadata**
-> {str: (bool, date, datetime, dict, float, int, list, str, none_type)} update_channel_metadata(api_token, channel_type, channel_url)
+> UpdateChannelMetadataResponse update_channel_metadata(api_token, channel_type, channel_url)
 
 Update a channel metadata - When updating existing items of a channel metadata by their keys or adding new items to the metadata
 
@@ -903,6 +904,7 @@ Update a channel metadata - When updating existing items of a channel metadata b
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import metadata_api
+from sendbird_platform_sdk.model.update_channel_metadata_response import UpdateChannelMetadataResponse
 from sendbird_platform_sdk.model.update_channel_metadata_data import UpdateChannelMetadataData
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
@@ -954,7 +956,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**{str: (bool, date, datetime, dict, float, int, list, str, none_type)}**
+[**UpdateChannelMetadataResponse**](UpdateChannelMetadataResponse.md)
 
 ### Authorization
 
@@ -975,7 +977,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_channel_metadata_by_key**
-> {str: (bool, date, datetime, dict, float, int, list, str, none_type)} update_channel_metadata_by_key(api_token, channel_type, channel_url, key)
+> UpdateChannelMetadataByKeyResponse update_channel_metadata_by_key(api_token, channel_type, channel_url, key)
 
 Update a channel metadata - When updating a specific item of a channel metadata by its key
 
@@ -988,6 +990,7 @@ Update a channel metadata - When updating a specific item of a channel metadata 
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import metadata_api
+from sendbird_platform_sdk.model.update_channel_metadata_by_key_response import UpdateChannelMetadataByKeyResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1037,7 +1040,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**{str: (bool, date, datetime, dict, float, int, list, str, none_type)}**
+[**UpdateChannelMetadataByKeyResponse**](UpdateChannelMetadataByKeyResponse.md)
 
 ### Authorization
 
@@ -1142,7 +1145,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_user_metadata_by_key**
-> {str: (bool, date, datetime, dict, float, int, list, str, none_type)} update_user_metadata_by_key(api_token, user_id, key)
+> UpdateUserMetadataByKeyResponse update_user_metadata_by_key(api_token, user_id, key)
 
 Update a user metadata - When updating a specific item of a user metadata by its key
 
@@ -1155,6 +1158,7 @@ Update a user metadata - When updating a specific item of a user metadata by its
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import metadata_api
+from sendbird_platform_sdk.model.update_user_metadata_by_key_response import UpdateUserMetadataByKeyResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1202,7 +1206,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**{str: (bool, date, datetime, dict, float, int, list, str, none_type)}**
+[**UpdateUserMetadataByKeyResponse**](UpdateUserMetadataByKeyResponse.md)
 
 ### Authorization
 
@@ -1223,7 +1227,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **view_channel_metacounter**
-> {str: (bool, date, datetime, dict, float, int, list, str, none_type)} view_channel_metacounter(api_token, channel_type, channel_url)
+> ViewChannelMetacounterResponse view_channel_metacounter(api_token, channel_type, channel_url)
 
 View a channel metacounter - When retrieving all items of a channel metacounter
 
@@ -1236,6 +1240,7 @@ View a channel metacounter - When retrieving all items of a channel metacounter
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import metadata_api
+from sendbird_platform_sdk.model.view_channel_metacounter_response import ViewChannelMetacounterResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1287,7 +1292,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**{str: (bool, date, datetime, dict, float, int, list, str, none_type)}**
+[**ViewChannelMetacounterResponse**](ViewChannelMetacounterResponse.md)
 
 ### Authorization
 
@@ -1380,7 +1385,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **view_channel_metadata**
-> {str: (bool, date, datetime, dict, float, int, list, str, none_type)} view_channel_metadata(api_token, channel_type, channel_url)
+> ViewChannelMetadataResponse view_channel_metadata(api_token, channel_type, channel_url)
 
 View a channel metadata - When retrieving all items of a channel metadata
 
@@ -1393,6 +1398,7 @@ View a channel metadata - When retrieving all items of a channel metadata
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import metadata_api
+from sendbird_platform_sdk.model.view_channel_metadata_response import ViewChannelMetadataResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1444,7 +1450,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**{str: (bool, date, datetime, dict, float, int, list, str, none_type)}**
+[**ViewChannelMetadataResponse**](ViewChannelMetadataResponse.md)
 
 ### Authorization
 
@@ -1465,7 +1471,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **view_channel_metadata_by_key**
-> {str: (bool, date, datetime, dict, float, int, list, str, none_type)} view_channel_metadata_by_key(api_token, channel_type, channel_url, key)
+> ViewChannelMetadataByKeyResponse view_channel_metadata_by_key(api_token, channel_type, channel_url, key)
 
 View a channel metadata - When retrieving a specific item of a channel metadata by its key
 
@@ -1478,6 +1484,7 @@ View a channel metadata - When retrieving a specific item of a channel metadata 
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import metadata_api
+from sendbird_platform_sdk.model.view_channel_metadata_by_key_response import ViewChannelMetadataByKeyResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1516,7 +1523,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**{str: (bool, date, datetime, dict, float, int, list, str, none_type)}**
+[**ViewChannelMetadataByKeyResponse**](ViewChannelMetadataByKeyResponse.md)
 
 ### Authorization
 
@@ -1621,7 +1628,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **view_user_metadata_by_key**
-> {str: (bool, date, datetime, dict, float, int, list, str, none_type)} view_user_metadata_by_key(api_token, user_id, key)
+> ViewUserMetadataByKeyResponse view_user_metadata_by_key(api_token, user_id, key)
 
 View a user metadata - When retrieving a specific item of a user metadata by its key
 
@@ -1634,6 +1641,7 @@ View a user metadata - When retrieving a specific item of a user metadata by its
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import metadata_api
+from sendbird_platform_sdk.model.view_user_metadata_by_key_response import ViewUserMetadataByKeyResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1670,7 +1678,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**{str: (bool, date, datetime, dict, float, int, list, str, none_type)}**
+[**ViewUserMetadataByKeyResponse**](ViewUserMetadataByKeyResponse.md)
 
 ### Authorization
 
