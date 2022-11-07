@@ -115,38 +115,10 @@ class TestMessageApi(unittest.TestCase):
         """
         pass
 
-    def test_get_statistics(self):
-        """Test case for get_statistics
-
-        Get statistics - weekly  # noqa: E501
-        """
-        pass
-
-    def test_get_statistics_daily(self):
-        """Test case for get_statistics_daily
-
-        Get statistics - daily  # noqa: E501
-        """
-        pass
-
-    def test_get_statistics_monthly(self):
-        """Test case for get_statistics_monthly
-
-        Get statistics - monthly  # noqa: E501
-        """
-        pass
-
     def test_list_all_emojis_and_emoji_categories(self):
         """Test case for list_all_emojis_and_emoji_categories
 
         List all emojis and emoji categories  # noqa: E501
-        """
-        pass
-
-    def test_list_announcement_groups(self):
-        """Test case for list_announcement_groups
-
-        List announcement groups  # noqa: E501
         """
         pass
 
@@ -199,13 +171,6 @@ class TestMessageApi(unittest.TestCase):
         """
         pass
 
-    def test_schedule_announcement(self):
-        """Test case for schedule_announcement
-
-        Schedule an announcement  # noqa: E501
-        """
-        pass
-
     def test_send_message(self):
         """Test case for send_message
 
@@ -217,13 +182,6 @@ class TestMessageApi(unittest.TestCase):
         """Test case for translate_message_into_other_languages
 
         Translate a message into other languages  # noqa: E501
-        """
-        pass
-
-    def test_update_announcement_by_id(self):
-        """Test case for update_announcement_by_id
-
-        Update an announcement  # noqa: E501
         """
         pass
 

@@ -13,13 +13,13 @@ import sys
 import unittest
 
 import sendbird_platform_sdk
-from sendbird_platform_sdk.model.schedule_announcement_data_message import ScheduleAnnouncementDataMessage
-globals()['ScheduleAnnouncementDataMessage'] = ScheduleAnnouncementDataMessage
-from sendbird_platform_sdk.model.schedule_announcement_data import ScheduleAnnouncementData
+from sendbird_platform_sdk.model.configure_auto_event_data_auto_event_message import ConfigureAutoEventDataAutoEventMessage
+globals()['ConfigureAutoEventDataAutoEventMessage'] = ConfigureAutoEventDataAutoEventMessage
+from sendbird_platform_sdk.model.configure_auto_event_data import ConfigureAutoEventData
 
 
-class TestScheduleAnnouncementData(unittest.TestCase):
-    """ScheduleAnnouncementData unit test stubs"""
+class TestConfigureAutoEventData(unittest.TestCase):
+    """ConfigureAutoEventData unit test stubs"""
 
     def setUp(self):
         pass
@@ -27,10 +27,10 @@ class TestScheduleAnnouncementData(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testScheduleAnnouncementData(self):
-        """Test ScheduleAnnouncementData"""
+    def testConfigureAutoEventData(self):
+        """Test ConfigureAutoEventData"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = ScheduleAnnouncementData()  # noqa: E501
+        # model = ConfigureAutoEventData()  # noqa: E501
         pass
 
 

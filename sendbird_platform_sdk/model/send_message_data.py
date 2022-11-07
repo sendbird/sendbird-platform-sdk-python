@@ -99,6 +99,15 @@ class SendMessageData(ModelNormal):
             'apns_bundle_id': (str,),  # noqa: E501
             'sound': (str,),  # noqa: E501
             'volume': (float,),  # noqa: E501
+            'url': (str,),  # noqa: E501
+            'file': (str,),  # noqa: E501
+            'file_name': (str,),  # noqa: E501
+            'file_size': (float,),  # noqa: E501
+            'file_type': (str,),  # noqa: E501
+            'thumbnails': ([str],),  # noqa: E501
+            'thumbnail1': (str,),  # noqa: E501
+            'thumbnail2': (str,),  # noqa: E501
+            'thumbnail3': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -124,6 +133,15 @@ class SendMessageData(ModelNormal):
         'apns_bundle_id': 'apns_bundle_id',  # noqa: E501
         'sound': 'sound',  # noqa: E501
         'volume': 'volume',  # noqa: E501
+        'url': 'url',  # noqa: E501
+        'file': 'file',  # noqa: E501
+        'file_name': 'file_name',  # noqa: E501
+        'file_size': 'file_size',  # noqa: E501
+        'file_type': 'file_type',  # noqa: E501
+        'thumbnails': 'thumbnails',  # noqa: E501
+        'thumbnail1': 'thumbnail1',  # noqa: E501
+        'thumbnail2': 'thumbnail2',  # noqa: E501
+        'thumbnail3': 'thumbnail3',  # noqa: E501
     }
 
     read_only_vars = {
@@ -186,6 +204,15 @@ class SendMessageData(ModelNormal):
             apns_bundle_id (str): Specifies the bundle ID of the client app in order to send a push notification to iOS devices. You can find this in Settings > Chat > Notifications > Push notification services. [optional]  # noqa: E501
             sound (str): Specifies the name of the file that sounds for critical alerts.. [optional]  # noqa: E501
             volume (float): Specifies the volume of the critical alert sound. The volume ranges from 0.0 to 1.0, which indicates silent and full volume, respectively. (Default 1.0). [optional]  # noqa: E501
+            url (str): [optional]  # noqa: E501
+            file (str): [optional]  # noqa: E501
+            file_name (str): [optional]  # noqa: E501
+            file_size (float): [optional]  # noqa: E501
+            file_type (str): [optional]  # noqa: E501
+            thumbnails ([str]): [optional]  # noqa: E501
+            thumbnail1 (str): [optional]  # noqa: E501
+            thumbnail2 (str): [optional]  # noqa: E501
+            thumbnail3 (str): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -293,6 +320,15 @@ class SendMessageData(ModelNormal):
             apns_bundle_id (str): Specifies the bundle ID of the client app in order to send a push notification to iOS devices. You can find this in Settings > Chat > Notifications > Push notification services. [optional]  # noqa: E501
             sound (str): Specifies the name of the file that sounds for critical alerts.. [optional]  # noqa: E501
             volume (float): Specifies the volume of the critical alert sound. The volume ranges from 0.0 to 1.0, which indicates silent and full volume, respectively. (Default 1.0). [optional]  # noqa: E501
+            url (str): [optional]  # noqa: E501
+            file (str): [optional]  # noqa: E501
+            file_name (str): [optional]  # noqa: E501
+            file_size (float): [optional]  # noqa: E501
+            file_type (str): [optional]  # noqa: E501
+            thumbnails ([str]): [optional]  # noqa: E501
+            thumbnail1 (str): [optional]  # noqa: E501
+            thumbnail2 (str): [optional]  # noqa: E501
+            thumbnail3 (str): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

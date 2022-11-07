@@ -24,6 +24,20 @@ class TestStatisticsApi(unittest.TestCase):
     def tearDown(self):
         pass
 
+    def test_get_detailed_open_rate_of_announcement_by_id(self):
+        """Test case for get_detailed_open_rate_of_announcement_by_id
+
+        Get detailed open rate of an announcement  # noqa: E501
+        """
+        pass
+
+    def test_get_detailed_open_status_of_announcement_by_id(self):
+        """Test case for get_detailed_open_status_of_announcement_by_id
+
+        Get detailed open status of an announcement  # noqa: E501
+        """
+        pass
+
     def test_retrieve_advanced_analytics_metrics(self):
         """Test case for retrieve_advanced_analytics_metrics
 

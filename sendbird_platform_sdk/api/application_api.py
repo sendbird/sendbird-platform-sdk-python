@@ -31,6 +31,7 @@ from sendbird_platform_sdk.model.add_hms_push_configuration_response import AddH
 from sendbird_platform_sdk.model.add_ip_to_whitelist_data import AddIpToWhitelistData
 from sendbird_platform_sdk.model.add_ip_to_whitelist_response import AddIpToWhitelistResponse
 from sendbird_platform_sdk.model.ban_users_in_channels_with_custom_channel_type_data import BanUsersInChannelsWithCustomChannelTypeData
+from sendbird_platform_sdk.model.configure_auto_event_data import ConfigureAutoEventData
 from sendbird_platform_sdk.model.custom_type_list_banned_users_response import CustomTypeListBannedUsersResponse
 from sendbird_platform_sdk.model.delete_allowed_ips_from_whitelist_response import DeleteAllowedIpsFromWhitelistResponse
 from sendbird_platform_sdk.model.delete_apns_certificate_by_id_response import DeleteApnsCertificateByIdResponse
@@ -44,6 +45,7 @@ from sendbird_platform_sdk.model.mute_users_in_channels_with_custom_channel_type
 from sendbird_platform_sdk.model.remove_push_configuration_by_id_response import RemovePushConfigurationByIdResponse
 from sendbird_platform_sdk.model.retrieve_ip_whitelist_response import RetrieveIpWhitelistResponse
 from sendbird_platform_sdk.model.revoke_secondary_api_token_by_token_response import RevokeSecondaryApiTokenByTokenResponse
+from sendbird_platform_sdk.model.send_bird_auto_event_message_settings import SendBirdAutoEventMessageSettings
 from sendbird_platform_sdk.model.send_bird_channel_response import SendBirdChannelResponse
 from sendbird_platform_sdk.model.set_domain_filter_data import SetDomainFilterData
 from sendbird_platform_sdk.model.update_apns_push_configuration_by_id_data import UpdateApnsPushConfigurationByIdData
@@ -354,6 +356,61 @@ class ApplicationApi(object):
             },
             api_client=api_client
         )
+        self.configure_auto_event_messages_endpoint = _Endpoint(
+            settings={
+                'response_type': (SendBirdAutoEventMessageSettings,),
+                'auth': [],
+                'endpoint_path': '/v3/applications/settings/auto_event_message',
+                'operation_id': 'configure_auto_event_messages',
+                'http_method': 'PUT',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'api_token',
+                    'configure_auto_event_data',
+                ],
+                'required': [
+                    'api_token',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'api_token':
+                        (str,),
+                    'configure_auto_event_data':
+                        (ConfigureAutoEventData,),
+                },
+                'attribute_map': {
+                    'api_token': 'Api-Token',
+                },
+                'location_map': {
+                    'api_token': 'header',
+                    'configure_auto_event_data': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client
+        )
         self.delete_allowed_ips_from_whitelist_endpoint = _Endpoint(
             settings={
                 'response_type': (DeleteAllowedIpsFromWhitelistResponse,),
@@ -517,6 +574,55 @@ class ApplicationApi(object):
                 'content_type': [
                     'application/json'
                 ]
+            },
+            api_client=api_client
+        )
+        self.list_auto_event_messages_endpoint = _Endpoint(
+            settings={
+                'response_type': (SendBirdAutoEventMessageSettings,),
+                'auth': [],
+                'endpoint_path': '/v3/applications/settings/auto_event_message',
+                'operation_id': 'list_auto_event_messages',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'api_token',
+                ],
+                'required': [
+                    'api_token',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'api_token':
+                        (str,),
+                },
+                'attribute_map': {
+                    'api_token': 'Api-Token',
+                },
+                'location_map': {
+                    'api_token': 'header',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
             },
             api_client=api_client
         )
@@ -2158,6 +2264,90 @@ class ApplicationApi(object):
             custom_type
         return self.ban_users_in_channels_with_custom_channel_type_endpoint.call_with_http_info(**kwargs)
 
+    def configure_auto_event_messages(
+        self,
+        api_token,
+        **kwargs
+    ):
+        """Configure auto event message settings  # noqa: E501
+
+        ## Configure auto event message settings  Determines whether to automatically send event messages to group channels when events take place in an application. You can choose which auto event message to receive on the Sendbird Dashboard  https://sendbird.com/docs/chat/v3/platform-api/application/managing-auto-event-messages/configure-auto-event-message-settings ----------------------------  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.configure_auto_event_messages(api_token, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            api_token (str):
+
+        Keyword Args:
+            configure_auto_event_data (ConfigureAutoEventData): [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            SendBirdAutoEventMessageSettings
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['api_token'] = \
+            api_token
+        return self.configure_auto_event_messages_endpoint.call_with_http_info(**kwargs)
+
     def delete_allowed_ips_from_whitelist(
         self,
         api_token,
@@ -2415,6 +2605,89 @@ class ApplicationApi(object):
         kwargs['api_token'] = \
             api_token
         return self.generate_secondary_api_token_endpoint.call_with_http_info(**kwargs)
+
+    def list_auto_event_messages(
+        self,
+        api_token,
+        **kwargs
+    ):
+        """List auto event messages  # noqa: E501
+
+        ## List auto event messages  Retrieves a list of auto event messages that are sent in a specified application and indicates which ones are in use. Auto event messages are Admin messages that are automatically generated when a specific event occurs.  https://sendbird.com/docs/chat/v3/platform-api/application/managing-auto-event-messages/list-auto-event-messages ----------------------------  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.list_auto_event_messages(api_token, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            api_token (str):
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            SendBirdAutoEventMessageSettings
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['api_token'] = \
+            api_token
+        return self.list_auto_event_messages_endpoint.call_with_http_info(**kwargs)
 
     def list_banned_users_in_channels_with_custom_channel_type(
         self,

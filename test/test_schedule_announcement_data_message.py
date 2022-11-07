@@ -14,12 +14,10 @@ import unittest
 
 import sendbird_platform_sdk
 from sendbird_platform_sdk.model.schedule_announcement_data_message import ScheduleAnnouncementDataMessage
-globals()['ScheduleAnnouncementDataMessage'] = ScheduleAnnouncementDataMessage
-from sendbird_platform_sdk.model.schedule_announcement_data import ScheduleAnnouncementData
 
 
-class TestScheduleAnnouncementData(unittest.TestCase):
-    """ScheduleAnnouncementData unit test stubs"""
+class TestScheduleAnnouncementDataMessage(unittest.TestCase):
+    """ScheduleAnnouncementDataMessage unit test stubs"""
 
     def setUp(self):
         pass
@@ -27,10 +25,10 @@ class TestScheduleAnnouncementData(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testScheduleAnnouncementData(self):
-        """Test ScheduleAnnouncementData"""
+    def testScheduleAnnouncementDataMessage(self):
+        """Test ScheduleAnnouncementDataMessage"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = ScheduleAnnouncementData()  # noqa: E501
+        # model = ScheduleAnnouncementDataMessage()  # noqa: E501
         pass
 
 

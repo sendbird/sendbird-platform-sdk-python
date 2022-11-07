@@ -21,6 +21,15 @@ Name | Type | Description | Notes
 **apns_bundle_id** | **str** | Specifies the bundle ID of the client app in order to send a push notification to iOS devices. You can find this in Settings &gt; Chat &gt; Notifications &gt; Push notification services | [optional] 
 **sound** | **str** | Specifies the name of the file that sounds for critical alerts. | [optional] 
 **volume** | **float** | Specifies the volume of the critical alert sound. The volume ranges from 0.0 to 1.0, which indicates silent and full volume, respectively. (Default 1.0) | [optional] 
+**url** | **str** |  | [optional] 
+**file** | **str** |  | [optional] 
+**file_name** | **str** |  | [optional] 
+**file_size** | **float** |  | [optional] 
+**file_type** | **str** |  | [optional] 
+**thumbnails** | **[str]** |  | [optional] 
+**thumbnail1** | **str** |  | [optional] 
+**thumbnail2** | **str** |  | [optional] 
+**thumbnail3** | **str** |  | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

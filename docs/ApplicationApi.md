@@ -9,9 +9,11 @@ Method | HTTP request | Description
 [**add_hms_push_configuration**](ApplicationApi.md#add_hms_push_configuration) | **POST** /v3/applications/push/hms | Add an HMS push configuration
 [**add_ip_to_whitelist**](ApplicationApi.md#add_ip_to_whitelist) | **PUT** /v3/applications/settings/ip_whitelist | Add an IP to a whitelist
 [**ban_users_in_channels_with_custom_channel_type**](ApplicationApi.md#ban_users_in_channels_with_custom_channel_type) | **POST** /v3/applications/settings_by_channel_custom_type/{custom_type}/ban | Ban users in channels with a custom channel type
+[**configure_auto_event_messages**](ApplicationApi.md#configure_auto_event_messages) | **PUT** /v3/applications/settings/auto_event_message | Configure auto event message settings
 [**delete_allowed_ips_from_whitelist**](ApplicationApi.md#delete_allowed_ips_from_whitelist) | **DELETE** /v3/applications/settings/ip_whitelist | Delete allowed IPs from a whitelist
 [**delete_apns_certificate_by_id**](ApplicationApi.md#delete_apns_certificate_by_id) | **DELETE** /v3/applications/push/apns/cert/{provider_id} | Delete an APNs certificate
 [**generate_secondary_api_token**](ApplicationApi.md#generate_secondary_api_token) | **POST** /v3/applications/api_tokens | Generate a secondary API token
+[**list_auto_event_messages**](ApplicationApi.md#list_auto_event_messages) | **GET** /v3/applications/settings/auto_event_message | List auto event messages
 [**list_banned_users_in_channels_with_custom_channel_type**](ApplicationApi.md#list_banned_users_in_channels_with_custom_channel_type) | **GET** /v3/applications/settings_by_channel_custom_type/{custom_type}/ban | List banned users in channels with a custom channel type
 [**list_muted_users_in_channels_with_custom_channel_type**](ApplicationApi.md#list_muted_users_in_channels_with_custom_channel_type) | **GET** /v3/applications/settings_by_channel_custom_type/{custom_type}/mute | List muted users in channels with a custom channel type
 [**list_push_configurations**](ApplicationApi.md#list_push_configurations) | **GET** /v3/applications/push/{push_type} | List push configurations
@@ -460,6 +462,92 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **configure_auto_event_messages**
+> SendBirdAutoEventMessageSettings configure_auto_event_messages(api_token)
+
+Configure auto event message settings
+
+## Configure auto event message settings  Determines whether to automatically send event messages to group channels when events take place in an application. You can choose which auto event message to receive on the Sendbird Dashboard  https://sendbird.com/docs/chat/v3/platform-api/application/managing-auto-event-messages/configure-auto-event-message-settings ----------------------------
+
+### Example
+
+
+```python
+import time
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import application_api
+from sendbird_platform_sdk.model.configure_auto_event_data import ConfigureAutoEventData
+from sendbird_platform_sdk.model.send_bird_auto_event_message_settings import SendBirdAutoEventMessageSettings
+from pprint import pprint
+# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = sendbird_platform_sdk.Configuration(
+    host = "https://api-APP_ID.sendbird.com"
+)
+
+
+# Enter a context with an instance of the API client
+with sendbird_platform_sdk.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = application_api.ApplicationApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
+    configure_auto_event_data = ConfigureAutoEventData(
+        auto_event_message=ConfigureAutoEventDataAutoEventMessage(
+            user_leave={},
+            user_join={},
+            channel_create={},
+            channel_change={},
+        ),
+    ) # ConfigureAutoEventData |  (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Configure auto event message settings
+        api_response = api_instance.configure_auto_event_messages(api_token)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling ApplicationApi->configure_auto_event_messages: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Configure auto event message settings
+        api_response = api_instance.configure_auto_event_messages(api_token, configure_auto_event_data=configure_auto_event_data)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling ApplicationApi->configure_auto_event_messages: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
+ **configure_auto_event_data** | [**ConfigureAutoEventData**](ConfigureAutoEventData.md)|  | [optional]
+
+### Return type
+
+[**SendBirdAutoEventMessageSettings**](SendBirdAutoEventMessageSettings.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **delete_allowed_ips_from_whitelist**
 > DeleteAllowedIpsFromWhitelistResponse delete_allowed_ips_from_whitelist(api_token, ip_whitelist_addresses)
 
@@ -670,6 +758,73 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **list_auto_event_messages**
+> SendBirdAutoEventMessageSettings list_auto_event_messages(api_token)
+
+List auto event messages
+
+## List auto event messages  Retrieves a list of auto event messages that are sent in a specified application and indicates which ones are in use. Auto event messages are Admin messages that are automatically generated when a specific event occurs.  https://sendbird.com/docs/chat/v3/platform-api/application/managing-auto-event-messages/list-auto-event-messages ----------------------------
+
+### Example
+
+
+```python
+import time
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import application_api
+from sendbird_platform_sdk.model.send_bird_auto_event_message_settings import SendBirdAutoEventMessageSettings
+from pprint import pprint
+# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = sendbird_platform_sdk.Configuration(
+    host = "https://api-APP_ID.sendbird.com"
+)
+
+
+# Enter a context with an instance of the API client
+with sendbird_platform_sdk.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = application_api.ApplicationApi(api_client)
+    api_token = "{{API_TOKEN}}" # str | 
+
+    # example passing only required values which don't have defaults set
+    try:
+        # List auto event messages
+        api_response = api_instance.list_auto_event_messages(api_token)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling ApplicationApi->list_auto_event_messages: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **api_token** | **str**|  |
+
+### Return type
+
+[**SendBirdAutoEventMessageSettings**](SendBirdAutoEventMessageSettings.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 

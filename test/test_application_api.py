@@ -59,6 +59,13 @@ class TestApplicationApi(unittest.TestCase):
         """
         pass
 
+    def test_configure_auto_event_messages(self):
+        """Test case for configure_auto_event_messages
+
+        Configure auto event message settings  # noqa: E501
+        """
+        pass
+
     def test_delete_allowed_ips_from_whitelist(self):
         """Test case for delete_allowed_ips_from_whitelist
 
@@ -77,6 +84,13 @@ class TestApplicationApi(unittest.TestCase):
         """Test case for generate_secondary_api_token
 
         Generate a secondary API token  # noqa: E501
+        """
+        pass
+
+    def test_list_auto_event_messages(self):
+        """Test case for list_auto_event_messages
+
+        List auto event messages  # noqa: E501
         """
         pass
 

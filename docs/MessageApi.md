@@ -17,11 +17,7 @@ Method | HTTP request | Description
 [**gc_view_number_of_each_members_unread_messages**](MessageApi.md#gc_view_number_of_each_members_unread_messages) | **GET** /v3/group_channels/{channel_url}/messages/unread_count | View number of each member&#39;s unread messages
 [**get_emoji_by_key**](MessageApi.md#get_emoji_by_key) | **GET** /v3/emojis/{emoji_key} | Get an emoji
 [**get_emoji_category_by_id**](MessageApi.md#get_emoji_category_by_id) | **GET** /v3/emoji_categories/{emoji_category_id} | Get an emoji category
-[**get_statistics**](MessageApi.md#get_statistics) | **GET** /v3/announcement_stats/weekly | Get statistics - weekly
-[**get_statistics_daily**](MessageApi.md#get_statistics_daily) | **GET** /v3/announcement_stats/daily | Get statistics - daily
-[**get_statistics_monthly**](MessageApi.md#get_statistics_monthly) | **GET** /v3/announcement_stats/monthly | Get statistics - monthly
 [**list_all_emojis_and_emoji_categories**](MessageApi.md#list_all_emojis_and_emoji_categories) | **GET** /v3/emoji_categories | List all emojis and emoji categories
-[**list_announcement_groups**](MessageApi.md#list_announcement_groups) | **GET** /v3/announcement_group | List announcement groups
 [**list_announcements**](MessageApi.md#list_announcements) | **GET** /v3/announcements | List announcements
 [**list_emojis**](MessageApi.md#list_emojis) | **GET** /v3/emojis | List emojis
 [**list_messages**](MessageApi.md#list_messages) | **GET** /v3/{channel_type}/{channel_url}/messages | List messages
@@ -29,10 +25,8 @@ Method | HTTP request | Description
 [**migrate_messages_by_url**](MessageApi.md#migrate_messages_by_url) | **POST** /v3/migration/{target_channel_url} | Migrate messages
 [**remove_extra_data_from_message**](MessageApi.md#remove_extra_data_from_message) | **DELETE** /v3/{channel_type}/{channel_url}/messages/{message_id}/sorted_metaarray | Remove extra data from a message
 [**remove_reaction_from_a_message**](MessageApi.md#remove_reaction_from_a_message) | **DELETE** /v3/{channel_type}/{channel_url}/messages/{message_id}/reactions | Remove a reaction from a message
-[**schedule_announcement**](MessageApi.md#schedule_announcement) | **POST** /v3/announcements | Schedule an announcement
 [**send_message**](MessageApi.md#send_message) | **POST** /v3/{channel_type}/{channel_url}/messages | Send a message
 [**translate_message_into_other_languages**](MessageApi.md#translate_message_into_other_languages) | **POST** /v3/{channel_type}/{channel_url}/messages/{message_id}/translation | Translate a message into other languages
-[**update_announcement_by_id**](MessageApi.md#update_announcement_by_id) | **PUT** /v3/announcements/{unique_id} | Update an announcement
 [**update_emoji_category_url_by_id**](MessageApi.md#update_emoji_category_url_by_id) | **PUT** /v3/emoji_categories/{emoji_category_id} | Update an emoji category URL
 [**update_emoji_url_by_key**](MessageApi.md#update_emoji_url_by_key) | **PUT** /v3/emojis/{emoji_key} | Update an emoji URL
 [**update_extra_data_in_message**](MessageApi.md#update_extra_data_in_message) | **PUT** /v3/{channel_type}/{channel_url}/messages/{message_id}/sorted_metaarray | Update extra data in a message
@@ -1060,230 +1054,6 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_statistics**
-> GetStatisticsResponse get_statistics(api_token)
-
-Get statistics - weekly
-
-## Get statistics  Retrieves the daily, weekly or monthly statistics of an announcement or an announcement group.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-get-statistics ----------------------------
-
-### Example
-
-
-```python
-import time
-import sendbird_platform_sdk
-from sendbird_platform_sdk.api import message_api
-from sendbird_platform_sdk.model.get_statistics_response import GetStatisticsResponse
-from pprint import pprint
-# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird_platform_sdk.Configuration(
-    host = "https://api-APP_ID.sendbird.com"
-)
-
-
-# Enter a context with an instance of the API client
-with sendbird_platform_sdk.ApiClient() as api_client:
-    # Create an instance of the API class
-    api_instance = message_api.MessageApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
-
-    # example passing only required values which don't have defaults set
-    try:
-        # Get statistics - weekly
-        api_response = api_instance.get_statistics(api_token)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling MessageApi->get_statistics: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
-
-### Return type
-
-[**GetStatisticsResponse**](GetStatisticsResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful response |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_statistics_daily**
-> GetStatisticsDailyResponse get_statistics_daily(api_token, start_date, end_date, start_week, end_week, start_month, end_month)
-
-Get statistics - daily
-
-## Get statistics  Retrieves the daily, weekly or monthly statistics of an announcement or an announcement group.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-get-statistics ----------------------------
-
-### Example
-
-
-```python
-import time
-import sendbird_platform_sdk
-from sendbird_platform_sdk.api import message_api
-from sendbird_platform_sdk.model.get_statistics_daily_response import GetStatisticsDailyResponse
-from pprint import pprint
-# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird_platform_sdk.Configuration(
-    host = "https://api-APP_ID.sendbird.com"
-)
-
-
-# Enter a context with an instance of the API client
-with sendbird_platform_sdk.ApiClient() as api_client:
-    # Create an instance of the API class
-    api_instance = message_api.MessageApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
-    start_date = "start_date_example" # str | 
-    end_date = "end_date_example" # str | 
-    start_week = "start_week_example" # str | 
-    end_week = "end_week_example" # str | 
-    start_month = "start_month_example" # str | 
-    end_month = "end_month_example" # str | 
-    announcement_group = "announcement_group_example" # str |  (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        # Get statistics - daily
-        api_response = api_instance.get_statistics_daily(api_token, start_date, end_date, start_week, end_week, start_month, end_month)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling MessageApi->get_statistics_daily: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # Get statistics - daily
-        api_response = api_instance.get_statistics_daily(api_token, start_date, end_date, start_week, end_week, start_month, end_month, announcement_group=announcement_group)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling MessageApi->get_statistics_daily: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
- **start_date** | **str**|  |
- **end_date** | **str**|  |
- **start_week** | **str**|  |
- **end_week** | **str**|  |
- **start_month** | **str**|  |
- **end_month** | **str**|  |
- **announcement_group** | **str**|  | [optional]
-
-### Return type
-
-[**GetStatisticsDailyResponse**](GetStatisticsDailyResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful response |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_statistics_monthly**
-> GetStatisticsMonthlyResponse get_statistics_monthly(api_token)
-
-Get statistics - monthly
-
-## Get statistics  Retrieves the daily, weekly or monthly statistics of an announcement or an announcement group.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-get-statistics ----------------------------
-
-### Example
-
-
-```python
-import time
-import sendbird_platform_sdk
-from sendbird_platform_sdk.api import message_api
-from sendbird_platform_sdk.model.get_statistics_monthly_response import GetStatisticsMonthlyResponse
-from pprint import pprint
-# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird_platform_sdk.Configuration(
-    host = "https://api-APP_ID.sendbird.com"
-)
-
-
-# Enter a context with an instance of the API client
-with sendbird_platform_sdk.ApiClient() as api_client:
-    # Create an instance of the API class
-    api_instance = message_api.MessageApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
-
-    # example passing only required values which don't have defaults set
-    try:
-        # Get statistics - monthly
-        api_response = api_instance.get_statistics_monthly(api_token)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling MessageApi->get_statistics_monthly: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
-
-### Return type
-
-[**GetStatisticsMonthlyResponse**](GetStatisticsMonthlyResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful response |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **list_all_emojis_and_emoji_categories**
 > ListAllEmojisAndEmojiCategoriesResponse list_all_emojis_and_emoji_categories(api_token)
 
@@ -1332,86 +1102,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ListAllEmojisAndEmojiCategoriesResponse**](ListAllEmojisAndEmojiCategoriesResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful response |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **list_announcement_groups**
-> ListAnnouncementGroupsResponse list_announcement_groups(api_token)
-
-List announcement groups
-
-## List announcement groups  Retrieves a list of announcement groups.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-list-announcement-groups ----------------------------
-
-### Example
-
-
-```python
-import time
-import sendbird_platform_sdk
-from sendbird_platform_sdk.api import message_api
-from sendbird_platform_sdk.model.list_announcement_groups_response import ListAnnouncementGroupsResponse
-from pprint import pprint
-# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird_platform_sdk.Configuration(
-    host = "https://api-APP_ID.sendbird.com"
-)
-
-
-# Enter a context with an instance of the API client
-with sendbird_platform_sdk.ApiClient() as api_client:
-    # Create an instance of the API class
-    api_instance = message_api.MessageApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
-    token = "token_example" # str |  (optional)
-    limit = 1 # int |  (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        # List announcement groups
-        api_response = api_instance.list_announcement_groups(api_token)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling MessageApi->list_announcement_groups: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # List announcement groups
-        api_response = api_instance.list_announcement_groups(api_token, token=token, limit=limit)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling MessageApi->list_announcement_groups: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
- **token** | **str**|  | [optional]
- **limit** | **int**|  | [optional]
-
-### Return type
-
-[**ListAnnouncementGroupsResponse**](ListAnnouncementGroupsResponse.md)
 
 ### Authorization
 
@@ -2032,112 +1722,6 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **schedule_announcement**
-> ScheduleAnnouncementResponse schedule_announcement(api_token)
-
-Schedule an announcement
-
-## Schedule an announcement  Schedules a new announcement. You can also schedule an announcement in the [Sendbird Dashboard](https://dashboard.sendbird.com).  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-schedule-an-announcement
-
-### Example
-
-
-```python
-import time
-import sendbird_platform_sdk
-from sendbird_platform_sdk.api import message_api
-from sendbird_platform_sdk.model.schedule_announcement_response import ScheduleAnnouncementResponse
-from sendbird_platform_sdk.model.schedule_announcement_data import ScheduleAnnouncementData
-from pprint import pprint
-# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird_platform_sdk.Configuration(
-    host = "https://api-APP_ID.sendbird.com"
-)
-
-
-# Enter a context with an instance of the API client
-with sendbird_platform_sdk.ApiClient() as api_client:
-    # Create an instance of the API class
-    api_instance = message_api.MessageApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
-    schedule_announcement_data = ScheduleAnnouncementData(
-        message="message_example",
-        message_type="message_type_example",
-        message_user_id="message_user_id_example",
-        message_content="message_content_example",
-        target_at="target_at_example",
-        target_list=[
-            "target_list_example",
-        ],
-        target_channel_type="target_channel_type_example",
-        unique_id="unique_id_example",
-        message_custom_type="message_custom_type_example",
-        message_data="message_data_example",
-        create_channel=True,
-        announcement_group="announcement_group_example",
-        create_channel_options="create_channel_options_example",
-        create_channel_options_name="create_channel_options_name_example",
-        create_channel_options_cover_url="create_channel_options_cover_url_example",
-        create_channel_options_custom_type="create_channel_options_custom_type_example",
-        create_channel_options_data="create_channel_options_data_example",
-        create_channel_options_distinct="create_channel_options_distinct_example",
-        scheduled_at=1,
-        cease_at="cease_at_example",
-        resume_at="resume_at_example",
-        end_at=1,
-        enable_push=True,
-        assign_sender_as_channel_inviter=True,
-    ) # ScheduleAnnouncementData |  (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        # Schedule an announcement
-        api_response = api_instance.schedule_announcement(api_token)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling MessageApi->schedule_announcement: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # Schedule an announcement
-        api_response = api_instance.schedule_announcement(api_token, schedule_announcement_data=schedule_announcement_data)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling MessageApi->schedule_announcement: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
- **schedule_announcement_data** | [**ScheduleAnnouncementData**](ScheduleAnnouncementData.md)|  | [optional]
-
-### Return type
-
-[**ScheduleAnnouncementResponse**](ScheduleAnnouncementResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful response |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **send_message**
 > SendBirdMessageResponse send_message(api_token, channel_type, channel_url)
 
@@ -2189,6 +1773,17 @@ with sendbird_platform_sdk.ApiClient() as api_client:
         apns_bundle_id="apns_bundle_id_example",
         sound="sound_example",
         volume=3.14,
+        url="url_example",
+        file="file_example",
+        file_name="file_name_example",
+        file_size=3.14,
+        file_type="file_type_example",
+        thumbnails=[
+            "thumbnails_example",
+        ],
+        thumbnail1="thumbnail1_example",
+        thumbnail2="thumbnail2_example",
+        thumbnail3="thumbnail3_example",
     ) # SendMessageData |  (optional)
 
     # example passing only required values which don't have defaults set
@@ -2311,105 +1906,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**SendBirdMessageResponse**](SendBirdMessageResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful response |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **update_announcement_by_id**
-> UpdateAnnouncementByIdResponse update_announcement_by_id(api_token, unique_id)
-
-Update an announcement
-
-## Update an announcement  Updates information of a specific announcement before it starts or changes the status of a specific announcement after it starts. For the 2 different applications, refer to the request body below.  >__Note__: Updating information of an announcement is possible only when the announcement status is scheduled, indicating it hasn't started yet.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-update-an-announcement ----------------------------
-
-### Example
-
-
-```python
-import time
-import sendbird_platform_sdk
-from sendbird_platform_sdk.api import message_api
-from sendbird_platform_sdk.model.update_announcement_by_id_data import UpdateAnnouncementByIdData
-from sendbird_platform_sdk.model.update_announcement_by_id_response import UpdateAnnouncementByIdResponse
-from pprint import pprint
-# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird_platform_sdk.Configuration(
-    host = "https://api-APP_ID.sendbird.com"
-)
-
-
-# Enter a context with an instance of the API client
-with sendbird_platform_sdk.ApiClient() as api_client:
-    # Create an instance of the API class
-    api_instance = message_api.MessageApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
-    unique_id = "unique_id_example" # str | 
-    update_announcement_by_id_data = UpdateAnnouncementByIdData(
-        unique_id="unique_id_example",
-        action="action_example",
-        announcement_group="announcement_group_example",
-        create_channel=True,
-        create_channel_options_name="create_channel_options_name_example",
-        create_channel_options_cover_url="create_channel_options_cover_url_example",
-        create_channel_options_custom_type="create_channel_options_custom_type_example",
-        create_channel_options_data="create_channel_options_data_example",
-        create_channel_options_distinct="create_channel_options_distinct_example",
-        message_user_id="message_user_id_example",
-        message_content="message_content_example",
-        message_data="message_data_example",
-        enable_push=True,
-        scheduled_at=1,
-        end_at=1,
-        cease_at="cease_at_example",
-        resume_at="resume_at_example",
-    ) # UpdateAnnouncementByIdData |  (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        # Update an announcement
-        api_response = api_instance.update_announcement_by_id(api_token, unique_id)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling MessageApi->update_announcement_by_id: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # Update an announcement
-        api_response = api_instance.update_announcement_by_id(api_token, unique_id, update_announcement_by_id_data=update_announcement_by_id_data)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling MessageApi->update_announcement_by_id: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
- **unique_id** | **str**|  |
- **update_announcement_by_id_data** | [**UpdateAnnouncementByIdData**](UpdateAnnouncementByIdData.md)|  | [optional]
-
-### Return type
-
-[**UpdateAnnouncementByIdResponse**](UpdateAnnouncementByIdResponse.md)
 
 ### Authorization
 
