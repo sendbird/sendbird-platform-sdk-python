@@ -18,9 +18,8 @@ configuration = sendbird_platform_sdk.Configuration(
 
 
 with sendbird_platform_sdk.ApiClient(configuration=configuration) as api_client:
-    # Create an instance of the API class
     
-    api_token = "YOUR_API_KEY" # str | 
+    api_token = "YOUR_API_KEY" 
 
 
     class User():

@@ -15,9 +15,8 @@ configuration = sendbird_platform_sdk.Configuration(
 )
 
 with sendbird_platform_sdk.ApiClient(configuration=configuration) as api_client:
-    # Create an instance of the API class
     
-    api_token = "YOUR_API_KEY" # str | 
+    api_token = "YOUR_API_KEY" 
     class GroupChannel():
 
         def __init__(self):
@@ -34,7 +33,6 @@ with sendbird_platform_sdk.ApiClient(configuration=configuration) as api_client:
             )
 
             try:
-                # Create a channel
                 api_response = self.api_instance.gc_create_channel(api_token, gc_create_channel_data=gc_create_channel_data)
                 return api_response
             except sendbird_platform_sdk.ApiException as e:
@@ -52,11 +50,10 @@ with sendbird_platform_sdk.ApiClient(configuration=configuration) as api_client:
                 nickname="5678",
                 profile_url="profile_url_example",
                 metadata={},
-            ) # CreateUserData |  (optional)
-
-            # example passing only required values which don't have defaults set
+            )
+            
             try:
-                # Create a user
+
                 api_response = self.api_instance.create_user(api_token, create_user_data=create_user_data)
                 return api_response
             except sendbird_platform_sdk.ApiException as e:
