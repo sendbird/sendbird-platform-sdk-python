@@ -1,0 +1,12 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: sendbird-platform-sdk-python
+description: sendbird-platform-sdk-python
+  annotations:
+    github.com/project-slug: sendbird/sendbird-platform-sdk-python
+spec:
+  type: library
+  lifecycle: production
+  owner: dep-developer-experience
+  system: sendbird-uikit
