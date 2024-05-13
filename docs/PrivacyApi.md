@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **cancel_the_registration_of_gdpr_request_by_id**
-> cancel_the_registration_of_gdpr_request_by_id(api_token, request_id)
+> cancel_the_registration_of_gdpr_request_by_id(request_id)
 
 Cancel the registration of a GDPR request
 
@@ -36,13 +36,21 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = privacy_api.PrivacyApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
     request_id = "request_id_example" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Cancel the registration of a GDPR request
-        api_instance.cancel_the_registration_of_gdpr_request_by_id(api_token, request_id)
+        api_instance.cancel_the_registration_of_gdpr_request_by_id(request_id)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling PrivacyApi->cancel_the_registration_of_gdpr_request_by_id: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Cancel the registration of a GDPR request
+        api_instance.cancel_the_registration_of_gdpr_request_by_id(request_id, api_token=api_token)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling PrivacyApi->cancel_the_registration_of_gdpr_request_by_id: %s\n" % e)
 ```
@@ -52,8 +60,8 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
  **request_id** | **str**|  |
+ **api_token** | **str**|  | [optional]
 
 ### Return type
 
@@ -78,7 +86,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_gdpr_requests**
-> ListGdprRequestsResponse list_gdpr_requests(api_token)
+> ListGdprRequestsResponse list_gdpr_requests()
 
 List GDPR requests
 
@@ -104,23 +112,15 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = privacy_api.PrivacyApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
     token = "token_example" # str |  (optional)
     limit = 1 # int |  (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        # List GDPR requests
-        api_response = api_instance.list_gdpr_requests(api_token)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling PrivacyApi->list_gdpr_requests: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # List GDPR requests
-        api_response = api_instance.list_gdpr_requests(api_token, token=token, limit=limit)
+        api_response = api_instance.list_gdpr_requests(api_token=api_token, token=token, limit=limit)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling PrivacyApi->list_gdpr_requests: %s\n" % e)
@@ -131,7 +131,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
+ **api_token** | **str**|  | [optional]
  **token** | **str**|  | [optional]
  **limit** | **int**|  | [optional]
 
@@ -158,7 +158,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **register_gdpr_request**
-> RegisterGdprRequestResponse register_gdpr_request(api_token)
+> RegisterGdprRequestResponse register_gdpr_request()
 
 Register a GDPR request
 
@@ -185,7 +185,7 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = privacy_api.PrivacyApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
     register_gdpr_request_data = RegisterGdprRequestData(
         action="action_example",
         user_ids=[
@@ -196,18 +196,10 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     ) # RegisterGdprRequestData |  (optional)
 
     # example passing only required values which don't have defaults set
-    try:
-        # Register a GDPR request
-        api_response = api_instance.register_gdpr_request(api_token)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling PrivacyApi->register_gdpr_request: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Register a GDPR request
-        api_response = api_instance.register_gdpr_request(api_token, register_gdpr_request_data=register_gdpr_request_data)
+        api_response = api_instance.register_gdpr_request(api_token=api_token, register_gdpr_request_data=register_gdpr_request_data)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling PrivacyApi->register_gdpr_request: %s\n" % e)
@@ -218,7 +210,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
+ **api_token** | **str**|  | [optional]
  **register_gdpr_request_data** | [**RegisterGdprRequestData**](RegisterGdprRequestData.md)|  | [optional]
 
 ### Return type
@@ -244,7 +236,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **view_gdpr_request_by_id**
-> ViewGdprRequestByIdResponse view_gdpr_request_by_id(api_token, request_id)
+> ViewGdprRequestByIdResponse view_gdpr_request_by_id(request_id)
 
 View a GDPR request
 
@@ -270,13 +262,22 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = privacy_api.PrivacyApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
     request_id = "request_id_example" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # View a GDPR request
-        api_response = api_instance.view_gdpr_request_by_id(api_token, request_id)
+        api_response = api_instance.view_gdpr_request_by_id(request_id)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling PrivacyApi->view_gdpr_request_by_id: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # View a GDPR request
+        api_response = api_instance.view_gdpr_request_by_id(request_id, api_token=api_token)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling PrivacyApi->view_gdpr_request_by_id: %s\n" % e)
@@ -287,8 +288,8 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
  **request_id** | **str**|  |
+ **api_token** | **str**|  | [optional]
 
 ### Return type
 

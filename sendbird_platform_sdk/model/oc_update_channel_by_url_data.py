@@ -115,18 +115,11 @@ class OcUpdateChannelByUrlData(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, channel_url, name, cover_url, cover_file, custom_type, data, operator_ids, operators, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, channel_url, *args, **kwargs):  # noqa: E501
         """OcUpdateChannelByUrlData - a model defined in OpenAPI
 
         Args:
             channel_url (str): Specifies the URL of the channel to update.
-            name (str): Specifies the channel topic, or the name of the channel. The length is limited to 191 characters.
-            cover_url (str): Specifies the URL of the cover image. The length is limited to 2,048 characters.
-            cover_file (file_type): Uploads the file for the channel cover image.
-            custom_type (str): Specifies the custom channel type which is used for channel grouping. The length is limited to 128 characters.<br /><br /> Custom types are also used within Sendbird's [Advanced analytics](/docs/chat/v3/platform-api/guides/advanced-analytics) to segment metrics, which enables the sub-classification of data views.
-            data (str): Specifies additional channel information such as a long description of the channel or `JSON` formatted string.
-            operator_ids ([str]): Specifies an array of one or more user IDs to register as operators of the channel. The maximum allowed number of operators per channel is 100. Operators can delete any messages in the channel, and can also receive all messages that have been throttled.<br/><br/>  Operators cannot view messages that have been [moderated by](/docs/chat/v3/platform-api/guides/filter-and-moderation) the domain filter or profanity filter. Only the sender will be notified that the message has been blocked.
-            operators ([str]): (Deprecated) Specifies the string IDs of the users registered as channel operators. Operators can delete any messages in the channel, and can also receive all messages that have been throttled.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -159,6 +152,13 @@ class OcUpdateChannelByUrlData(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            name (str): Specifies the channel topic, or the name of the channel. The length is limited to 191 characters.. [optional]  # noqa: E501
+            cover_url (str): Specifies the URL of the cover image. The length is limited to 2,048 characters.. [optional]  # noqa: E501
+            cover_file (file_type): Uploads the file for the channel cover image.. [optional]  # noqa: E501
+            custom_type (str): Specifies the custom channel type which is used for channel grouping. The length is limited to 128 characters.<br /><br /> Custom types are also used within Sendbird's [Advanced analytics](/docs/chat/v3/platform-api/guides/advanced-analytics) to segment metrics, which enables the sub-classification of data views.. [optional]  # noqa: E501
+            data (str): Specifies additional channel information such as a long description of the channel or `JSON` formatted string.. [optional]  # noqa: E501
+            operator_ids ([str]): Specifies an array of one or more user IDs to register as operators of the channel. The maximum allowed number of operators per channel is 100. Operators can delete any messages in the channel, and can also receive all messages that have been throttled.<br/><br/>  Operators cannot view messages that have been [moderated by](/docs/chat/v3/platform-api/guides/filter-and-moderation) the domain filter or profanity filter. Only the sender will be notified that the message has been blocked.. [optional]  # noqa: E501
+            operators ([str]): (Deprecated) Specifies the string IDs of the users registered as channel operators. Operators can delete any messages in the channel, and can also receive all messages that have been throttled.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -191,13 +191,6 @@ class OcUpdateChannelByUrlData(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         self.channel_url = channel_url
-        self.name = name
-        self.cover_url = cover_url
-        self.cover_file = cover_file
-        self.custom_type = custom_type
-        self.data = data
-        self.operator_ids = operator_ids
-        self.operators = operators
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -218,18 +211,11 @@ class OcUpdateChannelByUrlData(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, channel_url, name, cover_url, cover_file, custom_type, data, operator_ids, operators, *args, **kwargs):  # noqa: E501
+    def __init__(self, channel_url, *args, **kwargs):  # noqa: E501
         """OcUpdateChannelByUrlData - a model defined in OpenAPI
 
         Args:
             channel_url (str): Specifies the URL of the channel to update.
-            name (str): Specifies the channel topic, or the name of the channel. The length is limited to 191 characters.
-            cover_url (str): Specifies the URL of the cover image. The length is limited to 2,048 characters.
-            cover_file (file_type): Uploads the file for the channel cover image.
-            custom_type (str): Specifies the custom channel type which is used for channel grouping. The length is limited to 128 characters.<br /><br /> Custom types are also used within Sendbird's [Advanced analytics](/docs/chat/v3/platform-api/guides/advanced-analytics) to segment metrics, which enables the sub-classification of data views.
-            data (str): Specifies additional channel information such as a long description of the channel or `JSON` formatted string.
-            operator_ids ([str]): Specifies an array of one or more user IDs to register as operators of the channel. The maximum allowed number of operators per channel is 100. Operators can delete any messages in the channel, and can also receive all messages that have been throttled.<br/><br/>  Operators cannot view messages that have been [moderated by](/docs/chat/v3/platform-api/guides/filter-and-moderation) the domain filter or profanity filter. Only the sender will be notified that the message has been blocked.
-            operators ([str]): (Deprecated) Specifies the string IDs of the users registered as channel operators. Operators can delete any messages in the channel, and can also receive all messages that have been throttled.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -262,6 +248,13 @@ class OcUpdateChannelByUrlData(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            name (str): Specifies the channel topic, or the name of the channel. The length is limited to 191 characters.. [optional]  # noqa: E501
+            cover_url (str): Specifies the URL of the cover image. The length is limited to 2,048 characters.. [optional]  # noqa: E501
+            cover_file (file_type): Uploads the file for the channel cover image.. [optional]  # noqa: E501
+            custom_type (str): Specifies the custom channel type which is used for channel grouping. The length is limited to 128 characters.<br /><br /> Custom types are also used within Sendbird's [Advanced analytics](/docs/chat/v3/platform-api/guides/advanced-analytics) to segment metrics, which enables the sub-classification of data views.. [optional]  # noqa: E501
+            data (str): Specifies additional channel information such as a long description of the channel or `JSON` formatted string.. [optional]  # noqa: E501
+            operator_ids ([str]): Specifies an array of one or more user IDs to register as operators of the channel. The maximum allowed number of operators per channel is 100. Operators can delete any messages in the channel, and can also receive all messages that have been throttled.<br/><br/>  Operators cannot view messages that have been [moderated by](/docs/chat/v3/platform-api/guides/filter-and-moderation) the domain filter or profanity filter. Only the sender will be notified that the message has been blocked.. [optional]  # noqa: E501
+            operators ([str]): (Deprecated) Specifies the string IDs of the users registered as channel operators. Operators can delete any messages in the channel, and can also receive all messages that have been throttled.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -292,13 +285,6 @@ class OcUpdateChannelByUrlData(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         self.channel_url = channel_url
-        self.name = name
-        self.cover_url = cover_url
-        self.cover_file = cover_file
-        self.custom_type = custom_type
-        self.data = data
-        self.operator_ids = operator_ids
-        self.operators = operators
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

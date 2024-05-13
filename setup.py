@@ -12,7 +12,7 @@
 from setuptools import setup, find_packages  # noqa: H301
 
 NAME = "sendbird_platform_sdk"
-VERSION = "0.0.16"
+VERSION = "1.0.24"
 # To install the library, run the following
 #
 # python setup.py install

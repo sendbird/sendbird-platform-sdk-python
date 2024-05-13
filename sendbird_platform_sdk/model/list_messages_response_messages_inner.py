@@ -35,10 +35,12 @@ def lazy_import():
     from sendbird_platform_sdk.model.list_messages_response_messages_inner_sorted_metaarray_inner import ListMessagesResponseMessagesInnerSortedMetaarrayInner
     from sendbird_platform_sdk.model.send_bird_message_response_mentioned_users_inner import SendBirdMessageResponseMentionedUsersInner
     from sendbird_platform_sdk.model.send_bird_message_response_user import SendBirdMessageResponseUser
+    from sendbird_platform_sdk.model.send_bird_parent_message_info import SendBirdParentMessageInfo
     globals()['ListMessagesResponseMessagesInnerOgTag'] = ListMessagesResponseMessagesInnerOgTag
     globals()['ListMessagesResponseMessagesInnerSortedMetaarrayInner'] = ListMessagesResponseMessagesInnerSortedMetaarrayInner
     globals()['SendBirdMessageResponseMentionedUsersInner'] = SendBirdMessageResponseMentionedUsersInner
     globals()['SendBirdMessageResponseUser'] = SendBirdMessageResponseUser
+    globals()['SendBirdParentMessageInfo'] = SendBirdParentMessageInfo
 
 
 class ListMessagesResponseMessagesInner(ModelNormal):
@@ -116,6 +118,7 @@ class ListMessagesResponseMessagesInner(ModelNormal):
             'message_id': (float,),  # noqa: E501
             'sorted_metaarray': ([ListMessagesResponseMessagesInnerSortedMetaarrayInner],),  # noqa: E501
             'og_tag': (ListMessagesResponseMessagesInnerOgTag,),  # noqa: E501
+            'parent_message_info': (SendBirdParentMessageInfo,),  # noqa: E501
         }
 
     @cached_property
@@ -146,6 +149,7 @@ class ListMessagesResponseMessagesInner(ModelNormal):
         'message_id': 'message_id',  # noqa: E501
         'sorted_metaarray': 'sorted_metaarray',  # noqa: E501
         'og_tag': 'og_tag',  # noqa: E501
+        'parent_message_info': 'parent_message_info',  # noqa: E501
     }
 
     read_only_vars = {
@@ -211,6 +215,7 @@ class ListMessagesResponseMessagesInner(ModelNormal):
             message_id (float): [optional]  # noqa: E501
             sorted_metaarray ([ListMessagesResponseMessagesInnerSortedMetaarrayInner]): [optional]  # noqa: E501
             og_tag (ListMessagesResponseMessagesInnerOgTag): [optional]  # noqa: E501
+            parent_message_info (SendBirdParentMessageInfo): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -318,6 +323,7 @@ class ListMessagesResponseMessagesInner(ModelNormal):
             message_id (float): [optional]  # noqa: E501
             sorted_metaarray ([ListMessagesResponseMessagesInnerSortedMetaarrayInner]): [optional]  # noqa: E501
             og_tag (ListMessagesResponseMessagesInnerOgTag): [optional]  # noqa: E501
+            parent_message_info (SendBirdParentMessageInfo): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

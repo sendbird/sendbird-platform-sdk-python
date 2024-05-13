@@ -19,13 +19,15 @@ Method | HTTP request | Description
 [**gc_list_operators**](GroupChannelApi.md#gc_list_operators) | **GET** /v3/group_channels/{channel_url}/operators | List operators
 [**gc_register_operators**](GroupChannelApi.md#gc_register_operators) | **POST** /v3/group_channels/{channel_url}/operators | Register operators
 [**gc_reset_chat_history**](GroupChannelApi.md#gc_reset_chat_history) | **PUT** /v3/group_channels/{channel_url}/reset_user_history | Reset chat history
+[**gc_start_typing_indicators**](GroupChannelApi.md#gc_start_typing_indicators) | **POST** /v3/group_channels/{channel_url}/typing | Start typing indicators
+[**gc_stop_typing_indicators**](GroupChannelApi.md#gc_stop_typing_indicators) | **DELETE** /v3/group_channels/{channel_url}/typing | Stop typing indicators
 [**gc_unhide_or_unarchive_channel**](GroupChannelApi.md#gc_unhide_or_unarchive_channel) | **DELETE** /v3/group_channels/{channel_url}/hide | Unhide or unarchive a channel
 [**gc_update_channel_by_url**](GroupChannelApi.md#gc_update_channel_by_url) | **PUT** /v3/group_channels/{channel_url} | Update a channel
 [**gc_view_channel_by_url**](GroupChannelApi.md#gc_view_channel_by_url) | **GET** /v3/group_channels/{channel_url} | View a channel
 
 
 # **gc_accept_invitation**
-> SendBirdGroupChannel gc_accept_invitation(api_token, channel_url)
+> SendBirdGroupChannel gc_accept_invitation(channel_url)
 
 Accept an invitation
 
@@ -52,8 +54,8 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = group_channel_api.GroupChannelApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
     channel_url = "channel_url_example" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
     gc_accept_invitation_data = GcAcceptInvitationData(
         channel_url="channel_url_example",
         user_id="user_id_example",
@@ -63,7 +65,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Accept an invitation
-        api_response = api_instance.gc_accept_invitation(api_token, channel_url)
+        api_response = api_instance.gc_accept_invitation(channel_url)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling GroupChannelApi->gc_accept_invitation: %s\n" % e)
@@ -72,7 +74,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Accept an invitation
-        api_response = api_instance.gc_accept_invitation(api_token, channel_url, gc_accept_invitation_data=gc_accept_invitation_data)
+        api_response = api_instance.gc_accept_invitation(channel_url, api_token=api_token, gc_accept_invitation_data=gc_accept_invitation_data)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling GroupChannelApi->gc_accept_invitation: %s\n" % e)
@@ -83,8 +85,8 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
  **channel_url** | **str**|  |
+ **api_token** | **str**|  | [optional]
  **gc_accept_invitation_data** | [**GcAcceptInvitationData**](GcAcceptInvitationData.md)|  | [optional]
 
 ### Return type
@@ -110,7 +112,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **gc_cancel_the_registration_of_operators**
-> OcDeleteChannelByUrl200Response gc_cancel_the_registration_of_operators(api_token, channel_url, operator_ids)
+> OcDeleteChannelByUrl200Response gc_cancel_the_registration_of_operators(channel_url, operator_ids)
 
 Cancel the registration of operators
 
@@ -136,17 +138,17 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = group_channel_api.GroupChannelApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
     channel_url = "channel_url_example" # str | 
     operator_ids = [
         "operator_ids_example",
     ] # [str] | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
     delete_all = True # bool |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Cancel the registration of operators
-        api_response = api_instance.gc_cancel_the_registration_of_operators(api_token, channel_url, operator_ids)
+        api_response = api_instance.gc_cancel_the_registration_of_operators(channel_url, operator_ids)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling GroupChannelApi->gc_cancel_the_registration_of_operators: %s\n" % e)
@@ -155,7 +157,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Cancel the registration of operators
-        api_response = api_instance.gc_cancel_the_registration_of_operators(api_token, channel_url, operator_ids, delete_all=delete_all)
+        api_response = api_instance.gc_cancel_the_registration_of_operators(channel_url, operator_ids, api_token=api_token, delete_all=delete_all)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling GroupChannelApi->gc_cancel_the_registration_of_operators: %s\n" % e)
@@ -166,9 +168,9 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
  **channel_url** | **str**|  |
  **operator_ids** | **[str]**|  |
+ **api_token** | **str**|  | [optional]
  **delete_all** | **bool**|  | [optional]
 
 ### Return type
@@ -194,7 +196,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **gc_check_if_member_by_id**
-> GcCheckIfMemberByIdResponse gc_check_if_member_by_id(api_token, channel_url, user_id)
+> GcCheckIfMemberByIdResponse gc_check_if_member_by_id(channel_url, user_id)
 
 Check if member
 
@@ -220,14 +222,23 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = group_channel_api.GroupChannelApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
     channel_url = "channel_url_example" # str | 
     user_id = "user_id_example" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Check if member
-        api_response = api_instance.gc_check_if_member_by_id(api_token, channel_url, user_id)
+        api_response = api_instance.gc_check_if_member_by_id(channel_url, user_id)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling GroupChannelApi->gc_check_if_member_by_id: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Check if member
+        api_response = api_instance.gc_check_if_member_by_id(channel_url, user_id, api_token=api_token)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling GroupChannelApi->gc_check_if_member_by_id: %s\n" % e)
@@ -238,9 +249,9 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
  **channel_url** | **str**|  |
  **user_id** | **str**|  |
+ **api_token** | **str**|  | [optional]
 
 ### Return type
 
@@ -265,7 +276,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **gc_create_channel**
-> SendBirdGroupChannel gc_create_channel(api_token)
+> SendBirdGroupChannel gc_create_channel()
 
 Create a channel
 
@@ -292,7 +303,7 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = group_channel_api.GroupChannelApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
     gc_create_channel_data = GcCreateChannelData(
         user_ids=[
             "user_ids_example",
@@ -352,18 +363,10 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     ) # GcCreateChannelData |  (optional)
 
     # example passing only required values which don't have defaults set
-    try:
-        # Create a channel
-        api_response = api_instance.gc_create_channel(api_token)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling GroupChannelApi->gc_create_channel: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Create a channel
-        api_response = api_instance.gc_create_channel(api_token, gc_create_channel_data=gc_create_channel_data)
+        api_response = api_instance.gc_create_channel(api_token=api_token, gc_create_channel_data=gc_create_channel_data)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling GroupChannelApi->gc_create_channel: %s\n" % e)
@@ -374,7 +377,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
+ **api_token** | **str**|  | [optional]
  **gc_create_channel_data** | [**GcCreateChannelData**](GcCreateChannelData.md)|  | [optional]
 
 ### Return type
@@ -400,7 +403,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **gc_decline_invitation**
-> OcDeleteChannelByUrl200Response gc_decline_invitation(api_token, channel_url)
+> OcDeleteChannelByUrl200Response gc_decline_invitation(channel_url)
 
 Decline an invitation
 
@@ -427,8 +430,8 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = group_channel_api.GroupChannelApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
     channel_url = "channel_url_example" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
     gc_decline_invitation_data = GcDeclineInvitationData(
         channel_url="channel_url_example",
         user_id="user_id_example",
@@ -437,7 +440,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Decline an invitation
-        api_response = api_instance.gc_decline_invitation(api_token, channel_url)
+        api_response = api_instance.gc_decline_invitation(channel_url)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling GroupChannelApi->gc_decline_invitation: %s\n" % e)
@@ -446,7 +449,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Decline an invitation
-        api_response = api_instance.gc_decline_invitation(api_token, channel_url, gc_decline_invitation_data=gc_decline_invitation_data)
+        api_response = api_instance.gc_decline_invitation(channel_url, api_token=api_token, gc_decline_invitation_data=gc_decline_invitation_data)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling GroupChannelApi->gc_decline_invitation: %s\n" % e)
@@ -457,8 +460,8 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
  **channel_url** | **str**|  |
+ **api_token** | **str**|  | [optional]
  **gc_decline_invitation_data** | [**GcDeclineInvitationData**](GcDeclineInvitationData.md)|  | [optional]
 
 ### Return type
@@ -484,7 +487,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **gc_delete_channel_by_url**
-> OcDeleteChannelByUrl200Response gc_delete_channel_by_url(api_token, channel_url)
+> OcDeleteChannelByUrl200Response gc_delete_channel_by_url(channel_url)
 
 Delete a channel
 
@@ -510,13 +513,22 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = group_channel_api.GroupChannelApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
     channel_url = "channel_url_example" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Delete a channel
-        api_response = api_instance.gc_delete_channel_by_url(api_token, channel_url)
+        api_response = api_instance.gc_delete_channel_by_url(channel_url)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling GroupChannelApi->gc_delete_channel_by_url: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Delete a channel
+        api_response = api_instance.gc_delete_channel_by_url(channel_url, api_token=api_token)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling GroupChannelApi->gc_delete_channel_by_url: %s\n" % e)
@@ -527,8 +539,8 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
  **channel_url** | **str**|  |
+ **api_token** | **str**|  | [optional]
 
 ### Return type
 
@@ -553,7 +565,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **gc_hide_or_archive_channel**
-> OcDeleteChannelByUrl200Response gc_hide_or_archive_channel(api_token, channel_url)
+> OcDeleteChannelByUrl200Response gc_hide_or_archive_channel(channel_url)
 
 Hide or archive a channel
 
@@ -580,8 +592,8 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = group_channel_api.GroupChannelApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
     channel_url = "channel_url_example" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
     gc_hide_or_archive_channel_data = GcHideOrArchiveChannelData(
         channel_url="channel_url_example",
         user_id="user_id_example",
@@ -593,7 +605,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Hide or archive a channel
-        api_response = api_instance.gc_hide_or_archive_channel(api_token, channel_url)
+        api_response = api_instance.gc_hide_or_archive_channel(channel_url)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling GroupChannelApi->gc_hide_or_archive_channel: %s\n" % e)
@@ -602,7 +614,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Hide or archive a channel
-        api_response = api_instance.gc_hide_or_archive_channel(api_token, channel_url, gc_hide_or_archive_channel_data=gc_hide_or_archive_channel_data)
+        api_response = api_instance.gc_hide_or_archive_channel(channel_url, api_token=api_token, gc_hide_or_archive_channel_data=gc_hide_or_archive_channel_data)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling GroupChannelApi->gc_hide_or_archive_channel: %s\n" % e)
@@ -613,8 +625,8 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
  **channel_url** | **str**|  |
+ **api_token** | **str**|  | [optional]
  **gc_hide_or_archive_channel_data** | [**GcHideOrArchiveChannelData**](GcHideOrArchiveChannelData.md)|  | [optional]
 
 ### Return type
@@ -640,7 +652,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **gc_invite_as_members**
-> SendBirdGroupChannel gc_invite_as_members(api_token, channel_url)
+> SendBirdGroupChannel gc_invite_as_members(channel_url)
 
 Invite as members
 
@@ -667,8 +679,8 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = group_channel_api.GroupChannelApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
     channel_url = "channel_url_example" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
     gc_invite_as_members_data = GcInviteAsMembersData(
         channel_url="channel_url_example",
         user_ids=[
@@ -684,7 +696,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Invite as members
-        api_response = api_instance.gc_invite_as_members(api_token, channel_url)
+        api_response = api_instance.gc_invite_as_members(channel_url)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling GroupChannelApi->gc_invite_as_members: %s\n" % e)
@@ -693,7 +705,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Invite as members
-        api_response = api_instance.gc_invite_as_members(api_token, channel_url, gc_invite_as_members_data=gc_invite_as_members_data)
+        api_response = api_instance.gc_invite_as_members(channel_url, api_token=api_token, gc_invite_as_members_data=gc_invite_as_members_data)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling GroupChannelApi->gc_invite_as_members: %s\n" % e)
@@ -704,8 +716,8 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
  **channel_url** | **str**|  |
+ **api_token** | **str**|  | [optional]
  **gc_invite_as_members_data** | [**GcInviteAsMembersData**](GcInviteAsMembersData.md)|  | [optional]
 
 ### Return type
@@ -731,7 +743,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **gc_join_channel**
-> gc_join_channel(api_token, channel_url)
+> gc_join_channel(channel_url)
 
 Join a channel
 
@@ -757,8 +769,8 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = group_channel_api.GroupChannelApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
     channel_url = "channel_url_example" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
     gc_join_channel_data = GcJoinChannelData(
         channel_url="channel_url_example",
         user_id="user_id_example",
@@ -768,7 +780,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Join a channel
-        api_instance.gc_join_channel(api_token, channel_url)
+        api_instance.gc_join_channel(channel_url)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling GroupChannelApi->gc_join_channel: %s\n" % e)
 
@@ -776,7 +788,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Join a channel
-        api_instance.gc_join_channel(api_token, channel_url, gc_join_channel_data=gc_join_channel_data)
+        api_instance.gc_join_channel(channel_url, api_token=api_token, gc_join_channel_data=gc_join_channel_data)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling GroupChannelApi->gc_join_channel: %s\n" % e)
 ```
@@ -786,8 +798,8 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
  **channel_url** | **str**|  |
+ **api_token** | **str**|  | [optional]
  **gc_join_channel_data** | [**GcJoinChannelData**](GcJoinChannelData.md)|  | [optional]
 
 ### Return type
@@ -813,7 +825,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **gc_leave_channel**
-> OcDeleteChannelByUrl200Response gc_leave_channel(api_token, channel_url)
+> OcDeleteChannelByUrl200Response gc_leave_channel(channel_url)
 
 Leave a channel
 
@@ -840,8 +852,8 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = group_channel_api.GroupChannelApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
     channel_url = "channel_url_example" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
     gc_leave_channel_data = GcLeaveChannelData(
         channel_url="channel_url_example",
         user_ids=[
@@ -853,7 +865,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Leave a channel
-        api_response = api_instance.gc_leave_channel(api_token, channel_url)
+        api_response = api_instance.gc_leave_channel(channel_url)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling GroupChannelApi->gc_leave_channel: %s\n" % e)
@@ -862,7 +874,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Leave a channel
-        api_response = api_instance.gc_leave_channel(api_token, channel_url, gc_leave_channel_data=gc_leave_channel_data)
+        api_response = api_instance.gc_leave_channel(channel_url, api_token=api_token, gc_leave_channel_data=gc_leave_channel_data)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling GroupChannelApi->gc_leave_channel: %s\n" % e)
@@ -873,8 +885,8 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
  **channel_url** | **str**|  |
+ **api_token** | **str**|  | [optional]
  **gc_leave_channel_data** | [**GcLeaveChannelData**](GcLeaveChannelData.md)|  | [optional]
 
 ### Return type
@@ -900,7 +912,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **gc_list_channels**
-> GcListChannelsResponse gc_list_channels(api_token)
+> GcListChannelsResponse gc_list_channels()
 
 List channels
 
@@ -926,7 +938,7 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = group_channel_api.GroupChannelApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
     token = "token_example" # str |  (optional)
     limit = 1 # int |  (optional)
     distinct_mode = "distinct_mode_example" # str |  (optional)
@@ -971,18 +983,10 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     user_id = "user_id_example" # str |  (optional)
 
     # example passing only required values which don't have defaults set
-    try:
-        # List channels
-        api_response = api_instance.gc_list_channels(api_token)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling GroupChannelApi->gc_list_channels: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
     # and optional values
     try:
         # List channels
-        api_response = api_instance.gc_list_channels(api_token, token=token, limit=limit, distinct_mode=distinct_mode, public_mode=public_mode, super_mode=super_mode, created_after=created_after, created_before=created_before, show_empty=show_empty, show_member=show_member, show_delivery_receipt=show_delivery_receipt, show_read_receipt=show_read_receipt, show_metadata=show_metadata, show_frozen=show_frozen, order=order, metadata_order_key=metadata_order_key, custom_types=custom_types, custom_type_startswith=custom_type_startswith, channel_urls=channel_urls, name=name, name_contains=name_contains, name_startswith=name_startswith, members_exactly_in=members_exactly_in, members_include_in=members_include_in, query_type=query_type, members_nickname=members_nickname, members_nickname_contains=members_nickname_contains, metadata_key=metadata_key, metadata_values=metadata_values, metadata_value_startswith=metadata_value_startswith, metacounter_key=metacounter_key, metacounter_values=metacounter_values, metacounter_value_gt=metacounter_value_gt, metacounter_value_gte=metacounter_value_gte, metacounter_value_lt=metacounter_value_lt, metacounter_value_lte=metacounter_value_lte, include_sorted_metaarray_in_last_message=include_sorted_metaarray_in_last_message, custom_type=custom_type, read_receipt=read_receipt, member=member, is_distinct=is_distinct, members_in=members_in, user_id=user_id)
+        api_response = api_instance.gc_list_channels(api_token=api_token, token=token, limit=limit, distinct_mode=distinct_mode, public_mode=public_mode, super_mode=super_mode, created_after=created_after, created_before=created_before, show_empty=show_empty, show_member=show_member, show_delivery_receipt=show_delivery_receipt, show_read_receipt=show_read_receipt, show_metadata=show_metadata, show_frozen=show_frozen, order=order, metadata_order_key=metadata_order_key, custom_types=custom_types, custom_type_startswith=custom_type_startswith, channel_urls=channel_urls, name=name, name_contains=name_contains, name_startswith=name_startswith, members_exactly_in=members_exactly_in, members_include_in=members_include_in, query_type=query_type, members_nickname=members_nickname, members_nickname_contains=members_nickname_contains, metadata_key=metadata_key, metadata_values=metadata_values, metadata_value_startswith=metadata_value_startswith, metacounter_key=metacounter_key, metacounter_values=metacounter_values, metacounter_value_gt=metacounter_value_gt, metacounter_value_gte=metacounter_value_gte, metacounter_value_lt=metacounter_value_lt, metacounter_value_lte=metacounter_value_lte, include_sorted_metaarray_in_last_message=include_sorted_metaarray_in_last_message, custom_type=custom_type, read_receipt=read_receipt, member=member, is_distinct=is_distinct, members_in=members_in, user_id=user_id)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling GroupChannelApi->gc_list_channels: %s\n" % e)
@@ -993,7 +997,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
+ **api_token** | **str**|  | [optional]
  **token** | **str**|  | [optional]
  **limit** | **int**|  | [optional]
  **distinct_mode** | **str**|  | [optional]
@@ -1060,7 +1064,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **gc_list_members**
-> GcListMembersResponse gc_list_members(api_token, channel_url)
+> GcListMembersResponse gc_list_members(channel_url)
 
 List members
 
@@ -1086,8 +1090,8 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = group_channel_api.GroupChannelApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
     channel_url = "channel_url_example" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
     token = "token_example" # str |  (optional)
     limit = 1 # int |  (optional)
     show_delivery_receipt = True # bool |  (optional)
@@ -1101,7 +1105,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # List members
-        api_response = api_instance.gc_list_members(api_token, channel_url)
+        api_response = api_instance.gc_list_members(channel_url)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling GroupChannelApi->gc_list_members: %s\n" % e)
@@ -1110,7 +1114,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # List members
-        api_response = api_instance.gc_list_members(api_token, channel_url, token=token, limit=limit, show_delivery_receipt=show_delivery_receipt, show_read_receipt=show_read_receipt, order=order, operator_filter=operator_filter, member_state_filter=member_state_filter, muted_member_filter=muted_member_filter, nickname_startswith=nickname_startswith)
+        api_response = api_instance.gc_list_members(channel_url, api_token=api_token, token=token, limit=limit, show_delivery_receipt=show_delivery_receipt, show_read_receipt=show_read_receipt, order=order, operator_filter=operator_filter, member_state_filter=member_state_filter, muted_member_filter=muted_member_filter, nickname_startswith=nickname_startswith)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling GroupChannelApi->gc_list_members: %s\n" % e)
@@ -1121,8 +1125,8 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
  **channel_url** | **str**|  |
+ **api_token** | **str**|  | [optional]
  **token** | **str**|  | [optional]
  **limit** | **int**|  | [optional]
  **show_delivery_receipt** | **bool**|  | [optional]
@@ -1156,7 +1160,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **gc_list_operators**
-> GcListOperatorsResponse gc_list_operators(api_token, channel_url)
+> GcListOperatorsResponse gc_list_operators(channel_url)
 
 List operators
 
@@ -1182,15 +1186,15 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = group_channel_api.GroupChannelApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
     channel_url = "channel_url_example" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
     token = "token_example" # str |  (optional)
     limit = 1 # int |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # List operators
-        api_response = api_instance.gc_list_operators(api_token, channel_url)
+        api_response = api_instance.gc_list_operators(channel_url)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling GroupChannelApi->gc_list_operators: %s\n" % e)
@@ -1199,7 +1203,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # List operators
-        api_response = api_instance.gc_list_operators(api_token, channel_url, token=token, limit=limit)
+        api_response = api_instance.gc_list_operators(channel_url, api_token=api_token, token=token, limit=limit)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling GroupChannelApi->gc_list_operators: %s\n" % e)
@@ -1210,8 +1214,8 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
  **channel_url** | **str**|  |
+ **api_token** | **str**|  | [optional]
  **token** | **str**|  | [optional]
  **limit** | **int**|  | [optional]
 
@@ -1238,7 +1242,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **gc_register_operators**
-> GcRegisterOperatorsResponse gc_register_operators(api_token, channel_url)
+> GcRegisterOperatorsResponse gc_register_operators(channel_url)
 
 Register operators
 
@@ -1265,8 +1269,8 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = group_channel_api.GroupChannelApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
     channel_url = "channel_url_example" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
     gc_register_operators_data = GcRegisterOperatorsData(
         channel_url="channel_url_example",
         operator_ids=[
@@ -1277,7 +1281,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Register operators
-        api_response = api_instance.gc_register_operators(api_token, channel_url)
+        api_response = api_instance.gc_register_operators(channel_url)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling GroupChannelApi->gc_register_operators: %s\n" % e)
@@ -1286,7 +1290,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Register operators
-        api_response = api_instance.gc_register_operators(api_token, channel_url, gc_register_operators_data=gc_register_operators_data)
+        api_response = api_instance.gc_register_operators(channel_url, api_token=api_token, gc_register_operators_data=gc_register_operators_data)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling GroupChannelApi->gc_register_operators: %s\n" % e)
@@ -1297,8 +1301,8 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
  **channel_url** | **str**|  |
+ **api_token** | **str**|  | [optional]
  **gc_register_operators_data** | [**GcRegisterOperatorsData**](GcRegisterOperatorsData.md)|  | [optional]
 
 ### Return type
@@ -1324,7 +1328,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **gc_reset_chat_history**
-> GcResetChatHistoryResponse gc_reset_chat_history(api_token, channel_url)
+> GcResetChatHistoryResponse gc_reset_chat_history(channel_url)
 
 Reset chat history
 
@@ -1351,8 +1355,8 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = group_channel_api.GroupChannelApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
     channel_url = "channel_url_example" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
     gc_reset_chat_history_data = GcResetChatHistoryData(
         channel_url="channel_url_example",
         user_id="user_id_example",
@@ -1362,7 +1366,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Reset chat history
-        api_response = api_instance.gc_reset_chat_history(api_token, channel_url)
+        api_response = api_instance.gc_reset_chat_history(channel_url)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling GroupChannelApi->gc_reset_chat_history: %s\n" % e)
@@ -1371,7 +1375,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Reset chat history
-        api_response = api_instance.gc_reset_chat_history(api_token, channel_url, gc_reset_chat_history_data=gc_reset_chat_history_data)
+        api_response = api_instance.gc_reset_chat_history(channel_url, api_token=api_token, gc_reset_chat_history_data=gc_reset_chat_history_data)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling GroupChannelApi->gc_reset_chat_history: %s\n" % e)
@@ -1382,8 +1386,8 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
  **channel_url** | **str**|  |
+ **api_token** | **str**|  | [optional]
  **gc_reset_chat_history_data** | [**GcResetChatHistoryData**](GcResetChatHistoryData.md)|  | [optional]
 
 ### Return type
@@ -1408,8 +1412,178 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **gc_start_typing_indicators**
+> OcDeleteChannelByUrl200Response gc_start_typing_indicators(channel_url)
+
+Start typing indicators
+
+## Start typing indicators  You can start showing a typing indicator using this API. Seeing whether other users are typing can help a more interactive conversation environment by showing real-time engagement of other users.  https://sendbird.com/docs/chat/platform-api/v3/channel/managing-typing-indicators/start-typing-indicators ----------------------------   `channel_url`      Type: string      Description: Specifies the URL of the channel to set typing indicators.
+
+### Example
+
+
+```python
+import time
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import group_channel_api
+from sendbird_platform_sdk.model.gc_typing_indicators_data import GcTypingIndicatorsData
+from sendbird_platform_sdk.model.oc_delete_channel_by_url200_response import OcDeleteChannelByUrl200Response
+from pprint import pprint
+# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = sendbird_platform_sdk.Configuration(
+    host = "https://api-APP_ID.sendbird.com"
+)
+
+
+# Enter a context with an instance of the API client
+with sendbird_platform_sdk.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = group_channel_api.GroupChannelApi(api_client)
+    channel_url = "channel_url_example" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
+    gc_typing_indicators_data = GcTypingIndicatorsData(
+        user_ids=[
+            "user_ids_example",
+        ],
+    ) # GcTypingIndicatorsData |  (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Start typing indicators
+        api_response = api_instance.gc_start_typing_indicators(channel_url)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling GroupChannelApi->gc_start_typing_indicators: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Start typing indicators
+        api_response = api_instance.gc_start_typing_indicators(channel_url, api_token=api_token, gc_typing_indicators_data=gc_typing_indicators_data)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling GroupChannelApi->gc_start_typing_indicators: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **channel_url** | **str**|  |
+ **api_token** | **str**|  | [optional]
+ **gc_typing_indicators_data** | [**GcTypingIndicatorsData**](GcTypingIndicatorsData.md)|  | [optional]
+
+### Return type
+
+[**OcDeleteChannelByUrl200Response**](OcDeleteChannelByUrl200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **gc_stop_typing_indicators**
+> OcDeleteChannelByUrl200Response gc_stop_typing_indicators(channel_url)
+
+Stop typing indicators
+
+## Stop typing indicators  You can stop showing a typing indicator using this API. To signal that a user is no longer typing, you can let the indicator disappear when the user sends a message or completely deletes the message text.  https://sendbird.com/docs/chat/platform-api/v3/channel/managing-typing-indicators/stop-typing-indicators ----------------------------   `channel_url`      Type: string      Description: Specifies the URL of the channel to set typing indicators.
+
+### Example
+
+
+```python
+import time
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import group_channel_api
+from sendbird_platform_sdk.model.gc_typing_indicators_data import GcTypingIndicatorsData
+from sendbird_platform_sdk.model.oc_delete_channel_by_url200_response import OcDeleteChannelByUrl200Response
+from pprint import pprint
+# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = sendbird_platform_sdk.Configuration(
+    host = "https://api-APP_ID.sendbird.com"
+)
+
+
+# Enter a context with an instance of the API client
+with sendbird_platform_sdk.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = group_channel_api.GroupChannelApi(api_client)
+    channel_url = "channel_url_example" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
+    gc_typing_indicators_data = GcTypingIndicatorsData(
+        user_ids=[
+            "user_ids_example",
+        ],
+    ) # GcTypingIndicatorsData |  (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Stop typing indicators
+        api_response = api_instance.gc_stop_typing_indicators(channel_url)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling GroupChannelApi->gc_stop_typing_indicators: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Stop typing indicators
+        api_response = api_instance.gc_stop_typing_indicators(channel_url, api_token=api_token, gc_typing_indicators_data=gc_typing_indicators_data)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling GroupChannelApi->gc_stop_typing_indicators: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **channel_url** | **str**|  |
+ **api_token** | **str**|  | [optional]
+ **gc_typing_indicators_data** | [**GcTypingIndicatorsData**](GcTypingIndicatorsData.md)|  | [optional]
+
+### Return type
+
+[**OcDeleteChannelByUrl200Response**](OcDeleteChannelByUrl200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **gc_unhide_or_unarchive_channel**
-> OcDeleteChannelByUrl200Response gc_unhide_or_unarchive_channel(api_token, channel_url, user_id)
+> OcDeleteChannelByUrl200Response gc_unhide_or_unarchive_channel(channel_url, user_id)
 
 Unhide or unarchive a channel
 
@@ -1435,15 +1609,15 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = group_channel_api.GroupChannelApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
     channel_url = "channel_url_example" # str | 
     user_id = "user_id_example" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
     should_unhide_all = True # bool |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Unhide or unarchive a channel
-        api_response = api_instance.gc_unhide_or_unarchive_channel(api_token, channel_url, user_id)
+        api_response = api_instance.gc_unhide_or_unarchive_channel(channel_url, user_id)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling GroupChannelApi->gc_unhide_or_unarchive_channel: %s\n" % e)
@@ -1452,7 +1626,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Unhide or unarchive a channel
-        api_response = api_instance.gc_unhide_or_unarchive_channel(api_token, channel_url, user_id, should_unhide_all=should_unhide_all)
+        api_response = api_instance.gc_unhide_or_unarchive_channel(channel_url, user_id, api_token=api_token, should_unhide_all=should_unhide_all)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling GroupChannelApi->gc_unhide_or_unarchive_channel: %s\n" % e)
@@ -1463,9 +1637,9 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
  **channel_url** | **str**|  |
  **user_id** | **str**|  |
+ **api_token** | **str**|  | [optional]
  **should_unhide_all** | **bool**|  | [optional]
 
 ### Return type
@@ -1491,7 +1665,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **gc_update_channel_by_url**
-> SendBirdGroupChannel gc_update_channel_by_url(api_token, channel_url)
+> SendBirdGroupChannel gc_update_channel_by_url(channel_url)
 
 Update a channel
 
@@ -1518,8 +1692,8 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = group_channel_api.GroupChannelApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
     channel_url = "channel_url_example" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
     gc_update_channel_by_url_data = GcUpdateChannelByUrlData(
         channel_url="channel_url_example",
         name="name_example",
@@ -1538,7 +1712,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Update a channel
-        api_response = api_instance.gc_update_channel_by_url(api_token, channel_url)
+        api_response = api_instance.gc_update_channel_by_url(channel_url)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling GroupChannelApi->gc_update_channel_by_url: %s\n" % e)
@@ -1547,7 +1721,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Update a channel
-        api_response = api_instance.gc_update_channel_by_url(api_token, channel_url, gc_update_channel_by_url_data=gc_update_channel_by_url_data)
+        api_response = api_instance.gc_update_channel_by_url(channel_url, api_token=api_token, gc_update_channel_by_url_data=gc_update_channel_by_url_data)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling GroupChannelApi->gc_update_channel_by_url: %s\n" % e)
@@ -1558,8 +1732,8 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
  **channel_url** | **str**|  |
+ **api_token** | **str**|  | [optional]
  **gc_update_channel_by_url_data** | [**GcUpdateChannelByUrlData**](GcUpdateChannelByUrlData.md)|  | [optional]
 
 ### Return type
@@ -1585,7 +1759,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **gc_view_channel_by_url**
-> SendBirdGroupChannel gc_view_channel_by_url(api_token, channel_url)
+> SendBirdGroupChannel gc_view_channel_by_url(channel_url)
 
 View a channel
 
@@ -1611,8 +1785,8 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = group_channel_api.GroupChannelApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
     channel_url = "channel_url_example" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
     show_delivery_receipt = True # bool |  (optional)
     show_read_receipt = True # bool |  (optional)
     show_member = True # bool |  (optional)
@@ -1622,7 +1796,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # View a channel
-        api_response = api_instance.gc_view_channel_by_url(api_token, channel_url)
+        api_response = api_instance.gc_view_channel_by_url(channel_url)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling GroupChannelApi->gc_view_channel_by_url: %s\n" % e)
@@ -1631,7 +1805,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # View a channel
-        api_response = api_instance.gc_view_channel_by_url(api_token, channel_url, show_delivery_receipt=show_delivery_receipt, show_read_receipt=show_read_receipt, show_member=show_member, read_receipt=read_receipt, member=member)
+        api_response = api_instance.gc_view_channel_by_url(channel_url, api_token=api_token, show_delivery_receipt=show_delivery_receipt, show_read_receipt=show_read_receipt, show_member=show_member, read_receipt=read_receipt, member=member)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling GroupChannelApi->gc_view_channel_by_url: %s\n" % e)
@@ -1642,8 +1816,8 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
  **channel_url** | **str**|  |
+ **api_token** | **str**|  | [optional]
  **show_delivery_receipt** | **bool**|  | [optional]
  **show_read_receipt** | **bool**|  | [optional]
  **show_member** | **bool**|  | [optional]

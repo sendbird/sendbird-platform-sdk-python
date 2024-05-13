@@ -64,13 +64,12 @@ class MetadataApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'channel_type',
                     'channel_url',
+                    'api_token',
                     'create_channel_metacounter_data',
                 ],
                 'required': [
-                    'api_token',
                     'channel_type',
                     'channel_url',
                 ],
@@ -87,24 +86,24 @@ class MetadataApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'channel_type':
                         (str,),
                     'channel_url':
+                        (str,),
+                    'api_token':
                         (str,),
                     'create_channel_metacounter_data':
                         (CreateChannelMetacounterData,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'channel_type': 'channel_type',
                     'channel_url': 'channel_url',
+                    'api_token': 'Api-Token',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'channel_type': 'path',
                     'channel_url': 'path',
+                    'api_token': 'header',
                     'create_channel_metacounter_data': 'body',
                 },
                 'collection_format_map': {
@@ -131,13 +130,12 @@ class MetadataApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'channel_type',
                     'channel_url',
+                    'api_token',
                     'create_channel_metadata_data',
                 ],
                 'required': [
-                    'api_token',
                     'channel_type',
                     'channel_url',
                 ],
@@ -154,24 +152,24 @@ class MetadataApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'channel_type':
                         (str,),
                     'channel_url':
+                        (str,),
+                    'api_token':
                         (str,),
                     'create_channel_metadata_data':
                         (CreateChannelMetadataData,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'channel_type': 'channel_type',
                     'channel_url': 'channel_url',
+                    'api_token': 'Api-Token',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'channel_type': 'path',
                     'channel_url': 'path',
+                    'api_token': 'header',
                     'create_channel_metadata_data': 'body',
                 },
                 'collection_format_map': {
@@ -198,12 +196,11 @@ class MetadataApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'user_id',
+                    'api_token',
                     'create_user_metadata_data',
                 ],
                 'required': [
-                    'api_token',
                     'user_id',
                 ],
                 'nullable': [
@@ -219,20 +216,20 @@ class MetadataApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'user_id':
+                        (str,),
+                    'api_token':
                         (str,),
                     'create_user_metadata_data':
                         (CreateUserMetadataData,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'user_id': 'user_id',
+                    'api_token': 'Api-Token',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'user_id': 'path',
+                    'api_token': 'header',
                     'create_user_metadata_data': 'body',
                 },
                 'collection_format_map': {
@@ -259,12 +256,11 @@ class MetadataApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'channel_type',
                     'channel_url',
+                    'api_token',
                 ],
                 'required': [
-                    'api_token',
                     'channel_type',
                     'channel_url',
                 ],
@@ -281,22 +277,22 @@ class MetadataApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'channel_type':
                         (str,),
                     'channel_url':
                         (str,),
+                    'api_token':
+                        (str,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'channel_type': 'channel_type',
                     'channel_url': 'channel_url',
+                    'api_token': 'Api-Token',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'channel_type': 'path',
                     'channel_url': 'path',
+                    'api_token': 'header',
                 },
                 'collection_format_map': {
                 }
@@ -318,13 +314,12 @@ class MetadataApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'channel_type',
                     'channel_url',
                     'key',
+                    'api_token',
                 ],
                 'required': [
-                    'api_token',
                     'channel_type',
                     'channel_url',
                     'key',
@@ -342,26 +337,26 @@ class MetadataApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'channel_type':
                         (str,),
                     'channel_url':
                         (str,),
                     'key':
                         (str,),
+                    'api_token':
+                        (str,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'channel_type': 'channel_type',
                     'channel_url': 'channel_url',
                     'key': 'key',
+                    'api_token': 'Api-Token',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'channel_type': 'path',
                     'channel_url': 'path',
                     'key': 'path',
+                    'api_token': 'header',
                 },
                 'collection_format_map': {
                 }
@@ -383,13 +378,12 @@ class MetadataApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'channel_type',
                     'channel_url',
+                    'api_token',
                     'key',
                 ],
                 'required': [
-                    'api_token',
                     'channel_type',
                     'channel_url',
                 ],
@@ -406,25 +400,25 @@ class MetadataApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'channel_type':
                         (str,),
                     'channel_url':
+                        (str,),
+                    'api_token':
                         (str,),
                     'key':
                         (str,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'channel_type': 'channel_type',
                     'channel_url': 'channel_url',
+                    'api_token': 'Api-Token',
                     'key': 'key',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'channel_type': 'path',
                     'channel_url': 'path',
+                    'api_token': 'header',
                     'key': 'query',
                 },
                 'collection_format_map': {
@@ -447,13 +441,12 @@ class MetadataApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'channel_type',
                     'channel_url',
                     'key',
+                    'api_token',
                 ],
                 'required': [
-                    'api_token',
                     'channel_type',
                     'channel_url',
                     'key',
@@ -471,26 +464,26 @@ class MetadataApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'channel_type':
                         (str,),
                     'channel_url':
                         (str,),
                     'key':
                         (str,),
+                    'api_token':
+                        (str,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'channel_type': 'channel_type',
                     'channel_url': 'channel_url',
                     'key': 'key',
+                    'api_token': 'Api-Token',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'channel_type': 'path',
                     'channel_url': 'path',
                     'key': 'path',
+                    'api_token': 'header',
                 },
                 'collection_format_map': {
                 }
@@ -512,12 +505,11 @@ class MetadataApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'user_id',
+                    'api_token',
                     'key',
                 ],
                 'required': [
-                    'api_token',
                     'user_id',
                 ],
                 'nullable': [
@@ -533,21 +525,21 @@ class MetadataApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'user_id':
+                        (str,),
+                    'api_token':
                         (str,),
                     'key':
                         (str,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'user_id': 'user_id',
+                    'api_token': 'Api-Token',
                     'key': 'key',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'user_id': 'path',
+                    'api_token': 'header',
                     'key': 'query',
                 },
                 'collection_format_map': {
@@ -570,12 +562,11 @@ class MetadataApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'user_id',
                     'key',
+                    'api_token',
                 ],
                 'required': [
-                    'api_token',
                     'user_id',
                     'key',
                 ],
@@ -592,22 +583,22 @@ class MetadataApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'user_id':
                         (str,),
                     'key':
                         (str,),
+                    'api_token':
+                        (str,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'user_id': 'user_id',
                     'key': 'key',
+                    'api_token': 'Api-Token',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'user_id': 'path',
                     'key': 'path',
+                    'api_token': 'header',
                 },
                 'collection_format_map': {
                 }
@@ -629,13 +620,12 @@ class MetadataApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'channel_type',
                     'channel_url',
+                    'api_token',
                     'update_channel_metacounter_data',
                 ],
                 'required': [
-                    'api_token',
                     'channel_type',
                     'channel_url',
                 ],
@@ -652,24 +642,24 @@ class MetadataApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'channel_type':
                         (str,),
                     'channel_url':
+                        (str,),
+                    'api_token':
                         (str,),
                     'update_channel_metacounter_data':
                         (UpdateChannelMetacounterData,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'channel_type': 'channel_type',
                     'channel_url': 'channel_url',
+                    'api_token': 'Api-Token',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'channel_type': 'path',
                     'channel_url': 'path',
+                    'api_token': 'header',
                     'update_channel_metacounter_data': 'body',
                 },
                 'collection_format_map': {
@@ -696,14 +686,13 @@ class MetadataApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'channel_type',
                     'channel_url',
                     'key',
+                    'api_token',
                     'body',
                 ],
                 'required': [
-                    'api_token',
                     'channel_type',
                     'channel_url',
                     'key',
@@ -721,28 +710,28 @@ class MetadataApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'channel_type':
                         (str,),
                     'channel_url':
                         (str,),
                     'key':
                         (str,),
+                    'api_token':
+                        (str,),
                     'body':
                         ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'channel_type': 'channel_type',
                     'channel_url': 'channel_url',
                     'key': 'key',
+                    'api_token': 'Api-Token',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'channel_type': 'path',
                     'channel_url': 'path',
                     'key': 'path',
+                    'api_token': 'header',
                     'body': 'body',
                 },
                 'collection_format_map': {
@@ -769,13 +758,12 @@ class MetadataApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'channel_type',
                     'channel_url',
+                    'api_token',
                     'update_channel_metadata_data',
                 ],
                 'required': [
-                    'api_token',
                     'channel_type',
                     'channel_url',
                 ],
@@ -792,24 +780,24 @@ class MetadataApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'channel_type':
                         (str,),
                     'channel_url':
+                        (str,),
+                    'api_token':
                         (str,),
                     'update_channel_metadata_data':
                         (UpdateChannelMetadataData,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'channel_type': 'channel_type',
                     'channel_url': 'channel_url',
+                    'api_token': 'Api-Token',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'channel_type': 'path',
                     'channel_url': 'path',
+                    'api_token': 'header',
                     'update_channel_metadata_data': 'body',
                 },
                 'collection_format_map': {
@@ -836,14 +824,13 @@ class MetadataApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'channel_type',
                     'channel_url',
                     'key',
+                    'api_token',
                     'body',
                 ],
                 'required': [
-                    'api_token',
                     'channel_type',
                     'channel_url',
                     'key',
@@ -861,28 +848,28 @@ class MetadataApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'channel_type':
                         (str,),
                     'channel_url':
                         (str,),
                     'key':
                         (str,),
+                    'api_token':
+                        (str,),
                     'body':
                         ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'channel_type': 'channel_type',
                     'channel_url': 'channel_url',
                     'key': 'key',
+                    'api_token': 'Api-Token',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'channel_type': 'path',
                     'channel_url': 'path',
                     'key': 'path',
+                    'api_token': 'header',
                     'body': 'body',
                 },
                 'collection_format_map': {
@@ -909,12 +896,11 @@ class MetadataApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'user_id',
+                    'api_token',
                     'update_user_metadata_data',
                 ],
                 'required': [
-                    'api_token',
                     'user_id',
                 ],
                 'nullable': [
@@ -930,20 +916,20 @@ class MetadataApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'user_id':
+                        (str,),
+                    'api_token':
                         (str,),
                     'update_user_metadata_data':
                         (UpdateUserMetadataData,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'user_id': 'user_id',
+                    'api_token': 'Api-Token',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'user_id': 'path',
+                    'api_token': 'header',
                     'update_user_metadata_data': 'body',
                 },
                 'collection_format_map': {
@@ -970,13 +956,12 @@ class MetadataApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'user_id',
                     'key',
+                    'api_token',
                     'body',
                 ],
                 'required': [
-                    'api_token',
                     'user_id',
                     'key',
                 ],
@@ -993,24 +978,24 @@ class MetadataApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'user_id':
                         (str,),
                     'key':
+                        (str,),
+                    'api_token':
                         (str,),
                     'body':
                         ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'user_id': 'user_id',
                     'key': 'key',
+                    'api_token': 'Api-Token',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'user_id': 'path',
                     'key': 'path',
+                    'api_token': 'header',
                     'body': 'body',
                 },
                 'collection_format_map': {
@@ -1037,14 +1022,13 @@ class MetadataApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'channel_type',
                     'channel_url',
+                    'api_token',
                     'key',
                     'keys',
                 ],
                 'required': [
-                    'api_token',
                     'channel_type',
                     'channel_url',
                 ],
@@ -1061,11 +1045,11 @@ class MetadataApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'channel_type':
                         (str,),
                     'channel_url':
+                        (str,),
+                    'api_token':
                         (str,),
                     'key':
                         (str,),
@@ -1073,16 +1057,16 @@ class MetadataApi(object):
                         ([str],),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'channel_type': 'channel_type',
                     'channel_url': 'channel_url',
+                    'api_token': 'Api-Token',
                     'key': 'key',
                     'keys': 'keys',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'channel_type': 'path',
                     'channel_url': 'path',
+                    'api_token': 'header',
                     'key': 'query',
                     'keys': 'query',
                 },
@@ -1109,13 +1093,12 @@ class MetadataApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'channel_type',
                     'channel_url',
                     'key',
+                    'api_token',
                 ],
                 'required': [
-                    'api_token',
                     'channel_type',
                     'channel_url',
                     'key',
@@ -1133,26 +1116,26 @@ class MetadataApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'channel_type':
                         (str,),
                     'channel_url':
                         (str,),
                     'key':
                         (str,),
+                    'api_token':
+                        (str,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'channel_type': 'channel_type',
                     'channel_url': 'channel_url',
                     'key': 'key',
+                    'api_token': 'Api-Token',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'channel_type': 'path',
                     'channel_url': 'path',
                     'key': 'path',
+                    'api_token': 'header',
                 },
                 'collection_format_map': {
                 }
@@ -1176,14 +1159,13 @@ class MetadataApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'channel_type',
                     'channel_url',
+                    'api_token',
                     'key',
                     'keys',
                 ],
                 'required': [
-                    'api_token',
                     'channel_type',
                     'channel_url',
                 ],
@@ -1200,11 +1182,11 @@ class MetadataApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'channel_type':
                         (str,),
                     'channel_url':
+                        (str,),
+                    'api_token':
                         (str,),
                     'key':
                         (str,),
@@ -1212,16 +1194,16 @@ class MetadataApi(object):
                         ([str],),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'channel_type': 'channel_type',
                     'channel_url': 'channel_url',
+                    'api_token': 'Api-Token',
                     'key': 'key',
                     'keys': 'keys',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'channel_type': 'path',
                     'channel_url': 'path',
+                    'api_token': 'header',
                     'key': 'query',
                     'keys': 'query',
                 },
@@ -1248,13 +1230,12 @@ class MetadataApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'channel_type',
                     'channel_url',
                     'key',
+                    'api_token',
                 ],
                 'required': [
-                    'api_token',
                     'channel_type',
                     'channel_url',
                     'key',
@@ -1272,26 +1253,26 @@ class MetadataApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'channel_type':
                         (str,),
                     'channel_url':
                         (str,),
                     'key':
                         (str,),
+                    'api_token':
+                        (str,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'channel_type': 'channel_type',
                     'channel_url': 'channel_url',
                     'key': 'key',
+                    'api_token': 'Api-Token',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'channel_type': 'path',
                     'channel_url': 'path',
                     'key': 'path',
+                    'api_token': 'header',
                 },
                 'collection_format_map': {
                 }
@@ -1315,13 +1296,12 @@ class MetadataApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'user_id',
+                    'api_token',
                     'key',
                     'keys',
                 ],
                 'required': [
-                    'api_token',
                     'user_id',
                 ],
                 'nullable': [
@@ -1337,9 +1317,9 @@ class MetadataApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'user_id':
+                        (str,),
+                    'api_token':
                         (str,),
                     'key':
                         (str,),
@@ -1347,14 +1327,14 @@ class MetadataApi(object):
                         ([str],),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'user_id': 'user_id',
+                    'api_token': 'Api-Token',
                     'key': 'key',
                     'keys': 'keys',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'user_id': 'path',
+                    'api_token': 'header',
                     'key': 'query',
                     'keys': 'query',
                 },
@@ -1381,12 +1361,11 @@ class MetadataApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'user_id',
                     'key',
+                    'api_token',
                 ],
                 'required': [
-                    'api_token',
                     'user_id',
                     'key',
                 ],
@@ -1403,22 +1382,22 @@ class MetadataApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'user_id':
                         (str,),
                     'key':
                         (str,),
+                    'api_token':
+                        (str,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'user_id': 'user_id',
                     'key': 'key',
+                    'api_token': 'Api-Token',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'user_id': 'path',
                     'key': 'path',
+                    'api_token': 'header',
                 },
                 'collection_format_map': {
                 }
@@ -1434,7 +1413,6 @@ class MetadataApi(object):
 
     def create_channel_metacounter(
         self,
-        api_token,
         channel_type,
         channel_url,
         **kwargs
@@ -1445,15 +1423,15 @@ class MetadataApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.create_channel_metacounter(api_token, channel_type, channel_url, async_req=True)
+        >>> thread = api.create_channel_metacounter(channel_type, channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             channel_type (str):
             channel_url (str):
 
         Keyword Args:
+            api_token (str): [optional]
             create_channel_metacounter_data (CreateChannelMetacounterData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -1516,8 +1494,6 @@ class MetadataApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['channel_type'] = \
             channel_type
         kwargs['channel_url'] = \
@@ -1526,7 +1502,6 @@ class MetadataApi(object):
 
     def create_channel_metadata(
         self,
-        api_token,
         channel_type,
         channel_url,
         **kwargs
@@ -1537,15 +1512,15 @@ class MetadataApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.create_channel_metadata(api_token, channel_type, channel_url, async_req=True)
+        >>> thread = api.create_channel_metadata(channel_type, channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             channel_type (str):
             channel_url (str):
 
         Keyword Args:
+            api_token (str): [optional]
             create_channel_metadata_data (CreateChannelMetadataData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -1608,8 +1583,6 @@ class MetadataApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['channel_type'] = \
             channel_type
         kwargs['channel_url'] = \
@@ -1618,7 +1591,6 @@ class MetadataApi(object):
 
     def create_user_metadata(
         self,
-        api_token,
         user_id,
         **kwargs
     ):
@@ -1628,14 +1600,14 @@ class MetadataApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.create_user_metadata(api_token, user_id, async_req=True)
+        >>> thread = api.create_user_metadata(user_id, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             user_id (str):
 
         Keyword Args:
+            api_token (str): [optional]
             create_user_metadata_data (CreateUserMetadataData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -1698,15 +1670,12 @@ class MetadataApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['user_id'] = \
             user_id
         return self.create_user_metadata_endpoint.call_with_http_info(**kwargs)
 
     def delete_channel_metacounter(
         self,
-        api_token,
         channel_type,
         channel_url,
         **kwargs
@@ -1717,15 +1686,15 @@ class MetadataApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.delete_channel_metacounter(api_token, channel_type, channel_url, async_req=True)
+        >>> thread = api.delete_channel_metacounter(channel_type, channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             channel_type (str):
             channel_url (str):
 
         Keyword Args:
+            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -1787,8 +1756,6 @@ class MetadataApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['channel_type'] = \
             channel_type
         kwargs['channel_url'] = \
@@ -1797,7 +1764,6 @@ class MetadataApi(object):
 
     def delete_channel_metacounter_by_key(
         self,
-        api_token,
         channel_type,
         channel_url,
         key,
@@ -1809,16 +1775,16 @@ class MetadataApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.delete_channel_metacounter_by_key(api_token, channel_type, channel_url, key, async_req=True)
+        >>> thread = api.delete_channel_metacounter_by_key(channel_type, channel_url, key, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             channel_type (str):
             channel_url (str):
             key (str):
 
         Keyword Args:
+            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -1880,8 +1846,6 @@ class MetadataApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['channel_type'] = \
             channel_type
         kwargs['channel_url'] = \
@@ -1892,7 +1856,6 @@ class MetadataApi(object):
 
     def delete_channel_metadata(
         self,
-        api_token,
         channel_type,
         channel_url,
         **kwargs
@@ -1903,15 +1866,15 @@ class MetadataApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.delete_channel_metadata(api_token, channel_type, channel_url, async_req=True)
+        >>> thread = api.delete_channel_metadata(channel_type, channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             channel_type (str):
             channel_url (str):
 
         Keyword Args:
+            api_token (str): [optional]
             key (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -1974,8 +1937,6 @@ class MetadataApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['channel_type'] = \
             channel_type
         kwargs['channel_url'] = \
@@ -1984,7 +1945,6 @@ class MetadataApi(object):
 
     def delete_channel_metadata_by_key(
         self,
-        api_token,
         channel_type,
         channel_url,
         key,
@@ -1996,16 +1956,16 @@ class MetadataApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.delete_channel_metadata_by_key(api_token, channel_type, channel_url, key, async_req=True)
+        >>> thread = api.delete_channel_metadata_by_key(channel_type, channel_url, key, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             channel_type (str):
             channel_url (str):
             key (str):
 
         Keyword Args:
+            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -2067,8 +2027,6 @@ class MetadataApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['channel_type'] = \
             channel_type
         kwargs['channel_url'] = \
@@ -2079,7 +2037,6 @@ class MetadataApi(object):
 
     def delete_user_metadata(
         self,
-        api_token,
         user_id,
         **kwargs
     ):
@@ -2089,14 +2046,14 @@ class MetadataApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.delete_user_metadata(api_token, user_id, async_req=True)
+        >>> thread = api.delete_user_metadata(user_id, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             user_id (str):
 
         Keyword Args:
+            api_token (str): [optional]
             key (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -2159,15 +2116,12 @@ class MetadataApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['user_id'] = \
             user_id
         return self.delete_user_metadata_endpoint.call_with_http_info(**kwargs)
 
     def delete_user_metadata_by_key(
         self,
-        api_token,
         user_id,
         key,
         **kwargs
@@ -2178,15 +2132,15 @@ class MetadataApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.delete_user_metadata_by_key(api_token, user_id, key, async_req=True)
+        >>> thread = api.delete_user_metadata_by_key(user_id, key, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             user_id (str):
             key (str):
 
         Keyword Args:
+            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -2248,8 +2202,6 @@ class MetadataApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['user_id'] = \
             user_id
         kwargs['key'] = \
@@ -2258,7 +2210,6 @@ class MetadataApi(object):
 
     def update_channel_metacounter(
         self,
-        api_token,
         channel_type,
         channel_url,
         **kwargs
@@ -2269,15 +2220,15 @@ class MetadataApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.update_channel_metacounter(api_token, channel_type, channel_url, async_req=True)
+        >>> thread = api.update_channel_metacounter(channel_type, channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             channel_type (str):
             channel_url (str):
 
         Keyword Args:
+            api_token (str): [optional]
             update_channel_metacounter_data (UpdateChannelMetacounterData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -2340,8 +2291,6 @@ class MetadataApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['channel_type'] = \
             channel_type
         kwargs['channel_url'] = \
@@ -2350,7 +2299,6 @@ class MetadataApi(object):
 
     def update_channel_metacounter_by_key(
         self,
-        api_token,
         channel_type,
         channel_url,
         key,
@@ -2362,16 +2310,16 @@ class MetadataApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.update_channel_metacounter_by_key(api_token, channel_type, channel_url, key, async_req=True)
+        >>> thread = api.update_channel_metacounter_by_key(channel_type, channel_url, key, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             channel_type (str):
             channel_url (str):
             key (str):
 
         Keyword Args:
+            api_token (str): [optional]
             body ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -2434,8 +2382,6 @@ class MetadataApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['channel_type'] = \
             channel_type
         kwargs['channel_url'] = \
@@ -2446,7 +2392,6 @@ class MetadataApi(object):
 
     def update_channel_metadata(
         self,
-        api_token,
         channel_type,
         channel_url,
         **kwargs
@@ -2457,15 +2402,15 @@ class MetadataApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.update_channel_metadata(api_token, channel_type, channel_url, async_req=True)
+        >>> thread = api.update_channel_metadata(channel_type, channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             channel_type (str):
             channel_url (str):
 
         Keyword Args:
+            api_token (str): [optional]
             update_channel_metadata_data (UpdateChannelMetadataData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -2528,8 +2473,6 @@ class MetadataApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['channel_type'] = \
             channel_type
         kwargs['channel_url'] = \
@@ -2538,7 +2481,6 @@ class MetadataApi(object):
 
     def update_channel_metadata_by_key(
         self,
-        api_token,
         channel_type,
         channel_url,
         key,
@@ -2550,16 +2492,16 @@ class MetadataApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.update_channel_metadata_by_key(api_token, channel_type, channel_url, key, async_req=True)
+        >>> thread = api.update_channel_metadata_by_key(channel_type, channel_url, key, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             channel_type (str):
             channel_url (str):
             key (str):
 
         Keyword Args:
+            api_token (str): [optional]
             body ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -2622,8 +2564,6 @@ class MetadataApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['channel_type'] = \
             channel_type
         kwargs['channel_url'] = \
@@ -2634,7 +2574,6 @@ class MetadataApi(object):
 
     def update_user_metadata(
         self,
-        api_token,
         user_id,
         **kwargs
     ):
@@ -2644,14 +2583,14 @@ class MetadataApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.update_user_metadata(api_token, user_id, async_req=True)
+        >>> thread = api.update_user_metadata(user_id, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             user_id (str):
 
         Keyword Args:
+            api_token (str): [optional]
             update_user_metadata_data (UpdateUserMetadataData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -2714,15 +2653,12 @@ class MetadataApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['user_id'] = \
             user_id
         return self.update_user_metadata_endpoint.call_with_http_info(**kwargs)
 
     def update_user_metadata_by_key(
         self,
-        api_token,
         user_id,
         key,
         **kwargs
@@ -2733,15 +2669,15 @@ class MetadataApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.update_user_metadata_by_key(api_token, user_id, key, async_req=True)
+        >>> thread = api.update_user_metadata_by_key(user_id, key, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             user_id (str):
             key (str):
 
         Keyword Args:
+            api_token (str): [optional]
             body ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -2804,8 +2740,6 @@ class MetadataApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['user_id'] = \
             user_id
         kwargs['key'] = \
@@ -2814,7 +2748,6 @@ class MetadataApi(object):
 
     def view_channel_metacounter(
         self,
-        api_token,
         channel_type,
         channel_url,
         **kwargs
@@ -2825,15 +2758,15 @@ class MetadataApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.view_channel_metacounter(api_token, channel_type, channel_url, async_req=True)
+        >>> thread = api.view_channel_metacounter(channel_type, channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             channel_type (str):
             channel_url (str):
 
         Keyword Args:
+            api_token (str): [optional]
             key (str): [optional]
             keys ([str]): [optional]
             _return_http_data_only (bool): response data without head status
@@ -2897,8 +2830,6 @@ class MetadataApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['channel_type'] = \
             channel_type
         kwargs['channel_url'] = \
@@ -2907,7 +2838,6 @@ class MetadataApi(object):
 
     def view_channel_metacounter_by_key(
         self,
-        api_token,
         channel_type,
         channel_url,
         key,
@@ -2919,16 +2849,16 @@ class MetadataApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.view_channel_metacounter_by_key(api_token, channel_type, channel_url, key, async_req=True)
+        >>> thread = api.view_channel_metacounter_by_key(channel_type, channel_url, key, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             channel_type (str):
             channel_url (str):
             key (str):
 
         Keyword Args:
+            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -2990,8 +2920,6 @@ class MetadataApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['channel_type'] = \
             channel_type
         kwargs['channel_url'] = \
@@ -3002,7 +2930,6 @@ class MetadataApi(object):
 
     def view_channel_metadata(
         self,
-        api_token,
         channel_type,
         channel_url,
         **kwargs
@@ -3013,15 +2940,15 @@ class MetadataApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.view_channel_metadata(api_token, channel_type, channel_url, async_req=True)
+        >>> thread = api.view_channel_metadata(channel_type, channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             channel_type (str):
             channel_url (str):
 
         Keyword Args:
+            api_token (str): [optional]
             key (str): [optional]
             keys ([str]): [optional]
             _return_http_data_only (bool): response data without head status
@@ -3085,8 +3012,6 @@ class MetadataApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['channel_type'] = \
             channel_type
         kwargs['channel_url'] = \
@@ -3095,7 +3020,6 @@ class MetadataApi(object):
 
     def view_channel_metadata_by_key(
         self,
-        api_token,
         channel_type,
         channel_url,
         key,
@@ -3107,16 +3031,16 @@ class MetadataApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.view_channel_metadata_by_key(api_token, channel_type, channel_url, key, async_req=True)
+        >>> thread = api.view_channel_metadata_by_key(channel_type, channel_url, key, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             channel_type (str):
             channel_url (str):
             key (str):
 
         Keyword Args:
+            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -3178,8 +3102,6 @@ class MetadataApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['channel_type'] = \
             channel_type
         kwargs['channel_url'] = \
@@ -3190,7 +3112,6 @@ class MetadataApi(object):
 
     def view_user_metadata(
         self,
-        api_token,
         user_id,
         **kwargs
     ):
@@ -3200,14 +3121,14 @@ class MetadataApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.view_user_metadata(api_token, user_id, async_req=True)
+        >>> thread = api.view_user_metadata(user_id, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             user_id (str):
 
         Keyword Args:
+            api_token (str): [optional]
             key (str): [optional]
             keys ([str]): [optional]
             _return_http_data_only (bool): response data without head status
@@ -3271,15 +3192,12 @@ class MetadataApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['user_id'] = \
             user_id
         return self.view_user_metadata_endpoint.call_with_http_info(**kwargs)
 
     def view_user_metadata_by_key(
         self,
-        api_token,
         user_id,
         key,
         **kwargs
@@ -3290,15 +3208,15 @@ class MetadataApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.view_user_metadata_by_key(api_token, user_id, key, async_req=True)
+        >>> thread = api.view_user_metadata_by_key(user_id, key, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             user_id (str):
             key (str):
 
         Keyword Args:
+            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -3360,8 +3278,6 @@ class MetadataApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['user_id'] = \
             user_id
         kwargs['key'] = \

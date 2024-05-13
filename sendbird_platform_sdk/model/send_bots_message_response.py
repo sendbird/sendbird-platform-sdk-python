@@ -72,7 +72,7 @@ class SendBotsMessageResponse(ModelSimple):
                 and the value is attribute type.
         """
         return {
-            'value': (SendBirdMessageResponse,),
+            'value': (SendBirdBotsMessageResponse,),
         }
 
     @cached_property
@@ -102,10 +102,10 @@ class SendBotsMessageResponse(ModelSimple):
         Note that value can be passed either in args or in kwargs, but not in both.
 
         Args:
-            args[0] (SendBirdMessageResponse):  # noqa: E501
+            args[0] (SendBirdBotsMessageResponse):  # noqa: E501
 
         Keyword Args:
-            value (SendBirdMessageResponse):  # noqa: E501
+            value (SendBirdBotsMessageResponse):  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
@@ -196,10 +196,10 @@ class SendBotsMessageResponse(ModelSimple):
         Note that value can be passed either in args or in kwargs, but not in both.
 
         Args:
-            args[0] (SendBirdMessageResponse):  # noqa: E501
+            args[0] (SendBirdBotsMessageResponse):  # noqa: E501
 
         Keyword Args:
-            value (SendBirdMessageResponse):  # noqa: E501
+            value (SendBirdBotsMessageResponse):  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.

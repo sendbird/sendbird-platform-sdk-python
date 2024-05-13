@@ -37,7 +37,7 @@ Method | HTTP request | Description
 
 
 # **add_registration_or_device_token**
-> AddRegistrationOrDeviceTokenResponse add_registration_or_device_token(api_token, user_id, token_type)
+> AddRegistrationOrDeviceTokenResponse add_registration_or_device_token(user_id, token_type)
 
 Add a registration or device token
 
@@ -64,9 +64,9 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = user_api.UserApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
     user_id = "user_id_example" # str | 
     token_type = "token_type_example" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
     add_registration_or_device_token_data = AddRegistrationOrDeviceTokenData(
         gcm_reg_token="gcm_reg_token_example",
         huawei_device_token="huawei_device_token_example",
@@ -76,7 +76,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Add a registration or device token
-        api_response = api_instance.add_registration_or_device_token(api_token, user_id, token_type)
+        api_response = api_instance.add_registration_or_device_token(user_id, token_type)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserApi->add_registration_or_device_token: %s\n" % e)
@@ -85,7 +85,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Add a registration or device token
-        api_response = api_instance.add_registration_or_device_token(api_token, user_id, token_type, add_registration_or_device_token_data=add_registration_or_device_token_data)
+        api_response = api_instance.add_registration_or_device_token(user_id, token_type, api_token=api_token, add_registration_or_device_token_data=add_registration_or_device_token_data)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserApi->add_registration_or_device_token: %s\n" % e)
@@ -96,9 +96,9 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
  **user_id** | **str**|  |
  **token_type** | **str**|  |
+ **api_token** | **str**|  | [optional]
  **add_registration_or_device_token_data** | [**AddRegistrationOrDeviceTokenData**](AddRegistrationOrDeviceTokenData.md)|  | [optional]
 
 ### Return type
@@ -124,7 +124,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **choose_push_notification_content_template**
-> ChoosePushNotificationContentTemplateResponse choose_push_notification_content_template(api_token, user_id)
+> ChoosePushNotificationContentTemplateResponse choose_push_notification_content_template(user_id)
 
 Choose a push notification content template
 
@@ -150,14 +150,14 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = user_api.UserApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
     user_id = "user_id_example" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
     body = {} # {str: (bool, date, datetime, dict, float, int, list, str, none_type)} |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Choose a push notification content template
-        api_response = api_instance.choose_push_notification_content_template(api_token, user_id)
+        api_response = api_instance.choose_push_notification_content_template(user_id)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserApi->choose_push_notification_content_template: %s\n" % e)
@@ -166,7 +166,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Choose a push notification content template
-        api_response = api_instance.choose_push_notification_content_template(api_token, user_id, body=body)
+        api_response = api_instance.choose_push_notification_content_template(user_id, api_token=api_token, body=body)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserApi->choose_push_notification_content_template: %s\n" % e)
@@ -177,8 +177,8 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
  **user_id** | **str**|  |
+ **api_token** | **str**|  | [optional]
  **body** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}**|  | [optional]
 
 ### Return type
@@ -204,7 +204,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_user**
-> SendBirdUser create_user(api_token)
+> SendBirdUser create_user()
 
 Create a user
 
@@ -231,7 +231,7 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = user_api.UserApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
     create_user_data = CreateUserData(
         user_id="user_id_example",
         nickname="nickname_example",
@@ -245,18 +245,10 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     ) # CreateUserData |  (optional)
 
     # example passing only required values which don't have defaults set
-    try:
-        # Create a user
-        api_response = api_instance.create_user(api_token)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling UserApi->create_user: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Create a user
-        api_response = api_instance.create_user(api_token, create_user_data=create_user_data)
+        api_response = api_instance.create_user(api_token=api_token, create_user_data=create_user_data)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserApi->create_user: %s\n" % e)
@@ -267,7 +259,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
+ **api_token** | **str**|  | [optional]
  **create_user_data** | [**CreateUserData**](CreateUserData.md)|  | [optional]
 
 ### Return type
@@ -293,7 +285,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_user_token**
-> CreateUserTokenResponse create_user_token(api_token, user_id)
+> CreateUserTokenResponse create_user_token(user_id)
 
 Create user token
 
@@ -320,8 +312,8 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = user_api.UserApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
     user_id = "user_id_example" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
     create_user_token_data = CreateUserTokenData(
         expires_at=3.14,
     ) # CreateUserTokenData |  (optional)
@@ -329,7 +321,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Create user token
-        api_response = api_instance.create_user_token(api_token, user_id)
+        api_response = api_instance.create_user_token(user_id)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserApi->create_user_token: %s\n" % e)
@@ -338,7 +330,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Create user token
-        api_response = api_instance.create_user_token(api_token, user_id, create_user_token_data=create_user_token_data)
+        api_response = api_instance.create_user_token(user_id, api_token=api_token, create_user_token_data=create_user_token_data)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserApi->create_user_token: %s\n" % e)
@@ -349,8 +341,8 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
  **user_id** | **str**|  |
+ **api_token** | **str**|  | [optional]
  **create_user_token_data** | [**CreateUserTokenData**](CreateUserTokenData.md)|  | [optional]
 
 ### Return type
@@ -376,7 +368,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_user_by_id**
-> {str: (bool, date, datetime, dict, float, int, list, str, none_type)} delete_user_by_id(api_token, user_id)
+> {str: (bool, date, datetime, dict, float, int, list, str, none_type)} delete_user_by_id(user_id)
 
 Delete a user
 
@@ -401,13 +393,22 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = user_api.UserApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
     user_id = "user_id_example" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Delete a user
-        api_response = api_instance.delete_user_by_id(api_token, user_id)
+        api_response = api_instance.delete_user_by_id(user_id)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling UserApi->delete_user_by_id: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Delete a user
+        api_response = api_instance.delete_user_by_id(user_id, api_token=api_token)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserApi->delete_user_by_id: %s\n" % e)
@@ -418,8 +419,8 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
  **user_id** | **str**|  |
+ **api_token** | **str**|  | [optional]
 
 ### Return type
 
@@ -444,7 +445,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **leave_my_group_channels**
-> {str: (bool, date, datetime, dict, float, int, list, str, none_type)} leave_my_group_channels(api_token, user_id)
+> {str: (bool, date, datetime, dict, float, int, list, str, none_type)} leave_my_group_channels(user_id)
 
 Leave my group channels
 
@@ -470,8 +471,8 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = user_api.UserApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
     user_id = "user_id_example" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
     leave_my_group_channels_data = LeaveMyGroupChannelsData(
         custom_type="custom_type_example",
     ) # LeaveMyGroupChannelsData |  (optional)
@@ -479,7 +480,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Leave my group channels
-        api_response = api_instance.leave_my_group_channels(api_token, user_id)
+        api_response = api_instance.leave_my_group_channels(user_id)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserApi->leave_my_group_channels: %s\n" % e)
@@ -488,7 +489,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Leave my group channels
-        api_response = api_instance.leave_my_group_channels(api_token, user_id, leave_my_group_channels_data=leave_my_group_channels_data)
+        api_response = api_instance.leave_my_group_channels(user_id, api_token=api_token, leave_my_group_channels_data=leave_my_group_channels_data)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserApi->leave_my_group_channels: %s\n" % e)
@@ -499,8 +500,8 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
  **user_id** | **str**|  |
+ **api_token** | **str**|  | [optional]
  **leave_my_group_channels_data** | [**LeaveMyGroupChannelsData**](LeaveMyGroupChannelsData.md)|  | [optional]
 
 ### Return type
@@ -526,7 +527,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_my_group_channels**
-> ListMyGroupChannelsResponse list_my_group_channels(api_token, user_id)
+> ListMyGroupChannelsResponse list_my_group_channels(user_id)
 
 List my group channels
 
@@ -552,8 +553,8 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = user_api.UserApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
     user_id = "user_id_example" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
     token = "token_example" # str |  (optional)
     limit = 1 # int |  (optional)
     distinct_mode = "distinct_mode_example" # str |  (optional)
@@ -598,7 +599,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # List my group channels
-        api_response = api_instance.list_my_group_channels(api_token, user_id)
+        api_response = api_instance.list_my_group_channels(user_id)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserApi->list_my_group_channels: %s\n" % e)
@@ -607,7 +608,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # List my group channels
-        api_response = api_instance.list_my_group_channels(api_token, user_id, token=token, limit=limit, distinct_mode=distinct_mode, public_mode=public_mode, super_mode=super_mode, hidden_mode=hidden_mode, member_state_filter=member_state_filter, unread_filter=unread_filter, created_after=created_after, created_before=created_before, show_empty=show_empty, show_frozen=show_frozen, show_member=show_member, show_delivery_receipt=show_delivery_receipt, show_read_receipt=show_read_receipt, order=order, metadata_order_key=metadata_order_key, custom_types=custom_types, custom_type_startswith=custom_type_startswith, channel_urls=channel_urls, name=name, name_contains=name_contains, name_startswith=name_startswith, members_exactly_in=members_exactly_in, members_include_in=members_include_in, query_type=query_type, members_nickname=members_nickname, members_nickname_contains=members_nickname_contains, search_query=search_query, search_fields=search_fields, metadata_key=metadata_key, metadata_values=metadata_values, metadata_value_startswith=metadata_value_startswith, metacounter_key=metacounter_key, metacounter_values=metacounter_values, metacounter_value_gt=metacounter_value_gt, metacounter_value_gte=metacounter_value_gte, metacounter_value_lt=metacounter_value_lt, metacounter_value_lte=metacounter_value_lte, custom_type=custom_type)
+        api_response = api_instance.list_my_group_channels(user_id, api_token=api_token, token=token, limit=limit, distinct_mode=distinct_mode, public_mode=public_mode, super_mode=super_mode, hidden_mode=hidden_mode, member_state_filter=member_state_filter, unread_filter=unread_filter, created_after=created_after, created_before=created_before, show_empty=show_empty, show_frozen=show_frozen, show_member=show_member, show_delivery_receipt=show_delivery_receipt, show_read_receipt=show_read_receipt, order=order, metadata_order_key=metadata_order_key, custom_types=custom_types, custom_type_startswith=custom_type_startswith, channel_urls=channel_urls, name=name, name_contains=name_contains, name_startswith=name_startswith, members_exactly_in=members_exactly_in, members_include_in=members_include_in, query_type=query_type, members_nickname=members_nickname, members_nickname_contains=members_nickname_contains, search_query=search_query, search_fields=search_fields, metadata_key=metadata_key, metadata_values=metadata_values, metadata_value_startswith=metadata_value_startswith, metacounter_key=metacounter_key, metacounter_values=metacounter_values, metacounter_value_gt=metacounter_value_gt, metacounter_value_gte=metacounter_value_gte, metacounter_value_lt=metacounter_value_lt, metacounter_value_lte=metacounter_value_lte, custom_type=custom_type)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserApi->list_my_group_channels: %s\n" % e)
@@ -618,8 +619,8 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
  **user_id** | **str**|  |
+ **api_token** | **str**|  | [optional]
  **token** | **str**|  | [optional]
  **limit** | **int**|  | [optional]
  **distinct_mode** | **str**|  | [optional]
@@ -684,7 +685,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_registration_or_device_tokens**
-> ListRegistrationOrDeviceTokensResponse list_registration_or_device_tokens(api_token, user_id, token_type)
+> ListRegistrationOrDeviceTokensResponse list_registration_or_device_tokens(user_id, token_type)
 
 List registration or device tokens
 
@@ -710,14 +711,23 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = user_api.UserApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
     user_id = "user_id_example" # str | 
     token_type = "token_type_example" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # List registration or device tokens
-        api_response = api_instance.list_registration_or_device_tokens(api_token, user_id, token_type)
+        api_response = api_instance.list_registration_or_device_tokens(user_id, token_type)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling UserApi->list_registration_or_device_tokens: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # List registration or device tokens
+        api_response = api_instance.list_registration_or_device_tokens(user_id, token_type, api_token=api_token)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserApi->list_registration_or_device_tokens: %s\n" % e)
@@ -728,9 +738,9 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
  **user_id** | **str**|  |
  **token_type** | **str**|  |
+ **api_token** | **str**|  | [optional]
 
 ### Return type
 
@@ -755,7 +765,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_users**
-> ListUsersResponse list_users(api_token)
+> ListUsersResponse list_users()
 
 List users
 
@@ -781,7 +791,7 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = user_api.UserApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
     token = "token_example" # str |  (optional)
     limit = 1 # int |  (optional)
     active_mode = "active_mode_example" # str |  (optional)
@@ -793,18 +803,10 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     metadatavalues_in = "metadatavalues_in_example" # str |  (optional)
 
     # example passing only required values which don't have defaults set
-    try:
-        # List users
-        api_response = api_instance.list_users(api_token)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling UserApi->list_users: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
     # and optional values
     try:
         # List users
-        api_response = api_instance.list_users(api_token, token=token, limit=limit, active_mode=active_mode, show_bot=show_bot, user_ids=user_ids, nickname=nickname, nickname_startswith=nickname_startswith, metadatakey=metadatakey, metadatavalues_in=metadatavalues_in)
+        api_response = api_instance.list_users(api_token=api_token, token=token, limit=limit, active_mode=active_mode, show_bot=show_bot, user_ids=user_ids, nickname=nickname, nickname_startswith=nickname_startswith, metadatakey=metadatakey, metadatavalues_in=metadatavalues_in)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserApi->list_users: %s\n" % e)
@@ -815,7 +817,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
+ **api_token** | **str**|  | [optional]
  **token** | **str**|  | [optional]
  **limit** | **int**|  | [optional]
  **active_mode** | **str**|  | [optional]
@@ -849,7 +851,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **mark_all_messages_as_read**
-> {str: (bool, date, datetime, dict, float, int, list, str, none_type)} mark_all_messages_as_read(api_token, user_id)
+> {str: (bool, date, datetime, dict, float, int, list, str, none_type)} mark_all_messages_as_read(user_id)
 
 Mark all messages as read
 
@@ -875,8 +877,8 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = user_api.UserApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
     user_id = "user_id_example" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
     mark_all_messages_as_read_data = MarkAllMessagesAsReadData(
         channel_urls=[
             "channel_urls_example",
@@ -886,7 +888,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Mark all messages as read
-        api_response = api_instance.mark_all_messages_as_read(api_token, user_id)
+        api_response = api_instance.mark_all_messages_as_read(user_id)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserApi->mark_all_messages_as_read: %s\n" % e)
@@ -895,7 +897,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Mark all messages as read
-        api_response = api_instance.mark_all_messages_as_read(api_token, user_id, mark_all_messages_as_read_data=mark_all_messages_as_read_data)
+        api_response = api_instance.mark_all_messages_as_read(user_id, api_token=api_token, mark_all_messages_as_read_data=mark_all_messages_as_read_data)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserApi->mark_all_messages_as_read: %s\n" % e)
@@ -906,8 +908,8 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
  **user_id** | **str**|  |
+ **api_token** | **str**|  | [optional]
  **mark_all_messages_as_read_data** | [**MarkAllMessagesAsReadData**](MarkAllMessagesAsReadData.md)|  | [optional]
 
 ### Return type
@@ -933,7 +935,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **register_as_operator_to_channels_with_custom_channel_types**
-> {str: (bool, date, datetime, dict, float, int, list, str, none_type)} register_as_operator_to_channels_with_custom_channel_types(api_token, user_id)
+> {str: (bool, date, datetime, dict, float, int, list, str, none_type)} register_as_operator_to_channels_with_custom_channel_types(user_id)
 
 Register as an operator to channels with custom channel types
 
@@ -959,8 +961,8 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = user_api.UserApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
     user_id = "user_id_example" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
     register_as_operator_to_channels_with_custom_channel_types_data = RegisterAsOperatorToChannelsWithCustomChannelTypesData(
         channel_custom_types=[
             "channel_custom_types_example",
@@ -970,7 +972,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Register as an operator to channels with custom channel types
-        api_response = api_instance.register_as_operator_to_channels_with_custom_channel_types(api_token, user_id)
+        api_response = api_instance.register_as_operator_to_channels_with_custom_channel_types(user_id)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserApi->register_as_operator_to_channels_with_custom_channel_types: %s\n" % e)
@@ -979,7 +981,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Register as an operator to channels with custom channel types
-        api_response = api_instance.register_as_operator_to_channels_with_custom_channel_types(api_token, user_id, register_as_operator_to_channels_with_custom_channel_types_data=register_as_operator_to_channels_with_custom_channel_types_data)
+        api_response = api_instance.register_as_operator_to_channels_with_custom_channel_types(user_id, api_token=api_token, register_as_operator_to_channels_with_custom_channel_types_data=register_as_operator_to_channels_with_custom_channel_types_data)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserApi->register_as_operator_to_channels_with_custom_channel_types: %s\n" % e)
@@ -990,8 +992,8 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
  **user_id** | **str**|  |
+ **api_token** | **str**|  | [optional]
  **register_as_operator_to_channels_with_custom_channel_types_data** | [**RegisterAsOperatorToChannelsWithCustomChannelTypesData**](RegisterAsOperatorToChannelsWithCustomChannelTypesData.md)|  | [optional]
 
 ### Return type
@@ -1017,7 +1019,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **remove_registration_or_device_token**
-> RemoveRegistrationOrDeviceTokenResponse remove_registration_or_device_token(api_token, user_id)
+> RemoveRegistrationOrDeviceTokenResponse remove_registration_or_device_token(user_id)
 
 Remove a registration or device token - When unregistering all device tokens
 
@@ -1043,13 +1045,22 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = user_api.UserApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
     user_id = "user_id_example" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Remove a registration or device token - When unregistering all device tokens
-        api_response = api_instance.remove_registration_or_device_token(api_token, user_id)
+        api_response = api_instance.remove_registration_or_device_token(user_id)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling UserApi->remove_registration_or_device_token: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Remove a registration or device token - When unregistering all device tokens
+        api_response = api_instance.remove_registration_or_device_token(user_id, api_token=api_token)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserApi->remove_registration_or_device_token: %s\n" % e)
@@ -1060,8 +1071,8 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
  **user_id** | **str**|  |
+ **api_token** | **str**|  | [optional]
 
 ### Return type
 
@@ -1086,7 +1097,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **remove_registration_or_device_token_by_token**
-> RemoveRegistrationOrDeviceTokenByTokenResponse remove_registration_or_device_token_by_token(api_token, user_id, token_type, token)
+> RemoveRegistrationOrDeviceTokenByTokenResponse remove_registration_or_device_token_by_token(user_id, token_type, token)
 
 Remove a registration or device token - When unregistering a specific token
 
@@ -1112,15 +1123,24 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = user_api.UserApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
     user_id = "user_id_example" # str | 
     token_type = "token_type_example" # str | 
     token = "token_example" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Remove a registration or device token - When unregistering a specific token
-        api_response = api_instance.remove_registration_or_device_token_by_token(api_token, user_id, token_type, token)
+        api_response = api_instance.remove_registration_or_device_token_by_token(user_id, token_type, token)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling UserApi->remove_registration_or_device_token_by_token: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Remove a registration or device token - When unregistering a specific token
+        api_response = api_instance.remove_registration_or_device_token_by_token(user_id, token_type, token, api_token=api_token)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserApi->remove_registration_or_device_token_by_token: %s\n" % e)
@@ -1131,10 +1151,10 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
  **user_id** | **str**|  |
  **token_type** | **str**|  |
  **token** | **str**|  |
+ **api_token** | **str**|  | [optional]
 
 ### Return type
 
@@ -1159,7 +1179,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **remove_registration_or_device_token_from_owner_by_token**
-> RemoveRegistrationOrDeviceTokenFromOwnerByTokenResponse remove_registration_or_device_token_from_owner_by_token(api_token, token_type, token)
+> RemoveRegistrationOrDeviceTokenFromOwnerByTokenResponse remove_registration_or_device_token_from_owner_by_token(token_type, token)
 
 Remove a registration or device token from an owner
 
@@ -1185,14 +1205,23 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = user_api.UserApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
     token_type = "token_type_example" # str | 
     token = "token_example" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Remove a registration or device token from an owner
-        api_response = api_instance.remove_registration_or_device_token_from_owner_by_token(api_token, token_type, token)
+        api_response = api_instance.remove_registration_or_device_token_from_owner_by_token(token_type, token)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling UserApi->remove_registration_or_device_token_from_owner_by_token: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Remove a registration or device token from an owner
+        api_response = api_instance.remove_registration_or_device_token_from_owner_by_token(token_type, token, api_token=api_token)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserApi->remove_registration_or_device_token_from_owner_by_token: %s\n" % e)
@@ -1203,9 +1232,9 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
  **token_type** | **str**|  |
  **token** | **str**|  |
+ **api_token** | **str**|  | [optional]
 
 ### Return type
 
@@ -1230,7 +1259,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **reset_push_preferences**
-> ResetPushPreferencesResponse reset_push_preferences(api_token, user_id)
+> ResetPushPreferencesResponse reset_push_preferences(user_id)
 
 Reset push preferences
 
@@ -1256,13 +1285,22 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = user_api.UserApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
     user_id = "user_id_example" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Reset push preferences
-        api_response = api_instance.reset_push_preferences(api_token, user_id)
+        api_response = api_instance.reset_push_preferences(user_id)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling UserApi->reset_push_preferences: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Reset push preferences
+        api_response = api_instance.reset_push_preferences(user_id, api_token=api_token)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserApi->reset_push_preferences: %s\n" % e)
@@ -1273,8 +1311,8 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
  **user_id** | **str**|  |
+ **api_token** | **str**|  | [optional]
 
 ### Return type
 
@@ -1299,7 +1337,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_channel_invitation_preference**
-> UpdateChannelInvitationPreferenceResponse update_channel_invitation_preference(api_token, user_id)
+> UpdateChannelInvitationPreferenceResponse update_channel_invitation_preference(user_id)
 
 Update channel invitation preference
 
@@ -1326,8 +1364,8 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = user_api.UserApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
     user_id = "user_id_example" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
     update_channel_invitation_preference_data = UpdateChannelInvitationPreferenceData(
         auto_accept=True,
     ) # UpdateChannelInvitationPreferenceData |  (optional)
@@ -1335,7 +1373,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Update channel invitation preference
-        api_response = api_instance.update_channel_invitation_preference(api_token, user_id)
+        api_response = api_instance.update_channel_invitation_preference(user_id)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserApi->update_channel_invitation_preference: %s\n" % e)
@@ -1344,7 +1382,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Update channel invitation preference
-        api_response = api_instance.update_channel_invitation_preference(api_token, user_id, update_channel_invitation_preference_data=update_channel_invitation_preference_data)
+        api_response = api_instance.update_channel_invitation_preference(user_id, api_token=api_token, update_channel_invitation_preference_data=update_channel_invitation_preference_data)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserApi->update_channel_invitation_preference: %s\n" % e)
@@ -1355,8 +1393,8 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
  **user_id** | **str**|  |
+ **api_token** | **str**|  | [optional]
  **update_channel_invitation_preference_data** | [**UpdateChannelInvitationPreferenceData**](UpdateChannelInvitationPreferenceData.md)|  | [optional]
 
 ### Return type
@@ -1382,7 +1420,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_count_preference_of_channel_by_url**
-> UpdateCountPreferenceOfChannelByUrlResponse update_count_preference_of_channel_by_url(api_token, user_id, channel_url)
+> UpdateCountPreferenceOfChannelByUrlResponse update_count_preference_of_channel_by_url(user_id, channel_url)
 
 Update count preference of a channel
 
@@ -1409,9 +1447,9 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = user_api.UserApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
     user_id = "user_id_example" # str | 
     channel_url = "channel_url_example" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
     update_count_preference_of_channel_by_url_data = UpdateCountPreferenceOfChannelByUrlData(
         count_preference="count_preference_example",
     ) # UpdateCountPreferenceOfChannelByUrlData |  (optional)
@@ -1419,7 +1457,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Update count preference of a channel
-        api_response = api_instance.update_count_preference_of_channel_by_url(api_token, user_id, channel_url)
+        api_response = api_instance.update_count_preference_of_channel_by_url(user_id, channel_url)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserApi->update_count_preference_of_channel_by_url: %s\n" % e)
@@ -1428,7 +1466,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Update count preference of a channel
-        api_response = api_instance.update_count_preference_of_channel_by_url(api_token, user_id, channel_url, update_count_preference_of_channel_by_url_data=update_count_preference_of_channel_by_url_data)
+        api_response = api_instance.update_count_preference_of_channel_by_url(user_id, channel_url, api_token=api_token, update_count_preference_of_channel_by_url_data=update_count_preference_of_channel_by_url_data)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserApi->update_count_preference_of_channel_by_url: %s\n" % e)
@@ -1439,9 +1477,9 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
  **user_id** | **str**|  |
  **channel_url** | **str**|  |
+ **api_token** | **str**|  | [optional]
  **update_count_preference_of_channel_by_url_data** | [**UpdateCountPreferenceOfChannelByUrlData**](UpdateCountPreferenceOfChannelByUrlData.md)|  | [optional]
 
 ### Return type
@@ -1467,7 +1505,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_push_preferences**
-> UpdatePushPreferencesResponse update_push_preferences(api_token, user_id)
+> UpdatePushPreferencesResponse update_push_preferences(user_id)
 
 Update push preferences
 
@@ -1494,8 +1532,8 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = user_api.UserApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
     user_id = "user_id_example" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
     update_push_preferences_data = UpdatePushPreferencesData(
         push_trigger_option="push_trigger_option_example",
         do_not_disturb=True,
@@ -1508,7 +1546,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
         snooze_end_ts=1,
         block_push_from_bots=True,
         push_blocked_bot_ids=[
-            1,
+            "push_blocked_bot_ids_example",
         ],
         timezone="timezone_example",
         push_sound="push_sound_example",
@@ -1517,7 +1555,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Update push preferences
-        api_response = api_instance.update_push_preferences(api_token, user_id)
+        api_response = api_instance.update_push_preferences(user_id)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserApi->update_push_preferences: %s\n" % e)
@@ -1526,7 +1564,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Update push preferences
-        api_response = api_instance.update_push_preferences(api_token, user_id, update_push_preferences_data=update_push_preferences_data)
+        api_response = api_instance.update_push_preferences(user_id, api_token=api_token, update_push_preferences_data=update_push_preferences_data)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserApi->update_push_preferences: %s\n" % e)
@@ -1537,8 +1575,8 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
  **user_id** | **str**|  |
+ **api_token** | **str**|  | [optional]
  **update_push_preferences_data** | [**UpdatePushPreferencesData**](UpdatePushPreferencesData.md)|  | [optional]
 
 ### Return type
@@ -1564,7 +1602,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_push_preferences_for_channel_by_url**
-> UpdatePushPreferencesForChannelByUrlResponse update_push_preferences_for_channel_by_url(api_token, user_id, channel_url)
+> UpdatePushPreferencesForChannelByUrlResponse update_push_preferences_for_channel_by_url(user_id, channel_url)
 
 Update push preferences for a channel
 
@@ -1591,9 +1629,9 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = user_api.UserApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
     user_id = "user_id_example" # str | 
     channel_url = "channel_url_example" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
     update_push_preferences_for_channel_by_url_data = UpdatePushPreferencesForChannelByUrlData(
         push_trigger_option="push_trigger_option_example",
         enable=True,
@@ -1603,7 +1641,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Update push preferences for a channel
-        api_response = api_instance.update_push_preferences_for_channel_by_url(api_token, user_id, channel_url)
+        api_response = api_instance.update_push_preferences_for_channel_by_url(user_id, channel_url)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserApi->update_push_preferences_for_channel_by_url: %s\n" % e)
@@ -1612,7 +1650,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Update push preferences for a channel
-        api_response = api_instance.update_push_preferences_for_channel_by_url(api_token, user_id, channel_url, update_push_preferences_for_channel_by_url_data=update_push_preferences_for_channel_by_url_data)
+        api_response = api_instance.update_push_preferences_for_channel_by_url(user_id, channel_url, api_token=api_token, update_push_preferences_for_channel_by_url_data=update_push_preferences_for_channel_by_url_data)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserApi->update_push_preferences_for_channel_by_url: %s\n" % e)
@@ -1623,9 +1661,9 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
  **user_id** | **str**|  |
  **channel_url** | **str**|  |
+ **api_token** | **str**|  | [optional]
  **update_push_preferences_for_channel_by_url_data** | [**UpdatePushPreferencesForChannelByUrlData**](UpdatePushPreferencesForChannelByUrlData.md)|  | [optional]
 
 ### Return type
@@ -1651,7 +1689,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_user_by_id**
-> SendBirdUser update_user_by_id(api_token, user_id)
+> SendBirdUser update_user_by_id(user_id)
 
 Update a user
 
@@ -1678,8 +1716,8 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = user_api.UserApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
     user_id = "user_id_example" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
     update_user_by_id_data = UpdateUserByIdData(
         user_id="user_id_example",
         nickname="nickname_example",
@@ -1702,7 +1740,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Update a user
-        api_response = api_instance.update_user_by_id(api_token, user_id)
+        api_response = api_instance.update_user_by_id(user_id)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserApi->update_user_by_id: %s\n" % e)
@@ -1711,7 +1749,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Update a user
-        api_response = api_instance.update_user_by_id(api_token, user_id, update_user_by_id_data=update_user_by_id_data)
+        api_response = api_instance.update_user_by_id(user_id, api_token=api_token, update_user_by_id_data=update_user_by_id_data)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserApi->update_user_by_id: %s\n" % e)
@@ -1722,8 +1760,8 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
  **user_id** | **str**|  |
+ **api_token** | **str**|  | [optional]
  **update_user_by_id_data** | [**UpdateUserByIdData**](UpdateUserByIdData.md)|  | [optional]
 
 ### Return type
@@ -1749,7 +1787,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **view_channel_invitation_preference**
-> ViewChannelInvitationPreferenceResponse view_channel_invitation_preference(api_token, user_id)
+> ViewChannelInvitationPreferenceResponse view_channel_invitation_preference(user_id)
 
 View channel invitation preference
 
@@ -1775,13 +1813,22 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = user_api.UserApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
     user_id = "user_id_example" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # View channel invitation preference
-        api_response = api_instance.view_channel_invitation_preference(api_token, user_id)
+        api_response = api_instance.view_channel_invitation_preference(user_id)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling UserApi->view_channel_invitation_preference: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # View channel invitation preference
+        api_response = api_instance.view_channel_invitation_preference(user_id, api_token=api_token)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserApi->view_channel_invitation_preference: %s\n" % e)
@@ -1792,8 +1839,8 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
  **user_id** | **str**|  |
+ **api_token** | **str**|  | [optional]
 
 ### Return type
 
@@ -1818,7 +1865,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **view_count_preference_of_channel_by_url**
-> ViewCountPreferenceOfChannelByUrlResponse view_count_preference_of_channel_by_url(api_token, user_id, channel_url)
+> ViewCountPreferenceOfChannelByUrlResponse view_count_preference_of_channel_by_url(user_id, channel_url)
 
 View count preference of a channel
 
@@ -1844,14 +1891,23 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = user_api.UserApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
     user_id = "user_id_example" # str | 
     channel_url = "channel_url_example" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # View count preference of a channel
-        api_response = api_instance.view_count_preference_of_channel_by_url(api_token, user_id, channel_url)
+        api_response = api_instance.view_count_preference_of_channel_by_url(user_id, channel_url)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling UserApi->view_count_preference_of_channel_by_url: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # View count preference of a channel
+        api_response = api_instance.view_count_preference_of_channel_by_url(user_id, channel_url, api_token=api_token)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserApi->view_count_preference_of_channel_by_url: %s\n" % e)
@@ -1862,9 +1918,9 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
  **user_id** | **str**|  |
  **channel_url** | **str**|  |
+ **api_token** | **str**|  | [optional]
 
 ### Return type
 
@@ -1889,7 +1945,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **view_number_of_channels_by_join_status**
-> ViewNumberOfChannelsByJoinStatusResponse view_number_of_channels_by_join_status(api_token, user_id)
+> ViewNumberOfChannelsByJoinStatusResponse view_number_of_channels_by_join_status(user_id)
 
 View number of channels by join status
 
@@ -1915,14 +1971,14 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = user_api.UserApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
     user_id = "user_id_example" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
     state = "state_example" # str |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # View number of channels by join status
-        api_response = api_instance.view_number_of_channels_by_join_status(api_token, user_id)
+        api_response = api_instance.view_number_of_channels_by_join_status(user_id)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserApi->view_number_of_channels_by_join_status: %s\n" % e)
@@ -1931,7 +1987,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # View number of channels by join status
-        api_response = api_instance.view_number_of_channels_by_join_status(api_token, user_id, state=state)
+        api_response = api_instance.view_number_of_channels_by_join_status(user_id, api_token=api_token, state=state)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserApi->view_number_of_channels_by_join_status: %s\n" % e)
@@ -1942,8 +1998,8 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
  **user_id** | **str**|  |
+ **api_token** | **str**|  | [optional]
  **state** | **str**|  | [optional]
 
 ### Return type
@@ -1969,7 +2025,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **view_number_of_channels_with_unread_messages**
-> ViewNumberOfChannelsWithUnreadMessagesResponse view_number_of_channels_with_unread_messages(api_token, user_id)
+> ViewNumberOfChannelsWithUnreadMessagesResponse view_number_of_channels_with_unread_messages(user_id)
 
 View number of channels with unread messages
 
@@ -1995,8 +2051,8 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = user_api.UserApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
     user_id = "user_id_example" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
     custom_types = [
         "custom_types_example",
     ] # [str] |  (optional)
@@ -2005,7 +2061,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # View number of channels with unread messages
-        api_response = api_instance.view_number_of_channels_with_unread_messages(api_token, user_id)
+        api_response = api_instance.view_number_of_channels_with_unread_messages(user_id)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserApi->view_number_of_channels_with_unread_messages: %s\n" % e)
@@ -2014,7 +2070,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # View number of channels with unread messages
-        api_response = api_instance.view_number_of_channels_with_unread_messages(api_token, user_id, custom_types=custom_types, super_mode=super_mode)
+        api_response = api_instance.view_number_of_channels_with_unread_messages(user_id, api_token=api_token, custom_types=custom_types, super_mode=super_mode)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserApi->view_number_of_channels_with_unread_messages: %s\n" % e)
@@ -2025,8 +2081,8 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
  **user_id** | **str**|  |
+ **api_token** | **str**|  | [optional]
  **custom_types** | **[str]**|  | [optional]
  **super_mode** | **str**|  | [optional]
 
@@ -2053,7 +2109,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **view_number_of_unread_items**
-> ViewNumberOfUnreadItemsResponse view_number_of_unread_items(api_token, user_id)
+> ViewNumberOfUnreadItemsResponse view_number_of_unread_items(user_id)
 
 View number of unread items
 
@@ -2079,15 +2135,15 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = user_api.UserApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
     user_id = "user_id_example" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
     custom_type = "custom_type_example" # str |  (optional)
     item_keys = "item_keys_example" # str |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # View number of unread items
-        api_response = api_instance.view_number_of_unread_items(api_token, user_id)
+        api_response = api_instance.view_number_of_unread_items(user_id)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserApi->view_number_of_unread_items: %s\n" % e)
@@ -2096,7 +2152,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # View number of unread items
-        api_response = api_instance.view_number_of_unread_items(api_token, user_id, custom_type=custom_type, item_keys=item_keys)
+        api_response = api_instance.view_number_of_unread_items(user_id, api_token=api_token, custom_type=custom_type, item_keys=item_keys)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserApi->view_number_of_unread_items: %s\n" % e)
@@ -2107,8 +2163,8 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
  **user_id** | **str**|  |
+ **api_token** | **str**|  | [optional]
  **custom_type** | **str**|  | [optional]
  **item_keys** | **str**|  | [optional]
 
@@ -2135,7 +2191,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **view_number_of_unread_messages**
-> ViewNumberOfUnreadMessagesResponse view_number_of_unread_messages(api_token, user_id)
+> ViewNumberOfUnreadMessagesResponse view_number_of_unread_messages(user_id)
 
 View number of unread messages
 
@@ -2161,15 +2217,15 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = user_api.UserApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
     user_id = "user_id_example" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
     custom_types = "custom_types_example" # str |  (optional)
     super_mode = "super_mode_example" # str |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # View number of unread messages
-        api_response = api_instance.view_number_of_unread_messages(api_token, user_id)
+        api_response = api_instance.view_number_of_unread_messages(user_id)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserApi->view_number_of_unread_messages: %s\n" % e)
@@ -2178,7 +2234,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # View number of unread messages
-        api_response = api_instance.view_number_of_unread_messages(api_token, user_id, custom_types=custom_types, super_mode=super_mode)
+        api_response = api_instance.view_number_of_unread_messages(user_id, api_token=api_token, custom_types=custom_types, super_mode=super_mode)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserApi->view_number_of_unread_messages: %s\n" % e)
@@ -2189,8 +2245,8 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
  **user_id** | **str**|  |
+ **api_token** | **str**|  | [optional]
  **custom_types** | **str**|  | [optional]
  **super_mode** | **str**|  | [optional]
 
@@ -2217,7 +2273,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **view_push_preferences**
-> ViewPushPreferencesResponse view_push_preferences(api_token, user_id)
+> ViewPushPreferencesResponse view_push_preferences(user_id)
 
 View push preferences
 
@@ -2243,13 +2299,22 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = user_api.UserApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
     user_id = "user_id_example" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # View push preferences
-        api_response = api_instance.view_push_preferences(api_token, user_id)
+        api_response = api_instance.view_push_preferences(user_id)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling UserApi->view_push_preferences: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # View push preferences
+        api_response = api_instance.view_push_preferences(user_id, api_token=api_token)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserApi->view_push_preferences: %s\n" % e)
@@ -2260,8 +2325,8 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
  **user_id** | **str**|  |
+ **api_token** | **str**|  | [optional]
 
 ### Return type
 
@@ -2286,7 +2351,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **view_push_preferences_for_channel_by_url**
-> ViewPushPreferencesForChannelByUrlResponse view_push_preferences_for_channel_by_url(api_token, user_id, channel_url)
+> ViewPushPreferencesForChannelByUrlResponse view_push_preferences_for_channel_by_url(user_id, channel_url)
 
 View push preferences for a channel
 
@@ -2312,14 +2377,23 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = user_api.UserApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
     user_id = "user_id_example" # str | 
     channel_url = "channel_url_example" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # View push preferences for a channel
-        api_response = api_instance.view_push_preferences_for_channel_by_url(api_token, user_id, channel_url)
+        api_response = api_instance.view_push_preferences_for_channel_by_url(user_id, channel_url)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling UserApi->view_push_preferences_for_channel_by_url: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # View push preferences for a channel
+        api_response = api_instance.view_push_preferences_for_channel_by_url(user_id, channel_url, api_token=api_token)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserApi->view_push_preferences_for_channel_by_url: %s\n" % e)
@@ -2330,9 +2404,9 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
  **user_id** | **str**|  |
  **channel_url** | **str**|  |
+ **api_token** | **str**|  | [optional]
 
 ### Return type
 
@@ -2357,7 +2431,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **view_user_by_id**
-> SendBirdUser view_user_by_id(api_token, user_id)
+> SendBirdUser view_user_by_id(user_id)
 
 View a user
 
@@ -2383,8 +2457,8 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = user_api.UserApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
     user_id = "user_id_example" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
     include_unread_count = True # bool |  (optional)
     custom_types = "custom_types_example" # str |  (optional)
     super_mode = "super_mode_example" # str |  (optional)
@@ -2392,7 +2466,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # View a user
-        api_response = api_instance.view_user_by_id(api_token, user_id)
+        api_response = api_instance.view_user_by_id(user_id)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserApi->view_user_by_id: %s\n" % e)
@@ -2401,7 +2475,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # View a user
-        api_response = api_instance.view_user_by_id(api_token, user_id, include_unread_count=include_unread_count, custom_types=custom_types, super_mode=super_mode)
+        api_response = api_instance.view_user_by_id(user_id, api_token=api_token, include_unread_count=include_unread_count, custom_types=custom_types, super_mode=super_mode)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserApi->view_user_by_id: %s\n" % e)
@@ -2412,8 +2486,8 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
  **user_id** | **str**|  |
+ **api_token** | **str**|  | [optional]
  **include_unread_count** | **bool**|  | [optional]
  **custom_types** | **str**|  | [optional]
  **super_mode** | **str**|  | [optional]
@@ -2441,7 +2515,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **view_who_owns_registration_or_device_token_by_token**
-> ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponse view_who_owns_registration_or_device_token_by_token(api_token, token_type, token)
+> ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponse view_who_owns_registration_or_device_token_by_token(token_type, token)
 
 View who owns a registration or device token
 
@@ -2467,14 +2541,23 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = user_api.UserApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
     token_type = "token_type_example" # str | 
     token = "token_example" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # View who owns a registration or device token
-        api_response = api_instance.view_who_owns_registration_or_device_token_by_token(api_token, token_type, token)
+        api_response = api_instance.view_who_owns_registration_or_device_token_by_token(token_type, token)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling UserApi->view_who_owns_registration_or_device_token_by_token: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # View who owns a registration or device token
+        api_response = api_instance.view_who_owns_registration_or_device_token_by_token(token_type, token, api_token=api_token)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserApi->view_who_owns_registration_or_device_token_by_token: %s\n" % e)
@@ -2485,9 +2568,9 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
  **token_type** | **str**|  |
  **token** | **str**|  |
+ **api_token** | **str**|  | [optional]
 
 ### Return type
 

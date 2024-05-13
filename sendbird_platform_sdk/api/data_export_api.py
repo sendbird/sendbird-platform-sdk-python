@@ -50,13 +50,12 @@ class DataExportApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'data_type',
+                    'api_token',
                     'token',
                     'limit',
                 ],
                 'required': [
-                    'api_token',
                     'data_type',
                 ],
                 'nullable': [
@@ -72,9 +71,9 @@ class DataExportApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'data_type':
+                        (str,),
+                    'api_token':
                         (str,),
                     'token':
                         (str,),
@@ -82,14 +81,14 @@ class DataExportApi(object):
                         (int,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'data_type': 'data_type',
+                    'api_token': 'Api-Token',
                     'token': 'token',
                     'limit': 'limit',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'data_type': 'path',
+                    'api_token': 'header',
                     'token': 'query',
                     'limit': 'query',
                 },
@@ -115,12 +114,11 @@ class DataExportApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'data_type',
+                    'api_token',
                     'register_and_schedule_data_export_data',
                 ],
                 'required': [
-                    'api_token',
                     'data_type',
                 ],
                 'nullable': [
@@ -136,20 +134,20 @@ class DataExportApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'data_type':
+                        (str,),
+                    'api_token':
                         (str,),
                     'register_and_schedule_data_export_data':
                         (RegisterAndScheduleDataExportData,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'data_type': 'data_type',
+                    'api_token': 'Api-Token',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'data_type': 'path',
+                    'api_token': 'header',
                     'register_and_schedule_data_export_data': 'body',
                 },
                 'collection_format_map': {
@@ -176,12 +174,11 @@ class DataExportApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'data_type',
                     'request_id',
+                    'api_token',
                 ],
                 'required': [
-                    'api_token',
                     'data_type',
                     'request_id',
                 ],
@@ -198,22 +195,22 @@ class DataExportApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'data_type':
                         (str,),
                     'request_id':
                         (str,),
+                    'api_token':
+                        (str,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'data_type': 'data_type',
                     'request_id': 'request_id',
+                    'api_token': 'Api-Token',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'data_type': 'path',
                     'request_id': 'path',
+                    'api_token': 'header',
                 },
                 'collection_format_map': {
                 }
@@ -229,7 +226,6 @@ class DataExportApi(object):
 
     def list_data_exports_by_message_channel_or_user(
         self,
-        api_token,
         data_type,
         **kwargs
     ):
@@ -239,14 +235,14 @@ class DataExportApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.list_data_exports_by_message_channel_or_user(api_token, data_type, async_req=True)
+        >>> thread = api.list_data_exports_by_message_channel_or_user(data_type, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             data_type (str):
 
         Keyword Args:
+            api_token (str): [optional]
             token (str): [optional]
             limit (int): [optional]
             _return_http_data_only (bool): response data without head status
@@ -310,15 +306,12 @@ class DataExportApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['data_type'] = \
             data_type
         return self.list_data_exports_by_message_channel_or_user_endpoint.call_with_http_info(**kwargs)
 
     def register_and_schedule_data_export(
         self,
-        api_token,
         data_type,
         **kwargs
     ):
@@ -328,14 +321,14 @@ class DataExportApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.register_and_schedule_data_export(api_token, data_type, async_req=True)
+        >>> thread = api.register_and_schedule_data_export(data_type, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             data_type (str):
 
         Keyword Args:
+            api_token (str): [optional]
             register_and_schedule_data_export_data (RegisterAndScheduleDataExportData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -398,15 +391,12 @@ class DataExportApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['data_type'] = \
             data_type
         return self.register_and_schedule_data_export_endpoint.call_with_http_info(**kwargs)
 
     def view_data_export_by_id(
         self,
-        api_token,
         data_type,
         request_id,
         **kwargs
@@ -417,15 +407,15 @@ class DataExportApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.view_data_export_by_id(api_token, data_type, request_id, async_req=True)
+        >>> thread = api.view_data_export_by_id(data_type, request_id, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             data_type (str):
             request_id (str):
 
         Keyword Args:
+            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -487,8 +477,6 @@ class DataExportApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['data_type'] = \
             data_type
         kwargs['request_id'] = \

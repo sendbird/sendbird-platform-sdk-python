@@ -13,6 +13,8 @@ Name | Type | Description | Notes
 **mark_as_read** | **bool** | Determines whether to mark the message as read for the bot. If set to false, the bot&#39;s unread_count and read_receipt remain unchanged after the message is sent. (Default: true) | [optional] 
 **dedup_id** | **str** | Specifies the unique ID for the message to prevent the same message data from getting sent to the channel. | [optional] 
 **created_at** | **int** | Specifies the time that the message was sent, in [Unix milliseconds](/docs/chat/v3/platform-api/guides/miscellaneous#2-timestamps) format. | [optional] 
+**extended_message_payload** | [**SendBotSMessageDataExtendedMessagePayload**](SendBotSMessageDataExtendedMessagePayload.md) |  | [optional] 
+**target_message_id** | **int** | Specifies the ID of the user&#39;s message which bot&#39;s message replies to | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

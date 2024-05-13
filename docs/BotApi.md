@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 
 # **create_bot**
-> CreateBotResponse create_bot(api_token)
+> CreateBotResponse create_bot()
 
 Create a bot
 
@@ -43,7 +43,7 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = bot_api.BotApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
     create_bot_data = CreateBotData(
         bot_userid="bot_userid_example",
         bot_nickname="bot_nickname_example",
@@ -57,18 +57,10 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     ) # CreateBotData |  (optional)
 
     # example passing only required values which don't have defaults set
-    try:
-        # Create a bot
-        api_response = api_instance.create_bot(api_token)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling BotApi->create_bot: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Create a bot
-        api_response = api_instance.create_bot(api_token, create_bot_data=create_bot_data)
+        api_response = api_instance.create_bot(api_token=api_token, create_bot_data=create_bot_data)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling BotApi->create_bot: %s\n" % e)
@@ -79,7 +71,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
+ **api_token** | **str**|  | [optional]
  **create_bot_data** | [**CreateBotData**](CreateBotData.md)|  | [optional]
 
 ### Return type
@@ -105,7 +97,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_bot_by_id**
-> {str: (bool, date, datetime, dict, float, int, list, str, none_type)} delete_bot_by_id(api_token, bot_userid)
+> {str: (bool, date, datetime, dict, float, int, list, str, none_type)} delete_bot_by_id(bot_userid)
 
 Delete a bot
 
@@ -130,13 +122,22 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = bot_api.BotApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
     bot_userid = "bot_userid_example" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Delete a bot
-        api_response = api_instance.delete_bot_by_id(api_token, bot_userid)
+        api_response = api_instance.delete_bot_by_id(bot_userid)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling BotApi->delete_bot_by_id: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Delete a bot
+        api_response = api_instance.delete_bot_by_id(bot_userid, api_token=api_token)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling BotApi->delete_bot_by_id: %s\n" % e)
@@ -147,8 +148,8 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
  **bot_userid** | **str**|  |
+ **api_token** | **str**|  | [optional]
 
 ### Return type
 
@@ -173,7 +174,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **join_channels**
-> JoinChannelsResponse join_channels(api_token, bot_userid)
+> JoinChannelsResponse join_channels(bot_userid)
 
 Join channels
 
@@ -200,8 +201,8 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = bot_api.BotApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
     bot_userid = "bot_userid_example" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
     join_channels_data = JoinChannelsData(
         bot_userid="bot_userid_example",
         channel_urls=[
@@ -212,7 +213,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Join channels
-        api_response = api_instance.join_channels(api_token, bot_userid)
+        api_response = api_instance.join_channels(bot_userid)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling BotApi->join_channels: %s\n" % e)
@@ -221,7 +222,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Join channels
-        api_response = api_instance.join_channels(api_token, bot_userid, join_channels_data=join_channels_data)
+        api_response = api_instance.join_channels(bot_userid, api_token=api_token, join_channels_data=join_channels_data)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling BotApi->join_channels: %s\n" % e)
@@ -232,8 +233,8 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
  **bot_userid** | **str**|  |
+ **api_token** | **str**|  | [optional]
  **join_channels_data** | [**JoinChannelsData**](JoinChannelsData.md)|  | [optional]
 
 ### Return type
@@ -259,7 +260,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **leave_channels**
-> leave_channels(api_token, bot_userid)
+> leave_channels(bot_userid)
 
 Leave channels - When leaving all channels
 
@@ -284,14 +285,14 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = bot_api.BotApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
     bot_userid = "bot_userid_example" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
     channel_url = "channel_url_example" # str |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Leave channels - When leaving all channels
-        api_instance.leave_channels(api_token, bot_userid)
+        api_instance.leave_channels(bot_userid)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling BotApi->leave_channels: %s\n" % e)
 
@@ -299,7 +300,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Leave channels - When leaving all channels
-        api_instance.leave_channels(api_token, bot_userid, channel_url=channel_url)
+        api_instance.leave_channels(bot_userid, api_token=api_token, channel_url=channel_url)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling BotApi->leave_channels: %s\n" % e)
 ```
@@ -309,8 +310,8 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
  **bot_userid** | **str**|  |
+ **api_token** | **str**|  | [optional]
  **channel_url** | **str**|  | [optional]
 
 ### Return type
@@ -336,7 +337,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **leave_channels_by_url**
-> {str: (bool, date, datetime, dict, float, int, list, str, none_type)} leave_channels_by_url(api_token, bot_userid, channel_url)
+> {str: (bool, date, datetime, dict, float, int, list, str, none_type)} leave_channels_by_url(bot_userid, channel_url)
 
 Leave channels - When leaving a channel by its channel URL
 
@@ -361,14 +362,23 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = bot_api.BotApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
     bot_userid = "bot_userid_example" # str | 
     channel_url = "channel_url_example" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Leave channels - When leaving a channel by its channel URL
-        api_response = api_instance.leave_channels_by_url(api_token, bot_userid, channel_url)
+        api_response = api_instance.leave_channels_by_url(bot_userid, channel_url)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling BotApi->leave_channels_by_url: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Leave channels - When leaving a channel by its channel URL
+        api_response = api_instance.leave_channels_by_url(bot_userid, channel_url, api_token=api_token)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling BotApi->leave_channels_by_url: %s\n" % e)
@@ -379,9 +389,9 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
  **bot_userid** | **str**|  |
  **channel_url** | **str**|  |
+ **api_token** | **str**|  | [optional]
 
 ### Return type
 
@@ -406,7 +416,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_bots**
-> ListBotsResponse list_bots(api_token)
+> ListBotsResponse list_bots()
 
 List bots
 
@@ -432,23 +442,15 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = bot_api.BotApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
     token = "token_example" # str |  (optional)
     limit = 1 # int |  (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        # List bots
-        api_response = api_instance.list_bots(api_token)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling BotApi->list_bots: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # List bots
-        api_response = api_instance.list_bots(api_token, token=token, limit=limit)
+        api_response = api_instance.list_bots(api_token=api_token, token=token, limit=limit)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling BotApi->list_bots: %s\n" % e)
@@ -459,7 +461,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
+ **api_token** | **str**|  | [optional]
  **token** | **str**|  | [optional]
  **limit** | **int**|  | [optional]
 
@@ -486,7 +488,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **send_bots_message**
-> SendBirdMessageResponse send_bots_message(api_token, bot_userid)
+> SendBirdBotsMessageResponse send_bots_message(bot_userid)
 
 Send a bot's message
 
@@ -499,7 +501,7 @@ Send a bot's message
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import bot_api
-from sendbird_platform_sdk.model.send_bird_message_response import SendBirdMessageResponse
+from sendbird_platform_sdk.model.send_bird_bots_message_response import SendBirdBotsMessageResponse
 from sendbird_platform_sdk.model.send_bot_s_message_data import SendBotSMessageData
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
@@ -513,8 +515,8 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = bot_api.BotApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
     bot_userid = "bot_userid_example" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
     send_bot_s_message_data = SendBotSMessageData(
         message="message_example",
         channel_url="channel_url_example",
@@ -527,12 +529,19 @@ with sendbird_platform_sdk.ApiClient() as api_client:
         mark_as_read=True,
         dedup_id="dedup_id_example",
         created_at=1,
+        extended_message_payload=SendBotSMessageDataExtendedMessagePayload(
+            suggested_replies=[
+                "suggested_replies_example",
+            ],
+            custom_view={},
+        ),
+        target_message_id=1,
     ) # SendBotSMessageData |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Send a bot's message
-        api_response = api_instance.send_bots_message(api_token, bot_userid)
+        api_response = api_instance.send_bots_message(bot_userid)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling BotApi->send_bots_message: %s\n" % e)
@@ -541,7 +550,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Send a bot's message
-        api_response = api_instance.send_bots_message(api_token, bot_userid, send_bot_s_message_data=send_bot_s_message_data)
+        api_response = api_instance.send_bots_message(bot_userid, api_token=api_token, send_bot_s_message_data=send_bot_s_message_data)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling BotApi->send_bots_message: %s\n" % e)
@@ -552,13 +561,13 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
  **bot_userid** | **str**|  |
+ **api_token** | **str**|  | [optional]
  **send_bot_s_message_data** | [**SendBotSMessageData**](SendBotSMessageData.md)|  | [optional]
 
 ### Return type
 
-[**SendBirdMessageResponse**](SendBirdMessageResponse.md)
+[**SendBirdBotsMessageResponse**](SendBirdBotsMessageResponse.md)
 
 ### Authorization
 
@@ -579,7 +588,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_bot_by_id**
-> UpdateBotByIdResponse update_bot_by_id(api_token, bot_userid)
+> UpdateBotByIdResponse update_bot_by_id(bot_userid)
 
 Update a bot
 
@@ -606,8 +615,8 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = bot_api.BotApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
     bot_userid = "bot_userid_example" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
     update_bot_by_id_data = UpdateBotByIdData(
         bot_userid="bot_userid_example",
         bot_nickname="bot_nickname_example",
@@ -622,7 +631,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Update a bot
-        api_response = api_instance.update_bot_by_id(api_token, bot_userid)
+        api_response = api_instance.update_bot_by_id(bot_userid)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling BotApi->update_bot_by_id: %s\n" % e)
@@ -631,7 +640,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Update a bot
-        api_response = api_instance.update_bot_by_id(api_token, bot_userid, update_bot_by_id_data=update_bot_by_id_data)
+        api_response = api_instance.update_bot_by_id(bot_userid, api_token=api_token, update_bot_by_id_data=update_bot_by_id_data)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling BotApi->update_bot_by_id: %s\n" % e)
@@ -642,8 +651,8 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
  **bot_userid** | **str**|  |
+ **api_token** | **str**|  | [optional]
  **update_bot_by_id_data** | [**UpdateBotByIdData**](UpdateBotByIdData.md)|  | [optional]
 
 ### Return type
@@ -669,7 +678,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **view_bot_by_id**
-> ViewBotByIdResponse view_bot_by_id(api_token, bot_userid)
+> ViewBotByIdResponse view_bot_by_id(bot_userid)
 
 View a bot
 
@@ -695,13 +704,22 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = bot_api.BotApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
     bot_userid = "bot_userid_example" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # View a bot
-        api_response = api_instance.view_bot_by_id(api_token, bot_userid)
+        api_response = api_instance.view_bot_by_id(bot_userid)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling BotApi->view_bot_by_id: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # View a bot
+        api_response = api_instance.view_bot_by_id(bot_userid, api_token=api_token)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling BotApi->view_bot_by_id: %s\n" % e)
@@ -712,8 +730,8 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
  **bot_userid** | **str**|  |
+ **api_token** | **str**|  | [optional]
 
 ### Return type
 

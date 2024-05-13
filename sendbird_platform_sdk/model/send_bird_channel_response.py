@@ -35,20 +35,18 @@ def lazy_import():
     from sendbird_platform_sdk.model.send_bird_group_channel_channel import SendBirdGroupChannelChannel
     from sendbird_platform_sdk.model.send_bird_group_channel_created_by import SendBirdGroupChannelCreatedBy
     from sendbird_platform_sdk.model.send_bird_group_channel_disappearing_message import SendBirdGroupChannelDisappearingMessage
-    from sendbird_platform_sdk.model.send_bird_group_channel_inviter import SendBirdGroupChannelInviter
-    from sendbird_platform_sdk.model.send_bird_group_channel_last_message import SendBirdGroupChannelLastMessage
     from sendbird_platform_sdk.model.send_bird_group_channel_sms_fallback import SendBirdGroupChannelSmsFallback
     from sendbird_platform_sdk.model.send_bird_member import SendBirdMember
+    from sendbird_platform_sdk.model.send_bird_message_response import SendBirdMessageResponse
     from sendbird_platform_sdk.model.send_bird_open_channel import SendBirdOpenChannel
     from sendbird_platform_sdk.model.send_bird_user import SendBirdUser
     globals()['SendBirdGroupChannel'] = SendBirdGroupChannel
     globals()['SendBirdGroupChannelChannel'] = SendBirdGroupChannelChannel
     globals()['SendBirdGroupChannelCreatedBy'] = SendBirdGroupChannelCreatedBy
     globals()['SendBirdGroupChannelDisappearingMessage'] = SendBirdGroupChannelDisappearingMessage
-    globals()['SendBirdGroupChannelInviter'] = SendBirdGroupChannelInviter
-    globals()['SendBirdGroupChannelLastMessage'] = SendBirdGroupChannelLastMessage
     globals()['SendBirdGroupChannelSmsFallback'] = SendBirdGroupChannelSmsFallback
     globals()['SendBirdMember'] = SendBirdMember
+    globals()['SendBirdMessageResponse'] = SendBirdMessageResponse
     globals()['SendBirdOpenChannel'] = SendBirdOpenChannel
     globals()['SendBirdUser'] = SendBirdUser
 
@@ -143,7 +141,7 @@ class SendBirdChannelResponse(ModelComposed):
             'ignore_profanity_filter': (bool,),  # noqa: E501
             'hidden_state': (str,),  # noqa: E501
             'invited_at': (float,),  # noqa: E501
-            'inviter': (SendBirdGroupChannelInviter,),  # noqa: E501
+            'inviter': (SendBirdUser,),  # noqa: E501
             'is_access_code_required': (bool,),  # noqa: E501
             'is_broadcast': (bool,),  # noqa: E501
             'is_created': (bool,),  # noqa: E501
@@ -157,7 +155,7 @@ class SendBirdChannelResponse(ModelComposed):
             'is_super': (bool,),  # noqa: E501
             'joined_at': (float,),  # noqa: E501
             'joined_member_count': (float,),  # noqa: E501
-            'last_message': (SendBirdGroupChannelLastMessage,),  # noqa: E501
+            'last_message': (SendBirdMessageResponse,),  # noqa: E501
             'max_length_message': (float,),  # noqa: E501
             'member_count': (float,),  # noqa: E501
             'members': ([SendBirdMember],),  # noqa: E501
@@ -175,6 +173,7 @@ class SendBirdChannelResponse(ModelComposed):
             'unread_mention_count': (float,),  # noqa: E501
             'unread_message_count': (float,),  # noqa: E501
             'channel': (SendBirdGroupChannelChannel,),  # noqa: E501
+            'read_receipt': ({str: (int,)},),  # noqa: E501
             'is_dynamic_partitioned': (bool,),  # noqa: E501
             'participant_count': (float,),  # noqa: E501
         }
@@ -229,6 +228,7 @@ class SendBirdChannelResponse(ModelComposed):
         'unread_mention_count': 'unread_mention_count',  # noqa: E501
         'unread_message_count': 'unread_message_count',  # noqa: E501
         'channel': 'channel',  # noqa: E501
+        'read_receipt': 'read_receipt',  # noqa: E501
         'is_dynamic_partitioned': 'is_dynamic_partitioned',  # noqa: E501
         'participant_count': 'participant_count',  # noqa: E501
     }
@@ -284,7 +284,7 @@ class SendBirdChannelResponse(ModelComposed):
             ignore_profanity_filter (bool): [optional]  # noqa: E501
             hidden_state (str): [optional]  # noqa: E501
             invited_at (float): [optional]  # noqa: E501
-            inviter (SendBirdGroupChannelInviter): [optional]  # noqa: E501
+            inviter (SendBirdUser): [optional]  # noqa: E501
             is_access_code_required (bool): [optional]  # noqa: E501
             is_broadcast (bool): [optional]  # noqa: E501
             is_created (bool): [optional]  # noqa: E501
@@ -298,7 +298,7 @@ class SendBirdChannelResponse(ModelComposed):
             is_super (bool): [optional]  # noqa: E501
             joined_at (float): [optional]  # noqa: E501
             joined_member_count (float): [optional]  # noqa: E501
-            last_message (SendBirdGroupChannelLastMessage): [optional]  # noqa: E501
+            last_message (SendBirdMessageResponse): [optional]  # noqa: E501
             max_length_message (float): [optional]  # noqa: E501
             member_count (float): [optional]  # noqa: E501
             members ([SendBirdMember]): [optional]  # noqa: E501
@@ -316,6 +316,7 @@ class SendBirdChannelResponse(ModelComposed):
             unread_mention_count (float): [optional]  # noqa: E501
             unread_message_count (float): [optional]  # noqa: E501
             channel (SendBirdGroupChannelChannel): [optional]  # noqa: E501
+            read_receipt ({str: (int,)}): [optional]  # noqa: E501
             is_dynamic_partitioned (bool): [optional]  # noqa: E501
             participant_count (float): [optional]  # noqa: E501
         """
@@ -433,7 +434,7 @@ class SendBirdChannelResponse(ModelComposed):
             ignore_profanity_filter (bool): [optional]  # noqa: E501
             hidden_state (str): [optional]  # noqa: E501
             invited_at (float): [optional]  # noqa: E501
-            inviter (SendBirdGroupChannelInviter): [optional]  # noqa: E501
+            inviter (SendBirdUser): [optional]  # noqa: E501
             is_access_code_required (bool): [optional]  # noqa: E501
             is_broadcast (bool): [optional]  # noqa: E501
             is_created (bool): [optional]  # noqa: E501
@@ -447,7 +448,7 @@ class SendBirdChannelResponse(ModelComposed):
             is_super (bool): [optional]  # noqa: E501
             joined_at (float): [optional]  # noqa: E501
             joined_member_count (float): [optional]  # noqa: E501
-            last_message (SendBirdGroupChannelLastMessage): [optional]  # noqa: E501
+            last_message (SendBirdMessageResponse): [optional]  # noqa: E501
             max_length_message (float): [optional]  # noqa: E501
             member_count (float): [optional]  # noqa: E501
             members ([SendBirdMember]): [optional]  # noqa: E501
@@ -465,6 +466,7 @@ class SendBirdChannelResponse(ModelComposed):
             unread_mention_count (float): [optional]  # noqa: E501
             unread_message_count (float): [optional]  # noqa: E501
             channel (SendBirdGroupChannelChannel): [optional]  # noqa: E501
+            read_receipt ({str: (int,)}): [optional]  # noqa: E501
             is_dynamic_partitioned (bool): [optional]  # noqa: E501
             participant_count (float): [optional]  # noqa: E501
         """
