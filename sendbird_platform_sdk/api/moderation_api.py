@@ -76,12 +76,11 @@ class ModerationApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'user_id',
+                    'api_token',
                     'ban_from_channels_with_custom_channel_types_data',
                 ],
                 'required': [
-                    'api_token',
                     'user_id',
                 ],
                 'nullable': [
@@ -97,20 +96,20 @@ class ModerationApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'user_id':
+                        (str,),
+                    'api_token':
                         (str,),
                     'ban_from_channels_with_custom_channel_types_data':
                         (BanFromChannelsWithCustomChannelTypesData,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'user_id': 'user_id',
+                    'api_token': 'Api-Token',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'user_id': 'path',
+                    'api_token': 'header',
                     'ban_from_channels_with_custom_channel_types_data': 'body',
                 },
                 'collection_format_map': {
@@ -137,12 +136,11 @@ class ModerationApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'user_id',
+                    'api_token',
                     'block_user_data',
                 ],
                 'required': [
-                    'api_token',
                     'user_id',
                 ],
                 'nullable': [
@@ -158,20 +156,20 @@ class ModerationApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'user_id':
+                        (str,),
+                    'api_token':
                         (str,),
                     'block_user_data':
                         (BlockUserData,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'user_id': 'user_id',
+                    'api_token': 'Api-Token',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'user_id': 'path',
+                    'api_token': 'header',
                     'block_user_data': 'body',
                 },
                 'collection_format_map': {
@@ -198,12 +196,11 @@ class ModerationApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'channel_url',
+                    'api_token',
                     'gc_ban_user_data',
                 ],
                 'required': [
-                    'api_token',
                     'channel_url',
                 ],
                 'nullable': [
@@ -219,20 +216,20 @@ class ModerationApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'channel_url':
+                        (str,),
+                    'api_token':
                         (str,),
                     'gc_ban_user_data':
                         (GcBanUserData,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'channel_url': 'channel_url',
+                    'api_token': 'Api-Token',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'channel_url': 'path',
+                    'api_token': 'header',
                     'gc_ban_user_data': 'body',
                 },
                 'collection_format_map': {
@@ -259,12 +256,11 @@ class ModerationApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'channel_url',
+                    'api_token',
                     'gc_freeze_channel_data',
                 ],
                 'required': [
-                    'api_token',
                     'channel_url',
                 ],
                 'nullable': [
@@ -280,20 +276,20 @@ class ModerationApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'channel_url':
+                        (str,),
+                    'api_token':
                         (str,),
                     'gc_freeze_channel_data':
                         (GcFreezeChannelData,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'channel_url': 'channel_url',
+                    'api_token': 'Api-Token',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'channel_url': 'path',
+                    'api_token': 'header',
                     'gc_freeze_channel_data': 'body',
                 },
                 'collection_format_map': {
@@ -320,13 +316,12 @@ class ModerationApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'channel_url',
+                    'api_token',
                     'token',
                     'limit',
                 ],
                 'required': [
-                    'api_token',
                     'channel_url',
                 ],
                 'nullable': [
@@ -342,9 +337,9 @@ class ModerationApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'channel_url':
+                        (str,),
+                    'api_token':
                         (str,),
                     'token':
                         (str,),
@@ -352,14 +347,14 @@ class ModerationApi(object):
                         (int,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'channel_url': 'channel_url',
+                    'api_token': 'Api-Token',
                     'token': 'token',
                     'limit': 'limit',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'channel_url': 'path',
+                    'api_token': 'header',
                     'token': 'query',
                     'limit': 'query',
                 },
@@ -385,13 +380,12 @@ class ModerationApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'channel_url',
+                    'api_token',
                     'token',
                     'limit',
                 ],
                 'required': [
-                    'api_token',
                     'channel_url',
                 ],
                 'nullable': [
@@ -407,9 +401,9 @@ class ModerationApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'channel_url':
+                        (str,),
+                    'api_token':
                         (str,),
                     'token':
                         (str,),
@@ -417,14 +411,14 @@ class ModerationApi(object):
                         (int,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'channel_url': 'channel_url',
+                    'api_token': 'Api-Token',
                     'token': 'token',
                     'limit': 'limit',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'channel_url': 'path',
+                    'api_token': 'header',
                     'token': 'query',
                     'limit': 'query',
                 },
@@ -450,12 +444,11 @@ class ModerationApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'channel_url',
+                    'api_token',
                     'gc_mute_user_data',
                 ],
                 'required': [
-                    'api_token',
                     'channel_url',
                 ],
                 'nullable': [
@@ -471,20 +464,20 @@ class ModerationApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'channel_url':
+                        (str,),
+                    'api_token':
                         (str,),
                     'gc_mute_user_data':
                         (GcMuteUserData,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'channel_url': 'channel_url',
+                    'api_token': 'Api-Token',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'channel_url': 'path',
+                    'api_token': 'header',
                     'gc_mute_user_data': 'body',
                 },
                 'collection_format_map': {
@@ -511,12 +504,11 @@ class ModerationApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'channel_url',
                     'banned_user_id',
+                    'api_token',
                 ],
                 'required': [
-                    'api_token',
                     'channel_url',
                     'banned_user_id',
                 ],
@@ -533,22 +525,22 @@ class ModerationApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'channel_url':
                         (str,),
                     'banned_user_id':
                         (str,),
+                    'api_token':
+                        (str,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'channel_url': 'channel_url',
                     'banned_user_id': 'banned_user_id',
+                    'api_token': 'Api-Token',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'channel_url': 'path',
                     'banned_user_id': 'path',
+                    'api_token': 'header',
                 },
                 'collection_format_map': {
                 }
@@ -572,12 +564,11 @@ class ModerationApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'channel_url',
                     'muted_user_id',
+                    'api_token',
                 ],
                 'required': [
-                    'api_token',
                     'channel_url',
                     'muted_user_id',
                 ],
@@ -594,22 +585,22 @@ class ModerationApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'channel_url':
                         (str,),
                     'muted_user_id':
                         (str,),
+                    'api_token':
+                        (str,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'channel_url': 'channel_url',
                     'muted_user_id': 'muted_user_id',
+                    'api_token': 'Api-Token',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'channel_url': 'path',
                     'muted_user_id': 'path',
+                    'api_token': 'header',
                 },
                 'collection_format_map': {
                 }
@@ -633,13 +624,12 @@ class ModerationApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'channel_url',
                     'banned_user_id',
+                    'api_token',
                     'gc_update_ban_by_id_data',
                 ],
                 'required': [
-                    'api_token',
                     'channel_url',
                     'banned_user_id',
                 ],
@@ -656,24 +646,24 @@ class ModerationApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'channel_url':
                         (str,),
                     'banned_user_id':
+                        (str,),
+                    'api_token':
                         (str,),
                     'gc_update_ban_by_id_data':
                         (GcUpdateBanByIdData,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'channel_url': 'channel_url',
                     'banned_user_id': 'banned_user_id',
+                    'api_token': 'Api-Token',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'channel_url': 'path',
                     'banned_user_id': 'path',
+                    'api_token': 'header',
                     'gc_update_ban_by_id_data': 'body',
                 },
                 'collection_format_map': {
@@ -700,12 +690,11 @@ class ModerationApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'channel_url',
                     'banned_user_id',
+                    'api_token',
                 ],
                 'required': [
-                    'api_token',
                     'channel_url',
                     'banned_user_id',
                 ],
@@ -722,22 +711,22 @@ class ModerationApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'channel_url':
                         (str,),
                     'banned_user_id':
                         (str,),
+                    'api_token':
+                        (str,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'channel_url': 'channel_url',
                     'banned_user_id': 'banned_user_id',
+                    'api_token': 'Api-Token',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'channel_url': 'path',
                     'banned_user_id': 'path',
+                    'api_token': 'header',
                 },
                 'collection_format_map': {
                 }
@@ -761,12 +750,11 @@ class ModerationApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'channel_url',
                     'muted_user_id',
+                    'api_token',
                 ],
                 'required': [
-                    'api_token',
                     'channel_url',
                     'muted_user_id',
                 ],
@@ -783,22 +771,22 @@ class ModerationApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'channel_url':
                         (str,),
                     'muted_user_id':
                         (str,),
+                    'api_token':
+                        (str,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'channel_url': 'channel_url',
                     'muted_user_id': 'muted_user_id',
+                    'api_token': 'Api-Token',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'channel_url': 'path',
                     'muted_user_id': 'path',
+                    'api_token': 'header',
                 },
                 'collection_format_map': {
                 }
@@ -822,13 +810,12 @@ class ModerationApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'user_id',
+                    'api_token',
                     'token',
                     'limit',
                 ],
                 'required': [
-                    'api_token',
                     'user_id',
                 ],
                 'nullable': [
@@ -844,9 +831,9 @@ class ModerationApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'user_id':
+                        (str,),
+                    'api_token':
                         (str,),
                     'token':
                         (str,),
@@ -854,14 +841,14 @@ class ModerationApi(object):
                         (int,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'user_id': 'user_id',
+                    'api_token': 'Api-Token',
                     'token': 'token',
                     'limit': 'limit',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'user_id': 'path',
+                    'api_token': 'header',
                     'token': 'query',
                     'limit': 'query',
                 },
@@ -887,8 +874,8 @@ class ModerationApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'user_id',
+                    'api_token',
                     'token',
                     'limit',
                     'user_ids',
@@ -896,7 +883,6 @@ class ModerationApi(object):
                     'metadatavalues_in',
                 ],
                 'required': [
-                    'api_token',
                     'user_id',
                 ],
                 'nullable': [
@@ -912,9 +898,9 @@ class ModerationApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'user_id':
+                        (str,),
+                    'api_token':
                         (str,),
                     'token':
                         (str,),
@@ -928,8 +914,8 @@ class ModerationApi(object):
                         (str,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'user_id': 'user_id',
+                    'api_token': 'Api-Token',
                     'token': 'token',
                     'limit': 'limit',
                     'user_ids': 'user_ids',
@@ -937,8 +923,8 @@ class ModerationApi(object):
                     'metadatavalues_in': 'metadatavalues_in',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'user_id': 'path',
+                    'api_token': 'header',
                     'token': 'query',
                     'limit': 'query',
                     'user_ids': 'query',
@@ -967,13 +953,12 @@ class ModerationApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'user_id',
+                    'api_token',
                     'token',
                     'limit',
                 ],
                 'required': [
-                    'api_token',
                     'user_id',
                 ],
                 'nullable': [
@@ -989,9 +974,9 @@ class ModerationApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'user_id':
+                        (str,),
+                    'api_token':
                         (str,),
                     'token':
                         (str,),
@@ -999,14 +984,14 @@ class ModerationApi(object):
                         (int,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'user_id': 'user_id',
+                    'api_token': 'Api-Token',
                     'token': 'token',
                     'limit': 'limit',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'user_id': 'path',
+                    'api_token': 'header',
                     'token': 'query',
                     'limit': 'query',
                 },
@@ -1032,12 +1017,11 @@ class ModerationApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'user_id',
+                    'api_token',
                     'mute_in_channels_with_custom_channel_types_data',
                 ],
                 'required': [
-                    'api_token',
                     'user_id',
                 ],
                 'nullable': [
@@ -1053,20 +1037,20 @@ class ModerationApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'user_id':
+                        (str,),
+                    'api_token':
                         (str,),
                     'mute_in_channels_with_custom_channel_types_data':
                         (MuteInChannelsWithCustomChannelTypesData,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'user_id': 'user_id',
+                    'api_token': 'Api-Token',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'user_id': 'path',
+                    'api_token': 'header',
                     'mute_in_channels_with_custom_channel_types_data': 'body',
                 },
                 'collection_format_map': {
@@ -1093,12 +1077,11 @@ class ModerationApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'channel_url',
+                    'api_token',
                     'oc_ban_user_data',
                 ],
                 'required': [
-                    'api_token',
                     'channel_url',
                 ],
                 'nullable': [
@@ -1114,20 +1097,20 @@ class ModerationApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'channel_url':
+                        (str,),
+                    'api_token':
                         (str,),
                     'oc_ban_user_data':
                         (OcBanUserData,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'channel_url': 'channel_url',
+                    'api_token': 'Api-Token',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'channel_url': 'path',
+                    'api_token': 'header',
                     'oc_ban_user_data': 'body',
                 },
                 'collection_format_map': {
@@ -1154,12 +1137,11 @@ class ModerationApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'channel_url',
+                    'api_token',
                     'oc_freeze_channel_data',
                 ],
                 'required': [
-                    'api_token',
                     'channel_url',
                 ],
                 'nullable': [
@@ -1175,20 +1157,20 @@ class ModerationApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'channel_url':
+                        (str,),
+                    'api_token':
                         (str,),
                     'oc_freeze_channel_data':
                         (OcFreezeChannelData,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'channel_url': 'channel_url',
+                    'api_token': 'Api-Token',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'channel_url': 'path',
+                    'api_token': 'header',
                     'oc_freeze_channel_data': 'body',
                 },
                 'collection_format_map': {
@@ -1215,13 +1197,12 @@ class ModerationApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'channel_url',
+                    'api_token',
                     'token',
                     'limit',
                 ],
                 'required': [
-                    'api_token',
                     'channel_url',
                 ],
                 'nullable': [
@@ -1237,9 +1218,9 @@ class ModerationApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'channel_url':
+                        (str,),
+                    'api_token':
                         (str,),
                     'token':
                         (str,),
@@ -1247,14 +1228,14 @@ class ModerationApi(object):
                         (int,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'channel_url': 'channel_url',
+                    'api_token': 'Api-Token',
                     'token': 'token',
                     'limit': 'limit',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'channel_url': 'path',
+                    'api_token': 'header',
                     'token': 'query',
                     'limit': 'query',
                 },
@@ -1280,13 +1261,12 @@ class ModerationApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'channel_url',
+                    'api_token',
                     'token',
                     'limit',
                 ],
                 'required': [
-                    'api_token',
                     'channel_url',
                 ],
                 'nullable': [
@@ -1302,9 +1282,9 @@ class ModerationApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'channel_url':
+                        (str,),
+                    'api_token':
                         (str,),
                     'token':
                         (str,),
@@ -1312,14 +1292,14 @@ class ModerationApi(object):
                         (int,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'channel_url': 'channel_url',
+                    'api_token': 'Api-Token',
                     'token': 'token',
                     'limit': 'limit',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'channel_url': 'path',
+                    'api_token': 'header',
                     'token': 'query',
                     'limit': 'query',
                 },
@@ -1345,12 +1325,11 @@ class ModerationApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'channel_url',
+                    'api_token',
                     'oc_mute_user_data',
                 ],
                 'required': [
-                    'api_token',
                     'channel_url',
                 ],
                 'nullable': [
@@ -1366,20 +1345,20 @@ class ModerationApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'channel_url':
+                        (str,),
+                    'api_token':
                         (str,),
                     'oc_mute_user_data':
                         (OcMuteUserData,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'channel_url': 'channel_url',
+                    'api_token': 'Api-Token',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'channel_url': 'path',
+                    'api_token': 'header',
                     'oc_mute_user_data': 'body',
                 },
                 'collection_format_map': {
@@ -1406,12 +1385,11 @@ class ModerationApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'channel_url',
                     'banned_user_id',
+                    'api_token',
                 ],
                 'required': [
-                    'api_token',
                     'channel_url',
                     'banned_user_id',
                 ],
@@ -1428,22 +1406,22 @@ class ModerationApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'channel_url':
                         (str,),
                     'banned_user_id':
                         (str,),
+                    'api_token':
+                        (str,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'channel_url': 'channel_url',
                     'banned_user_id': 'banned_user_id',
+                    'api_token': 'Api-Token',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'channel_url': 'path',
                     'banned_user_id': 'path',
+                    'api_token': 'header',
                 },
                 'collection_format_map': {
                 }
@@ -1467,12 +1445,11 @@ class ModerationApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'channel_url',
                     'muted_user_id',
+                    'api_token',
                 ],
                 'required': [
-                    'api_token',
                     'channel_url',
                     'muted_user_id',
                 ],
@@ -1489,22 +1466,22 @@ class ModerationApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'channel_url':
                         (str,),
                     'muted_user_id':
                         (str,),
+                    'api_token':
+                        (str,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'channel_url': 'channel_url',
                     'muted_user_id': 'muted_user_id',
+                    'api_token': 'Api-Token',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'channel_url': 'path',
                     'muted_user_id': 'path',
+                    'api_token': 'header',
                 },
                 'collection_format_map': {
                 }
@@ -1528,13 +1505,12 @@ class ModerationApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'channel_url',
                     'banned_user_id',
+                    'api_token',
                     'oc_update_ban_by_id_data',
                 ],
                 'required': [
-                    'api_token',
                     'channel_url',
                     'banned_user_id',
                 ],
@@ -1551,24 +1527,24 @@ class ModerationApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'channel_url':
                         (str,),
                     'banned_user_id':
+                        (str,),
+                    'api_token':
                         (str,),
                     'oc_update_ban_by_id_data':
                         (OcUpdateBanByIdData,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'channel_url': 'channel_url',
                     'banned_user_id': 'banned_user_id',
+                    'api_token': 'Api-Token',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'channel_url': 'path',
                     'banned_user_id': 'path',
+                    'api_token': 'header',
                     'oc_update_ban_by_id_data': 'body',
                 },
                 'collection_format_map': {
@@ -1595,12 +1571,11 @@ class ModerationApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'channel_url',
                     'banned_user_id',
+                    'api_token',
                 ],
                 'required': [
-                    'api_token',
                     'channel_url',
                     'banned_user_id',
                 ],
@@ -1617,22 +1592,22 @@ class ModerationApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'channel_url':
                         (str,),
                     'banned_user_id':
                         (str,),
+                    'api_token':
+                        (str,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'channel_url': 'channel_url',
                     'banned_user_id': 'banned_user_id',
+                    'api_token': 'Api-Token',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'channel_url': 'path',
                     'banned_user_id': 'path',
+                    'api_token': 'header',
                 },
                 'collection_format_map': {
                 }
@@ -1656,12 +1631,11 @@ class ModerationApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'channel_url',
                     'muted_user_id',
+                    'api_token',
                 ],
                 'required': [
-                    'api_token',
                     'channel_url',
                     'muted_user_id',
                 ],
@@ -1678,22 +1652,22 @@ class ModerationApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'channel_url':
                         (str,),
                     'muted_user_id':
                         (str,),
+                    'api_token':
+                        (str,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'channel_url': 'channel_url',
                     'muted_user_id': 'muted_user_id',
+                    'api_token': 'Api-Token',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'channel_url': 'path',
                     'muted_user_id': 'path',
+                    'api_token': 'header',
                 },
                 'collection_format_map': {
                 }
@@ -1717,12 +1691,11 @@ class ModerationApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'user_id',
                     'target_id',
+                    'api_token',
                 ],
                 'required': [
-                    'api_token',
                     'user_id',
                     'target_id',
                 ],
@@ -1739,22 +1712,22 @@ class ModerationApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'user_id':
                         (str,),
                     'target_id':
                         (str,),
+                    'api_token':
+                        (str,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'user_id': 'user_id',
                     'target_id': 'target_id',
+                    'api_token': 'Api-Token',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'user_id': 'path',
                     'target_id': 'path',
+                    'api_token': 'header',
                 },
                 'collection_format_map': {
                 }
@@ -1770,7 +1743,6 @@ class ModerationApi(object):
 
     def ban_from_channels_with_custom_channel_types(
         self,
-        api_token,
         user_id,
         **kwargs
     ):
@@ -1780,14 +1752,14 @@ class ModerationApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.ban_from_channels_with_custom_channel_types(api_token, user_id, async_req=True)
+        >>> thread = api.ban_from_channels_with_custom_channel_types(user_id, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             user_id (str):
 
         Keyword Args:
+            api_token (str): [optional]
             ban_from_channels_with_custom_channel_types_data (BanFromChannelsWithCustomChannelTypesData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -1850,15 +1822,12 @@ class ModerationApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['user_id'] = \
             user_id
         return self.ban_from_channels_with_custom_channel_types_endpoint.call_with_http_info(**kwargs)
 
     def block_user(
         self,
-        api_token,
         user_id,
         **kwargs
     ):
@@ -1868,14 +1837,14 @@ class ModerationApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.block_user(api_token, user_id, async_req=True)
+        >>> thread = api.block_user(user_id, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             user_id (str):
 
         Keyword Args:
+            api_token (str): [optional]
             block_user_data (BlockUserData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -1938,15 +1907,12 @@ class ModerationApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['user_id'] = \
             user_id
         return self.block_user_endpoint.call_with_http_info(**kwargs)
 
     def gc_ban_user(
         self,
-        api_token,
         channel_url,
         **kwargs
     ):
@@ -1956,14 +1922,14 @@ class ModerationApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.gc_ban_user(api_token, channel_url, async_req=True)
+        >>> thread = api.gc_ban_user(channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             channel_url (str):
 
         Keyword Args:
+            api_token (str): [optional]
             gc_ban_user_data (GcBanUserData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -2026,15 +1992,12 @@ class ModerationApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['channel_url'] = \
             channel_url
         return self.gc_ban_user_endpoint.call_with_http_info(**kwargs)
 
     def gc_freeze_channel(
         self,
-        api_token,
         channel_url,
         **kwargs
     ):
@@ -2044,14 +2007,14 @@ class ModerationApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.gc_freeze_channel(api_token, channel_url, async_req=True)
+        >>> thread = api.gc_freeze_channel(channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             channel_url (str):
 
         Keyword Args:
+            api_token (str): [optional]
             gc_freeze_channel_data (GcFreezeChannelData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -2114,15 +2077,12 @@ class ModerationApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['channel_url'] = \
             channel_url
         return self.gc_freeze_channel_endpoint.call_with_http_info(**kwargs)
 
     def gc_list_banned_users(
         self,
-        api_token,
         channel_url,
         **kwargs
     ):
@@ -2132,14 +2092,14 @@ class ModerationApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.gc_list_banned_users(api_token, channel_url, async_req=True)
+        >>> thread = api.gc_list_banned_users(channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             channel_url (str):
 
         Keyword Args:
+            api_token (str): [optional]
             token (str): [optional]
             limit (int): [optional]
             _return_http_data_only (bool): response data without head status
@@ -2203,15 +2163,12 @@ class ModerationApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['channel_url'] = \
             channel_url
         return self.gc_list_banned_users_endpoint.call_with_http_info(**kwargs)
 
     def gc_list_muted_users(
         self,
-        api_token,
         channel_url,
         **kwargs
     ):
@@ -2221,14 +2178,14 @@ class ModerationApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.gc_list_muted_users(api_token, channel_url, async_req=True)
+        >>> thread = api.gc_list_muted_users(channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             channel_url (str):
 
         Keyword Args:
+            api_token (str): [optional]
             token (str): [optional]
             limit (int): [optional]
             _return_http_data_only (bool): response data without head status
@@ -2292,15 +2249,12 @@ class ModerationApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['channel_url'] = \
             channel_url
         return self.gc_list_muted_users_endpoint.call_with_http_info(**kwargs)
 
     def gc_mute_user(
         self,
-        api_token,
         channel_url,
         **kwargs
     ):
@@ -2310,14 +2264,14 @@ class ModerationApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.gc_mute_user(api_token, channel_url, async_req=True)
+        >>> thread = api.gc_mute_user(channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             channel_url (str):
 
         Keyword Args:
+            api_token (str): [optional]
             gc_mute_user_data (GcMuteUserData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -2380,15 +2334,12 @@ class ModerationApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['channel_url'] = \
             channel_url
         return self.gc_mute_user_endpoint.call_with_http_info(**kwargs)
 
     def gc_unban_user_by_id(
         self,
-        api_token,
         channel_url,
         banned_user_id,
         **kwargs
@@ -2399,15 +2350,15 @@ class ModerationApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.gc_unban_user_by_id(api_token, channel_url, banned_user_id, async_req=True)
+        >>> thread = api.gc_unban_user_by_id(channel_url, banned_user_id, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             channel_url (str):
             banned_user_id (str):
 
         Keyword Args:
+            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -2469,8 +2420,6 @@ class ModerationApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['channel_url'] = \
             channel_url
         kwargs['banned_user_id'] = \
@@ -2479,7 +2428,6 @@ class ModerationApi(object):
 
     def gc_unmute_user_by_id(
         self,
-        api_token,
         channel_url,
         muted_user_id,
         **kwargs
@@ -2490,15 +2438,15 @@ class ModerationApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.gc_unmute_user_by_id(api_token, channel_url, muted_user_id, async_req=True)
+        >>> thread = api.gc_unmute_user_by_id(channel_url, muted_user_id, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             channel_url (str):
             muted_user_id (str):
 
         Keyword Args:
+            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -2560,8 +2508,6 @@ class ModerationApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['channel_url'] = \
             channel_url
         kwargs['muted_user_id'] = \
@@ -2570,7 +2516,6 @@ class ModerationApi(object):
 
     def gc_update_ban_by_id(
         self,
-        api_token,
         channel_url,
         banned_user_id,
         **kwargs
@@ -2581,15 +2526,15 @@ class ModerationApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.gc_update_ban_by_id(api_token, channel_url, banned_user_id, async_req=True)
+        >>> thread = api.gc_update_ban_by_id(channel_url, banned_user_id, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             channel_url (str):
             banned_user_id (str):
 
         Keyword Args:
+            api_token (str): [optional]
             gc_update_ban_by_id_data (GcUpdateBanByIdData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -2652,8 +2597,6 @@ class ModerationApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['channel_url'] = \
             channel_url
         kwargs['banned_user_id'] = \
@@ -2662,7 +2605,6 @@ class ModerationApi(object):
 
     def gc_view_ban_by_id(
         self,
-        api_token,
         channel_url,
         banned_user_id,
         **kwargs
@@ -2673,15 +2615,15 @@ class ModerationApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.gc_view_ban_by_id(api_token, channel_url, banned_user_id, async_req=True)
+        >>> thread = api.gc_view_ban_by_id(channel_url, banned_user_id, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             channel_url (str):
             banned_user_id (str):
 
         Keyword Args:
+            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -2743,8 +2685,6 @@ class ModerationApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['channel_url'] = \
             channel_url
         kwargs['banned_user_id'] = \
@@ -2753,7 +2693,6 @@ class ModerationApi(object):
 
     def gc_view_mute_by_id(
         self,
-        api_token,
         channel_url,
         muted_user_id,
         **kwargs
@@ -2764,15 +2703,15 @@ class ModerationApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.gc_view_mute_by_id(api_token, channel_url, muted_user_id, async_req=True)
+        >>> thread = api.gc_view_mute_by_id(channel_url, muted_user_id, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             channel_url (str):
             muted_user_id (str):
 
         Keyword Args:
+            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -2834,8 +2773,6 @@ class ModerationApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['channel_url'] = \
             channel_url
         kwargs['muted_user_id'] = \
@@ -2844,7 +2781,6 @@ class ModerationApi(object):
 
     def list_banned_channels(
         self,
-        api_token,
         user_id,
         **kwargs
     ):
@@ -2854,14 +2790,14 @@ class ModerationApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.list_banned_channels(api_token, user_id, async_req=True)
+        >>> thread = api.list_banned_channels(user_id, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             user_id (str):
 
         Keyword Args:
+            api_token (str): [optional]
             token (str): [optional]
             limit (int): [optional]
             _return_http_data_only (bool): response data without head status
@@ -2925,15 +2861,12 @@ class ModerationApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['user_id'] = \
             user_id
         return self.list_banned_channels_endpoint.call_with_http_info(**kwargs)
 
     def list_blocked_users(
         self,
-        api_token,
         user_id,
         **kwargs
     ):
@@ -2943,14 +2876,14 @@ class ModerationApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.list_blocked_users(api_token, user_id, async_req=True)
+        >>> thread = api.list_blocked_users(user_id, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             user_id (str):
 
         Keyword Args:
+            api_token (str): [optional]
             token (str): [optional]
             limit (int): [optional]
             user_ids (str): [optional]
@@ -3017,15 +2950,12 @@ class ModerationApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['user_id'] = \
             user_id
         return self.list_blocked_users_endpoint.call_with_http_info(**kwargs)
 
     def list_muted_channels(
         self,
-        api_token,
         user_id,
         **kwargs
     ):
@@ -3035,14 +2965,14 @@ class ModerationApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.list_muted_channels(api_token, user_id, async_req=True)
+        >>> thread = api.list_muted_channels(user_id, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             user_id (str):
 
         Keyword Args:
+            api_token (str): [optional]
             token (str): [optional]
             limit (int): [optional]
             _return_http_data_only (bool): response data without head status
@@ -3106,15 +3036,12 @@ class ModerationApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['user_id'] = \
             user_id
         return self.list_muted_channels_endpoint.call_with_http_info(**kwargs)
 
     def mute_in_channels_with_custom_channel_types(
         self,
-        api_token,
         user_id,
         **kwargs
     ):
@@ -3124,14 +3051,14 @@ class ModerationApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.mute_in_channels_with_custom_channel_types(api_token, user_id, async_req=True)
+        >>> thread = api.mute_in_channels_with_custom_channel_types(user_id, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             user_id (str):
 
         Keyword Args:
+            api_token (str): [optional]
             mute_in_channels_with_custom_channel_types_data (MuteInChannelsWithCustomChannelTypesData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -3194,15 +3121,12 @@ class ModerationApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['user_id'] = \
             user_id
         return self.mute_in_channels_with_custom_channel_types_endpoint.call_with_http_info(**kwargs)
 
     def oc_ban_user(
         self,
-        api_token,
         channel_url,
         **kwargs
     ):
@@ -3212,14 +3136,14 @@ class ModerationApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.oc_ban_user(api_token, channel_url, async_req=True)
+        >>> thread = api.oc_ban_user(channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             channel_url (str):
 
         Keyword Args:
+            api_token (str): [optional]
             oc_ban_user_data (OcBanUserData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -3282,15 +3206,12 @@ class ModerationApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['channel_url'] = \
             channel_url
         return self.oc_ban_user_endpoint.call_with_http_info(**kwargs)
 
     def oc_freeze_channel(
         self,
-        api_token,
         channel_url,
         **kwargs
     ):
@@ -3300,14 +3221,14 @@ class ModerationApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.oc_freeze_channel(api_token, channel_url, async_req=True)
+        >>> thread = api.oc_freeze_channel(channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             channel_url (str):
 
         Keyword Args:
+            api_token (str): [optional]
             oc_freeze_channel_data (OcFreezeChannelData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -3370,15 +3291,12 @@ class ModerationApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['channel_url'] = \
             channel_url
         return self.oc_freeze_channel_endpoint.call_with_http_info(**kwargs)
 
     def oc_list_banned_users(
         self,
-        api_token,
         channel_url,
         **kwargs
     ):
@@ -3388,14 +3306,14 @@ class ModerationApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.oc_list_banned_users(api_token, channel_url, async_req=True)
+        >>> thread = api.oc_list_banned_users(channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             channel_url (str):
 
         Keyword Args:
+            api_token (str): [optional]
             token (str): [optional]
             limit (int): [optional]
             _return_http_data_only (bool): response data without head status
@@ -3459,15 +3377,12 @@ class ModerationApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['channel_url'] = \
             channel_url
         return self.oc_list_banned_users_endpoint.call_with_http_info(**kwargs)
 
     def oc_list_muted_users(
         self,
-        api_token,
         channel_url,
         **kwargs
     ):
@@ -3477,14 +3392,14 @@ class ModerationApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.oc_list_muted_users(api_token, channel_url, async_req=True)
+        >>> thread = api.oc_list_muted_users(channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             channel_url (str):
 
         Keyword Args:
+            api_token (str): [optional]
             token (str): [optional]
             limit (int): [optional]
             _return_http_data_only (bool): response data without head status
@@ -3548,15 +3463,12 @@ class ModerationApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['channel_url'] = \
             channel_url
         return self.oc_list_muted_users_endpoint.call_with_http_info(**kwargs)
 
     def oc_mute_user(
         self,
-        api_token,
         channel_url,
         **kwargs
     ):
@@ -3566,14 +3478,14 @@ class ModerationApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.oc_mute_user(api_token, channel_url, async_req=True)
+        >>> thread = api.oc_mute_user(channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             channel_url (str):
 
         Keyword Args:
+            api_token (str): [optional]
             oc_mute_user_data (OcMuteUserData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -3636,15 +3548,12 @@ class ModerationApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['channel_url'] = \
             channel_url
         return self.oc_mute_user_endpoint.call_with_http_info(**kwargs)
 
     def oc_unban_user_by_id(
         self,
-        api_token,
         channel_url,
         banned_user_id,
         **kwargs
@@ -3655,15 +3564,15 @@ class ModerationApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.oc_unban_user_by_id(api_token, channel_url, banned_user_id, async_req=True)
+        >>> thread = api.oc_unban_user_by_id(channel_url, banned_user_id, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             channel_url (str):
             banned_user_id (str):
 
         Keyword Args:
+            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -3725,8 +3634,6 @@ class ModerationApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['channel_url'] = \
             channel_url
         kwargs['banned_user_id'] = \
@@ -3735,7 +3642,6 @@ class ModerationApi(object):
 
     def oc_unmute_user_by_id(
         self,
-        api_token,
         channel_url,
         muted_user_id,
         **kwargs
@@ -3746,15 +3652,15 @@ class ModerationApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.oc_unmute_user_by_id(api_token, channel_url, muted_user_id, async_req=True)
+        >>> thread = api.oc_unmute_user_by_id(channel_url, muted_user_id, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             channel_url (str):
             muted_user_id (str):
 
         Keyword Args:
+            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -3816,8 +3722,6 @@ class ModerationApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['channel_url'] = \
             channel_url
         kwargs['muted_user_id'] = \
@@ -3826,7 +3730,6 @@ class ModerationApi(object):
 
     def oc_update_ban_by_id(
         self,
-        api_token,
         channel_url,
         banned_user_id,
         **kwargs
@@ -3837,15 +3740,15 @@ class ModerationApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.oc_update_ban_by_id(api_token, channel_url, banned_user_id, async_req=True)
+        >>> thread = api.oc_update_ban_by_id(channel_url, banned_user_id, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             channel_url (str):
             banned_user_id (str):
 
         Keyword Args:
+            api_token (str): [optional]
             oc_update_ban_by_id_data (OcUpdateBanByIdData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -3908,8 +3811,6 @@ class ModerationApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['channel_url'] = \
             channel_url
         kwargs['banned_user_id'] = \
@@ -3918,7 +3819,6 @@ class ModerationApi(object):
 
     def oc_view_ban_by_id(
         self,
-        api_token,
         channel_url,
         banned_user_id,
         **kwargs
@@ -3929,15 +3829,15 @@ class ModerationApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.oc_view_ban_by_id(api_token, channel_url, banned_user_id, async_req=True)
+        >>> thread = api.oc_view_ban_by_id(channel_url, banned_user_id, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             channel_url (str):
             banned_user_id (str):
 
         Keyword Args:
+            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -3999,8 +3899,6 @@ class ModerationApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['channel_url'] = \
             channel_url
         kwargs['banned_user_id'] = \
@@ -4009,7 +3907,6 @@ class ModerationApi(object):
 
     def oc_view_mute_by_id(
         self,
-        api_token,
         channel_url,
         muted_user_id,
         **kwargs
@@ -4020,15 +3917,15 @@ class ModerationApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.oc_view_mute_by_id(api_token, channel_url, muted_user_id, async_req=True)
+        >>> thread = api.oc_view_mute_by_id(channel_url, muted_user_id, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             channel_url (str):
             muted_user_id (str):
 
         Keyword Args:
+            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -4090,8 +3987,6 @@ class ModerationApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['channel_url'] = \
             channel_url
         kwargs['muted_user_id'] = \
@@ -4100,7 +3995,6 @@ class ModerationApi(object):
 
     def unblock_user_by_id(
         self,
-        api_token,
         user_id,
         target_id,
         **kwargs
@@ -4111,15 +4005,15 @@ class ModerationApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.unblock_user_by_id(api_token, user_id, target_id, async_req=True)
+        >>> thread = api.unblock_user_by_id(user_id, target_id, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             user_id (str):
             target_id (str):
 
         Keyword Args:
+            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -4181,8 +4075,6 @@ class ModerationApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['user_id'] = \
             user_id
         kwargs['target_id'] = \

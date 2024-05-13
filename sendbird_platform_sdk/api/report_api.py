@@ -62,9 +62,7 @@ class ReportApi(object):
                     'start_ts',
                     'end_ts',
                 ],
-                'required': [
-                    'api_token',
-                ],
+                'required': [],
                 'nullable': [
                 ],
                 'enum': [
@@ -125,14 +123,13 @@ class ReportApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'channel_type',
                     'channel_url',
+                    'api_token',
                     'token',
                     'limit',
                 ],
                 'required': [
-                    'api_token',
                     'channel_type',
                     'channel_url',
                 ],
@@ -149,11 +146,11 @@ class ReportApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'channel_type':
                         (str,),
                     'channel_url':
+                        (str,),
+                    'api_token':
                         (str,),
                     'token':
                         (str,),
@@ -161,16 +158,16 @@ class ReportApi(object):
                         (int,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'channel_type': 'channel_type',
                     'channel_url': 'channel_url',
+                    'api_token': 'Api-Token',
                     'token': 'token',
                     'limit': 'limit',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'channel_type': 'path',
                     'channel_url': 'path',
+                    'api_token': 'header',
                     'token': 'query',
                     'limit': 'query',
                 },
@@ -196,15 +193,14 @@ class ReportApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'channel_type',
                     'channel_url',
                     'message_id',
+                    'api_token',
                     'token',
                     'limit',
                 ],
                 'required': [
-                    'api_token',
                     'channel_type',
                     'channel_url',
                     'message_id',
@@ -222,13 +218,13 @@ class ReportApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'channel_type':
                         (str,),
                     'channel_url':
                         (str,),
                     'message_id':
+                        (str,),
+                    'api_token':
                         (str,),
                     'token':
                         (str,),
@@ -236,18 +232,18 @@ class ReportApi(object):
                         (int,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'channel_type': 'channel_type',
                     'channel_url': 'channel_url',
                     'message_id': 'message_id',
+                    'api_token': 'Api-Token',
                     'token': 'token',
                     'limit': 'limit',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'channel_type': 'path',
                     'channel_url': 'path',
                     'message_id': 'path',
+                    'api_token': 'header',
                     'token': 'query',
                     'limit': 'query',
                 },
@@ -273,13 +269,12 @@ class ReportApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'offending_user_id',
+                    'api_token',
                     'token',
                     'limit',
                 ],
                 'required': [
-                    'api_token',
                     'offending_user_id',
                 ],
                 'nullable': [
@@ -295,9 +290,9 @@ class ReportApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'offending_user_id':
+                        (str,),
+                    'api_token':
                         (str,),
                     'token':
                         (str,),
@@ -305,14 +300,14 @@ class ReportApi(object):
                         (int,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'offending_user_id': 'offending_user_id',
+                    'api_token': 'Api-Token',
                     'token': 'token',
                     'limit': 'limit',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'offending_user_id': 'path',
+                    'api_token': 'header',
                     'token': 'query',
                     'limit': 'query',
                 },
@@ -338,13 +333,12 @@ class ReportApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'channel_type',
                     'channel_url',
+                    'api_token',
                     'report_channel_by_url_data',
                 ],
                 'required': [
-                    'api_token',
                     'channel_type',
                     'channel_url',
                 ],
@@ -361,24 +355,24 @@ class ReportApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'channel_type':
                         (str,),
                     'channel_url':
+                        (str,),
+                    'api_token':
                         (str,),
                     'report_channel_by_url_data':
                         (ReportChannelByUrlData,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'channel_type': 'channel_type',
                     'channel_url': 'channel_url',
+                    'api_token': 'Api-Token',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'channel_type': 'path',
                     'channel_url': 'path',
+                    'api_token': 'header',
                     'report_channel_by_url_data': 'body',
                 },
                 'collection_format_map': {
@@ -405,14 +399,13 @@ class ReportApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'channel_type',
                     'channel_url',
                     'message_id',
+                    'api_token',
                     'report_message_by_id_data',
                 ],
                 'required': [
-                    'api_token',
                     'channel_type',
                     'channel_url',
                     'message_id',
@@ -430,28 +423,28 @@ class ReportApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'channel_type':
                         (str,),
                     'channel_url':
                         (str,),
                     'message_id':
                         (str,),
+                    'api_token':
+                        (str,),
                     'report_message_by_id_data':
                         (ReportMessageByIdData,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'channel_type': 'channel_type',
                     'channel_url': 'channel_url',
                     'message_id': 'message_id',
+                    'api_token': 'Api-Token',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'channel_type': 'path',
                     'channel_url': 'path',
                     'message_id': 'path',
+                    'api_token': 'header',
                     'report_message_by_id_data': 'body',
                 },
                 'collection_format_map': {
@@ -478,12 +471,11 @@ class ReportApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'offending_user_id',
+                    'api_token',
                     'report_user_by_id_data',
                 ],
                 'required': [
-                    'api_token',
                     'offending_user_id',
                 ],
                 'nullable': [
@@ -499,20 +491,20 @@ class ReportApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'offending_user_id':
+                        (str,),
+                    'api_token':
                         (str,),
                     'report_user_by_id_data':
                         (ReportUserByIdData,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'offending_user_id': 'offending_user_id',
+                    'api_token': 'Api-Token',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'offending_user_id': 'path',
+                    'api_token': 'header',
                     'report_user_by_id_data': 'body',
                 },
                 'collection_format_map': {
@@ -539,13 +531,12 @@ class ReportApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'channel_type',
                     'channel_url',
                     'message_id',
+                    'api_token',
                 ],
                 'required': [
-                    'api_token',
                     'channel_type',
                     'channel_url',
                     'message_id',
@@ -563,26 +554,26 @@ class ReportApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'channel_type':
                         (str,),
                     'channel_url':
                         (str,),
                     'message_id':
                         (str,),
+                    'api_token':
+                        (str,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'channel_type': 'channel_type',
                     'channel_url': 'channel_url',
                     'message_id': 'message_id',
+                    'api_token': 'Api-Token',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'channel_type': 'path',
                     'channel_url': 'path',
                     'message_id': 'path',
+                    'api_token': 'header',
                 },
                 'collection_format_map': {
                 }
@@ -598,7 +589,6 @@ class ReportApi(object):
 
     def list_reports(
         self,
-        api_token,
         **kwargs
     ):
         """List reports  # noqa: E501
@@ -607,13 +597,12 @@ class ReportApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.list_reports(api_token, async_req=True)
+        >>> thread = api.list_reports(async_req=True)
         >>> result = thread.get()
 
-        Args:
-            api_token (str):
 
         Keyword Args:
+            api_token (str): [optional]
             token (str): [optional]
             limit (int): [optional]
             start_ts (int): [optional]
@@ -679,13 +668,10 @@ class ReportApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         return self.list_reports_endpoint.call_with_http_info(**kwargs)
 
     def list_reports_on_channel_by_url(
         self,
-        api_token,
         channel_type,
         channel_url,
         **kwargs
@@ -696,15 +682,15 @@ class ReportApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.list_reports_on_channel_by_url(api_token, channel_type, channel_url, async_req=True)
+        >>> thread = api.list_reports_on_channel_by_url(channel_type, channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             channel_type (str):
             channel_url (str):
 
         Keyword Args:
+            api_token (str): [optional]
             token (str): [optional]
             limit (int): [optional]
             _return_http_data_only (bool): response data without head status
@@ -768,8 +754,6 @@ class ReportApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['channel_type'] = \
             channel_type
         kwargs['channel_url'] = \
@@ -778,7 +762,6 @@ class ReportApi(object):
 
     def list_reports_on_message_by_id(
         self,
-        api_token,
         channel_type,
         channel_url,
         message_id,
@@ -790,16 +773,16 @@ class ReportApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.list_reports_on_message_by_id(api_token, channel_type, channel_url, message_id, async_req=True)
+        >>> thread = api.list_reports_on_message_by_id(channel_type, channel_url, message_id, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             channel_type (str):
             channel_url (str):
             message_id (str):
 
         Keyword Args:
+            api_token (str): [optional]
             token (str): [optional]
             limit (int): [optional]
             _return_http_data_only (bool): response data without head status
@@ -863,8 +846,6 @@ class ReportApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['channel_type'] = \
             channel_type
         kwargs['channel_url'] = \
@@ -875,7 +856,6 @@ class ReportApi(object):
 
     def list_reports_on_user_by_id(
         self,
-        api_token,
         offending_user_id,
         **kwargs
     ):
@@ -885,14 +865,14 @@ class ReportApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.list_reports_on_user_by_id(api_token, offending_user_id, async_req=True)
+        >>> thread = api.list_reports_on_user_by_id(offending_user_id, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             offending_user_id (str):
 
         Keyword Args:
+            api_token (str): [optional]
             token (str): [optional]
             limit (int): [optional]
             _return_http_data_only (bool): response data without head status
@@ -956,15 +936,12 @@ class ReportApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['offending_user_id'] = \
             offending_user_id
         return self.list_reports_on_user_by_id_endpoint.call_with_http_info(**kwargs)
 
     def report_channel_by_url(
         self,
-        api_token,
         channel_type,
         channel_url,
         **kwargs
@@ -975,15 +952,15 @@ class ReportApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.report_channel_by_url(api_token, channel_type, channel_url, async_req=True)
+        >>> thread = api.report_channel_by_url(channel_type, channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             channel_type (str):
             channel_url (str):
 
         Keyword Args:
+            api_token (str): [optional]
             report_channel_by_url_data (ReportChannelByUrlData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -1046,8 +1023,6 @@ class ReportApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['channel_type'] = \
             channel_type
         kwargs['channel_url'] = \
@@ -1056,7 +1031,6 @@ class ReportApi(object):
 
     def report_message_by_id(
         self,
-        api_token,
         channel_type,
         channel_url,
         message_id,
@@ -1068,16 +1042,16 @@ class ReportApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.report_message_by_id(api_token, channel_type, channel_url, message_id, async_req=True)
+        >>> thread = api.report_message_by_id(channel_type, channel_url, message_id, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             channel_type (str):
             channel_url (str):
             message_id (str):
 
         Keyword Args:
+            api_token (str): [optional]
             report_message_by_id_data (ReportMessageByIdData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -1140,8 +1114,6 @@ class ReportApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['channel_type'] = \
             channel_type
         kwargs['channel_url'] = \
@@ -1152,7 +1124,6 @@ class ReportApi(object):
 
     def report_user_by_id(
         self,
-        api_token,
         offending_user_id,
         **kwargs
     ):
@@ -1162,14 +1133,14 @@ class ReportApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.report_user_by_id(api_token, offending_user_id, async_req=True)
+        >>> thread = api.report_user_by_id(offending_user_id, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             offending_user_id (str):
 
         Keyword Args:
+            api_token (str): [optional]
             report_user_by_id_data (ReportUserByIdData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -1232,15 +1203,12 @@ class ReportApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['offending_user_id'] = \
             offending_user_id
         return self.report_user_by_id_endpoint.call_with_http_info(**kwargs)
 
     def view_moderated_message_by_id(
         self,
-        api_token,
         channel_type,
         channel_url,
         message_id,
@@ -1252,16 +1220,16 @@ class ReportApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.view_moderated_message_by_id(api_token, channel_type, channel_url, message_id, async_req=True)
+        >>> thread = api.view_moderated_message_by_id(channel_type, channel_url, message_id, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             channel_type (str):
             channel_url (str):
             message_id (str):
 
         Keyword Args:
+            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -1323,8 +1291,6 @@ class ReportApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['channel_type'] = \
             channel_type
         kwargs['channel_url'] = \

@@ -29,7 +29,7 @@ Name | Type | Description | Notes
 **sorted_metaarray** | **[{str: (bool, date, datetime, dict, float, int, list, str, none_type)}]** |  | [optional] 
 **thread_info** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}** |  | [optional] 
 **parent_message_id** | **float** |  | [optional] 
-**parent_message_info** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}** |  | [optional] 
+**parent_message_info** | [**SendBirdParentMessageInfo**](SendBirdParentMessageInfo.md) |  | [optional] 
 **is_reply_to_channel** | **bool** |  | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 

@@ -53,11 +53,10 @@ class StatisticsApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'unique_id',
+                    'api_token',
                 ],
                 'required': [
-                    'api_token',
                     'unique_id',
                 ],
                 'nullable': [
@@ -73,18 +72,18 @@ class StatisticsApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'unique_id':
+                        (str,),
+                    'api_token':
                         (str,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'unique_id': 'unique_id',
+                    'api_token': 'Api-Token',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'unique_id': 'path',
+                    'api_token': 'header',
                 },
                 'collection_format_map': {
                 }
@@ -108,8 +107,8 @@ class StatisticsApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'unique_id',
+                    'api_token',
                     'limit',
                     'next',
                     'unique_ids',
@@ -117,7 +116,6 @@ class StatisticsApi(object):
                     'has_opened',
                 ],
                 'required': [
-                    'api_token',
                     'unique_id',
                 ],
                 'nullable': [
@@ -133,9 +131,9 @@ class StatisticsApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'unique_id':
+                        (str,),
+                    'api_token':
                         (str,),
                     'limit':
                         (int,),
@@ -149,8 +147,8 @@ class StatisticsApi(object):
                         (bool,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'unique_id': 'unique_id',
+                    'api_token': 'Api-Token',
                     'limit': 'limit',
                     'next': 'next',
                     'unique_ids': 'unique_ids',
@@ -158,8 +156,8 @@ class StatisticsApi(object):
                     'has_opened': 'has_opened',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'unique_id': 'path',
+                    'api_token': 'header',
                     'limit': 'query',
                     'next': 'query',
                     'unique_ids': 'query',
@@ -192,9 +190,7 @@ class StatisticsApi(object):
                 'all': [
                     'api_token',
                 ],
-                'required': [
-                    'api_token',
-                ],
+                'required': [],
                 'nullable': [
                 ],
                 'enum': [
@@ -241,9 +237,7 @@ class StatisticsApi(object):
                 'all': [
                     'api_token',
                 ],
-                'required': [
-                    'api_token',
-                ],
+                'required': [],
                 'nullable': [
                 ],
                 'enum': [
@@ -291,9 +285,7 @@ class StatisticsApi(object):
                     'api_token',
                     'date',
                 ],
-                'required': [
-                    'api_token',
-                ],
+                'required': [],
                 'nullable': [
                 ],
                 'enum': [
@@ -345,9 +337,7 @@ class StatisticsApi(object):
                     'api_token',
                     'date',
                 ],
-                'required': [
-                    'api_token',
-                ],
+                'required': [],
                 'nullable': [
                 ],
                 'enum': [
@@ -396,17 +386,16 @@ class StatisticsApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'time_dimension',
                     'start_year',
                     'start_month',
                     'end_year',
                     'end_month',
+                    'api_token',
                     'start_day',
                     'end_day',
                 ],
                 'required': [
-                    'api_token',
                     'time_dimension',
                     'start_year',
                     'start_month',
@@ -426,8 +415,6 @@ class StatisticsApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'time_dimension':
                         (str,),
                     'start_year':
@@ -438,28 +425,30 @@ class StatisticsApi(object):
                         (int,),
                     'end_month':
                         (int,),
+                    'api_token':
+                        (str,),
                     'start_day':
                         (int,),
                     'end_day':
                         (int,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'time_dimension': 'time_dimension',
                     'start_year': 'start_year',
                     'start_month': 'start_month',
                     'end_year': 'end_year',
                     'end_month': 'end_month',
+                    'api_token': 'Api-Token',
                     'start_day': 'start_day',
                     'end_day': 'end_day',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'time_dimension': 'query',
                     'start_year': 'query',
                     'start_month': 'query',
                     'end_year': 'query',
                     'end_month': 'query',
+                    'api_token': 'header',
                     'start_day': 'query',
                     'end_day': 'query',
                 },
@@ -477,7 +466,6 @@ class StatisticsApi(object):
 
     def get_detailed_open_rate_of_announcement_by_id(
         self,
-        api_token,
         unique_id,
         **kwargs
     ):
@@ -487,14 +475,14 @@ class StatisticsApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.get_detailed_open_rate_of_announcement_by_id(api_token, unique_id, async_req=True)
+        >>> thread = api.get_detailed_open_rate_of_announcement_by_id(unique_id, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             unique_id (str):
 
         Keyword Args:
+            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -556,15 +544,12 @@ class StatisticsApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['unique_id'] = \
             unique_id
         return self.get_detailed_open_rate_of_announcement_by_id_endpoint.call_with_http_info(**kwargs)
 
     def get_detailed_open_status_of_announcement_by_id(
         self,
-        api_token,
         unique_id,
         **kwargs
     ):
@@ -574,14 +559,14 @@ class StatisticsApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.get_detailed_open_status_of_announcement_by_id(api_token, unique_id, async_req=True)
+        >>> thread = api.get_detailed_open_status_of_announcement_by_id(unique_id, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             unique_id (str):
 
         Keyword Args:
+            api_token (str): [optional]
             limit (int): [optional]
             next (str): [optional]
             unique_ids ([str]): [optional]
@@ -648,15 +633,12 @@ class StatisticsApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['unique_id'] = \
             unique_id
         return self.get_detailed_open_status_of_announcement_by_id_endpoint.call_with_http_info(**kwargs)
 
     def retrieve_advanced_analytics_metrics(
         self,
-        api_token,
         **kwargs
     ):
         """Retrieve Advanced analytics metrics  # noqa: E501
@@ -665,13 +647,12 @@ class StatisticsApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.retrieve_advanced_analytics_metrics(api_token, async_req=True)
+        >>> thread = api.retrieve_advanced_analytics_metrics(async_req=True)
         >>> result = thread.get()
 
-        Args:
-            api_token (str):
 
         Keyword Args:
+            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -733,13 +714,10 @@ class StatisticsApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         return self.retrieve_advanced_analytics_metrics_endpoint.call_with_http_info(**kwargs)
 
     def view_number_of_concurrent_connections(
         self,
-        api_token,
         **kwargs
     ):
         """View number of concurrent connections  # noqa: E501
@@ -748,13 +726,12 @@ class StatisticsApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.view_number_of_concurrent_connections(api_token, async_req=True)
+        >>> thread = api.view_number_of_concurrent_connections(async_req=True)
         >>> result = thread.get()
 
-        Args:
-            api_token (str):
 
         Keyword Args:
+            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -816,13 +793,10 @@ class StatisticsApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         return self.view_number_of_concurrent_connections_endpoint.call_with_http_info(**kwargs)
 
     def view_number_of_daily_active_users(
         self,
-        api_token,
         **kwargs
     ):
         """View number of daily active users  # noqa: E501
@@ -831,13 +805,12 @@ class StatisticsApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.view_number_of_daily_active_users(api_token, async_req=True)
+        >>> thread = api.view_number_of_daily_active_users(async_req=True)
         >>> result = thread.get()
 
-        Args:
-            api_token (str):
 
         Keyword Args:
+            api_token (str): [optional]
             date (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -900,13 +873,10 @@ class StatisticsApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         return self.view_number_of_daily_active_users_endpoint.call_with_http_info(**kwargs)
 
     def view_number_of_monthly_active_users(
         self,
-        api_token,
         **kwargs
     ):
         """View number of monthly active users  # noqa: E501
@@ -915,13 +885,12 @@ class StatisticsApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.view_number_of_monthly_active_users(api_token, async_req=True)
+        >>> thread = api.view_number_of_monthly_active_users(async_req=True)
         >>> result = thread.get()
 
-        Args:
-            api_token (str):
 
         Keyword Args:
+            api_token (str): [optional]
             date (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -984,13 +953,10 @@ class StatisticsApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         return self.view_number_of_monthly_active_users_endpoint.call_with_http_info(**kwargs)
 
     def view_number_of_peak_connections(
         self,
-        api_token,
         time_dimension,
         start_year,
         start_month,
@@ -1004,11 +970,10 @@ class StatisticsApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.view_number_of_peak_connections(api_token, time_dimension, start_year, start_month, end_year, end_month, async_req=True)
+        >>> thread = api.view_number_of_peak_connections(time_dimension, start_year, start_month, end_year, end_month, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             time_dimension (str):
             start_year (int):
             start_month (int):
@@ -1016,6 +981,7 @@ class StatisticsApi(object):
             end_month (int):
 
         Keyword Args:
+            api_token (str): [optional]
             start_day (int): [optional]
             end_day (int): [optional]
             _return_http_data_only (bool): response data without head status
@@ -1079,8 +1045,6 @@ class StatisticsApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['time_dimension'] = \
             time_dimension
         kwargs['start_year'] = \

@@ -91,10 +91,10 @@ class UpdatePushPreferencesData(ModelNormal):
             'snooze_enabled': (bool,),  # noqa: E501
             'snooze_start_ts': (int,),  # noqa: E501
             'snooze_end_ts': (int,),  # noqa: E501
-            'block_push_from_bots': (bool,),  # noqa: E501
-            'push_blocked_bot_ids': ([int],),  # noqa: E501
             'timezone': (str,),  # noqa: E501
             'push_sound': (str,),  # noqa: E501
+            'block_push_from_bots': (bool,),  # noqa: E501
+            'push_blocked_bot_ids': ([str],),  # noqa: E501
         }
 
     @cached_property
@@ -112,10 +112,10 @@ class UpdatePushPreferencesData(ModelNormal):
         'snooze_enabled': 'snooze_enabled',  # noqa: E501
         'snooze_start_ts': 'snooze_start_ts',  # noqa: E501
         'snooze_end_ts': 'snooze_end_ts',  # noqa: E501
-        'block_push_from_bots': 'block_push_from_bots',  # noqa: E501
-        'push_blocked_bot_ids': 'push_blocked_bot_ids',  # noqa: E501
         'timezone': 'timezone',  # noqa: E501
         'push_sound': 'push_sound',  # noqa: E501
+        'block_push_from_bots': 'block_push_from_bots',  # noqa: E501
+        'push_blocked_bot_ids': 'push_blocked_bot_ids',  # noqa: E501
     }
 
     read_only_vars = {
@@ -125,7 +125,7 @@ class UpdatePushPreferencesData(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, push_trigger_option, do_not_disturb, start_hour, start_min, end_hour, end_min, snooze_enabled, snooze_start_ts, snooze_end_ts, block_push_from_bots, push_blocked_bot_ids, timezone, push_sound, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, push_trigger_option, do_not_disturb, start_hour, start_min, end_hour, end_min, snooze_enabled, snooze_start_ts, snooze_end_ts, timezone, push_sound, *args, **kwargs):  # noqa: E501
         """UpdatePushPreferencesData - a model defined in OpenAPI
 
         Args:
@@ -138,8 +138,6 @@ class UpdatePushPreferencesData(ModelNormal):
             snooze_enabled (bool): Determines whether to snooze notification messages for the user during a specific period of time. (Default: false)
             snooze_start_ts (int): Specifies the timestamp of when to start snoozing the notifications, in [Unix milliseconds](/docs/chat/v3/platform-api/guides/miscellaneous#2-timestamps).
             snooze_end_ts (int): Specifies the timestamp of when to end snoozing the notifications, in [Unix milliseconds](/docs/chat/v3/platform-api/guides/miscellaneous#2-timestamps).
-            block_push_from_bots (bool): Determines whether to block push notifications from [all bots](/docs/chat/v3/platform-api/guides/bot-interface#2-list-bots) within the application. If the push_blocked_bot_ids is specified, notifications only from the bots in the property are blocked. (Default: false)
-            push_blocked_bot_ids ([int]): Specifies an array of one or more IDs of bots whose push notifications are blocked. This property is effective only when the block_push_from_bots is set to true.
             timezone (str): Specifies the timezone to be applied to push preferences with a value such as UTC, Asia/Seoul, Europe/London, etc.
             push_sound (str): Specifies the name of a sound file to be played when a push notification is delivered to your client app.
 
@@ -174,6 +172,8 @@ class UpdatePushPreferencesData(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            block_push_from_bots (bool): Determines whether to block push notifications from [all bots](/docs/chat/v3/platform-api/guides/bot-interface#2-list-bots) within the application. If the push_blocked_bot_ids is specified, notifications only from the bots in the property are blocked. (Default: false). [optional]  # noqa: E501
+            push_blocked_bot_ids ([str]): Specifies an array of one or more IDs of bots whose push notifications are blocked. This property is effective only when the block_push_from_bots is set to true.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -214,8 +214,6 @@ class UpdatePushPreferencesData(ModelNormal):
         self.snooze_enabled = snooze_enabled
         self.snooze_start_ts = snooze_start_ts
         self.snooze_end_ts = snooze_end_ts
-        self.block_push_from_bots = block_push_from_bots
-        self.push_blocked_bot_ids = push_blocked_bot_ids
         self.timezone = timezone
         self.push_sound = push_sound
         for var_name, var_value in kwargs.items():
@@ -238,7 +236,7 @@ class UpdatePushPreferencesData(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, push_trigger_option, do_not_disturb, start_hour, start_min, end_hour, end_min, snooze_enabled, snooze_start_ts, snooze_end_ts, block_push_from_bots, push_blocked_bot_ids, timezone, push_sound, *args, **kwargs):  # noqa: E501
+    def __init__(self, push_trigger_option, do_not_disturb, start_hour, start_min, end_hour, end_min, snooze_enabled, snooze_start_ts, snooze_end_ts, timezone, push_sound, *args, **kwargs):  # noqa: E501
         """UpdatePushPreferencesData - a model defined in OpenAPI
 
         Args:
@@ -251,8 +249,6 @@ class UpdatePushPreferencesData(ModelNormal):
             snooze_enabled (bool): Determines whether to snooze notification messages for the user during a specific period of time. (Default: false)
             snooze_start_ts (int): Specifies the timestamp of when to start snoozing the notifications, in [Unix milliseconds](/docs/chat/v3/platform-api/guides/miscellaneous#2-timestamps).
             snooze_end_ts (int): Specifies the timestamp of when to end snoozing the notifications, in [Unix milliseconds](/docs/chat/v3/platform-api/guides/miscellaneous#2-timestamps).
-            block_push_from_bots (bool): Determines whether to block push notifications from [all bots](/docs/chat/v3/platform-api/guides/bot-interface#2-list-bots) within the application. If the push_blocked_bot_ids is specified, notifications only from the bots in the property are blocked. (Default: false)
-            push_blocked_bot_ids ([int]): Specifies an array of one or more IDs of bots whose push notifications are blocked. This property is effective only when the block_push_from_bots is set to true.
             timezone (str): Specifies the timezone to be applied to push preferences with a value such as UTC, Asia/Seoul, Europe/London, etc.
             push_sound (str): Specifies the name of a sound file to be played when a push notification is delivered to your client app.
 
@@ -287,6 +283,8 @@ class UpdatePushPreferencesData(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            block_push_from_bots (bool): Determines whether to block push notifications from [all bots](/docs/chat/v3/platform-api/guides/bot-interface#2-list-bots) within the application. If the push_blocked_bot_ids is specified, notifications only from the bots in the property are blocked. (Default: false). [optional]  # noqa: E501
+            push_blocked_bot_ids ([str]): Specifies an array of one or more IDs of bots whose push notifications are blocked. This property is effective only when the block_push_from_bots is set to true.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -325,8 +323,6 @@ class UpdatePushPreferencesData(ModelNormal):
         self.snooze_enabled = snooze_enabled
         self.snooze_start_ts = snooze_start_ts
         self.snooze_end_ts = snooze_end_ts
-        self.block_push_from_bots = block_push_from_bots
-        self.push_blocked_bot_ids = push_blocked_bot_ids
         self.timezone = timezone
         self.push_sound = push_sound
         for var_name, var_value in kwargs.items():

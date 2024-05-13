@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 
 # **oc_cancel_the_registration_of_operators**
-> oc_cancel_the_registration_of_operators(api_token, channel_url, operator_ids)
+> oc_cancel_the_registration_of_operators(channel_url, operator_ids)
 
 Cancel the registration of operators
 
@@ -41,17 +41,17 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = open_channel_api.OpenChannelApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
     channel_url = "channel_url_example" # str | 
     operator_ids = [
         "operator_ids_example",
     ] # [str] | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
     delete_all = True # bool |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Cancel the registration of operators
-        api_instance.oc_cancel_the_registration_of_operators(api_token, channel_url, operator_ids)
+        api_instance.oc_cancel_the_registration_of_operators(channel_url, operator_ids)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling OpenChannelApi->oc_cancel_the_registration_of_operators: %s\n" % e)
 
@@ -59,7 +59,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Cancel the registration of operators
-        api_instance.oc_cancel_the_registration_of_operators(api_token, channel_url, operator_ids, delete_all=delete_all)
+        api_instance.oc_cancel_the_registration_of_operators(channel_url, operator_ids, api_token=api_token, delete_all=delete_all)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling OpenChannelApi->oc_cancel_the_registration_of_operators: %s\n" % e)
 ```
@@ -69,9 +69,9 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
  **channel_url** | **str**|  |
  **operator_ids** | **[str]**|  |
+ **api_token** | **str**|  | [optional]
  **delete_all** | **bool**|  | [optional]
 
 ### Return type
@@ -97,7 +97,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **oc_create_channel**
-> SendBirdOpenChannel oc_create_channel(api_token)
+> SendBirdOpenChannel oc_create_channel()
 
 Create a channel
 
@@ -124,7 +124,7 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = open_channel_api.OpenChannelApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
     oc_create_channel_data = OcCreateChannelData(
         name="name_example",
         channel_url="channel_url_example",
@@ -143,18 +143,10 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     ) # OcCreateChannelData |  (optional)
 
     # example passing only required values which don't have defaults set
-    try:
-        # Create a channel
-        api_response = api_instance.oc_create_channel(api_token)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling OpenChannelApi->oc_create_channel: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Create a channel
-        api_response = api_instance.oc_create_channel(api_token, oc_create_channel_data=oc_create_channel_data)
+        api_response = api_instance.oc_create_channel(api_token=api_token, oc_create_channel_data=oc_create_channel_data)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling OpenChannelApi->oc_create_channel: %s\n" % e)
@@ -165,7 +157,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
+ **api_token** | **str**|  | [optional]
  **oc_create_channel_data** | [**OcCreateChannelData**](OcCreateChannelData.md)|  | [optional]
 
 ### Return type
@@ -191,7 +183,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **oc_delete_channel_by_url**
-> OcDeleteChannelByUrl200Response oc_delete_channel_by_url(api_token, channel_url)
+> OcDeleteChannelByUrl200Response oc_delete_channel_by_url(channel_url)
 
 Delete a channel
 
@@ -217,13 +209,22 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = open_channel_api.OpenChannelApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
     channel_url = "channel_url_example" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Delete a channel
-        api_response = api_instance.oc_delete_channel_by_url(api_token, channel_url)
+        api_response = api_instance.oc_delete_channel_by_url(channel_url)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling OpenChannelApi->oc_delete_channel_by_url: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Delete a channel
+        api_response = api_instance.oc_delete_channel_by_url(channel_url, api_token=api_token)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling OpenChannelApi->oc_delete_channel_by_url: %s\n" % e)
@@ -234,8 +235,8 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
  **channel_url** | **str**|  |
+ **api_token** | **str**|  | [optional]
 
 ### Return type
 
@@ -260,7 +261,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **oc_list_channels**
-> OcListChannelsResponse oc_list_channels(api_token)
+> OcListChannelsResponse oc_list_channels()
 
 List channels
 
@@ -286,7 +287,7 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = open_channel_api.OpenChannelApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
     token = "token_example" # str |  (optional)
     limit = 1 # int |  (optional)
     custom_types = "custom_types_example" # str |  (optional)
@@ -297,18 +298,10 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     custom_type = "custom_type_example" # str |  (optional)
 
     # example passing only required values which don't have defaults set
-    try:
-        # List channels
-        api_response = api_instance.oc_list_channels(api_token)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling OpenChannelApi->oc_list_channels: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
     # and optional values
     try:
         # List channels
-        api_response = api_instance.oc_list_channels(api_token, token=token, limit=limit, custom_types=custom_types, name_contains=name_contains, url_contains=url_contains, show_frozen=show_frozen, show_metadata=show_metadata, custom_type=custom_type)
+        api_response = api_instance.oc_list_channels(api_token=api_token, token=token, limit=limit, custom_types=custom_types, name_contains=name_contains, url_contains=url_contains, show_frozen=show_frozen, show_metadata=show_metadata, custom_type=custom_type)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling OpenChannelApi->oc_list_channels: %s\n" % e)
@@ -319,7 +312,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
+ **api_token** | **str**|  | [optional]
  **token** | **str**|  | [optional]
  **limit** | **int**|  | [optional]
  **custom_types** | **str**|  | [optional]
@@ -352,7 +345,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **oc_list_operators**
-> OcListOperatorsResponse oc_list_operators(api_token, channel_url)
+> OcListOperatorsResponse oc_list_operators(channel_url)
 
 List operators
 
@@ -378,15 +371,15 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = open_channel_api.OpenChannelApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
     channel_url = "channel_url_example" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
     token = "token_example" # str |  (optional)
     limit = 1 # int |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # List operators
-        api_response = api_instance.oc_list_operators(api_token, channel_url)
+        api_response = api_instance.oc_list_operators(channel_url)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling OpenChannelApi->oc_list_operators: %s\n" % e)
@@ -395,7 +388,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # List operators
-        api_response = api_instance.oc_list_operators(api_token, channel_url, token=token, limit=limit)
+        api_response = api_instance.oc_list_operators(channel_url, api_token=api_token, token=token, limit=limit)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling OpenChannelApi->oc_list_operators: %s\n" % e)
@@ -406,8 +399,8 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
  **channel_url** | **str**|  |
+ **api_token** | **str**|  | [optional]
  **token** | **str**|  | [optional]
  **limit** | **int**|  | [optional]
 
@@ -434,7 +427,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **oc_list_participants**
-> OcListParticipantsResponse oc_list_participants(api_token, channel_url)
+> OcListParticipantsResponse oc_list_participants(channel_url)
 
 List participants
 
@@ -460,15 +453,15 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = open_channel_api.OpenChannelApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
     channel_url = "channel_url_example" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
     token = "token_example" # str |  (optional)
     limit = 1 # int |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # List participants
-        api_response = api_instance.oc_list_participants(api_token, channel_url)
+        api_response = api_instance.oc_list_participants(channel_url)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling OpenChannelApi->oc_list_participants: %s\n" % e)
@@ -477,7 +470,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # List participants
-        api_response = api_instance.oc_list_participants(api_token, channel_url, token=token, limit=limit)
+        api_response = api_instance.oc_list_participants(channel_url, api_token=api_token, token=token, limit=limit)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling OpenChannelApi->oc_list_participants: %s\n" % e)
@@ -488,8 +481,8 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
  **channel_url** | **str**|  |
+ **api_token** | **str**|  | [optional]
  **token** | **str**|  | [optional]
  **limit** | **int**|  | [optional]
 
@@ -516,7 +509,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **oc_register_operators**
-> OcDeleteChannelByUrl200Response oc_register_operators(api_token, channel_url)
+> OcDeleteChannelByUrl200Response oc_register_operators(channel_url)
 
 Register operators
 
@@ -543,8 +536,8 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = open_channel_api.OpenChannelApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
     channel_url = "channel_url_example" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
     oc_register_operators_data = OcRegisterOperatorsData(
         channel_url="channel_url_example",
         operator_ids=[
@@ -555,7 +548,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Register operators
-        api_response = api_instance.oc_register_operators(api_token, channel_url)
+        api_response = api_instance.oc_register_operators(channel_url)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling OpenChannelApi->oc_register_operators: %s\n" % e)
@@ -564,7 +557,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Register operators
-        api_response = api_instance.oc_register_operators(api_token, channel_url, oc_register_operators_data=oc_register_operators_data)
+        api_response = api_instance.oc_register_operators(channel_url, api_token=api_token, oc_register_operators_data=oc_register_operators_data)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling OpenChannelApi->oc_register_operators: %s\n" % e)
@@ -575,8 +568,8 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
  **channel_url** | **str**|  |
+ **api_token** | **str**|  | [optional]
  **oc_register_operators_data** | [**OcRegisterOperatorsData**](OcRegisterOperatorsData.md)|  | [optional]
 
 ### Return type
@@ -602,7 +595,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **oc_update_channel_by_url**
-> SendBirdOpenChannel oc_update_channel_by_url(api_token, channel_url)
+> SendBirdOpenChannel oc_update_channel_by_url(channel_url)
 
 Update a channel
 
@@ -629,8 +622,8 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = open_channel_api.OpenChannelApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
     channel_url = "channel_url_example" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
     oc_update_channel_by_url_data = OcUpdateChannelByUrlData(
         channel_url="channel_url_example",
         name="name_example",
@@ -649,7 +642,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Update a channel
-        api_response = api_instance.oc_update_channel_by_url(api_token, channel_url)
+        api_response = api_instance.oc_update_channel_by_url(channel_url)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling OpenChannelApi->oc_update_channel_by_url: %s\n" % e)
@@ -658,7 +651,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Update a channel
-        api_response = api_instance.oc_update_channel_by_url(api_token, channel_url, oc_update_channel_by_url_data=oc_update_channel_by_url_data)
+        api_response = api_instance.oc_update_channel_by_url(channel_url, api_token=api_token, oc_update_channel_by_url_data=oc_update_channel_by_url_data)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling OpenChannelApi->oc_update_channel_by_url: %s\n" % e)
@@ -669,8 +662,8 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
  **channel_url** | **str**|  |
+ **api_token** | **str**|  | [optional]
  **oc_update_channel_by_url_data** | [**OcUpdateChannelByUrlData**](OcUpdateChannelByUrlData.md)|  | [optional]
 
 ### Return type
@@ -696,7 +689,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **oc_view_channel_by_url**
-> SendBirdOpenChannel oc_view_channel_by_url(api_token, channel_url)
+> SendBirdOpenChannel oc_view_channel_by_url(channel_url)
 
 View a channel
 
@@ -722,13 +715,22 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = open_channel_api.OpenChannelApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
     channel_url = "channel_url_example" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # View a channel
-        api_response = api_instance.oc_view_channel_by_url(api_token, channel_url)
+        api_response = api_instance.oc_view_channel_by_url(channel_url)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling OpenChannelApi->oc_view_channel_by_url: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # View a channel
+        api_response = api_instance.oc_view_channel_by_url(channel_url, api_token=api_token)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling OpenChannelApi->oc_view_channel_by_url: %s\n" % e)
@@ -739,8 +741,8 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
  **channel_url** | **str**|  |
+ **api_token** | **str**|  | [optional]
 
 ### Return type
 

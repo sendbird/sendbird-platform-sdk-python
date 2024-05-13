@@ -33,8 +33,10 @@ from sendbird_platform_sdk.exceptions import ApiAttributeError
 def lazy_import():
     from sendbird_platform_sdk.model.send_bird_message_response_mentioned_users_inner import SendBirdMessageResponseMentionedUsersInner
     from sendbird_platform_sdk.model.send_bird_message_response_user import SendBirdMessageResponseUser
+    from sendbird_platform_sdk.model.send_bird_parent_message_info import SendBirdParentMessageInfo
     globals()['SendBirdMessageResponseMentionedUsersInner'] = SendBirdMessageResponseMentionedUsersInner
     globals()['SendBirdMessageResponseUser'] = SendBirdMessageResponseUser
+    globals()['SendBirdParentMessageInfo'] = SendBirdParentMessageInfo
 
 
 class SendBirdMessageResponse(ModelNormal):
@@ -115,7 +117,7 @@ class SendBirdMessageResponse(ModelNormal):
             'sorted_metaarray': ([{str: (bool, date, datetime, dict, float, int, list, str, none_type)}],),  # noqa: E501
             'thread_info': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),  # noqa: E501
             'parent_message_id': (float,),  # noqa: E501
-            'parent_message_info': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),  # noqa: E501
+            'parent_message_info': (SendBirdParentMessageInfo,),  # noqa: E501
             'is_reply_to_channel': (bool,),  # noqa: E501
         }
 
@@ -220,7 +222,7 @@ class SendBirdMessageResponse(ModelNormal):
             sorted_metaarray ([{str: (bool, date, datetime, dict, float, int, list, str, none_type)}]): [optional]  # noqa: E501
             thread_info ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]  # noqa: E501
             parent_message_id (float): [optional]  # noqa: E501
-            parent_message_info ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]  # noqa: E501
+            parent_message_info (SendBirdParentMessageInfo): [optional]  # noqa: E501
             is_reply_to_channel (bool): [optional]  # noqa: E501
         """
 
@@ -332,7 +334,7 @@ class SendBirdMessageResponse(ModelNormal):
             sorted_metaarray ([{str: (bool, date, datetime, dict, float, int, list, str, none_type)}]): [optional]  # noqa: E501
             thread_info ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]  # noqa: E501
             parent_message_id (float): [optional]  # noqa: E501
-            parent_message_info ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]  # noqa: E501
+            parent_message_info (SendBirdParentMessageInfo): [optional]  # noqa: E501
             is_reply_to_channel (bool): [optional]  # noqa: E501
         """
 

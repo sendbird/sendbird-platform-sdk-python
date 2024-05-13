@@ -123,13 +123,11 @@ class UpdateUserByIdData(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, user_id, nickname, profile_url, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, user_id, *args, **kwargs):  # noqa: E501
         """UpdateUserByIdData - a model defined in OpenAPI
 
         Args:
             user_id (str): Specifies the unique ID of the user to update.
-            nickname (str): Specifies the user's nickname. The length is limited to 80 characters.
-            profile_url (str): Specifies the URL of the user's profile image. The length is limited to 2,048 characters.<br /><br /> The [domain filter](/docs/chat/v3/platform-api/guides/filter-and-moderation#2-domain-filter) filters out the request if the value of this property matches the filter's domain set.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -162,6 +160,8 @@ class UpdateUserByIdData(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            nickname (str): Specifies the user's nickname. The length is limited to 80 characters.. [optional]  # noqa: E501
+            profile_url (str): Specifies the URL of the user's profile image. The length is limited to 2,048 characters.<br /><br /> The [domain filter](/docs/chat/v3/platform-api/guides/filter-and-moderation#2-domain-filter) filters out the request if the value of this property matches the filter's domain set.. [optional]  # noqa: E501
             profile_file (file_type): Uploads the file of the user's profile image. An acceptable image is limited to `JPG` (.jpg), `JPEG` (.jpeg), or `PNG` (.png) file of up to 25 MB.. [optional]  # noqa: E501
             issue_access_token (bool): Determines whether to revoke the existing access token and create a new one for the user. If true, an opaque string token is issued and provided upon creation, which should be passed whenever the user logs in. If false, an access token is not required when the user logs in. (Default: false). [optional]  # noqa: E501
             issue_session_token (bool): Determines whether to add a new session token for the user. If true, an opaque string token is issued and provided upon creation, which should be passed whenever the user logs in. If false, a session token is not required when the user logs in. (Default: false). [optional]  # noqa: E501
@@ -203,8 +203,6 @@ class UpdateUserByIdData(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         self.user_id = user_id
-        self.nickname = nickname
-        self.profile_url = profile_url
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -225,13 +223,11 @@ class UpdateUserByIdData(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, user_id, nickname, profile_url, *args, **kwargs):  # noqa: E501
+    def __init__(self, user_id, *args, **kwargs):  # noqa: E501
         """UpdateUserByIdData - a model defined in OpenAPI
 
         Args:
             user_id (str): Specifies the unique ID of the user to update.
-            nickname (str): Specifies the user's nickname. The length is limited to 80 characters.
-            profile_url (str): Specifies the URL of the user's profile image. The length is limited to 2,048 characters.<br /><br /> The [domain filter](/docs/chat/v3/platform-api/guides/filter-and-moderation#2-domain-filter) filters out the request if the value of this property matches the filter's domain set.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -264,6 +260,8 @@ class UpdateUserByIdData(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            nickname (str): Specifies the user's nickname. The length is limited to 80 characters.. [optional]  # noqa: E501
+            profile_url (str): Specifies the URL of the user's profile image. The length is limited to 2,048 characters.<br /><br /> The [domain filter](/docs/chat/v3/platform-api/guides/filter-and-moderation#2-domain-filter) filters out the request if the value of this property matches the filter's domain set.. [optional]  # noqa: E501
             profile_file (file_type): Uploads the file of the user's profile image. An acceptable image is limited to `JPG` (.jpg), `JPEG` (.jpeg), or `PNG` (.png) file of up to 25 MB.. [optional]  # noqa: E501
             issue_access_token (bool): Determines whether to revoke the existing access token and create a new one for the user. If true, an opaque string token is issued and provided upon creation, which should be passed whenever the user logs in. If false, an access token is not required when the user logs in. (Default: false). [optional]  # noqa: E501
             issue_session_token (bool): Determines whether to add a new session token for the user. If true, an opaque string token is issued and provided upon creation, which should be passed whenever the user logs in. If false, a session token is not required when the user logs in. (Default: false). [optional]  # noqa: E501
@@ -303,8 +301,6 @@ class UpdateUserByIdData(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         self.user_id = user_id
-        self.nickname = nickname
-        self.profile_url = profile_url
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

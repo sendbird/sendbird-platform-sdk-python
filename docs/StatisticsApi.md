@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **get_detailed_open_rate_of_announcement_by_id**
-> GetDetailedOpenRateOfAnnouncementByIdResponse get_detailed_open_rate_of_announcement_by_id(api_token, unique_id)
+> GetDetailedOpenRateOfAnnouncementByIdResponse get_detailed_open_rate_of_announcement_by_id(unique_id)
 
 Get detailed open rate of an announcement
 
@@ -40,13 +40,22 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = statistics_api.StatisticsApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
     unique_id = "unique_id_example" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Get detailed open rate of an announcement
-        api_response = api_instance.get_detailed_open_rate_of_announcement_by_id(api_token, unique_id)
+        api_response = api_instance.get_detailed_open_rate_of_announcement_by_id(unique_id)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling StatisticsApi->get_detailed_open_rate_of_announcement_by_id: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Get detailed open rate of an announcement
+        api_response = api_instance.get_detailed_open_rate_of_announcement_by_id(unique_id, api_token=api_token)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling StatisticsApi->get_detailed_open_rate_of_announcement_by_id: %s\n" % e)
@@ -57,8 +66,8 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
  **unique_id** | **str**|  |
+ **api_token** | **str**|  | [optional]
 
 ### Return type
 
@@ -83,7 +92,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_detailed_open_status_of_announcement_by_id**
-> GetDetailedOpenStatusOfAnnouncementByIdResponse get_detailed_open_status_of_announcement_by_id(api_token, unique_id)
+> GetDetailedOpenStatusOfAnnouncementByIdResponse get_detailed_open_status_of_announcement_by_id(unique_id)
 
 Get detailed open status of an announcement
 
@@ -109,8 +118,8 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = statistics_api.StatisticsApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
     unique_id = "unique_id_example" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
     limit = 1 # int |  (optional)
     next = "next_example" # str |  (optional)
     unique_ids = [
@@ -124,7 +133,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Get detailed open status of an announcement
-        api_response = api_instance.get_detailed_open_status_of_announcement_by_id(api_token, unique_id)
+        api_response = api_instance.get_detailed_open_status_of_announcement_by_id(unique_id)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling StatisticsApi->get_detailed_open_status_of_announcement_by_id: %s\n" % e)
@@ -133,7 +142,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Get detailed open status of an announcement
-        api_response = api_instance.get_detailed_open_status_of_announcement_by_id(api_token, unique_id, limit=limit, next=next, unique_ids=unique_ids, channel_urls=channel_urls, has_opened=has_opened)
+        api_response = api_instance.get_detailed_open_status_of_announcement_by_id(unique_id, api_token=api_token, limit=limit, next=next, unique_ids=unique_ids, channel_urls=channel_urls, has_opened=has_opened)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling StatisticsApi->get_detailed_open_status_of_announcement_by_id: %s\n" % e)
@@ -144,8 +153,8 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
  **unique_id** | **str**|  |
+ **api_token** | **str**|  | [optional]
  **limit** | **int**|  | [optional]
  **next** | **str**|  | [optional]
  **unique_ids** | **[str]**|  | [optional]
@@ -175,7 +184,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **retrieve_advanced_analytics_metrics**
-> RetrieveAdvancedAnalyticsMetricsResponse retrieve_advanced_analytics_metrics(api_token)
+> RetrieveAdvancedAnalyticsMetricsResponse retrieve_advanced_analytics_metrics()
 
 Retrieve Advanced analytics metrics
 
@@ -201,12 +210,13 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = statistics_api.StatisticsApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
 
     # example passing only required values which don't have defaults set
+    # and optional values
     try:
         # Retrieve Advanced analytics metrics
-        api_response = api_instance.retrieve_advanced_analytics_metrics(api_token)
+        api_response = api_instance.retrieve_advanced_analytics_metrics(api_token=api_token)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling StatisticsApi->retrieve_advanced_analytics_metrics: %s\n" % e)
@@ -217,7 +227,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
+ **api_token** | **str**|  | [optional]
 
 ### Return type
 
@@ -242,7 +252,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **view_number_of_concurrent_connections**
-> ViewNumberOfConcurrentConnectionsResponse view_number_of_concurrent_connections(api_token)
+> ViewNumberOfConcurrentConnectionsResponse view_number_of_concurrent_connections()
 
 View number of concurrent connections
 
@@ -268,12 +278,13 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = statistics_api.StatisticsApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
 
     # example passing only required values which don't have defaults set
+    # and optional values
     try:
         # View number of concurrent connections
-        api_response = api_instance.view_number_of_concurrent_connections(api_token)
+        api_response = api_instance.view_number_of_concurrent_connections(api_token=api_token)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling StatisticsApi->view_number_of_concurrent_connections: %s\n" % e)
@@ -284,7 +295,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
+ **api_token** | **str**|  | [optional]
 
 ### Return type
 
@@ -309,7 +320,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **view_number_of_daily_active_users**
-> ViewNumberOfDailyActiveUsersResponse view_number_of_daily_active_users(api_token)
+> ViewNumberOfDailyActiveUsersResponse view_number_of_daily_active_users()
 
 View number of daily active users
 
@@ -335,22 +346,14 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = statistics_api.StatisticsApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
     date = "date_example" # str |  (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        # View number of daily active users
-        api_response = api_instance.view_number_of_daily_active_users(api_token)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling StatisticsApi->view_number_of_daily_active_users: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # View number of daily active users
-        api_response = api_instance.view_number_of_daily_active_users(api_token, date=date)
+        api_response = api_instance.view_number_of_daily_active_users(api_token=api_token, date=date)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling StatisticsApi->view_number_of_daily_active_users: %s\n" % e)
@@ -361,7 +364,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
+ **api_token** | **str**|  | [optional]
  **date** | **str**|  | [optional]
 
 ### Return type
@@ -387,7 +390,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **view_number_of_monthly_active_users**
-> ViewNumberOfMonthlyActiveUsersResponse view_number_of_monthly_active_users(api_token)
+> ViewNumberOfMonthlyActiveUsersResponse view_number_of_monthly_active_users()
 
 View number of monthly active users
 
@@ -413,22 +416,14 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = statistics_api.StatisticsApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
     date = "date_example" # str |  (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        # View number of monthly active users
-        api_response = api_instance.view_number_of_monthly_active_users(api_token)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling StatisticsApi->view_number_of_monthly_active_users: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # View number of monthly active users
-        api_response = api_instance.view_number_of_monthly_active_users(api_token, date=date)
+        api_response = api_instance.view_number_of_monthly_active_users(api_token=api_token, date=date)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling StatisticsApi->view_number_of_monthly_active_users: %s\n" % e)
@@ -439,7 +434,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
+ **api_token** | **str**|  | [optional]
  **date** | **str**|  | [optional]
 
 ### Return type
@@ -465,7 +460,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **view_number_of_peak_connections**
-> ViewNumberOfPeakConnectionsResponse view_number_of_peak_connections(api_token, time_dimension, start_year, start_month, end_year, end_month)
+> ViewNumberOfPeakConnectionsResponse view_number_of_peak_connections(time_dimension, start_year, start_month, end_year, end_month)
 
 View number of peak connections
 
@@ -491,19 +486,19 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = statistics_api.StatisticsApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
     time_dimension = "time_dimension_example" # str | 
     start_year = 1 # int | 
     start_month = 1 # int | 
     end_year = 1 # int | 
     end_month = 1 # int | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
     start_day = 1 # int |  (optional)
     end_day = 1 # int |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # View number of peak connections
-        api_response = api_instance.view_number_of_peak_connections(api_token, time_dimension, start_year, start_month, end_year, end_month)
+        api_response = api_instance.view_number_of_peak_connections(time_dimension, start_year, start_month, end_year, end_month)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling StatisticsApi->view_number_of_peak_connections: %s\n" % e)
@@ -512,7 +507,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # View number of peak connections
-        api_response = api_instance.view_number_of_peak_connections(api_token, time_dimension, start_year, start_month, end_year, end_month, start_day=start_day, end_day=end_day)
+        api_response = api_instance.view_number_of_peak_connections(time_dimension, start_year, start_month, end_year, end_month, api_token=api_token, start_day=start_day, end_day=end_day)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling StatisticsApi->view_number_of_peak_connections: %s\n" % e)
@@ -523,12 +518,12 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
  **time_dimension** | **str**|  |
  **start_year** | **int**|  |
  **start_month** | **int**|  |
  **end_year** | **int**|  |
  **end_month** | **int**|  |
+ **api_token** | **str**|  | [optional]
  **start_day** | **int**|  | [optional]
  **end_day** | **int**|  | [optional]
 

@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 
 # **get_detailed_open_rate_of_announcement_group**
-> GetDetailedOpenRateOfAnnouncementGroupResponse get_detailed_open_rate_of_announcement_group(api_token, announcement_group)
+> GetDetailedOpenRateOfAnnouncementGroupResponse get_detailed_open_rate_of_announcement_group(announcement_group)
 
 Get detailed open rate of an announcement group
 
@@ -41,13 +41,22 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = announcement_api.AnnouncementApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
     announcement_group = "announcement_group_example" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Get detailed open rate of an announcement group
-        api_response = api_instance.get_detailed_open_rate_of_announcement_group(api_token, announcement_group)
+        api_response = api_instance.get_detailed_open_rate_of_announcement_group(announcement_group)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling AnnouncementApi->get_detailed_open_rate_of_announcement_group: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Get detailed open rate of an announcement group
+        api_response = api_instance.get_detailed_open_rate_of_announcement_group(announcement_group, api_token=api_token)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling AnnouncementApi->get_detailed_open_rate_of_announcement_group: %s\n" % e)
@@ -58,8 +67,8 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
  **announcement_group** | **str**|  |
+ **api_token** | **str**|  | [optional]
 
 ### Return type
 
@@ -84,7 +93,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_statistics**
-> GetStatisticsResponse get_statistics(api_token)
+> GetStatisticsResponse get_statistics()
 
 Get statistics - weekly
 
@@ -110,12 +119,13 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = announcement_api.AnnouncementApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
 
     # example passing only required values which don't have defaults set
+    # and optional values
     try:
         # Get statistics - weekly
-        api_response = api_instance.get_statistics(api_token)
+        api_response = api_instance.get_statistics(api_token=api_token)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling AnnouncementApi->get_statistics: %s\n" % e)
@@ -126,7 +136,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
+ **api_token** | **str**|  | [optional]
 
 ### Return type
 
@@ -151,7 +161,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_statistics_daily**
-> GetStatisticsDailyResponse get_statistics_daily(api_token, start_date, end_date, start_week, end_week, start_month, end_month)
+> GetStatisticsDailyResponse get_statistics_daily(start_date, end_date, start_week, end_week, start_month, end_month)
 
 Get statistics - daily
 
@@ -177,19 +187,19 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = announcement_api.AnnouncementApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
     start_date = "start_date_example" # str | 
     end_date = "end_date_example" # str | 
     start_week = "start_week_example" # str | 
     end_week = "end_week_example" # str | 
     start_month = "start_month_example" # str | 
     end_month = "end_month_example" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
     announcement_group = "announcement_group_example" # str |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Get statistics - daily
-        api_response = api_instance.get_statistics_daily(api_token, start_date, end_date, start_week, end_week, start_month, end_month)
+        api_response = api_instance.get_statistics_daily(start_date, end_date, start_week, end_week, start_month, end_month)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling AnnouncementApi->get_statistics_daily: %s\n" % e)
@@ -198,7 +208,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Get statistics - daily
-        api_response = api_instance.get_statistics_daily(api_token, start_date, end_date, start_week, end_week, start_month, end_month, announcement_group=announcement_group)
+        api_response = api_instance.get_statistics_daily(start_date, end_date, start_week, end_week, start_month, end_month, api_token=api_token, announcement_group=announcement_group)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling AnnouncementApi->get_statistics_daily: %s\n" % e)
@@ -209,13 +219,13 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
  **start_date** | **str**|  |
  **end_date** | **str**|  |
  **start_week** | **str**|  |
  **end_week** | **str**|  |
  **start_month** | **str**|  |
  **end_month** | **str**|  |
+ **api_token** | **str**|  | [optional]
  **announcement_group** | **str**|  | [optional]
 
 ### Return type
@@ -241,7 +251,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_statistics_monthly**
-> GetStatisticsMonthlyResponse get_statistics_monthly(api_token)
+> GetStatisticsMonthlyResponse get_statistics_monthly()
 
 Get statistics - monthly
 
@@ -267,12 +277,13 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = announcement_api.AnnouncementApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
 
     # example passing only required values which don't have defaults set
+    # and optional values
     try:
         # Get statistics - monthly
-        api_response = api_instance.get_statistics_monthly(api_token)
+        api_response = api_instance.get_statistics_monthly(api_token=api_token)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling AnnouncementApi->get_statistics_monthly: %s\n" % e)
@@ -283,7 +294,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
+ **api_token** | **str**|  | [optional]
 
 ### Return type
 
@@ -308,7 +319,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_announcement_groups**
-> ListAnnouncementGroupsResponse list_announcement_groups(api_token)
+> ListAnnouncementGroupsResponse list_announcement_groups()
 
 List announcement groups
 
@@ -334,23 +345,15 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = announcement_api.AnnouncementApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
     token = "token_example" # str |  (optional)
     limit = 1 # int |  (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        # List announcement groups
-        api_response = api_instance.list_announcement_groups(api_token)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling AnnouncementApi->list_announcement_groups: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # List announcement groups
-        api_response = api_instance.list_announcement_groups(api_token, token=token, limit=limit)
+        api_response = api_instance.list_announcement_groups(api_token=api_token, token=token, limit=limit)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling AnnouncementApi->list_announcement_groups: %s\n" % e)
@@ -361,7 +364,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
+ **api_token** | **str**|  | [optional]
  **token** | **str**|  | [optional]
  **limit** | **int**|  | [optional]
 
@@ -388,7 +391,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **schedule_announcement**
-> ScheduleAnnouncementResponse schedule_announcement(api_token)
+> ScheduleAnnouncementResponse schedule_announcement()
 
 Schedule an announcement
 
@@ -415,7 +418,7 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = announcement_api.AnnouncementApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
     schedule_announcement_data = ScheduleAnnouncementData(
         message=ScheduleAnnouncementDataMessage(
             type="type_example",
@@ -450,18 +453,10 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     ) # ScheduleAnnouncementData |  (optional)
 
     # example passing only required values which don't have defaults set
-    try:
-        # Schedule an announcement
-        api_response = api_instance.schedule_announcement(api_token)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling AnnouncementApi->schedule_announcement: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Schedule an announcement
-        api_response = api_instance.schedule_announcement(api_token, schedule_announcement_data=schedule_announcement_data)
+        api_response = api_instance.schedule_announcement(api_token=api_token, schedule_announcement_data=schedule_announcement_data)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling AnnouncementApi->schedule_announcement: %s\n" % e)
@@ -472,7 +467,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
+ **api_token** | **str**|  | [optional]
  **schedule_announcement_data** | [**ScheduleAnnouncementData**](ScheduleAnnouncementData.md)|  | [optional]
 
 ### Return type
@@ -498,7 +493,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_announcement_by_id**
-> UpdateAnnouncementByIdResponse update_announcement_by_id(api_token, unique_id)
+> UpdateAnnouncementByIdResponse update_announcement_by_id(unique_id)
 
 Update an announcement
 
@@ -525,8 +520,8 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = announcement_api.AnnouncementApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
     unique_id = "unique_id_example" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
     update_announcement_by_id_data = UpdateAnnouncementByIdData(
         unique_id="unique_id_example",
         action="action_example",
@@ -550,7 +545,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Update an announcement
-        api_response = api_instance.update_announcement_by_id(api_token, unique_id)
+        api_response = api_instance.update_announcement_by_id(unique_id)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling AnnouncementApi->update_announcement_by_id: %s\n" % e)
@@ -559,7 +554,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Update an announcement
-        api_response = api_instance.update_announcement_by_id(api_token, unique_id, update_announcement_by_id_data=update_announcement_by_id_data)
+        api_response = api_instance.update_announcement_by_id(unique_id, api_token=api_token, update_announcement_by_id_data=update_announcement_by_id_data)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling AnnouncementApi->update_announcement_by_id: %s\n" % e)
@@ -570,8 +565,8 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
  **unique_id** | **str**|  |
+ **api_token** | **str**|  | [optional]
  **update_announcement_by_id_data** | [**UpdateAnnouncementByIdData**](UpdateAnnouncementByIdData.md)|  | [optional]
 
 ### Return type
@@ -597,7 +592,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **view_announcement_by_id**
-> ViewAnnouncementByIdResponse view_announcement_by_id(api_token, unique_id)
+> ViewAnnouncementByIdResponse view_announcement_by_id(unique_id)
 
 View an announcement
 
@@ -623,13 +618,22 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = announcement_api.AnnouncementApi(api_client)
-    api_token = "{{API_TOKEN}}" # str | 
     unique_id = "unique_id_example" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # View an announcement
-        api_response = api_instance.view_announcement_by_id(api_token, unique_id)
+        api_response = api_instance.view_announcement_by_id(unique_id)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling AnnouncementApi->view_announcement_by_id: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # View an announcement
+        api_response = api_instance.view_announcement_by_id(unique_id, api_token=api_token)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling AnnouncementApi->view_announcement_by_id: %s\n" % e)
@@ -640,8 +644,8 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  |
  **unique_id** | **str**|  |
+ **api_token** | **str**|  | [optional]
 
 ### Return type
 

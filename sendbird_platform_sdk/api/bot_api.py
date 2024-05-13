@@ -27,7 +27,7 @@ from sendbird_platform_sdk.model.create_bot_response import CreateBotResponse
 from sendbird_platform_sdk.model.join_channels_data import JoinChannelsData
 from sendbird_platform_sdk.model.join_channels_response import JoinChannelsResponse
 from sendbird_platform_sdk.model.list_bots_response import ListBotsResponse
-from sendbird_platform_sdk.model.send_bird_message_response import SendBirdMessageResponse
+from sendbird_platform_sdk.model.send_bird_bots_message_response import SendBirdBotsMessageResponse
 from sendbird_platform_sdk.model.send_bot_s_message_data import SendBotSMessageData
 from sendbird_platform_sdk.model.update_bot_by_id_data import UpdateBotByIdData
 from sendbird_platform_sdk.model.update_bot_by_id_response import UpdateBotByIdResponse
@@ -59,9 +59,7 @@ class BotApi(object):
                     'api_token',
                     'create_bot_data',
                 ],
-                'required': [
-                    'api_token',
-                ],
+                'required': [],
                 'nullable': [
                 ],
                 'enum': [
@@ -111,11 +109,10 @@ class BotApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'bot_userid',
+                    'api_token',
                 ],
                 'required': [
-                    'api_token',
                     'bot_userid',
                 ],
                 'nullable': [
@@ -131,18 +128,18 @@ class BotApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'bot_userid':
+                        (str,),
+                    'api_token':
                         (str,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'bot_userid': 'bot_userid',
+                    'api_token': 'Api-Token',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'bot_userid': 'path',
+                    'api_token': 'header',
                 },
                 'collection_format_map': {
                 }
@@ -166,12 +163,11 @@ class BotApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'bot_userid',
+                    'api_token',
                     'join_channels_data',
                 ],
                 'required': [
-                    'api_token',
                     'bot_userid',
                 ],
                 'nullable': [
@@ -187,20 +183,20 @@ class BotApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'bot_userid':
+                        (str,),
+                    'api_token':
                         (str,),
                     'join_channels_data':
                         (JoinChannelsData,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'bot_userid': 'bot_userid',
+                    'api_token': 'Api-Token',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'bot_userid': 'path',
+                    'api_token': 'header',
                     'join_channels_data': 'body',
                 },
                 'collection_format_map': {
@@ -227,12 +223,11 @@ class BotApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'bot_userid',
+                    'api_token',
                     'channel_url',
                 ],
                 'required': [
-                    'api_token',
                     'bot_userid',
                 ],
                 'nullable': [
@@ -248,21 +243,21 @@ class BotApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'bot_userid':
+                        (str,),
+                    'api_token':
                         (str,),
                     'channel_url':
                         (str,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'bot_userid': 'bot_userid',
+                    'api_token': 'Api-Token',
                     'channel_url': 'channel_url',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'bot_userid': 'path',
+                    'api_token': 'header',
                     'channel_url': 'query',
                 },
                 'collection_format_map': {
@@ -285,12 +280,11 @@ class BotApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'bot_userid',
                     'channel_url',
+                    'api_token',
                 ],
                 'required': [
-                    'api_token',
                     'bot_userid',
                     'channel_url',
                 ],
@@ -307,22 +301,22 @@ class BotApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'bot_userid':
                         (str,),
                     'channel_url':
                         (str,),
+                    'api_token':
+                        (str,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'bot_userid': 'bot_userid',
                     'channel_url': 'channel_url',
+                    'api_token': 'Api-Token',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'bot_userid': 'path',
                     'channel_url': 'path',
+                    'api_token': 'header',
                 },
                 'collection_format_map': {
                 }
@@ -350,9 +344,7 @@ class BotApi(object):
                     'token',
                     'limit',
                 ],
-                'required': [
-                    'api_token',
-                ],
+                'required': [],
                 'nullable': [
                 ],
                 'enum': [
@@ -396,7 +388,7 @@ class BotApi(object):
         )
         self.send_bots_message_endpoint = _Endpoint(
             settings={
-                'response_type': (SendBirdMessageResponse,),
+                'response_type': (SendBirdBotsMessageResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/bots/{bot_userid}/send',
                 'operation_id': 'send_bots_message',
@@ -405,12 +397,11 @@ class BotApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'bot_userid',
+                    'api_token',
                     'send_bot_s_message_data',
                 ],
                 'required': [
-                    'api_token',
                     'bot_userid',
                 ],
                 'nullable': [
@@ -426,20 +417,20 @@ class BotApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'bot_userid':
+                        (str,),
+                    'api_token':
                         (str,),
                     'send_bot_s_message_data':
                         (SendBotSMessageData,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'bot_userid': 'bot_userid',
+                    'api_token': 'Api-Token',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'bot_userid': 'path',
+                    'api_token': 'header',
                     'send_bot_s_message_data': 'body',
                 },
                 'collection_format_map': {
@@ -466,12 +457,11 @@ class BotApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'bot_userid',
+                    'api_token',
                     'update_bot_by_id_data',
                 ],
                 'required': [
-                    'api_token',
                     'bot_userid',
                 ],
                 'nullable': [
@@ -487,20 +477,20 @@ class BotApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'bot_userid':
+                        (str,),
+                    'api_token':
                         (str,),
                     'update_bot_by_id_data':
                         (UpdateBotByIdData,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'bot_userid': 'bot_userid',
+                    'api_token': 'Api-Token',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'bot_userid': 'path',
+                    'api_token': 'header',
                     'update_bot_by_id_data': 'body',
                 },
                 'collection_format_map': {
@@ -527,11 +517,10 @@ class BotApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'bot_userid',
+                    'api_token',
                 ],
                 'required': [
-                    'api_token',
                     'bot_userid',
                 ],
                 'nullable': [
@@ -547,18 +536,18 @@ class BotApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'bot_userid':
+                        (str,),
+                    'api_token':
                         (str,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'bot_userid': 'bot_userid',
+                    'api_token': 'Api-Token',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'bot_userid': 'path',
+                    'api_token': 'header',
                 },
                 'collection_format_map': {
                 }
@@ -574,7 +563,6 @@ class BotApi(object):
 
     def create_bot(
         self,
-        api_token,
         **kwargs
     ):
         """Create a bot  # noqa: E501
@@ -583,13 +571,12 @@ class BotApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.create_bot(api_token, async_req=True)
+        >>> thread = api.create_bot(async_req=True)
         >>> result = thread.get()
 
-        Args:
-            api_token (str):
 
         Keyword Args:
+            api_token (str): [optional]
             create_bot_data (CreateBotData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -652,13 +639,10 @@ class BotApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         return self.create_bot_endpoint.call_with_http_info(**kwargs)
 
     def delete_bot_by_id(
         self,
-        api_token,
         bot_userid,
         **kwargs
     ):
@@ -668,14 +652,14 @@ class BotApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.delete_bot_by_id(api_token, bot_userid, async_req=True)
+        >>> thread = api.delete_bot_by_id(bot_userid, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             bot_userid (str):
 
         Keyword Args:
+            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -737,15 +721,12 @@ class BotApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['bot_userid'] = \
             bot_userid
         return self.delete_bot_by_id_endpoint.call_with_http_info(**kwargs)
 
     def join_channels(
         self,
-        api_token,
         bot_userid,
         **kwargs
     ):
@@ -755,14 +736,14 @@ class BotApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.join_channels(api_token, bot_userid, async_req=True)
+        >>> thread = api.join_channels(bot_userid, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             bot_userid (str):
 
         Keyword Args:
+            api_token (str): [optional]
             join_channels_data (JoinChannelsData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -825,15 +806,12 @@ class BotApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['bot_userid'] = \
             bot_userid
         return self.join_channels_endpoint.call_with_http_info(**kwargs)
 
     def leave_channels(
         self,
-        api_token,
         bot_userid,
         **kwargs
     ):
@@ -843,14 +821,14 @@ class BotApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.leave_channels(api_token, bot_userid, async_req=True)
+        >>> thread = api.leave_channels(bot_userid, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             bot_userid (str):
 
         Keyword Args:
+            api_token (str): [optional]
             channel_url (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -913,15 +891,12 @@ class BotApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['bot_userid'] = \
             bot_userid
         return self.leave_channels_endpoint.call_with_http_info(**kwargs)
 
     def leave_channels_by_url(
         self,
-        api_token,
         bot_userid,
         channel_url,
         **kwargs
@@ -932,15 +907,15 @@ class BotApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.leave_channels_by_url(api_token, bot_userid, channel_url, async_req=True)
+        >>> thread = api.leave_channels_by_url(bot_userid, channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             bot_userid (str):
             channel_url (str):
 
         Keyword Args:
+            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -1002,8 +977,6 @@ class BotApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['bot_userid'] = \
             bot_userid
         kwargs['channel_url'] = \
@@ -1012,7 +985,6 @@ class BotApi(object):
 
     def list_bots(
         self,
-        api_token,
         **kwargs
     ):
         """List bots  # noqa: E501
@@ -1021,13 +993,12 @@ class BotApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.list_bots(api_token, async_req=True)
+        >>> thread = api.list_bots(async_req=True)
         >>> result = thread.get()
 
-        Args:
-            api_token (str):
 
         Keyword Args:
+            api_token (str): [optional]
             token (str): [optional]
             limit (int): [optional]
             _return_http_data_only (bool): response data without head status
@@ -1091,13 +1062,10 @@ class BotApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         return self.list_bots_endpoint.call_with_http_info(**kwargs)
 
     def send_bots_message(
         self,
-        api_token,
         bot_userid,
         **kwargs
     ):
@@ -1107,14 +1075,14 @@ class BotApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.send_bots_message(api_token, bot_userid, async_req=True)
+        >>> thread = api.send_bots_message(bot_userid, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             bot_userid (str):
 
         Keyword Args:
+            api_token (str): [optional]
             send_bot_s_message_data (SendBotSMessageData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -1148,7 +1116,7 @@ class BotApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            SendBirdMessageResponse
+            SendBirdBotsMessageResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -1177,15 +1145,12 @@ class BotApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['bot_userid'] = \
             bot_userid
         return self.send_bots_message_endpoint.call_with_http_info(**kwargs)
 
     def update_bot_by_id(
         self,
-        api_token,
         bot_userid,
         **kwargs
     ):
@@ -1195,14 +1160,14 @@ class BotApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.update_bot_by_id(api_token, bot_userid, async_req=True)
+        >>> thread = api.update_bot_by_id(bot_userid, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             bot_userid (str):
 
         Keyword Args:
+            api_token (str): [optional]
             update_bot_by_id_data (UpdateBotByIdData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -1265,15 +1230,12 @@ class BotApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['bot_userid'] = \
             bot_userid
         return self.update_bot_by_id_endpoint.call_with_http_info(**kwargs)
 
     def view_bot_by_id(
         self,
-        api_token,
         bot_userid,
         **kwargs
     ):
@@ -1283,14 +1245,14 @@ class BotApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.view_bot_by_id(api_token, bot_userid, async_req=True)
+        >>> thread = api.view_bot_by_id(bot_userid, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             bot_userid (str):
 
         Keyword Args:
+            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -1352,8 +1314,6 @@ class BotApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['bot_userid'] = \
             bot_userid
         return self.view_bot_by_id_endpoint.call_with_http_info(**kwargs)

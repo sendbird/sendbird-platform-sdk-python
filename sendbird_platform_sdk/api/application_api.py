@@ -89,9 +89,7 @@ class ApplicationApi(object):
                     'api_token',
                     'add_apns_push_configuration_data',
                 ],
-                'required': [
-                    'api_token',
-                ],
+                'required': [],
                 'nullable': [
                 ],
                 'enum': [
@@ -144,9 +142,7 @@ class ApplicationApi(object):
                     'api_token',
                     'add_fcm_push_configuration_data',
                 ],
-                'required': [
-                    'api_token',
-                ],
+                'required': [],
                 'nullable': [
                 ],
                 'enum': [
@@ -199,9 +195,7 @@ class ApplicationApi(object):
                     'api_token',
                     'add_hms_push_configuration_data',
                 ],
-                'required': [
-                    'api_token',
-                ],
+                'required': [],
                 'nullable': [
                 ],
                 'enum': [
@@ -254,9 +248,7 @@ class ApplicationApi(object):
                     'api_token',
                     'add_ip_to_whitelist_data',
                 ],
-                'required': [
-                    'api_token',
-                ],
+                'required': [],
                 'nullable': [
                 ],
                 'enum': [
@@ -306,12 +298,11 @@ class ApplicationApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'custom_type',
+                    'api_token',
                     'ban_users_in_channels_with_custom_channel_type_data',
                 ],
                 'required': [
-                    'api_token',
                     'custom_type',
                 ],
                 'nullable': [
@@ -327,20 +318,20 @@ class ApplicationApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'custom_type':
+                        (str,),
+                    'api_token':
                         (str,),
                     'ban_users_in_channels_with_custom_channel_type_data':
                         (BanUsersInChannelsWithCustomChannelTypeData,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'custom_type': 'custom_type',
+                    'api_token': 'Api-Token',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'custom_type': 'path',
+                    'api_token': 'header',
                     'ban_users_in_channels_with_custom_channel_type_data': 'body',
                 },
                 'collection_format_map': {
@@ -370,9 +361,7 @@ class ApplicationApi(object):
                     'api_token',
                     'configure_auto_event_data',
                 ],
-                'required': [
-                    'api_token',
-                ],
+                'required': [],
                 'nullable': [
                 ],
                 'enum': [
@@ -422,11 +411,10 @@ class ApplicationApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'ip_whitelist_addresses',
+                    'api_token',
                 ],
                 'required': [
-                    'api_token',
                     'ip_whitelist_addresses',
                 ],
                 'nullable': [
@@ -442,18 +430,18 @@ class ApplicationApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'ip_whitelist_addresses':
                         ([str],),
+                    'api_token':
+                        (str,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'ip_whitelist_addresses': 'ip_whitelist_addresses',
+                    'api_token': 'Api-Token',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'ip_whitelist_addresses': 'query',
+                    'api_token': 'header',
                 },
                 'collection_format_map': {
                     'ip_whitelist_addresses': 'multi',
@@ -478,11 +466,10 @@ class ApplicationApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'provider_id',
+                    'api_token',
                 ],
                 'required': [
-                    'api_token',
                     'provider_id',
                 ],
                 'nullable': [
@@ -498,18 +485,18 @@ class ApplicationApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'provider_id':
+                        (str,),
+                    'api_token':
                         (str,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'provider_id': 'provider_id',
+                    'api_token': 'Api-Token',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'provider_id': 'path',
+                    'api_token': 'header',
                 },
                 'collection_format_map': {
                 }
@@ -536,9 +523,7 @@ class ApplicationApi(object):
                     'api_token',
                     'generate_secondary_api_token_data',
                 ],
-                'required': [
-                    'api_token',
-                ],
+                'required': [],
                 'nullable': [
                 ],
                 'enum': [
@@ -590,9 +575,7 @@ class ApplicationApi(object):
                 'all': [
                     'api_token',
                 ],
-                'required': [
-                    'api_token',
-                ],
+                'required': [],
                 'nullable': [
                 ],
                 'enum': [
@@ -637,13 +620,12 @@ class ApplicationApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'custom_type',
+                    'api_token',
                     'token',
                     'limit',
                 ],
                 'required': [
-                    'api_token',
                     'custom_type',
                 ],
                 'nullable': [
@@ -659,9 +641,9 @@ class ApplicationApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'custom_type':
+                        (str,),
+                    'api_token':
                         (str,),
                     'token':
                         (str,),
@@ -669,14 +651,14 @@ class ApplicationApi(object):
                         (int,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'custom_type': 'custom_type',
+                    'api_token': 'Api-Token',
                     'token': 'token',
                     'limit': 'limit',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'custom_type': 'path',
+                    'api_token': 'header',
                     'token': 'query',
                     'limit': 'query',
                 },
@@ -702,13 +684,12 @@ class ApplicationApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'custom_type',
+                    'api_token',
                     'token',
                     'limit',
                 ],
                 'required': [
-                    'api_token',
                     'custom_type',
                 ],
                 'nullable': [
@@ -724,9 +705,9 @@ class ApplicationApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'custom_type':
+                        (str,),
+                    'api_token':
                         (str,),
                     'token':
                         (str,),
@@ -734,14 +715,14 @@ class ApplicationApi(object):
                         (int,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'custom_type': 'custom_type',
+                    'api_token': 'Api-Token',
                     'token': 'token',
                     'limit': 'limit',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'custom_type': 'path',
+                    'api_token': 'header',
                     'token': 'query',
                     'limit': 'query',
                 },
@@ -767,11 +748,10 @@ class ApplicationApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'push_type',
+                    'api_token',
                 ],
                 'required': [
-                    'api_token',
                     'push_type',
                 ],
                 'nullable': [
@@ -787,18 +767,18 @@ class ApplicationApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'push_type':
+                        (str,),
+                    'api_token':
                         (str,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'push_type': 'push_type',
+                    'api_token': 'Api-Token',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'push_type': 'path',
+                    'api_token': 'header',
                 },
                 'collection_format_map': {
                 }
@@ -824,9 +804,7 @@ class ApplicationApi(object):
                 'all': [
                     'api_token',
                 ],
-                'required': [
-                    'api_token',
-                ],
+                'required': [],
                 'nullable': [
                 ],
                 'enum': [
@@ -873,9 +851,7 @@ class ApplicationApi(object):
                 'all': [
                     'api_token',
                 ],
-                'required': [
-                    'api_token',
-                ],
+                'required': [],
                 'nullable': [
                 ],
                 'enum': [
@@ -920,12 +896,11 @@ class ApplicationApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'custom_type',
+                    'api_token',
                     'mute_users_in_channels_with_custom_channel_type_data',
                 ],
                 'required': [
-                    'api_token',
                     'custom_type',
                 ],
                 'nullable': [
@@ -941,20 +916,20 @@ class ApplicationApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'custom_type':
+                        (str,),
+                    'api_token':
                         (str,),
                     'mute_users_in_channels_with_custom_channel_type_data':
                         (MuteUsersInChannelsWithCustomChannelTypeData,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'custom_type': 'custom_type',
+                    'api_token': 'Api-Token',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'custom_type': 'path',
+                    'api_token': 'header',
                     'mute_users_in_channels_with_custom_channel_type_data': 'body',
                 },
                 'collection_format_map': {
@@ -981,12 +956,11 @@ class ApplicationApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'push_type',
                     'provider_id',
+                    'api_token',
                 ],
                 'required': [
-                    'api_token',
                     'push_type',
                     'provider_id',
                 ],
@@ -1003,22 +977,22 @@ class ApplicationApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'push_type':
                         (str,),
                     'provider_id':
                         (str,),
+                    'api_token':
+                        (str,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'push_type': 'push_type',
                     'provider_id': 'provider_id',
+                    'api_token': 'Api-Token',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'push_type': 'path',
                     'provider_id': 'path',
+                    'api_token': 'header',
                 },
                 'collection_format_map': {
                 }
@@ -1044,9 +1018,7 @@ class ApplicationApi(object):
                 'all': [
                     'api_token',
                 ],
-                'required': [
-                    'api_token',
-                ],
+                'required': [],
                 'nullable': [
                 ],
                 'enum': [
@@ -1091,11 +1063,10 @@ class ApplicationApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'api_token2',
+                    'api_token',
                 ],
                 'required': [
-                    'api_token',
                     'api_token2',
                 ],
                 'nullable': [
@@ -1111,18 +1082,18 @@ class ApplicationApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'api_token2':
+                        (str,),
+                    'api_token':
                         (str,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'api_token2': 'api_token',
+                    'api_token': 'Api-Token',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'api_token2': 'path',
+                    'api_token': 'header',
                 },
                 'collection_format_map': {
                 }
@@ -1146,12 +1117,11 @@ class ApplicationApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'custom_type',
+                    'api_token',
                     'set_domain_filter_data',
                 ],
                 'required': [
-                    'api_token',
                     'custom_type',
                 ],
                 'nullable': [
@@ -1167,20 +1137,20 @@ class ApplicationApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'custom_type':
+                        (str,),
+                    'api_token':
                         (str,),
                     'set_domain_filter_data':
                         (SetDomainFilterData,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'custom_type': 'custom_type',
+                    'api_token': 'Api-Token',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'custom_type': 'path',
+                    'api_token': 'header',
                     'set_domain_filter_data': 'body',
                 },
                 'collection_format_map': {
@@ -1207,12 +1177,11 @@ class ApplicationApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'custom_type',
                     'user_ids',
+                    'api_token',
                 ],
                 'required': [
-                    'api_token',
                     'custom_type',
                     'user_ids',
                 ],
@@ -1229,22 +1198,22 @@ class ApplicationApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'custom_type':
                         (str,),
                     'user_ids':
                         ([str],),
+                    'api_token':
+                        (str,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'custom_type': 'custom_type',
                     'user_ids': 'user_ids',
+                    'api_token': 'Api-Token',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'custom_type': 'path',
                     'user_ids': 'query',
+                    'api_token': 'header',
                 },
                 'collection_format_map': {
                     'user_ids': 'multi',
@@ -1269,12 +1238,11 @@ class ApplicationApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'custom_type',
                     'user_ids',
+                    'api_token',
                 ],
                 'required': [
-                    'api_token',
                     'custom_type',
                     'user_ids',
                 ],
@@ -1291,22 +1259,22 @@ class ApplicationApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'custom_type':
                         (str,),
                     'user_ids':
                         ([str],),
+                    'api_token':
+                        (str,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'custom_type': 'custom_type',
                     'user_ids': 'user_ids',
+                    'api_token': 'Api-Token',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'custom_type': 'path',
                     'user_ids': 'query',
+                    'api_token': 'header',
                 },
                 'collection_format_map': {
                     'user_ids': 'multi',
@@ -1331,12 +1299,11 @@ class ApplicationApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'provider_id',
+                    'api_token',
                     'update_apns_push_configuration_by_id_data',
                 ],
                 'required': [
-                    'api_token',
                     'provider_id',
                 ],
                 'nullable': [
@@ -1352,20 +1319,20 @@ class ApplicationApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'provider_id':
+                        (str,),
+                    'api_token':
                         (str,),
                     'update_apns_push_configuration_by_id_data':
                         (UpdateApnsPushConfigurationByIdData,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'provider_id': 'provider_id',
+                    'api_token': 'Api-Token',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'provider_id': 'path',
+                    'api_token': 'header',
                     'update_apns_push_configuration_by_id_data': 'body',
                 },
                 'collection_format_map': {
@@ -1395,9 +1362,7 @@ class ApplicationApi(object):
                     'api_token',
                     'update_default_channel_invitation_preference_data',
                 ],
-                'required': [
-                    'api_token',
-                ],
+                'required': [],
                 'nullable': [
                 ],
                 'enum': [
@@ -1447,12 +1412,11 @@ class ApplicationApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'provider_id',
+                    'api_token',
                     'update_fcm_push_configuration_by_id_data',
                 ],
                 'required': [
-                    'api_token',
                     'provider_id',
                 ],
                 'nullable': [
@@ -1468,20 +1432,20 @@ class ApplicationApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'provider_id':
+                        (str,),
+                    'api_token':
                         (str,),
                     'update_fcm_push_configuration_by_id_data':
                         (UpdateFcmPushConfigurationByIdData,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'provider_id': 'provider_id',
+                    'api_token': 'Api-Token',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'provider_id': 'path',
+                    'api_token': 'header',
                     'update_fcm_push_configuration_by_id_data': 'body',
                 },
                 'collection_format_map': {
@@ -1508,12 +1472,11 @@ class ApplicationApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'provider_id',
+                    'api_token',
                     'update_hms_push_configuration_by_id_data',
                 ],
                 'required': [
-                    'api_token',
                     'provider_id',
                 ],
                 'nullable': [
@@ -1529,20 +1492,20 @@ class ApplicationApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'provider_id':
+                        (str,),
+                    'api_token':
                         (str,),
                     'update_hms_push_configuration_by_id_data':
                         (UpdateHmsPushConfigurationByIdData,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'provider_id': 'provider_id',
+                    'api_token': 'Api-Token',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'provider_id': 'path',
+                    'api_token': 'header',
                     'update_hms_push_configuration_by_id_data': 'body',
                 },
                 'collection_format_map': {
@@ -1569,12 +1532,11 @@ class ApplicationApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'template_name',
+                    'api_token',
                     'update_push_notification_content_template_data',
                 ],
                 'required': [
-                    'api_token',
                     'template_name',
                 ],
                 'nullable': [
@@ -1590,20 +1552,20 @@ class ApplicationApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'template_name':
+                        (str,),
+                    'api_token':
                         (str,),
                     'update_push_notification_content_template_data':
                         (UpdatePushNotificationContentTemplateData,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'template_name': 'template_name',
+                    'api_token': 'Api-Token',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'template_name': 'path',
+                    'api_token': 'header',
                     'update_push_notification_content_template_data': 'body',
                 },
                 'collection_format_map': {
@@ -1632,9 +1594,7 @@ class ApplicationApi(object):
                 'all': [
                     'api_token',
                 ],
-                'required': [
-                    'api_token',
-                ],
+                'required': [],
                 'nullable': [
                 ],
                 'enum': [
@@ -1679,12 +1639,11 @@ class ApplicationApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'push_type',
                     'provider_id',
+                    'api_token',
                 ],
                 'required': [
-                    'api_token',
                     'push_type',
                     'provider_id',
                 ],
@@ -1701,22 +1660,22 @@ class ApplicationApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'push_type':
                         (str,),
                     'provider_id':
                         (str,),
+                    'api_token':
+                        (str,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'push_type': 'push_type',
                     'provider_id': 'provider_id',
+                    'api_token': 'Api-Token',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'push_type': 'path',
                     'provider_id': 'path',
+                    'api_token': 'header',
                 },
                 'collection_format_map': {
                 }
@@ -1740,11 +1699,10 @@ class ApplicationApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'template_name',
+                    'api_token',
                 ],
                 'required': [
-                    'api_token',
                     'template_name',
                 ],
                 'nullable': [
@@ -1760,18 +1718,18 @@ class ApplicationApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'template_name':
+                        (str,),
+                    'api_token':
                         (str,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'template_name': 'template_name',
+                    'api_token': 'Api-Token',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'template_name': 'path',
+                    'api_token': 'header',
                 },
                 'collection_format_map': {
                 }
@@ -1795,11 +1753,10 @@ class ApplicationApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'api_token2',
+                    'api_token',
                 ],
                 'required': [
-                    'api_token',
                     'api_token2',
                 ],
                 'nullable': [
@@ -1815,18 +1772,18 @@ class ApplicationApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'api_token2':
+                        (str,),
+                    'api_token':
                         (str,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'api_token2': 'api_token',
+                    'api_token': 'Api-Token',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'api_token2': 'path',
+                    'api_token': 'header',
                 },
                 'collection_format_map': {
                 }
@@ -1842,7 +1799,6 @@ class ApplicationApi(object):
 
     def add_apns_push_configuration(
         self,
-        api_token,
         **kwargs
     ):
         """Add an APNs push configuration  # noqa: E501
@@ -1851,13 +1807,12 @@ class ApplicationApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.add_apns_push_configuration(api_token, async_req=True)
+        >>> thread = api.add_apns_push_configuration(async_req=True)
         >>> result = thread.get()
 
-        Args:
-            api_token (str):
 
         Keyword Args:
+            api_token (str): [optional]
             add_apns_push_configuration_data (AddApnsPushConfigurationData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -1920,13 +1875,10 @@ class ApplicationApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         return self.add_apns_push_configuration_endpoint.call_with_http_info(**kwargs)
 
     def add_fcm_push_configuration(
         self,
-        api_token,
         **kwargs
     ):
         """Add a FCM push configuration  # noqa: E501
@@ -1935,13 +1887,12 @@ class ApplicationApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.add_fcm_push_configuration(api_token, async_req=True)
+        >>> thread = api.add_fcm_push_configuration(async_req=True)
         >>> result = thread.get()
 
-        Args:
-            api_token (str):
 
         Keyword Args:
+            api_token (str): [optional]
             add_fcm_push_configuration_data (AddFcmPushConfigurationData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -2004,13 +1955,10 @@ class ApplicationApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         return self.add_fcm_push_configuration_endpoint.call_with_http_info(**kwargs)
 
     def add_hms_push_configuration(
         self,
-        api_token,
         **kwargs
     ):
         """Add an HMS push configuration  # noqa: E501
@@ -2019,13 +1967,12 @@ class ApplicationApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.add_hms_push_configuration(api_token, async_req=True)
+        >>> thread = api.add_hms_push_configuration(async_req=True)
         >>> result = thread.get()
 
-        Args:
-            api_token (str):
 
         Keyword Args:
+            api_token (str): [optional]
             add_hms_push_configuration_data (AddHmsPushConfigurationData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -2088,13 +2035,10 @@ class ApplicationApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         return self.add_hms_push_configuration_endpoint.call_with_http_info(**kwargs)
 
     def add_ip_to_whitelist(
         self,
-        api_token,
         **kwargs
     ):
         """Add an IP to a whitelist  # noqa: E501
@@ -2103,13 +2047,12 @@ class ApplicationApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.add_ip_to_whitelist(api_token, async_req=True)
+        >>> thread = api.add_ip_to_whitelist(async_req=True)
         >>> result = thread.get()
 
-        Args:
-            api_token (str):
 
         Keyword Args:
+            api_token (str): [optional]
             add_ip_to_whitelist_data (AddIpToWhitelistData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -2172,13 +2115,10 @@ class ApplicationApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         return self.add_ip_to_whitelist_endpoint.call_with_http_info(**kwargs)
 
     def ban_users_in_channels_with_custom_channel_type(
         self,
-        api_token,
         custom_type,
         **kwargs
     ):
@@ -2188,14 +2128,14 @@ class ApplicationApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.ban_users_in_channels_with_custom_channel_type(api_token, custom_type, async_req=True)
+        >>> thread = api.ban_users_in_channels_with_custom_channel_type(custom_type, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             custom_type (str):
 
         Keyword Args:
+            api_token (str): [optional]
             ban_users_in_channels_with_custom_channel_type_data (BanUsersInChannelsWithCustomChannelTypeData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -2258,15 +2198,12 @@ class ApplicationApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['custom_type'] = \
             custom_type
         return self.ban_users_in_channels_with_custom_channel_type_endpoint.call_with_http_info(**kwargs)
 
     def configure_auto_event_messages(
         self,
-        api_token,
         **kwargs
     ):
         """Configure auto event message settings  # noqa: E501
@@ -2275,13 +2212,12 @@ class ApplicationApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.configure_auto_event_messages(api_token, async_req=True)
+        >>> thread = api.configure_auto_event_messages(async_req=True)
         >>> result = thread.get()
 
-        Args:
-            api_token (str):
 
         Keyword Args:
+            api_token (str): [optional]
             configure_auto_event_data (ConfigureAutoEventData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -2344,13 +2280,10 @@ class ApplicationApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         return self.configure_auto_event_messages_endpoint.call_with_http_info(**kwargs)
 
     def delete_allowed_ips_from_whitelist(
         self,
-        api_token,
         ip_whitelist_addresses,
         **kwargs
     ):
@@ -2360,14 +2293,14 @@ class ApplicationApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.delete_allowed_ips_from_whitelist(api_token, ip_whitelist_addresses, async_req=True)
+        >>> thread = api.delete_allowed_ips_from_whitelist(ip_whitelist_addresses, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             ip_whitelist_addresses ([str]):
 
         Keyword Args:
+            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -2429,15 +2362,12 @@ class ApplicationApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['ip_whitelist_addresses'] = \
             ip_whitelist_addresses
         return self.delete_allowed_ips_from_whitelist_endpoint.call_with_http_info(**kwargs)
 
     def delete_apns_certificate_by_id(
         self,
-        api_token,
         provider_id,
         **kwargs
     ):
@@ -2447,14 +2377,14 @@ class ApplicationApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.delete_apns_certificate_by_id(api_token, provider_id, async_req=True)
+        >>> thread = api.delete_apns_certificate_by_id(provider_id, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             provider_id (str):
 
         Keyword Args:
+            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -2516,15 +2446,12 @@ class ApplicationApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['provider_id'] = \
             provider_id
         return self.delete_apns_certificate_by_id_endpoint.call_with_http_info(**kwargs)
 
     def generate_secondary_api_token(
         self,
-        api_token,
         **kwargs
     ):
         """Generate a secondary API token  # noqa: E501
@@ -2533,13 +2460,12 @@ class ApplicationApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.generate_secondary_api_token(api_token, async_req=True)
+        >>> thread = api.generate_secondary_api_token(async_req=True)
         >>> result = thread.get()
 
-        Args:
-            api_token (str):
 
         Keyword Args:
+            api_token (str): [optional]
             generate_secondary_api_token_data (GenerateSecondaryApiTokenData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -2602,13 +2528,10 @@ class ApplicationApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         return self.generate_secondary_api_token_endpoint.call_with_http_info(**kwargs)
 
     def list_auto_event_messages(
         self,
-        api_token,
         **kwargs
     ):
         """List auto event messages  # noqa: E501
@@ -2617,13 +2540,12 @@ class ApplicationApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.list_auto_event_messages(api_token, async_req=True)
+        >>> thread = api.list_auto_event_messages(async_req=True)
         >>> result = thread.get()
 
-        Args:
-            api_token (str):
 
         Keyword Args:
+            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -2685,13 +2607,10 @@ class ApplicationApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         return self.list_auto_event_messages_endpoint.call_with_http_info(**kwargs)
 
     def list_banned_users_in_channels_with_custom_channel_type(
         self,
-        api_token,
         custom_type,
         **kwargs
     ):
@@ -2701,14 +2620,14 @@ class ApplicationApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.list_banned_users_in_channels_with_custom_channel_type(api_token, custom_type, async_req=True)
+        >>> thread = api.list_banned_users_in_channels_with_custom_channel_type(custom_type, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             custom_type (str):
 
         Keyword Args:
+            api_token (str): [optional]
             token (str): [optional]
             limit (int): [optional]
             _return_http_data_only (bool): response data without head status
@@ -2772,15 +2691,12 @@ class ApplicationApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['custom_type'] = \
             custom_type
         return self.list_banned_users_in_channels_with_custom_channel_type_endpoint.call_with_http_info(**kwargs)
 
     def list_muted_users_in_channels_with_custom_channel_type(
         self,
-        api_token,
         custom_type,
         **kwargs
     ):
@@ -2790,14 +2706,14 @@ class ApplicationApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.list_muted_users_in_channels_with_custom_channel_type(api_token, custom_type, async_req=True)
+        >>> thread = api.list_muted_users_in_channels_with_custom_channel_type(custom_type, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             custom_type (str):
 
         Keyword Args:
+            api_token (str): [optional]
             token (str): [optional]
             limit (int): [optional]
             _return_http_data_only (bool): response data without head status
@@ -2861,15 +2777,12 @@ class ApplicationApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['custom_type'] = \
             custom_type
         return self.list_muted_users_in_channels_with_custom_channel_type_endpoint.call_with_http_info(**kwargs)
 
     def list_push_configurations(
         self,
-        api_token,
         push_type,
         **kwargs
     ):
@@ -2879,14 +2792,14 @@ class ApplicationApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.list_push_configurations(api_token, push_type, async_req=True)
+        >>> thread = api.list_push_configurations(push_type, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             push_type (str):
 
         Keyword Args:
+            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -2948,15 +2861,12 @@ class ApplicationApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['push_type'] = \
             push_type
         return self.list_push_configurations_endpoint.call_with_http_info(**kwargs)
 
     def list_push_notification_content_templates(
         self,
-        api_token,
         **kwargs
     ):
         """List push notification content templates  # noqa: E501
@@ -2965,13 +2875,12 @@ class ApplicationApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.list_push_notification_content_templates(api_token, async_req=True)
+        >>> thread = api.list_push_notification_content_templates(async_req=True)
         >>> result = thread.get()
 
-        Args:
-            api_token (str):
 
         Keyword Args:
+            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -3033,13 +2942,10 @@ class ApplicationApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         return self.list_push_notification_content_templates_endpoint.call_with_http_info(**kwargs)
 
     def list_secondary_api_tokens(
         self,
-        api_token,
         **kwargs
     ):
         """List secondary API tokens  # noqa: E501
@@ -3048,13 +2954,12 @@ class ApplicationApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.list_secondary_api_tokens(api_token, async_req=True)
+        >>> thread = api.list_secondary_api_tokens(async_req=True)
         >>> result = thread.get()
 
-        Args:
-            api_token (str):
 
         Keyword Args:
+            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -3116,13 +3021,10 @@ class ApplicationApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         return self.list_secondary_api_tokens_endpoint.call_with_http_info(**kwargs)
 
     def mute_users_in_channels_with_custom_channel_type(
         self,
-        api_token,
         custom_type,
         **kwargs
     ):
@@ -3132,14 +3034,14 @@ class ApplicationApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.mute_users_in_channels_with_custom_channel_type(api_token, custom_type, async_req=True)
+        >>> thread = api.mute_users_in_channels_with_custom_channel_type(custom_type, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             custom_type (str):
 
         Keyword Args:
+            api_token (str): [optional]
             mute_users_in_channels_with_custom_channel_type_data (MuteUsersInChannelsWithCustomChannelTypeData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -3202,15 +3104,12 @@ class ApplicationApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['custom_type'] = \
             custom_type
         return self.mute_users_in_channels_with_custom_channel_type_endpoint.call_with_http_info(**kwargs)
 
     def remove_push_configuration_by_id(
         self,
-        api_token,
         push_type,
         provider_id,
         **kwargs
@@ -3221,15 +3120,15 @@ class ApplicationApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.remove_push_configuration_by_id(api_token, push_type, provider_id, async_req=True)
+        >>> thread = api.remove_push_configuration_by_id(push_type, provider_id, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             push_type (str):
             provider_id (str):
 
         Keyword Args:
+            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -3291,8 +3190,6 @@ class ApplicationApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['push_type'] = \
             push_type
         kwargs['provider_id'] = \
@@ -3301,7 +3198,6 @@ class ApplicationApi(object):
 
     def retrieve_ip_whitelist(
         self,
-        api_token,
         **kwargs
     ):
         """Retrieve an IP whitelist  # noqa: E501
@@ -3310,13 +3206,12 @@ class ApplicationApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.retrieve_ip_whitelist(api_token, async_req=True)
+        >>> thread = api.retrieve_ip_whitelist(async_req=True)
         >>> result = thread.get()
 
-        Args:
-            api_token (str):
 
         Keyword Args:
+            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -3378,13 +3273,10 @@ class ApplicationApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         return self.retrieve_ip_whitelist_endpoint.call_with_http_info(**kwargs)
 
     def revoke_secondary_api_token_by_token(
         self,
-        api_token,
         api_token2,
         **kwargs
     ):
@@ -3394,14 +3286,14 @@ class ApplicationApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.revoke_secondary_api_token_by_token(api_token, api_token2, async_req=True)
+        >>> thread = api.revoke_secondary_api_token_by_token(api_token2, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             api_token2 (str):
 
         Keyword Args:
+            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -3463,15 +3355,12 @@ class ApplicationApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['api_token2'] = \
             api_token2
         return self.revoke_secondary_api_token_by_token_endpoint.call_with_http_info(**kwargs)
 
     def set_domain_filter(
         self,
-        api_token,
         custom_type,
         **kwargs
     ):
@@ -3481,14 +3370,14 @@ class ApplicationApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.set_domain_filter(api_token, custom_type, async_req=True)
+        >>> thread = api.set_domain_filter(custom_type, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             custom_type (str):
 
         Keyword Args:
+            api_token (str): [optional]
             set_domain_filter_data (SetDomainFilterData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -3551,15 +3440,12 @@ class ApplicationApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['custom_type'] = \
             custom_type
         return self.set_domain_filter_endpoint.call_with_http_info(**kwargs)
 
     def unban_users_in_channels_with_custom_channel_type(
         self,
-        api_token,
         custom_type,
         user_ids,
         **kwargs
@@ -3570,15 +3456,15 @@ class ApplicationApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.unban_users_in_channels_with_custom_channel_type(api_token, custom_type, user_ids, async_req=True)
+        >>> thread = api.unban_users_in_channels_with_custom_channel_type(custom_type, user_ids, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             custom_type (str):
             user_ids ([str]):
 
         Keyword Args:
+            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -3640,8 +3526,6 @@ class ApplicationApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['custom_type'] = \
             custom_type
         kwargs['user_ids'] = \
@@ -3650,7 +3534,6 @@ class ApplicationApi(object):
 
     def unmute_users_in_channels_with_custom_channel_type(
         self,
-        api_token,
         custom_type,
         user_ids,
         **kwargs
@@ -3661,15 +3544,15 @@ class ApplicationApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.unmute_users_in_channels_with_custom_channel_type(api_token, custom_type, user_ids, async_req=True)
+        >>> thread = api.unmute_users_in_channels_with_custom_channel_type(custom_type, user_ids, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             custom_type (str):
             user_ids ([str]):
 
         Keyword Args:
+            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -3731,8 +3614,6 @@ class ApplicationApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['custom_type'] = \
             custom_type
         kwargs['user_ids'] = \
@@ -3741,7 +3622,6 @@ class ApplicationApi(object):
 
     def update_apns_push_configuration_by_id(
         self,
-        api_token,
         provider_id,
         **kwargs
     ):
@@ -3751,14 +3631,14 @@ class ApplicationApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.update_apns_push_configuration_by_id(api_token, provider_id, async_req=True)
+        >>> thread = api.update_apns_push_configuration_by_id(provider_id, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             provider_id (str):
 
         Keyword Args:
+            api_token (str): [optional]
             update_apns_push_configuration_by_id_data (UpdateApnsPushConfigurationByIdData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -3821,15 +3701,12 @@ class ApplicationApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['provider_id'] = \
             provider_id
         return self.update_apns_push_configuration_by_id_endpoint.call_with_http_info(**kwargs)
 
     def update_default_channel_invitation_preference(
         self,
-        api_token,
         **kwargs
     ):
         """Update default channel invitation preference  # noqa: E501
@@ -3838,13 +3715,12 @@ class ApplicationApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.update_default_channel_invitation_preference(api_token, async_req=True)
+        >>> thread = api.update_default_channel_invitation_preference(async_req=True)
         >>> result = thread.get()
 
-        Args:
-            api_token (str):
 
         Keyword Args:
+            api_token (str): [optional]
             update_default_channel_invitation_preference_data (UpdateDefaultChannelInvitationPreferenceData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -3907,13 +3783,10 @@ class ApplicationApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         return self.update_default_channel_invitation_preference_endpoint.call_with_http_info(**kwargs)
 
     def update_fcm_push_configuration_by_id(
         self,
-        api_token,
         provider_id,
         **kwargs
     ):
@@ -3923,14 +3796,14 @@ class ApplicationApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.update_fcm_push_configuration_by_id(api_token, provider_id, async_req=True)
+        >>> thread = api.update_fcm_push_configuration_by_id(provider_id, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             provider_id (str):
 
         Keyword Args:
+            api_token (str): [optional]
             update_fcm_push_configuration_by_id_data (UpdateFcmPushConfigurationByIdData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -3993,15 +3866,12 @@ class ApplicationApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['provider_id'] = \
             provider_id
         return self.update_fcm_push_configuration_by_id_endpoint.call_with_http_info(**kwargs)
 
     def update_hms_push_configuration_by_id(
         self,
-        api_token,
         provider_id,
         **kwargs
     ):
@@ -4011,14 +3881,14 @@ class ApplicationApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.update_hms_push_configuration_by_id(api_token, provider_id, async_req=True)
+        >>> thread = api.update_hms_push_configuration_by_id(provider_id, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             provider_id (str):
 
         Keyword Args:
+            api_token (str): [optional]
             update_hms_push_configuration_by_id_data (UpdateHmsPushConfigurationByIdData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -4081,15 +3951,12 @@ class ApplicationApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['provider_id'] = \
             provider_id
         return self.update_hms_push_configuration_by_id_endpoint.call_with_http_info(**kwargs)
 
     def update_push_notification_content_template(
         self,
-        api_token,
         template_name,
         **kwargs
     ):
@@ -4099,14 +3966,14 @@ class ApplicationApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.update_push_notification_content_template(api_token, template_name, async_req=True)
+        >>> thread = api.update_push_notification_content_template(template_name, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             template_name (str):
 
         Keyword Args:
+            api_token (str): [optional]
             update_push_notification_content_template_data (UpdatePushNotificationContentTemplateData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -4169,15 +4036,12 @@ class ApplicationApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['template_name'] = \
             template_name
         return self.update_push_notification_content_template_endpoint.call_with_http_info(**kwargs)
 
     def view_default_channel_invitation_preference(
         self,
-        api_token,
         **kwargs
     ):
         """View default channel invitation preference  # noqa: E501
@@ -4186,13 +4050,12 @@ class ApplicationApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.view_default_channel_invitation_preference(api_token, async_req=True)
+        >>> thread = api.view_default_channel_invitation_preference(async_req=True)
         >>> result = thread.get()
 
-        Args:
-            api_token (str):
 
         Keyword Args:
+            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -4254,13 +4117,10 @@ class ApplicationApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         return self.view_default_channel_invitation_preference_endpoint.call_with_http_info(**kwargs)
 
     def view_push_configuration_by_id(
         self,
-        api_token,
         push_type,
         provider_id,
         **kwargs
@@ -4271,15 +4131,15 @@ class ApplicationApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.view_push_configuration_by_id(api_token, push_type, provider_id, async_req=True)
+        >>> thread = api.view_push_configuration_by_id(push_type, provider_id, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             push_type (str):
             provider_id (str):
 
         Keyword Args:
+            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -4341,8 +4201,6 @@ class ApplicationApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['push_type'] = \
             push_type
         kwargs['provider_id'] = \
@@ -4351,24 +4209,23 @@ class ApplicationApi(object):
 
     def view_push_notification_content_template(
         self,
-        api_token,
         template_name,
         **kwargs
     ):
-        """View a push notification content template  # noqa: E501
+        """Get a push notification content template  # noqa: E501
 
-        ## View a push notification content template  Retrieves information on a specific push notification content templates of an application. The name of a content template is either `default` or `alternative`.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-view-a-push-notification-content-template ----------------------------  # noqa: E501
+        ## Get a push notification content template  Retrieves information on a specific push notification content templates of an application. The name of a content template is either `default` or `alternative`.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-view-a-push-notification-content-template ----------------------------  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.view_push_notification_content_template(api_token, template_name, async_req=True)
+        >>> thread = api.view_push_notification_content_template(template_name, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             template_name (str):
 
         Keyword Args:
+            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -4430,15 +4287,12 @@ class ApplicationApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['template_name'] = \
             template_name
         return self.view_push_notification_content_template_endpoint.call_with_http_info(**kwargs)
 
     def view_secondary_api_token_by_token(
         self,
-        api_token,
         api_token2,
         **kwargs
     ):
@@ -4448,14 +4302,14 @@ class ApplicationApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.view_secondary_api_token_by_token(api_token, api_token2, async_req=True)
+        >>> thread = api.view_secondary_api_token_by_token(api_token2, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             api_token2 (str):
 
         Keyword Args:
+            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -4517,8 +4371,6 @@ class ApplicationApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['api_token2'] = \
             api_token2
         return self.view_secondary_api_token_by_token_endpoint.call_with_http_info(**kwargs)

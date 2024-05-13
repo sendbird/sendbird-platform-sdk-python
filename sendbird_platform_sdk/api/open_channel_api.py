@@ -54,13 +54,12 @@ class OpenChannelApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'channel_url',
                     'operator_ids',
+                    'api_token',
                     'delete_all',
                 ],
                 'required': [
-                    'api_token',
                     'channel_url',
                     'operator_ids',
                 ],
@@ -77,25 +76,25 @@ class OpenChannelApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'channel_url':
                         (str,),
                     'operator_ids':
                         ([str],),
+                    'api_token':
+                        (str,),
                     'delete_all':
                         (bool,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'channel_url': 'channel_url',
                     'operator_ids': 'operator_ids',
+                    'api_token': 'Api-Token',
                     'delete_all': 'delete_all',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'channel_url': 'path',
                     'operator_ids': 'query',
+                    'api_token': 'header',
                     'delete_all': 'query',
                 },
                 'collection_format_map': {
@@ -122,9 +121,7 @@ class OpenChannelApi(object):
                     'api_token',
                     'oc_create_channel_data',
                 ],
-                'required': [
-                    'api_token',
-                ],
+                'required': [],
                 'nullable': [
                 ],
                 'enum': [
@@ -174,11 +171,10 @@ class OpenChannelApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'channel_url',
+                    'api_token',
                 ],
                 'required': [
-                    'api_token',
                     'channel_url',
                 ],
                 'nullable': [
@@ -194,18 +190,18 @@ class OpenChannelApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'channel_url':
+                        (str,),
+                    'api_token':
                         (str,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'channel_url': 'channel_url',
+                    'api_token': 'Api-Token',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'channel_url': 'path',
+                    'api_token': 'header',
                 },
                 'collection_format_map': {
                 }
@@ -239,9 +235,7 @@ class OpenChannelApi(object):
                     'show_metadata',
                     'custom_type',
                 ],
-                'required': [
-                    'api_token',
-                ],
+                'required': [],
                 'nullable': [
                 ],
                 'enum': [
@@ -318,13 +312,12 @@ class OpenChannelApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'channel_url',
+                    'api_token',
                     'token',
                     'limit',
                 ],
                 'required': [
-                    'api_token',
                     'channel_url',
                 ],
                 'nullable': [
@@ -340,9 +333,9 @@ class OpenChannelApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'channel_url':
+                        (str,),
+                    'api_token':
                         (str,),
                     'token':
                         (str,),
@@ -350,14 +343,14 @@ class OpenChannelApi(object):
                         (int,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'channel_url': 'channel_url',
+                    'api_token': 'Api-Token',
                     'token': 'token',
                     'limit': 'limit',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'channel_url': 'path',
+                    'api_token': 'header',
                     'token': 'query',
                     'limit': 'query',
                 },
@@ -383,13 +376,12 @@ class OpenChannelApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'channel_url',
+                    'api_token',
                     'token',
                     'limit',
                 ],
                 'required': [
-                    'api_token',
                     'channel_url',
                 ],
                 'nullable': [
@@ -405,9 +397,9 @@ class OpenChannelApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'channel_url':
+                        (str,),
+                    'api_token':
                         (str,),
                     'token':
                         (str,),
@@ -415,14 +407,14 @@ class OpenChannelApi(object):
                         (int,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'channel_url': 'channel_url',
+                    'api_token': 'Api-Token',
                     'token': 'token',
                     'limit': 'limit',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'channel_url': 'path',
+                    'api_token': 'header',
                     'token': 'query',
                     'limit': 'query',
                 },
@@ -448,12 +440,11 @@ class OpenChannelApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'channel_url',
+                    'api_token',
                     'oc_register_operators_data',
                 ],
                 'required': [
-                    'api_token',
                     'channel_url',
                 ],
                 'nullable': [
@@ -469,20 +460,20 @@ class OpenChannelApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'channel_url':
+                        (str,),
+                    'api_token':
                         (str,),
                     'oc_register_operators_data':
                         (OcRegisterOperatorsData,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'channel_url': 'channel_url',
+                    'api_token': 'Api-Token',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'channel_url': 'path',
+                    'api_token': 'header',
                     'oc_register_operators_data': 'body',
                 },
                 'collection_format_map': {
@@ -509,12 +500,11 @@ class OpenChannelApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'channel_url',
+                    'api_token',
                     'oc_update_channel_by_url_data',
                 ],
                 'required': [
-                    'api_token',
                     'channel_url',
                 ],
                 'nullable': [
@@ -530,20 +520,20 @@ class OpenChannelApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'channel_url':
+                        (str,),
+                    'api_token':
                         (str,),
                     'oc_update_channel_by_url_data':
                         (OcUpdateChannelByUrlData,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'channel_url': 'channel_url',
+                    'api_token': 'Api-Token',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'channel_url': 'path',
+                    'api_token': 'header',
                     'oc_update_channel_by_url_data': 'body',
                 },
                 'collection_format_map': {
@@ -570,11 +560,10 @@ class OpenChannelApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'channel_url',
+                    'api_token',
                 ],
                 'required': [
-                    'api_token',
                     'channel_url',
                 ],
                 'nullable': [
@@ -590,18 +579,18 @@ class OpenChannelApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'channel_url':
+                        (str,),
+                    'api_token':
                         (str,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'channel_url': 'channel_url',
+                    'api_token': 'Api-Token',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'channel_url': 'path',
+                    'api_token': 'header',
                 },
                 'collection_format_map': {
                 }
@@ -617,7 +606,6 @@ class OpenChannelApi(object):
 
     def oc_cancel_the_registration_of_operators(
         self,
-        api_token,
         channel_url,
         operator_ids,
         **kwargs
@@ -628,15 +616,15 @@ class OpenChannelApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.oc_cancel_the_registration_of_operators(api_token, channel_url, operator_ids, async_req=True)
+        >>> thread = api.oc_cancel_the_registration_of_operators(channel_url, operator_ids, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             channel_url (str):
             operator_ids ([str]):
 
         Keyword Args:
+            api_token (str): [optional]
             delete_all (bool): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -699,8 +687,6 @@ class OpenChannelApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['channel_url'] = \
             channel_url
         kwargs['operator_ids'] = \
@@ -709,7 +695,6 @@ class OpenChannelApi(object):
 
     def oc_create_channel(
         self,
-        api_token,
         **kwargs
     ):
         """Create a channel  # noqa: E501
@@ -718,13 +703,12 @@ class OpenChannelApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.oc_create_channel(api_token, async_req=True)
+        >>> thread = api.oc_create_channel(async_req=True)
         >>> result = thread.get()
 
-        Args:
-            api_token (str):
 
         Keyword Args:
+            api_token (str): [optional]
             oc_create_channel_data (OcCreateChannelData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -787,13 +771,10 @@ class OpenChannelApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         return self.oc_create_channel_endpoint.call_with_http_info(**kwargs)
 
     def oc_delete_channel_by_url(
         self,
-        api_token,
         channel_url,
         **kwargs
     ):
@@ -803,14 +784,14 @@ class OpenChannelApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.oc_delete_channel_by_url(api_token, channel_url, async_req=True)
+        >>> thread = api.oc_delete_channel_by_url(channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             channel_url (str):
 
         Keyword Args:
+            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -872,15 +853,12 @@ class OpenChannelApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['channel_url'] = \
             channel_url
         return self.oc_delete_channel_by_url_endpoint.call_with_http_info(**kwargs)
 
     def oc_list_channels(
         self,
-        api_token,
         **kwargs
     ):
         """List channels  # noqa: E501
@@ -889,13 +867,12 @@ class OpenChannelApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.oc_list_channels(api_token, async_req=True)
+        >>> thread = api.oc_list_channels(async_req=True)
         >>> result = thread.get()
 
-        Args:
-            api_token (str):
 
         Keyword Args:
+            api_token (str): [optional]
             token (str): [optional]
             limit (int): [optional]
             custom_types (str): [optional]
@@ -965,13 +942,10 @@ class OpenChannelApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         return self.oc_list_channels_endpoint.call_with_http_info(**kwargs)
 
     def oc_list_operators(
         self,
-        api_token,
         channel_url,
         **kwargs
     ):
@@ -981,14 +955,14 @@ class OpenChannelApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.oc_list_operators(api_token, channel_url, async_req=True)
+        >>> thread = api.oc_list_operators(channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             channel_url (str):
 
         Keyword Args:
+            api_token (str): [optional]
             token (str): [optional]
             limit (int): [optional]
             _return_http_data_only (bool): response data without head status
@@ -1052,15 +1026,12 @@ class OpenChannelApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['channel_url'] = \
             channel_url
         return self.oc_list_operators_endpoint.call_with_http_info(**kwargs)
 
     def oc_list_participants(
         self,
-        api_token,
         channel_url,
         **kwargs
     ):
@@ -1070,14 +1041,14 @@ class OpenChannelApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.oc_list_participants(api_token, channel_url, async_req=True)
+        >>> thread = api.oc_list_participants(channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             channel_url (str):
 
         Keyword Args:
+            api_token (str): [optional]
             token (str): [optional]
             limit (int): [optional]
             _return_http_data_only (bool): response data without head status
@@ -1141,15 +1112,12 @@ class OpenChannelApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['channel_url'] = \
             channel_url
         return self.oc_list_participants_endpoint.call_with_http_info(**kwargs)
 
     def oc_register_operators(
         self,
-        api_token,
         channel_url,
         **kwargs
     ):
@@ -1159,14 +1127,14 @@ class OpenChannelApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.oc_register_operators(api_token, channel_url, async_req=True)
+        >>> thread = api.oc_register_operators(channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             channel_url (str):
 
         Keyword Args:
+            api_token (str): [optional]
             oc_register_operators_data (OcRegisterOperatorsData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -1229,15 +1197,12 @@ class OpenChannelApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['channel_url'] = \
             channel_url
         return self.oc_register_operators_endpoint.call_with_http_info(**kwargs)
 
     def oc_update_channel_by_url(
         self,
-        api_token,
         channel_url,
         **kwargs
     ):
@@ -1247,14 +1212,14 @@ class OpenChannelApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.oc_update_channel_by_url(api_token, channel_url, async_req=True)
+        >>> thread = api.oc_update_channel_by_url(channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             channel_url (str):
 
         Keyword Args:
+            api_token (str): [optional]
             oc_update_channel_by_url_data (OcUpdateChannelByUrlData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -1317,15 +1282,12 @@ class OpenChannelApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['channel_url'] = \
             channel_url
         return self.oc_update_channel_by_url_endpoint.call_with_http_info(**kwargs)
 
     def oc_view_channel_by_url(
         self,
-        api_token,
         channel_url,
         **kwargs
     ):
@@ -1335,14 +1297,14 @@ class OpenChannelApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.oc_view_channel_by_url(api_token, channel_url, async_req=True)
+        >>> thread = api.oc_view_channel_by_url(channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             channel_url (str):
 
         Keyword Args:
+            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -1404,8 +1366,6 @@ class OpenChannelApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['channel_url'] = \
             channel_url
         return self.oc_view_channel_by_url_endpoint.call_with_http_info(**kwargs)

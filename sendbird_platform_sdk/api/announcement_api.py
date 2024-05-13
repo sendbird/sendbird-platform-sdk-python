@@ -56,11 +56,10 @@ class AnnouncementApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'announcement_group',
+                    'api_token',
                 ],
                 'required': [
-                    'api_token',
                     'announcement_group',
                 ],
                 'nullable': [
@@ -76,18 +75,18 @@ class AnnouncementApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'announcement_group':
+                        (str,),
+                    'api_token':
                         (str,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'announcement_group': 'announcement_group',
+                    'api_token': 'Api-Token',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'announcement_group': 'path',
+                    'api_token': 'header',
                 },
                 'collection_format_map': {
                 }
@@ -113,9 +112,7 @@ class AnnouncementApi(object):
                 'all': [
                     'api_token',
                 ],
-                'required': [
-                    'api_token',
-                ],
+                'required': [],
                 'nullable': [
                 ],
                 'enum': [
@@ -160,17 +157,16 @@ class AnnouncementApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'start_date',
                     'end_date',
                     'start_week',
                     'end_week',
                     'start_month',
                     'end_month',
+                    'api_token',
                     'announcement_group',
                 ],
                 'required': [
-                    'api_token',
                     'start_date',
                     'end_date',
                     'start_week',
@@ -191,8 +187,6 @@ class AnnouncementApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'start_date':
                         (str,),
                     'end_date':
@@ -205,27 +199,29 @@ class AnnouncementApi(object):
                         (str,),
                     'end_month':
                         (str,),
+                    'api_token':
+                        (str,),
                     'announcement_group':
                         (str,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'start_date': 'start_date',
                     'end_date': 'end_date',
                     'start_week': 'start_week',
                     'end_week': 'end_week',
                     'start_month': 'start_month',
                     'end_month': 'end_month',
+                    'api_token': 'Api-Token',
                     'announcement_group': 'announcement_group',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'start_date': 'query',
                     'end_date': 'query',
                     'start_week': 'query',
                     'end_week': 'query',
                     'start_month': 'query',
                     'end_month': 'query',
+                    'api_token': 'header',
                     'announcement_group': 'query',
                 },
                 'collection_format_map': {
@@ -252,9 +248,7 @@ class AnnouncementApi(object):
                 'all': [
                     'api_token',
                 ],
-                'required': [
-                    'api_token',
-                ],
+                'required': [],
                 'nullable': [
                 ],
                 'enum': [
@@ -303,9 +297,7 @@ class AnnouncementApi(object):
                     'token',
                     'limit',
                 ],
-                'required': [
-                    'api_token',
-                ],
+                'required': [],
                 'nullable': [
                 ],
                 'enum': [
@@ -361,9 +353,7 @@ class AnnouncementApi(object):
                     'api_token',
                     'schedule_announcement_data',
                 ],
-                'required': [
-                    'api_token',
-                ],
+                'required': [],
                 'nullable': [
                 ],
                 'enum': [
@@ -413,12 +403,11 @@ class AnnouncementApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'unique_id',
+                    'api_token',
                     'update_announcement_by_id_data',
                 ],
                 'required': [
-                    'api_token',
                     'unique_id',
                 ],
                 'nullable': [
@@ -434,20 +423,20 @@ class AnnouncementApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'unique_id':
+                        (str,),
+                    'api_token':
                         (str,),
                     'update_announcement_by_id_data':
                         (UpdateAnnouncementByIdData,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'unique_id': 'unique_id',
+                    'api_token': 'Api-Token',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'unique_id': 'path',
+                    'api_token': 'header',
                     'update_announcement_by_id_data': 'body',
                 },
                 'collection_format_map': {
@@ -474,11 +463,10 @@ class AnnouncementApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'unique_id',
+                    'api_token',
                 ],
                 'required': [
-                    'api_token',
                     'unique_id',
                 ],
                 'nullable': [
@@ -494,18 +482,18 @@ class AnnouncementApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'unique_id':
+                        (str,),
+                    'api_token':
                         (str,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'unique_id': 'unique_id',
+                    'api_token': 'Api-Token',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'unique_id': 'path',
+                    'api_token': 'header',
                 },
                 'collection_format_map': {
                 }
@@ -521,7 +509,6 @@ class AnnouncementApi(object):
 
     def get_detailed_open_rate_of_announcement_group(
         self,
-        api_token,
         announcement_group,
         **kwargs
     ):
@@ -531,14 +518,14 @@ class AnnouncementApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.get_detailed_open_rate_of_announcement_group(api_token, announcement_group, async_req=True)
+        >>> thread = api.get_detailed_open_rate_of_announcement_group(announcement_group, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             announcement_group (str):
 
         Keyword Args:
+            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -600,15 +587,12 @@ class AnnouncementApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['announcement_group'] = \
             announcement_group
         return self.get_detailed_open_rate_of_announcement_group_endpoint.call_with_http_info(**kwargs)
 
     def get_statistics(
         self,
-        api_token,
         **kwargs
     ):
         """Get statistics - weekly  # noqa: E501
@@ -617,13 +601,12 @@ class AnnouncementApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.get_statistics(api_token, async_req=True)
+        >>> thread = api.get_statistics(async_req=True)
         >>> result = thread.get()
 
-        Args:
-            api_token (str):
 
         Keyword Args:
+            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -685,13 +668,10 @@ class AnnouncementApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         return self.get_statistics_endpoint.call_with_http_info(**kwargs)
 
     def get_statistics_daily(
         self,
-        api_token,
         start_date,
         end_date,
         start_week,
@@ -706,11 +686,10 @@ class AnnouncementApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.get_statistics_daily(api_token, start_date, end_date, start_week, end_week, start_month, end_month, async_req=True)
+        >>> thread = api.get_statistics_daily(start_date, end_date, start_week, end_week, start_month, end_month, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             start_date (str):
             end_date (str):
             start_week (str):
@@ -719,6 +698,7 @@ class AnnouncementApi(object):
             end_month (str):
 
         Keyword Args:
+            api_token (str): [optional]
             announcement_group (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -781,8 +761,6 @@ class AnnouncementApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['start_date'] = \
             start_date
         kwargs['end_date'] = \
@@ -799,7 +777,6 @@ class AnnouncementApi(object):
 
     def get_statistics_monthly(
         self,
-        api_token,
         **kwargs
     ):
         """Get statistics - monthly  # noqa: E501
@@ -808,13 +785,12 @@ class AnnouncementApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.get_statistics_monthly(api_token, async_req=True)
+        >>> thread = api.get_statistics_monthly(async_req=True)
         >>> result = thread.get()
 
-        Args:
-            api_token (str):
 
         Keyword Args:
+            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -876,13 +852,10 @@ class AnnouncementApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         return self.get_statistics_monthly_endpoint.call_with_http_info(**kwargs)
 
     def list_announcement_groups(
         self,
-        api_token,
         **kwargs
     ):
         """List announcement groups  # noqa: E501
@@ -891,13 +864,12 @@ class AnnouncementApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.list_announcement_groups(api_token, async_req=True)
+        >>> thread = api.list_announcement_groups(async_req=True)
         >>> result = thread.get()
 
-        Args:
-            api_token (str):
 
         Keyword Args:
+            api_token (str): [optional]
             token (str): [optional]
             limit (int): [optional]
             _return_http_data_only (bool): response data without head status
@@ -961,13 +933,10 @@ class AnnouncementApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         return self.list_announcement_groups_endpoint.call_with_http_info(**kwargs)
 
     def schedule_announcement(
         self,
-        api_token,
         **kwargs
     ):
         """Schedule an announcement  # noqa: E501
@@ -976,13 +945,12 @@ class AnnouncementApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.schedule_announcement(api_token, async_req=True)
+        >>> thread = api.schedule_announcement(async_req=True)
         >>> result = thread.get()
 
-        Args:
-            api_token (str):
 
         Keyword Args:
+            api_token (str): [optional]
             schedule_announcement_data (ScheduleAnnouncementData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -1045,13 +1013,10 @@ class AnnouncementApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         return self.schedule_announcement_endpoint.call_with_http_info(**kwargs)
 
     def update_announcement_by_id(
         self,
-        api_token,
         unique_id,
         **kwargs
     ):
@@ -1061,14 +1026,14 @@ class AnnouncementApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.update_announcement_by_id(api_token, unique_id, async_req=True)
+        >>> thread = api.update_announcement_by_id(unique_id, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             unique_id (str):
 
         Keyword Args:
+            api_token (str): [optional]
             update_announcement_by_id_data (UpdateAnnouncementByIdData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -1131,15 +1096,12 @@ class AnnouncementApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['unique_id'] = \
             unique_id
         return self.update_announcement_by_id_endpoint.call_with_http_info(**kwargs)
 
     def view_announcement_by_id(
         self,
-        api_token,
         unique_id,
         **kwargs
     ):
@@ -1149,14 +1111,14 @@ class AnnouncementApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.view_announcement_by_id(api_token, unique_id, async_req=True)
+        >>> thread = api.view_announcement_by_id(unique_id, async_req=True)
         >>> result = thread.get()
 
         Args:
-            api_token (str):
             unique_id (str):
 
         Keyword Args:
+            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -1218,8 +1180,6 @@ class AnnouncementApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['api_token'] = \
-            api_token
         kwargs['unique_id'] = \
             unique_id
         return self.view_announcement_by_id_endpoint.call_with_http_info(**kwargs)
