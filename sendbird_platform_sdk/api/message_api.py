@@ -698,7 +698,7 @@ class MessageApi(object):
                     'api_token':
                         (str,),
                     'user_ids':
-                        (str,),
+                        ([str],),
                 },
                 'attribute_map': {
                     'channel_url': 'channel_url',
@@ -711,6 +711,7 @@ class MessageApi(object):
                     'user_ids': 'query',
                 },
                 'collection_format_map': {
+                    'user_ids': 'multi',
                 }
             },
             headers_map={
@@ -2911,7 +2912,7 @@ class MessageApi(object):
 
         Keyword Args:
             api_token (str): [optional]
-            user_ids (str): [optional]
+            user_ids ([str]): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object

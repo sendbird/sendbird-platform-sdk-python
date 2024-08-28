@@ -97,7 +97,6 @@ class SendBirdOpenChannel(ModelNormal):
             'data': (str,),  # noqa: E501
             'is_dynamic_partitioned': (bool,),  # noqa: E501
             'is_ephemeral': (bool,),  # noqa: E501
-            'is_frozen': (bool,),  # noqa: E501
             'max_length_message': (float,),  # noqa: E501
             'operators': ([SendBirdUser],),  # noqa: E501
             'participant_count': (float,),  # noqa: E501
@@ -119,7 +118,6 @@ class SendBirdOpenChannel(ModelNormal):
         'data': 'data',  # noqa: E501
         'is_dynamic_partitioned': 'is_dynamic_partitioned',  # noqa: E501
         'is_ephemeral': 'is_ephemeral',  # noqa: E501
-        'is_frozen': 'is_frozen',  # noqa: E501
         'max_length_message': 'max_length_message',  # noqa: E501
         'operators': 'operators',  # noqa: E501
         'participant_count': 'participant_count',  # noqa: E501
@@ -176,7 +174,6 @@ class SendBirdOpenChannel(ModelNormal):
             data (str): [optional]  # noqa: E501
             is_dynamic_partitioned (bool): [optional]  # noqa: E501
             is_ephemeral (bool): [optional]  # noqa: E501
-            is_frozen (bool): [optional]  # noqa: E501
             max_length_message (float): [optional]  # noqa: E501
             operators ([SendBirdUser]): [optional]  # noqa: E501
             participant_count (float): [optional]  # noqa: E501
@@ -275,7 +272,6 @@ class SendBirdOpenChannel(ModelNormal):
             data (str): [optional]  # noqa: E501
             is_dynamic_partitioned (bool): [optional]  # noqa: E501
             is_ephemeral (bool): [optional]  # noqa: E501
-            is_frozen (bool): [optional]  # noqa: E501
             max_length_message (float): [optional]  # noqa: E501
             operators ([SendBirdUser]): [optional]  # noqa: E501
             participant_count (float): [optional]  # noqa: E501

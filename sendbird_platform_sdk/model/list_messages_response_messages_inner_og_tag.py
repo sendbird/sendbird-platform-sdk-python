@@ -31,8 +31,8 @@ from sendbird_platform_sdk.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from sendbird_platform_sdk.model.list_messages_response_messages_inner_og_tag_og_image import ListMessagesResponseMessagesInnerOgTagOgImage
-    globals()['ListMessagesResponseMessagesInnerOgTagOgImage'] = ListMessagesResponseMessagesInnerOgTagOgImage
+    from sendbird_platform_sdk.model.send_bird_og_image import SendBirdOGImage
+    globals()['SendBirdOGImage'] = SendBirdOGImage
 
 
 class ListMessagesResponseMessagesInnerOgTag(ModelNormal):
@@ -91,7 +91,7 @@ class ListMessagesResponseMessagesInnerOgTag(ModelNormal):
             'ogurl': (str,),  # noqa: E501
             'ogtitle': (str,),  # noqa: E501
             'ogdescription': (str,),  # noqa: E501
-            'ogimage': (ListMessagesResponseMessagesInnerOgTagOgImage,),  # noqa: E501
+            'ogimage': (SendBirdOGImage,),  # noqa: E501
         }
 
     @cached_property
@@ -150,7 +150,7 @@ class ListMessagesResponseMessagesInnerOgTag(ModelNormal):
             ogurl (str): [optional]  # noqa: E501
             ogtitle (str): [optional]  # noqa: E501
             ogdescription (str): [optional]  # noqa: E501
-            ogimage (ListMessagesResponseMessagesInnerOgTagOgImage): [optional]  # noqa: E501
+            ogimage (SendBirdOGImage): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -239,7 +239,7 @@ class ListMessagesResponseMessagesInnerOgTag(ModelNormal):
             ogurl (str): [optional]  # noqa: E501
             ogtitle (str): [optional]  # noqa: E501
             ogdescription (str): [optional]  # noqa: E501
-            ogimage (ListMessagesResponseMessagesInnerOgTagOgImage): [optional]  # noqa: E501
+            ogimage (SendBirdOGImage): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
