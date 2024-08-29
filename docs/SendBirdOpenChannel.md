@@ -13,7 +13,6 @@ Name | Type | Description | Notes
 **data** | **str** |  | [optional] 
 **is_dynamic_partitioned** | **bool** |  | [optional] 
 **is_ephemeral** | **bool** |  | [optional] 
-**is_frozen** | **bool** |  | [optional] 
 **max_length_message** | **float** |  | [optional] 
 **operators** | [**[SendBirdUser]**](SendBirdUser.md) |  | [optional] 
 **participant_count** | **float** |  | [optional] 

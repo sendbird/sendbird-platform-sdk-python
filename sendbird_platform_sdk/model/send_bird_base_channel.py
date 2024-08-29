@@ -94,7 +94,6 @@ class SendBirdBaseChannel(ModelNormal):
             'custom_type': (str,),  # noqa: E501
             'data': (str,),  # noqa: E501
             'is_ephemeral': (bool,),  # noqa: E501
-            'is_frozen': (bool,),  # noqa: E501
             'name': (str,),  # noqa: E501
             'url': (str,),  # noqa: E501
         }
@@ -111,7 +110,6 @@ class SendBirdBaseChannel(ModelNormal):
         'custom_type': 'custom_type',  # noqa: E501
         'data': 'data',  # noqa: E501
         'is_ephemeral': 'is_ephemeral',  # noqa: E501
-        'is_frozen': 'is_frozen',  # noqa: E501
         'name': 'name',  # noqa: E501
         'url': 'url',  # noqa: E501
     }
@@ -163,7 +161,6 @@ class SendBirdBaseChannel(ModelNormal):
             custom_type (str): [optional]  # noqa: E501
             data (str): [optional]  # noqa: E501
             is_ephemeral (bool): [optional]  # noqa: E501
-            is_frozen (bool): [optional]  # noqa: E501
             name (str): [optional]  # noqa: E501
             url (str): [optional]  # noqa: E501
         """
@@ -257,7 +254,6 @@ class SendBirdBaseChannel(ModelNormal):
             custom_type (str): [optional]  # noqa: E501
             data (str): [optional]  # noqa: E501
             is_ephemeral (bool): [optional]  # noqa: E501
-            is_frozen (bool): [optional]  # noqa: E501
             name (str): [optional]  # noqa: E501
             url (str): [optional]  # noqa: E501
         """

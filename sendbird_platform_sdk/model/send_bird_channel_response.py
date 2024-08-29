@@ -148,7 +148,6 @@ class SendBirdChannelResponse(ModelComposed):
             'is_discoverable': (bool,),  # noqa: E501
             'is_distinct': (bool,),  # noqa: E501
             'is_ephemeral': (bool,),  # noqa: E501
-            'is_frozen': (bool,),  # noqa: E501
             'is_hidden': (bool,),  # noqa: E501
             'is_public': (bool,),  # noqa: E501
             'is_push_enabled': (bool,),  # noqa: E501
@@ -203,7 +202,6 @@ class SendBirdChannelResponse(ModelComposed):
         'is_discoverable': 'is_discoverable',  # noqa: E501
         'is_distinct': 'is_distinct',  # noqa: E501
         'is_ephemeral': 'is_ephemeral',  # noqa: E501
-        'is_frozen': 'is_frozen',  # noqa: E501
         'is_hidden': 'is_hidden',  # noqa: E501
         'is_public': 'is_public',  # noqa: E501
         'is_push_enabled': 'is_push_enabled',  # noqa: E501
@@ -291,7 +289,6 @@ class SendBirdChannelResponse(ModelComposed):
             is_discoverable (bool): [optional]  # noqa: E501
             is_distinct (bool): [optional]  # noqa: E501
             is_ephemeral (bool): [optional]  # noqa: E501
-            is_frozen (bool): [optional]  # noqa: E501
             is_hidden (bool): [optional]  # noqa: E501
             is_public (bool): [optional]  # noqa: E501
             is_push_enabled (bool): [optional]  # noqa: E501
@@ -441,7 +438,6 @@ class SendBirdChannelResponse(ModelComposed):
             is_discoverable (bool): [optional]  # noqa: E501
             is_distinct (bool): [optional]  # noqa: E501
             is_ephemeral (bool): [optional]  # noqa: E501
-            is_frozen (bool): [optional]  # noqa: E501
             is_hidden (bool): [optional]  # noqa: E501
             is_public (bool): [optional]  # noqa: E501
             is_push_enabled (bool): [optional]  # noqa: E501

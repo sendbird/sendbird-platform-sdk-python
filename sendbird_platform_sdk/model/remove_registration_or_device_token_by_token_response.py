@@ -88,7 +88,7 @@ class RemoveRegistrationOrDeviceTokenByTokenResponse(ModelNormal):
         """
         lazy_import()
         return {
-            'token': ([str],),  # noqa: E501
+            'token': (str,),  # noqa: E501
             'user': (SendBirdUser,),  # noqa: E501
         }
 
@@ -143,7 +143,7 @@ class RemoveRegistrationOrDeviceTokenByTokenResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            token ([str]): [optional]  # noqa: E501
+            token (str): [optional]  # noqa: E501
             user (SendBirdUser): [optional]  # noqa: E501
         """
 
@@ -230,7 +230,7 @@ class RemoveRegistrationOrDeviceTokenByTokenResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            token ([str]): [optional]  # noqa: E501
+            token (str): [optional]  # noqa: E501
             user (SendBirdUser): [optional]  # noqa: E501
         """
 

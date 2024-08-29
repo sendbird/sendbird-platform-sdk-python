@@ -867,7 +867,9 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     api_instance = message_api.MessageApi(api_client)
     channel_url = "channel_url_example" # str | 
     api_token = "{{API_TOKEN}}" # str |  (optional)
-    user_ids = "user_ids_example" # str |  (optional)
+    user_ids = [
+        "user_ids_example",
+    ] # [str] |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -894,7 +896,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **channel_url** | **str**|  |
  **api_token** | **str**|  | [optional]
- **user_ids** | **str**|  | [optional]
+ **user_ids** | **[str]**|  | [optional]
 
 ### Return type
 

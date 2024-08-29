@@ -23,7 +23,6 @@ Name | Type | Description | Notes
 **is_discoverable** | **bool** |  | [optional] 
 **is_distinct** | **bool** |  | [optional] 
 **is_ephemeral** | **bool** |  | [optional] 
-**is_frozen** | **bool** |  | [optional] 
 **is_hidden** | **bool** |  | [optional] 
 **is_public** | **bool** |  | [optional] 
 **is_push_enabled** | **bool** |  | [optional] 
