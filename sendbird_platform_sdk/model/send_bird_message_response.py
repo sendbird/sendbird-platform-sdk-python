@@ -31,9 +31,11 @@ from sendbird_platform_sdk.exceptions import ApiAttributeError
 
 
 def lazy_import():
+    from sendbird_platform_sdk.model.send_bird_file import SendBirdFile
     from sendbird_platform_sdk.model.send_bird_message_response_mentioned_users_inner import SendBirdMessageResponseMentionedUsersInner
     from sendbird_platform_sdk.model.send_bird_message_response_user import SendBirdMessageResponseUser
     from sendbird_platform_sdk.model.send_bird_parent_message_info import SendBirdParentMessageInfo
+    globals()['SendBirdFile'] = SendBirdFile
     globals()['SendBirdMessageResponseMentionedUsersInner'] = SendBirdMessageResponseMentionedUsersInner
     globals()['SendBirdMessageResponseUser'] = SendBirdMessageResponseUser
     globals()['SendBirdParentMessageInfo'] = SendBirdParentMessageInfo
@@ -102,6 +104,7 @@ class SendBirdMessageResponse(ModelNormal):
             'is_removed': (bool,),  # noqa: E501
             'user': (SendBirdMessageResponseUser,),  # noqa: E501
             'file': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),  # noqa: E501
+            'files': ([SendBirdFile],),  # noqa: E501
             'message': (str,),  # noqa: E501
             'data': (str,),  # noqa: E501
             'message_retention_hour': (float,),  # noqa: E501
@@ -137,6 +140,7 @@ class SendBirdMessageResponse(ModelNormal):
         'is_removed': 'is_removed',  # noqa: E501
         'user': 'user',  # noqa: E501
         'file': 'file',  # noqa: E501
+        'files': 'files',  # noqa: E501
         'message': 'message',  # noqa: E501
         'data': 'data',  # noqa: E501
         'message_retention_hour': 'message_retention_hour',  # noqa: E501
@@ -207,6 +211,7 @@ class SendBirdMessageResponse(ModelNormal):
             is_removed (bool): [optional]  # noqa: E501
             user (SendBirdMessageResponseUser): [optional]  # noqa: E501
             file ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]  # noqa: E501
+            files ([SendBirdFile]): [optional]  # noqa: E501
             message (str): [optional]  # noqa: E501
             data (str): [optional]  # noqa: E501
             message_retention_hour (float): [optional]  # noqa: E501
@@ -319,6 +324,7 @@ class SendBirdMessageResponse(ModelNormal):
             is_removed (bool): [optional]  # noqa: E501
             user (SendBirdMessageResponseUser): [optional]  # noqa: E501
             file ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]  # noqa: E501
+            files ([SendBirdFile]): [optional]  # noqa: E501
             message (str): [optional]  # noqa: E501
             data (str): [optional]  # noqa: E501
             message_retention_hour (float): [optional]  # noqa: E501
