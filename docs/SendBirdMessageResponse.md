@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **is_removed** | **bool** |  | [optional] 
 **user** | [**SendBirdMessageResponseUser**](SendBirdMessageResponseUser.md) |  | [optional] 
 **file** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}** |  | [optional] 
+**files** | [**[SendBirdFile]**](SendBirdFile.md) |  | [optional] 
 **message** | **str** |  | [optional] 
 **data** | **str** |  | [optional] 
 **message_retention_hour** | **float** |  | [optional] 

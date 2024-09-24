@@ -399,11 +399,11 @@ class SendBirdGroupChannelInviter(ModelComposed):
         lazy_import()
         return {
           'anyOf': [
-              SendBirdUser,
-              none_type,
           ],
           'allOf': [
           ],
           'oneOf': [
+              SendBirdUser,
+              none_type,
           ],
         }
