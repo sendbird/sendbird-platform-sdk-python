@@ -84,7 +84,7 @@ class ListPushConfigurationsResponsePushConfigurationsInner(ModelNormal):
         return {
             'id': (str,),  # noqa: E501
             'push_type': (str,),  # noqa: E501
-            'created_at': (float,),  # noqa: E501
+            'created_at': (int,),  # noqa: E501
             'api_key': (str,),  # noqa: E501
             'sender_id': (str,),  # noqa: E501
             'push_sound': (str,),  # noqa: E501
@@ -147,7 +147,7 @@ class ListPushConfigurationsResponsePushConfigurationsInner(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             id (str): [optional]  # noqa: E501
             push_type (str): [optional]  # noqa: E501
-            created_at (float): [optional]  # noqa: E501
+            created_at (int): [optional]  # noqa: E501
             api_key (str): [optional]  # noqa: E501
             sender_id (str): [optional]  # noqa: E501
             push_sound (str): [optional]  # noqa: E501
@@ -238,7 +238,7 @@ class ListPushConfigurationsResponsePushConfigurationsInner(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             id (str): [optional]  # noqa: E501
             push_type (str): [optional]  # noqa: E501
-            created_at (float): [optional]  # noqa: E501
+            created_at (int): [optional]  # noqa: E501
             api_key (str): [optional]  # noqa: E501
             sender_id (str): [optional]  # noqa: E501
             push_sound (str): [optional]  # noqa: E501

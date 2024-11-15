@@ -88,10 +88,10 @@ class SendBirdThreadInfo(ModelNormal):
         """
         lazy_import()
         return {
-            'last_replied_at': (float,),  # noqa: E501
+            'last_replied_at': (int,),  # noqa: E501
             'most_replied_users': ([SendBirdUser],),  # noqa: E501
-            'reply_count': (float,),  # noqa: E501
-            'updated_at': (float,),  # noqa: E501
+            'reply_count': (int,),  # noqa: E501
+            'updated_at': (int,),  # noqa: E501
         }
 
     @cached_property
@@ -147,10 +147,10 @@ class SendBirdThreadInfo(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            last_replied_at (float): [optional]  # noqa: E501
+            last_replied_at (int): [optional]  # noqa: E501
             most_replied_users ([SendBirdUser]): [optional]  # noqa: E501
-            reply_count (float): [optional]  # noqa: E501
-            updated_at (float): [optional]  # noqa: E501
+            reply_count (int): [optional]  # noqa: E501
+            updated_at (int): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -236,10 +236,10 @@ class SendBirdThreadInfo(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            last_replied_at (float): [optional]  # noqa: E501
+            last_replied_at (int): [optional]  # noqa: E501
             most_replied_users ([SendBirdUser]): [optional]  # noqa: E501
-            reply_count (float): [optional]  # noqa: E501
-            updated_at (float): [optional]  # noqa: E501
+            reply_count (int): [optional]  # noqa: E501
+            updated_at (int): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

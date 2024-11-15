@@ -1796,7 +1796,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
         url="url_example",
         file="file_example",
         file_name="file_name_example",
-        file_size=3.14,
+        file_size=1,
         file_type="file_type_example",
         thumbnails=[
             "thumbnails_example",

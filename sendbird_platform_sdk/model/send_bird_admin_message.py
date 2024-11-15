@@ -117,27 +117,27 @@ class SendBirdAdminMessage(ModelNormal):
             'apple_critical_alert_options': (SendBirdAppleCriticalAlertOptions,),  # noqa: E501
             'channel_type': (str,),  # noqa: E501
             'channel_url': (str,),  # noqa: E501
-            'created_at': (float,),  # noqa: E501
+            'created_at': (int,),  # noqa: E501
             'custom_type': (str,),  # noqa: E501
             'data': (str,),  # noqa: E501
             'is_reply_to_channel': (bool,),  # noqa: E501
             'mention_type': (str,),  # noqa: E501
             'mentioned_users': ([SendBirdUser],),  # noqa: E501
             'message': (str,),  # noqa: E501
-            'message_id': (float,),  # noqa: E501
+            'message_id': (int,),  # noqa: E501
             'message_type': (str,),  # noqa: E501
             'meta_array': (SBObject,),  # noqa: E501
             'meta_arrays': ([SendBirdMessageMetaArray],),  # noqa: E501
             'og_meta_data': (SendBirdOGMetaData,),  # noqa: E501
             'parent_message': (SendBirdMessageResponse,),  # noqa: E501
-            'parent_message_id': (float,),  # noqa: E501
+            'parent_message_id': (int,),  # noqa: E501
             'parent_message_text': (str,),  # noqa: E501
             'reactions': ([SendBirdReaction],),  # noqa: E501
             'sending_status': (str,),  # noqa: E501
             'silent': (bool,),  # noqa: E501
             'thread_info': (SendBirdThreadInfo,),  # noqa: E501
             'translations': (SBObject,),  # noqa: E501
-            'updated_at': (float,),  # noqa: E501
+            'updated_at': (int,),  # noqa: E501
         }
 
     @cached_property
@@ -216,27 +216,27 @@ class SendBirdAdminMessage(ModelNormal):
             apple_critical_alert_options (SendBirdAppleCriticalAlertOptions): [optional]  # noqa: E501
             channel_type (str): [optional]  # noqa: E501
             channel_url (str): [optional]  # noqa: E501
-            created_at (float): [optional]  # noqa: E501
+            created_at (int): [optional]  # noqa: E501
             custom_type (str): [optional]  # noqa: E501
             data (str): [optional]  # noqa: E501
             is_reply_to_channel (bool): [optional]  # noqa: E501
             mention_type (str): [optional]  # noqa: E501
             mentioned_users ([SendBirdUser]): [optional]  # noqa: E501
             message (str): [optional]  # noqa: E501
-            message_id (float): [optional]  # noqa: E501
+            message_id (int): [optional]  # noqa: E501
             message_type (str): [optional]  # noqa: E501
             meta_array (SBObject): [optional]  # noqa: E501
             meta_arrays ([SendBirdMessageMetaArray]): [optional]  # noqa: E501
             og_meta_data (SendBirdOGMetaData): [optional]  # noqa: E501
             parent_message (SendBirdMessageResponse): [optional]  # noqa: E501
-            parent_message_id (float): [optional]  # noqa: E501
+            parent_message_id (int): [optional]  # noqa: E501
             parent_message_text (str): [optional]  # noqa: E501
             reactions ([SendBirdReaction]): [optional]  # noqa: E501
             sending_status (str): [optional]  # noqa: E501
             silent (bool): [optional]  # noqa: E501
             thread_info (SendBirdThreadInfo): [optional]  # noqa: E501
             translations (SBObject): [optional]  # noqa: E501
-            updated_at (float): [optional]  # noqa: E501
+            updated_at (int): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -325,27 +325,27 @@ class SendBirdAdminMessage(ModelNormal):
             apple_critical_alert_options (SendBirdAppleCriticalAlertOptions): [optional]  # noqa: E501
             channel_type (str): [optional]  # noqa: E501
             channel_url (str): [optional]  # noqa: E501
-            created_at (float): [optional]  # noqa: E501
+            created_at (int): [optional]  # noqa: E501
             custom_type (str): [optional]  # noqa: E501
             data (str): [optional]  # noqa: E501
             is_reply_to_channel (bool): [optional]  # noqa: E501
             mention_type (str): [optional]  # noqa: E501
             mentioned_users ([SendBirdUser]): [optional]  # noqa: E501
             message (str): [optional]  # noqa: E501
-            message_id (float): [optional]  # noqa: E501
+            message_id (int): [optional]  # noqa: E501
             message_type (str): [optional]  # noqa: E501
             meta_array (SBObject): [optional]  # noqa: E501
             meta_arrays ([SendBirdMessageMetaArray]): [optional]  # noqa: E501
             og_meta_data (SendBirdOGMetaData): [optional]  # noqa: E501
             parent_message (SendBirdMessageResponse): [optional]  # noqa: E501
-            parent_message_id (float): [optional]  # noqa: E501
+            parent_message_id (int): [optional]  # noqa: E501
             parent_message_text (str): [optional]  # noqa: E501
             reactions ([SendBirdReaction]): [optional]  # noqa: E501
             sending_status (str): [optional]  # noqa: E501
             silent (bool): [optional]  # noqa: E501
             thread_info (SendBirdThreadInfo): [optional]  # noqa: E501
             translations (SBObject): [optional]  # noqa: E501
-            updated_at (float): [optional]  # noqa: E501
+            updated_at (int): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

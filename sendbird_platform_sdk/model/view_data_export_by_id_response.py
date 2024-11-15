@@ -94,9 +94,9 @@ class ViewDataExportByIdResponse(ModelNormal):
             'format': (str,),  # noqa: E501
             'csv_delimiter': (str,),  # noqa: E501
             'timezone': (str,),  # noqa: E501
-            'created_at': (float,),  # noqa: E501
-            'start_ts': (float,),  # noqa: E501
-            'end_ts': (float,),  # noqa: E501
+            'created_at': (int,),  # noqa: E501
+            'start_ts': (int,),  # noqa: E501
+            'end_ts': (int,),  # noqa: E501
             'channel_urls': ([str],),  # noqa: E501
             'channel_custom_types': ([str],),  # noqa: E501
             'sender_ids': ([str],),  # noqa: E501
@@ -173,9 +173,9 @@ class ViewDataExportByIdResponse(ModelNormal):
             format (str): [optional]  # noqa: E501
             csv_delimiter (str): [optional]  # noqa: E501
             timezone (str): [optional]  # noqa: E501
-            created_at (float): [optional]  # noqa: E501
-            start_ts (float): [optional]  # noqa: E501
-            end_ts (float): [optional]  # noqa: E501
+            created_at (int): [optional]  # noqa: E501
+            start_ts (int): [optional]  # noqa: E501
+            end_ts (int): [optional]  # noqa: E501
             channel_urls ([str]): [optional]  # noqa: E501
             channel_custom_types ([str]): [optional]  # noqa: E501
             sender_ids ([str]): [optional]  # noqa: E501
@@ -272,9 +272,9 @@ class ViewDataExportByIdResponse(ModelNormal):
             format (str): [optional]  # noqa: E501
             csv_delimiter (str): [optional]  # noqa: E501
             timezone (str): [optional]  # noqa: E501
-            created_at (float): [optional]  # noqa: E501
-            start_ts (float): [optional]  # noqa: E501
-            end_ts (float): [optional]  # noqa: E501
+            created_at (int): [optional]  # noqa: E501
+            start_ts (int): [optional]  # noqa: E501
+            end_ts (int): [optional]  # noqa: E501
             channel_urls ([str]): [optional]  # noqa: E501
             channel_custom_types ([str]): [optional]  # noqa: E501
             sender_ids ([str]): [optional]  # noqa: E501

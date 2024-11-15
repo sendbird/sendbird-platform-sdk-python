@@ -90,7 +90,7 @@ class SendBirdFile(ModelNormal):
         return {
             'url': (str,),  # noqa: E501
             'file_name': (str,),  # noqa: E501
-            'file_size': (float,),  # noqa: E501
+            'file_size': (int,),  # noqa: E501
             'file_type': (str,),  # noqa: E501
             'thumbnails': ([SendBirdThumbnailSBObject],),  # noqa: E501
             'require_auth': (bool,),  # noqa: E501
@@ -153,7 +153,7 @@ class SendBirdFile(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             url (str): [optional]  # noqa: E501
             file_name (str): [optional]  # noqa: E501
-            file_size (float): [optional]  # noqa: E501
+            file_size (int): [optional]  # noqa: E501
             file_type (str): [optional]  # noqa: E501
             thumbnails ([SendBirdThumbnailSBObject]): [optional]  # noqa: E501
             require_auth (bool): [optional]  # noqa: E501
@@ -244,7 +244,7 @@ class SendBirdFile(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             url (str): [optional]  # noqa: E501
             file_name (str): [optional]  # noqa: E501
-            file_size (float): [optional]  # noqa: E501
+            file_size (int): [optional]  # noqa: E501
             file_type (str): [optional]  # noqa: E501
             thumbnails ([SendBirdThumbnailSBObject]): [optional]  # noqa: E501
             require_auth (bool): [optional]  # noqa: E501

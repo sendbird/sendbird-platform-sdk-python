@@ -89,7 +89,7 @@ class SendBirdEmojiCategory(ModelNormal):
         lazy_import()
         return {
             'emojis': ([SendBirdEmoji],),  # noqa: E501
-            'id': (float,),  # noqa: E501
+            'id': (int,),  # noqa: E501
             'name': (str,),  # noqa: E501
             'url': (str,),  # noqa: E501
         }
@@ -148,7 +148,7 @@ class SendBirdEmojiCategory(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             emojis ([SendBirdEmoji]): [optional]  # noqa: E501
-            id (float): [optional]  # noqa: E501
+            id (int): [optional]  # noqa: E501
             name (str): [optional]  # noqa: E501
             url (str): [optional]  # noqa: E501
         """
@@ -237,7 +237,7 @@ class SendBirdEmojiCategory(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             emojis ([SendBirdEmoji]): [optional]  # noqa: E501
-            id (float): [optional]  # noqa: E501
+            id (int): [optional]  # noqa: E501
             name (str): [optional]  # noqa: E501
             url (str): [optional]  # noqa: E501
         """

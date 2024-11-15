@@ -84,11 +84,11 @@ class AddApnsPushConfigurationResponsePushConfigurationsInner(ModelNormal):
         return {
             'id': (str,),  # noqa: E501
             'push_type': (str,),  # noqa: E501
-            'created_at': (float,),  # noqa: E501
+            'created_at': (int,),  # noqa: E501
             'apns_cer_env_type': (str,),  # noqa: E501
-            'apns_expiration': (float,),  # noqa: E501
+            'apns_expiration': (int,),  # noqa: E501
             'apns_name': (str,),  # noqa: E501
-            'has_unread_count_badge': (float,),  # noqa: E501
+            'has_unread_count_badge': (int,),  # noqa: E501
             'content_available': (bool,),  # noqa: E501
             'mutable_content': (bool,),  # noqa: E501
             'push_sound': (str,),  # noqa: E501
@@ -155,11 +155,11 @@ class AddApnsPushConfigurationResponsePushConfigurationsInner(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             id (str): [optional]  # noqa: E501
             push_type (str): [optional]  # noqa: E501
-            created_at (float): [optional]  # noqa: E501
+            created_at (int): [optional]  # noqa: E501
             apns_cer_env_type (str): [optional]  # noqa: E501
-            apns_expiration (float): [optional]  # noqa: E501
+            apns_expiration (int): [optional]  # noqa: E501
             apns_name (str): [optional]  # noqa: E501
-            has_unread_count_badge (float): [optional]  # noqa: E501
+            has_unread_count_badge (int): [optional]  # noqa: E501
             content_available (bool): [optional]  # noqa: E501
             mutable_content (bool): [optional]  # noqa: E501
             push_sound (str): [optional]  # noqa: E501
@@ -250,11 +250,11 @@ class AddApnsPushConfigurationResponsePushConfigurationsInner(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             id (str): [optional]  # noqa: E501
             push_type (str): [optional]  # noqa: E501
-            created_at (float): [optional]  # noqa: E501
+            created_at (int): [optional]  # noqa: E501
             apns_cer_env_type (str): [optional]  # noqa: E501
-            apns_expiration (float): [optional]  # noqa: E501
+            apns_expiration (int): [optional]  # noqa: E501
             apns_name (str): [optional]  # noqa: E501
-            has_unread_count_badge (float): [optional]  # noqa: E501
+            has_unread_count_badge (int): [optional]  # noqa: E501
             content_available (bool): [optional]  # noqa: E501
             mutable_content (bool): [optional]  # noqa: E501
             push_sound (str): [optional]  # noqa: E501

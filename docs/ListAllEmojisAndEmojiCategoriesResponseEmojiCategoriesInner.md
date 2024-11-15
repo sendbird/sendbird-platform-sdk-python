@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **float** |  | [optional] 
+**id** | **int** |  | [optional] 
 **name** | **str** |  | [optional] 
 **url** | **str** |  | [optional] 
 **emojis** | [**[ListAllEmojisAndEmojiCategoriesResponseEmojiCategoriesInnerEmojisInner]**](ListAllEmojisAndEmojiCategoriesResponseEmojiCategoriesInnerEmojisInner.md) |  | [optional] 

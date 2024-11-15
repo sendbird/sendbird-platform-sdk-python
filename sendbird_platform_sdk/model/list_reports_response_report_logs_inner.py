@@ -99,7 +99,7 @@ class ListReportsResponseReportLogsInner(ModelNormal):
             'reported_message': (SendBirdMessageResponse,),  # noqa: E501
             'channel': (SendBirdChannelResponse,),  # noqa: E501
             'report_description': (str,),  # noqa: E501
-            'created_at': (float,),  # noqa: E501
+            'created_at': (int,),  # noqa: E501
         }
 
     @cached_property
@@ -166,7 +166,7 @@ class ListReportsResponseReportLogsInner(ModelNormal):
             reported_message (SendBirdMessageResponse): [optional]  # noqa: E501
             channel (SendBirdChannelResponse): [optional]  # noqa: E501
             report_description (str): [optional]  # noqa: E501
-            created_at (float): [optional]  # noqa: E501
+            created_at (int): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -259,7 +259,7 @@ class ListReportsResponseReportLogsInner(ModelNormal):
             reported_message (SendBirdMessageResponse): [optional]  # noqa: E501
             channel (SendBirdChannelResponse): [optional]  # noqa: E501
             report_description (str): [optional]  # noqa: E501
-            created_at (float): [optional]  # noqa: E501
+            created_at (int): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

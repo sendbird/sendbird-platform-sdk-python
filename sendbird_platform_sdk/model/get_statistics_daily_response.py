@@ -89,7 +89,7 @@ class GetStatisticsDailyResponse(ModelNormal):
         lazy_import()
         return {
             'statistics': ([GetStatisticsDailyResponseStatisticsInner],),  # noqa: E501
-            'week': (float,),  # noqa: E501
+            'weeks': (int,),  # noqa: E501
         }
 
     @cached_property
@@ -99,7 +99,7 @@ class GetStatisticsDailyResponse(ModelNormal):
 
     attribute_map = {
         'statistics': 'statistics',  # noqa: E501
-        'week': 'week',  # noqa: E501
+        'weeks': 'weeks',  # noqa: E501
     }
 
     read_only_vars = {
@@ -144,7 +144,7 @@ class GetStatisticsDailyResponse(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             statistics ([GetStatisticsDailyResponseStatisticsInner]): [optional]  # noqa: E501
-            week (float): [optional]  # noqa: E501
+            weeks (int): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -231,7 +231,7 @@ class GetStatisticsDailyResponse(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             statistics ([GetStatisticsDailyResponseStatisticsInner]): [optional]  # noqa: E501
-            week (float): [optional]  # noqa: E501
+            weeks (int): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

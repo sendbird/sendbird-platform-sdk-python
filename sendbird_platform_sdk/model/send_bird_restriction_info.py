@@ -87,7 +87,7 @@ class SendBirdRestrictionInfo(ModelNormal):
         """
         return {
             'description': (str,),  # noqa: E501
-            'end_at': (float,),  # noqa: E501
+            'end_at': (int,),  # noqa: E501
             'restriction_type': (str,),  # noqa: E501
         }
 
@@ -144,7 +144,7 @@ class SendBirdRestrictionInfo(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             description (str): [optional]  # noqa: E501
-            end_at (float): [optional]  # noqa: E501
+            end_at (int): [optional]  # noqa: E501
             restriction_type (str): [optional]  # noqa: E501
         """
 
@@ -232,7 +232,7 @@ class SendBirdRestrictionInfo(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             description (str): [optional]  # noqa: E501
-            end_at (float): [optional]  # noqa: E501
+            end_at (int): [optional]  # noqa: E501
             restriction_type (str): [optional]  # noqa: E501
         """
 

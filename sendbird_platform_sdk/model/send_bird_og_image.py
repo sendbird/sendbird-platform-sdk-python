@@ -83,11 +83,11 @@ class SendBirdOGImage(ModelNormal):
         """
         return {
             'alt': (str,),  # noqa: E501
-            'height': (float,),  # noqa: E501
+            'height': (int,),  # noqa: E501
             'secure_url': (str,),  # noqa: E501
             'type': (str,),  # noqa: E501
             'url': (str,),  # noqa: E501
-            'width': (float,),  # noqa: E501
+            'width': (int,),  # noqa: E501
         }
 
     @cached_property
@@ -146,11 +146,11 @@ class SendBirdOGImage(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             alt (str): [optional]  # noqa: E501
-            height (float): [optional]  # noqa: E501
+            height (int): [optional]  # noqa: E501
             secure_url (str): [optional]  # noqa: E501
             type (str): [optional]  # noqa: E501
             url (str): [optional]  # noqa: E501
-            width (float): [optional]  # noqa: E501
+            width (int): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -237,11 +237,11 @@ class SendBirdOGImage(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             alt (str): [optional]  # noqa: E501
-            height (float): [optional]  # noqa: E501
+            height (int): [optional]  # noqa: E501
             secure_url (str): [optional]  # noqa: E501
             type (str): [optional]  # noqa: E501
             url (str): [optional]  # noqa: E501
-            width (float): [optional]  # noqa: E501
+            width (int): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

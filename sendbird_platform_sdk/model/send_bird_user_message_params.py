@@ -110,8 +110,8 @@ class SendBirdUserMessageParams(ModelNormal):
             'message': (str,),  # noqa: E501
             'meta_array_keys': ([str],),  # noqa: E501
             'meta_arrays': ([SendBirdMessageMetaArray],),  # noqa: E501
-            'parent_message_id': (float,),  # noqa: E501
-            'poll_id': (float,),  # noqa: E501
+            'parent_message_id': (int,),  # noqa: E501
+            'poll_id': (int,),  # noqa: E501
             'push_notification_delivery_option': (str,),  # noqa: E501
             'target_languages': ([str],),  # noqa: E501
             'translation_target_languages': ([str],),  # noqa: E501
@@ -191,8 +191,8 @@ class SendBirdUserMessageParams(ModelNormal):
             message (str): [optional]  # noqa: E501
             meta_array_keys ([str]): [optional]  # noqa: E501
             meta_arrays ([SendBirdMessageMetaArray]): [optional]  # noqa: E501
-            parent_message_id (float): [optional]  # noqa: E501
-            poll_id (float): [optional]  # noqa: E501
+            parent_message_id (int): [optional]  # noqa: E501
+            poll_id (int): [optional]  # noqa: E501
             push_notification_delivery_option (str): [optional]  # noqa: E501
             target_languages ([str]): [optional]  # noqa: E501
             translation_target_languages ([str]): [optional]  # noqa: E501
@@ -291,8 +291,8 @@ class SendBirdUserMessageParams(ModelNormal):
             message (str): [optional]  # noqa: E501
             meta_array_keys ([str]): [optional]  # noqa: E501
             meta_arrays ([SendBirdMessageMetaArray]): [optional]  # noqa: E501
-            parent_message_id (float): [optional]  # noqa: E501
-            poll_id (float): [optional]  # noqa: E501
+            parent_message_id (int): [optional]  # noqa: E501
+            poll_id (int): [optional]  # noqa: E501
             push_notification_delivery_option (str): [optional]  # noqa: E501
             target_languages ([str]): [optional]  # noqa: E501
             translation_target_languages ([str]): [optional]  # noqa: E501

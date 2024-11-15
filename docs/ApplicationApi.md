@@ -374,7 +374,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
         banned_list=[
             BanUsersInChannelsWithCustomChannelTypeDataBannedListInner(
                 user_id="user_id_example",
-                seconds=3.14,
+                seconds=1,
                 description="description_example",
             ),
         ],
@@ -1218,7 +1218,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
         user_ids=[
             "user_ids_example",
         ],
-        seconds=3.14,
+        seconds=1,
         description="description_example",
         on_demand_upsert=True,
     ) # MuteUsersInChannelsWithCustomChannelTypeData |  (optional)

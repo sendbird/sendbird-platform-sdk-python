@@ -83,7 +83,7 @@ class ListSecondaryApiTokensResponseApiTokensInner(ModelNormal):
         """
         return {
             'token': (str,),  # noqa: E501
-            'created_at': (float,),  # noqa: E501
+            'created_at': (int,),  # noqa: E501
         }
 
     @cached_property
@@ -138,7 +138,7 @@ class ListSecondaryApiTokensResponseApiTokensInner(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             token (str): [optional]  # noqa: E501
-            created_at (float): [optional]  # noqa: E501
+            created_at (int): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -225,7 +225,7 @@ class ListSecondaryApiTokensResponseApiTokensInner(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             token (str): [optional]  # noqa: E501
-            created_at (float): [optional]  # noqa: E501
+            created_at (int): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

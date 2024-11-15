@@ -315,7 +315,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     user_id = "user_id_example" # str | 
     api_token = "{{API_TOKEN}}" # str |  (optional)
     create_user_token_data = CreateUserTokenData(
-        expires_at=3.14,
+        expires_at=1,
     ) # CreateUserTokenData |  (optional)
 
     # example passing only required values which don't have defaults set

@@ -84,7 +84,7 @@ class Function(ModelNormal):
         return {
             'arguments': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'caller': (Function,),  # noqa: E501
-            'length': (float,),  # noqa: E501
+            'length': (int,),  # noqa: E501
             'prototype': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
         }
 
@@ -143,7 +143,7 @@ class Function(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             arguments (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             caller (Function): [optional]  # noqa: E501
-            length (float): [optional]  # noqa: E501
+            length (int): [optional]  # noqa: E501
             prototype (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
         """
 
@@ -232,7 +232,7 @@ class Function(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             arguments (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             caller (Function): [optional]  # noqa: E501
-            length (float): [optional]  # noqa: E501
+            length (int): [optional]  # noqa: E501
             prototype (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
         """
 

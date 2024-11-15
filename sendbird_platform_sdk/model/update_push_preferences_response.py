@@ -87,13 +87,13 @@ class UpdatePushPreferencesResponse(ModelNormal):
             'push_blocked_bot_ids': ([str],),  # noqa: E501
             'push_trigger_option': (str,),  # noqa: E501
             'do_not_disturb': (bool,),  # noqa: E501
-            'start_hour': (float,),  # noqa: E501
-            'start_min': (float,),  # noqa: E501
-            'end_hour': (float,),  # noqa: E501
-            'end_min': (float,),  # noqa: E501
+            'start_hour': (int,),  # noqa: E501
+            'start_min': (int,),  # noqa: E501
+            'end_hour': (int,),  # noqa: E501
+            'end_min': (int,),  # noqa: E501
             'snooze_enabled': (bool,),  # noqa: E501
-            'snooze_start_ts': (float,),  # noqa: E501
-            'snooze_end_ts': (float,),  # noqa: E501
+            'snooze_start_ts': (int,),  # noqa: E501
+            'snooze_end_ts': (int,),  # noqa: E501
             'timezone': (str,),  # noqa: E501
             'push_sound': (str,),  # noqa: E501
         }
@@ -166,13 +166,13 @@ class UpdatePushPreferencesResponse(ModelNormal):
             push_blocked_bot_ids ([str]): [optional]  # noqa: E501
             push_trigger_option (str): [optional]  # noqa: E501
             do_not_disturb (bool): [optional]  # noqa: E501
-            start_hour (float): [optional]  # noqa: E501
-            start_min (float): [optional]  # noqa: E501
-            end_hour (float): [optional]  # noqa: E501
-            end_min (float): [optional]  # noqa: E501
+            start_hour (int): [optional]  # noqa: E501
+            start_min (int): [optional]  # noqa: E501
+            end_hour (int): [optional]  # noqa: E501
+            end_min (int): [optional]  # noqa: E501
             snooze_enabled (bool): [optional]  # noqa: E501
-            snooze_start_ts (float): [optional]  # noqa: E501
-            snooze_end_ts (float): [optional]  # noqa: E501
+            snooze_start_ts (int): [optional]  # noqa: E501
+            snooze_end_ts (int): [optional]  # noqa: E501
             timezone (str): [optional]  # noqa: E501
             push_sound (str): [optional]  # noqa: E501
         """
@@ -265,13 +265,13 @@ class UpdatePushPreferencesResponse(ModelNormal):
             push_blocked_bot_ids ([str]): [optional]  # noqa: E501
             push_trigger_option (str): [optional]  # noqa: E501
             do_not_disturb (bool): [optional]  # noqa: E501
-            start_hour (float): [optional]  # noqa: E501
-            start_min (float): [optional]  # noqa: E501
-            end_hour (float): [optional]  # noqa: E501
-            end_min (float): [optional]  # noqa: E501
+            start_hour (int): [optional]  # noqa: E501
+            start_min (int): [optional]  # noqa: E501
+            end_hour (int): [optional]  # noqa: E501
+            end_min (int): [optional]  # noqa: E501
             snooze_enabled (bool): [optional]  # noqa: E501
-            snooze_start_ts (float): [optional]  # noqa: E501
-            snooze_end_ts (float): [optional]  # noqa: E501
+            snooze_start_ts (int): [optional]  # noqa: E501
+            snooze_end_ts (int): [optional]  # noqa: E501
             timezone (str): [optional]  # noqa: E501
             push_sound (str): [optional]  # noqa: E501
         """

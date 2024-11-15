@@ -83,16 +83,16 @@ class GetStatisticsDailyResponseStatisticsInner(ModelNormal):
         """
         return {
             'date_range': (str,),  # noqa: E501
-            'canceled_announcement_count': (float,),  # noqa: E501
-            'stopped_announcement_count': (float,),  # noqa: E501
-            'completed_announcement_count': (float,),  # noqa: E501
-            'total_announcement_count': (float,),  # noqa: E501
-            'target_channel_count': (float,),  # noqa: E501
-            'target_user_count': (float,),  # noqa: E501
-            'sent_channel_count': (float,),  # noqa: E501
-            'sent_user_count': (float,),  # noqa: E501
+            'canceled_announcement_count': (int,),  # noqa: E501
+            'stopped_announcement_count': (int,),  # noqa: E501
+            'completed_announcement_count': (int,),  # noqa: E501
+            'total_announcement_count': (int,),  # noqa: E501
+            'target_channel_count': (int,),  # noqa: E501
+            'target_user_count': (int,),  # noqa: E501
+            'sent_channel_count': (int,),  # noqa: E501
+            'sent_user_count': (int,),  # noqa: E501
             'open_rate': (float,),  # noqa: E501
-            'open_count': (float,),  # noqa: E501
+            'open_count': (int,),  # noqa: E501
         }
 
     @cached_property
@@ -156,16 +156,16 @@ class GetStatisticsDailyResponseStatisticsInner(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             date_range (str): [optional]  # noqa: E501
-            canceled_announcement_count (float): [optional]  # noqa: E501
-            stopped_announcement_count (float): [optional]  # noqa: E501
-            completed_announcement_count (float): [optional]  # noqa: E501
-            total_announcement_count (float): [optional]  # noqa: E501
-            target_channel_count (float): [optional]  # noqa: E501
-            target_user_count (float): [optional]  # noqa: E501
-            sent_channel_count (float): [optional]  # noqa: E501
-            sent_user_count (float): [optional]  # noqa: E501
+            canceled_announcement_count (int): [optional]  # noqa: E501
+            stopped_announcement_count (int): [optional]  # noqa: E501
+            completed_announcement_count (int): [optional]  # noqa: E501
+            total_announcement_count (int): [optional]  # noqa: E501
+            target_channel_count (int): [optional]  # noqa: E501
+            target_user_count (int): [optional]  # noqa: E501
+            sent_channel_count (int): [optional]  # noqa: E501
+            sent_user_count (int): [optional]  # noqa: E501
             open_rate (float): [optional]  # noqa: E501
-            open_count (float): [optional]  # noqa: E501
+            open_count (int): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -252,16 +252,16 @@ class GetStatisticsDailyResponseStatisticsInner(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             date_range (str): [optional]  # noqa: E501
-            canceled_announcement_count (float): [optional]  # noqa: E501
-            stopped_announcement_count (float): [optional]  # noqa: E501
-            completed_announcement_count (float): [optional]  # noqa: E501
-            total_announcement_count (float): [optional]  # noqa: E501
-            target_channel_count (float): [optional]  # noqa: E501
-            target_user_count (float): [optional]  # noqa: E501
-            sent_channel_count (float): [optional]  # noqa: E501
-            sent_user_count (float): [optional]  # noqa: E501
+            canceled_announcement_count (int): [optional]  # noqa: E501
+            stopped_announcement_count (int): [optional]  # noqa: E501
+            completed_announcement_count (int): [optional]  # noqa: E501
+            total_announcement_count (int): [optional]  # noqa: E501
+            target_channel_count (int): [optional]  # noqa: E501
+            target_user_count (int): [optional]  # noqa: E501
+            sent_channel_count (int): [optional]  # noqa: E501
+            sent_user_count (int): [optional]  # noqa: E501
             open_rate (float): [optional]  # noqa: E501
-            open_count (float): [optional]  # noqa: E501
+            open_count (int): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

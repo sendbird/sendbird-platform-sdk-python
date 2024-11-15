@@ -98,11 +98,11 @@ class ListMessagesResponseMessagesInner(ModelNormal):
         """
         lazy_import()
         return {
-            'message_survival_seconds': (float,),  # noqa: E501
+            'message_survival_seconds': (int,),  # noqa: E501
             'custom_type': (str,),  # noqa: E501
             'mentioned_users': ([SendBirdMessageResponseMentionedUsersInner],),  # noqa: E501
             'translations': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),  # noqa: E501
-            'updated_at': (float,),  # noqa: E501
+            'updated_at': (int,),  # noqa: E501
             'is_op_msg': (bool,),  # noqa: E501
             'is_removed': (bool,),  # noqa: E501
             'user': (SendBirdMessageResponseUser,),  # noqa: E501
@@ -110,15 +110,15 @@ class ListMessagesResponseMessagesInner(ModelNormal):
             'files': ([SendBirdFile],),  # noqa: E501
             'message': (str,),  # noqa: E501
             'data': (str,),  # noqa: E501
-            'message_retention_hour': (float,),  # noqa: E501
+            'message_retention_hour': (int,),  # noqa: E501
             'silent': (bool,),  # noqa: E501
             'type': (str,),  # noqa: E501
-            'created_at': (float,),  # noqa: E501
+            'created_at': (int,),  # noqa: E501
             'channel_type': (str,),  # noqa: E501
             'req_id': (str,),  # noqa: E501
             'mention_type': (str,),  # noqa: E501
             'channel_url': (str,),  # noqa: E501
-            'message_id': (float,),  # noqa: E501
+            'message_id': (int,),  # noqa: E501
             'sorted_metaarray': ([ListMessagesResponseMessagesInnerSortedMetaarrayInner],),  # noqa: E501
             'og_tag': (ListMessagesResponseMessagesInnerOgTag,),  # noqa: E501
             'parent_message_info': (SendBirdParentMessageInfo,),  # noqa: E501
@@ -197,11 +197,11 @@ class ListMessagesResponseMessagesInner(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            message_survival_seconds (float): [optional]  # noqa: E501
+            message_survival_seconds (int): [optional]  # noqa: E501
             custom_type (str): [optional]  # noqa: E501
             mentioned_users ([SendBirdMessageResponseMentionedUsersInner]): [optional]  # noqa: E501
             translations ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]  # noqa: E501
-            updated_at (float): [optional]  # noqa: E501
+            updated_at (int): [optional]  # noqa: E501
             is_op_msg (bool): [optional]  # noqa: E501
             is_removed (bool): [optional]  # noqa: E501
             user (SendBirdMessageResponseUser): [optional]  # noqa: E501
@@ -209,15 +209,15 @@ class ListMessagesResponseMessagesInner(ModelNormal):
             files ([SendBirdFile]): [optional]  # noqa: E501
             message (str): [optional]  # noqa: E501
             data (str): [optional]  # noqa: E501
-            message_retention_hour (float): [optional]  # noqa: E501
+            message_retention_hour (int): [optional]  # noqa: E501
             silent (bool): [optional]  # noqa: E501
             type (str): [optional]  # noqa: E501
-            created_at (float): [optional]  # noqa: E501
+            created_at (int): [optional]  # noqa: E501
             channel_type (str): [optional]  # noqa: E501
             req_id (str): [optional]  # noqa: E501
             mention_type (str): [optional]  # noqa: E501
             channel_url (str): [optional]  # noqa: E501
-            message_id (float): [optional]  # noqa: E501
+            message_id (int): [optional]  # noqa: E501
             sorted_metaarray ([ListMessagesResponseMessagesInnerSortedMetaarrayInner]): [optional]  # noqa: E501
             og_tag (ListMessagesResponseMessagesInnerOgTag): [optional]  # noqa: E501
             parent_message_info (SendBirdParentMessageInfo): [optional]  # noqa: E501
@@ -306,11 +306,11 @@ class ListMessagesResponseMessagesInner(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            message_survival_seconds (float): [optional]  # noqa: E501
+            message_survival_seconds (int): [optional]  # noqa: E501
             custom_type (str): [optional]  # noqa: E501
             mentioned_users ([SendBirdMessageResponseMentionedUsersInner]): [optional]  # noqa: E501
             translations ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]  # noqa: E501
-            updated_at (float): [optional]  # noqa: E501
+            updated_at (int): [optional]  # noqa: E501
             is_op_msg (bool): [optional]  # noqa: E501
             is_removed (bool): [optional]  # noqa: E501
             user (SendBirdMessageResponseUser): [optional]  # noqa: E501
@@ -318,15 +318,15 @@ class ListMessagesResponseMessagesInner(ModelNormal):
             files ([SendBirdFile]): [optional]  # noqa: E501
             message (str): [optional]  # noqa: E501
             data (str): [optional]  # noqa: E501
-            message_retention_hour (float): [optional]  # noqa: E501
+            message_retention_hour (int): [optional]  # noqa: E501
             silent (bool): [optional]  # noqa: E501
             type (str): [optional]  # noqa: E501
-            created_at (float): [optional]  # noqa: E501
+            created_at (int): [optional]  # noqa: E501
             channel_type (str): [optional]  # noqa: E501
             req_id (str): [optional]  # noqa: E501
             mention_type (str): [optional]  # noqa: E501
             channel_url (str): [optional]  # noqa: E501
-            message_id (float): [optional]  # noqa: E501
+            message_id (int): [optional]  # noqa: E501
             sorted_metaarray ([ListMessagesResponseMessagesInnerSortedMetaarrayInner]): [optional]  # noqa: E501
             og_tag (ListMessagesResponseMessagesInnerOgTag): [optional]  # noqa: E501
             parent_message_info (SendBirdParentMessageInfo): [optional]  # noqa: E501

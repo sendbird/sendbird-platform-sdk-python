@@ -89,7 +89,7 @@ class SendBirdBaseChannel(ModelNormal):
         lazy_import()
         return {
             'cover_url': (str,),  # noqa: E501
-            'created_at': (float,),  # noqa: E501
+            'created_at': (int,),  # noqa: E501
             'creator': (SendBirdUser,),  # noqa: E501
             'custom_type': (str,),  # noqa: E501
             'data': (str,),  # noqa: E501
@@ -156,7 +156,7 @@ class SendBirdBaseChannel(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             cover_url (str): [optional]  # noqa: E501
-            created_at (float): [optional]  # noqa: E501
+            created_at (int): [optional]  # noqa: E501
             creator (SendBirdUser): [optional]  # noqa: E501
             custom_type (str): [optional]  # noqa: E501
             data (str): [optional]  # noqa: E501
@@ -249,7 +249,7 @@ class SendBirdBaseChannel(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             cover_url (str): [optional]  # noqa: E501
-            created_at (float): [optional]  # noqa: E501
+            created_at (int): [optional]  # noqa: E501
             creator (SendBirdUser): [optional]  # noqa: E501
             custom_type (str): [optional]  # noqa: E501
             data (str): [optional]  # noqa: E501

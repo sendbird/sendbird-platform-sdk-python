@@ -82,7 +82,7 @@ class SendBirdGroupChannelDisappearingMessage(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'message_survival_seconds': (float,),  # noqa: E501
+            'message_survival_seconds': (int,),  # noqa: E501
             'is_triggered_by_message_read': (bool,),  # noqa: E501
         }
 
@@ -137,7 +137,7 @@ class SendBirdGroupChannelDisappearingMessage(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            message_survival_seconds (float): [optional]  # noqa: E501
+            message_survival_seconds (int): [optional]  # noqa: E501
             is_triggered_by_message_read (bool): [optional]  # noqa: E501
         """
 
@@ -224,7 +224,7 @@ class SendBirdGroupChannelDisappearingMessage(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            message_survival_seconds (float): [optional]  # noqa: E501
+            message_survival_seconds (int): [optional]  # noqa: E501
             is_triggered_by_message_read (bool): [optional]  # noqa: E501
         """
 

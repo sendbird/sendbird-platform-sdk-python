@@ -83,7 +83,7 @@ class CreateChannelMetadataResponse(ModelNormal):
         """
         return {
             'metadata': ({str: (str,)},),  # noqa: E501
-            'include_ts': (float,),  # noqa: E501
+            'include_ts': (int,),  # noqa: E501
         }
 
     @cached_property
@@ -138,7 +138,7 @@ class CreateChannelMetadataResponse(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             metadata ({str: (str,)}): [optional]  # noqa: E501
-            include_ts (float): [optional]  # noqa: E501
+            include_ts (int): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -225,7 +225,7 @@ class CreateChannelMetadataResponse(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             metadata ({str: (str,)}): [optional]  # noqa: E501
-            include_ts (float): [optional]  # noqa: E501
+            include_ts (int): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

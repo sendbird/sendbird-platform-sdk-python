@@ -82,12 +82,12 @@ class SendBirdThumbnailSBObject(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'height': (float,),  # noqa: E501
+            'height': (int,),  # noqa: E501
             'plain_url': (str,),  # noqa: E501
-            'real_height': (float,),  # noqa: E501
-            'real_width': (float,),  # noqa: E501
+            'real_height': (int,),  # noqa: E501
+            'real_width': (int,),  # noqa: E501
             'url': (str,),  # noqa: E501
-            'width': (float,),  # noqa: E501
+            'width': (int,),  # noqa: E501
         }
 
     @cached_property
@@ -145,12 +145,12 @@ class SendBirdThumbnailSBObject(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            height (float): [optional]  # noqa: E501
+            height (int): [optional]  # noqa: E501
             plain_url (str): [optional]  # noqa: E501
-            real_height (float): [optional]  # noqa: E501
-            real_width (float): [optional]  # noqa: E501
+            real_height (int): [optional]  # noqa: E501
+            real_width (int): [optional]  # noqa: E501
             url (str): [optional]  # noqa: E501
-            width (float): [optional]  # noqa: E501
+            width (int): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -236,12 +236,12 @@ class SendBirdThumbnailSBObject(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            height (float): [optional]  # noqa: E501
+            height (int): [optional]  # noqa: E501
             plain_url (str): [optional]  # noqa: E501
-            real_height (float): [optional]  # noqa: E501
-            real_width (float): [optional]  # noqa: E501
+            real_height (int): [optional]  # noqa: E501
+            real_width (int): [optional]  # noqa: E501
             url (str): [optional]  # noqa: E501
-            width (float): [optional]  # noqa: E501
+            width (int): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

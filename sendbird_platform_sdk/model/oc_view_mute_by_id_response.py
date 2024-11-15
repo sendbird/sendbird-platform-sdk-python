@@ -83,9 +83,9 @@ class OcViewMuteByIdResponse(ModelNormal):
         """
         return {
             'is_muted': (bool,),  # noqa: E501
-            'remaining_duration': (float,),  # noqa: E501
-            'start_at': (float,),  # noqa: E501
-            'end_at': (float,),  # noqa: E501
+            'remaining_duration': (int,),  # noqa: E501
+            'start_at': (int,),  # noqa: E501
+            'end_at': (int,),  # noqa: E501
             'description': (str,),  # noqa: E501
         }
 
@@ -144,9 +144,9 @@ class OcViewMuteByIdResponse(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             is_muted (bool): [optional]  # noqa: E501
-            remaining_duration (float): [optional]  # noqa: E501
-            start_at (float): [optional]  # noqa: E501
-            end_at (float): [optional]  # noqa: E501
+            remaining_duration (int): [optional]  # noqa: E501
+            start_at (int): [optional]  # noqa: E501
+            end_at (int): [optional]  # noqa: E501
             description (str): [optional]  # noqa: E501
         """
 
@@ -234,9 +234,9 @@ class OcViewMuteByIdResponse(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             is_muted (bool): [optional]  # noqa: E501
-            remaining_duration (float): [optional]  # noqa: E501
-            start_at (float): [optional]  # noqa: E501
-            end_at (float): [optional]  # noqa: E501
+            remaining_duration (int): [optional]  # noqa: E501
+            start_at (int): [optional]  # noqa: E501
+            end_at (int): [optional]  # noqa: E501
             description (str): [optional]  # noqa: E501
         """
 

@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** |  | [optional] 
 **push_type** | **str** |  | [optional] 
-**created_at** | **float** |  | [optional] 
+**created_at** | **int** |  | [optional] 
 **api_key** | **str** |  | [optional] 
 **sender_id** | **str** |  | [optional] 
 **push_sound** | **str** |  | [optional] 

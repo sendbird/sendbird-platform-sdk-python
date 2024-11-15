@@ -89,7 +89,7 @@ class SendBirdPoll(ModelNormal):
         lazy_import()
         return {
             'details': (SendBirdPollDetails,),  # noqa: E501
-            'id': (float,),  # noqa: E501
+            'id': (int,),  # noqa: E501
             'title': (str,),  # noqa: E501
         }
 
@@ -146,7 +146,7 @@ class SendBirdPoll(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             details (SendBirdPollDetails): [optional]  # noqa: E501
-            id (float): [optional]  # noqa: E501
+            id (int): [optional]  # noqa: E501
             title (str): [optional]  # noqa: E501
         """
 
@@ -234,7 +234,7 @@ class SendBirdPoll(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             details (SendBirdPollDetails): [optional]  # noqa: E501
-            id (float): [optional]  # noqa: E501
+            id (int): [optional]  # noqa: E501
             title (str): [optional]  # noqa: E501
         """
 

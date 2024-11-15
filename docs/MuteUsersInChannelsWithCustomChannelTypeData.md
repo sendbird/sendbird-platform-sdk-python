@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **user_ids** | **[str]** |  | 
-**seconds** | **float** |  | [optional] 
+**seconds** | **int** |  | [optional] 
 **description** | **str** |  | [optional] 
 **on_demand_upsert** | **bool** |  | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]

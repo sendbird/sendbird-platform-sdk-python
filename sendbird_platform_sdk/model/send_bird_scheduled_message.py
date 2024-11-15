@@ -82,7 +82,7 @@ class SendBirdScheduledMessage(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'scheduled_message_id': (float,),  # noqa: E501
+            'scheduled_message_id': (int,),  # noqa: E501
             'message_type': (str,),  # noqa: E501
             'message': (str,),  # noqa: E501
         }
@@ -139,7 +139,7 @@ class SendBirdScheduledMessage(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            scheduled_message_id (float): [optional]  # noqa: E501
+            scheduled_message_id (int): [optional]  # noqa: E501
             message_type (str): [optional]  # noqa: E501
             message (str): [optional]  # noqa: E501
         """
@@ -227,7 +227,7 @@ class SendBirdScheduledMessage(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            scheduled_message_id (float): [optional]  # noqa: E501
+            scheduled_message_id (int): [optional]  # noqa: E501
             message_type (str): [optional]  # noqa: E501
             message (str): [optional]  # noqa: E501
         """

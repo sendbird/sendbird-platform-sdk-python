@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **url** | **str** |  | [optional] 
 **file_name** | **str** |  | [optional] 
-**file_size** | **float** |  | [optional] 
+**file_size** | **int** |  | [optional] 
 **file_type** | **str** |  | [optional] 
 **thumbnails** | [**[SendBirdThumbnailSBObject]**](SendBirdThumbnailSBObject.md) |  | [optional] 
 **require_auth** | **bool** |  | [optional] 

@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **user** | [**SendBirdUser**](SendBirdUser.md) |  | [optional] 
-**start_at** | **float** |  | [optional] 
-**end_at** | **float** |  | [optional] 
+**start_at** | **int** |  | [optional] 
+**end_at** | **int** |  | [optional] 
 **description** | **str** |  | [optional] 
 **metadata** | [**OcDeleteChannelByUrl200Response**](OcDeleteChannelByUrl200Response.md) |  | [optional] 
 **next_url** | **str** |  | [optional] 

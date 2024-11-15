@@ -90,8 +90,8 @@ class OcBanUserResponse(ModelNormal):
         """
         lazy_import()
         return {
-            'start_at': (float,),  # noqa: E501
-            'end_at': (float,),  # noqa: E501
+            'start_at': (int,),  # noqa: E501
+            'end_at': (int,),  # noqa: E501
             'description': (str,),  # noqa: E501
             'user_id': (str,),  # noqa: E501
             'user': (SendBirdUser,),  # noqa: E501
@@ -161,8 +161,8 @@ class OcBanUserResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            start_at (float): [optional]  # noqa: E501
-            end_at (float): [optional]  # noqa: E501
+            start_at (int): [optional]  # noqa: E501
+            end_at (int): [optional]  # noqa: E501
             description (str): [optional]  # noqa: E501
             user_id (str): [optional]  # noqa: E501
             user (SendBirdUser): [optional]  # noqa: E501
@@ -256,8 +256,8 @@ class OcBanUserResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            start_at (float): [optional]  # noqa: E501
-            end_at (float): [optional]  # noqa: E501
+            start_at (int): [optional]  # noqa: E501
+            end_at (int): [optional]  # noqa: E501
             description (str): [optional]  # noqa: E501
             user_id (str): [optional]  # noqa: E501
             user (SendBirdUser): [optional]  # noqa: E501

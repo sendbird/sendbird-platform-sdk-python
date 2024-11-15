@@ -109,7 +109,7 @@ class SendBirdFileMessageParams(ModelNormal):
             'data': (str,),  # noqa: E501
             'file': (Blob,),  # noqa: E501
             'file_name': (str,),  # noqa: E501
-            'file_size': (float,),  # noqa: E501
+            'file_size': (int,),  # noqa: E501
             'file_url': (str,),  # noqa: E501
             'is_reply_to_channel': (bool,),  # noqa: E501
             'mention_type': (str,),  # noqa: E501
@@ -118,7 +118,7 @@ class SendBirdFileMessageParams(ModelNormal):
             'meta_array_keys': ([str],),  # noqa: E501
             'meta_arrays': ([SendBirdMessageMetaArray],),  # noqa: E501
             'mime_type': (str,),  # noqa: E501
-            'parent_message_id': (float,),  # noqa: E501
+            'parent_message_id': (int,),  # noqa: E501
             'push_notification_delivery_option': (str,),  # noqa: E501
             'thumbnail_sizes': ([SendBirdThumbnailSize],),  # noqa: E501
         }
@@ -194,7 +194,7 @@ class SendBirdFileMessageParams(ModelNormal):
             data (str): [optional]  # noqa: E501
             file (Blob): [optional]  # noqa: E501
             file_name (str): [optional]  # noqa: E501
-            file_size (float): [optional]  # noqa: E501
+            file_size (int): [optional]  # noqa: E501
             file_url (str): [optional]  # noqa: E501
             is_reply_to_channel (bool): [optional]  # noqa: E501
             mention_type (str): [optional]  # noqa: E501
@@ -203,7 +203,7 @@ class SendBirdFileMessageParams(ModelNormal):
             meta_array_keys ([str]): [optional]  # noqa: E501
             meta_arrays ([SendBirdMessageMetaArray]): [optional]  # noqa: E501
             mime_type (str): [optional]  # noqa: E501
-            parent_message_id (float): [optional]  # noqa: E501
+            parent_message_id (int): [optional]  # noqa: E501
             push_notification_delivery_option (str): [optional]  # noqa: E501
             thumbnail_sizes ([SendBirdThumbnailSize]): [optional]  # noqa: E501
         """
@@ -296,7 +296,7 @@ class SendBirdFileMessageParams(ModelNormal):
             data (str): [optional]  # noqa: E501
             file (Blob): [optional]  # noqa: E501
             file_name (str): [optional]  # noqa: E501
-            file_size (float): [optional]  # noqa: E501
+            file_size (int): [optional]  # noqa: E501
             file_url (str): [optional]  # noqa: E501
             is_reply_to_channel (bool): [optional]  # noqa: E501
             mention_type (str): [optional]  # noqa: E501
@@ -305,7 +305,7 @@ class SendBirdFileMessageParams(ModelNormal):
             meta_array_keys ([str]): [optional]  # noqa: E501
             meta_arrays ([SendBirdMessageMetaArray]): [optional]  # noqa: E501
             mime_type (str): [optional]  # noqa: E501
-            parent_message_id (float): [optional]  # noqa: E501
+            parent_message_id (int): [optional]  # noqa: E501
             push_notification_delivery_option (str): [optional]  # noqa: E501
             thumbnail_sizes ([SendBirdThumbnailSize]): [optional]  # noqa: E501
         """

@@ -86,10 +86,10 @@ class SendBirdGroupChannelChannel(ModelNormal):
             'name': (str,),  # noqa: E501
             'cover_url': (str,),  # noqa: E501
             'data': (str,),  # noqa: E501
-            'created_at': (float,),  # noqa: E501
+            'created_at': (int,),  # noqa: E501
             'custom_type': (str,),  # noqa: E501
-            'max_length_message': (float,),  # noqa: E501
-            'member_count': (float,),  # noqa: E501
+            'max_length_message': (int,),  # noqa: E501
+            'member_count': (int,),  # noqa: E501
         }
 
     @cached_property
@@ -153,10 +153,10 @@ class SendBirdGroupChannelChannel(ModelNormal):
             name (str): [optional]  # noqa: E501
             cover_url (str): [optional]  # noqa: E501
             data (str): [optional]  # noqa: E501
-            created_at (float): [optional]  # noqa: E501
+            created_at (int): [optional]  # noqa: E501
             custom_type (str): [optional]  # noqa: E501
-            max_length_message (float): [optional]  # noqa: E501
-            member_count (float): [optional]  # noqa: E501
+            max_length_message (int): [optional]  # noqa: E501
+            member_count (int): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -246,10 +246,10 @@ class SendBirdGroupChannelChannel(ModelNormal):
             name (str): [optional]  # noqa: E501
             cover_url (str): [optional]  # noqa: E501
             data (str): [optional]  # noqa: E501
-            created_at (float): [optional]  # noqa: E501
+            created_at (int): [optional]  # noqa: E501
             custom_type (str): [optional]  # noqa: E501
-            max_length_message (float): [optional]  # noqa: E501
-            member_count (float): [optional]  # noqa: E501
+            max_length_message (int): [optional]  # noqa: E501
+            member_count (int): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
