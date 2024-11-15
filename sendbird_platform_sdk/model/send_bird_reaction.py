@@ -83,7 +83,7 @@ class SendBirdReaction(ModelNormal):
         """
         return {
             'key': (str,),  # noqa: E501
-            'updated_at': (float,),  # noqa: E501
+            'updated_at': (int,),  # noqa: E501
             'user_ids': ([str],),  # noqa: E501
         }
 
@@ -140,7 +140,7 @@ class SendBirdReaction(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             key (str): [optional]  # noqa: E501
-            updated_at (float): [optional]  # noqa: E501
+            updated_at (int): [optional]  # noqa: E501
             user_ids ([str]): [optional]  # noqa: E501
         """
 
@@ -228,7 +228,7 @@ class SendBirdReaction(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             key (str): [optional]  # noqa: E501
-            updated_at (float): [optional]  # noqa: E501
+            updated_at (int): [optional]  # noqa: E501
             user_ids ([str]): [optional]  # noqa: E501
         """
 

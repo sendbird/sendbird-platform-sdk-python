@@ -102,7 +102,7 @@ class SendMessageData(ModelNormal):
             'url': (str,),  # noqa: E501
             'file': (str,),  # noqa: E501
             'file_name': (str,),  # noqa: E501
-            'file_size': (float,),  # noqa: E501
+            'file_size': (int,),  # noqa: E501
             'file_type': (str,),  # noqa: E501
             'thumbnails': ([str],),  # noqa: E501
             'thumbnail1': (str,),  # noqa: E501
@@ -207,7 +207,7 @@ class SendMessageData(ModelNormal):
             url (str): [optional]  # noqa: E501
             file (str): [optional]  # noqa: E501
             file_name (str): [optional]  # noqa: E501
-            file_size (float): [optional]  # noqa: E501
+            file_size (int): [optional]  # noqa: E501
             file_type (str): [optional]  # noqa: E501
             thumbnails ([str]): [optional]  # noqa: E501
             thumbnail1 (str): [optional]  # noqa: E501
@@ -323,7 +323,7 @@ class SendMessageData(ModelNormal):
             url (str): [optional]  # noqa: E501
             file (str): [optional]  # noqa: E501
             file_name (str): [optional]  # noqa: E501
-            file_size (float): [optional]  # noqa: E501
+            file_size (int): [optional]  # noqa: E501
             file_type (str): [optional]  # noqa: E501
             thumbnails ([str]): [optional]  # noqa: E501
             thumbnail1 (str): [optional]  # noqa: E501

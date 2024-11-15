@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **cover_url** | **str** |  | [optional] 
-**created_at** | **float** |  | [optional] 
+**created_at** | **int** |  | [optional] 
 **creator** | [**SendBirdUser**](SendBirdUser.md) |  | [optional] 
 **custom_type** | **str** |  | [optional] 
 **data** | **str** |  | [optional] 

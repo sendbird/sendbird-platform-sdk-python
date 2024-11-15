@@ -83,10 +83,10 @@ class RemoveReactionFromAMessageResponse(ModelNormal):
         """
         return {
             'reaction': (str,),  # noqa: E501
-            'user_id': (float,),  # noqa: E501
+            'user_id': (int,),  # noqa: E501
             'success': (bool,),  # noqa: E501
-            'msg_id': (float,),  # noqa: E501
-            'updated_at': (float,),  # noqa: E501
+            'msg_id': (int,),  # noqa: E501
+            'updated_at': (int,),  # noqa: E501
             'operation': (str,),  # noqa: E501
         }
 
@@ -146,10 +146,10 @@ class RemoveReactionFromAMessageResponse(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             reaction (str): [optional]  # noqa: E501
-            user_id (float): [optional]  # noqa: E501
+            user_id (int): [optional]  # noqa: E501
             success (bool): [optional]  # noqa: E501
-            msg_id (float): [optional]  # noqa: E501
-            updated_at (float): [optional]  # noqa: E501
+            msg_id (int): [optional]  # noqa: E501
+            updated_at (int): [optional]  # noqa: E501
             operation (str): [optional]  # noqa: E501
         """
 
@@ -237,10 +237,10 @@ class RemoveReactionFromAMessageResponse(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             reaction (str): [optional]  # noqa: E501
-            user_id (float): [optional]  # noqa: E501
+            user_id (int): [optional]  # noqa: E501
             success (bool): [optional]  # noqa: E501
-            msg_id (float): [optional]  # noqa: E501
-            updated_at (float): [optional]  # noqa: E501
+            msg_id (int): [optional]  # noqa: E501
+            updated_at (int): [optional]  # noqa: E501
             operation (str): [optional]  # noqa: E501
         """
 

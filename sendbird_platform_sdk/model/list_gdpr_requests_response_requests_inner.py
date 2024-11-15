@@ -95,7 +95,7 @@ class ListGdprRequestsResponseRequestsInner(ModelNormal):
             'files': (ListDataExportsByMessageChannelOrUserResponseExportedDataInnerFile,),  # noqa: E501
             'user_ids': ([str],),  # noqa: E501
             'channel_delete_option': (str,),  # noqa: E501
-            'created_at': (float,),  # noqa: E501
+            'created_at': (int,),  # noqa: E501
         }
 
     @cached_property
@@ -162,7 +162,7 @@ class ListGdprRequestsResponseRequestsInner(ModelNormal):
             files (ListDataExportsByMessageChannelOrUserResponseExportedDataInnerFile): [optional]  # noqa: E501
             user_ids ([str]): [optional]  # noqa: E501
             channel_delete_option (str): [optional]  # noqa: E501
-            created_at (float): [optional]  # noqa: E501
+            created_at (int): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -255,7 +255,7 @@ class ListGdprRequestsResponseRequestsInner(ModelNormal):
             files (ListDataExportsByMessageChannelOrUserResponseExportedDataInnerFile): [optional]  # noqa: E501
             user_ids ([str]): [optional]  # noqa: E501
             channel_delete_option (str): [optional]  # noqa: E501
-            created_at (float): [optional]  # noqa: E501
+            created_at (int): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

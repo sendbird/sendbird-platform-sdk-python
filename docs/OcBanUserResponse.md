@@ -4,8 +4,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**start_at** | **float** |  | [optional] 
-**end_at** | **float** |  | [optional] 
+**start_at** | **int** |  | [optional] 
+**end_at** | **int** |  | [optional] 
 **description** | **str** |  | [optional] 
 **user_id** | **str** |  | [optional] 
 **user** | [**SendBirdUser**](SendBirdUser.md) |  | [optional] 

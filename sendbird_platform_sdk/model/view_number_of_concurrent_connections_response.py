@@ -82,7 +82,7 @@ class ViewNumberOfConcurrentConnectionsResponse(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'ccu': (float,),  # noqa: E501
+            'ccu': (int,),  # noqa: E501
         }
 
     @cached_property
@@ -135,7 +135,7 @@ class ViewNumberOfConcurrentConnectionsResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            ccu (float): [optional]  # noqa: E501
+            ccu (int): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -221,7 +221,7 @@ class ViewNumberOfConcurrentConnectionsResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            ccu (float): [optional]  # noqa: E501
+            ccu (int): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

@@ -90,7 +90,7 @@ class OcListChannelsResponse(ModelNormal):
         return {
             'channels': ([SendBirdOpenChannel],),  # noqa: E501
             'next': (str,),  # noqa: E501
-            'ts': (float,),  # noqa: E501
+            'ts': (int,),  # noqa: E501
         }
 
     @cached_property
@@ -147,7 +147,7 @@ class OcListChannelsResponse(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             channels ([SendBirdOpenChannel]): [optional]  # noqa: E501
             next (str): [optional]  # noqa: E501
-            ts (float): [optional]  # noqa: E501
+            ts (int): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -235,7 +235,7 @@ class OcListChannelsResponse(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             channels ([SendBirdOpenChannel]): [optional]  # noqa: E501
             next (str): [optional]  # noqa: E501
-            ts (float): [optional]  # noqa: E501
+            ts (int): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

@@ -82,7 +82,7 @@ class ViewTotalNumberOfMessagesInChannelResponse(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'total': (float,),  # noqa: E501
+            'total': (int,),  # noqa: E501
         }
 
     @cached_property
@@ -135,7 +135,7 @@ class ViewTotalNumberOfMessagesInChannelResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            total (float): [optional]  # noqa: E501
+            total (int): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -221,7 +221,7 @@ class ViewTotalNumberOfMessagesInChannelResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            total (float): [optional]  # noqa: E501
+            total (int): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

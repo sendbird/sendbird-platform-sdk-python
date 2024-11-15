@@ -82,7 +82,7 @@ class Blob(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'size': (float,),  # noqa: E501
+            'size': (int,),  # noqa: E501
             'type': (str,),  # noqa: E501
         }
 
@@ -137,7 +137,7 @@ class Blob(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            size (float): [optional]  # noqa: E501
+            size (int): [optional]  # noqa: E501
             type (str): [optional]  # noqa: E501
         """
 
@@ -224,7 +224,7 @@ class Blob(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            size (float): [optional]  # noqa: E501
+            size (int): [optional]  # noqa: E501
             type (str): [optional]  # noqa: E501
         """
 

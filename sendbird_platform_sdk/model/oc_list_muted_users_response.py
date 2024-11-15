@@ -89,7 +89,7 @@ class OcListMutedUsersResponse(ModelNormal):
         lazy_import()
         return {
             'muted_list': ([SendBirdUser],),  # noqa: E501
-            'total_mute_count': (float,),  # noqa: E501
+            'total_mute_count': (int,),  # noqa: E501
             'next': (str,),  # noqa: E501
         }
 
@@ -146,7 +146,7 @@ class OcListMutedUsersResponse(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             muted_list ([SendBirdUser]): [optional]  # noqa: E501
-            total_mute_count (float): [optional]  # noqa: E501
+            total_mute_count (int): [optional]  # noqa: E501
             next (str): [optional]  # noqa: E501
         """
 
@@ -234,7 +234,7 @@ class OcListMutedUsersResponse(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             muted_list ([SendBirdUser]): [optional]  # noqa: E501
-            total_mute_count (float): [optional]  # noqa: E501
+            total_mute_count (int): [optional]  # noqa: E501
             next (str): [optional]  # noqa: E501
         """
 

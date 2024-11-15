@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **banned_list** | [**[OcListBannedUsersResponseBannedListInner]**](OcListBannedUsersResponseBannedListInner.md) |  | [optional] 
-**total_ban_count** | **float** |  | [optional] 
+**total_ban_count** | **int** |  | [optional] 
 **next** | **str** |  | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 

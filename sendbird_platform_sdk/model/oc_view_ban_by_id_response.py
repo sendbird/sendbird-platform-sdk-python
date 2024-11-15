@@ -90,8 +90,8 @@ class OcViewBanByIdResponse(ModelNormal):
         return {
             'user': (SendBirdUser,),  # noqa: E501
             'description': (str,),  # noqa: E501
-            'end_at': (float,),  # noqa: E501
-            'start_at': (float,),  # noqa: E501
+            'end_at': (int,),  # noqa: E501
+            'start_at': (int,),  # noqa: E501
         }
 
     @cached_property
@@ -149,8 +149,8 @@ class OcViewBanByIdResponse(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             user (SendBirdUser): [optional]  # noqa: E501
             description (str): [optional]  # noqa: E501
-            end_at (float): [optional]  # noqa: E501
-            start_at (float): [optional]  # noqa: E501
+            end_at (int): [optional]  # noqa: E501
+            start_at (int): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -238,8 +238,8 @@ class OcViewBanByIdResponse(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             user (SendBirdUser): [optional]  # noqa: E501
             description (str): [optional]  # noqa: E501
-            end_at (float): [optional]  # noqa: E501
-            start_at (float): [optional]  # noqa: E501
+            end_at (int): [optional]  # noqa: E501
+            start_at (int): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

@@ -89,7 +89,7 @@ class GcListBannedUsersResponse(ModelNormal):
         lazy_import()
         return {
             'banned_list': ([OcListBannedUsersResponseBannedListInner],),  # noqa: E501
-            'total_ban_count': (float,),  # noqa: E501
+            'total_ban_count': (int,),  # noqa: E501
             'next': (str,),  # noqa: E501
         }
 
@@ -146,7 +146,7 @@ class GcListBannedUsersResponse(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             banned_list ([OcListBannedUsersResponseBannedListInner]): [optional]  # noqa: E501
-            total_ban_count (float): [optional]  # noqa: E501
+            total_ban_count (int): [optional]  # noqa: E501
             next (str): [optional]  # noqa: E501
         """
 
@@ -234,7 +234,7 @@ class GcListBannedUsersResponse(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             banned_list ([OcListBannedUsersResponseBannedListInner]): [optional]  # noqa: E501
-            total_ban_count (float): [optional]  # noqa: E501
+            total_ban_count (int): [optional]  # noqa: E501
             next (str): [optional]  # noqa: E501
         """
 

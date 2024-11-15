@@ -88,7 +88,7 @@ class ListAllEmojisAndEmojiCategoriesResponseEmojiCategoriesInner(ModelNormal):
         """
         lazy_import()
         return {
-            'id': (float,),  # noqa: E501
+            'id': (int,),  # noqa: E501
             'name': (str,),  # noqa: E501
             'url': (str,),  # noqa: E501
             'emojis': ([ListAllEmojisAndEmojiCategoriesResponseEmojiCategoriesInnerEmojisInner],),  # noqa: E501
@@ -147,7 +147,7 @@ class ListAllEmojisAndEmojiCategoriesResponseEmojiCategoriesInner(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            id (float): [optional]  # noqa: E501
+            id (int): [optional]  # noqa: E501
             name (str): [optional]  # noqa: E501
             url (str): [optional]  # noqa: E501
             emojis ([ListAllEmojisAndEmojiCategoriesResponseEmojiCategoriesInnerEmojisInner]): [optional]  # noqa: E501
@@ -236,7 +236,7 @@ class ListAllEmojisAndEmojiCategoriesResponseEmojiCategoriesInner(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            id (float): [optional]  # noqa: E501
+            id (int): [optional]  # noqa: E501
             name (str): [optional]  # noqa: E501
             url (str): [optional]  # noqa: E501
             emojis ([ListAllEmojisAndEmojiCategoriesResponseEmojiCategoriesInnerEmojisInner]): [optional]  # noqa: E501

@@ -84,9 +84,9 @@ class GetDetailedOpenRateOfAnnouncementGroupResponse(ModelNormal):
         return {
             'unique_id': (str,),  # noqa: E501
             'announcement_group': (str,),  # noqa: E501
-            'open_counts': ([float],),  # noqa: E501
+            'open_counts': ([int],),  # noqa: E501
             'open_rates': ([float],),  # noqa: E501
-            'cumulative_open_counts': ([float],),  # noqa: E501
+            'cumulative_open_counts': ([int],),  # noqa: E501
             'cumulative_open_rates': ([float],),  # noqa: E501
         }
 
@@ -147,9 +147,9 @@ class GetDetailedOpenRateOfAnnouncementGroupResponse(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             unique_id (str): [optional]  # noqa: E501
             announcement_group (str): [optional]  # noqa: E501
-            open_counts ([float]): [optional]  # noqa: E501
+            open_counts ([int]): [optional]  # noqa: E501
             open_rates ([float]): [optional]  # noqa: E501
-            cumulative_open_counts ([float]): [optional]  # noqa: E501
+            cumulative_open_counts ([int]): [optional]  # noqa: E501
             cumulative_open_rates ([float]): [optional]  # noqa: E501
         """
 
@@ -238,9 +238,9 @@ class GetDetailedOpenRateOfAnnouncementGroupResponse(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             unique_id (str): [optional]  # noqa: E501
             announcement_group (str): [optional]  # noqa: E501
-            open_counts ([float]): [optional]  # noqa: E501
+            open_counts ([int]): [optional]  # noqa: E501
             open_rates ([float]): [optional]  # noqa: E501
-            cumulative_open_counts ([float]): [optional]  # noqa: E501
+            cumulative_open_counts ([int]): [optional]  # noqa: E501
             cumulative_open_rates ([float]): [optional]  # noqa: E501
         """
 

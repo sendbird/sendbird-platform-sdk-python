@@ -93,7 +93,7 @@ class UpdateBotByIdResponse(ModelNormal):
             'enable_mark_as_read': (bool,),  # noqa: E501
             'is_privacy_mode': (bool,),  # noqa: E501
             'show_member': (bool,),  # noqa: E501
-            'channel_invitation_preference': (float,),  # noqa: E501
+            'channel_invitation_preference': (int,),  # noqa: E501
         }
 
     @cached_property
@@ -156,7 +156,7 @@ class UpdateBotByIdResponse(ModelNormal):
             enable_mark_as_read (bool): [optional]  # noqa: E501
             is_privacy_mode (bool): [optional]  # noqa: E501
             show_member (bool): [optional]  # noqa: E501
-            channel_invitation_preference (float): [optional]  # noqa: E501
+            channel_invitation_preference (int): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -247,7 +247,7 @@ class UpdateBotByIdResponse(ModelNormal):
             enable_mark_as_read (bool): [optional]  # noqa: E501
             is_privacy_mode (bool): [optional]  # noqa: E501
             show_member (bool): [optional]  # noqa: E501
-            channel_invitation_preference (float): [optional]  # noqa: E501
+            channel_invitation_preference (int): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

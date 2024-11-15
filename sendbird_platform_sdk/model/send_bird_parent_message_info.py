@@ -93,7 +93,7 @@ class SendBirdParentMessageInfo(ModelNormal):
             'custom_type': (str,),  # noqa: E501
             'message': (str,),  # noqa: E501
             'type': (str,),  # noqa: E501
-            'ts': (float,),  # noqa: E501
+            'ts': (int,),  # noqa: E501
             'user': (SendBirdUser,),  # noqa: E501
             'file': (SendBirdFile,),  # noqa: E501
             'files': ([SendBirdFile],),  # noqa: E501
@@ -158,7 +158,7 @@ class SendBirdParentMessageInfo(ModelNormal):
             custom_type (str): [optional]  # noqa: E501
             message (str): [optional]  # noqa: E501
             type (str): [optional]  # noqa: E501
-            ts (float): [optional]  # noqa: E501
+            ts (int): [optional]  # noqa: E501
             user (SendBirdUser): [optional]  # noqa: E501
             file (SendBirdFile): [optional]  # noqa: E501
             files ([SendBirdFile]): [optional]  # noqa: E501
@@ -250,7 +250,7 @@ class SendBirdParentMessageInfo(ModelNormal):
             custom_type (str): [optional]  # noqa: E501
             message (str): [optional]  # noqa: E501
             type (str): [optional]  # noqa: E501
-            ts (float): [optional]  # noqa: E501
+            ts (int): [optional]  # noqa: E501
             user (SendBirdUser): [optional]  # noqa: E501
             file (SendBirdFile): [optional]  # noqa: E501
             files ([SendBirdFile]): [optional]  # noqa: E501

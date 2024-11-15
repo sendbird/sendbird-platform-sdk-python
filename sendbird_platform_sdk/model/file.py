@@ -82,9 +82,9 @@ class File(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'last_modified': (float,),  # noqa: E501
+            'last_modified': (int,),  # noqa: E501
             'name': (str,),  # noqa: E501
-            'size': (float,),  # noqa: E501
+            'size': (int,),  # noqa: E501
             'type': (str,),  # noqa: E501
             'webkit_relative_path': (str,),  # noqa: E501
         }
@@ -143,9 +143,9 @@ class File(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            last_modified (float): [optional]  # noqa: E501
+            last_modified (int): [optional]  # noqa: E501
             name (str): [optional]  # noqa: E501
-            size (float): [optional]  # noqa: E501
+            size (int): [optional]  # noqa: E501
             type (str): [optional]  # noqa: E501
             webkit_relative_path (str): [optional]  # noqa: E501
         """
@@ -233,9 +233,9 @@ class File(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            last_modified (float): [optional]  # noqa: E501
+            last_modified (int): [optional]  # noqa: E501
             name (str): [optional]  # noqa: E501
-            size (float): [optional]  # noqa: E501
+            size (int): [optional]  # noqa: E501
             type (str): [optional]  # noqa: E501
             webkit_relative_path (str): [optional]  # noqa: E501
         """

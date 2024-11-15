@@ -82,7 +82,7 @@ class SendBirdGroupChannelSmsFallback(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'wait_seconds': (float,),  # noqa: E501
+            'wait_seconds': (int,),  # noqa: E501
             'exclude_user_ids': ([str],),  # noqa: E501
         }
 
@@ -137,7 +137,7 @@ class SendBirdGroupChannelSmsFallback(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            wait_seconds (float): [optional]  # noqa: E501
+            wait_seconds (int): [optional]  # noqa: E501
             exclude_user_ids ([str]): [optional]  # noqa: E501
         """
 
@@ -224,7 +224,7 @@ class SendBirdGroupChannelSmsFallback(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            wait_seconds (float): [optional]  # noqa: E501
+            wait_seconds (int): [optional]  # noqa: E501
             exclude_user_ids ([str]): [optional]  # noqa: E501
         """
 

@@ -88,14 +88,14 @@ class SendBirdPollOption(ModelNormal):
         """
         lazy_import()
         return {
-            'created_at': (float,),  # noqa: E501
+            'created_at': (int,),  # noqa: E501
             'created_by': (str,),  # noqa: E501
-            'id': (float,),  # noqa: E501
+            'id': (int,),  # noqa: E501
             'partial_voters': ([SendBirdUser],),  # noqa: E501
-            'poll_id': (float,),  # noqa: E501
+            'poll_id': (int,),  # noqa: E501
             'text': (str,),  # noqa: E501
-            'updated_at': (float,),  # noqa: E501
-            'vote_count': (float,),  # noqa: E501
+            'updated_at': (int,),  # noqa: E501
+            'vote_count': (int,),  # noqa: E501
         }
 
     @cached_property
@@ -155,14 +155,14 @@ class SendBirdPollOption(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            created_at (float): [optional]  # noqa: E501
+            created_at (int): [optional]  # noqa: E501
             created_by (str): [optional]  # noqa: E501
-            id (float): [optional]  # noqa: E501
+            id (int): [optional]  # noqa: E501
             partial_voters ([SendBirdUser]): [optional]  # noqa: E501
-            poll_id (float): [optional]  # noqa: E501
+            poll_id (int): [optional]  # noqa: E501
             text (str): [optional]  # noqa: E501
-            updated_at (float): [optional]  # noqa: E501
-            vote_count (float): [optional]  # noqa: E501
+            updated_at (int): [optional]  # noqa: E501
+            vote_count (int): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -248,14 +248,14 @@ class SendBirdPollOption(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            created_at (float): [optional]  # noqa: E501
+            created_at (int): [optional]  # noqa: E501
             created_by (str): [optional]  # noqa: E501
-            id (float): [optional]  # noqa: E501
+            id (int): [optional]  # noqa: E501
             partial_voters ([SendBirdUser]): [optional]  # noqa: E501
-            poll_id (float): [optional]  # noqa: E501
+            poll_id (int): [optional]  # noqa: E501
             text (str): [optional]  # noqa: E501
-            updated_at (float): [optional]  # noqa: E501
-            vote_count (float): [optional]  # noqa: E501
+            updated_at (int): [optional]  # noqa: E501
+            vote_count (int): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

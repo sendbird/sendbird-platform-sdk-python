@@ -83,7 +83,7 @@ class ViewNumberOfPeakConnectionsResponsePeakConnectionsInner(ModelNormal):
         """
         return {
             'date': (str,),  # noqa: E501
-            'peak_connections': (float,),  # noqa: E501
+            'peak_connections': (int,),  # noqa: E501
         }
 
     @cached_property
@@ -138,7 +138,7 @@ class ViewNumberOfPeakConnectionsResponsePeakConnectionsInner(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             date (str): [optional]  # noqa: E501
-            peak_connections (float): [optional]  # noqa: E501
+            peak_connections (int): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -225,7 +225,7 @@ class ViewNumberOfPeakConnectionsResponsePeakConnectionsInner(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             date (str): [optional]  # noqa: E501
-            peak_connections (float): [optional]  # noqa: E501
+            peak_connections (int): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

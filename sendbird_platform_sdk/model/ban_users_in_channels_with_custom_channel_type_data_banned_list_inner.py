@@ -83,7 +83,7 @@ class BanUsersInChannelsWithCustomChannelTypeDataBannedListInner(ModelNormal):
         """
         return {
             'user_id': (str,),  # noqa: E501
-            'seconds': (float,),  # noqa: E501
+            'seconds': (int,),  # noqa: E501
             'description': (str,),  # noqa: E501
         }
 
@@ -142,7 +142,7 @@ class BanUsersInChannelsWithCustomChannelTypeDataBannedListInner(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            seconds (float): [optional]  # noqa: E501
+            seconds (int): [optional]  # noqa: E501
             description (str): [optional]  # noqa: E501
         """
 
@@ -233,7 +233,7 @@ class BanUsersInChannelsWithCustomChannelTypeDataBannedListInner(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            seconds (float): [optional]  # noqa: E501
+            seconds (int): [optional]  # noqa: E501
             description (str): [optional]  # noqa: E501
         """
 

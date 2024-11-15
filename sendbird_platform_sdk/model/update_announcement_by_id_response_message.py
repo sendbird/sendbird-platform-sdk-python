@@ -89,13 +89,13 @@ class UpdateAnnouncementByIdResponseMessage(ModelNormal):
             'data': (str,),  # noqa: E501
             'enable_push': (bool,),  # noqa: E501
             'target_at': (str,),  # noqa: E501
-            'target_user_count': (float,),  # noqa: E501
-            'target_channel_count': (float,),  # noqa: E501
+            'target_user_count': (int,),  # noqa: E501
+            'target_channel_count': (int,),  # noqa: E501
             'status': (str,),  # noqa: E501
-            'scheduled_at': (float,),  # noqa: E501
-            'completed_at': (float,),  # noqa: E501
-            'sent_user_count': (float,),  # noqa: E501
-            'open_count': (float,),  # noqa: E501
+            'scheduled_at': (int,),  # noqa: E501
+            'completed_at': (int,),  # noqa: E501
+            'sent_user_count': (int,),  # noqa: E501
+            'open_count': (int,),  # noqa: E501
             'open_rate': (float,),  # noqa: E501
         }
 
@@ -170,13 +170,13 @@ class UpdateAnnouncementByIdResponseMessage(ModelNormal):
             data (str): [optional]  # noqa: E501
             enable_push (bool): [optional]  # noqa: E501
             target_at (str): [optional]  # noqa: E501
-            target_user_count (float): [optional]  # noqa: E501
-            target_channel_count (float): [optional]  # noqa: E501
+            target_user_count (int): [optional]  # noqa: E501
+            target_channel_count (int): [optional]  # noqa: E501
             status (str): [optional]  # noqa: E501
-            scheduled_at (float): [optional]  # noqa: E501
-            completed_at (float): [optional]  # noqa: E501
-            sent_user_count (float): [optional]  # noqa: E501
-            open_count (float): [optional]  # noqa: E501
+            scheduled_at (int): [optional]  # noqa: E501
+            completed_at (int): [optional]  # noqa: E501
+            sent_user_count (int): [optional]  # noqa: E501
+            open_count (int): [optional]  # noqa: E501
             open_rate (float): [optional]  # noqa: E501
         """
 
@@ -270,13 +270,13 @@ class UpdateAnnouncementByIdResponseMessage(ModelNormal):
             data (str): [optional]  # noqa: E501
             enable_push (bool): [optional]  # noqa: E501
             target_at (str): [optional]  # noqa: E501
-            target_user_count (float): [optional]  # noqa: E501
-            target_channel_count (float): [optional]  # noqa: E501
+            target_user_count (int): [optional]  # noqa: E501
+            target_channel_count (int): [optional]  # noqa: E501
             status (str): [optional]  # noqa: E501
-            scheduled_at (float): [optional]  # noqa: E501
-            completed_at (float): [optional]  # noqa: E501
-            sent_user_count (float): [optional]  # noqa: E501
-            open_count (float): [optional]  # noqa: E501
+            scheduled_at (int): [optional]  # noqa: E501
+            completed_at (int): [optional]  # noqa: E501
+            sent_user_count (int): [optional]  # noqa: E501
+            open_count (int): [optional]  # noqa: E501
             open_rate (float): [optional]  # noqa: E501
         """
 

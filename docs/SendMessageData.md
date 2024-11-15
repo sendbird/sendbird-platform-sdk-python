@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 **url** | **str** |  | [optional] 
 **file** | **str** |  | [optional] 
 **file_name** | **str** |  | [optional] 
-**file_size** | **float** |  | [optional] 
+**file_size** | **int** |  | [optional] 
 **file_type** | **str** |  | [optional] 
 **thumbnails** | **[str]** |  | [optional] 
 **thumbnail1** | **str** |  | [optional] 

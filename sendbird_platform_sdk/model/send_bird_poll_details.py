@@ -95,14 +95,14 @@ class SendBirdPollDetails(ModelNormal):
         return {
             'allow_multiple_votes': (bool,),  # noqa: E501
             'allow_user_suggestion': (bool,),  # noqa: E501
-            'close_at': (float,),  # noqa: E501
-            'created_at': (float,),  # noqa: E501
+            'close_at': (int,),  # noqa: E501
+            'created_at': (int,),  # noqa: E501
             'created_by': (str,),  # noqa: E501
             'is_anonymous': (bool,),  # noqa: E501
             'options': ([SendBirdPollOption],),  # noqa: E501
             'status': (str,),  # noqa: E501
-            'updated_at': (float,),  # noqa: E501
-            'voter_count': (float,),  # noqa: E501
+            'updated_at': (int,),  # noqa: E501
+            'voter_count': (int,),  # noqa: E501
         }
 
     @cached_property
@@ -166,14 +166,14 @@ class SendBirdPollDetails(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             allow_multiple_votes (bool): [optional]  # noqa: E501
             allow_user_suggestion (bool): [optional]  # noqa: E501
-            close_at (float): [optional]  # noqa: E501
-            created_at (float): [optional]  # noqa: E501
+            close_at (int): [optional]  # noqa: E501
+            created_at (int): [optional]  # noqa: E501
             created_by (str): [optional]  # noqa: E501
             is_anonymous (bool): [optional]  # noqa: E501
             options ([SendBirdPollOption]): [optional]  # noqa: E501
             status (str): [optional]  # noqa: E501
-            updated_at (float): [optional]  # noqa: E501
-            voter_count (float): [optional]  # noqa: E501
+            updated_at (int): [optional]  # noqa: E501
+            voter_count (int): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -261,14 +261,14 @@ class SendBirdPollDetails(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             allow_multiple_votes (bool): [optional]  # noqa: E501
             allow_user_suggestion (bool): [optional]  # noqa: E501
-            close_at (float): [optional]  # noqa: E501
-            created_at (float): [optional]  # noqa: E501
+            close_at (int): [optional]  # noqa: E501
+            created_at (int): [optional]  # noqa: E501
             created_by (str): [optional]  # noqa: E501
             is_anonymous (bool): [optional]  # noqa: E501
             options ([SendBirdPollOption]): [optional]  # noqa: E501
             status (str): [optional]  # noqa: E501
-            updated_at (float): [optional]  # noqa: E501
-            voter_count (float): [optional]  # noqa: E501
+            updated_at (int): [optional]  # noqa: E501
+            voter_count (int): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

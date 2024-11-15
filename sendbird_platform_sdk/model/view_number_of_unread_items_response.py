@@ -82,15 +82,15 @@ class ViewNumberOfUnreadItemsResponse(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'non_super_group_channel_unread_message_count': (float,),  # noqa: E501
-            'super_group_channel_unread_message_count': (float,),  # noqa: E501
-            'group_channel_unread_message_count': (float,),  # noqa: E501
-            'super_group_channel_invitation_count': (float,),  # noqa: E501
-            'group_channel_invitation_count': (float,),  # noqa: E501
-            'super_group_channel_unread_mention_count': (float,),  # noqa: E501
-            'group_channel_unread_mention_count': (float,),  # noqa: E501
-            'non_super_group_channel_unread_mention_count': (float,),  # noqa: E501
-            'non_super_group_channel_invitation_count': (float,),  # noqa: E501
+            'non_super_group_channel_unread_message_count': (int,),  # noqa: E501
+            'super_group_channel_unread_message_count': (int,),  # noqa: E501
+            'group_channel_unread_message_count': (int,),  # noqa: E501
+            'super_group_channel_invitation_count': (int,),  # noqa: E501
+            'group_channel_invitation_count': (int,),  # noqa: E501
+            'super_group_channel_unread_mention_count': (int,),  # noqa: E501
+            'group_channel_unread_mention_count': (int,),  # noqa: E501
+            'non_super_group_channel_unread_mention_count': (int,),  # noqa: E501
+            'non_super_group_channel_invitation_count': (int,),  # noqa: E501
         }
 
     @cached_property
@@ -151,15 +151,15 @@ class ViewNumberOfUnreadItemsResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            non_super_group_channel_unread_message_count (float): [optional]  # noqa: E501
-            super_group_channel_unread_message_count (float): [optional]  # noqa: E501
-            group_channel_unread_message_count (float): [optional]  # noqa: E501
-            super_group_channel_invitation_count (float): [optional]  # noqa: E501
-            group_channel_invitation_count (float): [optional]  # noqa: E501
-            super_group_channel_unread_mention_count (float): [optional]  # noqa: E501
-            group_channel_unread_mention_count (float): [optional]  # noqa: E501
-            non_super_group_channel_unread_mention_count (float): [optional]  # noqa: E501
-            non_super_group_channel_invitation_count (float): [optional]  # noqa: E501
+            non_super_group_channel_unread_message_count (int): [optional]  # noqa: E501
+            super_group_channel_unread_message_count (int): [optional]  # noqa: E501
+            group_channel_unread_message_count (int): [optional]  # noqa: E501
+            super_group_channel_invitation_count (int): [optional]  # noqa: E501
+            group_channel_invitation_count (int): [optional]  # noqa: E501
+            super_group_channel_unread_mention_count (int): [optional]  # noqa: E501
+            group_channel_unread_mention_count (int): [optional]  # noqa: E501
+            non_super_group_channel_unread_mention_count (int): [optional]  # noqa: E501
+            non_super_group_channel_invitation_count (int): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -245,15 +245,15 @@ class ViewNumberOfUnreadItemsResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            non_super_group_channel_unread_message_count (float): [optional]  # noqa: E501
-            super_group_channel_unread_message_count (float): [optional]  # noqa: E501
-            group_channel_unread_message_count (float): [optional]  # noqa: E501
-            super_group_channel_invitation_count (float): [optional]  # noqa: E501
-            group_channel_invitation_count (float): [optional]  # noqa: E501
-            super_group_channel_unread_mention_count (float): [optional]  # noqa: E501
-            group_channel_unread_mention_count (float): [optional]  # noqa: E501
-            non_super_group_channel_unread_mention_count (float): [optional]  # noqa: E501
-            non_super_group_channel_invitation_count (float): [optional]  # noqa: E501
+            non_super_group_channel_unread_message_count (int): [optional]  # noqa: E501
+            super_group_channel_unread_message_count (int): [optional]  # noqa: E501
+            group_channel_unread_message_count (int): [optional]  # noqa: E501
+            super_group_channel_invitation_count (int): [optional]  # noqa: E501
+            group_channel_invitation_count (int): [optional]  # noqa: E501
+            super_group_channel_unread_mention_count (int): [optional]  # noqa: E501
+            group_channel_unread_mention_count (int): [optional]  # noqa: E501
+            non_super_group_channel_unread_mention_count (int): [optional]  # noqa: E501
+            non_super_group_channel_invitation_count (int): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

@@ -83,7 +83,7 @@ class SendBirdAppleCriticalAlertOptions(ModelNormal):
         """
         return {
             'name': (str,),  # noqa: E501
-            'volume': (float,),  # noqa: E501
+            'volume': (int,),  # noqa: E501
         }
 
     @cached_property
@@ -138,7 +138,7 @@ class SendBirdAppleCriticalAlertOptions(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             name (str): [optional]  # noqa: E501
-            volume (float): [optional]  # noqa: E501
+            volume (int): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -225,7 +225,7 @@ class SendBirdAppleCriticalAlertOptions(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             name (str): [optional]  # noqa: E501
-            volume (float): [optional]  # noqa: E501
+            volume (int): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

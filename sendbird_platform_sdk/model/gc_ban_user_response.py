@@ -91,8 +91,8 @@ class GcBanUserResponse(ModelNormal):
         lazy_import()
         return {
             'user': (SendBirdUser,),  # noqa: E501
-            'start_at': (float,),  # noqa: E501
-            'end_at': (float,),  # noqa: E501
+            'start_at': (int,),  # noqa: E501
+            'end_at': (int,),  # noqa: E501
             'description': (str,),  # noqa: E501
             'metadata': (OcDeleteChannelByUrl200Response,),  # noqa: E501
             'next_url': (str,),  # noqa: E501
@@ -162,8 +162,8 @@ class GcBanUserResponse(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             user (SendBirdUser): [optional]  # noqa: E501
-            start_at (float): [optional]  # noqa: E501
-            end_at (float): [optional]  # noqa: E501
+            start_at (int): [optional]  # noqa: E501
+            end_at (int): [optional]  # noqa: E501
             description (str): [optional]  # noqa: E501
             metadata (OcDeleteChannelByUrl200Response): [optional]  # noqa: E501
             next_url (str): [optional]  # noqa: E501
@@ -257,8 +257,8 @@ class GcBanUserResponse(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             user (SendBirdUser): [optional]  # noqa: E501
-            start_at (float): [optional]  # noqa: E501
-            end_at (float): [optional]  # noqa: E501
+            start_at (int): [optional]  # noqa: E501
+            end_at (int): [optional]  # noqa: E501
             description (str): [optional]  # noqa: E501
             metadata (OcDeleteChannelByUrl200Response): [optional]  # noqa: E501
             next_url (str): [optional]  # noqa: E501

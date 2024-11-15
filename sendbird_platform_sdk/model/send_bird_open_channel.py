@@ -91,15 +91,15 @@ class SendBirdOpenChannel(ModelNormal):
             'name': (str,),  # noqa: E501
             'custom_type': (str,),  # noqa: E501
             'channel_url': (str,),  # noqa: E501
-            'created_at': (float,),  # noqa: E501
+            'created_at': (int,),  # noqa: E501
             'cover_url': (str,),  # noqa: E501
             'creator': (SendBirdUser,),  # noqa: E501
             'data': (str,),  # noqa: E501
             'is_dynamic_partitioned': (bool,),  # noqa: E501
             'is_ephemeral': (bool,),  # noqa: E501
-            'max_length_message': (float,),  # noqa: E501
+            'max_length_message': (int,),  # noqa: E501
             'operators': ([SendBirdUser],),  # noqa: E501
-            'participant_count': (float,),  # noqa: E501
+            'participant_count': (int,),  # noqa: E501
             'freeze': (bool,),  # noqa: E501
         }
 
@@ -168,15 +168,15 @@ class SendBirdOpenChannel(ModelNormal):
             name (str): [optional]  # noqa: E501
             custom_type (str): [optional]  # noqa: E501
             channel_url (str): [optional]  # noqa: E501
-            created_at (float): [optional]  # noqa: E501
+            created_at (int): [optional]  # noqa: E501
             cover_url (str): [optional]  # noqa: E501
             creator (SendBirdUser): [optional]  # noqa: E501
             data (str): [optional]  # noqa: E501
             is_dynamic_partitioned (bool): [optional]  # noqa: E501
             is_ephemeral (bool): [optional]  # noqa: E501
-            max_length_message (float): [optional]  # noqa: E501
+            max_length_message (int): [optional]  # noqa: E501
             operators ([SendBirdUser]): [optional]  # noqa: E501
-            participant_count (float): [optional]  # noqa: E501
+            participant_count (int): [optional]  # noqa: E501
             freeze (bool): [optional]  # noqa: E501
         """
 
@@ -266,15 +266,15 @@ class SendBirdOpenChannel(ModelNormal):
             name (str): [optional]  # noqa: E501
             custom_type (str): [optional]  # noqa: E501
             channel_url (str): [optional]  # noqa: E501
-            created_at (float): [optional]  # noqa: E501
+            created_at (int): [optional]  # noqa: E501
             cover_url (str): [optional]  # noqa: E501
             creator (SendBirdUser): [optional]  # noqa: E501
             data (str): [optional]  # noqa: E501
             is_dynamic_partitioned (bool): [optional]  # noqa: E501
             is_ephemeral (bool): [optional]  # noqa: E501
-            max_length_message (float): [optional]  # noqa: E501
+            max_length_message (int): [optional]  # noqa: E501
             operators ([SendBirdUser]): [optional]  # noqa: E501
-            participant_count (float): [optional]  # noqa: E501
+            participant_count (int): [optional]  # noqa: E501
             freeze (bool): [optional]  # noqa: E501
         """
 

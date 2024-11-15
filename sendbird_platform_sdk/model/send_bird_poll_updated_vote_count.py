@@ -82,8 +82,8 @@ class SendBirdPollUpdatedVoteCount(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'option_id': (float,),  # noqa: E501
-            'vote_count': (float,),  # noqa: E501
+            'option_id': (int,),  # noqa: E501
+            'vote_count': (int,),  # noqa: E501
         }
 
     @cached_property
@@ -137,8 +137,8 @@ class SendBirdPollUpdatedVoteCount(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            option_id (float): [optional]  # noqa: E501
-            vote_count (float): [optional]  # noqa: E501
+            option_id (int): [optional]  # noqa: E501
+            vote_count (int): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -224,8 +224,8 @@ class SendBirdPollUpdatedVoteCount(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            option_id (float): [optional]  # noqa: E501
-            vote_count (float): [optional]  # noqa: E501
+            option_id (int): [optional]  # noqa: E501
+            vote_count (int): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

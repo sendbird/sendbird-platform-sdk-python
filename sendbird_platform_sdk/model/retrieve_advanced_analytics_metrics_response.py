@@ -84,7 +84,7 @@ class RetrieveAdvancedAnalyticsMetricsResponse(ModelNormal):
         return {
             'segments': (str,),  # noqa: E501
             'date': (str,),  # noqa: E501
-            'value': (float,),  # noqa: E501
+            'value': (int,),  # noqa: E501
             'channel_type': (str,),  # noqa: E501
             'custom_channel_type': (str,),  # noqa: E501
             'custom_message_type': (str,),  # noqa: E501
@@ -147,7 +147,7 @@ class RetrieveAdvancedAnalyticsMetricsResponse(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             segments (str): [optional]  # noqa: E501
             date (str): [optional]  # noqa: E501
-            value (float): [optional]  # noqa: E501
+            value (int): [optional]  # noqa: E501
             channel_type (str): [optional]  # noqa: E501
             custom_channel_type (str): [optional]  # noqa: E501
             custom_message_type (str): [optional]  # noqa: E501
@@ -238,7 +238,7 @@ class RetrieveAdvancedAnalyticsMetricsResponse(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             segments (str): [optional]  # noqa: E501
             date (str): [optional]  # noqa: E501
-            value (float): [optional]  # noqa: E501
+            value (int): [optional]  # noqa: E501
             channel_type (str): [optional]  # noqa: E501
             custom_channel_type (str): [optional]  # noqa: E501
             custom_message_type (str): [optional]  # noqa: E501

@@ -82,8 +82,8 @@ class SendBirdThumbnailSize(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'max_height': (float,),  # noqa: E501
-            'max_width': (float,),  # noqa: E501
+            'max_height': (int,),  # noqa: E501
+            'max_width': (int,),  # noqa: E501
         }
 
     @cached_property
@@ -137,8 +137,8 @@ class SendBirdThumbnailSize(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            max_height (float): [optional]  # noqa: E501
-            max_width (float): [optional]  # noqa: E501
+            max_height (int): [optional]  # noqa: E501
+            max_width (int): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -224,8 +224,8 @@ class SendBirdThumbnailSize(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            max_height (float): [optional]  # noqa: E501
-            max_width (float): [optional]  # noqa: E501
+            max_height (int): [optional]  # noqa: E501
+            max_width (int): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

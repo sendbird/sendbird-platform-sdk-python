@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **segments** | **str** |  | [optional] 
 **date** | **str** |  | [optional] 
-**value** | **float** |  | [optional] 
+**value** | **int** |  | [optional] 
 **channel_type** | **str** |  | [optional] 
 **custom_channel_type** | **str** |  | [optional] 
 **custom_message_type** | **str** |  | [optional] 

@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **custom_type** | **str** |  | [optional] 
 **message** | **str** |  | [optional] 
 **type** | **str** |  | [optional] 
-**ts** | **float** |  | [optional] 
+**ts** | **int** |  | [optional] 
 **user** | [**SendBirdUser**](SendBirdUser.md) |  | [optional] 
 **file** | [**SendBirdFile**](SendBirdFile.md) |  | [optional] 
 **files** | [**[SendBirdFile]**](SendBirdFile.md) |  | [optional] 

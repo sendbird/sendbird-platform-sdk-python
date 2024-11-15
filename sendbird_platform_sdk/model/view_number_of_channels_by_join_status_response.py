@@ -82,7 +82,7 @@ class ViewNumberOfChannelsByJoinStatusResponse(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'group_channel_count': (float,),  # noqa: E501
+            'group_channel_count': (int,),  # noqa: E501
         }
 
     @cached_property
@@ -135,7 +135,7 @@ class ViewNumberOfChannelsByJoinStatusResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            group_channel_count (float): [optional]  # noqa: E501
+            group_channel_count (int): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -221,7 +221,7 @@ class ViewNumberOfChannelsByJoinStatusResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            group_channel_count (float): [optional]  # noqa: E501
+            group_channel_count (int): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

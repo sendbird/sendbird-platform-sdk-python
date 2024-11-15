@@ -82,7 +82,7 @@ class CreateUserTokenData(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'expires_at': (float,),  # noqa: E501
+            'expires_at': (int,),  # noqa: E501
         }
 
     @cached_property
@@ -135,7 +135,7 @@ class CreateUserTokenData(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            expires_at (float): Specifies the expiration time of the new session token in Unix milliseconds format. By default, the expiration time of a session token is seven days from the timestamp when the token was issued.. [optional]  # noqa: E501
+            expires_at (int): Specifies the expiration time of the new session token in Unix milliseconds format. By default, the expiration time of a session token is seven days from the timestamp when the token was issued.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -221,7 +221,7 @@ class CreateUserTokenData(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            expires_at (float): Specifies the expiration time of the new session token in Unix milliseconds format. By default, the expiration time of a session token is seven days from the timestamp when the token was issued.. [optional]  # noqa: E501
+            expires_at (int): Specifies the expiration time of the new session token in Unix milliseconds format. By default, the expiration time of a session token is seven days from the timestamp when the token was issued.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

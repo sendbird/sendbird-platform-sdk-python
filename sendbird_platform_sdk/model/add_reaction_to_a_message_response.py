@@ -86,8 +86,8 @@ class AddReactionToAMessageResponse(ModelNormal):
             'operation': (str,),  # noqa: E501
             'success': (bool,),  # noqa: E501
             'reaction': (str,),  # noqa: E501
-            'updated_at': (float,),  # noqa: E501
-            'msg_id': (float,),  # noqa: E501
+            'updated_at': (int,),  # noqa: E501
+            'msg_id': (int,),  # noqa: E501
         }
 
     @cached_property
@@ -149,8 +149,8 @@ class AddReactionToAMessageResponse(ModelNormal):
             operation (str): [optional]  # noqa: E501
             success (bool): [optional]  # noqa: E501
             reaction (str): [optional]  # noqa: E501
-            updated_at (float): [optional]  # noqa: E501
-            msg_id (float): [optional]  # noqa: E501
+            updated_at (int): [optional]  # noqa: E501
+            msg_id (int): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -240,8 +240,8 @@ class AddReactionToAMessageResponse(ModelNormal):
             operation (str): [optional]  # noqa: E501
             success (bool): [optional]  # noqa: E501
             reaction (str): [optional]  # noqa: E501
-            updated_at (float): [optional]  # noqa: E501
-            msg_id (float): [optional]  # noqa: E501
+            updated_at (int): [optional]  # noqa: E501
+            msg_id (int): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

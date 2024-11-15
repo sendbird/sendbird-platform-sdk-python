@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**message_survival_seconds** | **float** |  | [optional] 
+**message_survival_seconds** | **int** |  | [optional] 
 **is_triggered_by_message_read** | **bool** |  | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 

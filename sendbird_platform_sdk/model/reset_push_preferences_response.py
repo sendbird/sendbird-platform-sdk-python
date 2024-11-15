@@ -83,16 +83,16 @@ class ResetPushPreferencesResponse(ModelNormal):
         """
         return {
             'snooze_start_ts': (str,),  # noqa: E501
-            'start_hour': (float,),  # noqa: E501
+            'start_hour': (int,),  # noqa: E501
             'snooze_enabled': (bool,),  # noqa: E501
-            'end_min': (float,),  # noqa: E501
+            'end_min': (int,),  # noqa: E501
             'timezone': (str,),  # noqa: E501
             'block_push_from_bots': (bool,),  # noqa: E501
-            'push_blocked_bot_ids': ([float],),  # noqa: E501
-            'start_min': (float,),  # noqa: E501
+            'push_blocked_bot_ids': ([int],),  # noqa: E501
+            'start_min': (int,),  # noqa: E501
             'snooze_end_ts': (str,),  # noqa: E501
             'do_not_disturb': (bool,),  # noqa: E501
-            'end_hour': (float,),  # noqa: E501
+            'end_hour': (int,),  # noqa: E501
             'enable_push_for_replies': (bool,),  # noqa: E501
             'push_sound': (str,),  # noqa: E501
             'push_trigger_option': (str,),  # noqa: E501
@@ -162,16 +162,16 @@ class ResetPushPreferencesResponse(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             snooze_start_ts (str): [optional]  # noqa: E501
-            start_hour (float): [optional]  # noqa: E501
+            start_hour (int): [optional]  # noqa: E501
             snooze_enabled (bool): [optional]  # noqa: E501
-            end_min (float): [optional]  # noqa: E501
+            end_min (int): [optional]  # noqa: E501
             timezone (str): [optional]  # noqa: E501
             block_push_from_bots (bool): [optional]  # noqa: E501
-            push_blocked_bot_ids ([float]): [optional]  # noqa: E501
-            start_min (float): [optional]  # noqa: E501
+            push_blocked_bot_ids ([int]): [optional]  # noqa: E501
+            start_min (int): [optional]  # noqa: E501
             snooze_end_ts (str): [optional]  # noqa: E501
             do_not_disturb (bool): [optional]  # noqa: E501
-            end_hour (float): [optional]  # noqa: E501
+            end_hour (int): [optional]  # noqa: E501
             enable_push_for_replies (bool): [optional]  # noqa: E501
             push_sound (str): [optional]  # noqa: E501
             push_trigger_option (str): [optional]  # noqa: E501
@@ -261,16 +261,16 @@ class ResetPushPreferencesResponse(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             snooze_start_ts (str): [optional]  # noqa: E501
-            start_hour (float): [optional]  # noqa: E501
+            start_hour (int): [optional]  # noqa: E501
             snooze_enabled (bool): [optional]  # noqa: E501
-            end_min (float): [optional]  # noqa: E501
+            end_min (int): [optional]  # noqa: E501
             timezone (str): [optional]  # noqa: E501
             block_push_from_bots (bool): [optional]  # noqa: E501
-            push_blocked_bot_ids ([float]): [optional]  # noqa: E501
-            start_min (float): [optional]  # noqa: E501
+            push_blocked_bot_ids ([int]): [optional]  # noqa: E501
+            start_min (int): [optional]  # noqa: E501
             snooze_end_ts (str): [optional]  # noqa: E501
             do_not_disturb (bool): [optional]  # noqa: E501
-            end_hour (float): [optional]  # noqa: E501
+            end_hour (int): [optional]  # noqa: E501
             enable_push_for_replies (bool): [optional]  # noqa: E501
             push_sound (str): [optional]  # noqa: E501
             push_trigger_option (str): [optional]  # noqa: E501
