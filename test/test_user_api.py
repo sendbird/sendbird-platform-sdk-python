@@ -1,7 +1,7 @@
 """
     Sendbird Platform SDK
 
-    Sendbird Platform API SDK  https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api  # noqa: E501
+    Sendbird Platform API SDK  [https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api](https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api)  Contact Support:   Name: Sendbird   Email: [support@sendbird.com](https://mailto:support@sendbird.com)  # noqa: E501
 
     The version of the OpenAPI document: 1.0.0
     Contact: support@sendbird.com
@@ -24,22 +24,22 @@ class TestUserApi(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def test_add_registration_or_device_token(self):
-        """Test case for add_registration_or_device_token
+    def test_add_a_registration_or_device_token(self):
+        """Test case for add_a_registration_or_device_token
 
         Add a registration or device token  # noqa: E501
         """
         pass
 
-    def test_choose_push_notification_content_template(self):
-        """Test case for choose_push_notification_content_template
+    def test_choose_a_push_notification_content_template(self):
+        """Test case for choose_a_push_notification_content_template
 
         Choose a push notification content template  # noqa: E501
         """
         pass
 
-    def test_create_user(self):
-        """Test case for create_user
+    def test_create_a_user(self):
+        """Test case for create_a_user
 
         Create a user  # noqa: E501
         """
@@ -52,10 +52,17 @@ class TestUserApi(unittest.TestCase):
         """
         pass
 
-    def test_delete_user_by_id(self):
-        """Test case for delete_user_by_id
+    def test_delete_a_user(self):
+        """Test case for delete_a_user
 
         Delete a user  # noqa: E501
+        """
+        pass
+
+    def test_get_channel_invitation_preference(self):
+        """Test case for get_channel_invitation_preference
+
+        Get channel invitation preference  # noqa: E501
         """
         pass
 
@@ -94,31 +101,24 @@ class TestUserApi(unittest.TestCase):
         """
         pass
 
-    def test_register_as_operator_to_channels_with_custom_channel_types(self):
-        """Test case for register_as_operator_to_channels_with_custom_channel_types
-
-        Register as an operator to channels with custom channel types  # noqa: E501
-        """
-        pass
-
-    def test_remove_registration_or_device_token(self):
-        """Test case for remove_registration_or_device_token
-
-        Remove a registration or device token - When unregistering all device tokens  # noqa: E501
-        """
-        pass
-
-    def test_remove_registration_or_device_token_by_token(self):
-        """Test case for remove_registration_or_device_token_by_token
+    def test_remove_a_registration_or_device_token(self):
+        """Test case for remove_a_registration_or_device_token
 
         Remove a registration or device token - When unregistering a specific token  # noqa: E501
         """
         pass
 
-    def test_remove_registration_or_device_token_from_owner_by_token(self):
-        """Test case for remove_registration_or_device_token_from_owner_by_token
+    def test_remove_a_registration_or_device_token_from_an_owner(self):
+        """Test case for remove_a_registration_or_device_token_from_an_owner
 
         Remove a registration or device token from an owner  # noqa: E501
+        """
+        pass
+
+    def test_remove_all_registration_or_device_token(self):
+        """Test case for remove_all_registration_or_device_token
+
+        Remove a registration or device token - When unregistering all device tokens  # noqa: E501
         """
         pass
 
@@ -129,6 +129,13 @@ class TestUserApi(unittest.TestCase):
         """
         pass
 
+    def test_update_a_user(self):
+        """Test case for update_a_user
+
+        Update a user  # noqa: E501
+        """
+        pass
+
     def test_update_channel_invitation_preference(self):
         """Test case for update_channel_invitation_preference
 
@@ -136,8 +143,8 @@ class TestUserApi(unittest.TestCase):
         """
         pass
 
-    def test_update_count_preference_of_channel_by_url(self):
-        """Test case for update_count_preference_of_channel_by_url
+    def test_update_count_preference_of_a_channel(self):
+        """Test case for update_count_preference_of_a_channel
 
         Update count preference of a channel  # noqa: E501
         """
@@ -150,38 +157,24 @@ class TestUserApi(unittest.TestCase):
         """
         pass
 
-    def test_update_push_preferences_for_channel_by_url(self):
-        """Test case for update_push_preferences_for_channel_by_url
+    def test_update_push_preferences_for_a_channel(self):
+        """Test case for update_push_preferences_for_a_channel
 
         Update push preferences for a channel  # noqa: E501
         """
         pass
 
-    def test_update_user_by_id(self):
-        """Test case for update_user_by_id
+    def test_view_a_user(self):
+        """Test case for view_a_user
 
-        Update a user  # noqa: E501
+        View a user  # noqa: E501
         """
         pass
 
-    def test_view_channel_invitation_preference(self):
-        """Test case for view_channel_invitation_preference
-
-        View channel invitation preference  # noqa: E501
-        """
-        pass
-
-    def test_view_count_preference_of_channel_by_url(self):
-        """Test case for view_count_preference_of_channel_by_url
+    def test_view_count_preference_of_a_channel(self):
+        """Test case for view_count_preference_of_a_channel
 
         View count preference of a channel  # noqa: E501
-        """
-        pass
-
-    def test_view_number_of_channels_by_join_status(self):
-        """Test case for view_number_of_channels_by_join_status
-
-        View number of channels by join status  # noqa: E501
         """
         pass
 
@@ -189,13 +182,6 @@ class TestUserApi(unittest.TestCase):
         """Test case for view_number_of_channels_with_unread_messages
 
         View number of channels with unread messages  # noqa: E501
-        """
-        pass
-
-    def test_view_number_of_unread_items(self):
-        """Test case for view_number_of_unread_items
-
-        View number of unread items  # noqa: E501
         """
         pass
 
@@ -213,22 +199,15 @@ class TestUserApi(unittest.TestCase):
         """
         pass
 
-    def test_view_push_preferences_for_channel_by_url(self):
-        """Test case for view_push_preferences_for_channel_by_url
+    def test_view_push_preferences_for_a_channel(self):
+        """Test case for view_push_preferences_for_a_channel
 
         View push preferences for a channel  # noqa: E501
         """
         pass
 
-    def test_view_user_by_id(self):
-        """Test case for view_user_by_id
-
-        View a user  # noqa: E501
-        """
-        pass
-
-    def test_view_who_owns_registration_or_device_token_by_token(self):
-        """Test case for view_who_owns_registration_or_device_token_by_token
+    def test_view_who_owns_a_registration_or_device_token(self):
+        """Test case for view_who_owns_a_registration_or_device_token
 
         View who owns a registration or device token  # noqa: E501
         """

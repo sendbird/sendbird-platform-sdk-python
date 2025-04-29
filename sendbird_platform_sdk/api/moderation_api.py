@@ -1,7 +1,7 @@
 """
     Sendbird Platform SDK
 
-    Sendbird Platform API SDK  https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api  # noqa: E501
+    Sendbird Platform API SDK  [https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api](https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api)  Contact Support:   Name: Sendbird   Email: [support@sendbird.com](https://mailto:support@sendbird.com)  # noqa: E501
 
     The version of the OpenAPI document: 1.0.0
     Contact: support@sendbird.com
@@ -22,36 +22,13 @@ from sendbird_platform_sdk.model_utils import (  # noqa: F401
     none_type,
     validate_and_convert_types
 )
-from sendbird_platform_sdk.model.ban_from_channels_with_custom_channel_types_data import BanFromChannelsWithCustomChannelTypesData
-from sendbird_platform_sdk.model.block_user_data import BlockUserData
-from sendbird_platform_sdk.model.block_user_response import BlockUserResponse
-from sendbird_platform_sdk.model.gc_ban_user_data import GcBanUserData
-from sendbird_platform_sdk.model.gc_ban_user_response import GcBanUserResponse
-from sendbird_platform_sdk.model.gc_freeze_channel_data import GcFreezeChannelData
-from sendbird_platform_sdk.model.gc_list_banned_users_response import GcListBannedUsersResponse
-from sendbird_platform_sdk.model.gc_list_muted_users_response import GcListMutedUsersResponse
-from sendbird_platform_sdk.model.gc_mute_user_data import GcMuteUserData
-from sendbird_platform_sdk.model.gc_update_ban_by_id_data import GcUpdateBanByIdData
-from sendbird_platform_sdk.model.gc_update_ban_by_id_response import GcUpdateBanByIdResponse
-from sendbird_platform_sdk.model.gc_view_ban_by_id_response import GcViewBanByIdResponse
-from sendbird_platform_sdk.model.gc_view_mute_by_id_response import GcViewMuteByIdResponse
-from sendbird_platform_sdk.model.list_banned_channels_response import ListBannedChannelsResponse
+from sendbird_platform_sdk.model.block_a_user_request import BlockAUserRequest
+from sendbird_platform_sdk.model.block_a_user_response import BlockAUserResponse
+from sendbird_platform_sdk.model.freeze_a_group_channel_request import FreezeAGroupChannelRequest
+from sendbird_platform_sdk.model.freeze_an_open_channel_request import FreezeAnOpenChannelRequest
 from sendbird_platform_sdk.model.list_blocked_users_response import ListBlockedUsersResponse
-from sendbird_platform_sdk.model.list_muted_channels_response import ListMutedChannelsResponse
-from sendbird_platform_sdk.model.mute_in_channels_with_custom_channel_types_data import MuteInChannelsWithCustomChannelTypesData
-from sendbird_platform_sdk.model.oc_ban_user_data import OcBanUserData
-from sendbird_platform_sdk.model.oc_ban_user_response import OcBanUserResponse
-from sendbird_platform_sdk.model.oc_delete_channel_by_url200_response import OcDeleteChannelByUrl200Response
-from sendbird_platform_sdk.model.oc_freeze_channel_data import OcFreezeChannelData
-from sendbird_platform_sdk.model.oc_list_banned_users_response import OcListBannedUsersResponse
-from sendbird_platform_sdk.model.oc_list_muted_users_response import OcListMutedUsersResponse
-from sendbird_platform_sdk.model.oc_mute_user_data import OcMuteUserData
-from sendbird_platform_sdk.model.oc_update_ban_by_id_data import OcUpdateBanByIdData
-from sendbird_platform_sdk.model.oc_update_ban_by_id_response import OcUpdateBanByIdResponse
-from sendbird_platform_sdk.model.oc_view_ban_by_id_response import OcViewBanByIdResponse
-from sendbird_platform_sdk.model.oc_view_mute_by_id_response import OcViewMuteByIdResponse
-from sendbird_platform_sdk.model.send_bird_group_channel import SendBirdGroupChannel
-from sendbird_platform_sdk.model.send_bird_open_channel import SendBirdOpenChannel
+from sendbird_platform_sdk.model.sendbird_group_channel_detail import SendbirdGroupChannelDetail
+from sendbird_platform_sdk.model.sendbird_open_channel import SendbirdOpenChannel
 
 
 class ModerationApi(object):
@@ -65,72 +42,12 @@ class ModerationApi(object):
         if api_client is None:
             api_client = ApiClient()
         self.api_client = api_client
-        self.ban_from_channels_with_custom_channel_types_endpoint = _Endpoint(
+        self.block_a_user_endpoint = _Endpoint(
             settings={
-                'response_type': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
-                'auth': [],
-                'endpoint_path': '/v3/users/{user_id}/banned_channel_custom_types',
-                'operation_id': 'ban_from_channels_with_custom_channel_types',
-                'http_method': 'POST',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'user_id',
-                    'api_token',
-                    'ban_from_channels_with_custom_channel_types_data',
-                ],
-                'required': [
-                    'user_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'user_id':
-                        (str,),
-                    'api_token':
-                        (str,),
-                    'ban_from_channels_with_custom_channel_types_data':
-                        (BanFromChannelsWithCustomChannelTypesData,),
-                },
-                'attribute_map': {
-                    'user_id': 'user_id',
-                    'api_token': 'Api-Token',
-                },
-                'location_map': {
-                    'user_id': 'path',
-                    'api_token': 'header',
-                    'ban_from_channels_with_custom_channel_types_data': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
-            api_client=api_client
-        )
-        self.block_user_endpoint = _Endpoint(
-            settings={
-                'response_type': (BlockUserResponse,),
+                'response_type': (BlockAUserResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/users/{user_id}/block',
-                'operation_id': 'block_user',
+                'operation_id': 'block_a_user',
                 'http_method': 'POST',
                 'servers': None,
             },
@@ -138,7 +55,7 @@ class ModerationApi(object):
                 'all': [
                     'user_id',
                     'api_token',
-                    'block_user_data',
+                    'block_a_user_request',
                 ],
                 'required': [
                     'user_id',
@@ -160,17 +77,17 @@ class ModerationApi(object):
                         (str,),
                     'api_token':
                         (str,),
-                    'block_user_data':
-                        (BlockUserData,),
+                    'block_a_user_request':
+                        (BlockAUserRequest,),
                 },
                 'attribute_map': {
                     'user_id': 'user_id',
-                    'api_token': 'Api-Token',
+                    'api_token': 'api-token',
                 },
                 'location_map': {
                     'user_id': 'path',
                     'api_token': 'header',
-                    'block_user_data': 'body',
+                    'block_a_user_request': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -185,72 +102,12 @@ class ModerationApi(object):
             },
             api_client=api_client
         )
-        self.gc_ban_user_endpoint = _Endpoint(
+        self.freeze_a_group_channel_endpoint = _Endpoint(
             settings={
-                'response_type': (GcBanUserResponse,),
-                'auth': [],
-                'endpoint_path': '/v3/group_channels/{channel_url}/ban',
-                'operation_id': 'gc_ban_user',
-                'http_method': 'POST',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'channel_url',
-                    'api_token',
-                    'gc_ban_user_data',
-                ],
-                'required': [
-                    'channel_url',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'channel_url':
-                        (str,),
-                    'api_token':
-                        (str,),
-                    'gc_ban_user_data':
-                        (GcBanUserData,),
-                },
-                'attribute_map': {
-                    'channel_url': 'channel_url',
-                    'api_token': 'Api-Token',
-                },
-                'location_map': {
-                    'channel_url': 'path',
-                    'api_token': 'header',
-                    'gc_ban_user_data': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
-            api_client=api_client
-        )
-        self.gc_freeze_channel_endpoint = _Endpoint(
-            settings={
-                'response_type': (SendBirdGroupChannel,),
+                'response_type': (SendbirdGroupChannelDetail,),
                 'auth': [],
                 'endpoint_path': '/v3/group_channels/{channel_url}/freeze',
-                'operation_id': 'gc_freeze_channel',
+                'operation_id': 'freeze_a_group_channel',
                 'http_method': 'PUT',
                 'servers': None,
             },
@@ -258,7 +115,7 @@ class ModerationApi(object):
                 'all': [
                     'channel_url',
                     'api_token',
-                    'gc_freeze_channel_data',
+                    'freeze_a_group_channel_request',
                 ],
                 'required': [
                     'channel_url',
@@ -280,17 +137,17 @@ class ModerationApi(object):
                         (str,),
                     'api_token':
                         (str,),
-                    'gc_freeze_channel_data':
-                        (GcFreezeChannelData,),
+                    'freeze_a_group_channel_request':
+                        (FreezeAGroupChannelRequest,),
                 },
                 'attribute_map': {
                     'channel_url': 'channel_url',
-                    'api_token': 'Api-Token',
+                    'api_token': 'api-token',
                 },
                 'location_map': {
                     'channel_url': 'path',
                     'api_token': 'header',
-                    'gc_freeze_channel_data': 'body',
+                    'freeze_a_group_channel_request': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -305,333 +162,23 @@ class ModerationApi(object):
             },
             api_client=api_client
         )
-        self.gc_list_banned_users_endpoint = _Endpoint(
+        self.freeze_an_open_channel_endpoint = _Endpoint(
             settings={
-                'response_type': (GcListBannedUsersResponse,),
+                'response_type': (SendbirdOpenChannel,),
                 'auth': [],
-                'endpoint_path': '/v3/group_channels/{channel_url}/ban',
-                'operation_id': 'gc_list_banned_users',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'channel_url',
-                    'api_token',
-                    'token',
-                    'limit',
-                ],
-                'required': [
-                    'channel_url',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'channel_url':
-                        (str,),
-                    'api_token':
-                        (str,),
-                    'token':
-                        (str,),
-                    'limit':
-                        (int,),
-                },
-                'attribute_map': {
-                    'channel_url': 'channel_url',
-                    'api_token': 'Api-Token',
-                    'token': 'token',
-                    'limit': 'limit',
-                },
-                'location_map': {
-                    'channel_url': 'path',
-                    'api_token': 'header',
-                    'token': 'query',
-                    'limit': 'query',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
-        self.gc_list_muted_users_endpoint = _Endpoint(
-            settings={
-                'response_type': (GcListMutedUsersResponse,),
-                'auth': [],
-                'endpoint_path': '/v3/group_channels/{channel_url}/mute',
-                'operation_id': 'gc_list_muted_users',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'channel_url',
-                    'api_token',
-                    'token',
-                    'limit',
-                ],
-                'required': [
-                    'channel_url',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'channel_url':
-                        (str,),
-                    'api_token':
-                        (str,),
-                    'token':
-                        (str,),
-                    'limit':
-                        (int,),
-                },
-                'attribute_map': {
-                    'channel_url': 'channel_url',
-                    'api_token': 'Api-Token',
-                    'token': 'token',
-                    'limit': 'limit',
-                },
-                'location_map': {
-                    'channel_url': 'path',
-                    'api_token': 'header',
-                    'token': 'query',
-                    'limit': 'query',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
-        self.gc_mute_user_endpoint = _Endpoint(
-            settings={
-                'response_type': (SendBirdGroupChannel,),
-                'auth': [],
-                'endpoint_path': '/v3/group_channels/{channel_url}/mute',
-                'operation_id': 'gc_mute_user',
-                'http_method': 'POST',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'channel_url',
-                    'api_token',
-                    'gc_mute_user_data',
-                ],
-                'required': [
-                    'channel_url',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'channel_url':
-                        (str,),
-                    'api_token':
-                        (str,),
-                    'gc_mute_user_data':
-                        (GcMuteUserData,),
-                },
-                'attribute_map': {
-                    'channel_url': 'channel_url',
-                    'api_token': 'Api-Token',
-                },
-                'location_map': {
-                    'channel_url': 'path',
-                    'api_token': 'header',
-                    'gc_mute_user_data': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
-            api_client=api_client
-        )
-        self.gc_unban_user_by_id_endpoint = _Endpoint(
-            settings={
-                'response_type': (OcDeleteChannelByUrl200Response,),
-                'auth': [],
-                'endpoint_path': '/v3/group_channels/{channel_url}/ban/{banned_user_id}',
-                'operation_id': 'gc_unban_user_by_id',
-                'http_method': 'DELETE',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'channel_url',
-                    'banned_user_id',
-                    'api_token',
-                ],
-                'required': [
-                    'channel_url',
-                    'banned_user_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'channel_url':
-                        (str,),
-                    'banned_user_id':
-                        (str,),
-                    'api_token':
-                        (str,),
-                },
-                'attribute_map': {
-                    'channel_url': 'channel_url',
-                    'banned_user_id': 'banned_user_id',
-                    'api_token': 'Api-Token',
-                },
-                'location_map': {
-                    'channel_url': 'path',
-                    'banned_user_id': 'path',
-                    'api_token': 'header',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
-        self.gc_unmute_user_by_id_endpoint = _Endpoint(
-            settings={
-                'response_type': (OcDeleteChannelByUrl200Response,),
-                'auth': [],
-                'endpoint_path': '/v3/group_channels/{channel_url}/mute/{muted_user_id}',
-                'operation_id': 'gc_unmute_user_by_id',
-                'http_method': 'DELETE',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'channel_url',
-                    'muted_user_id',
-                    'api_token',
-                ],
-                'required': [
-                    'channel_url',
-                    'muted_user_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'channel_url':
-                        (str,),
-                    'muted_user_id':
-                        (str,),
-                    'api_token':
-                        (str,),
-                },
-                'attribute_map': {
-                    'channel_url': 'channel_url',
-                    'muted_user_id': 'muted_user_id',
-                    'api_token': 'Api-Token',
-                },
-                'location_map': {
-                    'channel_url': 'path',
-                    'muted_user_id': 'path',
-                    'api_token': 'header',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
-        self.gc_update_ban_by_id_endpoint = _Endpoint(
-            settings={
-                'response_type': (GcUpdateBanByIdResponse,),
-                'auth': [],
-                'endpoint_path': '/v3/group_channels/{channel_url}/ban/{banned_user_id}',
-                'operation_id': 'gc_update_ban_by_id',
+                'endpoint_path': '/v3/open_channels/{channel_url}/freeze',
+                'operation_id': 'freeze_an_open_channel',
                 'http_method': 'PUT',
                 'servers': None,
             },
             params_map={
                 'all': [
                     'channel_url',
-                    'banned_user_id',
                     'api_token',
-                    'gc_update_ban_by_id_data',
+                    'freeze_an_open_channel_request',
                 ],
                 'required': [
                     'channel_url',
-                    'banned_user_id',
                 ],
                 'nullable': [
                 ],
@@ -648,23 +195,19 @@ class ModerationApi(object):
                 'openapi_types': {
                     'channel_url':
                         (str,),
-                    'banned_user_id':
-                        (str,),
                     'api_token':
                         (str,),
-                    'gc_update_ban_by_id_data':
-                        (GcUpdateBanByIdData,),
+                    'freeze_an_open_channel_request':
+                        (FreezeAnOpenChannelRequest,),
                 },
                 'attribute_map': {
                     'channel_url': 'channel_url',
-                    'banned_user_id': 'banned_user_id',
-                    'api_token': 'Api-Token',
+                    'api_token': 'api-token',
                 },
                 'location_map': {
                     'channel_url': 'path',
-                    'banned_user_id': 'path',
                     'api_token': 'header',
-                    'gc_update_ban_by_id_data': 'body',
+                    'freeze_an_open_channel_request': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -676,190 +219,6 @@ class ModerationApi(object):
                 'content_type': [
                     'application/json'
                 ]
-            },
-            api_client=api_client
-        )
-        self.gc_view_ban_by_id_endpoint = _Endpoint(
-            settings={
-                'response_type': (GcViewBanByIdResponse,),
-                'auth': [],
-                'endpoint_path': '/v3/group_channels/{channel_url}/ban/{banned_user_id}',
-                'operation_id': 'gc_view_ban_by_id',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'channel_url',
-                    'banned_user_id',
-                    'api_token',
-                ],
-                'required': [
-                    'channel_url',
-                    'banned_user_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'channel_url':
-                        (str,),
-                    'banned_user_id':
-                        (str,),
-                    'api_token':
-                        (str,),
-                },
-                'attribute_map': {
-                    'channel_url': 'channel_url',
-                    'banned_user_id': 'banned_user_id',
-                    'api_token': 'Api-Token',
-                },
-                'location_map': {
-                    'channel_url': 'path',
-                    'banned_user_id': 'path',
-                    'api_token': 'header',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
-        self.gc_view_mute_by_id_endpoint = _Endpoint(
-            settings={
-                'response_type': (GcViewMuteByIdResponse,),
-                'auth': [],
-                'endpoint_path': '/v3/group_channels/{channel_url}/mute/{muted_user_id}',
-                'operation_id': 'gc_view_mute_by_id',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'channel_url',
-                    'muted_user_id',
-                    'api_token',
-                ],
-                'required': [
-                    'channel_url',
-                    'muted_user_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'channel_url':
-                        (str,),
-                    'muted_user_id':
-                        (str,),
-                    'api_token':
-                        (str,),
-                },
-                'attribute_map': {
-                    'channel_url': 'channel_url',
-                    'muted_user_id': 'muted_user_id',
-                    'api_token': 'Api-Token',
-                },
-                'location_map': {
-                    'channel_url': 'path',
-                    'muted_user_id': 'path',
-                    'api_token': 'header',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
-        self.list_banned_channels_endpoint = _Endpoint(
-            settings={
-                'response_type': (ListBannedChannelsResponse,),
-                'auth': [],
-                'endpoint_path': '/v3/users/{user_id}/ban',
-                'operation_id': 'list_banned_channels',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'user_id',
-                    'api_token',
-                    'token',
-                    'limit',
-                ],
-                'required': [
-                    'user_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'user_id':
-                        (str,),
-                    'api_token':
-                        (str,),
-                    'token':
-                        (str,),
-                    'limit':
-                        (int,),
-                },
-                'attribute_map': {
-                    'user_id': 'user_id',
-                    'api_token': 'Api-Token',
-                    'token': 'token',
-                    'limit': 'limit',
-                },
-                'location_map': {
-                    'user_id': 'path',
-                    'api_token': 'header',
-                    'token': 'query',
-                    'limit': 'query',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
             },
             api_client=api_client
         )
@@ -875,12 +234,13 @@ class ModerationApi(object):
             params_map={
                 'all': [
                     'user_id',
-                    'api_token',
+                    'list',
                     'token',
                     'limit',
                     'user_ids',
                     'metadatakey',
                     'metadatavalues_in',
+                    'api_token',
                 ],
                 'required': [
                     'user_id',
@@ -888,6 +248,7 @@ class ModerationApi(object):
                 'nullable': [
                 ],
                 'enum': [
+                    'list',
                 ],
                 'validation': [
                 ]
@@ -896,11 +257,16 @@ class ModerationApi(object):
                 'validations': {
                 },
                 'allowed_values': {
+                    ('list',): {
+
+                        "BLOCKED_BY_ME": "blocked_by_me",
+                        "BLOCKING_ME": "blocking_me"
+                    },
                 },
                 'openapi_types': {
                     'user_id':
                         (str,),
-                    'api_token':
+                    'list':
                         (str,),
                     'token':
                         (str,),
@@ -912,515 +278,27 @@ class ModerationApi(object):
                         (str,),
                     'metadatavalues_in':
                         (str,),
+                    'api_token':
+                        (str,),
                 },
                 'attribute_map': {
                     'user_id': 'user_id',
-                    'api_token': 'Api-Token',
+                    'list': 'list',
                     'token': 'token',
                     'limit': 'limit',
                     'user_ids': 'user_ids',
                     'metadatakey': 'metadatakey',
                     'metadatavalues_in': 'metadatavalues_in',
+                    'api_token': 'api-token',
                 },
                 'location_map': {
                     'user_id': 'path',
-                    'api_token': 'header',
+                    'list': 'query',
                     'token': 'query',
                     'limit': 'query',
                     'user_ids': 'query',
                     'metadatakey': 'query',
                     'metadatavalues_in': 'query',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
-        self.list_muted_channels_endpoint = _Endpoint(
-            settings={
-                'response_type': (ListMutedChannelsResponse,),
-                'auth': [],
-                'endpoint_path': '/v3/users/{user_id}/mute',
-                'operation_id': 'list_muted_channels',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'user_id',
-                    'api_token',
-                    'token',
-                    'limit',
-                ],
-                'required': [
-                    'user_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'user_id':
-                        (str,),
-                    'api_token':
-                        (str,),
-                    'token':
-                        (str,),
-                    'limit':
-                        (int,),
-                },
-                'attribute_map': {
-                    'user_id': 'user_id',
-                    'api_token': 'Api-Token',
-                    'token': 'token',
-                    'limit': 'limit',
-                },
-                'location_map': {
-                    'user_id': 'path',
-                    'api_token': 'header',
-                    'token': 'query',
-                    'limit': 'query',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
-        self.mute_in_channels_with_custom_channel_types_endpoint = _Endpoint(
-            settings={
-                'response_type': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
-                'auth': [],
-                'endpoint_path': '/v3/users/{user_id}/muted_channel_custom_types',
-                'operation_id': 'mute_in_channels_with_custom_channel_types',
-                'http_method': 'POST',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'user_id',
-                    'api_token',
-                    'mute_in_channels_with_custom_channel_types_data',
-                ],
-                'required': [
-                    'user_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'user_id':
-                        (str,),
-                    'api_token':
-                        (str,),
-                    'mute_in_channels_with_custom_channel_types_data':
-                        (MuteInChannelsWithCustomChannelTypesData,),
-                },
-                'attribute_map': {
-                    'user_id': 'user_id',
-                    'api_token': 'Api-Token',
-                },
-                'location_map': {
-                    'user_id': 'path',
-                    'api_token': 'header',
-                    'mute_in_channels_with_custom_channel_types_data': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
-            api_client=api_client
-        )
-        self.oc_ban_user_endpoint = _Endpoint(
-            settings={
-                'response_type': (OcBanUserResponse,),
-                'auth': [],
-                'endpoint_path': '/v3/open_channels/{channel_url}/ban',
-                'operation_id': 'oc_ban_user',
-                'http_method': 'POST',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'channel_url',
-                    'api_token',
-                    'oc_ban_user_data',
-                ],
-                'required': [
-                    'channel_url',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'channel_url':
-                        (str,),
-                    'api_token':
-                        (str,),
-                    'oc_ban_user_data':
-                        (OcBanUserData,),
-                },
-                'attribute_map': {
-                    'channel_url': 'channel_url',
-                    'api_token': 'Api-Token',
-                },
-                'location_map': {
-                    'channel_url': 'path',
-                    'api_token': 'header',
-                    'oc_ban_user_data': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
-            api_client=api_client
-        )
-        self.oc_freeze_channel_endpoint = _Endpoint(
-            settings={
-                'response_type': (SendBirdOpenChannel,),
-                'auth': [],
-                'endpoint_path': '/v3/open_channels/{channel_url}/freeze',
-                'operation_id': 'oc_freeze_channel',
-                'http_method': 'PUT',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'channel_url',
-                    'api_token',
-                    'oc_freeze_channel_data',
-                ],
-                'required': [
-                    'channel_url',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'channel_url':
-                        (str,),
-                    'api_token':
-                        (str,),
-                    'oc_freeze_channel_data':
-                        (OcFreezeChannelData,),
-                },
-                'attribute_map': {
-                    'channel_url': 'channel_url',
-                    'api_token': 'Api-Token',
-                },
-                'location_map': {
-                    'channel_url': 'path',
-                    'api_token': 'header',
-                    'oc_freeze_channel_data': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
-            api_client=api_client
-        )
-        self.oc_list_banned_users_endpoint = _Endpoint(
-            settings={
-                'response_type': (OcListBannedUsersResponse,),
-                'auth': [],
-                'endpoint_path': '/v3/open_channels/{channel_url}/ban',
-                'operation_id': 'oc_list_banned_users',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'channel_url',
-                    'api_token',
-                    'token',
-                    'limit',
-                ],
-                'required': [
-                    'channel_url',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'channel_url':
-                        (str,),
-                    'api_token':
-                        (str,),
-                    'token':
-                        (str,),
-                    'limit':
-                        (int,),
-                },
-                'attribute_map': {
-                    'channel_url': 'channel_url',
-                    'api_token': 'Api-Token',
-                    'token': 'token',
-                    'limit': 'limit',
-                },
-                'location_map': {
-                    'channel_url': 'path',
-                    'api_token': 'header',
-                    'token': 'query',
-                    'limit': 'query',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
-        self.oc_list_muted_users_endpoint = _Endpoint(
-            settings={
-                'response_type': (OcListMutedUsersResponse,),
-                'auth': [],
-                'endpoint_path': '/v3/open_channels/{channel_url}/mute',
-                'operation_id': 'oc_list_muted_users',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'channel_url',
-                    'api_token',
-                    'token',
-                    'limit',
-                ],
-                'required': [
-                    'channel_url',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'channel_url':
-                        (str,),
-                    'api_token':
-                        (str,),
-                    'token':
-                        (str,),
-                    'limit':
-                        (int,),
-                },
-                'attribute_map': {
-                    'channel_url': 'channel_url',
-                    'api_token': 'Api-Token',
-                    'token': 'token',
-                    'limit': 'limit',
-                },
-                'location_map': {
-                    'channel_url': 'path',
-                    'api_token': 'header',
-                    'token': 'query',
-                    'limit': 'query',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
-        self.oc_mute_user_endpoint = _Endpoint(
-            settings={
-                'response_type': (SendBirdOpenChannel,),
-                'auth': [],
-                'endpoint_path': '/v3/open_channels/{channel_url}/mute',
-                'operation_id': 'oc_mute_user',
-                'http_method': 'POST',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'channel_url',
-                    'api_token',
-                    'oc_mute_user_data',
-                ],
-                'required': [
-                    'channel_url',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'channel_url':
-                        (str,),
-                    'api_token':
-                        (str,),
-                    'oc_mute_user_data':
-                        (OcMuteUserData,),
-                },
-                'attribute_map': {
-                    'channel_url': 'channel_url',
-                    'api_token': 'Api-Token',
-                },
-                'location_map': {
-                    'channel_url': 'path',
-                    'api_token': 'header',
-                    'oc_mute_user_data': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
-            api_client=api_client
-        )
-        self.oc_unban_user_by_id_endpoint = _Endpoint(
-            settings={
-                'response_type': (OcDeleteChannelByUrl200Response,),
-                'auth': [],
-                'endpoint_path': '/v3/open_channels/{channel_url}/ban/{banned_user_id}',
-                'operation_id': 'oc_unban_user_by_id',
-                'http_method': 'DELETE',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'channel_url',
-                    'banned_user_id',
-                    'api_token',
-                ],
-                'required': [
-                    'channel_url',
-                    'banned_user_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'channel_url':
-                        (str,),
-                    'banned_user_id':
-                        (str,),
-                    'api_token':
-                        (str,),
-                },
-                'attribute_map': {
-                    'channel_url': 'channel_url',
-                    'banned_user_id': 'banned_user_id',
-                    'api_token': 'Api-Token',
-                },
-                'location_map': {
-                    'channel_url': 'path',
-                    'banned_user_id': 'path',
                     'api_token': 'header',
                 },
                 'collection_format_map': {
@@ -1434,258 +312,12 @@ class ModerationApi(object):
             },
             api_client=api_client
         )
-        self.oc_unmute_user_by_id_endpoint = _Endpoint(
-            settings={
-                'response_type': (OcDeleteChannelByUrl200Response,),
-                'auth': [],
-                'endpoint_path': '/v3/open_channels/{channel_url}/mute/{muted_user_id}',
-                'operation_id': 'oc_unmute_user_by_id',
-                'http_method': 'DELETE',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'channel_url',
-                    'muted_user_id',
-                    'api_token',
-                ],
-                'required': [
-                    'channel_url',
-                    'muted_user_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'channel_url':
-                        (str,),
-                    'muted_user_id':
-                        (str,),
-                    'api_token':
-                        (str,),
-                },
-                'attribute_map': {
-                    'channel_url': 'channel_url',
-                    'muted_user_id': 'muted_user_id',
-                    'api_token': 'Api-Token',
-                },
-                'location_map': {
-                    'channel_url': 'path',
-                    'muted_user_id': 'path',
-                    'api_token': 'header',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
-        self.oc_update_ban_by_id_endpoint = _Endpoint(
-            settings={
-                'response_type': (OcUpdateBanByIdResponse,),
-                'auth': [],
-                'endpoint_path': '/v3/open_channels/{channel_url}/ban/{banned_user_id}',
-                'operation_id': 'oc_update_ban_by_id',
-                'http_method': 'PUT',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'channel_url',
-                    'banned_user_id',
-                    'api_token',
-                    'oc_update_ban_by_id_data',
-                ],
-                'required': [
-                    'channel_url',
-                    'banned_user_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'channel_url':
-                        (str,),
-                    'banned_user_id':
-                        (str,),
-                    'api_token':
-                        (str,),
-                    'oc_update_ban_by_id_data':
-                        (OcUpdateBanByIdData,),
-                },
-                'attribute_map': {
-                    'channel_url': 'channel_url',
-                    'banned_user_id': 'banned_user_id',
-                    'api_token': 'Api-Token',
-                },
-                'location_map': {
-                    'channel_url': 'path',
-                    'banned_user_id': 'path',
-                    'api_token': 'header',
-                    'oc_update_ban_by_id_data': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
-            api_client=api_client
-        )
-        self.oc_view_ban_by_id_endpoint = _Endpoint(
-            settings={
-                'response_type': (OcViewBanByIdResponse,),
-                'auth': [],
-                'endpoint_path': '/v3/open_channels/{channel_url}/ban/{banned_user_id}',
-                'operation_id': 'oc_view_ban_by_id',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'channel_url',
-                    'banned_user_id',
-                    'api_token',
-                ],
-                'required': [
-                    'channel_url',
-                    'banned_user_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'channel_url':
-                        (str,),
-                    'banned_user_id':
-                        (str,),
-                    'api_token':
-                        (str,),
-                },
-                'attribute_map': {
-                    'channel_url': 'channel_url',
-                    'banned_user_id': 'banned_user_id',
-                    'api_token': 'Api-Token',
-                },
-                'location_map': {
-                    'channel_url': 'path',
-                    'banned_user_id': 'path',
-                    'api_token': 'header',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
-        self.oc_view_mute_by_id_endpoint = _Endpoint(
-            settings={
-                'response_type': (OcViewMuteByIdResponse,),
-                'auth': [],
-                'endpoint_path': '/v3/open_channels/{channel_url}/mute/{muted_user_id}',
-                'operation_id': 'oc_view_mute_by_id',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'channel_url',
-                    'muted_user_id',
-                    'api_token',
-                ],
-                'required': [
-                    'channel_url',
-                    'muted_user_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'channel_url':
-                        (str,),
-                    'muted_user_id':
-                        (str,),
-                    'api_token':
-                        (str,),
-                },
-                'attribute_map': {
-                    'channel_url': 'channel_url',
-                    'muted_user_id': 'muted_user_id',
-                    'api_token': 'Api-Token',
-                },
-                'location_map': {
-                    'channel_url': 'path',
-                    'muted_user_id': 'path',
-                    'api_token': 'header',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
-        self.unblock_user_by_id_endpoint = _Endpoint(
+        self.unblock_a_user_endpoint = _Endpoint(
             settings={
                 'response_type': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
                 'auth': [],
                 'endpoint_path': '/v3/users/{user_id}/block/{target_id}',
-                'operation_id': 'unblock_user_by_id',
+                'operation_id': 'unblock_a_user',
                 'http_method': 'DELETE',
                 'servers': None,
             },
@@ -1722,7 +354,7 @@ class ModerationApi(object):
                 'attribute_map': {
                     'user_id': 'user_id',
                     'target_id': 'target_id',
-                    'api_token': 'Api-Token',
+                    'api_token': 'api-token',
                 },
                 'location_map': {
                     'user_id': 'path',
@@ -1741,111 +373,26 @@ class ModerationApi(object):
             api_client=api_client
         )
 
-    def ban_from_channels_with_custom_channel_types(
-        self,
-        user_id,
-        **kwargs
-    ):
-        """Ban from channels with custom channel types  # noqa: E501
-
-        ## Ban from channels with custom channel types  Bans a user from channels with particular custom channel types.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-ban-from-channels-with-custom-channel-types ----------------------------  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.ban_from_channels_with_custom_channel_types(user_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            user_id (str):
-
-        Keyword Args:
-            api_token (str): [optional]
-            ban_from_channels_with_custom_channel_types_data (BanFromChannelsWithCustomChannelTypesData): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            {str: (bool, date, datetime, dict, float, int, list, str, none_type)}
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['user_id'] = \
-            user_id
-        return self.ban_from_channels_with_custom_channel_types_endpoint.call_with_http_info(**kwargs)
-
-    def block_user(
+    def block_a_user(
         self,
         user_id,
         **kwargs
     ):
         """Block a user  # noqa: E501
 
-        ## Block a user  Allows a user to block another user. A user doesn't receive messages from someone they have blocked anymore. Also, blocking someone doesn't alert them that they have been blocked. Blocked users still can send messages as normal in the channel: however, they can't receive any messages from the users who have blocked them.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-block-a-user ----------------------------  # noqa: E501
+        ## Block a user  A user can block another user if the user doesn't wish to receive any messages or notifications from the blocked user in a 1-to-1 group channel. In a 1-to-N group channel, the user can still receive messages from the blocked user, but this depends on the UI settings of the chat view. In any case, notifications from the blocked user won't be delivered to the 1-to-N group channel. You can choose whether or not the user can view [which users are blocked](https://sendbird.com/docs/chat/platform-api/v3/moderation/listing-blocked-and-blocking-users/list-blocked-and-blocking-users) in the channel UI.  Sendbird application provides two blocking options: include or exclude blocked users when sending invitations, and turn on or off notifications from blocked users. [Explicit and classic block modes](https://sendbird.com/docs/chat/platform-api/v3/deprecated#2-explicit-and-classic-block-modes) have been deprecated and are only supported for customers who started using them before they were deprecated.  - **Include or exclude blocked users when sending invitations**: Determines whether or not to automatically filter out blocked users when a user invites a group of users to a new group channel. By default, blocked users are included when sending invitations. The value of this option can be changed by Sendbird if your Sendbird application isn't integrated to the client app. If you want to change the value, [contact our sales team](https://get.sendbird.com/talk-to-sales.html).      - **Turn on or off notifications from blocked users**: Determines whether or not to receive message notifications from the blocked user in a specific 1-to-N group channel where they are both members. By default, a user doesn't receive notifications from blocked users. The value of this option can be set individually per channel. If you want to use this option, [contact our sales team](https://get.sendbird.com/talk-to-sales.html).       > **Note**: To learn more about other available moderation tools, see [Moderation Overview](https://sendbird.com/docs/chat/platform-api/v3/moderation/moderation-overview#2-actions).      The following tables explain what happens to a user's chat experience when the user blocks another user in a 1-to-1 or 1-to-N group channel. In the case of a 1-to-1 group channel, the block mode is only maintained with the original members. If other than the original members are added, the rules for 1-to-N group channel begin to apply.  [https://sendbird.com/docs/chat/platform-api/v3/moderation/blocking-users/block-users#1-block-users](https://sendbird.com/docs/chat/platform-api/v3/moderation/blocking-users/block-users#1-block-users)  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.block_user(user_id, async_req=True)
+        >>> thread = api.block_a_user(user_id, async_req=True)
         >>> result = thread.get()
 
         Args:
-            user_id (str):
+            user_id (str): (Required) 
 
         Keyword Args:
             api_token (str): [optional]
-            block_user_data (BlockUserData): [optional]
+            block_a_user_request (BlockAUserRequest): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -1878,7 +425,7 @@ class ModerationApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            BlockUserResponse
+            BlockAUserResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -1909,28 +456,28 @@ class ModerationApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['user_id'] = \
             user_id
-        return self.block_user_endpoint.call_with_http_info(**kwargs)
+        return self.block_a_user_endpoint.call_with_http_info(**kwargs)
 
-    def gc_ban_user(
+    def freeze_a_group_channel(
         self,
         channel_url,
         **kwargs
     ):
-        """Ban a user  # noqa: E501
+        """Freeze a group channel  # noqa: E501
 
-        ## Ban a user  Bans a user from a group channel. A banned user is immediately expelled from a channel and allowed to join the channel again after a set time period.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-ban-a-user ----------------------------  # noqa: E501
+        ## Freeze a group channel  Freezes or unfreezes a group channel.  > **Note**: To learn more about other available moderation tools, see [Moderation Overview](https://sendbird.com/docs/chat/platform-api/v3/moderation/moderation-overview#2-actions).      [https://sendbird.com/docs/chat/platform-api/v3/moderation/freezing-a-channel/freeze-a-group-channel#1-freeze-a-group-channel](https://sendbird.com/docs/chat/platform-api/v3/moderation/freezing-a-channel/freeze-a-group-channel#1-freeze-a-group-channel)  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.gc_ban_user(channel_url, async_req=True)
+        >>> thread = api.freeze_a_group_channel(channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
-            channel_url (str):
+            channel_url (str): (Required) 
 
         Keyword Args:
             api_token (str): [optional]
-            gc_ban_user_data (GcBanUserData): [optional]
+            freeze_a_group_channel_request (FreezeAGroupChannelRequest): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -1963,7 +510,7 @@ class ModerationApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            GcBanUserResponse
+            SendbirdGroupChannelDetail
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -1994,28 +541,28 @@ class ModerationApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['channel_url'] = \
             channel_url
-        return self.gc_ban_user_endpoint.call_with_http_info(**kwargs)
+        return self.freeze_a_group_channel_endpoint.call_with_http_info(**kwargs)
 
-    def gc_freeze_channel(
+    def freeze_an_open_channel(
         self,
         channel_url,
         **kwargs
     ):
-        """Freeze a channel  # noqa: E501
+        """Freeze an open channel  # noqa: E501
 
-        ## Freeze a channel  Freezes or unfreezes a group channel.  > __Note__: Only users designated as channel operators are allowed to talk when a channel is frozen.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-freeze-a-channel ----------------------------  # noqa: E501
+        ## Freeze an open channel  Freezes or unfreezes an open channel.  > **Note**: To learn more about other available moderation tools, see [Moderation Overview](https://sendbird.com/docs/chat/platform-api/v3/moderation/moderation-overview#2-actions).      [https://sendbird.com/docs/chat/platform-api/v3/moderation/freezing-a-channel/freeze-an-open-channel#1-freeze-an-open-channel](https://sendbird.com/docs/chat/platform-api/v3/moderation/freezing-a-channel/freeze-an-open-channel#1-freeze-an-open-channel)  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.gc_freeze_channel(channel_url, async_req=True)
+        >>> thread = api.freeze_an_open_channel(channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
-            channel_url (str):
+            channel_url (str): (Required) 
 
         Keyword Args:
             api_token (str): [optional]
-            gc_freeze_channel_data (GcFreezeChannelData): [optional]
+            freeze_an_open_channel_request (FreezeAnOpenChannelRequest): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -2048,7 +595,7 @@ class ModerationApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            SendBirdGroupChannel
+            SendbirdOpenChannel
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2079,791 +626,7 @@ class ModerationApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['channel_url'] = \
             channel_url
-        return self.gc_freeze_channel_endpoint.call_with_http_info(**kwargs)
-
-    def gc_list_banned_users(
-        self,
-        channel_url,
-        **kwargs
-    ):
-        """List banned users  # noqa: E501
-
-        ## List banned users  Retrieves a list of the banned users from a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-list-banned-users ----------------------------   `channel_url`      Type: string      Description: Specifies the URL of the channel where to retrieve a list of banned users.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.gc_list_banned_users(channel_url, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            channel_url (str):
-
-        Keyword Args:
-            api_token (str): [optional]
-            token (str): [optional]
-            limit (int): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            GcListBannedUsersResponse
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['channel_url'] = \
-            channel_url
-        return self.gc_list_banned_users_endpoint.call_with_http_info(**kwargs)
-
-    def gc_list_muted_users(
-        self,
-        channel_url,
-        **kwargs
-    ):
-        """List muted users  # noqa: E501
-
-        ## List muted users  Retrieves a list of the muted users in a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-list-muted-users ----------------------------   `channel_url`      Type: string      Description: Specifies the URL of the channel to retrieve a list of muted users.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.gc_list_muted_users(channel_url, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            channel_url (str):
-
-        Keyword Args:
-            api_token (str): [optional]
-            token (str): [optional]
-            limit (int): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            GcListMutedUsersResponse
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['channel_url'] = \
-            channel_url
-        return self.gc_list_muted_users_endpoint.call_with_http_info(**kwargs)
-
-    def gc_mute_user(
-        self,
-        channel_url,
-        **kwargs
-    ):
-        """Mute a user  # noqa: E501
-
-        ## Mute a user  Mutes a user in a group channel. A muted user remains in the channel and is allowed to view the messages, but can't send any messages until unmuted.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-mute-a-user ----------------------------  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.gc_mute_user(channel_url, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            channel_url (str):
-
-        Keyword Args:
-            api_token (str): [optional]
-            gc_mute_user_data (GcMuteUserData): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            SendBirdGroupChannel
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['channel_url'] = \
-            channel_url
-        return self.gc_mute_user_endpoint.call_with_http_info(**kwargs)
-
-    def gc_unban_user_by_id(
-        self,
-        channel_url,
-        banned_user_id,
-        **kwargs
-    ):
-        """Unban a user  # noqa: E501
-
-        ## Unban a user  Unbans a user from a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-unban-a-user ----------------------------  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.gc_unban_user_by_id(channel_url, banned_user_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            channel_url (str):
-            banned_user_id (str):
-
-        Keyword Args:
-            api_token (str): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            OcDeleteChannelByUrl200Response
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['channel_url'] = \
-            channel_url
-        kwargs['banned_user_id'] = \
-            banned_user_id
-        return self.gc_unban_user_by_id_endpoint.call_with_http_info(**kwargs)
-
-    def gc_unmute_user_by_id(
-        self,
-        channel_url,
-        muted_user_id,
-        **kwargs
-    ):
-        """Unmute a user  # noqa: E501
-
-        ## Unmute a user  Unmutes a user within a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-unmute-a-user ----------------------------  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.gc_unmute_user_by_id(channel_url, muted_user_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            channel_url (str):
-            muted_user_id (str):
-
-        Keyword Args:
-            api_token (str): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            OcDeleteChannelByUrl200Response
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['channel_url'] = \
-            channel_url
-        kwargs['muted_user_id'] = \
-            muted_user_id
-        return self.gc_unmute_user_by_id_endpoint.call_with_http_info(**kwargs)
-
-    def gc_update_ban_by_id(
-        self,
-        channel_url,
-        banned_user_id,
-        **kwargs
-    ):
-        """Update a ban  # noqa: E501
-
-        ## Update a ban  Updates details of a ban imposed on a user. You can change the length of the ban with this action, and also provide an updated description.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-update-a-ban ----------------------------  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.gc_update_ban_by_id(channel_url, banned_user_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            channel_url (str):
-            banned_user_id (str):
-
-        Keyword Args:
-            api_token (str): [optional]
-            gc_update_ban_by_id_data (GcUpdateBanByIdData): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            GcUpdateBanByIdResponse
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['channel_url'] = \
-            channel_url
-        kwargs['banned_user_id'] = \
-            banned_user_id
-        return self.gc_update_ban_by_id_endpoint.call_with_http_info(**kwargs)
-
-    def gc_view_ban_by_id(
-        self,
-        channel_url,
-        banned_user_id,
-        **kwargs
-    ):
-        """View a ban  # noqa: E501
-
-        ## View a ban  Retrieves details of a ban imposed on a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-view-a-ban ----------------------------  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.gc_view_ban_by_id(channel_url, banned_user_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            channel_url (str):
-            banned_user_id (str):
-
-        Keyword Args:
-            api_token (str): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            GcViewBanByIdResponse
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['channel_url'] = \
-            channel_url
-        kwargs['banned_user_id'] = \
-            banned_user_id
-        return self.gc_view_ban_by_id_endpoint.call_with_http_info(**kwargs)
-
-    def gc_view_mute_by_id(
-        self,
-        channel_url,
-        muted_user_id,
-        **kwargs
-    ):
-        """View a mute  # noqa: E501
-
-        ## View a mute  Checks if a user is muted in a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-view-a-mute ----------------------------  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.gc_view_mute_by_id(channel_url, muted_user_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            channel_url (str):
-            muted_user_id (str):
-
-        Keyword Args:
-            api_token (str): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            GcViewMuteByIdResponse
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['channel_url'] = \
-            channel_url
-        kwargs['muted_user_id'] = \
-            muted_user_id
-        return self.gc_view_mute_by_id_endpoint.call_with_http_info(**kwargs)
-
-    def list_banned_channels(
-        self,
-        user_id,
-        **kwargs
-    ):
-        """List banned channels  # noqa: E501
-
-        ## List banned channels  Retrieves a list of open and group channels with additional information where a user is banned.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-list-banned-channels ----------------------------   `user_id`      Type: string      Description: Specifies the unique ID of the target user.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.list_banned_channels(user_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            user_id (str):
-
-        Keyword Args:
-            api_token (str): [optional]
-            token (str): [optional]
-            limit (int): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            ListBannedChannelsResponse
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['user_id'] = \
-            user_id
-        return self.list_banned_channels_endpoint.call_with_http_info(**kwargs)
+        return self.freeze_an_open_channel_endpoint.call_with_http_info(**kwargs)
 
     def list_blocked_users(
         self,
@@ -2872,7 +635,7 @@ class ModerationApi(object):
     ):
         """List blocked users  # noqa: E501
 
-        ## List blocked users  Retrieves a list of other users that a user has blocked.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-list-blocked-users ----------------------------   `user_id`      Type: string      Description: Specifies the unique ID of the target user.  # noqa: E501
+        ## List blocked by and blocking users  This action retrieves a list of users who are either blocked by a specific user or a list of users who are blocking a specific user.  [https://sendbird.com/docs/chat/platform-api/v3/moderation/listing-blocked-and-blocking-users/list-blocked-and-blocking-users#1-list-blocked-by-and-blocking-users](https://sendbird.com/docs/chat/platform-api/v3/moderation/listing-blocked-and-blocking-users/list-blocked-and-blocking-users#1-list-blocked-by-and-blocking-users)  `user_id`   Type: string   Description: Specifies the unique ID of the target user.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -2880,15 +643,16 @@ class ModerationApi(object):
         >>> result = thread.get()
 
         Args:
-            user_id (str):
+            user_id (str): (Required) 
 
         Keyword Args:
-            api_token (str): [optional]
+            list (str): Specifies whether to retrieve a list of users who are blocked by the specified user or a list of users who are blocking the specified user. Acceptable values are blocked_by_me and blocking_me. The `me` in the values refers to the user specified in the parameter. (Default: blocked_by_me). [optional]
             token (str): [optional]
             limit (int): [optional]
-            user_ids (str): [optional]
+            user_ids (str): Specifies the user IDs of the blocked or blocking users to search for. The value should be a comma-separated string that consists of multiple URL encoded user IDs.. [optional]
             metadatakey (str): [optional]
             metadatavalues_in (str): [optional]
+            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -2954,1046 +718,7 @@ class ModerationApi(object):
             user_id
         return self.list_blocked_users_endpoint.call_with_http_info(**kwargs)
 
-    def list_muted_channels(
-        self,
-        user_id,
-        **kwargs
-    ):
-        """List muted channels  # noqa: E501
-
-        ## List muted channels  Retrieves a list of open and group channels with additional information where a user is muted.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-list-muted-channels ----------------------------   `user_id`      Type: string      Description: Specifies the unique ID of the target user.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.list_muted_channels(user_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            user_id (str):
-
-        Keyword Args:
-            api_token (str): [optional]
-            token (str): [optional]
-            limit (int): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            ListMutedChannelsResponse
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['user_id'] = \
-            user_id
-        return self.list_muted_channels_endpoint.call_with_http_info(**kwargs)
-
-    def mute_in_channels_with_custom_channel_types(
-        self,
-        user_id,
-        **kwargs
-    ):
-        """Mute in channels with custom channel types  # noqa: E501
-
-        ## Mute in channels with custom channel types  Mutes a user in channels with particular custom channel types.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-mute-in-channels-with-custom-channel-types ----------------------------  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.mute_in_channels_with_custom_channel_types(user_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            user_id (str):
-
-        Keyword Args:
-            api_token (str): [optional]
-            mute_in_channels_with_custom_channel_types_data (MuteInChannelsWithCustomChannelTypesData): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            {str: (bool, date, datetime, dict, float, int, list, str, none_type)}
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['user_id'] = \
-            user_id
-        return self.mute_in_channels_with_custom_channel_types_endpoint.call_with_http_info(**kwargs)
-
-    def oc_ban_user(
-        self,
-        channel_url,
-        **kwargs
-    ):
-        """Ban a user  # noqa: E501
-
-        ## Ban a user  Bans a user from an open channel. A banned user is immediately expelled from a channel and allowed to participate in the channel again after a set time period.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-ban-a-user ----------------------------  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.oc_ban_user(channel_url, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            channel_url (str):
-
-        Keyword Args:
-            api_token (str): [optional]
-            oc_ban_user_data (OcBanUserData): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            OcBanUserResponse
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['channel_url'] = \
-            channel_url
-        return self.oc_ban_user_endpoint.call_with_http_info(**kwargs)
-
-    def oc_freeze_channel(
-        self,
-        channel_url,
-        **kwargs
-    ):
-        """Freeze a channel  # noqa: E501
-
-        ## Freeze a channel  Freezes or unfreezes an open channel.  > __Note__: Only users designated as channel operators are allowed to talk when a channel is frozen.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-freeze-a-channel ----------------------------  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.oc_freeze_channel(channel_url, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            channel_url (str):
-
-        Keyword Args:
-            api_token (str): [optional]
-            oc_freeze_channel_data (OcFreezeChannelData): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            SendBirdOpenChannel
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['channel_url'] = \
-            channel_url
-        return self.oc_freeze_channel_endpoint.call_with_http_info(**kwargs)
-
-    def oc_list_banned_users(
-        self,
-        channel_url,
-        **kwargs
-    ):
-        """List banned users  # noqa: E501
-
-        ## List banned users  Retrieves a list of banned users from a specific open channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-list-banned-users ----------------------------   `channel_url`      Type: string      Description: Specifies the URL of the channel where to retrieve a list of banned users.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.oc_list_banned_users(channel_url, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            channel_url (str):
-
-        Keyword Args:
-            api_token (str): [optional]
-            token (str): [optional]
-            limit (int): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            OcListBannedUsersResponse
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['channel_url'] = \
-            channel_url
-        return self.oc_list_banned_users_endpoint.call_with_http_info(**kwargs)
-
-    def oc_list_muted_users(
-        self,
-        channel_url,
-        **kwargs
-    ):
-        """List muted users  # noqa: E501
-
-        ## List muted users  Retrieves a list of muted users in the channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-list-muted-users ----------------------------   `channel_url`      Type: string      Description: Specifies the URL of the channel to retrieve a list of muted users.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.oc_list_muted_users(channel_url, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            channel_url (str):
-
-        Keyword Args:
-            api_token (str): [optional]
-            token (str): [optional]
-            limit (int): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            OcListMutedUsersResponse
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['channel_url'] = \
-            channel_url
-        return self.oc_list_muted_users_endpoint.call_with_http_info(**kwargs)
-
-    def oc_mute_user(
-        self,
-        channel_url,
-        **kwargs
-    ):
-        """Mute a user  # noqa: E501
-
-        ## Mute a user  Mutes a user in the channel. A muted user remains in the channel and is allowed to view the messages, but can't send any messages until unmuted.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-mute-a-user  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.oc_mute_user(channel_url, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            channel_url (str):
-
-        Keyword Args:
-            api_token (str): [optional]
-            oc_mute_user_data (OcMuteUserData): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            SendBirdOpenChannel
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['channel_url'] = \
-            channel_url
-        return self.oc_mute_user_endpoint.call_with_http_info(**kwargs)
-
-    def oc_unban_user_by_id(
-        self,
-        channel_url,
-        banned_user_id,
-        **kwargs
-    ):
-        """Unban a user  # noqa: E501
-
-        ## Unban a user  Unbans a user from an open channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-unban-a-user ----------------------------  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.oc_unban_user_by_id(channel_url, banned_user_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            channel_url (str):
-            banned_user_id (str):
-
-        Keyword Args:
-            api_token (str): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            OcDeleteChannelByUrl200Response
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['channel_url'] = \
-            channel_url
-        kwargs['banned_user_id'] = \
-            banned_user_id
-        return self.oc_unban_user_by_id_endpoint.call_with_http_info(**kwargs)
-
-    def oc_unmute_user_by_id(
-        self,
-        channel_url,
-        muted_user_id,
-        **kwargs
-    ):
-        """Unmute a user  # noqa: E501
-
-        ## Unmute a user  Unmutes a user from an open channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-unmute-a-user ----------------------------  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.oc_unmute_user_by_id(channel_url, muted_user_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            channel_url (str):
-            muted_user_id (str):
-
-        Keyword Args:
-            api_token (str): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            OcDeleteChannelByUrl200Response
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['channel_url'] = \
-            channel_url
-        kwargs['muted_user_id'] = \
-            muted_user_id
-        return self.oc_unmute_user_by_id_endpoint.call_with_http_info(**kwargs)
-
-    def oc_update_ban_by_id(
-        self,
-        channel_url,
-        banned_user_id,
-        **kwargs
-    ):
-        """Update a ban  # noqa: E501
-
-        ## Update a ban  Updates details of a ban imposed on a user. You can change the length of a ban with this action, and also provide an updated description.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-update-a-ban ----------------------------  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.oc_update_ban_by_id(channel_url, banned_user_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            channel_url (str):
-            banned_user_id (str):
-
-        Keyword Args:
-            api_token (str): [optional]
-            oc_update_ban_by_id_data (OcUpdateBanByIdData): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            OcUpdateBanByIdResponse
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['channel_url'] = \
-            channel_url
-        kwargs['banned_user_id'] = \
-            banned_user_id
-        return self.oc_update_ban_by_id_endpoint.call_with_http_info(**kwargs)
-
-    def oc_view_ban_by_id(
-        self,
-        channel_url,
-        banned_user_id,
-        **kwargs
-    ):
-        """View a ban  # noqa: E501
-
-        ## View a ban  Retrieves details of a ban imposed on a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-view-a-ban ----------------------------  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.oc_view_ban_by_id(channel_url, banned_user_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            channel_url (str):
-            banned_user_id (str):
-
-        Keyword Args:
-            api_token (str): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            OcViewBanByIdResponse
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['channel_url'] = \
-            channel_url
-        kwargs['banned_user_id'] = \
-            banned_user_id
-        return self.oc_view_ban_by_id_endpoint.call_with_http_info(**kwargs)
-
-    def oc_view_mute_by_id(
-        self,
-        channel_url,
-        muted_user_id,
-        **kwargs
-    ):
-        """View a mute  # noqa: E501
-
-        ## View a mute  Checks if a user is muted in an open channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-view-a-mute ----------------------------  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.oc_view_mute_by_id(channel_url, muted_user_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            channel_url (str):
-            muted_user_id (str):
-
-        Keyword Args:
-            api_token (str): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            OcViewMuteByIdResponse
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['channel_url'] = \
-            channel_url
-        kwargs['muted_user_id'] = \
-            muted_user_id
-        return self.oc_view_mute_by_id_endpoint.call_with_http_info(**kwargs)
-
-    def unblock_user_by_id(
+    def unblock_a_user(
         self,
         user_id,
         target_id,
@@ -4001,16 +726,16 @@ class ModerationApi(object):
     ):
         """Unblock a user  # noqa: E501
 
-        ## Unblock a user  Unblocks the user.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-unblock-a-user ----------------------------  # noqa: E501
+        ## Unblock a user  Unblocks the user.  https://sendbird.com/docs/chat/platform-api/v3/moderation/blocking-users/unblock-a-user#1-unblock-a-user  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.unblock_user_by_id(user_id, target_id, async_req=True)
+        >>> thread = api.unblock_a_user(user_id, target_id, async_req=True)
         >>> result = thread.get()
 
         Args:
-            user_id (str):
-            target_id (str):
+            user_id (str): (Required) 
+            target_id (str): (Required) 
 
         Keyword Args:
             api_token (str): [optional]
@@ -4079,5 +804,5 @@ class ModerationApi(object):
             user_id
         kwargs['target_id'] = \
             target_id
-        return self.unblock_user_by_id_endpoint.call_with_http_info(**kwargs)
+        return self.unblock_a_user_endpoint.call_with_http_info(**kwargs)
 

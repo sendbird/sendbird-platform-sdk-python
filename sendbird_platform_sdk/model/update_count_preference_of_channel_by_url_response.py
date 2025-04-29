@@ -1,7 +1,7 @@
 """
     Sendbird Platform SDK
 
-    Sendbird Platform API SDK  https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api  # noqa: E501
+    Sendbird Platform API SDK  [https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api](https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api)  Contact Support:   Name: Sendbird   Email: [support@sendbird.com](https://mailto:support@sendbird.com)  # noqa: E501
 
     The version of the OpenAPI document: 1.0.0
     Contact: support@sendbird.com
@@ -56,6 +56,12 @@ class UpdateCountPreferenceOfChannelByUrlResponse(ModelNormal):
     """
 
     allowed_values = {
+        ('count_preference',): {
+            'FALSE': "false",
+            'ALL': "all",
+            'UNREAD_MESSAGE_COUNT_ONLY': "unread_message_count_only",
+            'UNREAD_MENTIONED_COUNT_ONLY': "unread_mentioned_count_only",
+        },
     }
 
     validations = {

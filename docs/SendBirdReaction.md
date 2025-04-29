@@ -1,11 +1,11 @@
-# SendBirdReaction
+# SendbirdReaction
 
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **key** | **str** |  | [optional] 
-**updated_at** | **float** |  | [optional] 
+**updated_at** | **int** |  | [optional] 
 **user_ids** | **[str]** |  | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 

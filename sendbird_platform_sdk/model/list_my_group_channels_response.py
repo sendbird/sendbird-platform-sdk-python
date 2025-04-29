@@ -1,7 +1,7 @@
 """
     Sendbird Platform SDK
 
-    Sendbird Platform API SDK  https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api  # noqa: E501
+    Sendbird Platform API SDK  [https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api](https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api)  Contact Support:   Name: Sendbird   Email: [support@sendbird.com](https://mailto:support@sendbird.com)  # noqa: E501
 
     The version of the OpenAPI document: 1.0.0
     Contact: support@sendbird.com
@@ -31,8 +31,8 @@ from sendbird_platform_sdk.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from sendbird_platform_sdk.model.send_bird_group_channel import SendBirdGroupChannel
-    globals()['SendBirdGroupChannel'] = SendBirdGroupChannel
+    from sendbird_platform_sdk.model.sendbird_group_channel import SendbirdGroupChannel
+    globals()['SendbirdGroupChannel'] = SendbirdGroupChannel
 
 
 class ListMyGroupChannelsResponse(ModelNormal):
@@ -88,9 +88,9 @@ class ListMyGroupChannelsResponse(ModelNormal):
         """
         lazy_import()
         return {
-            'channels': ([SendBirdGroupChannel],),  # noqa: E501
+            'channels': ([SendbirdGroupChannel],),  # noqa: E501
             'next': (str,),  # noqa: E501
-            'ts': (float,),  # noqa: E501
+            'ts': (int,),  # noqa: E501
         }
 
     @cached_property
@@ -145,9 +145,9 @@ class ListMyGroupChannelsResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            channels ([SendBirdGroupChannel]): [optional]  # noqa: E501
+            channels ([SendbirdGroupChannel]): [optional]  # noqa: E501
             next (str): [optional]  # noqa: E501
-            ts (float): [optional]  # noqa: E501
+            ts (int): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -233,9 +233,9 @@ class ListMyGroupChannelsResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            channels ([SendBirdGroupChannel]): [optional]  # noqa: E501
+            channels ([SendbirdGroupChannel]): [optional]  # noqa: E501
             next (str): [optional]  # noqa: E501
-            ts (float): [optional]  # noqa: E501
+            ts (int): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**users** | [**[SendBirdUser]**](SendBirdUser.md) |  | [optional] 
+**users** | [**[SendbirdUser]**](SendbirdUser.md) |  | [optional] 
 **next** | **str** |  | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 

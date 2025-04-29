@@ -1,7 +1,7 @@
 """
     Sendbird Platform SDK
 
-    Sendbird Platform API SDK  https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api  # noqa: E501
+    Sendbird Platform API SDK  [https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api](https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api)  Contact Support:   Name: Sendbird   Email: [support@sendbird.com](https://mailto:support@sendbird.com)  # noqa: E501
 
     The version of the OpenAPI document: 1.0.0
     Contact: support@sendbird.com
@@ -31,8 +31,8 @@ from sendbird_platform_sdk.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from sendbird_platform_sdk.model.send_bird_user import SendBirdUser
-    globals()['SendBirdUser'] = SendBirdUser
+    from sendbird_platform_sdk.model.sendbird_user import SendbirdUser
+    globals()['SendbirdUser'] = SendbirdUser
 
 
 class ListUsersResponse(ModelNormal):
@@ -88,8 +88,8 @@ class ListUsersResponse(ModelNormal):
         """
         lazy_import()
         return {
-            'users': ([SendBirdUser],),  # noqa: E501
             'next': (str,),  # noqa: E501
+            'users': ([SendbirdUser],),  # noqa: E501
         }
 
     @cached_property
@@ -98,8 +98,8 @@ class ListUsersResponse(ModelNormal):
 
 
     attribute_map = {
-        'users': 'users',  # noqa: E501
         'next': 'next',  # noqa: E501
+        'users': 'users',  # noqa: E501
     }
 
     read_only_vars = {
@@ -143,8 +143,8 @@ class ListUsersResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            users ([SendBirdUser]): [optional]  # noqa: E501
             next (str): [optional]  # noqa: E501
+            users ([SendbirdUser]): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -230,8 +230,8 @@ class ListUsersResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            users ([SendBirdUser]): [optional]  # noqa: E501
             next (str): [optional]  # noqa: E501
+            users ([SendbirdUser]): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

@@ -1,7 +1,7 @@
 """
     Sendbird Platform SDK
 
-    Sendbird Platform API SDK  https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api  # noqa: E501
+    Sendbird Platform API SDK  [https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api](https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api)  Contact Support:   Name: Sendbird   Email: [support@sendbird.com](https://mailto:support@sendbird.com)  # noqa: E501
 
     The version of the OpenAPI document: 1.0.0
     Contact: support@sendbird.com
@@ -24,150 +24,31 @@ class TestMetadataApi(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def test_create_channel_metacounter(self):
-        """Test case for create_channel_metacounter
-
-        Create a channel metacounter  # noqa: E501
-        """
-        pass
-
-    def test_create_channel_metadata(self):
-        """Test case for create_channel_metadata
+    def test_create_a_channel_metadata(self):
+        """Test case for create_a_channel_metadata
 
         Create a channel metadata  # noqa: E501
         """
         pass
 
-    def test_create_user_metadata(self):
-        """Test case for create_user_metadata
-
-        Create a user metadata  # noqa: E501
-        """
-        pass
-
-    def test_delete_channel_metacounter(self):
-        """Test case for delete_channel_metacounter
-
-        Delete a channel metacounter - When deleting all items of a channel metacounter  # noqa: E501
-        """
-        pass
-
-    def test_delete_channel_metacounter_by_key(self):
-        """Test case for delete_channel_metacounter_by_key
-
-        Delete a channel metacounter - When deleting a specific item of a channel metacounter by its key  # noqa: E501
-        """
-        pass
-
-    def test_delete_channel_metadata(self):
-        """Test case for delete_channel_metadata
+    def test_delete_a_channel_metadata_when_deleting_all_items_of_a_channel_metadata(self):
+        """Test case for delete_a_channel_metadata_when_deleting_all_items_of_a_channel_metadata
 
         Delete a channel metadata - When deleting all items of a channel metadata  # noqa: E501
         """
         pass
 
-    def test_delete_channel_metadata_by_key(self):
-        """Test case for delete_channel_metadata_by_key
-
-        Delete a channel metadata - When deleting a specific item of a channel metadata by its key  # noqa: E501
-        """
-        pass
-
-    def test_delete_user_metadata(self):
-        """Test case for delete_user_metadata
-
-        Delete a user metadata - When deleting all items of a user metadata  # noqa: E501
-        """
-        pass
-
-    def test_delete_user_metadata_by_key(self):
-        """Test case for delete_user_metadata_by_key
-
-        Delete a user metadata - When deleting a specific item of a user metadata by its key  # noqa: E501
-        """
-        pass
-
-    def test_update_channel_metacounter(self):
-        """Test case for update_channel_metacounter
-
-        Update a channel metacounter - When updating existing items of a channel metacounter by their keys or adding new items to the metacounter  # noqa: E501
-        """
-        pass
-
-    def test_update_channel_metacounter_by_key(self):
-        """Test case for update_channel_metacounter_by_key
-
-        Update a channel metacounter - When updating a specific item of a channel metacounter by its key  # noqa: E501
-        """
-        pass
-
-    def test_update_channel_metadata(self):
-        """Test case for update_channel_metadata
+    def test_update_a_channel_metadata(self):
+        """Test case for update_a_channel_metadata
 
         Update a channel metadata - When updating existing items of a channel metadata by their keys or adding new items to the metadata  # noqa: E501
         """
         pass
 
-    def test_update_channel_metadata_by_key(self):
-        """Test case for update_channel_metadata_by_key
-
-        Update a channel metadata - When updating a specific item of a channel metadata by its key  # noqa: E501
-        """
-        pass
-
-    def test_update_user_metadata(self):
-        """Test case for update_user_metadata
-
-        Update a user metadata - When updating existing items of a user metadata by their keys or adding new items to the metadata  # noqa: E501
-        """
-        pass
-
-    def test_update_user_metadata_by_key(self):
-        """Test case for update_user_metadata_by_key
-
-        Update a user metadata - When updating a specific item of a user metadata by its key  # noqa: E501
-        """
-        pass
-
-    def test_view_channel_metacounter(self):
-        """Test case for view_channel_metacounter
-
-        View a channel metacounter - When retrieving all items of a channel metacounter  # noqa: E501
-        """
-        pass
-
-    def test_view_channel_metacounter_by_key(self):
-        """Test case for view_channel_metacounter_by_key
-
-        View a channel metacounter - When retrieving a specific item of a channel metacounter by its key  # noqa: E501
-        """
-        pass
-
-    def test_view_channel_metadata(self):
-        """Test case for view_channel_metadata
+    def test_view_a_channel_metadata_when_retrieving_all_items_of_a_channel_metadata(self):
+        """Test case for view_a_channel_metadata_when_retrieving_all_items_of_a_channel_metadata
 
         View a channel metadata - When retrieving all items of a channel metadata  # noqa: E501
-        """
-        pass
-
-    def test_view_channel_metadata_by_key(self):
-        """Test case for view_channel_metadata_by_key
-
-        View a channel metadata - When retrieving a specific item of a channel metadata by its key  # noqa: E501
-        """
-        pass
-
-    def test_view_user_metadata(self):
-        """Test case for view_user_metadata
-
-        View a user metadata - When retrieving all items of a user metadata  # noqa: E501
-        """
-        pass
-
-    def test_view_user_metadata_by_key(self):
-        """Test case for view_user_metadata_by_key
-
-        View a user metadata - When retrieving a specific item of a user metadata by its key  # noqa: E501
         """
         pass
 

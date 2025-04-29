@@ -1,7 +1,7 @@
 """
     Sendbird Platform SDK
 
-    Sendbird Platform API SDK  https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api  # noqa: E501
+    Sendbird Platform API SDK  [https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api](https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api)  Contact Support:   Name: Sendbird   Email: [support@sendbird.com](https://mailto:support@sendbird.com)  # noqa: E501
 
     The version of the OpenAPI document: 1.0.0
     Contact: support@sendbird.com
@@ -24,94 +24,24 @@ class TestModerationApi(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def test_ban_from_channels_with_custom_channel_types(self):
-        """Test case for ban_from_channels_with_custom_channel_types
-
-        Ban from channels with custom channel types  # noqa: E501
-        """
-        pass
-
-    def test_block_user(self):
-        """Test case for block_user
+    def test_block_a_user(self):
+        """Test case for block_a_user
 
         Block a user  # noqa: E501
         """
         pass
 
-    def test_gc_ban_user(self):
-        """Test case for gc_ban_user
+    def test_freeze_a_group_channel(self):
+        """Test case for freeze_a_group_channel
 
-        Ban a user  # noqa: E501
+        Freeze a group channel  # noqa: E501
         """
         pass
 
-    def test_gc_freeze_channel(self):
-        """Test case for gc_freeze_channel
+    def test_freeze_an_open_channel(self):
+        """Test case for freeze_an_open_channel
 
-        Freeze a channel  # noqa: E501
-        """
-        pass
-
-    def test_gc_list_banned_users(self):
-        """Test case for gc_list_banned_users
-
-        List banned users  # noqa: E501
-        """
-        pass
-
-    def test_gc_list_muted_users(self):
-        """Test case for gc_list_muted_users
-
-        List muted users  # noqa: E501
-        """
-        pass
-
-    def test_gc_mute_user(self):
-        """Test case for gc_mute_user
-
-        Mute a user  # noqa: E501
-        """
-        pass
-
-    def test_gc_unban_user_by_id(self):
-        """Test case for gc_unban_user_by_id
-
-        Unban a user  # noqa: E501
-        """
-        pass
-
-    def test_gc_unmute_user_by_id(self):
-        """Test case for gc_unmute_user_by_id
-
-        Unmute a user  # noqa: E501
-        """
-        pass
-
-    def test_gc_update_ban_by_id(self):
-        """Test case for gc_update_ban_by_id
-
-        Update a ban  # noqa: E501
-        """
-        pass
-
-    def test_gc_view_ban_by_id(self):
-        """Test case for gc_view_ban_by_id
-
-        View a ban  # noqa: E501
-        """
-        pass
-
-    def test_gc_view_mute_by_id(self):
-        """Test case for gc_view_mute_by_id
-
-        View a mute  # noqa: E501
-        """
-        pass
-
-    def test_list_banned_channels(self):
-        """Test case for list_banned_channels
-
-        List banned channels  # noqa: E501
+        Freeze an open channel  # noqa: E501
         """
         pass
 
@@ -122,92 +52,8 @@ class TestModerationApi(unittest.TestCase):
         """
         pass
 
-    def test_list_muted_channels(self):
-        """Test case for list_muted_channels
-
-        List muted channels  # noqa: E501
-        """
-        pass
-
-    def test_mute_in_channels_with_custom_channel_types(self):
-        """Test case for mute_in_channels_with_custom_channel_types
-
-        Mute in channels with custom channel types  # noqa: E501
-        """
-        pass
-
-    def test_oc_ban_user(self):
-        """Test case for oc_ban_user
-
-        Ban a user  # noqa: E501
-        """
-        pass
-
-    def test_oc_freeze_channel(self):
-        """Test case for oc_freeze_channel
-
-        Freeze a channel  # noqa: E501
-        """
-        pass
-
-    def test_oc_list_banned_users(self):
-        """Test case for oc_list_banned_users
-
-        List banned users  # noqa: E501
-        """
-        pass
-
-    def test_oc_list_muted_users(self):
-        """Test case for oc_list_muted_users
-
-        List muted users  # noqa: E501
-        """
-        pass
-
-    def test_oc_mute_user(self):
-        """Test case for oc_mute_user
-
-        Mute a user  # noqa: E501
-        """
-        pass
-
-    def test_oc_unban_user_by_id(self):
-        """Test case for oc_unban_user_by_id
-
-        Unban a user  # noqa: E501
-        """
-        pass
-
-    def test_oc_unmute_user_by_id(self):
-        """Test case for oc_unmute_user_by_id
-
-        Unmute a user  # noqa: E501
-        """
-        pass
-
-    def test_oc_update_ban_by_id(self):
-        """Test case for oc_update_ban_by_id
-
-        Update a ban  # noqa: E501
-        """
-        pass
-
-    def test_oc_view_ban_by_id(self):
-        """Test case for oc_view_ban_by_id
-
-        View a ban  # noqa: E501
-        """
-        pass
-
-    def test_oc_view_mute_by_id(self):
-        """Test case for oc_view_mute_by_id
-
-        View a mute  # noqa: E501
-        """
-        pass
-
-    def test_unblock_user_by_id(self):
-        """Test case for unblock_user_by_id
+    def test_unblock_a_user(self):
+        """Test case for unblock_a_user
 
         Unblock a user  # noqa: E501
         """
