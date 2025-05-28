@@ -89,7 +89,12 @@ class AddApnsPushConfigurationData(ModelNormal):
             'content_available': (bool,),  # noqa: E501
             'mutable_content': (bool,),  # noqa: E501
             'push_sound': (str,),  # noqa: E501
-            'apns_type': (str,),  # noqa: E501
+            'apns_type': (str,),  # noqa: E501 
+            # NEW: Add these for .p8 support
+            'apns_p8': (file_type,),  # noqa: E501
+            'apns_key_id': (str,),  # noqa: E501
+            'apns_team_id': (str,),  # noqa: E501
+            'apns_bundle_id': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -105,7 +110,11 @@ class AddApnsPushConfigurationData(ModelNormal):
         'content_available': 'content_available',  # noqa: E501
         'mutable_content': 'mutable_content',  # noqa: E501
         'push_sound': 'push_sound',  # noqa: E501
-        'apns_type': 'apns_type',  # noqa: E501
+        'apns_type': 'apns_type',  # noqa: E501 
+        'apns_p8': 'apns_p8',
+        'apns_key_id': 'apns_key_id',
+        'apns_team_id': 'apns_team_id',
+        'apns_bundle_id': 'apns_bundle_id',
     }
 
     read_only_vars = {
