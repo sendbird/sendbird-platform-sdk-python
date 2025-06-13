@@ -27,6 +27,7 @@ from sendbird_platform_sdk.model.add_extra_data_to_a_message_response import Add
 from sendbird_platform_sdk.model.get_total_number_of_messages_in_a_channel_response import GetTotalNumberOfMessagesInAChannelResponse
 from sendbird_platform_sdk.model.list_messages_response import ListMessagesResponse
 from sendbird_platform_sdk.model.mark_channel_messages_as_read_request import MarkChannelMessagesAsReadRequest
+from sendbird_platform_sdk.model.migrate_messages_request import MigrateMessagesRequest
 from sendbird_platform_sdk.model.send_a_message_request import SendAMessageRequest
 from sendbird_platform_sdk.model.sendbird_message_response import SendbirdMessageResponse
 from sendbird_platform_sdk.model.update_a_message_request import UpdateAMessageRequest
@@ -620,7 +621,7 @@ class MessageApi(object):
                 'all': [
                     'target_channel_url',
                     'api_token',
-                    'body',
+                    'migrate_messages_request',
                 ],
                 'required': [
                     'target_channel_url',
@@ -642,8 +643,8 @@ class MessageApi(object):
                         (str,),
                     'api_token':
                         (str,),
-                    'body':
-                        ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
+                    'migrate_messages_request':
+                        (MigrateMessagesRequest,),
                 },
                 'attribute_map': {
                     'target_channel_url': 'target_channel_url',
@@ -652,7 +653,7 @@ class MessageApi(object):
                 'location_map': {
                     'target_channel_url': 'path',
                     'api_token': 'header',
-                    'body': 'body',
+                    'migrate_messages_request': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -1561,7 +1562,7 @@ class MessageApi(object):
 
         Keyword Args:
             api_token (str): [optional]
-            body ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]
+            migrate_messages_request (MigrateMessagesRequest): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object

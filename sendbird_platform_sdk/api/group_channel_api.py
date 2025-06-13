@@ -719,12 +719,6 @@ class GroupChannelApi(object):
                     'metacounter_value_lt',
                     'metacounter_value_lte',
                     'include_sorted_metaarray_in_last_message',
-                    'custom_type',
-                    'read_receipt',
-                    'member',
-                    'is_distinct',
-                    'members_in',
-                    'user_id',
                 ],
                 'required': [
                     'api_token',
@@ -845,18 +839,6 @@ class GroupChannelApi(object):
                         (str,),
                     'include_sorted_metaarray_in_last_message':
                         (bool,),
-                    'custom_type':
-                        (str,),
-                    'read_receipt':
-                        (bool,),
-                    'member':
-                        (bool,),
-                    'is_distinct':
-                        (bool,),
-                    'members_in':
-                        (str,),
-                    'user_id':
-                        (str,),
                 },
                 'attribute_map': {
                     'api_token': 'api-token',
@@ -896,12 +878,6 @@ class GroupChannelApi(object):
                     'metacounter_value_lt': 'metacounter_value_lt',
                     'metacounter_value_lte': 'metacounter_value_lte',
                     'include_sorted_metaarray_in_last_message': 'include_sorted_metaarray_in_last_message',
-                    'custom_type': 'custom_type',
-                    'read_receipt': 'read_receipt',
-                    'member': 'member',
-                    'is_distinct': 'is_distinct',
-                    'members_in': 'members_in',
-                    'user_id': 'user_id',
                 },
                 'location_map': {
                     'api_token': 'header',
@@ -941,12 +917,6 @@ class GroupChannelApi(object):
                     'metacounter_value_lt': 'query',
                     'metacounter_value_lte': 'query',
                     'include_sorted_metaarray_in_last_message': 'query',
-                    'custom_type': 'query',
-                    'read_receipt': 'query',
-                    'member': 'query',
-                    'is_distinct': 'query',
-                    'members_in': 'query',
-                    'user_id': 'query',
                 },
                 'collection_format_map': {
                 }
@@ -2452,12 +2422,6 @@ class GroupChannelApi(object):
             metacounter_value_lt (str): Searches for group channels with metacounter containing an item with the key specified by the metadata_key parameter, where the value of that item is lower than the value specified by this parameter. To use this parameter, the metacounter_key parameter should be specified.. [optional]
             metacounter_value_lte (str): Searches for group channels with metacounter containing an item with the key specified by the metadata_key parameter, where the value of that item is lower than or equal to the value specified by this parameter. To use this parameter, the metacounter_key parameter should be specified.. [optional]
             include_sorted_metaarray_in_last_message (bool): Determines whether to include the sorted_metaarray as one of the last_message’s properties in the response.. [optional]
-            custom_type (str): (Deprecated) Returns channels whose custom_type matches the given value. If this field is not specified, all channels are returned, regardless of their custom type. The string passed here must be urlencoded.. [optional]
-            read_receipt (bool): (Deprecated) Superseded by show_read_receipt.. [optional]
-            member (bool): (Deprecated) Superseded by show_member.. [optional]
-            is_distinct (bool): (Deprecated) Superseded by distinct_mode.. [optional]
-            members_in (str): (Deprecated) Superseded by members_exactly_in.. [optional]
-            user_id (str): (Deprecated) Restricts the search scope to only retrieve the target user's group channels. It's recommended to use the list group channels by user action instead.. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object

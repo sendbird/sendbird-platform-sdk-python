@@ -520,6 +520,9 @@ class UserApi(object):
                     'query_type',
                     'members_nickname',
                     'members_nickname_contains',
+                    'members_nickname_startswith',
+                    'search_query',
+                    'search_fields',
                     'metadata_key',
                     'metadata_values',
                     'metadata_value_startswith',
@@ -530,12 +533,9 @@ class UserApi(object):
                     'metacounter_value_lt',
                     'metacounter_value_lte',
                     'include_sorted_metaarray_in_last_message',
-                    'custom_type',
-                    'read_receipt',
-                    'member',
-                    'is_distinct',
-                    'members_in',
-                    'user_id2',
+                    'hidden_mode',
+                    'unread_filter',
+                    'member_state_filter',
                 ],
                 'required': [
                     'user_id',
@@ -548,6 +548,9 @@ class UserApi(object):
                     'public_mode',
                     'super_mode',
                     'order',
+                    'hidden_mode',
+                    'unread_filter',
+                    'member_state_filter',
                 ],
                 'validation': [
                 ]
@@ -580,6 +583,27 @@ class UserApi(object):
                         "LATEST_LAST_MESSAGE": "latest_last_message",
                         "CHANNEL_NAME_ALPHABETICAL": "channel_name_alphabetical",
                         "METADATA_VALUE_ALPHABETICAL": "metadata_value_alphabetical"
+                    },
+                    ('hidden_mode',): {
+
+                        "UNHIDDEN_ONLY": "unhidden_only",
+                        "HIDDEN_ONLY": "hidden_only",
+                        "HIDDEN_ALLOW_AUTO_UNHIDE": "hidden_allow_auto_unhide",
+                        "HIDDEN_PREVENT_AUTO_UNHIDE": "hidden_prevent_auto_unhide",
+                        "ALL": "all"
+                    },
+                    ('unread_filter',): {
+
+                        "ALL": "all",
+                        "UNREAD_MESSAGE": "unread_message"
+                    },
+                    ('member_state_filter',): {
+
+                        "ALL": "all",
+                        "INVITED_ONLY": "invited_only",
+                        "JOINED_ONLY": "joined_only",
+                        "INVITED_BY_FRIEND": "invited_by_friend",
+                        "INVITED_BY_NON_FRIEND": "invited_by_non_friend"
                     },
                 },
                 'openapi_types': {
@@ -639,6 +663,12 @@ class UserApi(object):
                         (str,),
                     'members_nickname_contains':
                         (str,),
+                    'members_nickname_startswith':
+                        (str,),
+                    'search_query':
+                        (str,),
+                    'search_fields':
+                        (str,),
                     'metadata_key':
                         (str,),
                     'metadata_values':
@@ -659,17 +689,11 @@ class UserApi(object):
                         (str,),
                     'include_sorted_metaarray_in_last_message':
                         (bool,),
-                    'custom_type':
+                    'hidden_mode':
                         (str,),
-                    'read_receipt':
-                        (bool,),
-                    'member':
-                        (bool,),
-                    'is_distinct':
-                        (bool,),
-                    'members_in':
+                    'unread_filter':
                         (str,),
-                    'user_id2':
+                    'member_state_filter':
                         (str,),
                 },
                 'attribute_map': {
@@ -701,6 +725,9 @@ class UserApi(object):
                     'query_type': 'query_type',
                     'members_nickname': 'members_nickname',
                     'members_nickname_contains': 'members_nickname_contains',
+                    'members_nickname_startswith': 'members_nickname_startswith',
+                    'search_query': 'search_query',
+                    'search_fields': 'search_fields',
                     'metadata_key': 'metadata_key',
                     'metadata_values': 'metadata_values',
                     'metadata_value_startswith': 'metadata_value_startswith',
@@ -711,12 +738,9 @@ class UserApi(object):
                     'metacounter_value_lt': 'metacounter_value_lt',
                     'metacounter_value_lte': 'metacounter_value_lte',
                     'include_sorted_metaarray_in_last_message': 'include_sorted_metaarray_in_last_message',
-                    'custom_type': 'custom_type',
-                    'read_receipt': 'read_receipt',
-                    'member': 'member',
-                    'is_distinct': 'is_distinct',
-                    'members_in': 'members_in',
-                    'user_id2': 'user_id',
+                    'hidden_mode': 'hidden_mode',
+                    'unread_filter': 'unread_filter',
+                    'member_state_filter': 'member_state_filter',
                 },
                 'location_map': {
                     'user_id': 'path',
@@ -747,6 +771,9 @@ class UserApi(object):
                     'query_type': 'query',
                     'members_nickname': 'query',
                     'members_nickname_contains': 'query',
+                    'members_nickname_startswith': 'query',
+                    'search_query': 'query',
+                    'search_fields': 'query',
                     'metadata_key': 'query',
                     'metadata_values': 'query',
                     'metadata_value_startswith': 'query',
@@ -757,12 +784,9 @@ class UserApi(object):
                     'metacounter_value_lt': 'query',
                     'metacounter_value_lte': 'query',
                     'include_sorted_metaarray_in_last_message': 'query',
-                    'custom_type': 'query',
-                    'read_receipt': 'query',
-                    'member': 'query',
-                    'is_distinct': 'query',
-                    'members_in': 'query',
-                    'user_id2': 'query',
+                    'hidden_mode': 'query',
+                    'unread_filter': 'query',
+                    'member_state_filter': 'query',
                 },
                 'collection_format_map': {
                 }
@@ -2638,6 +2662,9 @@ class UserApi(object):
             query_type (str): Specifies a logical condition applied to the members_include_in parameter. Acceptable values are either AND or OR. For example, if you specify three members, A, B, and C, in members_include_in, the value of AND returns all channels that include every one of {A. B, C} as members. The value of OR returns channels that include {A}, plus those that include {B}, plus those that include {C}. (Default: AND). [optional]
             members_nickname (str): Searches for group channels with members whose nicknames match the specified value. URL encoding the value is recommended.. [optional]
             members_nickname_contains (str): Searches for group channels with members whose nicknames contain the specified value. Note that this parameter is case-insensitive. URL encoding the value is recommended.  * We recommend using at least three characters for the parameter value for better search efficiency when you design and implement related features. If you would like to allow one or two characters for searching, use members_nickname instead to prevent performance issues.. [optional]
+            members_nickname_startswith (str): Searches for group channels with members whose nicknames begin with the specified value. This parameter isn't case-sensitive. URL encoding the value is recommended.. [optional]
+            search_query (str): Searches for group channels where the specified query string matches the channel name or the nickname of the member. This parameter isn't case-sensitive and should be specified in conjunction with the search_fields parameter below. URL encoding the value is recommended.. [optional]
+            search_fields (str): Specifies a comma-separated string of one or more search fields to apply to the query, which restricts the results within the specified fields (OR search condition). Acceptable values are channel_name and member_nickname. This is effective only when the search_query parameter above is specified. (Default: channel_name, member_nickname together). [optional]
             metadata_key (str): Searches for group channels with metadata containing an item with the specified value as its key. To use this parameter, either the metadata_values parameter or the metadata_value_startswith parameter should be specified.. [optional]
             metadata_values (str): Searches for group channels with metadata containing an item with the key specified by the metadata_key parameter, and the value of that item matches one or more values specified by this parameter. The string should be specified with multiple values separated by commas. URL encoding each value is recommended. To use this parameter, the metadata_key parameter should be specified.. [optional]
             metadata_value_startswith (str): Searches for group channels with metadata containing an item with the key specified by the metadata_key parameter, and the values of that item that start with the specified value of this parameter. URL encoding the value is recommended. To use this parameter, the metadata_key parameter should be specified.. [optional]
@@ -2648,12 +2675,9 @@ class UserApi(object):
             metacounter_value_lt (str): Searches for group channels with metacounter containing an item with the key specified by the metadata_key parameter, where the value of that item is lower than the value specified by this parameter. To use this parameter, the metacounter_key parameter should be specified.. [optional]
             metacounter_value_lte (str): Searches for group channels with metacounter containing an item with the key specified by the metadata_key parameter, where the value of that item is lower than or equal to the value specified by this parameter. To use this parameter, the metacounter_key parameter should be specified.. [optional]
             include_sorted_metaarray_in_last_message (bool): Determines whether to include the sorted_metaarray as one of the last_message’s properties in the response.. [optional]
-            custom_type (str): (Deprecated) Returns channels whose custom_type matches the given value. If this field is not specified, all channels are returned, regardless of their custom type. The string passed here must be urlencoded.. [optional]
-            read_receipt (bool): (Deprecated) Superseded by show_read_receipt.. [optional]
-            member (bool): (Deprecated) Superseded by show_member.. [optional]
-            is_distinct (bool): (Deprecated) Superseded by distinct_mode.. [optional]
-            members_in (str): (Deprecated) Superseded by members_exactly_in.. [optional]
-            user_id2 (str): (Deprecated) Restricts the search scope to only retrieve the target user's group channels. It's recommended to use the list group channels by user action instead.. [optional]
+            hidden_mode (str): Restricts the search scope to group channels that match a specific hidden_status and operating behavior. [optional]
+            unread_filter (str): Restricts the search scope to only retrieve group channels with one or more unread messages. This filter doesn't support Supergroup channels. Acceptable values are all and unread_message. (Default: all). [optional]
+            member_state_filter (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object

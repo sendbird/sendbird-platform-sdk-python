@@ -123,8 +123,8 @@ class SendbirdGroupChannelDetail(ModelNormal):
             'is_super': (bool,),  # noqa: E501
             'joined_member_count': (int,),  # noqa: E501
             'last_message': (SendbirdMessageResponse,),  # noqa: E501
-            'max_length_message': (float,),  # noqa: E501
-            'member_count': (float,),  # noqa: E501
+            'max_length_message': (int,),  # noqa: E501
+            'member_count': (int,),  # noqa: E501
             'members': ([SendbirdMember],),  # noqa: E501
             'message_survival_seconds': (int,),  # noqa: E501
             'name': (str,),  # noqa: E501
@@ -242,8 +242,8 @@ class SendbirdGroupChannelDetail(ModelNormal):
             is_super (bool): [optional]  # noqa: E501
             joined_member_count (int): [optional]  # noqa: E501
             last_message (SendbirdMessageResponse): [optional]  # noqa: E501
-            max_length_message (float): [optional]  # noqa: E501
-            member_count (float): [optional]  # noqa: E501
+            max_length_message (int): [optional]  # noqa: E501
+            member_count (int): [optional]  # noqa: E501
             members ([SendbirdMember]): [optional]  # noqa: E501
             message_survival_seconds (int): [optional]  # noqa: E501
             name (str): [optional]  # noqa: E501
@@ -363,8 +363,8 @@ class SendbirdGroupChannelDetail(ModelNormal):
             is_super (bool): [optional]  # noqa: E501
             joined_member_count (int): [optional]  # noqa: E501
             last_message (SendbirdMessageResponse): [optional]  # noqa: E501
-            max_length_message (float): [optional]  # noqa: E501
-            member_count (float): [optional]  # noqa: E501
+            max_length_message (int): [optional]  # noqa: E501
+            member_count (int): [optional]  # noqa: E501
             members ([SendbirdMember]): [optional]  # noqa: E501
             message_survival_seconds (int): [optional]  # noqa: E501
             name (str): [optional]  # noqa: E501

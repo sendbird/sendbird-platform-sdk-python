@@ -4,6 +4,8 @@
 
 
 [![link to docs](https://img.shields.io/badge/SDK-docs-green)](/docs)
+[![PYPI](https://img.shields.io/pypi/v/sendbird-platform-sdk.svg)](https://pypi.org/project/sendbird-platform-sdk)
+
 
 This is a python library that makes talking to the [Sendbird Platform API](https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api) easier. With this library you can extend your Sendbird integration to include advanced features like channel automation and user management.
 

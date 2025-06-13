@@ -969,12 +969,6 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     metacounter_value_lt = "metacounter_value_lt_example" # str | Searches for group channels with metacounter containing an item with the key specified by the metadata_key parameter, where the value of that item is lower than the value specified by this parameter. To use this parameter, the metacounter_key parameter should be specified. (optional)
     metacounter_value_lte = "metacounter_value_lte_example" # str | Searches for group channels with metacounter containing an item with the key specified by the metadata_key parameter, where the value of that item is lower than or equal to the value specified by this parameter. To use this parameter, the metacounter_key parameter should be specified. (optional)
     include_sorted_metaarray_in_last_message = False # bool | Determines whether to include the sorted_metaarray as one of the last_message’s properties in the response. (optional)
-    custom_type = "ANNOUNCEMENT" # str | (Deprecated) Returns channels whose custom_type matches the given value. If this field is not specified, all channels are returned, regardless of their custom type. The string passed here must be urlencoded. (optional)
-    read_receipt = False # bool | (Deprecated) Superseded by show_read_receipt. (optional)
-    member = True # bool | (Deprecated) Superseded by show_member. (optional)
-    is_distinct = True # bool | (Deprecated) Superseded by distinct_mode. (optional)
-    members_in = "members_in_example" # str | (Deprecated) Superseded by members_exactly_in. (optional)
-    user_id = "user_id_example" # str | (Deprecated) Restricts the search scope to only retrieve the target user's group channels. It's recommended to use the list group channels by user action instead. (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -988,7 +982,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # List channels
-        api_response = api_instance.list_channels(api_token, token=token, limit=limit, distinct_mode=distinct_mode, public_mode=public_mode, super_mode=super_mode, created_after=created_after, created_before=created_before, show_empty=show_empty, show_member=show_member, show_delivery_receipt=show_delivery_receipt, show_read_receipt=show_read_receipt, show_metadata=show_metadata, show_frozen=show_frozen, order=order, metadata_order_key=metadata_order_key, custom_types=custom_types, custom_type_startswith=custom_type_startswith, channel_urls=channel_urls, name=name, name_contains=name_contains, name_startswith=name_startswith, members_exactly_in=members_exactly_in, members_include_in=members_include_in, query_type=query_type, members_nickname=members_nickname, members_nickname_contains=members_nickname_contains, metadata_key=metadata_key, metadata_values=metadata_values, metadata_value_startswith=metadata_value_startswith, metacounter_key=metacounter_key, metacounter_values=metacounter_values, metacounter_value_gt=metacounter_value_gt, metacounter_value_gte=metacounter_value_gte, metacounter_value_lt=metacounter_value_lt, metacounter_value_lte=metacounter_value_lte, include_sorted_metaarray_in_last_message=include_sorted_metaarray_in_last_message, custom_type=custom_type, read_receipt=read_receipt, member=member, is_distinct=is_distinct, members_in=members_in, user_id=user_id)
+        api_response = api_instance.list_channels(api_token, token=token, limit=limit, distinct_mode=distinct_mode, public_mode=public_mode, super_mode=super_mode, created_after=created_after, created_before=created_before, show_empty=show_empty, show_member=show_member, show_delivery_receipt=show_delivery_receipt, show_read_receipt=show_read_receipt, show_metadata=show_metadata, show_frozen=show_frozen, order=order, metadata_order_key=metadata_order_key, custom_types=custom_types, custom_type_startswith=custom_type_startswith, channel_urls=channel_urls, name=name, name_contains=name_contains, name_startswith=name_startswith, members_exactly_in=members_exactly_in, members_include_in=members_include_in, query_type=query_type, members_nickname=members_nickname, members_nickname_contains=members_nickname_contains, metadata_key=metadata_key, metadata_values=metadata_values, metadata_value_startswith=metadata_value_startswith, metacounter_key=metacounter_key, metacounter_values=metacounter_values, metacounter_value_gt=metacounter_value_gt, metacounter_value_gte=metacounter_value_gte, metacounter_value_lt=metacounter_value_lt, metacounter_value_lte=metacounter_value_lte, include_sorted_metaarray_in_last_message=include_sorted_metaarray_in_last_message)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling GroupChannelApi->list_channels: %s\n" % e)
@@ -1036,12 +1030,6 @@ Name | Type | Description  | Notes
  **metacounter_value_lt** | **str**| Searches for group channels with metacounter containing an item with the key specified by the metadata_key parameter, where the value of that item is lower than the value specified by this parameter. To use this parameter, the metacounter_key parameter should be specified. | [optional]
  **metacounter_value_lte** | **str**| Searches for group channels with metacounter containing an item with the key specified by the metadata_key parameter, where the value of that item is lower than or equal to the value specified by this parameter. To use this parameter, the metacounter_key parameter should be specified. | [optional]
  **include_sorted_metaarray_in_last_message** | **bool**| Determines whether to include the sorted_metaarray as one of the last_message’s properties in the response. | [optional]
- **custom_type** | **str**| (Deprecated) Returns channels whose custom_type matches the given value. If this field is not specified, all channels are returned, regardless of their custom type. The string passed here must be urlencoded. | [optional]
- **read_receipt** | **bool**| (Deprecated) Superseded by show_read_receipt. | [optional]
- **member** | **bool**| (Deprecated) Superseded by show_member. | [optional]
- **is_distinct** | **bool**| (Deprecated) Superseded by distinct_mode. | [optional]
- **members_in** | **str**| (Deprecated) Superseded by members_exactly_in. | [optional]
- **user_id** | **str**| (Deprecated) Restricts the search scope to only retrieve the target user&#39;s group channels. It&#39;s recommended to use the list group channels by user action instead. | [optional]
 
 ### Return type
 

@@ -580,6 +580,7 @@ Migrate messages
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import message_api
+from sendbird_platform_sdk.model.migrate_messages_request import MigrateMessagesRequest
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -594,7 +595,13 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     api_instance = message_api.MessageApi(api_client)
     target_channel_url = "target_channel_url_example" # str | (Required) 
     api_token = "{{API_TOKEN}}" # str |  (optional)
-    body = {} # {str: (bool, date, datetime, dict, float, int, list, str, none_type)} |  (optional)
+    migrate_messages_request = MigrateMessagesRequest(
+        messages=[
+            MigrateMessagesRequestMessagesInner(None),
+        ],
+        update_read_ts=True,
+        rewind_read_ts=True,
+    ) # MigrateMessagesRequest |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -608,7 +615,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Migrate messages
-        api_response = api_instance.migrate_messages(target_channel_url, api_token=api_token, body=body)
+        api_response = api_instance.migrate_messages(target_channel_url, api_token=api_token, migrate_messages_request=migrate_messages_request)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling MessageApi->migrate_messages: %s\n" % e)
@@ -621,7 +628,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **target_channel_url** | **str**| (Required)  |
  **api_token** | **str**|  | [optional]
- **body** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}**|  | [optional]
+ **migrate_messages_request** | [**MigrateMessagesRequest**](MigrateMessagesRequest.md)|  | [optional]
 
 ### Return type
 

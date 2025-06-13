@@ -167,7 +167,7 @@ class MetadataApi(object):
                 'location_map': {
                     'channel_type': 'path',
                     'channel_url': 'path',
-                    'key': 'query',
+                    'key': 'path',
                     'api_token': 'header',
                 },
                 'collection_format_map': {
