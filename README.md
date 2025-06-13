@@ -43,7 +43,12 @@ This package has been tested with python version 3.9.10
 
 
 # ⚙️ Installation 
-see Local Development
+
+Using pip
+
+```bash
+pip install sendbird-platform-sdk
+```
 
 # 🤓 Local Development
 Install via [Setuptools](http://pypi.python.org/pypi/setuptools).
@@ -68,5 +73,4 @@ All the documentation for this project lives in the /docs directory of this repo
 | Message | [docs/MessageApi.md](docs/MessageApi.md)  |
 | OpenChannel | [docs/OpenChannelApi.md ](docs/OpenChannelApi.md)  |
 | User | [docs/UserApi.md](docs/UserApi.md)  |
-| Webhooks | [docs/WebhooksApi.md](docs/WebhooksApi.md)  |
 
