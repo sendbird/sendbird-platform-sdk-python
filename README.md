@@ -4,8 +4,6 @@
 
 
 [![link to docs](https://img.shields.io/badge/SDK-docs-green)](/docs)
-[![PYPI](https://img.shields.io/pypi/v/sendbird-platform-sdk.svg)](https://pypi.org/project/sendbird-platform-sdk)
-
 
 This is a python library that makes talking to the [Sendbird Platform API](https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api) easier. With this library you can extend your Sendbird integration to include advanced features like channel automation and user management.
 
@@ -43,12 +41,7 @@ This package has been tested with python version 3.9.10
 
 
 # ⚙️ Installation 
-
-Using pip
-
-```bash
-pip install sendbird-platform-sdk
-```
+see Local Development
 
 # 🤓 Local Development
 Install via [Setuptools](http://pypi.python.org/pypi/setuptools).
@@ -73,4 +66,4 @@ All the documentation for this project lives in the /docs directory of this repo
 | Message | [docs/MessageApi.md](docs/MessageApi.md)  |
 | OpenChannel | [docs/OpenChannelApi.md ](docs/OpenChannelApi.md)  |
 | User | [docs/UserApi.md](docs/UserApi.md)  |
-
+| Webhooks | [docs/WebhooksApi.md](docs/WebhooksApi.md)  |
