@@ -1,7 +1,7 @@
 """
     Sendbird Platform SDK
 
-    Sendbird Platform API SDK  https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api  # noqa: E501
+    Sendbird Platform API SDK  [https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api](https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api)  Contact Support:   Name: Sendbird   Email: [support@sendbird.com](https://mailto:support@sendbird.com)  # noqa: E501
 
     The version of the OpenAPI document: 1.0.0
     Contact: support@sendbird.com
@@ -13,8 +13,8 @@ import sys
 import unittest
 
 import sendbird_platform_sdk
-from sendbird_platform_sdk.model.list_messages_response_messages_inner import ListMessagesResponseMessagesInner
-globals()['ListMessagesResponseMessagesInner'] = ListMessagesResponseMessagesInner
+from sendbird_platform_sdk.model.sendbird_message_response import SendbirdMessageResponse
+globals()['SendbirdMessageResponse'] = SendbirdMessageResponse
 from sendbird_platform_sdk.model.list_messages_response import ListMessagesResponse
 
 

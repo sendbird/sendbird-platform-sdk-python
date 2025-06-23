@@ -1,7 +1,7 @@
 """
     Sendbird Platform SDK
 
-    Sendbird Platform API SDK  https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api  # noqa: E501
+    Sendbird Platform API SDK  [https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api](https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api)  Contact Support:   Name: Sendbird   Email: [support@sendbird.com](https://mailto:support@sendbird.com)  # noqa: E501
 
     The version of the OpenAPI document: 1.0.0
     Contact: support@sendbird.com
@@ -22,38 +22,17 @@ from sendbird_platform_sdk.model_utils import (  # noqa: F401
     none_type,
     validate_and_convert_types
 )
-from sendbird_platform_sdk.model.add_emoji_categories_response import AddEmojiCategoriesResponse
-from sendbird_platform_sdk.model.add_emojis_data import AddEmojisData
-from sendbird_platform_sdk.model.add_emojis_response import AddEmojisResponse
-from sendbird_platform_sdk.model.add_extra_data_to_message_data import AddExtraDataToMessageData
-from sendbird_platform_sdk.model.add_extra_data_to_message_response import AddExtraDataToMessageResponse
-from sendbird_platform_sdk.model.add_reaction_to_a_message_data import AddReactionToAMessageData
-from sendbird_platform_sdk.model.add_reaction_to_a_message_response import AddReactionToAMessageResponse
-from sendbird_platform_sdk.model.enable_reactions_data import EnableReactionsData
-from sendbird_platform_sdk.model.enable_reactions_response import EnableReactionsResponse
-from sendbird_platform_sdk.model.gc_mark_all_messages_as_delivered_data import GcMarkAllMessagesAsDeliveredData
-from sendbird_platform_sdk.model.gc_mark_all_messages_as_delivered_response import GcMarkAllMessagesAsDeliveredResponse
-from sendbird_platform_sdk.model.gc_mark_all_messages_as_read_data import GcMarkAllMessagesAsReadData
-from sendbird_platform_sdk.model.gc_view_number_of_each_members_unread_messages_response import GcViewNumberOfEachMembersUnreadMessagesResponse
-from sendbird_platform_sdk.model.list_all_emojis_and_emoji_categories_response import ListAllEmojisAndEmojiCategoriesResponse
-from sendbird_platform_sdk.model.list_announcements_response import ListAnnouncementsResponse
-from sendbird_platform_sdk.model.list_emojis_response import ListEmojisResponse
+from sendbird_platform_sdk.model.add_extra_data_to_a_message_request import AddExtraDataToAMessageRequest
+from sendbird_platform_sdk.model.add_extra_data_to_a_message_response import AddExtraDataToAMessageResponse
+from sendbird_platform_sdk.model.get_total_number_of_messages_in_a_channel_response import GetTotalNumberOfMessagesInAChannelResponse
 from sendbird_platform_sdk.model.list_messages_response import ListMessagesResponse
-from sendbird_platform_sdk.model.list_reactions_of_message_response import ListReactionsOfMessageResponse
-from sendbird_platform_sdk.model.remove_reaction_from_a_message_response import RemoveReactionFromAMessageResponse
-from sendbird_platform_sdk.model.send_bird_emoji import SendBirdEmoji
-from sendbird_platform_sdk.model.send_bird_emoji_category import SendBirdEmojiCategory
-from sendbird_platform_sdk.model.send_bird_message_response import SendBirdMessageResponse
-from sendbird_platform_sdk.model.send_message_data import SendMessageData
-from sendbird_platform_sdk.model.translate_message_into_other_languages_data import TranslateMessageIntoOtherLanguagesData
-from sendbird_platform_sdk.model.update_emoji_category_url_by_id_data import UpdateEmojiCategoryUrlByIdData
-from sendbird_platform_sdk.model.update_emoji_url_by_key_data import UpdateEmojiUrlByKeyData
-from sendbird_platform_sdk.model.update_extra_data_in_message_data import UpdateExtraDataInMessageData
-from sendbird_platform_sdk.model.update_extra_data_in_message_response import UpdateExtraDataInMessageResponse
-from sendbird_platform_sdk.model.update_message_by_id_data import UpdateMessageByIdData
-from sendbird_platform_sdk.model.use_default_emojis_data import UseDefaultEmojisData
-from sendbird_platform_sdk.model.use_default_emojis_response import UseDefaultEmojisResponse
-from sendbird_platform_sdk.model.view_total_number_of_messages_in_channel_response import ViewTotalNumberOfMessagesInChannelResponse
+from sendbird_platform_sdk.model.mark_channel_messages_as_read_request import MarkChannelMessagesAsReadRequest
+from sendbird_platform_sdk.model.migrate_messages_request import MigrateMessagesRequest
+from sendbird_platform_sdk.model.send_a_message_request import SendAMessageRequest
+from sendbird_platform_sdk.model.sendbird_message_response import SendbirdMessageResponse
+from sendbird_platform_sdk.model.update_a_message_request import UpdateAMessageRequest
+from sendbird_platform_sdk.model.update_extra_data_in_a_message_request import UpdateExtraDataInAMessageRequest
+from sendbird_platform_sdk.model.update_extra_data_in_a_message_response import UpdateExtraDataInAMessageResponse
 
 
 class MessageApi(object):
@@ -67,118 +46,12 @@ class MessageApi(object):
         if api_client is None:
             api_client = ApiClient()
         self.api_client = api_client
-        self.add_emoji_categories_endpoint = _Endpoint(
+        self.add_extra_data_to_a_message_endpoint = _Endpoint(
             settings={
-                'response_type': (AddEmojiCategoriesResponse,),
-                'auth': [],
-                'endpoint_path': '/v3/emoji_categories',
-                'operation_id': 'add_emoji_categories',
-                'http_method': 'POST',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'api_token',
-                    'body',
-                ],
-                'required': [],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'api_token':
-                        (str,),
-                    'body':
-                        ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
-                },
-                'attribute_map': {
-                    'api_token': 'Api-Token',
-                },
-                'location_map': {
-                    'api_token': 'header',
-                    'body': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
-            api_client=api_client
-        )
-        self.add_emojis_endpoint = _Endpoint(
-            settings={
-                'response_type': (AddEmojisResponse,),
-                'auth': [],
-                'endpoint_path': '/v3/emojis',
-                'operation_id': 'add_emojis',
-                'http_method': 'POST',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'api_token',
-                    'add_emojis_data',
-                ],
-                'required': [],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'api_token':
-                        (str,),
-                    'add_emojis_data':
-                        (AddEmojisData,),
-                },
-                'attribute_map': {
-                    'api_token': 'Api-Token',
-                },
-                'location_map': {
-                    'api_token': 'header',
-                    'add_emojis_data': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
-            api_client=api_client
-        )
-        self.add_extra_data_to_message_endpoint = _Endpoint(
-            settings={
-                'response_type': (AddExtraDataToMessageResponse,),
+                'response_type': (AddExtraDataToAMessageResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/{channel_type}/{channel_url}/messages/{message_id}/sorted_metaarray',
-                'operation_id': 'add_extra_data_to_message',
+                'operation_id': 'add_extra_data_to_a_message',
                 'http_method': 'POST',
                 'servers': None,
             },
@@ -188,7 +61,7 @@ class MessageApi(object):
                     'channel_url',
                     'message_id',
                     'api_token',
-                    'add_extra_data_to_message_data',
+                    'add_extra_data_to_a_message_request',
                 ],
                 'required': [
                     'channel_type',
@@ -198,6 +71,7 @@ class MessageApi(object):
                 'nullable': [
                 ],
                 'enum': [
+                    'channel_type',
                 ],
                 'validation': [
                 ]
@@ -206,6 +80,11 @@ class MessageApi(object):
                 'validations': {
                 },
                 'allowed_values': {
+                    ('channel_type',): {
+
+                        "OPEN_CHANNELS": "open_channels",
+                        "GROUP_CHANNELS": "group_channels"
+                    },
                 },
                 'openapi_types': {
                     'channel_type':
@@ -216,21 +95,21 @@ class MessageApi(object):
                         (str,),
                     'api_token':
                         (str,),
-                    'add_extra_data_to_message_data':
-                        (AddExtraDataToMessageData,),
+                    'add_extra_data_to_a_message_request':
+                        (AddExtraDataToAMessageRequest,),
                 },
                 'attribute_map': {
                     'channel_type': 'channel_type',
                     'channel_url': 'channel_url',
                     'message_id': 'message_id',
-                    'api_token': 'Api-Token',
+                    'api_token': 'api-token',
                 },
                 'location_map': {
                     'channel_type': 'path',
                     'channel_url': 'path',
                     'message_id': 'path',
                     'api_token': 'header',
-                    'add_extra_data_to_message_data': 'body',
+                    'add_extra_data_to_a_message_request': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -245,190 +124,12 @@ class MessageApi(object):
             },
             api_client=api_client
         )
-        self.add_reaction_to_a_message_endpoint = _Endpoint(
-            settings={
-                'response_type': (AddReactionToAMessageResponse,),
-                'auth': [],
-                'endpoint_path': '/v3/{channel_type}/{channel_url}/messages/{message_id}/reactions',
-                'operation_id': 'add_reaction_to_a_message',
-                'http_method': 'POST',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'channel_type',
-                    'channel_url',
-                    'message_id',
-                    'api_token',
-                    'add_reaction_to_a_message_data',
-                ],
-                'required': [
-                    'channel_type',
-                    'channel_url',
-                    'message_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'channel_type':
-                        (str,),
-                    'channel_url':
-                        (str,),
-                    'message_id':
-                        (str,),
-                    'api_token':
-                        (str,),
-                    'add_reaction_to_a_message_data':
-                        (AddReactionToAMessageData,),
-                },
-                'attribute_map': {
-                    'channel_type': 'channel_type',
-                    'channel_url': 'channel_url',
-                    'message_id': 'message_id',
-                    'api_token': 'Api-Token',
-                },
-                'location_map': {
-                    'channel_type': 'path',
-                    'channel_url': 'path',
-                    'message_id': 'path',
-                    'api_token': 'header',
-                    'add_reaction_to_a_message_data': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
-            api_client=api_client
-        )
-        self.delete_emoji_by_key_endpoint = _Endpoint(
-            settings={
-                'response_type': None,
-                'auth': [],
-                'endpoint_path': '/v3/emojis/{emoji_key}',
-                'operation_id': 'delete_emoji_by_key',
-                'http_method': 'DELETE',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'emoji_key',
-                    'api_token',
-                ],
-                'required': [
-                    'emoji_key',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'emoji_key':
-                        (str,),
-                    'api_token':
-                        (str,),
-                },
-                'attribute_map': {
-                    'emoji_key': 'emoji_key',
-                    'api_token': 'Api-Token',
-                },
-                'location_map': {
-                    'emoji_key': 'path',
-                    'api_token': 'header',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
-        self.delete_emoji_category_by_id_endpoint = _Endpoint(
-            settings={
-                'response_type': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
-                'auth': [],
-                'endpoint_path': '/v3/emoji_categories/{emoji_category_id}',
-                'operation_id': 'delete_emoji_category_by_id',
-                'http_method': 'DELETE',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'emoji_category_id',
-                    'api_token',
-                ],
-                'required': [
-                    'emoji_category_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'emoji_category_id':
-                        (str,),
-                    'api_token':
-                        (str,),
-                },
-                'attribute_map': {
-                    'emoji_category_id': 'emoji_category_id',
-                    'api_token': 'Api-Token',
-                },
-                'location_map': {
-                    'emoji_category_id': 'path',
-                    'api_token': 'header',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
-        self.delete_message_by_id_endpoint = _Endpoint(
+        self.delete_a_message_endpoint = _Endpoint(
             settings={
                 'response_type': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
                 'auth': [],
                 'endpoint_path': '/v3/{channel_type}/{channel_url}/messages/{message_id}',
-                'operation_id': 'delete_message_by_id',
+                'operation_id': 'delete_a_message',
                 'http_method': 'DELETE',
                 'servers': None,
             },
@@ -447,6 +148,7 @@ class MessageApi(object):
                 'nullable': [
                 ],
                 'enum': [
+                    'channel_type',
                 ],
                 'validation': [
                 ]
@@ -455,6 +157,11 @@ class MessageApi(object):
                 'validations': {
                 },
                 'allowed_values': {
+                    ('channel_type',): {
+
+                        "OPEN_CHANNELS": "open_channels",
+                        "GROUP_CHANNELS": "group_channels"
+                    },
                 },
                 'openapi_types': {
                     'channel_type':
@@ -470,7 +177,7 @@ class MessageApi(object):
                     'channel_type': 'channel_type',
                     'channel_url': 'channel_url',
                     'message_id': 'message_id',
-                    'api_token': 'Api-Token',
+                    'api_token': 'api-token',
                 },
                 'location_map': {
                     'channel_type': 'path',
@@ -489,24 +196,36 @@ class MessageApi(object):
             },
             api_client=api_client
         )
-        self.enable_reactions_endpoint = _Endpoint(
+        self.get_a_message_endpoint = _Endpoint(
             settings={
-                'response_type': (EnableReactionsResponse,),
+                'response_type': (SendbirdMessageResponse,),
                 'auth': [],
-                'endpoint_path': '/v3/applications/settings/reactions',
-                'operation_id': 'enable_reactions',
-                'http_method': 'PUT',
+                'endpoint_path': '/v3/{channel_type}/{channel_url}/messages/{message_id}',
+                'operation_id': 'get_a_message',
+                'http_method': 'GET',
                 'servers': None,
             },
             params_map={
                 'all': [
+                    'channel_type',
+                    'channel_url',
+                    'message_id',
+                    'include_reactions',
+                    'include_thread_info',
+                    'include_parent_message_info',
+                    'include_poll_details',
+                    'with_sorted_meta_array',
                     'api_token',
-                    'enable_reactions_data',
                 ],
-                'required': [],
+                'required': [
+                    'channel_type',
+                    'channel_url',
+                    'message_id',
+                ],
                 'nullable': [
                 ],
                 'enum': [
+                    'channel_type',
                 ],
                 'validation': [
                 ]
@@ -515,19 +234,53 @@ class MessageApi(object):
                 'validations': {
                 },
                 'allowed_values': {
+                    ('channel_type',): {
+
+                        "OPEN_CHANNELS": "open_channels",
+                        "GROUP_CHANNELS": "group_channels"
+                    },
                 },
                 'openapi_types': {
+                    'channel_type':
+                        (str,),
+                    'channel_url':
+                        (str,),
+                    'message_id':
+                        (str,),
+                    'include_reactions':
+                        (bool,),
+                    'include_thread_info':
+                        (bool,),
+                    'include_parent_message_info':
+                        (bool,),
+                    'include_poll_details':
+                        (bool,),
+                    'with_sorted_meta_array':
+                        (bool,),
                     'api_token':
                         (str,),
-                    'enable_reactions_data':
-                        (EnableReactionsData,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
+                    'channel_type': 'channel_type',
+                    'channel_url': 'channel_url',
+                    'message_id': 'message_id',
+                    'include_reactions': 'include_reactions',
+                    'include_thread_info': 'include_thread_info',
+                    'include_parent_message_info': 'include_parent_message_info',
+                    'include_poll_details': 'include_poll_details',
+                    'with_sorted_meta_array': 'with_sorted_meta_array',
+                    'api_token': 'api-token',
                 },
                 'location_map': {
+                    'channel_type': 'path',
+                    'channel_url': 'path',
+                    'message_id': 'path',
+                    'include_reactions': 'query',
+                    'include_thread_info': 'query',
+                    'include_parent_message_info': 'query',
+                    'include_poll_details': 'query',
+                    'with_sorted_meta_array': 'query',
                     'api_token': 'header',
-                    'enable_reactions_data': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -536,33 +289,33 @@ class MessageApi(object):
                 'accept': [
                     'application/json'
                 ],
-                'content_type': [
-                    'application/json'
-                ]
+                'content_type': [],
             },
             api_client=api_client
         )
-        self.gc_mark_all_messages_as_delivered_endpoint = _Endpoint(
+        self.get_total_number_of_messages_in_a_channel_endpoint = _Endpoint(
             settings={
-                'response_type': (GcMarkAllMessagesAsDeliveredResponse,),
+                'response_type': (GetTotalNumberOfMessagesInAChannelResponse,),
                 'auth': [],
-                'endpoint_path': '/v3/group_channels/{channel_url}/messages/mark_as_delivered',
-                'operation_id': 'gc_mark_all_messages_as_delivered',
-                'http_method': 'PUT',
+                'endpoint_path': '/v3/{channel_type}/{channel_url}/messages/total_count',
+                'operation_id': 'get_total_number_of_messages_in_a_channel',
+                'http_method': 'GET',
                 'servers': None,
             },
             params_map={
                 'all': [
+                    'channel_type',
                     'channel_url',
                     'api_token',
-                    'gc_mark_all_messages_as_delivered_data',
                 ],
                 'required': [
+                    'channel_type',
                     'channel_url',
                 ],
                 'nullable': [
                 ],
                 'enum': [
+                    'channel_type',
                 ],
                 'validation': [
                 ]
@@ -571,418 +324,28 @@ class MessageApi(object):
                 'validations': {
                 },
                 'allowed_values': {
+                    ('channel_type',): {
+
+                        "OPEN_CHANNELS": "open_channels",
+                        "GROUP_CHANNELS": "group_channels"
+                    },
                 },
                 'openapi_types': {
+                    'channel_type':
+                        (str,),
                     'channel_url':
                         (str,),
                     'api_token':
                         (str,),
-                    'gc_mark_all_messages_as_delivered_data':
-                        (GcMarkAllMessagesAsDeliveredData,),
                 },
                 'attribute_map': {
+                    'channel_type': 'channel_type',
                     'channel_url': 'channel_url',
-                    'api_token': 'Api-Token',
+                    'api_token': 'api-token',
                 },
                 'location_map': {
+                    'channel_type': 'path',
                     'channel_url': 'path',
-                    'api_token': 'header',
-                    'gc_mark_all_messages_as_delivered_data': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
-            api_client=api_client
-        )
-        self.gc_mark_all_messages_as_read_endpoint = _Endpoint(
-            settings={
-                'response_type': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
-                'auth': [],
-                'endpoint_path': '/v3/group_channels/{channel_url}/messages/mark_as_read',
-                'operation_id': 'gc_mark_all_messages_as_read',
-                'http_method': 'PUT',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'channel_url',
-                    'api_token',
-                    'gc_mark_all_messages_as_read_data',
-                ],
-                'required': [
-                    'channel_url',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'channel_url':
-                        (str,),
-                    'api_token':
-                        (str,),
-                    'gc_mark_all_messages_as_read_data':
-                        (GcMarkAllMessagesAsReadData,),
-                },
-                'attribute_map': {
-                    'channel_url': 'channel_url',
-                    'api_token': 'Api-Token',
-                },
-                'location_map': {
-                    'channel_url': 'path',
-                    'api_token': 'header',
-                    'gc_mark_all_messages_as_read_data': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
-            api_client=api_client
-        )
-        self.gc_view_number_of_each_members_unread_messages_endpoint = _Endpoint(
-            settings={
-                'response_type': (GcViewNumberOfEachMembersUnreadMessagesResponse,),
-                'auth': [],
-                'endpoint_path': '/v3/group_channels/{channel_url}/messages/unread_count',
-                'operation_id': 'gc_view_number_of_each_members_unread_messages',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'channel_url',
-                    'api_token',
-                    'user_ids',
-                ],
-                'required': [
-                    'channel_url',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'channel_url':
-                        (str,),
-                    'api_token':
-                        (str,),
-                    'user_ids':
-                        ([str],),
-                },
-                'attribute_map': {
-                    'channel_url': 'channel_url',
-                    'api_token': 'Api-Token',
-                    'user_ids': 'user_ids',
-                },
-                'location_map': {
-                    'channel_url': 'path',
-                    'api_token': 'header',
-                    'user_ids': 'query',
-                },
-                'collection_format_map': {
-                    'user_ids': 'multi',
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
-        self.get_emoji_by_key_endpoint = _Endpoint(
-            settings={
-                'response_type': (SendBirdEmoji,),
-                'auth': [],
-                'endpoint_path': '/v3/emojis/{emoji_key}',
-                'operation_id': 'get_emoji_by_key',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'emoji_key',
-                    'api_token',
-                ],
-                'required': [
-                    'emoji_key',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'emoji_key':
-                        (str,),
-                    'api_token':
-                        (str,),
-                },
-                'attribute_map': {
-                    'emoji_key': 'emoji_key',
-                    'api_token': 'Api-Token',
-                },
-                'location_map': {
-                    'emoji_key': 'path',
-                    'api_token': 'header',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
-        self.get_emoji_category_by_id_endpoint = _Endpoint(
-            settings={
-                'response_type': (SendBirdEmojiCategory,),
-                'auth': [],
-                'endpoint_path': '/v3/emoji_categories/{emoji_category_id}',
-                'operation_id': 'get_emoji_category_by_id',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'emoji_category_id',
-                    'api_token',
-                ],
-                'required': [
-                    'emoji_category_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'emoji_category_id':
-                        (str,),
-                    'api_token':
-                        (str,),
-                },
-                'attribute_map': {
-                    'emoji_category_id': 'emoji_category_id',
-                    'api_token': 'Api-Token',
-                },
-                'location_map': {
-                    'emoji_category_id': 'path',
-                    'api_token': 'header',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
-        self.list_all_emojis_and_emoji_categories_endpoint = _Endpoint(
-            settings={
-                'response_type': (ListAllEmojisAndEmojiCategoriesResponse,),
-                'auth': [],
-                'endpoint_path': '/v3/emoji_categories',
-                'operation_id': 'list_all_emojis_and_emoji_categories',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'api_token',
-                ],
-                'required': [],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'api_token':
-                        (str,),
-                },
-                'attribute_map': {
-                    'api_token': 'Api-Token',
-                },
-                'location_map': {
-                    'api_token': 'header',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
-        self.list_announcements_endpoint = _Endpoint(
-            settings={
-                'response_type': (ListAnnouncementsResponse,),
-                'auth': [],
-                'endpoint_path': '/v3/announcements',
-                'operation_id': 'list_announcements',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'api_token',
-                    'token',
-                    'limit',
-                    'order',
-                    'status',
-                    'announcement_group',
-                ],
-                'required': [],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'api_token':
-                        (str,),
-                    'token':
-                        (str,),
-                    'limit':
-                        (int,),
-                    'order':
-                        (str,),
-                    'status':
-                        (str,),
-                    'announcement_group':
-                        (str,),
-                },
-                'attribute_map': {
-                    'api_token': 'Api-Token',
-                    'token': 'token',
-                    'limit': 'limit',
-                    'order': 'order',
-                    'status': 'status',
-                    'announcement_group': 'announcement_group',
-                },
-                'location_map': {
-                    'api_token': 'header',
-                    'token': 'query',
-                    'limit': 'query',
-                    'order': 'query',
-                    'status': 'query',
-                    'announcement_group': 'query',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
-        self.list_emojis_endpoint = _Endpoint(
-            settings={
-                'response_type': (ListEmojisResponse,),
-                'auth': [],
-                'endpoint_path': '/v3/emojis',
-                'operation_id': 'list_emojis',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'api_token',
-                ],
-                'required': [],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'api_token':
-                        (str,),
-                },
-                'attribute_map': {
-                    'api_token': 'Api-Token',
-                },
-                'location_map': {
                     'api_token': 'header',
                 },
                 'collection_format_map': {
@@ -1009,7 +372,6 @@ class MessageApi(object):
                 'all': [
                     'channel_type',
                     'channel_url',
-                    'api_token',
                     'message_ts',
                     'message_id',
                     'prev_limit',
@@ -1025,19 +387,25 @@ class MessageApi(object):
                     'include_reactions',
                     'include_reply_type',
                     'include_parent_message_info',
+                    'include_thread_info',
+                    'include_poll_details',
                     'with_sorted_meta_array',
                     'show_subchannel_messages_only',
                     'user_id',
-                    'custom_type',
-                    'with_meta_array',
+                    'api_token',
                 ],
                 'required': [
                     'channel_type',
                     'channel_url',
+                    'message_ts',
+                    'message_id',
                 ],
                 'nullable': [
                 ],
                 'enum': [
+                    'channel_type',
+                    'operator_filter',
+                    'message_type',
                     'include_reply_type',
                 ],
                 'validation': [
@@ -1047,6 +415,23 @@ class MessageApi(object):
                 'validations': {
                 },
                 'allowed_values': {
+                    ('channel_type',): {
+
+                        "OPEN_CHANNELS": "open_channels",
+                        "GROUP_CHANNELS": "group_channels"
+                    },
+                    ('operator_filter',): {
+
+                        "ALL": "all",
+                        "OPERATOR": "operator",
+                        "NONOPERATOR": "nonoperator"
+                    },
+                    ('message_type',): {
+
+                        "MESG": "MESG",
+                        "FILE": "FILE",
+                        "ADMM": "ADMM"
+                    },
                     ('include_reply_type',): {
 
                         "NONE": "NONE",
@@ -1059,10 +444,8 @@ class MessageApi(object):
                         (str,),
                     'channel_url':
                         (str,),
-                    'api_token':
-                        (str,),
                     'message_ts':
-                        (str,),
+                        (int,),
                     'message_id':
                         (int,),
                     'prev_limit':
@@ -1091,21 +474,22 @@ class MessageApi(object):
                         (str,),
                     'include_parent_message_info':
                         (bool,),
+                    'include_thread_info':
+                        (bool,),
+                    'include_poll_details':
+                        (bool,),
                     'with_sorted_meta_array':
                         (bool,),
                     'show_subchannel_messages_only':
                         (bool,),
                     'user_id':
                         (str,),
-                    'custom_type':
+                    'api_token':
                         (str,),
-                    'with_meta_array':
-                        (bool,),
                 },
                 'attribute_map': {
                     'channel_type': 'channel_type',
                     'channel_url': 'channel_url',
-                    'api_token': 'Api-Token',
                     'message_ts': 'message_ts',
                     'message_id': 'message_id',
                     'prev_limit': 'prev_limit',
@@ -1121,16 +505,16 @@ class MessageApi(object):
                     'include_reactions': 'include_reactions',
                     'include_reply_type': 'include_reply_type',
                     'include_parent_message_info': 'include_parent_message_info',
+                    'include_thread_info': 'include_thread_info',
+                    'include_poll_details': 'include_poll_details',
                     'with_sorted_meta_array': 'with_sorted_meta_array',
                     'show_subchannel_messages_only': 'show_subchannel_messages_only',
                     'user_id': 'user_id',
-                    'custom_type': 'custom_type',
-                    'with_meta_array': 'with_meta_array',
+                    'api_token': 'api-token',
                 },
                 'location_map': {
                     'channel_type': 'path',
                     'channel_url': 'path',
-                    'api_token': 'header',
                     'message_ts': 'query',
                     'message_id': 'query',
                     'prev_limit': 'query',
@@ -1146,11 +530,12 @@ class MessageApi(object):
                     'include_reactions': 'query',
                     'include_reply_type': 'query',
                     'include_parent_message_info': 'query',
+                    'include_thread_info': 'query',
+                    'include_poll_details': 'query',
                     'with_sorted_meta_array': 'query',
                     'show_subchannel_messages_only': 'query',
                     'user_id': 'query',
-                    'custom_type': 'query',
-                    'with_meta_array': 'query',
+                    'api_token': 'header',
                 },
                 'collection_format_map': {
                 }
@@ -1163,27 +548,23 @@ class MessageApi(object):
             },
             api_client=api_client
         )
-        self.list_reactions_of_message_endpoint = _Endpoint(
+        self.mark_channel_messages_as_read_endpoint = _Endpoint(
             settings={
-                'response_type': (ListReactionsOfMessageResponse,),
+                'response_type': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
                 'auth': [],
-                'endpoint_path': '/v3/{channel_type}/{channel_url}/messages/{message_id}/reactions',
-                'operation_id': 'list_reactions_of_message',
-                'http_method': 'GET',
+                'endpoint_path': '/v3/group_channels/{channel_url}/messages/mark_as_read',
+                'operation_id': 'mark_channel_messages_as_read',
+                'http_method': 'PUT',
                 'servers': None,
             },
             params_map={
                 'all': [
-                    'channel_type',
                     'channel_url',
-                    'message_id',
                     'api_token',
-                    'list_users',
+                    'mark_channel_messages_as_read_request',
                 ],
                 'required': [
-                    'channel_type',
                     'channel_url',
-                    'message_id',
                 ],
                 'nullable': [
                 ],
@@ -1198,30 +579,21 @@ class MessageApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'channel_type':
-                        (str,),
                     'channel_url':
-                        (str,),
-                    'message_id':
                         (str,),
                     'api_token':
                         (str,),
-                    'list_users':
-                        (bool,),
+                    'mark_channel_messages_as_read_request':
+                        (MarkChannelMessagesAsReadRequest,),
                 },
                 'attribute_map': {
-                    'channel_type': 'channel_type',
                     'channel_url': 'channel_url',
-                    'message_id': 'message_id',
-                    'api_token': 'Api-Token',
-                    'list_users': 'list_users',
+                    'api_token': 'api-token',
                 },
                 'location_map': {
-                    'channel_type': 'path',
                     'channel_url': 'path',
-                    'message_id': 'path',
                     'api_token': 'header',
-                    'list_users': 'query',
+                    'mark_channel_messages_as_read_request': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -1230,16 +602,18 @@ class MessageApi(object):
                 'accept': [
                     'application/json'
                 ],
-                'content_type': [],
+                'content_type': [
+                    'application/json'
+                ]
             },
             api_client=api_client
         )
-        self.migrate_messages_by_url_endpoint = _Endpoint(
+        self.migrate_messages_endpoint = _Endpoint(
             settings={
-                'response_type': None,
+                'response_type': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
                 'auth': [],
                 'endpoint_path': '/v3/migration/{target_channel_url}',
-                'operation_id': 'migrate_messages_by_url',
+                'operation_id': 'migrate_messages',
                 'http_method': 'POST',
                 'servers': None,
             },
@@ -1247,7 +621,7 @@ class MessageApi(object):
                 'all': [
                     'target_channel_url',
                     'api_token',
-                    'body',
+                    'migrate_messages_request',
                 ],
                 'required': [
                     'target_channel_url',
@@ -1269,35 +643,37 @@ class MessageApi(object):
                         (str,),
                     'api_token':
                         (str,),
-                    'body':
-                        ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
+                    'migrate_messages_request':
+                        (MigrateMessagesRequest,),
                 },
                 'attribute_map': {
                     'target_channel_url': 'target_channel_url',
-                    'api_token': 'Api-Token',
+                    'api_token': 'api-token',
                 },
                 'location_map': {
                     'target_channel_url': 'path',
                     'api_token': 'header',
-                    'body': 'body',
+                    'migrate_messages_request': 'body',
                 },
                 'collection_format_map': {
                 }
             },
             headers_map={
-                'accept': [],
+                'accept': [
+                    'application/json'
+                ],
                 'content_type': [
                     'application/json'
                 ]
             },
             api_client=api_client
         )
-        self.remove_extra_data_from_message_endpoint = _Endpoint(
+        self.remove_extra_data_from_a_message_endpoint = _Endpoint(
             settings={
                 'response_type': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
                 'auth': [],
                 'endpoint_path': '/v3/{channel_type}/{channel_url}/messages/{message_id}/sorted_metaarray',
-                'operation_id': 'remove_extra_data_from_message',
+                'operation_id': 'remove_extra_data_from_a_message',
                 'http_method': 'DELETE',
                 'servers': None,
             },
@@ -1306,8 +682,8 @@ class MessageApi(object):
                     'channel_type',
                     'channel_url',
                     'message_id',
-                    'api_token',
                     'keys',
+                    'api_token',
                 ],
                 'required': [
                     'channel_type',
@@ -1317,6 +693,7 @@ class MessageApi(object):
                 'nullable': [
                 ],
                 'enum': [
+                    'channel_type',
                 ],
                 'validation': [
                 ]
@@ -1325,6 +702,11 @@ class MessageApi(object):
                 'validations': {
                 },
                 'allowed_values': {
+                    ('channel_type',): {
+
+                        "OPEN_CHANNELS": "open_channels",
+                        "GROUP_CHANNELS": "group_channels"
+                    },
                 },
                 'openapi_types': {
                     'channel_type':
@@ -1332,102 +714,25 @@ class MessageApi(object):
                     'channel_url':
                         (str,),
                     'message_id':
-                        (str,),
-                    'api_token':
                         (str,),
                     'keys':
-                        ([str],),
-                },
-                'attribute_map': {
-                    'channel_type': 'channel_type',
-                    'channel_url': 'channel_url',
-                    'message_id': 'message_id',
-                    'api_token': 'Api-Token',
-                    'keys': 'keys',
-                },
-                'location_map': {
-                    'channel_type': 'path',
-                    'channel_url': 'path',
-                    'message_id': 'path',
-                    'api_token': 'header',
-                    'keys': 'query',
-                },
-                'collection_format_map': {
-                    'keys': 'multi',
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
-        self.remove_reaction_from_a_message_endpoint = _Endpoint(
-            settings={
-                'response_type': (RemoveReactionFromAMessageResponse,),
-                'auth': [],
-                'endpoint_path': '/v3/{channel_type}/{channel_url}/messages/{message_id}/reactions',
-                'operation_id': 'remove_reaction_from_a_message',
-                'http_method': 'DELETE',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'channel_type',
-                    'channel_url',
-                    'message_id',
-                    'api_token',
-                    'user_id',
-                    'reaction',
-                ],
-                'required': [
-                    'channel_type',
-                    'channel_url',
-                    'message_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'channel_type':
-                        (str,),
-                    'channel_url':
-                        (str,),
-                    'message_id':
                         (str,),
                     'api_token':
                         (str,),
-                    'user_id':
-                        (str,),
-                    'reaction':
-                        (str,),
                 },
                 'attribute_map': {
                     'channel_type': 'channel_type',
                     'channel_url': 'channel_url',
                     'message_id': 'message_id',
-                    'api_token': 'Api-Token',
-                    'user_id': 'user_id',
-                    'reaction': 'reaction',
+                    'keys': 'keys',
+                    'api_token': 'api-token',
                 },
                 'location_map': {
                     'channel_type': 'path',
                     'channel_url': 'path',
                     'message_id': 'path',
+                    'keys': 'query',
                     'api_token': 'header',
-                    'user_id': 'query',
-                    'reaction': 'query',
                 },
                 'collection_format_map': {
                 }
@@ -1440,12 +745,12 @@ class MessageApi(object):
             },
             api_client=api_client
         )
-        self.send_message_endpoint = _Endpoint(
+        self.send_a_message_endpoint = _Endpoint(
             settings={
-                'response_type': (SendBirdMessageResponse,),
+                'response_type': (SendbirdMessageResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/{channel_type}/{channel_url}/messages',
-                'operation_id': 'send_message',
+                'operation_id': 'send_a_message',
                 'http_method': 'POST',
                 'servers': None,
             },
@@ -1454,7 +759,7 @@ class MessageApi(object):
                     'channel_type',
                     'channel_url',
                     'api_token',
-                    'send_message_data',
+                    'send_a_message_request',
                 ],
                 'required': [
                     'channel_type',
@@ -1463,6 +768,7 @@ class MessageApi(object):
                 'nullable': [
                 ],
                 'enum': [
+                    'channel_type',
                 ],
                 'validation': [
                 ]
@@ -1471,6 +777,11 @@ class MessageApi(object):
                 'validations': {
                 },
                 'allowed_values': {
+                    ('channel_type',): {
+
+                        "OPEN_CHANNELS": "open_channels",
+                        "GROUP_CHANNELS": "group_channels"
+                    },
                 },
                 'openapi_types': {
                     'channel_type':
@@ -1479,19 +790,19 @@ class MessageApi(object):
                         (str,),
                     'api_token':
                         (str,),
-                    'send_message_data':
-                        (SendMessageData,),
+                    'send_a_message_request':
+                        (SendAMessageRequest,),
                 },
                 'attribute_map': {
                     'channel_type': 'channel_type',
                     'channel_url': 'channel_url',
-                    'api_token': 'Api-Token',
+                    'api_token': 'api-token',
                 },
                 'location_map': {
                     'channel_type': 'path',
                     'channel_url': 'path',
                     'api_token': 'header',
-                    'send_message_data': 'body',
+                    'send_a_message_request': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -1506,13 +817,13 @@ class MessageApi(object):
             },
             api_client=api_client
         )
-        self.translate_message_into_other_languages_endpoint = _Endpoint(
+        self.update_a_message_endpoint = _Endpoint(
             settings={
-                'response_type': (SendBirdMessageResponse,),
+                'response_type': (SendbirdMessageResponse,),
                 'auth': [],
-                'endpoint_path': '/v3/{channel_type}/{channel_url}/messages/{message_id}/translation',
-                'operation_id': 'translate_message_into_other_languages',
-                'http_method': 'POST',
+                'endpoint_path': '/v3/{channel_type}/{channel_url}/messages/{message_id}',
+                'operation_id': 'update_a_message',
+                'http_method': 'PUT',
                 'servers': None,
             },
             params_map={
@@ -1521,7 +832,7 @@ class MessageApi(object):
                     'channel_url',
                     'message_id',
                     'api_token',
-                    'translate_message_into_other_languages_data',
+                    'update_a_message_request',
                 ],
                 'required': [
                     'channel_type',
@@ -1531,6 +842,7 @@ class MessageApi(object):
                 'nullable': [
                 ],
                 'enum': [
+                    'channel_type',
                 ],
                 'validation': [
                 ]
@@ -1539,6 +851,11 @@ class MessageApi(object):
                 'validations': {
                 },
                 'allowed_values': {
+                    ('channel_type',): {
+
+                        "OPEN_CHANNELS": "open_channels",
+                        "GROUP_CHANNELS": "group_channels"
+                    },
                 },
                 'openapi_types': {
                     'channel_type':
@@ -1549,21 +866,21 @@ class MessageApi(object):
                         (str,),
                     'api_token':
                         (str,),
-                    'translate_message_into_other_languages_data':
-                        (TranslateMessageIntoOtherLanguagesData,),
+                    'update_a_message_request':
+                        (UpdateAMessageRequest,),
                 },
                 'attribute_map': {
                     'channel_type': 'channel_type',
                     'channel_url': 'channel_url',
                     'message_id': 'message_id',
-                    'api_token': 'Api-Token',
+                    'api_token': 'api-token',
                 },
                 'location_map': {
                     'channel_type': 'path',
                     'channel_url': 'path',
                     'message_id': 'path',
                     'api_token': 'header',
-                    'translate_message_into_other_languages_data': 'body',
+                    'update_a_message_request': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -1578,132 +895,12 @@ class MessageApi(object):
             },
             api_client=api_client
         )
-        self.update_emoji_category_url_by_id_endpoint = _Endpoint(
+        self.update_extra_data_in_a_message_endpoint = _Endpoint(
             settings={
-                'response_type': (SendBirdEmojiCategory,),
-                'auth': [],
-                'endpoint_path': '/v3/emoji_categories/{emoji_category_id}',
-                'operation_id': 'update_emoji_category_url_by_id',
-                'http_method': 'PUT',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'emoji_category_id',
-                    'api_token',
-                    'update_emoji_category_url_by_id_data',
-                ],
-                'required': [
-                    'emoji_category_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'emoji_category_id':
-                        (str,),
-                    'api_token':
-                        (str,),
-                    'update_emoji_category_url_by_id_data':
-                        (UpdateEmojiCategoryUrlByIdData,),
-                },
-                'attribute_map': {
-                    'emoji_category_id': 'emoji_category_id',
-                    'api_token': 'Api-Token',
-                },
-                'location_map': {
-                    'emoji_category_id': 'path',
-                    'api_token': 'header',
-                    'update_emoji_category_url_by_id_data': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
-            api_client=api_client
-        )
-        self.update_emoji_url_by_key_endpoint = _Endpoint(
-            settings={
-                'response_type': (SendBirdEmoji,),
-                'auth': [],
-                'endpoint_path': '/v3/emojis/{emoji_key}',
-                'operation_id': 'update_emoji_url_by_key',
-                'http_method': 'PUT',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'emoji_key',
-                    'api_token',
-                    'update_emoji_url_by_key_data',
-                ],
-                'required': [
-                    'emoji_key',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'emoji_key':
-                        (str,),
-                    'api_token':
-                        (str,),
-                    'update_emoji_url_by_key_data':
-                        (UpdateEmojiUrlByKeyData,),
-                },
-                'attribute_map': {
-                    'emoji_key': 'emoji_key',
-                    'api_token': 'Api-Token',
-                },
-                'location_map': {
-                    'emoji_key': 'path',
-                    'api_token': 'header',
-                    'update_emoji_url_by_key_data': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
-            api_client=api_client
-        )
-        self.update_extra_data_in_message_endpoint = _Endpoint(
-            settings={
-                'response_type': (UpdateExtraDataInMessageResponse,),
+                'response_type': (UpdateExtraDataInAMessageResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/{channel_type}/{channel_url}/messages/{message_id}/sorted_metaarray',
-                'operation_id': 'update_extra_data_in_message',
+                'operation_id': 'update_extra_data_in_a_message',
                 'http_method': 'PUT',
                 'servers': None,
             },
@@ -1713,7 +910,7 @@ class MessageApi(object):
                     'channel_url',
                     'message_id',
                     'api_token',
-                    'update_extra_data_in_message_data',
+                    'update_extra_data_in_a_message_request',
                 ],
                 'required': [
                     'channel_type',
@@ -1723,6 +920,7 @@ class MessageApi(object):
                 'nullable': [
                 ],
                 'enum': [
+                    'channel_type',
                 ],
                 'validation': [
                 ]
@@ -1731,6 +929,11 @@ class MessageApi(object):
                 'validations': {
                 },
                 'allowed_values': {
+                    ('channel_type',): {
+
+                        "OPEN_CHANNELS": "open_channels",
+                        "GROUP_CHANNELS": "group_channels"
+                    },
                 },
                 'openapi_types': {
                     'channel_type':
@@ -1741,21 +944,21 @@ class MessageApi(object):
                         (str,),
                     'api_token':
                         (str,),
-                    'update_extra_data_in_message_data':
-                        (UpdateExtraDataInMessageData,),
+                    'update_extra_data_in_a_message_request':
+                        (UpdateExtraDataInAMessageRequest,),
                 },
                 'attribute_map': {
                     'channel_type': 'channel_type',
                     'channel_url': 'channel_url',
                     'message_id': 'message_id',
-                    'api_token': 'Api-Token',
+                    'api_token': 'api-token',
                 },
                 'location_map': {
                     'channel_type': 'path',
                     'channel_url': 'path',
                     'message_id': 'path',
                     'api_token': 'header',
-                    'update_extra_data_in_message_data': 'body',
+                    'update_extra_data_in_a_message_request': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -1770,434 +973,8 @@ class MessageApi(object):
             },
             api_client=api_client
         )
-        self.update_message_by_id_endpoint = _Endpoint(
-            settings={
-                'response_type': (SendBirdMessageResponse,),
-                'auth': [],
-                'endpoint_path': '/v3/{channel_type}/{channel_url}/messages/{message_id}',
-                'operation_id': 'update_message_by_id',
-                'http_method': 'PUT',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'channel_type',
-                    'channel_url',
-                    'message_id',
-                    'api_token',
-                    'update_message_by_id_data',
-                ],
-                'required': [
-                    'channel_type',
-                    'channel_url',
-                    'message_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'channel_type':
-                        (str,),
-                    'channel_url':
-                        (str,),
-                    'message_id':
-                        (str,),
-                    'api_token':
-                        (str,),
-                    'update_message_by_id_data':
-                        (UpdateMessageByIdData,),
-                },
-                'attribute_map': {
-                    'channel_type': 'channel_type',
-                    'channel_url': 'channel_url',
-                    'message_id': 'message_id',
-                    'api_token': 'Api-Token',
-                },
-                'location_map': {
-                    'channel_type': 'path',
-                    'channel_url': 'path',
-                    'message_id': 'path',
-                    'api_token': 'header',
-                    'update_message_by_id_data': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
-            api_client=api_client
-        )
-        self.use_default_emojis_endpoint = _Endpoint(
-            settings={
-                'response_type': (UseDefaultEmojisResponse,),
-                'auth': [],
-                'endpoint_path': '/v3/applications/settings/use_default_emoji',
-                'operation_id': 'use_default_emojis',
-                'http_method': 'PUT',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'api_token',
-                    'use_default_emojis_data',
-                ],
-                'required': [],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'api_token':
-                        (str,),
-                    'use_default_emojis_data':
-                        (UseDefaultEmojisData,),
-                },
-                'attribute_map': {
-                    'api_token': 'Api-Token',
-                },
-                'location_map': {
-                    'api_token': 'header',
-                    'use_default_emojis_data': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
-            api_client=api_client
-        )
-        self.view_message_by_id_endpoint = _Endpoint(
-            settings={
-                'response_type': (SendBirdMessageResponse,),
-                'auth': [],
-                'endpoint_path': '/v3/{channel_type}/{channel_url}/messages/{message_id}',
-                'operation_id': 'view_message_by_id',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'channel_type',
-                    'channel_url',
-                    'message_id',
-                    'api_token',
-                    'with_sorted_meta_array',
-                    'with_meta_array',
-                    'include_parent_message_info',
-                ],
-                'required': [
-                    'channel_type',
-                    'channel_url',
-                    'message_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'channel_type':
-                        (str,),
-                    'channel_url':
-                        (str,),
-                    'message_id':
-                        (str,),
-                    'api_token':
-                        (str,),
-                    'with_sorted_meta_array':
-                        (bool,),
-                    'with_meta_array':
-                        (bool,),
-                    'include_parent_message_info':
-                        (bool,),
-                },
-                'attribute_map': {
-                    'channel_type': 'channel_type',
-                    'channel_url': 'channel_url',
-                    'message_id': 'message_id',
-                    'api_token': 'Api-Token',
-                    'with_sorted_meta_array': 'with_sorted_meta_array',
-                    'with_meta_array': 'with_meta_array',
-                    'include_parent_message_info': 'include_parent_message_info',
-                },
-                'location_map': {
-                    'channel_type': 'path',
-                    'channel_url': 'path',
-                    'message_id': 'path',
-                    'api_token': 'header',
-                    'with_sorted_meta_array': 'query',
-                    'with_meta_array': 'query',
-                    'include_parent_message_info': 'query',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
-        self.view_total_number_of_messages_in_channel_endpoint = _Endpoint(
-            settings={
-                'response_type': (ViewTotalNumberOfMessagesInChannelResponse,),
-                'auth': [],
-                'endpoint_path': '/v3/{channel_type}/{channel_url}/messages/total_count',
-                'operation_id': 'view_total_number_of_messages_in_channel',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'channel_type',
-                    'channel_url',
-                    'api_token',
-                ],
-                'required': [
-                    'channel_type',
-                    'channel_url',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'channel_type':
-                        (str,),
-                    'channel_url':
-                        (str,),
-                    'api_token':
-                        (str,),
-                },
-                'attribute_map': {
-                    'channel_type': 'channel_type',
-                    'channel_url': 'channel_url',
-                    'api_token': 'Api-Token',
-                },
-                'location_map': {
-                    'channel_type': 'path',
-                    'channel_url': 'path',
-                    'api_token': 'header',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
 
-    def add_emoji_categories(
-        self,
-        **kwargs
-    ):
-        """Add emoji categories  # noqa: E501
-
-        ## Add emoji categories  Adds a list of one or more new emoji categories to the application.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-add-emoji-categories  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.add_emoji_categories(async_req=True)
-        >>> result = thread.get()
-
-
-        Keyword Args:
-            api_token (str): [optional]
-            body ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            AddEmojiCategoriesResponse
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        return self.add_emoji_categories_endpoint.call_with_http_info(**kwargs)
-
-    def add_emojis(
-        self,
-        **kwargs
-    ):
-        """Add emojis  # noqa: E501
-
-        ## Add emojis  Adds a list of one or more new emojis to the application.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-add-emojis  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.add_emojis(async_req=True)
-        >>> result = thread.get()
-
-
-        Keyword Args:
-            api_token (str): [optional]
-            add_emojis_data (AddEmojisData): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            AddEmojisResponse
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        return self.add_emojis_endpoint.call_with_http_info(**kwargs)
-
-    def add_extra_data_to_message(
+    def add_extra_data_to_a_message(
         self,
         channel_type,
         channel_url,
@@ -2206,21 +983,21 @@ class MessageApi(object):
     ):
         """Add extra data to a message  # noqa: E501
 
-        ## Add extra data to a message  Adds one or more key-values items which store additional information for a message.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-add-extra-data-to-a-message ----------------------------  # noqa: E501
+        ## Add extra data to a message  Adds one or more key-values items which store additional information for a message.  https://sendbird.com/docs/chat/platform-api/v3/message/messaging-basics/message-add-metadata#1-add-metadata ----------------------------  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.add_extra_data_to_message(channel_type, channel_url, message_id, async_req=True)
+        >>> thread = api.add_extra_data_to_a_message(channel_type, channel_url, message_id, async_req=True)
         >>> result = thread.get()
 
         Args:
-            channel_type (str):
-            channel_url (str):
-            message_id (str):
+            channel_type (str): (Required) 
+            channel_url (str): (Required) 
+            message_id (str): (Required) 
 
         Keyword Args:
             api_token (str): [optional]
-            add_extra_data_to_message_data (AddExtraDataToMessageData): [optional]
+            add_extra_data_to_a_message_request (AddExtraDataToAMessageRequest): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -2253,7 +1030,7 @@ class MessageApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            AddExtraDataToMessageResponse
+            AddExtraDataToAMessageResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2288,270 +1065,9 @@ class MessageApi(object):
             channel_url
         kwargs['message_id'] = \
             message_id
-        return self.add_extra_data_to_message_endpoint.call_with_http_info(**kwargs)
+        return self.add_extra_data_to_a_message_endpoint.call_with_http_info(**kwargs)
 
-    def add_reaction_to_a_message(
-        self,
-        channel_type,
-        channel_url,
-        message_id,
-        **kwargs
-    ):
-        """Add a reaction to a message  # noqa: E501
-
-        ## Add a reaction to a message  Adds a specific reaction to a message.  > __Note__: Currently, this action is only available in group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-add-a-reaction-to-a-message ----------------------------  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.add_reaction_to_a_message(channel_type, channel_url, message_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            channel_type (str):
-            channel_url (str):
-            message_id (str):
-
-        Keyword Args:
-            api_token (str): [optional]
-            add_reaction_to_a_message_data (AddReactionToAMessageData): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            AddReactionToAMessageResponse
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['channel_type'] = \
-            channel_type
-        kwargs['channel_url'] = \
-            channel_url
-        kwargs['message_id'] = \
-            message_id
-        return self.add_reaction_to_a_message_endpoint.call_with_http_info(**kwargs)
-
-    def delete_emoji_by_key(
-        self,
-        emoji_key,
-        **kwargs
-    ):
-        """Delete an emoji  # noqa: E501
-
-        ## Delete an emoji  Deletes an emoji from the application.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-delete-an-emoji ----------------------------  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.delete_emoji_by_key(emoji_key, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            emoji_key (str):
-
-        Keyword Args:
-            api_token (str): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            None
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['emoji_key'] = \
-            emoji_key
-        return self.delete_emoji_by_key_endpoint.call_with_http_info(**kwargs)
-
-    def delete_emoji_category_by_id(
-        self,
-        emoji_category_id,
-        **kwargs
-    ):
-        """Delete an emoji category  # noqa: E501
-
-        ## Delete an emoji category  Deletes an emoji category with the specified ID.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-delete-an-emoji-category ----------------------------  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.delete_emoji_category_by_id(emoji_category_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            emoji_category_id (str):
-
-        Keyword Args:
-            api_token (str): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            {str: (bool, date, datetime, dict, float, int, list, str, none_type)}
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['emoji_category_id'] = \
-            emoji_category_id
-        return self.delete_emoji_category_by_id_endpoint.call_with_http_info(**kwargs)
-
-    def delete_message_by_id(
+    def delete_a_message(
         self,
         channel_type,
         channel_url,
@@ -2560,17 +1076,17 @@ class MessageApi(object):
     ):
         """Delete a message  # noqa: E501
 
-        ## Delete a message  Deletes a message from a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-delete-a-message ----------------------------  # noqa: E501
+        ## Delete a message  Deletes a message from a channel.  https://sendbird.com/docs/chat/platform-api/v3/message/messaging-basics/delete-a-message#1-delete-a-message ----------------------------  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.delete_message_by_id(channel_type, channel_url, message_id, async_req=True)
+        >>> thread = api.delete_a_message(channel_type, channel_url, message_id, async_req=True)
         >>> result = thread.get()
 
         Args:
-            channel_type (str):
-            channel_url (str):
-            message_id (str):
+            channel_type (str): (Required) 
+            channel_url (str): (Required) 
+            message_id (str): (Required) 
 
         Keyword Args:
             api_token (str): [optional]
@@ -2641,108 +1157,36 @@ class MessageApi(object):
             channel_url
         kwargs['message_id'] = \
             message_id
-        return self.delete_message_by_id_endpoint.call_with_http_info(**kwargs)
+        return self.delete_a_message_endpoint.call_with_http_info(**kwargs)
 
-    def enable_reactions(
+    def get_a_message(
         self,
-        **kwargs
-    ):
-        """Enable reactions  # noqa: E501
-
-        ## Enable reactions  Turn on or off reactions in a Sendbird application.  > __Note__: This action also allows reactions in UIKit.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-enable-reactions  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.enable_reactions(async_req=True)
-        >>> result = thread.get()
-
-
-        Keyword Args:
-            api_token (str): [optional]
-            enable_reactions_data (EnableReactionsData): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            EnableReactionsResponse
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        return self.enable_reactions_endpoint.call_with_http_info(**kwargs)
-
-    def gc_mark_all_messages_as_delivered(
-        self,
+        channel_type,
         channel_url,
+        message_id,
         **kwargs
     ):
-        """Mark all messages as delivered  # noqa: E501
+        """Get a message  # noqa: E501
 
-        ## Mark all messages as delivered  Marks all messages in a group channel as delivered for a given user. This action is only applicable for users in a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-mark-all-messages-as-delivered ----------------------------  # noqa: E501
+        ## Get a message  Retrieves information on a specific message.  https://sendbird.com/docs/chat/platform-api/v3/message/messaging-basics/get-a-message#1-get-a-message ----------------------------   `channel_type`      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  `channel_url`      Type: string      Description: Specifies the URL of the target channel.  `message_id`      Type: long      Description: Specifies the unique ID of the message to retrieve.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.gc_mark_all_messages_as_delivered(channel_url, async_req=True)
+        >>> thread = api.get_a_message(channel_type, channel_url, message_id, async_req=True)
         >>> result = thread.get()
 
         Args:
-            channel_url (str):
+            channel_type (str): (Required) 
+            channel_url (str): (Required) 
+            message_id (str): (Required) 
 
         Keyword Args:
+            include_reactions (bool): [optional]
+            include_thread_info (bool): [optional]
+            include_parent_message_info (bool): [optional]
+            include_poll_details (bool): Determines whether to include all properties of a poll resource with a full list of options in the results. If set to false, a selection of poll resource properties consisting of id, title, close_at, created_at, updated_at, status, and message_id are returned. (Default: false) * To use this property, the polls feature should be turned on in Settings > Chat > Features on Sendbird Dashboard.. [optional]
+            with_sorted_meta_array (bool): [optional]
             api_token (str): [optional]
-            gc_mark_all_messages_as_delivered_data (GcMarkAllMessagesAsDeliveredData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -2775,7 +1219,7 @@ class MessageApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            GcMarkAllMessagesAsDeliveredResponse
+            SendbirdMessageResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2804,631 +1248,145 @@ class MessageApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['channel_type'] = \
+            channel_type
         kwargs['channel_url'] = \
             channel_url
-        return self.gc_mark_all_messages_as_delivered_endpoint.call_with_http_info(**kwargs)
+        kwargs['message_id'] = \
+            message_id
+        return self.get_a_message_endpoint.call_with_http_info(**kwargs)
 
-    def gc_mark_all_messages_as_read(
-        self,
-        channel_url,
-        **kwargs
-    ):
-        """Mark all messages as read  # noqa: E501
-
-        ## Mark all messages as read  Marks all messages in a group channel as read for a given user. This action is only applicable for users in a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-mark-all-messages-as-read ----------------------------  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.gc_mark_all_messages_as_read(channel_url, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            channel_url (str):
-
-        Keyword Args:
-            api_token (str): [optional]
-            gc_mark_all_messages_as_read_data (GcMarkAllMessagesAsReadData): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            {str: (bool, date, datetime, dict, float, int, list, str, none_type)}
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['channel_url'] = \
-            channel_url
-        return self.gc_mark_all_messages_as_read_endpoint.call_with_http_info(**kwargs)
-
-    def gc_view_number_of_each_members_unread_messages(
-        self,
-        channel_url,
-        **kwargs
-    ):
-        """View number of each member's unread messages  # noqa: E501
-
-        ## View number of each member's unread messages  Retrieves the total number of each member's unread messages in a group channel. This action is only applicable for users in a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-view-number-of-each-member-s-unread-messages ----------------------------  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.gc_view_number_of_each_members_unread_messages(channel_url, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            channel_url (str):
-
-        Keyword Args:
-            api_token (str): [optional]
-            user_ids ([str]): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            GcViewNumberOfEachMembersUnreadMessagesResponse
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['channel_url'] = \
-            channel_url
-        return self.gc_view_number_of_each_members_unread_messages_endpoint.call_with_http_info(**kwargs)
-
-    def get_emoji_by_key(
-        self,
-        emoji_key,
-        **kwargs
-    ):
-        """Get an emoji  # noqa: E501
-
-        ## Get an emoji  Retrieves an emoji with the specified key.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-get-an-emoji ----------------------------  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.get_emoji_by_key(emoji_key, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            emoji_key (str):
-
-        Keyword Args:
-            api_token (str): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            SendBirdEmoji
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['emoji_key'] = \
-            emoji_key
-        return self.get_emoji_by_key_endpoint.call_with_http_info(**kwargs)
-
-    def get_emoji_category_by_id(
-        self,
-        emoji_category_id,
-        **kwargs
-    ):
-        """Get an emoji category  # noqa: E501
-
-        ## Get an emoji category  Retrieves an emoji category with the specified ID, including its emojis.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-get-an-emoji-category ----------------------------   `emoji_category_id`      Type: int      Description: Specifies the unique ID of the emoji category to retrieve.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.get_emoji_category_by_id(emoji_category_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            emoji_category_id (str):
-
-        Keyword Args:
-            api_token (str): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            SendBirdEmojiCategory
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['emoji_category_id'] = \
-            emoji_category_id
-        return self.get_emoji_category_by_id_endpoint.call_with_http_info(**kwargs)
-
-    def list_all_emojis_and_emoji_categories(
-        self,
-        **kwargs
-    ):
-        """List all emojis and emoji categories  # noqa: E501
-
-        ## List all emojis and emoji categories  Retrieves a list of all emoji categories registered to the application, including their emojis.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-list-all-emojis-and-emoji-categories  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.list_all_emojis_and_emoji_categories(async_req=True)
-        >>> result = thread.get()
-
-
-        Keyword Args:
-            api_token (str): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            ListAllEmojisAndEmojiCategoriesResponse
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        return self.list_all_emojis_and_emoji_categories_endpoint.call_with_http_info(**kwargs)
-
-    def list_announcements(
-        self,
-        **kwargs
-    ):
-        """List announcements  # noqa: E501
-
-        ## List announcements  Retrieves a list of announcements.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-list-announcements ----------------------------  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.list_announcements(async_req=True)
-        >>> result = thread.get()
-
-
-        Keyword Args:
-            api_token (str): [optional]
-            token (str): [optional]
-            limit (int): [optional]
-            order (str): [optional]
-            status (str): [optional]
-            announcement_group (str): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            ListAnnouncementsResponse
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        return self.list_announcements_endpoint.call_with_http_info(**kwargs)
-
-    def list_emojis(
-        self,
-        **kwargs
-    ):
-        """List emojis  # noqa: E501
-
-        ## List emojis  Retrieves a list of all emojis registered to the application.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-list-emojis  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.list_emojis(async_req=True)
-        >>> result = thread.get()
-
-
-        Keyword Args:
-            api_token (str): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            ListEmojisResponse
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        return self.list_emojis_endpoint.call_with_http_info(**kwargs)
-
-    def list_messages(
+    def get_total_number_of_messages_in_a_channel(
         self,
         channel_type,
         channel_url,
         **kwargs
     ):
-        """List messages  # noqa: E501
+        """Get total number of messages in a channel  # noqa: E501
 
-        ## List messages  Retrieves a list of past messages of a channel.  > This message retrieval is one of Sendbird's [premium features](https://sendbird.com/docs/chat/v3/platform-api/guides/application#-3-sendbird-s-premium-features). Contact our [sales team](https://get.sendbird.com/talk-to-sales.html) for further assistance.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-list-messages ----------------------------   `channel_type`      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  `channel_url`      Type: string      Description: Specifies the URL of the channel to retrieve a list of past messages.  # noqa: E501
+        ## Get total number of messages in a channel  Retrieves the total number of messages in a specific channel.  https://sendbird.com/docs/chat/platform-api/v3/message/messaging-basics/get-total-number-of-messages-in-a-channel#1-get-total-number-of-messages-in-a-channel ----------------------------  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.list_messages(channel_type, channel_url, async_req=True)
+        >>> thread = api.get_total_number_of_messages_in_a_channel(channel_type, channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
-            channel_type (str):
-            channel_url (str):
+            channel_type (str): (Required) 
+            channel_url (str): (Required) 
 
         Keyword Args:
             api_token (str): [optional]
-            message_ts (str): [optional]
-            message_id (int): [optional]
-            prev_limit (int): [optional]
-            next_limit (int): [optional]
-            include (bool): [optional]
-            reverse (bool): [optional]
-            sender_id (str): [optional]
-            sender_ids (str): [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            GetTotalNumberOfMessagesInAChannelResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['channel_type'] = \
+            channel_type
+        kwargs['channel_url'] = \
+            channel_url
+        return self.get_total_number_of_messages_in_a_channel_endpoint.call_with_http_info(**kwargs)
+
+    def list_messages(
+        self,
+        channel_type,
+        channel_url,
+        message_ts,
+        message_id,
+        **kwargs
+    ):
+        """List messages  # noqa: E501
+
+        ## List messages  You can retrieve a list of past messages of a specific channel with this API.  By default, this action returns a list of messages in the order they were created. Replies in threaded messages are also listed in the chronological order of their creation like other messages, not grouped with their parent messages.  https://sendbird.com/docs/chat/platform-api/v3/message/messaging-basics/list-messages#1-list-messages  `channel_type`   Type: string   Description: Specifies the type of the channel. Either open_channels or group_channels.   `channel_url`   Type: string   Description: Specifies the URL of the channel to retrieve a list of past messages.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.list_messages(channel_type, channel_url, message_ts, message_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            channel_type (str): (Required) 
+            channel_url (str): (Required) 
+            message_ts (int): Specifies the timestamp to be the reference point of the query in Unix milliseconds. Either this or the message_id parameter below should be specified in your query URL to retrieve a list. It fetches messages that were sent prior to and after the specified message_ts and the default value for both prev_limit and next_limit is 15.
+            message_id (int): Specifies the unique ID of the message to be the reference point of the query. Either this or the message_ts parameter above should be specified in your query URL to retrieve a list. It fetches messages that were sent prior to and after the specified message_id and the default value for both prev_limit and next_limit is 15.
+
+        Keyword Args:
+            prev_limit (int): Specifies the number of previously sent messages to retrieve before message_ts. For example, if message_ts=1484202848298, then prev_limit=50 returns 50 messages sent by 1484202848297 (message_ts - 1). Acceptable values range from 0 to 200. (Default: 15). [optional]
+            next_limit (int): Specifies the number of sent messages to retrieve after message_ts. For example, if message_ts=1484202848298, then next_limit=50 returns 50 messages sent from 1484202848299 (message_ts + 1). Acceptable values range from 0 to 200. (Default: 15). [optional]
+            include (bool): Determines whether to include messages sent exactly on the specified message_ts in the results. (Default: true). [optional]
+            reverse (bool): Determines whether to sort the results in reverse chronological order. If set to true, messages appear in reverse chronological order where the newest comes first and the oldest last. (Default: false). [optional]
+            sender_id (str): Restricts the search scope to only retrieve messages sent by the user with the specified ID.. [optional]
+            sender_ids (str): Restricts the search scope to only retrieve messages sent by one or more users with the specified IDs listed in a comma-separated string.. [optional]
             operator_filter (str): [optional]
-            custom_types (str): [optional]
+            custom_types (str): Specifies a comma-separated string of one or more custom message types to retrieve. The value set to this parameter can serve as a filter as follows: - A string of specific custom types: Messages with the corresponding custom types are returned. - Empty like &custom_types=&...: Messages whose custom_type property is empty or has a value of null are returned. - An asterisk (\\*) (default): All messages are returned regardless of their custom_type.. [optional]
             message_type (str): [optional]
             including_removed (bool): [optional]
             include_reactions (bool): [optional]
             include_reply_type (str): One of following values: NONE, ALL, ONLY_REPLY_TO_CHANNEL. [optional]
             include_parent_message_info (bool): [optional]
-            with_sorted_meta_array (bool): [optional]
+            include_thread_info (bool): [optional]
+            include_poll_details (bool): Determines whether to include all properties of a poll resource with a full list of options in the results. If set to false, a selection of poll resource properties consisting of id, title, close_at, created_at, updated_at, status, and message_id are returned. (Default: false) * To use this property, the polls feature should be turned on in Settings > Chat > Features on Sendbird Dashboard.. [optional]
+            with_sorted_meta_array (bool): Determines whether to include the sorted_metaarray property in the response. (Default: false). [optional]
             show_subchannel_messages_only (bool): [optional]
             user_id (str): [optional]
-            custom_type (str): [optional]
-            with_meta_array (bool): [optional]
+            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -3494,32 +1452,32 @@ class MessageApi(object):
             channel_type
         kwargs['channel_url'] = \
             channel_url
+        kwargs['message_ts'] = \
+            message_ts
+        kwargs['message_id'] = \
+            message_id
         return self.list_messages_endpoint.call_with_http_info(**kwargs)
 
-    def list_reactions_of_message(
+    def mark_channel_messages_as_read(
         self,
-        channel_type,
         channel_url,
-        message_id,
         **kwargs
     ):
-        """List reactions of a message  # noqa: E501
+        """Mark all messages as read  # noqa: E501
 
-        ## List reactions of a message  Retrieves a list of reactions made to a message.  > __Note__: Currently, this action is only available in group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-list-reactions-of-a-message ----------------------------   `channel_type`      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  `channel_url`      Type: string      Description: Specifies the URL of the target channel.  `message_id`      Type: long      Description: Specifies the unique ID of the message to add a reaction to.  # noqa: E501
+        ## Mark all messages as read  Marks all messages in a group channel as read for a specific user. This action is only applicable for users in a group channel.  https://sendbird.com/docs/chat/platform-api/v3/message/read-receipts/mark-all-messages-as-read-message#1-mark-all-messages-as-read  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.list_reactions_of_message(channel_type, channel_url, message_id, async_req=True)
+        >>> thread = api.mark_channel_messages_as_read(channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
-            channel_type (str):
-            channel_url (str):
-            message_id (str):
+            channel_url (str): (Required) 
 
         Keyword Args:
             api_token (str): [optional]
-            list_users (bool): [optional]
+            mark_channel_messages_as_read_request (MarkChannelMessagesAsReadRequest): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -3552,7 +1510,7 @@ class MessageApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            ListReactionsOfMessageResponse
+            {str: (bool, date, datetime, dict, float, int, list, str, none_type)}
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -3581,34 +1539,30 @@ class MessageApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['channel_type'] = \
-            channel_type
         kwargs['channel_url'] = \
             channel_url
-        kwargs['message_id'] = \
-            message_id
-        return self.list_reactions_of_message_endpoint.call_with_http_info(**kwargs)
+        return self.mark_channel_messages_as_read_endpoint.call_with_http_info(**kwargs)
 
-    def migrate_messages_by_url(
+    def migrate_messages(
         self,
         target_channel_url,
         **kwargs
     ):
         """Migrate messages  # noqa: E501
 
-        ## Migrate messages  Using our migration API, you can migrate the messages from another system into a Sendbird system's [channel](https://sendbird.com/docs/chat/v3/platform-api/guides/channel-types) which consists of users, messages, and other chat-related data.  > To turn on this feature, [contact our support team](https://dashboard.sendbird.com/settings/contact_us).  There are three things to do in advance before the migration. Follow the instructions below:  1. Register the users of your current chat solution to your Sendbird application. You can migrate the users into the Sendbird system using the [user creation API](https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-create-a-user). 2. Create either an [open](https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-create-a-channel) or a [group](https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-create-a-channel) channel to migrate the messages of your chat solution. The Sendbird system doesn't create a channel for your migration automatically. 3. The maximum number of migrated messages per call is 100. To avoid the failure during your migration, you must adjust the number of messages to process at once via the API.  https://sendbird.com/docs/chat/v3/platform-api/guides/migration#2-migrate-messages ----------------------------  # noqa: E501
+        ## Migrate messages  Using our migration API, you can migrate the messages from another system into a Sendbird system's [channel](https://sendbird.com/docs/chat/v3/platform-api/guides/channel-types) which consists of users, messages, and other chat-related data.  > To turn on this feature, [contact our support team](https://dashboard.sendbird.com/settings/contact_us).      There are three things to do in advance before the migration. Follow the instructions below:  1. Register the users of your current chat solution to your Sendbird application. You can migrate the users into the Sendbird system using the [user creation API](https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-create-a-user).      2. Create either an [open](https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-create-a-channel) or a [group](https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-create-a-channel) channel to migrate the messages of your chat solution. The Sendbird system doesn't create a channel for your migration automatically.      3. The maximum number of migrated messages per call is 100. To avoid the failure during your migration, you must adjust the number of messages to process at once via the API.       https://sendbird.com/docs/chat/platform-api/v3/message/migration/migrate-messages#1-migrate-messages  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.migrate_messages_by_url(target_channel_url, async_req=True)
+        >>> thread = api.migrate_messages(target_channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
-            target_channel_url (str):
+            target_channel_url (str): (Required) 
 
         Keyword Args:
             api_token (str): [optional]
-            body ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]
+            migrate_messages_request (MigrateMessagesRequest): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -3641,7 +1595,7 @@ class MessageApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            None
+            {str: (bool, date, datetime, dict, float, int, list, str, none_type)}
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -3672,9 +1626,9 @@ class MessageApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['target_channel_url'] = \
             target_channel_url
-        return self.migrate_messages_by_url_endpoint.call_with_http_info(**kwargs)
+        return self.migrate_messages_endpoint.call_with_http_info(**kwargs)
 
-    def remove_extra_data_from_message(
+    def remove_extra_data_from_a_message(
         self,
         channel_type,
         channel_url,
@@ -3683,21 +1637,21 @@ class MessageApi(object):
     ):
         """Remove extra data from a message  # noqa: E501
 
-        ## Remove extra data from a message  Removes specific items from a message by their keys.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-remove-extra-data-from-a-message ----------------------------  # noqa: E501
+        ## Remove extra data from a message  Removes specific items from a message by their keys.  https://sendbird.com/docs/chat/platform-api/v3/message/messaging-basics/message-remove-metadata#1-remove-metadata ----------------------------  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.remove_extra_data_from_message(channel_type, channel_url, message_id, async_req=True)
+        >>> thread = api.remove_extra_data_from_a_message(channel_type, channel_url, message_id, async_req=True)
         >>> result = thread.get()
 
         Args:
-            channel_type (str):
-            channel_url (str):
-            message_id (str):
+            channel_type (str): (Required) 
+            channel_url (str): (Required) 
+            message_id (str): (Required) 
 
         Keyword Args:
+            keys (str): [optional]
             api_token (str): [optional]
-            keys ([str]): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -3765,103 +1719,9 @@ class MessageApi(object):
             channel_url
         kwargs['message_id'] = \
             message_id
-        return self.remove_extra_data_from_message_endpoint.call_with_http_info(**kwargs)
+        return self.remove_extra_data_from_a_message_endpoint.call_with_http_info(**kwargs)
 
-    def remove_reaction_from_a_message(
-        self,
-        channel_type,
-        channel_url,
-        message_id,
-        **kwargs
-    ):
-        """Remove a reaction from a message  # noqa: E501
-
-        ## Remove a reaction from a message  Removes a specific reaction from a message.  > __Note__: Currently, this action is only available in group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-remove-a-reaction-from-a-message ----------------------------  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.remove_reaction_from_a_message(channel_type, channel_url, message_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            channel_type (str):
-            channel_url (str):
-            message_id (str):
-
-        Keyword Args:
-            api_token (str): [optional]
-            user_id (str): [optional]
-            reaction (str): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            RemoveReactionFromAMessageResponse
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['channel_type'] = \
-            channel_type
-        kwargs['channel_url'] = \
-            channel_url
-        kwargs['message_id'] = \
-            message_id
-        return self.remove_reaction_from_a_message_endpoint.call_with_http_info(**kwargs)
-
-    def send_message(
+    def send_a_message(
         self,
         channel_type,
         channel_url,
@@ -3869,20 +1729,20 @@ class MessageApi(object):
     ):
         """Send a message  # noqa: E501
 
-        ## Send a message  Sends a message to a channel. You can send a text message, a file message, and an admin message.  >__Note__: With Sendbird Chat SDKs and the platform API, any type of files in messages can be uploaded to Sendbird server.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-send-a-message ----------------------------  # noqa: E501
+        ## Send a message  You can use this action to send a text message, a file message, or an admin message to a specific channel. Sendbird Chat SDKs and the platform API allows you to upload any type of files in messages to the Sendbird server. See [Message Overview](https://sendbird.com/docs/chat/platform-api/v3/message/message-overview) for more information on each message type. Messages are sent between client devices running the Sendbird Chat SDK or UIKit as well as programmatically from businesses to their customers. For instance, a delivery app can automatically send a message like \"Arriving in one minute!\" on behalf of a delivery driver.  https://sendbird.com/docs/chat/platform-api/v3/message/messaging-basics/send-a-message#1-send-a-message ----------------------------  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.send_message(channel_type, channel_url, async_req=True)
+        >>> thread = api.send_a_message(channel_type, channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
-            channel_type (str):
-            channel_url (str):
+            channel_type (str): (Required) 
+            channel_url (str): (Required) 
 
         Keyword Args:
             api_token (str): [optional]
-            send_message_data (SendMessageData): [optional]
+            send_a_message_request (SendAMessageRequest): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -3915,7 +1775,7 @@ class MessageApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            SendBirdMessageResponse
+            SendbirdMessageResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -3948,365 +1808,9 @@ class MessageApi(object):
             channel_type
         kwargs['channel_url'] = \
             channel_url
-        return self.send_message_endpoint.call_with_http_info(**kwargs)
+        return self.send_a_message_endpoint.call_with_http_info(**kwargs)
 
-    def translate_message_into_other_languages(
-        self,
-        channel_type,
-        channel_url,
-        message_id,
-        **kwargs
-    ):
-        """Translate a message into other languages  # noqa: E501
-
-        ## Translate a message into other languages  Translates a message into specific languages. Only text messages of which type is MESG can be translated into other languages.  > __Note__: Message translation is powered by [Google Cloud Translation API recognition engine](https://cloud.google.com/translate/). Find language codes supported by the engine in the [Miscellaneous](https://sendbird.com/docs/chat/v3/platform-api/guides/Miscellaneous) page or visit the [Language Support](https://cloud.google.com/translate/docs/languages) for Google Cloud Translation.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-translate-a-message-into-other-languages ----------------------------  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.translate_message_into_other_languages(channel_type, channel_url, message_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            channel_type (str):
-            channel_url (str):
-            message_id (str):
-
-        Keyword Args:
-            api_token (str): [optional]
-            translate_message_into_other_languages_data (TranslateMessageIntoOtherLanguagesData): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            SendBirdMessageResponse
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['channel_type'] = \
-            channel_type
-        kwargs['channel_url'] = \
-            channel_url
-        kwargs['message_id'] = \
-            message_id
-        return self.translate_message_into_other_languages_endpoint.call_with_http_info(**kwargs)
-
-    def update_emoji_category_url_by_id(
-        self,
-        emoji_category_id,
-        **kwargs
-    ):
-        """Update an emoji category URL  # noqa: E501
-
-        ## Update an emoji category URL  Updates the URL of an emoji category with the specified ID.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-update-an-emoji-category-url ----------------------------  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.update_emoji_category_url_by_id(emoji_category_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            emoji_category_id (str):
-
-        Keyword Args:
-            api_token (str): [optional]
-            update_emoji_category_url_by_id_data (UpdateEmojiCategoryUrlByIdData): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            SendBirdEmojiCategory
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['emoji_category_id'] = \
-            emoji_category_id
-        return self.update_emoji_category_url_by_id_endpoint.call_with_http_info(**kwargs)
-
-    def update_emoji_url_by_key(
-        self,
-        emoji_key,
-        **kwargs
-    ):
-        """Update an emoji URL  # noqa: E501
-
-        ## Update an emoji URL  Updates the image URL of an emoji with the specified key.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-update-an-emoji-url ----------------------------  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.update_emoji_url_by_key(emoji_key, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            emoji_key (str):
-
-        Keyword Args:
-            api_token (str): [optional]
-            update_emoji_url_by_key_data (UpdateEmojiUrlByKeyData): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            SendBirdEmoji
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['emoji_key'] = \
-            emoji_key
-        return self.update_emoji_url_by_key_endpoint.call_with_http_info(**kwargs)
-
-    def update_extra_data_in_message(
-        self,
-        channel_type,
-        channel_url,
-        message_id,
-        **kwargs
-    ):
-        """Update extra data in a message  # noqa: E501
-
-        ## Update extra data in a message  Updates the values of specific items by their keys.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-update-extra-data-in-a-message ----------------------------  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.update_extra_data_in_message(channel_type, channel_url, message_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            channel_type (str):
-            channel_url (str):
-            message_id (str):
-
-        Keyword Args:
-            api_token (str): [optional]
-            update_extra_data_in_message_data (UpdateExtraDataInMessageData): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            UpdateExtraDataInMessageResponse
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['channel_type'] = \
-            channel_type
-        kwargs['channel_url'] = \
-            channel_url
-        kwargs['message_id'] = \
-            message_id
-        return self.update_extra_data_in_message_endpoint.call_with_http_info(**kwargs)
-
-    def update_message_by_id(
+    def update_a_message(
         self,
         channel_type,
         channel_url,
@@ -4315,21 +1819,21 @@ class MessageApi(object):
     ):
         """Update a message  # noqa: E501
 
-        ## Update a message  Updates information on a message in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-update-a-message ----------------------------  # noqa: E501
+        ## Update a message  Updates specific information on a message.  https://sendbird.com/docs/chat/platform-api/v3/message/messaging-basics/update-a-message#1-update-a-message ----------------------------  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.update_message_by_id(channel_type, channel_url, message_id, async_req=True)
+        >>> thread = api.update_a_message(channel_type, channel_url, message_id, async_req=True)
         >>> result = thread.get()
 
         Args:
-            channel_type (str):
-            channel_url (str):
-            message_id (str):
+            channel_type (str): (Required) 
+            channel_url (str): (Required) 
+            message_id (str): (Required) 
 
         Keyword Args:
             api_token (str): [optional]
-            update_message_by_id_data (UpdateMessageByIdData): [optional]
+            update_a_message_request (UpdateAMessageRequest): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -4362,7 +1866,7 @@ class MessageApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            SendBirdMessageResponse
+            SendbirdMessageResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -4397,114 +1901,32 @@ class MessageApi(object):
             channel_url
         kwargs['message_id'] = \
             message_id
-        return self.update_message_by_id_endpoint.call_with_http_info(**kwargs)
+        return self.update_a_message_endpoint.call_with_http_info(**kwargs)
 
-    def use_default_emojis(
-        self,
-        **kwargs
-    ):
-        """Use default emojis  # noqa: E501
-
-        ## Use default emojis  Determines whether to use the 7 default emojis initially provided.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-use-default-emojis  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.use_default_emojis(async_req=True)
-        >>> result = thread.get()
-
-
-        Keyword Args:
-            api_token (str): [optional]
-            use_default_emojis_data (UseDefaultEmojisData): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            UseDefaultEmojisResponse
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        return self.use_default_emojis_endpoint.call_with_http_info(**kwargs)
-
-    def view_message_by_id(
+    def update_extra_data_in_a_message(
         self,
         channel_type,
         channel_url,
         message_id,
         **kwargs
     ):
-        """View a message  # noqa: E501
+        """Update extra data in a message  # noqa: E501
 
-        ## View a message  Retrieves information on a message.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-view-a-message ----------------------------   `channel_type`      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  `channel_url`      Type: string      Description: Specifies the URL of the target channel.  `message_id`      Type: long      Description: Specifies the unique ID of the message to retrieve.  # noqa: E501
+        ## Update extra data in a message  Updates the values of specific items by their keys.  https://sendbird.com/docs/chat/platform-api/v3/message/messaging-basics/message-update-metadata#1-update-metadata ----------------------------  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.view_message_by_id(channel_type, channel_url, message_id, async_req=True)
+        >>> thread = api.update_extra_data_in_a_message(channel_type, channel_url, message_id, async_req=True)
         >>> result = thread.get()
 
         Args:
-            channel_type (str):
-            channel_url (str):
-            message_id (str):
+            channel_type (str): (Required) 
+            channel_url (str): (Required) 
+            message_id (str): (Required) 
 
         Keyword Args:
             api_token (str): [optional]
-            with_sorted_meta_array (bool): [optional]
-            with_meta_array (bool): [optional]
-            include_parent_message_info (bool): [optional]
+            update_extra_data_in_a_message_request (UpdateExtraDataInAMessageRequest): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -4537,7 +1959,7 @@ class MessageApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            SendBirdMessageResponse
+            UpdateExtraDataInAMessageResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -4572,93 +1994,5 @@ class MessageApi(object):
             channel_url
         kwargs['message_id'] = \
             message_id
-        return self.view_message_by_id_endpoint.call_with_http_info(**kwargs)
-
-    def view_total_number_of_messages_in_channel(
-        self,
-        channel_type,
-        channel_url,
-        **kwargs
-    ):
-        """View total number of messages in a channel  # noqa: E501
-
-        ## View total number of messages in a channel  Retrieves the total number of messages in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-view-total-number-of-messages-in-a-channel ----------------------------  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.view_total_number_of_messages_in_channel(channel_type, channel_url, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            channel_type (str):
-            channel_url (str):
-
-        Keyword Args:
-            api_token (str): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            ViewTotalNumberOfMessagesInChannelResponse
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['channel_type'] = \
-            channel_type
-        kwargs['channel_url'] = \
-            channel_url
-        return self.view_total_number_of_messages_in_channel_endpoint.call_with_http_info(**kwargs)
+        return self.update_extra_data_in_a_message_endpoint.call_with_http_info(**kwargs)
 

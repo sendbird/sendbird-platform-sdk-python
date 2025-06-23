@@ -1,7 +1,7 @@
 """
     Sendbird Platform SDK
 
-    Sendbird Platform API SDK  https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api  # noqa: E501
+    Sendbird Platform API SDK  [https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api](https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api)  Contact Support:   Name: Sendbird   Email: [support@sendbird.com](https://mailto:support@sendbird.com)  # noqa: E501
 
     The version of the OpenAPI document: 1.0.0
     Contact: support@sendbird.com
@@ -24,66 +24,59 @@ class TestOpenChannelApi(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def test_oc_cancel_the_registration_of_operators(self):
-        """Test case for oc_cancel_the_registration_of_operators
+    def test_create_an_open_channel(self):
+        """Test case for create_an_open_channel
 
-        Cancel the registration of operators  # noqa: E501
+        Create an open channel  # noqa: E501
         """
         pass
 
-    def test_oc_create_channel(self):
-        """Test case for oc_create_channel
+    def test_delete_an_open_channel(self):
+        """Test case for delete_an_open_channel
 
-        Create a channel  # noqa: E501
+        Delete an open channel  # noqa: E501
         """
         pass
 
-    def test_oc_delete_channel_by_url(self):
-        """Test case for oc_delete_channel_by_url
+    def test_get_an_open_channel(self):
+        """Test case for get_an_open_channel
 
-        Delete a channel  # noqa: E501
+        Get an open channel  # noqa: E501
         """
         pass
 
-    def test_oc_list_channels(self):
-        """Test case for oc_list_channels
+    def test_list_channel_operators(self):
+        """Test case for list_channel_operators
 
-        List channels  # noqa: E501
+        List operators of an open channel  # noqa: E501
         """
         pass
 
-    def test_oc_list_operators(self):
-        """Test case for oc_list_operators
+    def test_list_open_channels(self):
+        """Test case for list_open_channels
 
-        List operators  # noqa: E501
+        List open channels  # noqa: E501
         """
         pass
 
-    def test_oc_list_participants(self):
-        """Test case for oc_list_participants
+    def test_register_operators(self):
+        """Test case for register_operators
 
-        List participants  # noqa: E501
+        Register operators to an open channel  # noqa: E501
         """
         pass
 
-    def test_oc_register_operators(self):
-        """Test case for oc_register_operators
+    def test_unregister_operators(self):
+        """Test case for unregister_operators
 
-        Register operators  # noqa: E501
+        Unregister operators from an open channel  # noqa: E501
         """
         pass
 
-    def test_oc_update_channel_by_url(self):
-        """Test case for oc_update_channel_by_url
+    def test_update_an_open_channel(self):
+        """Test case for update_an_open_channel
 
-        Update a channel  # noqa: E501
-        """
-        pass
-
-    def test_oc_view_channel_by_url(self):
-        """Test case for oc_view_channel_by_url
-
-        View a channel  # noqa: E501
+        Update an open channel  # noqa: E501
         """
         pass
 

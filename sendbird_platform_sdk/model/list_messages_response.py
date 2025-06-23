@@ -1,7 +1,7 @@
 """
     Sendbird Platform SDK
 
-    Sendbird Platform API SDK  https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api  # noqa: E501
+    Sendbird Platform API SDK  [https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api](https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api)  Contact Support:   Name: Sendbird   Email: [support@sendbird.com](https://mailto:support@sendbird.com)  # noqa: E501
 
     The version of the OpenAPI document: 1.0.0
     Contact: support@sendbird.com
@@ -31,8 +31,8 @@ from sendbird_platform_sdk.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from sendbird_platform_sdk.model.list_messages_response_messages_inner import ListMessagesResponseMessagesInner
-    globals()['ListMessagesResponseMessagesInner'] = ListMessagesResponseMessagesInner
+    from sendbird_platform_sdk.model.sendbird_message_response import SendbirdMessageResponse
+    globals()['SendbirdMessageResponse'] = SendbirdMessageResponse
 
 
 class ListMessagesResponse(ModelNormal):
@@ -88,7 +88,7 @@ class ListMessagesResponse(ModelNormal):
         """
         lazy_import()
         return {
-            'messages': ([ListMessagesResponseMessagesInner],),  # noqa: E501
+            'messages': ([SendbirdMessageResponse],),  # noqa: E501
         }
 
     @cached_property
@@ -141,7 +141,7 @@ class ListMessagesResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            messages ([ListMessagesResponseMessagesInner]): [optional]  # noqa: E501
+            messages ([SendbirdMessageResponse]): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -227,7 +227,7 @@ class ListMessagesResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            messages ([ListMessagesResponseMessagesInner]): [optional]  # noqa: E501
+            messages ([SendbirdMessageResponse]): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

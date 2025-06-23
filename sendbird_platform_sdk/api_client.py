@@ -1,7 +1,7 @@
 """
     Sendbird Platform SDK
 
-    Sendbird Platform API SDK  https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api  # noqa: E501
+    Sendbird Platform API SDK  [https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api](https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api)  Contact Support:   Name: Sendbird   Email: [support@sendbird.com](https://mailto:support@sendbird.com)  # noqa: E501
 
     The version of the OpenAPI document: 1.0.0
     Contact: support@sendbird.com
@@ -77,7 +77,7 @@ class ApiClient(object):
             self.default_headers[header_name] = header_value
         self.cookie = cookie
         # Set default User-Agent.
-        self.user_agent = 'OpenAPI-Generator/1.0.27/python'
+        self.user_agent = 'OpenAPI-Generator/2.0.0/python'
 
     def __enter__(self):
         return self
@@ -803,10 +803,10 @@ class Endpoint(object):
         Example:
 
         api_instance = AnnouncementApi()
-        api_instance.get_detailed_open_rate_of_announcement_group  # this is an instance of the class Endpoint
-        api_instance.get_detailed_open_rate_of_announcement_group()  # this invokes api_instance.get_detailed_open_rate_of_announcement_group.__call__()
+        api_instance.schedule_an_announcement  # this is an instance of the class Endpoint
+        api_instance.schedule_an_announcement()  # this invokes api_instance.schedule_an_announcement.__call__()
         which then invokes the callable functions stored in that endpoint at
-        api_instance.get_detailed_open_rate_of_announcement_group.callable or self.callable in this class
+        api_instance.schedule_an_announcement.callable or self.callable in this class
 
         """
         return self.callable(self, *args, **kwargs)

@@ -1,7 +1,7 @@
 """
     Sendbird Platform SDK
 
-    Sendbird Platform API SDK  https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api  # noqa: E501
+    Sendbird Platform API SDK  [https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api](https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api)  Contact Support:   Name: Sendbird   Email: [support@sendbird.com](https://mailto:support@sendbird.com)  # noqa: E501
 
     The version of the OpenAPI document: 1.0.0
     Contact: support@sendbird.com
@@ -31,8 +31,8 @@ from sendbird_platform_sdk.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from sendbird_platform_sdk.model.send_bird_user import SendBirdUser
-    globals()['SendBirdUser'] = SendBirdUser
+    from sendbird_platform_sdk.model.sendbird_basic_user_info import SendbirdBasicUserInfo
+    globals()['SendbirdBasicUserInfo'] = SendbirdBasicUserInfo
 
 
 class ListRegistrationOrDeviceTokensResponse(ModelNormal):
@@ -91,7 +91,7 @@ class ListRegistrationOrDeviceTokensResponse(ModelNormal):
             'token': ([str],),  # noqa: E501
             'tokens': ([str],),  # noqa: E501
             'type': (str,),  # noqa: E501
-            'user': (SendBirdUser,),  # noqa: E501
+            'user': (SendbirdBasicUserInfo,),  # noqa: E501
         }
 
     @cached_property
@@ -150,7 +150,7 @@ class ListRegistrationOrDeviceTokensResponse(ModelNormal):
             token ([str]): [optional]  # noqa: E501
             tokens ([str]): [optional]  # noqa: E501
             type (str): [optional]  # noqa: E501
-            user (SendBirdUser): [optional]  # noqa: E501
+            user (SendbirdBasicUserInfo): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -239,7 +239,7 @@ class ListRegistrationOrDeviceTokensResponse(ModelNormal):
             token ([str]): [optional]  # noqa: E501
             tokens ([str]): [optional]  # noqa: E501
             type (str): [optional]  # noqa: E501
-            user (SendBirdUser): [optional]  # noqa: E501
+            user (SendbirdBasicUserInfo): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

@@ -1,7 +1,7 @@
 """
     Sendbird Platform SDK
 
-    Sendbird Platform API SDK  https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api  # noqa: E501
+    Sendbird Platform API SDK  [https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api](https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api)  Contact Support:   Name: Sendbird   Email: [support@sendbird.com](https://mailto:support@sendbird.com)  # noqa: E501
 
     The version of the OpenAPI document: 1.0.0
     Contact: support@sendbird.com
@@ -82,7 +82,7 @@ class ViewNumberOfMonthlyActiveUsersResponse(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'mau': (float,),  # noqa: E501
+            'mau': (int,),  # noqa: E501
         }
 
     @cached_property
@@ -135,7 +135,7 @@ class ViewNumberOfMonthlyActiveUsersResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            mau (float): [optional]  # noqa: E501
+            mau (int): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -221,7 +221,7 @@ class ViewNumberOfMonthlyActiveUsersResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            mau (float): [optional]  # noqa: E501
+            mau (int): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

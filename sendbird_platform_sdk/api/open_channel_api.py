@@ -1,7 +1,7 @@
 """
     Sendbird Platform SDK
 
-    Sendbird Platform API SDK  https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api  # noqa: E501
+    Sendbird Platform API SDK  [https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api](https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api)  Contact Support:   Name: Sendbird   Email: [support@sendbird.com](https://mailto:support@sendbird.com)  # noqa: E501
 
     The version of the OpenAPI document: 1.0.0
     Contact: support@sendbird.com
@@ -22,14 +22,12 @@ from sendbird_platform_sdk.model_utils import (  # noqa: F401
     none_type,
     validate_and_convert_types
 )
-from sendbird_platform_sdk.model.oc_create_channel_data import OcCreateChannelData
-from sendbird_platform_sdk.model.oc_delete_channel_by_url200_response import OcDeleteChannelByUrl200Response
-from sendbird_platform_sdk.model.oc_list_channels_response import OcListChannelsResponse
-from sendbird_platform_sdk.model.oc_list_operators_response import OcListOperatorsResponse
-from sendbird_platform_sdk.model.oc_list_participants_response import OcListParticipantsResponse
-from sendbird_platform_sdk.model.oc_register_operators_data import OcRegisterOperatorsData
-from sendbird_platform_sdk.model.oc_update_channel_by_url_data import OcUpdateChannelByUrlData
-from sendbird_platform_sdk.model.send_bird_open_channel import SendBirdOpenChannel
+from sendbird_platform_sdk.model.create_an_open_channel_request import CreateAnOpenChannelRequest
+from sendbird_platform_sdk.model.list_open_channels_response import ListOpenChannelsResponse
+from sendbird_platform_sdk.model.list_operators_response import ListOperatorsResponse
+from sendbird_platform_sdk.model.register_operators_to_a_group_channel_request import RegisterOperatorsToAGroupChannelRequest
+from sendbird_platform_sdk.model.sendbird_open_channel import SendbirdOpenChannel
+from sendbird_platform_sdk.model.update_an_open_channel_request import UpdateAnOpenChannelRequest
 
 
 class OpenChannelApi(object):
@@ -43,12 +41,389 @@ class OpenChannelApi(object):
         if api_client is None:
             api_client = ApiClient()
         self.api_client = api_client
-        self.oc_cancel_the_registration_of_operators_endpoint = _Endpoint(
+        self.create_an_open_channel_endpoint = _Endpoint(
             settings={
-                'response_type': None,
+                'response_type': (SendbirdOpenChannel,),
+                'auth': [],
+                'endpoint_path': '/v3/open_channels',
+                'operation_id': 'create_an_open_channel',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'api_token',
+                    'create_an_open_channel_request',
+                ],
+                'required': [],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'api_token':
+                        (str,),
+                    'create_an_open_channel_request':
+                        (CreateAnOpenChannelRequest,),
+                },
+                'attribute_map': {
+                    'api_token': 'api-token',
+                },
+                'location_map': {
+                    'api_token': 'header',
+                    'create_an_open_channel_request': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client
+        )
+        self.delete_an_open_channel_endpoint = _Endpoint(
+            settings={
+                'response_type': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
+                'auth': [],
+                'endpoint_path': '/v3/open_channels/{channel_url}',
+                'operation_id': 'delete_an_open_channel',
+                'http_method': 'DELETE',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'channel_url',
+                    'api_token',
+                ],
+                'required': [
+                    'channel_url',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'channel_url':
+                        (str,),
+                    'api_token':
+                        (str,),
+                },
+                'attribute_map': {
+                    'channel_url': 'channel_url',
+                    'api_token': 'api-token',
+                },
+                'location_map': {
+                    'channel_url': 'path',
+                    'api_token': 'header',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.get_an_open_channel_endpoint = _Endpoint(
+            settings={
+                'response_type': (SendbirdOpenChannel,),
+                'auth': [],
+                'endpoint_path': '/v3/open_channels/{channel_url}',
+                'operation_id': 'get_an_open_channel',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'channel_url',
+                    'api_token',
+                    'include_operators',
+                ],
+                'required': [
+                    'channel_url',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'channel_url':
+                        (str,),
+                    'api_token':
+                        (str,),
+                    'include_operators':
+                        (bool,),
+                },
+                'attribute_map': {
+                    'channel_url': 'channel_url',
+                    'api_token': 'api-token',
+                    'include_operators': 'include_operators',
+                },
+                'location_map': {
+                    'channel_url': 'path',
+                    'api_token': 'header',
+                    'include_operators': 'query',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.list_channel_operators_endpoint = _Endpoint(
+            settings={
+                'response_type': (ListOperatorsResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/open_channels/{channel_url}/operators',
-                'operation_id': 'oc_cancel_the_registration_of_operators',
+                'operation_id': 'list_channel_operators',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'channel_url',
+                    'token',
+                    'limit',
+                    'api_token',
+                ],
+                'required': [
+                    'channel_url',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'channel_url':
+                        (str,),
+                    'token':
+                        (str,),
+                    'limit':
+                        (int,),
+                    'api_token':
+                        (str,),
+                },
+                'attribute_map': {
+                    'channel_url': 'channel_url',
+                    'token': 'token',
+                    'limit': 'limit',
+                    'api_token': 'api-token',
+                },
+                'location_map': {
+                    'channel_url': 'path',
+                    'token': 'query',
+                    'limit': 'query',
+                    'api_token': 'header',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.list_open_channels_endpoint = _Endpoint(
+            settings={
+                'response_type': (ListOpenChannelsResponse,),
+                'auth': [],
+                'endpoint_path': '/v3/open_channels',
+                'operation_id': 'list_open_channels',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'token',
+                    'channel_urls',
+                    'limit',
+                    'custom_types',
+                    'name_contains',
+                    'url_contains',
+                    'show_frozen',
+                    'show_metadata',
+                    'api_token',
+                ],
+                'required': [],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'token':
+                        (str,),
+                    'channel_urls':
+                        (str,),
+                    'limit':
+                        (int,),
+                    'custom_types':
+                        (str,),
+                    'name_contains':
+                        (str,),
+                    'url_contains':
+                        (str,),
+                    'show_frozen':
+                        (bool,),
+                    'show_metadata':
+                        (bool,),
+                    'api_token':
+                        (str,),
+                },
+                'attribute_map': {
+                    'token': 'token',
+                    'channel_urls': 'channel_urls',
+                    'limit': 'limit',
+                    'custom_types': 'custom_types',
+                    'name_contains': 'name_contains',
+                    'url_contains': 'url_contains',
+                    'show_frozen': 'show_frozen',
+                    'show_metadata': 'show_metadata',
+                    'api_token': 'api-token',
+                },
+                'location_map': {
+                    'token': 'query',
+                    'channel_urls': 'query',
+                    'limit': 'query',
+                    'custom_types': 'query',
+                    'name_contains': 'query',
+                    'url_contains': 'query',
+                    'show_frozen': 'query',
+                    'show_metadata': 'query',
+                    'api_token': 'header',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.register_operators_endpoint = _Endpoint(
+            settings={
+                'response_type': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
+                'auth': [],
+                'endpoint_path': '/v3/open_channels/{channel_url}/operators',
+                'operation_id': 'register_operators',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'channel_url',
+                    'api_token',
+                    'register_operators_to_a_group_channel_request',
+                ],
+                'required': [
+                    'channel_url',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'channel_url':
+                        (str,),
+                    'api_token':
+                        (str,),
+                    'register_operators_to_a_group_channel_request':
+                        (RegisterOperatorsToAGroupChannelRequest,),
+                },
+                'attribute_map': {
+                    'channel_url': 'channel_url',
+                    'api_token': 'api-token',
+                },
+                'location_map': {
+                    'channel_url': 'path',
+                    'api_token': 'header',
+                    'register_operators_to_a_group_channel_request': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client
+        )
+        self.unregister_operators_endpoint = _Endpoint(
+            settings={
+                'response_type': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
+                'auth': [],
+                'endpoint_path': '/v3/open_channels/{channel_url}/operators',
+                'operation_id': 'unregister_operators',
                 'http_method': 'DELETE',
                 'servers': None,
             },
@@ -56,8 +431,8 @@ class OpenChannelApi(object):
                 'all': [
                     'channel_url',
                     'operator_ids',
-                    'api_token',
                     'delete_all',
+                    'api_token',
                 ],
                 'required': [
                     'channel_url',
@@ -79,73 +454,23 @@ class OpenChannelApi(object):
                     'channel_url':
                         (str,),
                     'operator_ids':
-                        ([str],),
-                    'api_token':
                         (str,),
                     'delete_all':
                         (bool,),
+                    'api_token':
+                        (str,),
                 },
                 'attribute_map': {
                     'channel_url': 'channel_url',
                     'operator_ids': 'operator_ids',
-                    'api_token': 'Api-Token',
                     'delete_all': 'delete_all',
+                    'api_token': 'api-token',
                 },
                 'location_map': {
                     'channel_url': 'path',
                     'operator_ids': 'query',
-                    'api_token': 'header',
                     'delete_all': 'query',
-                },
-                'collection_format_map': {
-                    'operator_ids': 'multi',
-                }
-            },
-            headers_map={
-                'accept': [],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
-        self.oc_create_channel_endpoint = _Endpoint(
-            settings={
-                'response_type': (SendBirdOpenChannel,),
-                'auth': [],
-                'endpoint_path': '/v3/open_channels',
-                'operation_id': 'oc_create_channel',
-                'http_method': 'POST',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'api_token',
-                    'oc_create_channel_data',
-                ],
-                'required': [],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'api_token':
-                        (str,),
-                    'oc_create_channel_data':
-                        (OcCreateChannelData,),
-                },
-                'attribute_map': {
-                    'api_token': 'Api-Token',
-                },
-                'location_map': {
                     'api_token': 'header',
-                    'oc_create_channel_data': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -154,347 +479,16 @@ class OpenChannelApi(object):
                 'accept': [
                     'application/json'
                 ],
-                'content_type': [
-                    'application/json'
-                ]
+                'content_type': [],
             },
             api_client=api_client
         )
-        self.oc_delete_channel_by_url_endpoint = _Endpoint(
+        self.update_an_open_channel_endpoint = _Endpoint(
             settings={
-                'response_type': (OcDeleteChannelByUrl200Response,),
+                'response_type': (SendbirdOpenChannel,),
                 'auth': [],
                 'endpoint_path': '/v3/open_channels/{channel_url}',
-                'operation_id': 'oc_delete_channel_by_url',
-                'http_method': 'DELETE',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'channel_url',
-                    'api_token',
-                ],
-                'required': [
-                    'channel_url',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'channel_url':
-                        (str,),
-                    'api_token':
-                        (str,),
-                },
-                'attribute_map': {
-                    'channel_url': 'channel_url',
-                    'api_token': 'Api-Token',
-                },
-                'location_map': {
-                    'channel_url': 'path',
-                    'api_token': 'header',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
-        self.oc_list_channels_endpoint = _Endpoint(
-            settings={
-                'response_type': (OcListChannelsResponse,),
-                'auth': [],
-                'endpoint_path': '/v3/open_channels',
-                'operation_id': 'oc_list_channels',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'api_token',
-                    'token',
-                    'limit',
-                    'custom_types',
-                    'name_contains',
-                    'url_contains',
-                    'show_frozen',
-                    'show_metadata',
-                    'custom_type',
-                ],
-                'required': [],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'api_token':
-                        (str,),
-                    'token':
-                        (str,),
-                    'limit':
-                        (int,),
-                    'custom_types':
-                        (str,),
-                    'name_contains':
-                        (str,),
-                    'url_contains':
-                        (str,),
-                    'show_frozen':
-                        (bool,),
-                    'show_metadata':
-                        (bool,),
-                    'custom_type':
-                        (str,),
-                },
-                'attribute_map': {
-                    'api_token': 'Api-Token',
-                    'token': 'token',
-                    'limit': 'limit',
-                    'custom_types': 'custom_types',
-                    'name_contains': 'name_contains',
-                    'url_contains': 'url_contains',
-                    'show_frozen': 'show_frozen',
-                    'show_metadata': 'show_metadata',
-                    'custom_type': 'custom_type',
-                },
-                'location_map': {
-                    'api_token': 'header',
-                    'token': 'query',
-                    'limit': 'query',
-                    'custom_types': 'query',
-                    'name_contains': 'query',
-                    'url_contains': 'query',
-                    'show_frozen': 'query',
-                    'show_metadata': 'query',
-                    'custom_type': 'query',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
-        self.oc_list_operators_endpoint = _Endpoint(
-            settings={
-                'response_type': (OcListOperatorsResponse,),
-                'auth': [],
-                'endpoint_path': '/v3/open_channels/{channel_url}/operators',
-                'operation_id': 'oc_list_operators',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'channel_url',
-                    'api_token',
-                    'token',
-                    'limit',
-                ],
-                'required': [
-                    'channel_url',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'channel_url':
-                        (str,),
-                    'api_token':
-                        (str,),
-                    'token':
-                        (str,),
-                    'limit':
-                        (int,),
-                },
-                'attribute_map': {
-                    'channel_url': 'channel_url',
-                    'api_token': 'Api-Token',
-                    'token': 'token',
-                    'limit': 'limit',
-                },
-                'location_map': {
-                    'channel_url': 'path',
-                    'api_token': 'header',
-                    'token': 'query',
-                    'limit': 'query',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
-        self.oc_list_participants_endpoint = _Endpoint(
-            settings={
-                'response_type': (OcListParticipantsResponse,),
-                'auth': [],
-                'endpoint_path': '/v3/open_channels/{channel_url}/participants',
-                'operation_id': 'oc_list_participants',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'channel_url',
-                    'api_token',
-                    'token',
-                    'limit',
-                ],
-                'required': [
-                    'channel_url',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'channel_url':
-                        (str,),
-                    'api_token':
-                        (str,),
-                    'token':
-                        (str,),
-                    'limit':
-                        (int,),
-                },
-                'attribute_map': {
-                    'channel_url': 'channel_url',
-                    'api_token': 'Api-Token',
-                    'token': 'token',
-                    'limit': 'limit',
-                },
-                'location_map': {
-                    'channel_url': 'path',
-                    'api_token': 'header',
-                    'token': 'query',
-                    'limit': 'query',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
-        self.oc_register_operators_endpoint = _Endpoint(
-            settings={
-                'response_type': (OcDeleteChannelByUrl200Response,),
-                'auth': [],
-                'endpoint_path': '/v3/open_channels/{channel_url}/operators',
-                'operation_id': 'oc_register_operators',
-                'http_method': 'POST',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'channel_url',
-                    'api_token',
-                    'oc_register_operators_data',
-                ],
-                'required': [
-                    'channel_url',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'channel_url':
-                        (str,),
-                    'api_token':
-                        (str,),
-                    'oc_register_operators_data':
-                        (OcRegisterOperatorsData,),
-                },
-                'attribute_map': {
-                    'channel_url': 'channel_url',
-                    'api_token': 'Api-Token',
-                },
-                'location_map': {
-                    'channel_url': 'path',
-                    'api_token': 'header',
-                    'oc_register_operators_data': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
-            api_client=api_client
-        )
-        self.oc_update_channel_by_url_endpoint = _Endpoint(
-            settings={
-                'response_type': (SendBirdOpenChannel,),
-                'auth': [],
-                'endpoint_path': '/v3/open_channels/{channel_url}',
-                'operation_id': 'oc_update_channel_by_url',
+                'operation_id': 'update_an_open_channel',
                 'http_method': 'PUT',
                 'servers': None,
             },
@@ -502,7 +496,7 @@ class OpenChannelApi(object):
                 'all': [
                     'channel_url',
                     'api_token',
-                    'oc_update_channel_by_url_data',
+                    'update_an_open_channel_request',
                 ],
                 'required': [
                     'channel_url',
@@ -524,17 +518,17 @@ class OpenChannelApi(object):
                         (str,),
                     'api_token':
                         (str,),
-                    'oc_update_channel_by_url_data':
-                        (OcUpdateChannelByUrlData,),
+                    'update_an_open_channel_request':
+                        (UpdateAnOpenChannelRequest,),
                 },
                 'attribute_map': {
                     'channel_url': 'channel_url',
-                    'api_token': 'Api-Token',
+                    'api_token': 'api-token',
                 },
                 'location_map': {
                     'channel_url': 'path',
                     'api_token': 'header',
-                    'oc_update_channel_by_url_data': 'body',
+                    'update_an_open_channel_request': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -549,83 +543,24 @@ class OpenChannelApi(object):
             },
             api_client=api_client
         )
-        self.oc_view_channel_by_url_endpoint = _Endpoint(
-            settings={
-                'response_type': (SendBirdOpenChannel,),
-                'auth': [],
-                'endpoint_path': '/v3/open_channels/{channel_url}',
-                'operation_id': 'oc_view_channel_by_url',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'channel_url',
-                    'api_token',
-                ],
-                'required': [
-                    'channel_url',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'channel_url':
-                        (str,),
-                    'api_token':
-                        (str,),
-                },
-                'attribute_map': {
-                    'channel_url': 'channel_url',
-                    'api_token': 'Api-Token',
-                },
-                'location_map': {
-                    'channel_url': 'path',
-                    'api_token': 'header',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
 
-    def oc_cancel_the_registration_of_operators(
+    def create_an_open_channel(
         self,
-        channel_url,
-        operator_ids,
         **kwargs
     ):
-        """Cancel the registration of operators  # noqa: E501
+        """Create an open channel  # noqa: E501
 
-        ## Cancel the registration of operators  Cancels the registration of operators from an open channel but leave them as participants.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-cancel-the-registration-of-operators ----------------------------   `channel_url`      Type: string      Description: Specifies the URL of the channel to cancel the registration of operators.  # noqa: E501
+        ## Create an open channel  You can create an [open channel](https://sendbird.com/docs/chat/platform-api/v3/channel/channel-overview#2-channel-types-3-open-channel) that facilitates conversations for millions of users. Open channels allow a seamless chat experience possible for all participants by using [dynamic partitioning](https://sendbird.com/docs/chat/platform-api/v3/channel/channel-overview#4-how-dynamic-partitioning-works) which creates subchannels that each handle up to tens of thousands of participants.  Because users don't need invitations to join open channels, short-lived live events like concerts or live streams that don't require a sustained membership are good use cases for open channels.  [https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-create-a-channel](https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-create-a-channel)  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.oc_cancel_the_registration_of_operators(channel_url, operator_ids, async_req=True)
+        >>> thread = api.create_an_open_channel(async_req=True)
         >>> result = thread.get()
 
-        Args:
-            channel_url (str):
-            operator_ids ([str]):
 
         Keyword Args:
             api_token (str): [optional]
-            delete_all (bool): [optional]
+            create_an_open_channel_request (CreateAnOpenChannelRequest): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -658,7 +593,519 @@ class OpenChannelApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            None
+            SendbirdOpenChannel
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        return self.create_an_open_channel_endpoint.call_with_http_info(**kwargs)
+
+    def delete_an_open_channel(
+        self,
+        channel_url,
+        **kwargs
+    ):
+        """Delete an open channel  # noqa: E501
+
+        ## Delete an open channel  You can delete an open channel using this API. See [this page](https://sendbird.com/docs/chat/platform-api/v3/channel/channel-overview#2-channel-types-3-open-channel-vs-group-channel-vs-supergroup-channel) to learn more about channel types.  https://sendbird.com/docs/chat/platform-api/v3/channel/managing-a-channel/delete-an-open-channel#1-delete-an-open-channel  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.delete_an_open_channel(channel_url, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            channel_url (str): (Required) 
+
+        Keyword Args:
+            api_token (str): [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            {str: (bool, date, datetime, dict, float, int, list, str, none_type)}
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['channel_url'] = \
+            channel_url
+        return self.delete_an_open_channel_endpoint.call_with_http_info(**kwargs)
+
+    def get_an_open_channel(
+        self,
+        channel_url,
+        **kwargs
+    ):
+        """Get an open channel  # noqa: E501
+
+        ## Get an open channel  This action retrieves information about a specific [open channel](https://sendbird.com/docs/chat/platform-api/v3/channel/channel-overview#2-channel-types-3-open-channel).  [https://sendbird.com/docs/chat/platform-api/v3/channel/listing-channels-in-an-application/get-an-open-channel#1-get-an-open-channel](https://sendbird.com/docs/chat/platform-api/v3/channel/listing-channels-in-an-application/get-an-open-channel#1-get-an-open-channel)  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_an_open_channel(channel_url, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            channel_url (str): (Required) 
+
+        Keyword Args:
+            api_token (str): [optional]
+            include_operators (bool): Determines whether to include a list of operators in the response. (Default: false). [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            SendbirdOpenChannel
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['channel_url'] = \
+            channel_url
+        return self.get_an_open_channel_endpoint.call_with_http_info(**kwargs)
+
+    def list_channel_operators(
+        self,
+        channel_url,
+        **kwargs
+    ):
+        """List operators of an open channel  # noqa: E501
+
+        ## List operators of an open channel  You can retrieve a list of operators of an open channel using this API.  https://sendbird.com/docs/chat/platform-api/v3/user/assigning-a-user-role/list-operators-of-an-open-channel#1-list-operators-of-an-open-channel  `channel_url`   Type: string   Description: Specifies the URL of the channel to retrieve a list of operators.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.list_channel_operators(channel_url, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            channel_url (str): (Required) 
+
+        Keyword Args:
+            token (str): [optional]
+            limit (int): [optional]
+            api_token (str): [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            ListOperatorsResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['channel_url'] = \
+            channel_url
+        return self.list_channel_operators_endpoint.call_with_http_info(**kwargs)
+
+    def list_open_channels(
+        self,
+        **kwargs
+    ):
+        """List open channels  # noqa: E501
+
+        ## List open channels  This action retrieves a list of [open channels](https://sendbird.com/docs/chat/platform-api/v3/channel/channel-overview#2-channel-types-3-open-channel). You can use various query parameters to determine the search scope and select what kind of information you want to receive about the queried channels.  [https://sendbird.com/docs/chat/platform-api/v3/channel/listing-channels-in-an-application/list-open-channels#1-list-open-channels](https://sendbird.com/docs/chat/platform-api/v3/channel/listing-channels-in-an-application/list-open-channels#1-list-open-channels)  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.list_open_channels(async_req=True)
+        >>> result = thread.get()
+
+
+        Keyword Args:
+            token (str): [optional]
+            channel_urls (str): Specifies a comma-separated string of one or more open channel URLs to restrict the search scope. URL encoding each channel URL is recommended.. [optional]
+            limit (int): [optional]
+            custom_types (str): Specifies a comma-separated string of one or more custom types to filter open channels. Urlencoding each type is recommended (for example, ?custom_types=urlencoded_type_1,urlencoded_type_2). If not specified, all channels are returned, regardless of their custom type.. [optional]
+            name_contains (str): [optional]
+            url_contains (str): [optional]
+            show_frozen (bool): Determines whether to include frozen channels in the response. Frozen channels are channels where only channel operators are allowed to send messages. (Default: true). [optional]
+            show_metadata (bool): Determines whether to include channel metadata in the response. (Default: false). [optional]
+            api_token (str): [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            ListOpenChannelsResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        return self.list_open_channels_endpoint.call_with_http_info(**kwargs)
+
+    def register_operators(
+        self,
+        channel_url,
+        **kwargs
+    ):
+        """Register operators to an open channel  # noqa: E501
+
+        ## Register operators to an open channel  You can register one or more operators to an open channel using this API.  https://sendbird.com/docs/chat/platform-api/v3/user/assigning-a-user-role/register-operators-to-an-open-channel#1-register-operators-to-an-open-channel  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.register_operators(channel_url, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            channel_url (str): (Required) 
+
+        Keyword Args:
+            api_token (str): [optional]
+            register_operators_to_a_group_channel_request (RegisterOperatorsToAGroupChannelRequest): [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            {str: (bool, date, datetime, dict, float, int, list, str, none_type)}
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['channel_url'] = \
+            channel_url
+        return self.register_operators_endpoint.call_with_http_info(**kwargs)
+
+    def unregister_operators(
+        self,
+        channel_url,
+        operator_ids,
+        **kwargs
+    ):
+        """Unregister operators from an open channel  # noqa: E501
+
+        ## Unregister operators from an open channel  You can unregister operators in an open channel but keep them in the channel as participants using this API.  https://sendbird.com/docs/chat/platform-api/v3/user/assigning-a-user-role/unregister-operators-from-an-open-channel#1-unregister-operators-from-an-open-channel  `channel_url`   Type: string   Description: Specifies the URL of the channel to cancel the registration of operators.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.unregister_operators(channel_url, operator_ids, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            channel_url (str): (Required) 
+            operator_ids (str): Specifies an array of one or more operator IDs to unregister from the channel. The operators in this array remain as participants of the channel after losing their operational roles. Urlencoding each operator ID is recommended. An example of a Urlencoded array would be ?operator_ids=urlencoded_id_1,urlencoded_id_2.
+
+        Keyword Args:
+            delete_all (bool): Determines whether to unregister all operators and leave them as the participants of the channel. When this is set to true, the operator_ids property isn't effective and doesn't need to be specified in the request. (Default: false). [optional]
+            api_token (str): [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            {str: (bool, date, datetime, dict, float, int, list, str, none_type)}
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -691,107 +1138,28 @@ class OpenChannelApi(object):
             channel_url
         kwargs['operator_ids'] = \
             operator_ids
-        return self.oc_cancel_the_registration_of_operators_endpoint.call_with_http_info(**kwargs)
+        return self.unregister_operators_endpoint.call_with_http_info(**kwargs)
 
-    def oc_create_channel(
-        self,
-        **kwargs
-    ):
-        """Create a channel  # noqa: E501
-
-        ## Create a channel  Creates an open channel.  >__Note__: Classic open channels created before the deprecation date of March 2021 will maintain their original form and functions. However, new applications created after December 15, 2020, will be able to create dynamic partitioning open channels only.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-create-a-channel  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.oc_create_channel(async_req=True)
-        >>> result = thread.get()
-
-
-        Keyword Args:
-            api_token (str): [optional]
-            oc_create_channel_data (OcCreateChannelData): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            SendBirdOpenChannel
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        return self.oc_create_channel_endpoint.call_with_http_info(**kwargs)
-
-    def oc_delete_channel_by_url(
+    def update_an_open_channel(
         self,
         channel_url,
         **kwargs
     ):
-        """Delete a channel  # noqa: E501
+        """Update an open channel  # noqa: E501
 
-        ## Delete a channel  Deletes an open channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-delete-a-channel ----------------------------  # noqa: E501
+        ## Update an open channel  You can update information about an open channel using this API. You can add a cover image to a channel to better identify the channel or specify a custom channel type for grouping channels by custom type. See [this page](https://sendbird.com/docs/chat/platform-api/v3/channel/channel-overview#2-channel-types-3-open-channel-vs-group-channel-vs-supergroup-channel) to learn more about channel types.  https://sendbird.com/docs/chat/platform-api/v3/channel/managing-a-channel/update-an-open-channel#1-update-an-open-channel  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.oc_delete_channel_by_url(channel_url, async_req=True)
+        >>> thread = api.update_an_open_channel(channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
-            channel_url (str):
+            channel_url (str): (Required) 
 
         Keyword Args:
             api_token (str): [optional]
+            update_an_open_channel_request (UpdateAnOpenChannelRequest): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -824,7 +1192,7 @@ class OpenChannelApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            OcDeleteChannelByUrl200Response
+            SendbirdOpenChannel
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -855,518 +1223,5 @@ class OpenChannelApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['channel_url'] = \
             channel_url
-        return self.oc_delete_channel_by_url_endpoint.call_with_http_info(**kwargs)
-
-    def oc_list_channels(
-        self,
-        **kwargs
-    ):
-        """List channels  # noqa: E501
-
-        ## List channels  Retrieves a list of open channels. You can query the list using various parameters.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-list-channels ----------------------------  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.oc_list_channels(async_req=True)
-        >>> result = thread.get()
-
-
-        Keyword Args:
-            api_token (str): [optional]
-            token (str): [optional]
-            limit (int): [optional]
-            custom_types (str): [optional]
-            name_contains (str): [optional]
-            url_contains (str): [optional]
-            show_frozen (bool): [optional]
-            show_metadata (bool): [optional]
-            custom_type (str): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            OcListChannelsResponse
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        return self.oc_list_channels_endpoint.call_with_http_info(**kwargs)
-
-    def oc_list_operators(
-        self,
-        channel_url,
-        **kwargs
-    ):
-        """List operators  # noqa: E501
-
-        ## List operators  Retrieves a list of operators of an open channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-list-operators ----------------------------   `channel_url`      Type: string      Description: Specifies the URL of the channel to retrieve a list of operators.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.oc_list_operators(channel_url, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            channel_url (str):
-
-        Keyword Args:
-            api_token (str): [optional]
-            token (str): [optional]
-            limit (int): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            OcListOperatorsResponse
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['channel_url'] = \
-            channel_url
-        return self.oc_list_operators_endpoint.call_with_http_info(**kwargs)
-
-    def oc_list_participants(
-        self,
-        channel_url,
-        **kwargs
-    ):
-        """List participants  # noqa: E501
-
-        ## List participants  Retrieves a list of the participants of an open channel. A participant refers to a user who has entered the open channel and is currently online.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-list-participants ----------------------------   `channel_url`      Type: string      Description: Specifies the URL of the channel to retrieve a list of participants in.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.oc_list_participants(channel_url, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            channel_url (str):
-
-        Keyword Args:
-            api_token (str): [optional]
-            token (str): [optional]
-            limit (int): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            OcListParticipantsResponse
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['channel_url'] = \
-            channel_url
-        return self.oc_list_participants_endpoint.call_with_http_info(**kwargs)
-
-    def oc_register_operators(
-        self,
-        channel_url,
-        **kwargs
-    ):
-        """Register operators  # noqa: E501
-
-        ## Register operators  Registers one or more operators to an open channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-register-operators ----------------------------  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.oc_register_operators(channel_url, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            channel_url (str):
-
-        Keyword Args:
-            api_token (str): [optional]
-            oc_register_operators_data (OcRegisterOperatorsData): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            OcDeleteChannelByUrl200Response
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['channel_url'] = \
-            channel_url
-        return self.oc_register_operators_endpoint.call_with_http_info(**kwargs)
-
-    def oc_update_channel_by_url(
-        self,
-        channel_url,
-        **kwargs
-    ):
-        """Update a channel  # noqa: E501
-
-        ## Update a channel  Updates information on an open channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-update-a-channel ----------------------------  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.oc_update_channel_by_url(channel_url, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            channel_url (str):
-
-        Keyword Args:
-            api_token (str): [optional]
-            oc_update_channel_by_url_data (OcUpdateChannelByUrlData): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            SendBirdOpenChannel
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['channel_url'] = \
-            channel_url
-        return self.oc_update_channel_by_url_endpoint.call_with_http_info(**kwargs)
-
-    def oc_view_channel_by_url(
-        self,
-        channel_url,
-        **kwargs
-    ):
-        """View a channel  # noqa: E501
-
-        ## View a channel  Retrieves information on a specific open channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-view-a-channel ----------------------------  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.oc_view_channel_by_url(channel_url, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            channel_url (str):
-
-        Keyword Args:
-            api_token (str): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            SendBirdOpenChannel
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['channel_url'] = \
-            channel_url
-        return self.oc_view_channel_by_url_endpoint.call_with_http_info(**kwargs)
+        return self.update_an_open_channel_endpoint.call_with_http_info(**kwargs)
 

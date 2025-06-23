@@ -4,104 +4,22 @@ All URIs are relative to *https://api-APP_ID.sendbird.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**oc_cancel_the_registration_of_operators**](OpenChannelApi.md#oc_cancel_the_registration_of_operators) | **DELETE** /v3/open_channels/{channel_url}/operators | Cancel the registration of operators
-[**oc_create_channel**](OpenChannelApi.md#oc_create_channel) | **POST** /v3/open_channels | Create a channel
-[**oc_delete_channel_by_url**](OpenChannelApi.md#oc_delete_channel_by_url) | **DELETE** /v3/open_channels/{channel_url} | Delete a channel
-[**oc_list_channels**](OpenChannelApi.md#oc_list_channels) | **GET** /v3/open_channels | List channels
-[**oc_list_operators**](OpenChannelApi.md#oc_list_operators) | **GET** /v3/open_channels/{channel_url}/operators | List operators
-[**oc_list_participants**](OpenChannelApi.md#oc_list_participants) | **GET** /v3/open_channels/{channel_url}/participants | List participants
-[**oc_register_operators**](OpenChannelApi.md#oc_register_operators) | **POST** /v3/open_channels/{channel_url}/operators | Register operators
-[**oc_update_channel_by_url**](OpenChannelApi.md#oc_update_channel_by_url) | **PUT** /v3/open_channels/{channel_url} | Update a channel
-[**oc_view_channel_by_url**](OpenChannelApi.md#oc_view_channel_by_url) | **GET** /v3/open_channels/{channel_url} | View a channel
+[**create_an_open_channel**](OpenChannelApi.md#create_an_open_channel) | **POST** /v3/open_channels | Create an open channel
+[**delete_an_open_channel**](OpenChannelApi.md#delete_an_open_channel) | **DELETE** /v3/open_channels/{channel_url} | Delete an open channel
+[**get_an_open_channel**](OpenChannelApi.md#get_an_open_channel) | **GET** /v3/open_channels/{channel_url} | Get an open channel
+[**list_channel_operators**](OpenChannelApi.md#list_channel_operators) | **GET** /v3/open_channels/{channel_url}/operators | List operators of an open channel
+[**list_open_channels**](OpenChannelApi.md#list_open_channels) | **GET** /v3/open_channels | List open channels
+[**register_operators**](OpenChannelApi.md#register_operators) | **POST** /v3/open_channels/{channel_url}/operators | Register operators to an open channel
+[**unregister_operators**](OpenChannelApi.md#unregister_operators) | **DELETE** /v3/open_channels/{channel_url}/operators | Unregister operators from an open channel
+[**update_an_open_channel**](OpenChannelApi.md#update_an_open_channel) | **PUT** /v3/open_channels/{channel_url} | Update an open channel
 
 
-# **oc_cancel_the_registration_of_operators**
-> oc_cancel_the_registration_of_operators(channel_url, operator_ids)
+# **create_an_open_channel**
+> SendbirdOpenChannel create_an_open_channel()
 
-Cancel the registration of operators
+Create an open channel
 
-## Cancel the registration of operators  Cancels the registration of operators from an open channel but leave them as participants.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-cancel-the-registration-of-operators ----------------------------   `channel_url`      Type: string      Description: Specifies the URL of the channel to cancel the registration of operators.
-
-### Example
-
-
-```python
-import time
-import sendbird_platform_sdk
-from sendbird_platform_sdk.api import open_channel_api
-from pprint import pprint
-# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird_platform_sdk.Configuration(
-    host = "https://api-APP_ID.sendbird.com"
-)
-
-
-# Enter a context with an instance of the API client
-with sendbird_platform_sdk.ApiClient() as api_client:
-    # Create an instance of the API class
-    api_instance = open_channel_api.OpenChannelApi(api_client)
-    channel_url = "channel_url_example" # str | 
-    operator_ids = [
-        "operator_ids_example",
-    ] # [str] | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
-    delete_all = True # bool |  (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        # Cancel the registration of operators
-        api_instance.oc_cancel_the_registration_of_operators(channel_url, operator_ids)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling OpenChannelApi->oc_cancel_the_registration_of_operators: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # Cancel the registration of operators
-        api_instance.oc_cancel_the_registration_of_operators(channel_url, operator_ids, api_token=api_token, delete_all=delete_all)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling OpenChannelApi->oc_cancel_the_registration_of_operators: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **channel_url** | **str**|  |
- **operator_ids** | **[str]**|  |
- **api_token** | **str**|  | [optional]
- **delete_all** | **bool**|  | [optional]
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful response |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **oc_create_channel**
-> SendBirdOpenChannel oc_create_channel()
-
-Create a channel
-
-## Create a channel  Creates an open channel.  >__Note__: Classic open channels created before the deprecation date of March 2021 will maintain their original form and functions. However, new applications created after December 15, 2020, will be able to create dynamic partitioning open channels only.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-create-a-channel
+## Create an open channel  You can create an [open channel](https://sendbird.com/docs/chat/platform-api/v3/channel/channel-overview#2-channel-types-3-open-channel) that facilitates conversations for millions of users. Open channels allow a seamless chat experience possible for all participants by using [dynamic partitioning](https://sendbird.com/docs/chat/platform-api/v3/channel/channel-overview#4-how-dynamic-partitioning-works) which creates subchannels that each handle up to tens of thousands of participants.  Because users don't need invitations to join open channels, short-lived live events like concerts or live streams that don't require a sustained membership are good use cases for open channels.  [https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-create-a-channel](https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-create-a-channel)
 
 ### Example
 
@@ -110,8 +28,8 @@ Create a channel
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import open_channel_api
-from sendbird_platform_sdk.model.send_bird_open_channel import SendBirdOpenChannel
-from sendbird_platform_sdk.model.oc_create_channel_data import OcCreateChannelData
+from sendbird_platform_sdk.model.sendbird_open_channel import SendbirdOpenChannel
+from sendbird_platform_sdk.model.create_an_open_channel_request import CreateAnOpenChannelRequest
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -125,31 +43,28 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = open_channel_api.OpenChannelApi(api_client)
     api_token = "{{API_TOKEN}}" # str |  (optional)
-    oc_create_channel_data = OcCreateChannelData(
-        name="name_example",
+    create_an_open_channel_request = CreateAnOpenChannelRequest(
+        is_dynamic_partitioned=True,
         channel_url="channel_url_example",
-        cover_url="cover_url_example",
         cover_file=open('/path/to/file', 'rb'),
+        cover_url="cover_url_example",
         custom_type="custom_type_example",
         data="data_example",
         is_ephemeral=True,
-        is_dynamic_partitioned_2_how_dynamic_partitioning_works=True,
+        name="name_example",
         operator_ids=[
             "operator_ids_example",
         ],
-        operators=[
-            "operators_example",
-        ],
-    ) # OcCreateChannelData |  (optional)
+    ) # CreateAnOpenChannelRequest |  (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        # Create a channel
-        api_response = api_instance.oc_create_channel(api_token=api_token, oc_create_channel_data=oc_create_channel_data)
+        # Create an open channel
+        api_response = api_instance.create_an_open_channel(api_token=api_token, create_an_open_channel_request=create_an_open_channel_request)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling OpenChannelApi->oc_create_channel: %s\n" % e)
+        print("Exception when calling OpenChannelApi->create_an_open_channel: %s\n" % e)
 ```
 
 
@@ -158,11 +73,11 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **api_token** | **str**|  | [optional]
- **oc_create_channel_data** | [**OcCreateChannelData**](OcCreateChannelData.md)|  | [optional]
+ **create_an_open_channel_request** | [**CreateAnOpenChannelRequest**](CreateAnOpenChannelRequest.md)|  | [optional]
 
 ### Return type
 
-[**SendBirdOpenChannel**](SendBirdOpenChannel.md)
+[**SendbirdOpenChannel**](SendbirdOpenChannel.md)
 
 ### Authorization
 
@@ -182,12 +97,12 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oc_delete_channel_by_url**
-> OcDeleteChannelByUrl200Response oc_delete_channel_by_url(channel_url)
+# **delete_an_open_channel**
+> {str: (bool, date, datetime, dict, float, int, list, str, none_type)} delete_an_open_channel(channel_url)
 
-Delete a channel
+Delete an open channel
 
-## Delete a channel  Deletes an open channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-delete-a-channel ----------------------------
+## Delete an open channel  You can delete an open channel using this API. See [this page](https://sendbird.com/docs/chat/platform-api/v3/channel/channel-overview#2-channel-types-3-open-channel-vs-group-channel-vs-supergroup-channel) to learn more about channel types.  https://sendbird.com/docs/chat/platform-api/v3/channel/managing-a-channel/delete-an-open-channel#1-delete-an-open-channel
 
 ### Example
 
@@ -196,7 +111,6 @@ Delete a channel
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import open_channel_api
-from sendbird_platform_sdk.model.oc_delete_channel_by_url200_response import OcDeleteChannelByUrl200Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -209,25 +123,25 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = open_channel_api.OpenChannelApi(api_client)
-    channel_url = "channel_url_example" # str | 
+    channel_url = "channel_url_example" # str | (Required) 
     api_token = "{{API_TOKEN}}" # str |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
-        # Delete a channel
-        api_response = api_instance.oc_delete_channel_by_url(channel_url)
+        # Delete an open channel
+        api_response = api_instance.delete_an_open_channel(channel_url)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling OpenChannelApi->oc_delete_channel_by_url: %s\n" % e)
+        print("Exception when calling OpenChannelApi->delete_an_open_channel: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        # Delete a channel
-        api_response = api_instance.oc_delete_channel_by_url(channel_url, api_token=api_token)
+        # Delete an open channel
+        api_response = api_instance.delete_an_open_channel(channel_url, api_token=api_token)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling OpenChannelApi->oc_delete_channel_by_url: %s\n" % e)
+        print("Exception when calling OpenChannelApi->delete_an_open_channel: %s\n" % e)
 ```
 
 
@@ -235,12 +149,12 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **channel_url** | **str**|  |
+ **channel_url** | **str**| (Required)  |
  **api_token** | **str**|  | [optional]
 
 ### Return type
 
-[**OcDeleteChannelByUrl200Response**](OcDeleteChannelByUrl200Response.md)
+**{str: (bool, date, datetime, dict, float, int, list, str, none_type)}**
 
 ### Authorization
 
@@ -260,12 +174,12 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oc_list_channels**
-> OcListChannelsResponse oc_list_channels()
+# **get_an_open_channel**
+> SendbirdOpenChannel get_an_open_channel(channel_url)
 
-List channels
+Get an open channel
 
-## List channels  Retrieves a list of open channels. You can query the list using various parameters.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-list-channels ----------------------------
+## Get an open channel  This action retrieves information about a specific [open channel](https://sendbird.com/docs/chat/platform-api/v3/channel/channel-overview#2-channel-types-3-open-channel).  [https://sendbird.com/docs/chat/platform-api/v3/channel/listing-channels-in-an-application/get-an-open-channel#1-get-an-open-channel](https://sendbird.com/docs/chat/platform-api/v3/channel/listing-channels-in-an-application/get-an-open-channel#1-get-an-open-channel)
 
 ### Example
 
@@ -274,7 +188,7 @@ List channels
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import open_channel_api
-from sendbird_platform_sdk.model.oc_list_channels_response import OcListChannelsResponse
+from sendbird_platform_sdk.model.sendbird_open_channel import SendbirdOpenChannel
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -287,24 +201,186 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = open_channel_api.OpenChannelApi(api_client)
+    channel_url = "channel_url_example" # str | (Required) 
     api_token = "{{API_TOKEN}}" # str |  (optional)
+    include_operators = True # bool | Determines whether to include a list of operators in the response. (Default: false) (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Get an open channel
+        api_response = api_instance.get_an_open_channel(channel_url)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling OpenChannelApi->get_an_open_channel: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Get an open channel
+        api_response = api_instance.get_an_open_channel(channel_url, api_token=api_token, include_operators=include_operators)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling OpenChannelApi->get_an_open_channel: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **channel_url** | **str**| (Required)  |
+ **api_token** | **str**|  | [optional]
+ **include_operators** | **bool**| Determines whether to include a list of operators in the response. (Default: false) | [optional]
+
+### Return type
+
+[**SendbirdOpenChannel**](SendbirdOpenChannel.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **list_channel_operators**
+> ListOperatorsResponse list_channel_operators(channel_url)
+
+List operators of an open channel
+
+## List operators of an open channel  You can retrieve a list of operators of an open channel using this API.  https://sendbird.com/docs/chat/platform-api/v3/user/assigning-a-user-role/list-operators-of-an-open-channel#1-list-operators-of-an-open-channel  `channel_url`   Type: string   Description: Specifies the URL of the channel to retrieve a list of operators.
+
+### Example
+
+
+```python
+import time
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import open_channel_api
+from sendbird_platform_sdk.model.list_operators_response import ListOperatorsResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = sendbird_platform_sdk.Configuration(
+    host = "https://api-APP_ID.sendbird.com"
+)
+
+
+# Enter a context with an instance of the API client
+with sendbird_platform_sdk.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = open_channel_api.OpenChannelApi(api_client)
+    channel_url = "channel_url_example" # str | (Required) 
     token = "token_example" # str |  (optional)
     limit = 1 # int |  (optional)
-    custom_types = "custom_types_example" # str |  (optional)
+    api_token = "{{API_TOKEN}}" # str |  (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # List operators of an open channel
+        api_response = api_instance.list_channel_operators(channel_url)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling OpenChannelApi->list_channel_operators: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # List operators of an open channel
+        api_response = api_instance.list_channel_operators(channel_url, token=token, limit=limit, api_token=api_token)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling OpenChannelApi->list_channel_operators: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **channel_url** | **str**| (Required)  |
+ **token** | **str**|  | [optional]
+ **limit** | **int**|  | [optional]
+ **api_token** | **str**|  | [optional]
+
+### Return type
+
+[**ListOperatorsResponse**](ListOperatorsResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **list_open_channels**
+> ListOpenChannelsResponse list_open_channels()
+
+List open channels
+
+## List open channels  This action retrieves a list of [open channels](https://sendbird.com/docs/chat/platform-api/v3/channel/channel-overview#2-channel-types-3-open-channel). You can use various query parameters to determine the search scope and select what kind of information you want to receive about the queried channels.  [https://sendbird.com/docs/chat/platform-api/v3/channel/listing-channels-in-an-application/list-open-channels#1-list-open-channels](https://sendbird.com/docs/chat/platform-api/v3/channel/listing-channels-in-an-application/list-open-channels#1-list-open-channels)
+
+### Example
+
+
+```python
+import time
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import open_channel_api
+from sendbird_platform_sdk.model.list_open_channels_response import ListOpenChannelsResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = sendbird_platform_sdk.Configuration(
+    host = "https://api-APP_ID.sendbird.com"
+)
+
+
+# Enter a context with an instance of the API client
+with sendbird_platform_sdk.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = open_channel_api.OpenChannelApi(api_client)
+    token = "token_example" # str |  (optional)
+    channel_urls = "channel_urls_example" # str | Specifies a comma-separated string of one or more open channel URLs to restrict the search scope. URL encoding each channel URL is recommended. (optional)
+    limit = 1 # int |  (optional)
+    custom_types = "custom_types_example" # str | Specifies a comma-separated string of one or more custom types to filter open channels. Urlencoding each type is recommended (for example, ?custom_types=urlencoded_type_1,urlencoded_type_2). If not specified, all channels are returned, regardless of their custom type. (optional)
     name_contains = "name_contains_example" # str |  (optional)
     url_contains = "url_contains_example" # str |  (optional)
-    show_frozen = True # bool |  (optional)
-    show_metadata = True # bool |  (optional)
-    custom_type = "custom_type_example" # str |  (optional)
+    show_frozen = True # bool | Determines whether to include frozen channels in the response. Frozen channels are channels where only channel operators are allowed to send messages. (Default: true) (optional)
+    show_metadata = True # bool | Determines whether to include channel metadata in the response. (Default: false) (optional)
+    api_token = "{{API_TOKEN}}" # str |  (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        # List channels
-        api_response = api_instance.oc_list_channels(api_token=api_token, token=token, limit=limit, custom_types=custom_types, name_contains=name_contains, url_contains=url_contains, show_frozen=show_frozen, show_metadata=show_metadata, custom_type=custom_type)
+        # List open channels
+        api_response = api_instance.list_open_channels(token=token, channel_urls=channel_urls, limit=limit, custom_types=custom_types, name_contains=name_contains, url_contains=url_contains, show_frozen=show_frozen, show_metadata=show_metadata, api_token=api_token)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling OpenChannelApi->oc_list_channels: %s\n" % e)
+        print("Exception when calling OpenChannelApi->list_open_channels: %s\n" % e)
 ```
 
 
@@ -312,101 +388,19 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_token** | **str**|  | [optional]
  **token** | **str**|  | [optional]
+ **channel_urls** | **str**| Specifies a comma-separated string of one or more open channel URLs to restrict the search scope. URL encoding each channel URL is recommended. | [optional]
  **limit** | **int**|  | [optional]
- **custom_types** | **str**|  | [optional]
+ **custom_types** | **str**| Specifies a comma-separated string of one or more custom types to filter open channels. Urlencoding each type is recommended (for example, ?custom_types&#x3D;urlencoded_type_1,urlencoded_type_2). If not specified, all channels are returned, regardless of their custom type. | [optional]
  **name_contains** | **str**|  | [optional]
  **url_contains** | **str**|  | [optional]
- **show_frozen** | **bool**|  | [optional]
- **show_metadata** | **bool**|  | [optional]
- **custom_type** | **str**|  | [optional]
-
-### Return type
-
-[**OcListChannelsResponse**](OcListChannelsResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful response |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **oc_list_operators**
-> OcListOperatorsResponse oc_list_operators(channel_url)
-
-List operators
-
-## List operators  Retrieves a list of operators of an open channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-list-operators ----------------------------   `channel_url`      Type: string      Description: Specifies the URL of the channel to retrieve a list of operators.
-
-### Example
-
-
-```python
-import time
-import sendbird_platform_sdk
-from sendbird_platform_sdk.api import open_channel_api
-from sendbird_platform_sdk.model.oc_list_operators_response import OcListOperatorsResponse
-from pprint import pprint
-# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird_platform_sdk.Configuration(
-    host = "https://api-APP_ID.sendbird.com"
-)
-
-
-# Enter a context with an instance of the API client
-with sendbird_platform_sdk.ApiClient() as api_client:
-    # Create an instance of the API class
-    api_instance = open_channel_api.OpenChannelApi(api_client)
-    channel_url = "channel_url_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
-    token = "token_example" # str |  (optional)
-    limit = 1 # int |  (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        # List operators
-        api_response = api_instance.oc_list_operators(channel_url)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling OpenChannelApi->oc_list_operators: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # List operators
-        api_response = api_instance.oc_list_operators(channel_url, api_token=api_token, token=token, limit=limit)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling OpenChannelApi->oc_list_operators: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **channel_url** | **str**|  |
+ **show_frozen** | **bool**| Determines whether to include frozen channels in the response. Frozen channels are channels where only channel operators are allowed to send messages. (Default: true) | [optional]
+ **show_metadata** | **bool**| Determines whether to include channel metadata in the response. (Default: false) | [optional]
  **api_token** | **str**|  | [optional]
- **token** | **str**|  | [optional]
- **limit** | **int**|  | [optional]
 
 ### Return type
 
-[**OcListOperatorsResponse**](OcListOperatorsResponse.md)
+[**ListOpenChannelsResponse**](ListOpenChannelsResponse.md)
 
 ### Authorization
 
@@ -426,12 +420,12 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oc_list_participants**
-> OcListParticipantsResponse oc_list_participants(channel_url)
+# **register_operators**
+> {str: (bool, date, datetime, dict, float, int, list, str, none_type)} register_operators(channel_url)
 
-List participants
+Register operators to an open channel
 
-## List participants  Retrieves a list of the participants of an open channel. A participant refers to a user who has entered the open channel and is currently online.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-list-participants ----------------------------   `channel_url`      Type: string      Description: Specifies the URL of the channel to retrieve a list of participants in.
+## Register operators to an open channel  You can register one or more operators to an open channel using this API.  https://sendbird.com/docs/chat/platform-api/v3/user/assigning-a-user-role/register-operators-to-an-open-channel#1-register-operators-to-an-open-channel
 
 ### Example
 
@@ -440,7 +434,7 @@ List participants
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import open_channel_api
-from sendbird_platform_sdk.model.oc_list_participants_response import OcListParticipantsResponse
+from sendbird_platform_sdk.model.register_operators_to_a_group_channel_request import RegisterOperatorsToAGroupChannelRequest
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -453,114 +447,30 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = open_channel_api.OpenChannelApi(api_client)
-    channel_url = "channel_url_example" # str | 
+    channel_url = "channel_url_example" # str | (Required) 
     api_token = "{{API_TOKEN}}" # str |  (optional)
-    token = "token_example" # str |  (optional)
-    limit = 1 # int |  (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        # List participants
-        api_response = api_instance.oc_list_participants(channel_url)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling OpenChannelApi->oc_list_participants: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # List participants
-        api_response = api_instance.oc_list_participants(channel_url, api_token=api_token, token=token, limit=limit)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling OpenChannelApi->oc_list_participants: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **channel_url** | **str**|  |
- **api_token** | **str**|  | [optional]
- **token** | **str**|  | [optional]
- **limit** | **int**|  | [optional]
-
-### Return type
-
-[**OcListParticipantsResponse**](OcListParticipantsResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful response |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **oc_register_operators**
-> OcDeleteChannelByUrl200Response oc_register_operators(channel_url)
-
-Register operators
-
-## Register operators  Registers one or more operators to an open channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-register-operators ----------------------------
-
-### Example
-
-
-```python
-import time
-import sendbird_platform_sdk
-from sendbird_platform_sdk.api import open_channel_api
-from sendbird_platform_sdk.model.oc_register_operators_data import OcRegisterOperatorsData
-from sendbird_platform_sdk.model.oc_delete_channel_by_url200_response import OcDeleteChannelByUrl200Response
-from pprint import pprint
-# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird_platform_sdk.Configuration(
-    host = "https://api-APP_ID.sendbird.com"
-)
-
-
-# Enter a context with an instance of the API client
-with sendbird_platform_sdk.ApiClient() as api_client:
-    # Create an instance of the API class
-    api_instance = open_channel_api.OpenChannelApi(api_client)
-    channel_url = "channel_url_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
-    oc_register_operators_data = OcRegisterOperatorsData(
-        channel_url="channel_url_example",
+    register_operators_to_a_group_channel_request = RegisterOperatorsToAGroupChannelRequest(
         operator_ids=[
             "operator_ids_example",
         ],
-    ) # OcRegisterOperatorsData |  (optional)
+    ) # RegisterOperatorsToAGroupChannelRequest |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
-        # Register operators
-        api_response = api_instance.oc_register_operators(channel_url)
+        # Register operators to an open channel
+        api_response = api_instance.register_operators(channel_url)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling OpenChannelApi->oc_register_operators: %s\n" % e)
+        print("Exception when calling OpenChannelApi->register_operators: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        # Register operators
-        api_response = api_instance.oc_register_operators(channel_url, api_token=api_token, oc_register_operators_data=oc_register_operators_data)
+        # Register operators to an open channel
+        api_response = api_instance.register_operators(channel_url, api_token=api_token, register_operators_to_a_group_channel_request=register_operators_to_a_group_channel_request)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling OpenChannelApi->oc_register_operators: %s\n" % e)
+        print("Exception when calling OpenChannelApi->register_operators: %s\n" % e)
 ```
 
 
@@ -568,13 +478,13 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **channel_url** | **str**|  |
+ **channel_url** | **str**| (Required)  |
  **api_token** | **str**|  | [optional]
- **oc_register_operators_data** | [**OcRegisterOperatorsData**](OcRegisterOperatorsData.md)|  | [optional]
+ **register_operators_to_a_group_channel_request** | [**RegisterOperatorsToAGroupChannelRequest**](RegisterOperatorsToAGroupChannelRequest.md)|  | [optional]
 
 ### Return type
 
-[**OcDeleteChannelByUrl200Response**](OcDeleteChannelByUrl200Response.md)
+**{str: (bool, date, datetime, dict, float, int, list, str, none_type)}**
 
 ### Authorization
 
@@ -594,12 +504,12 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oc_update_channel_by_url**
-> SendBirdOpenChannel oc_update_channel_by_url(channel_url)
+# **unregister_operators**
+> {str: (bool, date, datetime, dict, float, int, list, str, none_type)} unregister_operators(channel_url, operator_ids)
 
-Update a channel
+Unregister operators from an open channel
 
-## Update a channel  Updates information on an open channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-update-a-channel ----------------------------
+## Unregister operators from an open channel  You can unregister operators in an open channel but keep them in the channel as participants using this API.  https://sendbird.com/docs/chat/platform-api/v3/user/assigning-a-user-role/unregister-operators-from-an-open-channel#1-unregister-operators-from-an-open-channel  `channel_url`   Type: string   Description: Specifies the URL of the channel to cancel the registration of operators.
 
 ### Example
 
@@ -608,8 +518,6 @@ Update a channel
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import open_channel_api
-from sendbird_platform_sdk.model.send_bird_open_channel import SendBirdOpenChannel
-from sendbird_platform_sdk.model.oc_update_channel_by_url_data import OcUpdateChannelByUrlData
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -622,39 +530,118 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = open_channel_api.OpenChannelApi(api_client)
-    channel_url = "channel_url_example" # str | 
+    channel_url = "channel_url_example" # str | (Required) 
+    operator_ids = "operator_ids_example" # str | Specifies an array of one or more operator IDs to unregister from the channel. The operators in this array remain as participants of the channel after losing their operational roles. Urlencoding each operator ID is recommended. An example of a Urlencoded array would be ?operator_ids=urlencoded_id_1,urlencoded_id_2.
+    delete_all = True # bool | Determines whether to unregister all operators and leave them as the participants of the channel. When this is set to true, the operator_ids property isn't effective and doesn't need to be specified in the request. (Default: false) (optional)
     api_token = "{{API_TOKEN}}" # str |  (optional)
-    oc_update_channel_by_url_data = OcUpdateChannelByUrlData(
-        channel_url="channel_url_example",
-        name="name_example",
-        cover_url="cover_url_example",
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Unregister operators from an open channel
+        api_response = api_instance.unregister_operators(channel_url, operator_ids)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling OpenChannelApi->unregister_operators: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Unregister operators from an open channel
+        api_response = api_instance.unregister_operators(channel_url, operator_ids, delete_all=delete_all, api_token=api_token)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling OpenChannelApi->unregister_operators: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **channel_url** | **str**| (Required)  |
+ **operator_ids** | **str**| Specifies an array of one or more operator IDs to unregister from the channel. The operators in this array remain as participants of the channel after losing their operational roles. Urlencoding each operator ID is recommended. An example of a Urlencoded array would be ?operator_ids&#x3D;urlencoded_id_1,urlencoded_id_2. |
+ **delete_all** | **bool**| Determines whether to unregister all operators and leave them as the participants of the channel. When this is set to true, the operator_ids property isn&#39;t effective and doesn&#39;t need to be specified in the request. (Default: false) | [optional]
+ **api_token** | **str**|  | [optional]
+
+### Return type
+
+**{str: (bool, date, datetime, dict, float, int, list, str, none_type)}**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_an_open_channel**
+> SendbirdOpenChannel update_an_open_channel(channel_url)
+
+Update an open channel
+
+## Update an open channel  You can update information about an open channel using this API. You can add a cover image to a channel to better identify the channel or specify a custom channel type for grouping channels by custom type. See [this page](https://sendbird.com/docs/chat/platform-api/v3/channel/channel-overview#2-channel-types-3-open-channel-vs-group-channel-vs-supergroup-channel) to learn more about channel types.  https://sendbird.com/docs/chat/platform-api/v3/channel/managing-a-channel/update-an-open-channel#1-update-an-open-channel
+
+### Example
+
+
+```python
+import time
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import open_channel_api
+from sendbird_platform_sdk.model.sendbird_open_channel import SendbirdOpenChannel
+from sendbird_platform_sdk.model.update_an_open_channel_request import UpdateAnOpenChannelRequest
+from pprint import pprint
+# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = sendbird_platform_sdk.Configuration(
+    host = "https://api-APP_ID.sendbird.com"
+)
+
+
+# Enter a context with an instance of the API client
+with sendbird_platform_sdk.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = open_channel_api.OpenChannelApi(api_client)
+    channel_url = "channel_url_example" # str | (Required) 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
+    update_an_open_channel_request = UpdateAnOpenChannelRequest(
         cover_file=open('/path/to/file', 'rb'),
+        cover_url="cover_url_example",
         custom_type="custom_type_example",
         data="data_example",
+        name="name_example",
         operator_ids=[
             "operator_ids_example",
         ],
-        operators=[
-            "operators_example",
-        ],
-    ) # OcUpdateChannelByUrlData |  (optional)
+    ) # UpdateAnOpenChannelRequest |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
-        # Update a channel
-        api_response = api_instance.oc_update_channel_by_url(channel_url)
+        # Update an open channel
+        api_response = api_instance.update_an_open_channel(channel_url)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling OpenChannelApi->oc_update_channel_by_url: %s\n" % e)
+        print("Exception when calling OpenChannelApi->update_an_open_channel: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        # Update a channel
-        api_response = api_instance.oc_update_channel_by_url(channel_url, api_token=api_token, oc_update_channel_by_url_data=oc_update_channel_by_url_data)
+        # Update an open channel
+        api_response = api_instance.update_an_open_channel(channel_url, api_token=api_token, update_an_open_channel_request=update_an_open_channel_request)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling OpenChannelApi->oc_update_channel_by_url: %s\n" % e)
+        print("Exception when calling OpenChannelApi->update_an_open_channel: %s\n" % e)
 ```
 
 
@@ -662,13 +649,13 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **channel_url** | **str**|  |
+ **channel_url** | **str**| (Required)  |
  **api_token** | **str**|  | [optional]
- **oc_update_channel_by_url_data** | [**OcUpdateChannelByUrlData**](OcUpdateChannelByUrlData.md)|  | [optional]
+ **update_an_open_channel_request** | [**UpdateAnOpenChannelRequest**](UpdateAnOpenChannelRequest.md)|  | [optional]
 
 ### Return type
 
-[**SendBirdOpenChannel**](SendBirdOpenChannel.md)
+[**SendbirdOpenChannel**](SendbirdOpenChannel.md)
 
 ### Authorization
 
@@ -677,84 +664,6 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful response |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **oc_view_channel_by_url**
-> SendBirdOpenChannel oc_view_channel_by_url(channel_url)
-
-View a channel
-
-## View a channel  Retrieves information on a specific open channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-view-a-channel ----------------------------
-
-### Example
-
-
-```python
-import time
-import sendbird_platform_sdk
-from sendbird_platform_sdk.api import open_channel_api
-from sendbird_platform_sdk.model.send_bird_open_channel import SendBirdOpenChannel
-from pprint import pprint
-# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird_platform_sdk.Configuration(
-    host = "https://api-APP_ID.sendbird.com"
-)
-
-
-# Enter a context with an instance of the API client
-with sendbird_platform_sdk.ApiClient() as api_client:
-    # Create an instance of the API class
-    api_instance = open_channel_api.OpenChannelApi(api_client)
-    channel_url = "channel_url_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        # View a channel
-        api_response = api_instance.oc_view_channel_by_url(channel_url)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling OpenChannelApi->oc_view_channel_by_url: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # View a channel
-        api_response = api_instance.oc_view_channel_by_url(channel_url, api_token=api_token)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling OpenChannelApi->oc_view_channel_by_url: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **channel_url** | **str**|  |
- **api_token** | **str**|  | [optional]
-
-### Return type
-
-[**SendBirdOpenChannel**](SendBirdOpenChannel.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
  - **Accept**: application/json
 
 

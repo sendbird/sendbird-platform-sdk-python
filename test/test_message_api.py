@@ -1,7 +1,7 @@
 """
     Sendbird Platform SDK
 
-    Sendbird Platform API SDK  https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api  # noqa: E501
+    Sendbird Platform API SDK  [https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api](https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api)  Contact Support:   Name: Sendbird   Email: [support@sendbird.com](https://mailto:support@sendbird.com)  # noqa: E501
 
     The version of the OpenAPI document: 1.0.0
     Contact: support@sendbird.com
@@ -24,115 +24,31 @@ class TestMessageApi(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def test_add_emoji_categories(self):
-        """Test case for add_emoji_categories
-
-        Add emoji categories  # noqa: E501
-        """
-        pass
-
-    def test_add_emojis(self):
-        """Test case for add_emojis
-
-        Add emojis  # noqa: E501
-        """
-        pass
-
-    def test_add_extra_data_to_message(self):
-        """Test case for add_extra_data_to_message
+    def test_add_extra_data_to_a_message(self):
+        """Test case for add_extra_data_to_a_message
 
         Add extra data to a message  # noqa: E501
         """
         pass
 
-    def test_add_reaction_to_a_message(self):
-        """Test case for add_reaction_to_a_message
-
-        Add a reaction to a message  # noqa: E501
-        """
-        pass
-
-    def test_delete_emoji_by_key(self):
-        """Test case for delete_emoji_by_key
-
-        Delete an emoji  # noqa: E501
-        """
-        pass
-
-    def test_delete_emoji_category_by_id(self):
-        """Test case for delete_emoji_category_by_id
-
-        Delete an emoji category  # noqa: E501
-        """
-        pass
-
-    def test_delete_message_by_id(self):
-        """Test case for delete_message_by_id
+    def test_delete_a_message(self):
+        """Test case for delete_a_message
 
         Delete a message  # noqa: E501
         """
         pass
 
-    def test_enable_reactions(self):
-        """Test case for enable_reactions
+    def test_get_a_message(self):
+        """Test case for get_a_message
 
-        Enable reactions  # noqa: E501
+        Get a message  # noqa: E501
         """
         pass
 
-    def test_gc_mark_all_messages_as_delivered(self):
-        """Test case for gc_mark_all_messages_as_delivered
+    def test_get_total_number_of_messages_in_a_channel(self):
+        """Test case for get_total_number_of_messages_in_a_channel
 
-        Mark all messages as delivered  # noqa: E501
-        """
-        pass
-
-    def test_gc_mark_all_messages_as_read(self):
-        """Test case for gc_mark_all_messages_as_read
-
-        Mark all messages as read  # noqa: E501
-        """
-        pass
-
-    def test_gc_view_number_of_each_members_unread_messages(self):
-        """Test case for gc_view_number_of_each_members_unread_messages
-
-        View number of each member's unread messages  # noqa: E501
-        """
-        pass
-
-    def test_get_emoji_by_key(self):
-        """Test case for get_emoji_by_key
-
-        Get an emoji  # noqa: E501
-        """
-        pass
-
-    def test_get_emoji_category_by_id(self):
-        """Test case for get_emoji_category_by_id
-
-        Get an emoji category  # noqa: E501
-        """
-        pass
-
-    def test_list_all_emojis_and_emoji_categories(self):
-        """Test case for list_all_emojis_and_emoji_categories
-
-        List all emojis and emoji categories  # noqa: E501
-        """
-        pass
-
-    def test_list_announcements(self):
-        """Test case for list_announcements
-
-        List announcements  # noqa: E501
-        """
-        pass
-
-    def test_list_emojis(self):
-        """Test case for list_emojis
-
-        List emojis  # noqa: E501
+        Get total number of messages in a channel  # noqa: E501
         """
         pass
 
@@ -143,94 +59,45 @@ class TestMessageApi(unittest.TestCase):
         """
         pass
 
-    def test_list_reactions_of_message(self):
-        """Test case for list_reactions_of_message
+    def test_mark_channel_messages_as_read(self):
+        """Test case for mark_channel_messages_as_read
 
-        List reactions of a message  # noqa: E501
+        Mark all messages as read  # noqa: E501
         """
         pass
 
-    def test_migrate_messages_by_url(self):
-        """Test case for migrate_messages_by_url
+    def test_migrate_messages(self):
+        """Test case for migrate_messages
 
         Migrate messages  # noqa: E501
         """
         pass
 
-    def test_remove_extra_data_from_message(self):
-        """Test case for remove_extra_data_from_message
+    def test_remove_extra_data_from_a_message(self):
+        """Test case for remove_extra_data_from_a_message
 
         Remove extra data from a message  # noqa: E501
         """
         pass
 
-    def test_remove_reaction_from_a_message(self):
-        """Test case for remove_reaction_from_a_message
-
-        Remove a reaction from a message  # noqa: E501
-        """
-        pass
-
-    def test_send_message(self):
-        """Test case for send_message
+    def test_send_a_message(self):
+        """Test case for send_a_message
 
         Send a message  # noqa: E501
         """
         pass
 
-    def test_translate_message_into_other_languages(self):
-        """Test case for translate_message_into_other_languages
-
-        Translate a message into other languages  # noqa: E501
-        """
-        pass
-
-    def test_update_emoji_category_url_by_id(self):
-        """Test case for update_emoji_category_url_by_id
-
-        Update an emoji category URL  # noqa: E501
-        """
-        pass
-
-    def test_update_emoji_url_by_key(self):
-        """Test case for update_emoji_url_by_key
-
-        Update an emoji URL  # noqa: E501
-        """
-        pass
-
-    def test_update_extra_data_in_message(self):
-        """Test case for update_extra_data_in_message
-
-        Update extra data in a message  # noqa: E501
-        """
-        pass
-
-    def test_update_message_by_id(self):
-        """Test case for update_message_by_id
+    def test_update_a_message(self):
+        """Test case for update_a_message
 
         Update a message  # noqa: E501
         """
         pass
 
-    def test_use_default_emojis(self):
-        """Test case for use_default_emojis
+    def test_update_extra_data_in_a_message(self):
+        """Test case for update_extra_data_in_a_message
 
-        Use default emojis  # noqa: E501
-        """
-        pass
-
-    def test_view_message_by_id(self):
-        """Test case for view_message_by_id
-
-        View a message  # noqa: E501
-        """
-        pass
-
-    def test_view_total_number_of_messages_in_channel(self):
-        """Test case for view_total_number_of_messages_in_channel
-
-        View total number of messages in a channel  # noqa: E501
+        Update extra data in a message  # noqa: E501
         """
         pass
 

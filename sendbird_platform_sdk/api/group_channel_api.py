@@ -1,7 +1,7 @@
 """
     Sendbird Platform SDK
 
-    Sendbird Platform API SDK  https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api  # noqa: E501
+    Sendbird Platform API SDK  [https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api](https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api)  Contact Support:   Name: Sendbird   Email: [support@sendbird.com](https://mailto:support@sendbird.com)  # noqa: E501
 
     The version of the OpenAPI document: 1.0.0
     Contact: support@sendbird.com
@@ -22,25 +22,24 @@ from sendbird_platform_sdk.model_utils import (  # noqa: F401
     none_type,
     validate_and_convert_types
 )
-from sendbird_platform_sdk.model.gc_accept_invitation_data import GcAcceptInvitationData
-from sendbird_platform_sdk.model.gc_check_if_member_by_id_response import GcCheckIfMemberByIdResponse
-from sendbird_platform_sdk.model.gc_create_channel_data import GcCreateChannelData
-from sendbird_platform_sdk.model.gc_decline_invitation_data import GcDeclineInvitationData
-from sendbird_platform_sdk.model.gc_hide_or_archive_channel_data import GcHideOrArchiveChannelData
-from sendbird_platform_sdk.model.gc_invite_as_members_data import GcInviteAsMembersData
-from sendbird_platform_sdk.model.gc_join_channel_data import GcJoinChannelData
-from sendbird_platform_sdk.model.gc_leave_channel_data import GcLeaveChannelData
-from sendbird_platform_sdk.model.gc_list_channels_response import GcListChannelsResponse
-from sendbird_platform_sdk.model.gc_list_members_response import GcListMembersResponse
-from sendbird_platform_sdk.model.gc_list_operators_response import GcListOperatorsResponse
-from sendbird_platform_sdk.model.gc_register_operators_data import GcRegisterOperatorsData
-from sendbird_platform_sdk.model.gc_register_operators_response import GcRegisterOperatorsResponse
-from sendbird_platform_sdk.model.gc_reset_chat_history_data import GcResetChatHistoryData
-from sendbird_platform_sdk.model.gc_reset_chat_history_response import GcResetChatHistoryResponse
-from sendbird_platform_sdk.model.gc_typing_indicators_data import GcTypingIndicatorsData
-from sendbird_platform_sdk.model.gc_update_channel_by_url_data import GcUpdateChannelByUrlData
-from sendbird_platform_sdk.model.oc_delete_channel_by_url200_response import OcDeleteChannelByUrl200Response
-from sendbird_platform_sdk.model.send_bird_group_channel import SendBirdGroupChannel
+from sendbird_platform_sdk.model.accept_an_invitation_request import AcceptAnInvitationRequest
+from sendbird_platform_sdk.model.check_if_member_response import CheckIfMemberResponse
+from sendbird_platform_sdk.model.create_a_group_channel_request import CreateAGroupChannelRequest
+from sendbird_platform_sdk.model.get_a_group_channel_response import GetAGroupChannelResponse
+from sendbird_platform_sdk.model.group_channel_list_members_response import GroupChannelListMembersResponse
+from sendbird_platform_sdk.model.group_chat_list_channels_response import GroupChatListChannelsResponse
+from sendbird_platform_sdk.model.hide_a_channel_request import HideAChannelRequest
+from sendbird_platform_sdk.model.invite_as_members_request import InviteAsMembersRequest
+from sendbird_platform_sdk.model.invite_as_members_response import InviteAsMembersResponse
+from sendbird_platform_sdk.model.join_a_channel_request import JoinAChannelRequest
+from sendbird_platform_sdk.model.leave_a_channel_request import LeaveAChannelRequest
+from sendbird_platform_sdk.model.list_operators_response import ListOperatorsResponse
+from sendbird_platform_sdk.model.register_operators_to_a_group_channel_request import RegisterOperatorsToAGroupChannelRequest
+from sendbird_platform_sdk.model.reset_chat_history_request import ResetChatHistoryRequest
+from sendbird_platform_sdk.model.reset_chat_history_response import ResetChatHistoryResponse
+from sendbird_platform_sdk.model.sendbird_group_channel_detail import SendbirdGroupChannelDetail
+from sendbird_platform_sdk.model.start_typing_indicators_request import StartTypingIndicatorsRequest
+from sendbird_platform_sdk.model.update_a_group_channel_request import UpdateAGroupChannelRequest
 
 
 class GroupChannelApi(object):
@@ -54,12 +53,12 @@ class GroupChannelApi(object):
         if api_client is None:
             api_client = ApiClient()
         self.api_client = api_client
-        self.gc_accept_invitation_endpoint = _Endpoint(
+        self.accept_an_invitation_endpoint = _Endpoint(
             settings={
-                'response_type': (SendBirdGroupChannel,),
+                'response_type': (SendbirdGroupChannelDetail,),
                 'auth': [],
                 'endpoint_path': '/v3/group_channels/{channel_url}/accept',
-                'operation_id': 'gc_accept_invitation',
+                'operation_id': 'accept_an_invitation',
                 'http_method': 'PUT',
                 'servers': None,
             },
@@ -67,7 +66,7 @@ class GroupChannelApi(object):
                 'all': [
                     'channel_url',
                     'api_token',
-                    'gc_accept_invitation_data',
+                    'accept_an_invitation_request',
                 ],
                 'required': [
                     'channel_url',
@@ -89,17 +88,17 @@ class GroupChannelApi(object):
                         (str,),
                     'api_token':
                         (str,),
-                    'gc_accept_invitation_data':
-                        (GcAcceptInvitationData,),
+                    'accept_an_invitation_request':
+                        (AcceptAnInvitationRequest,),
                 },
                 'attribute_map': {
                     'channel_url': 'channel_url',
-                    'api_token': 'Api-Token',
+                    'api_token': 'api-token',
                 },
                 'location_map': {
                     'channel_url': 'path',
                     'api_token': 'header',
-                    'gc_accept_invitation_data': 'body',
+                    'accept_an_invitation_request': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -114,12 +113,12 @@ class GroupChannelApi(object):
             },
             api_client=api_client
         )
-        self.gc_cancel_the_registration_of_operators_endpoint = _Endpoint(
+        self.cancel_the_registration_of_operators_endpoint = _Endpoint(
             settings={
-                'response_type': (OcDeleteChannelByUrl200Response,),
+                'response_type': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
                 'auth': [],
                 'endpoint_path': '/v3/group_channels/{channel_url}/operators',
-                'operation_id': 'gc_cancel_the_registration_of_operators',
+                'operation_id': 'cancel_the_registration_of_operators',
                 'http_method': 'DELETE',
                 'servers': None,
             },
@@ -127,8 +126,8 @@ class GroupChannelApi(object):
                 'all': [
                     'channel_url',
                     'operator_ids',
-                    'api_token',
                     'delete_all',
+                    'api_token',
                 ],
                 'required': [
                     'channel_url',
@@ -150,26 +149,25 @@ class GroupChannelApi(object):
                     'channel_url':
                         (str,),
                     'operator_ids':
-                        ([str],),
-                    'api_token':
                         (str,),
                     'delete_all':
                         (bool,),
+                    'api_token':
+                        (str,),
                 },
                 'attribute_map': {
                     'channel_url': 'channel_url',
                     'operator_ids': 'operator_ids',
-                    'api_token': 'Api-Token',
                     'delete_all': 'delete_all',
+                    'api_token': 'api-token',
                 },
                 'location_map': {
                     'channel_url': 'path',
                     'operator_ids': 'query',
-                    'api_token': 'header',
                     'delete_all': 'query',
+                    'api_token': 'header',
                 },
                 'collection_format_map': {
-                    'operator_ids': 'multi',
                 }
             },
             headers_map={
@@ -180,12 +178,12 @@ class GroupChannelApi(object):
             },
             api_client=api_client
         )
-        self.gc_check_if_member_by_id_endpoint = _Endpoint(
+        self.check_if_member_endpoint = _Endpoint(
             settings={
-                'response_type': (GcCheckIfMemberByIdResponse,),
+                'response_type': (CheckIfMemberResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/group_channels/{channel_url}/members/{user_id}',
-                'operation_id': 'gc_check_if_member_by_id',
+                'operation_id': 'check_if_member',
                 'http_method': 'GET',
                 'servers': None,
             },
@@ -222,7 +220,7 @@ class GroupChannelApi(object):
                 'attribute_map': {
                     'channel_url': 'channel_url',
                     'user_id': 'user_id',
-                    'api_token': 'Api-Token',
+                    'api_token': 'api-token',
                 },
                 'location_map': {
                     'channel_url': 'path',
@@ -240,19 +238,19 @@ class GroupChannelApi(object):
             },
             api_client=api_client
         )
-        self.gc_create_channel_endpoint = _Endpoint(
+        self.create_a_group_channel_endpoint = _Endpoint(
             settings={
-                'response_type': (SendBirdGroupChannel,),
+                'response_type': (SendbirdGroupChannelDetail,),
                 'auth': [],
                 'endpoint_path': '/v3/group_channels',
-                'operation_id': 'gc_create_channel',
+                'operation_id': 'create_a_group_channel',
                 'http_method': 'POST',
                 'servers': None,
             },
             params_map={
                 'all': [
                     'api_token',
-                    'gc_create_channel_data',
+                    'create_a_group_channel_request',
                 ],
                 'required': [],
                 'nullable': [
@@ -270,15 +268,15 @@ class GroupChannelApi(object):
                 'openapi_types': {
                     'api_token':
                         (str,),
-                    'gc_create_channel_data':
-                        (GcCreateChannelData,),
+                    'create_a_group_channel_request':
+                        (CreateAGroupChannelRequest,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
+                    'api_token': 'api-token',
                 },
                 'location_map': {
                     'api_token': 'header',
-                    'gc_create_channel_data': 'body',
+                    'create_a_group_channel_request': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -293,72 +291,12 @@ class GroupChannelApi(object):
             },
             api_client=api_client
         )
-        self.gc_decline_invitation_endpoint = _Endpoint(
+        self.delete_a_group_channel_endpoint = _Endpoint(
             settings={
-                'response_type': (OcDeleteChannelByUrl200Response,),
-                'auth': [],
-                'endpoint_path': '/v3/group_channels/{channel_url}/decline',
-                'operation_id': 'gc_decline_invitation',
-                'http_method': 'PUT',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'channel_url',
-                    'api_token',
-                    'gc_decline_invitation_data',
-                ],
-                'required': [
-                    'channel_url',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'channel_url':
-                        (str,),
-                    'api_token':
-                        (str,),
-                    'gc_decline_invitation_data':
-                        (GcDeclineInvitationData,),
-                },
-                'attribute_map': {
-                    'channel_url': 'channel_url',
-                    'api_token': 'Api-Token',
-                },
-                'location_map': {
-                    'channel_url': 'path',
-                    'api_token': 'header',
-                    'gc_decline_invitation_data': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
-            api_client=api_client
-        )
-        self.gc_delete_channel_by_url_endpoint = _Endpoint(
-            settings={
-                'response_type': (OcDeleteChannelByUrl200Response,),
+                'response_type': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
                 'auth': [],
                 'endpoint_path': '/v3/group_channels/{channel_url}',
-                'operation_id': 'gc_delete_channel_by_url',
+                'operation_id': 'delete_a_group_channel',
                 'http_method': 'DELETE',
                 'servers': None,
             },
@@ -390,7 +328,7 @@ class GroupChannelApi(object):
                 },
                 'attribute_map': {
                     'channel_url': 'channel_url',
-                    'api_token': 'Api-Token',
+                    'api_token': 'api-token',
                 },
                 'location_map': {
                     'channel_url': 'path',
@@ -407,12 +345,98 @@ class GroupChannelApi(object):
             },
             api_client=api_client
         )
-        self.gc_hide_or_archive_channel_endpoint = _Endpoint(
+        self.get_a_group_channel_endpoint = _Endpoint(
             settings={
-                'response_type': (OcDeleteChannelByUrl200Response,),
+                'response_type': (GetAGroupChannelResponse,),
+                'auth': [],
+                'endpoint_path': '/v3/group_channels/{channel_url}',
+                'operation_id': 'get_a_group_channel',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'channel_url',
+                    'show_delivery_receipt',
+                    'show_read_receipt',
+                    'show_member',
+                    'member_active_mode',
+                    'user_id',
+                    'api_token',
+                ],
+                'required': [
+                    'channel_url',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                    'member_active_mode',
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                    ('member_active_mode',): {
+
+                        "ALL": "all",
+                        "ACTIVATED": "activated",
+                        "DEACTIVATED": "deactivated"
+                    },
+                },
+                'openapi_types': {
+                    'channel_url':
+                        (str,),
+                    'show_delivery_receipt':
+                        (bool,),
+                    'show_read_receipt':
+                        (bool,),
+                    'show_member':
+                        (bool,),
+                    'member_active_mode':
+                        (str,),
+                    'user_id':
+                        (str,),
+                    'api_token':
+                        (str,),
+                },
+                'attribute_map': {
+                    'channel_url': 'channel_url',
+                    'show_delivery_receipt': 'show_delivery_receipt',
+                    'show_read_receipt': 'show_read_receipt',
+                    'show_member': 'show_member',
+                    'member_active_mode': 'member_active_mode',
+                    'user_id': 'user_id',
+                    'api_token': 'api-token',
+                },
+                'location_map': {
+                    'channel_url': 'path',
+                    'show_delivery_receipt': 'query',
+                    'show_read_receipt': 'query',
+                    'show_member': 'query',
+                    'member_active_mode': 'query',
+                    'user_id': 'query',
+                    'api_token': 'header',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.hide_a_channel_endpoint = _Endpoint(
+            settings={
+                'response_type': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
                 'auth': [],
                 'endpoint_path': '/v3/group_channels/{channel_url}/hide',
-                'operation_id': 'gc_hide_or_archive_channel',
+                'operation_id': 'hide_a_channel',
                 'http_method': 'PUT',
                 'servers': None,
             },
@@ -420,7 +444,7 @@ class GroupChannelApi(object):
                 'all': [
                     'channel_url',
                     'api_token',
-                    'gc_hide_or_archive_channel_data',
+                    'hide_a_channel_request',
                 ],
                 'required': [
                     'channel_url',
@@ -442,17 +466,17 @@ class GroupChannelApi(object):
                         (str,),
                     'api_token':
                         (str,),
-                    'gc_hide_or_archive_channel_data':
-                        (GcHideOrArchiveChannelData,),
+                    'hide_a_channel_request':
+                        (HideAChannelRequest,),
                 },
                 'attribute_map': {
                     'channel_url': 'channel_url',
-                    'api_token': 'Api-Token',
+                    'api_token': 'api-token',
                 },
                 'location_map': {
                     'channel_url': 'path',
                     'api_token': 'header',
-                    'gc_hide_or_archive_channel_data': 'body',
+                    'hide_a_channel_request': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -467,12 +491,12 @@ class GroupChannelApi(object):
             },
             api_client=api_client
         )
-        self.gc_invite_as_members_endpoint = _Endpoint(
+        self.invite_as_members_endpoint = _Endpoint(
             settings={
-                'response_type': (SendBirdGroupChannel,),
+                'response_type': (InviteAsMembersResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/group_channels/{channel_url}/invite',
-                'operation_id': 'gc_invite_as_members',
+                'operation_id': 'invite_as_members',
                 'http_method': 'POST',
                 'servers': None,
             },
@@ -480,7 +504,7 @@ class GroupChannelApi(object):
                 'all': [
                     'channel_url',
                     'api_token',
-                    'gc_invite_as_members_data',
+                    'invite_as_members_request',
                 ],
                 'required': [
                     'channel_url',
@@ -502,17 +526,17 @@ class GroupChannelApi(object):
                         (str,),
                     'api_token':
                         (str,),
-                    'gc_invite_as_members_data':
-                        (GcInviteAsMembersData,),
+                    'invite_as_members_request':
+                        (InviteAsMembersRequest,),
                 },
                 'attribute_map': {
                     'channel_url': 'channel_url',
-                    'api_token': 'Api-Token',
+                    'api_token': 'api-token',
                 },
                 'location_map': {
                     'channel_url': 'path',
                     'api_token': 'header',
-                    'gc_invite_as_members_data': 'body',
+                    'invite_as_members_request': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -527,12 +551,12 @@ class GroupChannelApi(object):
             },
             api_client=api_client
         )
-        self.gc_join_channel_endpoint = _Endpoint(
+        self.join_a_channel_endpoint = _Endpoint(
             settings={
-                'response_type': None,
+                'response_type': (SendbirdGroupChannelDetail,),
                 'auth': [],
                 'endpoint_path': '/v3/group_channels/{channel_url}/join',
-                'operation_id': 'gc_join_channel',
+                'operation_id': 'join_a_channel',
                 'http_method': 'PUT',
                 'servers': None,
             },
@@ -540,7 +564,7 @@ class GroupChannelApi(object):
                 'all': [
                     'channel_url',
                     'api_token',
-                    'gc_join_channel_data',
+                    'join_a_channel_request',
                 ],
                 'required': [
                     'channel_url',
@@ -562,75 +586,17 @@ class GroupChannelApi(object):
                         (str,),
                     'api_token':
                         (str,),
-                    'gc_join_channel_data':
-                        (GcJoinChannelData,),
+                    'join_a_channel_request':
+                        (JoinAChannelRequest,),
                 },
                 'attribute_map': {
                     'channel_url': 'channel_url',
-                    'api_token': 'Api-Token',
+                    'api_token': 'api-token',
                 },
                 'location_map': {
                     'channel_url': 'path',
                     'api_token': 'header',
-                    'gc_join_channel_data': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [],
-                'content_type': [
-                    'application/json'
-                ]
-            },
-            api_client=api_client
-        )
-        self.gc_leave_channel_endpoint = _Endpoint(
-            settings={
-                'response_type': (OcDeleteChannelByUrl200Response,),
-                'auth': [],
-                'endpoint_path': '/v3/group_channels/{channel_url}/leave',
-                'operation_id': 'gc_leave_channel',
-                'http_method': 'PUT',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'channel_url',
-                    'api_token',
-                    'gc_leave_channel_data',
-                ],
-                'required': [
-                    'channel_url',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'channel_url':
-                        (str,),
-                    'api_token':
-                        (str,),
-                    'gc_leave_channel_data':
-                        (GcLeaveChannelData,),
-                },
-                'attribute_map': {
-                    'channel_url': 'channel_url',
-                    'api_token': 'Api-Token',
-                },
-                'location_map': {
-                    'channel_url': 'path',
-                    'api_token': 'header',
-                    'gc_leave_channel_data': 'body',
+                    'join_a_channel_request': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -645,12 +611,72 @@ class GroupChannelApi(object):
             },
             api_client=api_client
         )
-        self.gc_list_channels_endpoint = _Endpoint(
+        self.leave_a_channel_endpoint = _Endpoint(
             settings={
-                'response_type': (GcListChannelsResponse,),
+                'response_type': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
+                'auth': [],
+                'endpoint_path': '/v3/group_channels/{channel_url}/leave',
+                'operation_id': 'leave_a_channel',
+                'http_method': 'PUT',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'channel_url',
+                    'api_token',
+                    'leave_a_channel_request',
+                ],
+                'required': [
+                    'channel_url',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'channel_url':
+                        (str,),
+                    'api_token':
+                        (str,),
+                    'leave_a_channel_request':
+                        (LeaveAChannelRequest,),
+                },
+                'attribute_map': {
+                    'channel_url': 'channel_url',
+                    'api_token': 'Api-Token',
+                },
+                'location_map': {
+                    'channel_url': 'path',
+                    'api_token': 'header',
+                    'leave_a_channel_request': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client
+        )
+        self.list_channels_endpoint = _Endpoint(
+            settings={
+                'response_type': (GroupChatListChannelsResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/group_channels',
-                'operation_id': 'gc_list_channels',
+                'operation_id': 'list_channels',
                 'http_method': 'GET',
                 'servers': None,
             },
@@ -693,17 +719,17 @@ class GroupChannelApi(object):
                     'metacounter_value_lt',
                     'metacounter_value_lte',
                     'include_sorted_metaarray_in_last_message',
-                    'custom_type',
-                    'read_receipt',
-                    'member',
-                    'is_distinct',
-                    'members_in',
-                    'user_id',
                 ],
-                'required': [],
+                'required': [
+                    'api_token',
+                ],
                 'nullable': [
                 ],
                 'enum': [
+                    'distinct_mode',
+                    'public_mode',
+                    'super_mode',
+                    'order',
                 ],
                 'validation': [
                 ]
@@ -712,6 +738,31 @@ class GroupChannelApi(object):
                 'validations': {
                 },
                 'allowed_values': {
+                    ('distinct_mode',): {
+
+                        "ALL": "all",
+                        "DISTINCT": "distinct",
+                        "NONDISTINCT": "nondistinct"
+                    },
+                    ('public_mode',): {
+
+                        "ALL": "all",
+                        "PRIVATE": "private",
+                        "PUBLIC": "public"
+                    },
+                    ('super_mode',): {
+
+                        "ALL": "all",
+                        "SUPER": "super",
+                        "NONSUPER": "nonsuper"
+                    },
+                    ('order',): {
+
+                        "CHRONOLOGICAL": "chronological",
+                        "LATEST_LAST_MESSAGE": "latest_last_message",
+                        "CHANNEL_NAME_ALPHABETICAL": "channel_name_alphabetical",
+                        "METADATA_VALUE_ALPHABETICAL": "metadata_value_alphabetical"
+                    },
                 },
                 'openapi_types': {
                     'api_token':
@@ -788,21 +839,9 @@ class GroupChannelApi(object):
                         (str,),
                     'include_sorted_metaarray_in_last_message':
                         (bool,),
-                    'custom_type':
-                        (str,),
-                    'read_receipt':
-                        (bool,),
-                    'member':
-                        (bool,),
-                    'is_distinct':
-                        (bool,),
-                    'members_in':
-                        (str,),
-                    'user_id':
-                        (str,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
+                    'api_token': 'api-token',
                     'token': 'token',
                     'limit': 'limit',
                     'distinct_mode': 'distinct_mode',
@@ -839,12 +878,6 @@ class GroupChannelApi(object):
                     'metacounter_value_lt': 'metacounter_value_lt',
                     'metacounter_value_lte': 'metacounter_value_lte',
                     'include_sorted_metaarray_in_last_message': 'include_sorted_metaarray_in_last_message',
-                    'custom_type': 'custom_type',
-                    'read_receipt': 'read_receipt',
-                    'member': 'member',
-                    'is_distinct': 'is_distinct',
-                    'members_in': 'members_in',
-                    'user_id': 'user_id',
                 },
                 'location_map': {
                     'api_token': 'header',
@@ -884,12 +917,6 @@ class GroupChannelApi(object):
                     'metacounter_value_lt': 'query',
                     'metacounter_value_lte': 'query',
                     'include_sorted_metaarray_in_last_message': 'query',
-                    'custom_type': 'query',
-                    'read_receipt': 'query',
-                    'member': 'query',
-                    'is_distinct': 'query',
-                    'members_in': 'query',
-                    'user_id': 'query',
                 },
                 'collection_format_map': {
                 }
@@ -902,28 +929,32 @@ class GroupChannelApi(object):
             },
             api_client=api_client
         )
-        self.gc_list_members_endpoint = _Endpoint(
+        self.list_members_endpoint = _Endpoint(
             settings={
-                'response_type': (GcListMembersResponse,),
+                'response_type': (GroupChannelListMembersResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/group_channels/{channel_url}/members',
-                'operation_id': 'gc_list_members',
+                'operation_id': 'list_members',
                 'http_method': 'GET',
                 'servers': None,
             },
             params_map={
                 'all': [
                     'channel_url',
-                    'api_token',
                     'token',
                     'limit',
+                    'user_id',
                     'show_delivery_receipt',
                     'show_read_receipt',
+                    'show_member_is_muted',
                     'order',
                     'operator_filter',
                     'member_state_filter',
                     'muted_member_filter',
+                    'member_active_mode_filter',
                     'nickname_startswith',
+                    'include_push_preference',
+                    'api_token',
                 ],
                 'required': [
                     'channel_url',
@@ -931,6 +962,11 @@ class GroupChannelApi(object):
                 'nullable': [
                 ],
                 'enum': [
+                    'order',
+                    'operator_filter',
+                    'member_state_filter',
+                    'muted_member_filter',
+                    'member_active_mode_filter',
                 ],
                 'validation': [
                 ]
@@ -939,19 +975,51 @@ class GroupChannelApi(object):
                 'validations': {
                 },
                 'allowed_values': {
+                    ('order',): {
+
+                        "MEMBER_NICKNAME_ALPHABETICAL": "member_nickname_alphabetical",
+                        "OPERATOR_THEN_MEMBER_ALPHABETICAL": "operator_then_member_alphabetical"
+                    },
+                    ('operator_filter',): {
+
+                        "ALL": "all",
+                        "OPERATOR": "operator",
+                        "NONOPERATOR": "nonoperator"
+                    },
+                    ('member_state_filter',): {
+
+                        "ALL": "all",
+                        "INVITED_ONLY": "invited_only",
+                        "JOINED_ONLY": "joined_only",
+                        "INVITED_BY_FRIEND": "invited_by_friend",
+                        "INVITED_BY_NON_FRIEND": "invited_by_non_friend"
+                    },
+                    ('muted_member_filter',): {
+
+                        "ALL": "all",
+                        "MUTED": "muted",
+                        "UNMUTED": "unmuted"
+                    },
+                    ('member_active_mode_filter',): {
+
+                        "ACTIVATED": "activated",
+                        "DEACTIVATED": "deactivated"
+                    },
                 },
                 'openapi_types': {
                     'channel_url':
-                        (str,),
-                    'api_token':
                         (str,),
                     'token':
                         (str,),
                     'limit':
                         (int,),
+                    'user_id':
+                        (str,),
                     'show_delivery_receipt':
                         (bool,),
                     'show_read_receipt':
+                        (bool,),
+                    'show_member_is_muted':
                         (bool,),
                     'order':
                         (str,),
@@ -961,34 +1029,48 @@ class GroupChannelApi(object):
                         (str,),
                     'muted_member_filter':
                         (str,),
+                    'member_active_mode_filter':
+                        (str,),
                     'nickname_startswith':
+                        (str,),
+                    'include_push_preference':
+                        (bool,),
+                    'api_token':
                         (str,),
                 },
                 'attribute_map': {
                     'channel_url': 'channel_url',
-                    'api_token': 'Api-Token',
                     'token': 'token',
                     'limit': 'limit',
+                    'user_id': 'user_id',
                     'show_delivery_receipt': 'show_delivery_receipt',
                     'show_read_receipt': 'show_read_receipt',
+                    'show_member_is_muted': 'show_member_is_muted',
                     'order': 'order',
                     'operator_filter': 'operator_filter',
                     'member_state_filter': 'member_state_filter',
                     'muted_member_filter': 'muted_member_filter',
+                    'member_active_mode_filter': 'member_active_mode_filter',
                     'nickname_startswith': 'nickname_startswith',
+                    'include_push_preference': 'include_push_preference',
+                    'api_token': 'api-token',
                 },
                 'location_map': {
                     'channel_url': 'path',
-                    'api_token': 'header',
                     'token': 'query',
                     'limit': 'query',
+                    'user_id': 'query',
                     'show_delivery_receipt': 'query',
                     'show_read_receipt': 'query',
+                    'show_member_is_muted': 'query',
                     'order': 'query',
                     'operator_filter': 'query',
                     'member_state_filter': 'query',
                     'muted_member_filter': 'query',
+                    'member_active_mode_filter': 'query',
                     'nickname_startswith': 'query',
+                    'include_push_preference': 'query',
+                    'api_token': 'header',
                 },
                 'collection_format_map': {
                 }
@@ -1001,21 +1083,21 @@ class GroupChannelApi(object):
             },
             api_client=api_client
         )
-        self.gc_list_operators_endpoint = _Endpoint(
+        self.list_operators_endpoint = _Endpoint(
             settings={
-                'response_type': (GcListOperatorsResponse,),
+                'response_type': (ListOperatorsResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/group_channels/{channel_url}/operators',
-                'operation_id': 'gc_list_operators',
+                'operation_id': 'list_operators',
                 'http_method': 'GET',
                 'servers': None,
             },
             params_map={
                 'all': [
                     'channel_url',
-                    'api_token',
                     'token',
                     'limit',
+                    'api_token',
                 ],
                 'required': [
                     'channel_url',
@@ -1035,24 +1117,24 @@ class GroupChannelApi(object):
                 'openapi_types': {
                     'channel_url':
                         (str,),
-                    'api_token':
-                        (str,),
                     'token':
                         (str,),
                     'limit':
                         (int,),
+                    'api_token':
+                        (str,),
                 },
                 'attribute_map': {
                     'channel_url': 'channel_url',
-                    'api_token': 'Api-Token',
                     'token': 'token',
                     'limit': 'limit',
+                    'api_token': 'api-token',
                 },
                 'location_map': {
                     'channel_url': 'path',
-                    'api_token': 'header',
                     'token': 'query',
                     'limit': 'query',
+                    'api_token': 'header',
                 },
                 'collection_format_map': {
                 }
@@ -1065,12 +1147,12 @@ class GroupChannelApi(object):
             },
             api_client=api_client
         )
-        self.gc_register_operators_endpoint = _Endpoint(
+        self.register_operators_to_a_group_channel_endpoint = _Endpoint(
             settings={
-                'response_type': (GcRegisterOperatorsResponse,),
+                'response_type': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
                 'auth': [],
                 'endpoint_path': '/v3/group_channels/{channel_url}/operators',
-                'operation_id': 'gc_register_operators',
+                'operation_id': 'register_operators_to_a_group_channel',
                 'http_method': 'POST',
                 'servers': None,
             },
@@ -1078,7 +1160,7 @@ class GroupChannelApi(object):
                 'all': [
                     'channel_url',
                     'api_token',
-                    'gc_register_operators_data',
+                    'register_operators_to_a_group_channel_request',
                 ],
                 'required': [
                     'channel_url',
@@ -1100,17 +1182,17 @@ class GroupChannelApi(object):
                         (str,),
                     'api_token':
                         (str,),
-                    'gc_register_operators_data':
-                        (GcRegisterOperatorsData,),
+                    'register_operators_to_a_group_channel_request':
+                        (RegisterOperatorsToAGroupChannelRequest,),
                 },
                 'attribute_map': {
                     'channel_url': 'channel_url',
-                    'api_token': 'Api-Token',
+                    'api_token': 'api-token',
                 },
                 'location_map': {
                     'channel_url': 'path',
                     'api_token': 'header',
-                    'gc_register_operators_data': 'body',
+                    'register_operators_to_a_group_channel_request': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -1125,12 +1207,12 @@ class GroupChannelApi(object):
             },
             api_client=api_client
         )
-        self.gc_reset_chat_history_endpoint = _Endpoint(
+        self.reset_chat_history_endpoint = _Endpoint(
             settings={
-                'response_type': (GcResetChatHistoryResponse,),
+                'response_type': (ResetChatHistoryResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/group_channels/{channel_url}/reset_user_history',
-                'operation_id': 'gc_reset_chat_history',
+                'operation_id': 'reset_chat_history',
                 'http_method': 'PUT',
                 'servers': None,
             },
@@ -1138,7 +1220,7 @@ class GroupChannelApi(object):
                 'all': [
                     'channel_url',
                     'api_token',
-                    'gc_reset_chat_history_data',
+                    'reset_chat_history_request',
                 ],
                 'required': [
                     'channel_url',
@@ -1160,17 +1242,17 @@ class GroupChannelApi(object):
                         (str,),
                     'api_token':
                         (str,),
-                    'gc_reset_chat_history_data':
-                        (GcResetChatHistoryData,),
+                    'reset_chat_history_request':
+                        (ResetChatHistoryRequest,),
                 },
                 'attribute_map': {
                     'channel_url': 'channel_url',
-                    'api_token': 'Api-Token',
+                    'api_token': 'api-token',
                 },
                 'location_map': {
                     'channel_url': 'path',
                     'api_token': 'header',
-                    'gc_reset_chat_history_data': 'body',
+                    'reset_chat_history_request': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -1185,12 +1267,12 @@ class GroupChannelApi(object):
             },
             api_client=api_client
         )
-        self.gc_start_typing_indicators_endpoint = _Endpoint(
+        self.start_typing_indicators_endpoint = _Endpoint(
             settings={
-                'response_type': (OcDeleteChannelByUrl200Response,),
+                'response_type': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
                 'auth': [],
                 'endpoint_path': '/v3/group_channels/{channel_url}/typing',
-                'operation_id': 'gc_start_typing_indicators',
+                'operation_id': 'start_typing_indicators',
                 'http_method': 'POST',
                 'servers': None,
             },
@@ -1198,7 +1280,7 @@ class GroupChannelApi(object):
                 'all': [
                     'channel_url',
                     'api_token',
-                    'gc_typing_indicators_data',
+                    'start_typing_indicators_request',
                 ],
                 'required': [
                     'channel_url',
@@ -1220,17 +1302,17 @@ class GroupChannelApi(object):
                         (str,),
                     'api_token':
                         (str,),
-                    'gc_typing_indicators_data':
-                        (GcTypingIndicatorsData,),
+                    'start_typing_indicators_request':
+                        (StartTypingIndicatorsRequest,),
                 },
                 'attribute_map': {
                     'channel_url': 'channel_url',
-                    'api_token': 'Api-Token',
+                    'api_token': 'api-token',
                 },
                 'location_map': {
                     'channel_url': 'path',
                     'api_token': 'header',
-                    'gc_typing_indicators_data': 'body',
+                    'start_typing_indicators_request': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -1245,12 +1327,12 @@ class GroupChannelApi(object):
             },
             api_client=api_client
         )
-        self.gc_stop_typing_indicators_endpoint = _Endpoint(
+        self.stop_typing_indicators_endpoint = _Endpoint(
             settings={
-                'response_type': (OcDeleteChannelByUrl200Response,),
+                'response_type': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
                 'auth': [],
                 'endpoint_path': '/v3/group_channels/{channel_url}/typing',
-                'operation_id': 'gc_stop_typing_indicators',
+                'operation_id': 'stop_typing_indicators',
                 'http_method': 'DELETE',
                 'servers': None,
             },
@@ -1258,7 +1340,7 @@ class GroupChannelApi(object):
                 'all': [
                     'channel_url',
                     'api_token',
-                    'gc_typing_indicators_data',
+                    'start_typing_indicators_request',
                 ],
                 'required': [
                     'channel_url',
@@ -1280,17 +1362,17 @@ class GroupChannelApi(object):
                         (str,),
                     'api_token':
                         (str,),
-                    'gc_typing_indicators_data':
-                        (GcTypingIndicatorsData,),
+                    'start_typing_indicators_request':
+                        (StartTypingIndicatorsRequest,),
                 },
                 'attribute_map': {
                     'channel_url': 'channel_url',
-                    'api_token': 'Api-Token',
+                    'api_token': 'api-token',
                 },
                 'location_map': {
                     'channel_url': 'path',
                     'api_token': 'header',
-                    'gc_typing_indicators_data': 'body',
+                    'start_typing_indicators_request': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -1305,12 +1387,12 @@ class GroupChannelApi(object):
             },
             api_client=api_client
         )
-        self.gc_unhide_or_unarchive_channel_endpoint = _Endpoint(
+        self.unhide_a_channel_endpoint = _Endpoint(
             settings={
-                'response_type': (OcDeleteChannelByUrl200Response,),
+                'response_type': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
                 'auth': [],
                 'endpoint_path': '/v3/group_channels/{channel_url}/hide',
-                'operation_id': 'gc_unhide_or_unarchive_channel',
+                'operation_id': 'unhide_a_channel',
                 'http_method': 'DELETE',
                 'servers': None,
             },
@@ -1318,8 +1400,8 @@ class GroupChannelApi(object):
                 'all': [
                     'channel_url',
                     'user_id',
-                    'api_token',
                     'should_unhide_all',
+                    'api_token',
                 ],
                 'required': [
                     'channel_url',
@@ -1342,22 +1424,22 @@ class GroupChannelApi(object):
                         (str,),
                     'user_id':
                         (str,),
-                    'api_token':
-                        (str,),
                     'should_unhide_all':
                         (bool,),
+                    'api_token':
+                        (str,),
                 },
                 'attribute_map': {
                     'channel_url': 'channel_url',
                     'user_id': 'user_id',
-                    'api_token': 'Api-Token',
                     'should_unhide_all': 'should_unhide_all',
+                    'api_token': 'api-token',
                 },
                 'location_map': {
                     'channel_url': 'path',
                     'user_id': 'query',
-                    'api_token': 'header',
                     'should_unhide_all': 'query',
+                    'api_token': 'header',
                 },
                 'collection_format_map': {
                 }
@@ -1370,12 +1452,12 @@ class GroupChannelApi(object):
             },
             api_client=api_client
         )
-        self.gc_update_channel_by_url_endpoint = _Endpoint(
+        self.update_a_group_channel_endpoint = _Endpoint(
             settings={
-                'response_type': (SendBirdGroupChannel,),
+                'response_type': (SendbirdGroupChannelDetail,),
                 'auth': [],
                 'endpoint_path': '/v3/group_channels/{channel_url}',
-                'operation_id': 'gc_update_channel_by_url',
+                'operation_id': 'update_a_group_channel',
                 'http_method': 'PUT',
                 'servers': None,
             },
@@ -1383,7 +1465,7 @@ class GroupChannelApi(object):
                 'all': [
                     'channel_url',
                     'api_token',
-                    'gc_update_channel_by_url_data',
+                    'update_a_group_channel_request',
                 ],
                 'required': [
                     'channel_url',
@@ -1405,17 +1487,17 @@ class GroupChannelApi(object):
                         (str,),
                     'api_token':
                         (str,),
-                    'gc_update_channel_by_url_data':
-                        (GcUpdateChannelByUrlData,),
+                    'update_a_group_channel_request':
+                        (UpdateAGroupChannelRequest,),
                 },
                 'attribute_map': {
                     'channel_url': 'channel_url',
-                    'api_token': 'Api-Token',
+                    'api_token': 'api-token',
                 },
                 'location_map': {
                     'channel_url': 'path',
                     'api_token': 'header',
-                    'gc_update_channel_by_url_data': 'body',
+                    'update_a_group_channel_request': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -1430,106 +1512,27 @@ class GroupChannelApi(object):
             },
             api_client=api_client
         )
-        self.gc_view_channel_by_url_endpoint = _Endpoint(
-            settings={
-                'response_type': (SendBirdGroupChannel,),
-                'auth': [],
-                'endpoint_path': '/v3/group_channels/{channel_url}',
-                'operation_id': 'gc_view_channel_by_url',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'channel_url',
-                    'api_token',
-                    'show_delivery_receipt',
-                    'show_read_receipt',
-                    'show_member',
-                    'read_receipt',
-                    'member',
-                ],
-                'required': [
-                    'channel_url',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'channel_url':
-                        (str,),
-                    'api_token':
-                        (str,),
-                    'show_delivery_receipt':
-                        (bool,),
-                    'show_read_receipt':
-                        (bool,),
-                    'show_member':
-                        (bool,),
-                    'read_receipt':
-                        (bool,),
-                    'member':
-                        (bool,),
-                },
-                'attribute_map': {
-                    'channel_url': 'channel_url',
-                    'api_token': 'Api-Token',
-                    'show_delivery_receipt': 'show_delivery_receipt',
-                    'show_read_receipt': 'show_read_receipt',
-                    'show_member': 'show_member',
-                    'read_receipt': 'read_receipt',
-                    'member': 'member',
-                },
-                'location_map': {
-                    'channel_url': 'path',
-                    'api_token': 'header',
-                    'show_delivery_receipt': 'query',
-                    'show_read_receipt': 'query',
-                    'show_member': 'query',
-                    'read_receipt': 'query',
-                    'member': 'query',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
 
-    def gc_accept_invitation(
+    def accept_an_invitation(
         self,
         channel_url,
         **kwargs
     ):
         """Accept an invitation  # noqa: E501
 
-        ## Accept an invitation  Accepts an invitation from a [private](#4-private-vs-public) group channel for a user to join. Since a user is allowed to join up to 2,000 group channels, the invitation to a user who already belongs to a maximum number of group channels will be canceled automatically.  > __Note__: This action is effective only when the `auto_accept` property of an application is set to false. You can change the value of the property using the [update default channel invitation preference](https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-update-default-channel-invitation-preference) action, or [update a user's channel invitation preference](https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-update-channel-invitation-preference) action.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-accept-an-invitation ----------------------------  # noqa: E501
+        ## Accept an invitation  Accepts an invitation from a group channel for a user to join. A single user may join up to 2,000 group channels, and any invitation to a user who is at capacity will be automatically canceled. See [this page](https://sendbird.com/docs/chat/platform-api/v3/channel/channel-overview#2-channel-types-3-open-channel-vs-group-channel-vs-supergroup-channel) to learn more about channel types.  > **Note**: This action is only available when the `auto_accept` property of an application is set to **false**. You can change the value of the property using the [update default channel invitation preference](https://sendbird.com/docs/chat/platform-api/v3/channel/setting-up-channels/update-default-invitation-preference) action, or the [update channel invitation preference](https://sendbird.com/docs/chat/platform-api/v3/channel/managing-a-channel/update-channel-invitation-preference) action.      [https://sendbird.com/docs/chat/platform-api/v3/channel/inviting-a-user/accept-an-invitation-channel#1-accept-an-invitation](https://sendbird.com/docs/chat/platform-api/v3/channel/inviting-a-user/accept-an-invitation-channel#1-accept-an-invitation)  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.gc_accept_invitation(channel_url, async_req=True)
+        >>> thread = api.accept_an_invitation(channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
-            channel_url (str):
+            channel_url (str): (Required) 
 
         Keyword Args:
             api_token (str): [optional]
-            gc_accept_invitation_data (GcAcceptInvitationData): [optional]
+            accept_an_invitation_request (AcceptAnInvitationRequest): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -1562,7 +1565,7 @@ class GroupChannelApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            SendBirdGroupChannel
+            SendbirdGroupChannelDetail
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -1593,9 +1596,9 @@ class GroupChannelApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['channel_url'] = \
             channel_url
-        return self.gc_accept_invitation_endpoint.call_with_http_info(**kwargs)
+        return self.accept_an_invitation_endpoint.call_with_http_info(**kwargs)
 
-    def gc_cancel_the_registration_of_operators(
+    def cancel_the_registration_of_operators(
         self,
         channel_url,
         operator_ids,
@@ -1603,20 +1606,20 @@ class GroupChannelApi(object):
     ):
         """Cancel the registration of operators  # noqa: E501
 
-        ## Cancel the registration of operators  Cancels the registration of operators from a group channel but leave them as members.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-cancel-the-registration-of-operators ----------------------------   `channel_url`      Type: string      Description: Specifies the URL of the channel to cancel the registration of operators.  # noqa: E501
+        ## Unregister operators from a group channel  You can unregister operators in a group channel but keep them in the channel as members using this API.  https://sendbird.com/docs/chat/platform-api/v3/user/assigning-a-user-role/unregister-operators-from-a-group-channel#1-unregister-operators-from-a-group-channel  `channel_url`   Type: string   Description: Specifies the URL of the channel to cancel the registration of operators.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.gc_cancel_the_registration_of_operators(channel_url, operator_ids, async_req=True)
+        >>> thread = api.cancel_the_registration_of_operators(channel_url, operator_ids, async_req=True)
         >>> result = thread.get()
 
         Args:
-            channel_url (str):
-            operator_ids ([str]):
+            channel_url (str): (Required) 
+            operator_ids (str): Specifies an array of one or more operator IDs to unregister from the channel. The operators in this array remain as participants of the channel after losing their operational roles. Urlencoding each operator ID is recommended. An example of a Urlencoded array would be ?operator_ids=urlencoded_id_1,urlencoded_id_2.
 
         Keyword Args:
-            api_token (str): [optional]
             delete_all (bool): [optional]
+            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -1649,7 +1652,7 @@ class GroupChannelApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            OcDeleteChannelByUrl200Response
+            {str: (bool, date, datetime, dict, float, int, list, str, none_type)}
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -1682,9 +1685,9 @@ class GroupChannelApi(object):
             channel_url
         kwargs['operator_ids'] = \
             operator_ids
-        return self.gc_cancel_the_registration_of_operators_endpoint.call_with_http_info(**kwargs)
+        return self.cancel_the_registration_of_operators_endpoint.call_with_http_info(**kwargs)
 
-    def gc_check_if_member_by_id(
+    def check_if_member(
         self,
         channel_url,
         user_id,
@@ -1692,16 +1695,16 @@ class GroupChannelApi(object):
     ):
         """Check if member  # noqa: E501
 
-        ## Check if member  Checks whether the user is a member of the group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-check-if-member ----------------------------  # noqa: E501
+        ## Check if user is a member  Checks if a user is a member of a group channel.  > **Note**: See [this page](https://sendbird.com/docs/chat/platform-api/v3/channel/channel-overview#2-channel-types-3-open-channel-vs-group-channel-vs-supergroup-channel) to learn more about channel types.      [https://sendbird.com/docs/chat/platform-api/v3/channel/listing-users/check-if-user-is-a-member#1-check-if-user-is-a-member](https://sendbird.com/docs/chat/platform-api/v3/channel/listing-users/check-if-user-is-a-member#1-check-if-user-is-a-member)  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.gc_check_if_member_by_id(channel_url, user_id, async_req=True)
+        >>> thread = api.check_if_member(channel_url, user_id, async_req=True)
         >>> result = thread.get()
 
         Args:
-            channel_url (str):
-            user_id (str):
+            channel_url (str): (Required) 
+            user_id (str): (Required) 
 
         Keyword Args:
             api_token (str): [optional]
@@ -1737,7 +1740,7 @@ class GroupChannelApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            GcCheckIfMemberByIdResponse
+            CheckIfMemberResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -1770,25 +1773,25 @@ class GroupChannelApi(object):
             channel_url
         kwargs['user_id'] = \
             user_id
-        return self.gc_check_if_member_by_id_endpoint.call_with_http_info(**kwargs)
+        return self.check_if_member_endpoint.call_with_http_info(**kwargs)
 
-    def gc_create_channel(
+    def create_a_group_channel(
         self,
         **kwargs
     ):
-        """Create a channel  # noqa: E501
+        """Create a group channel  # noqa: E501
 
-        ## Create a channel  Creates a new group channel.  > If you are creating a 1-on-1 direct messaging channel for a user, it is recommended that you turn on the `distinct` property. If the property is turned off, a user can create a new channel even if they have had the previous chat between them, and therefore can't see previously sent messages or data in the new channel. On the other hand, if the `distinct` property is turned on, every 1-on-1 conversation between the same two users occurs within the same channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-create-a-channel  # noqa: E501
+        ## Create a group channel  You can create a group channel for 1-to-1 and 1-to-N conversations. By default, group channels are used for conversations between up to 100 members. This number can stretch up to tens of thousands in Supergroup channels. Group channels can either be private and invite only, or public. They support typing indicators, unread count and read receipts, allowing for an interactive chat experience. A user can join up to 2000 group channels, and higher numbers would negatively impact the performance for the end user. The Chat history is turned off by default and its settings can be changed on Sendbird Dashboard by going to Settings > Chat > Channels > Group channels > Chat history. To learn more about group channels, see Channel Overview.  > If you are seeing the error message Maximum \"channel join\" count reached., then consider deleting channels that are no longer used. For situations where an agent connects with many customers such as support, delivery logistics or sales, we recommend using Sendbird Desk.  https://sendbird.com/docs/chat/platform-api/v3/channel/creating-a-channel/create-a-group-channel#1-create-a-group-channel  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.gc_create_channel(async_req=True)
+        >>> thread = api.create_a_group_channel(async_req=True)
         >>> result = thread.get()
 
 
         Keyword Args:
             api_token (str): [optional]
-            gc_create_channel_data (GcCreateChannelData): [optional]
+            create_a_group_channel_request (CreateAGroupChannelRequest): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -1821,7 +1824,7 @@ class GroupChannelApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            SendBirdGroupChannel
+            SendbirdGroupChannelDetail
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -1850,105 +1853,20 @@ class GroupChannelApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        return self.gc_create_channel_endpoint.call_with_http_info(**kwargs)
+        return self.create_a_group_channel_endpoint.call_with_http_info(**kwargs)
 
-    def gc_decline_invitation(
+    def delete_a_group_channel(
         self,
         channel_url,
         **kwargs
     ):
-        """Decline an invitation  # noqa: E501
+        """Delete a group channel  # noqa: E501
 
-        ## Decline an invitation  Declines an invitation for a user to not join a [private](#4-private-vs-public) group channel.  > __Note__: This action is effective only when the `auto_accept` property of an application is set to false. You can change the value of the property using the [update default channel invitation preference](https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-update-default-channel-invitation-preference) action, or [update a user's channel invitation preference](https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-update-channel-invitation-preference) action.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-decline-an-invitation ----------------------------  # noqa: E501
+        ## Delete a group channel  You can delete a group channel or a Supergroup channel using this API. See [this page](https://sendbird.com/docs/chat/platform-api/v3/channel/channel-overview#2-channel-types-3-open-channel-vs-group-channel-vs-supergroup-channel) to learn more about channel types.  [https://sendbird.com/docs/chat/platform-api/v3/channel/managing-a-channel/delete-a-group-channel#1-delete-a-group-channel](https://sendbird.com/docs/chat/platform-api/v3/channel/managing-a-channel/delete-a-group-channel#1-delete-a-group-channel)  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.gc_decline_invitation(channel_url, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            channel_url (str):
-
-        Keyword Args:
-            api_token (str): [optional]
-            gc_decline_invitation_data (GcDeclineInvitationData): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            OcDeleteChannelByUrl200Response
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['channel_url'] = \
-            channel_url
-        return self.gc_decline_invitation_endpoint.call_with_http_info(**kwargs)
-
-    def gc_delete_channel_by_url(
-        self,
-        channel_url,
-        **kwargs
-    ):
-        """Delete a channel  # noqa: E501
-
-        ## Delete a channel  Deletes a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-delete-a-channel ----------------------------  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.gc_delete_channel_by_url(channel_url, async_req=True)
+        >>> thread = api.delete_a_group_channel(channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
@@ -1988,7 +1906,7 @@ class GroupChannelApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            OcDeleteChannelByUrl200Response
+            {str: (bool, date, datetime, dict, float, int, list, str, none_type)}
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2019,28 +1937,32 @@ class GroupChannelApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['channel_url'] = \
             channel_url
-        return self.gc_delete_channel_by_url_endpoint.call_with_http_info(**kwargs)
+        return self.delete_a_group_channel_endpoint.call_with_http_info(**kwargs)
 
-    def gc_hide_or_archive_channel(
+    def get_a_group_channel(
         self,
         channel_url,
         **kwargs
     ):
-        """Hide or archive a channel  # noqa: E501
+        """Get a group channel  # noqa: E501
 
-        ## Hide or archive a channel  Hides or archives a channel from the channel list of either a specific user or entire channel members. Normally, a hidden channel comes back and shows up in the channel list when a member in the channel sends a new message. This automatically-triggered behavior is intended for users who want to temporarily remove a channel from their list because [leaving the channel](#2-leave-the-channel) would delete all the past messages and stored data.  You can also leave out a channel from the list and archive the channel. The channel doesn't appear even when receiving a new message from other member.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-hide-or-archive-a-channel ----------------------------  # noqa: E501
+        ## Get a group channel  This action retrieves information about a specific [group channel](https://sendbird.com/docs/chat/platform-api/v3/channel/channel-overview#2-channel-types-3-group-channel). You can use the optional query parameters to determine whether to include delivery receipt, read receipt, or member information in the response.  https://sendbird.com/docs/chat/platform-api/v3/channel/listing-channels-in-an-application/get-a-group-channel#1-get-a-group-channel  `channel_url`   Type: string   Description: Specifies the URL of the channel to retrieve.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.gc_hide_or_archive_channel(channel_url, async_req=True)
+        >>> thread = api.get_a_group_channel(channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
             channel_url (str):
 
         Keyword Args:
+            show_delivery_receipt (bool): [optional]
+            show_read_receipt (bool): [optional]
+            show_member (bool): [optional]
+            member_active_mode (str): Restricts the member list to members who are activated or deactivated in the channel. This parameter is only effective if the parameter show_member is true. Acceptable values are all, activated, and deactivated. (default: all). [optional]
+            user_id (str): [optional]
             api_token (str): [optional]
-            gc_hide_or_archive_channel_data (GcHideOrArchiveChannelData): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -2073,7 +1995,7 @@ class GroupChannelApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            OcDeleteChannelByUrl200Response
+            GetAGroupChannelResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2104,28 +2026,113 @@ class GroupChannelApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['channel_url'] = \
             channel_url
-        return self.gc_hide_or_archive_channel_endpoint.call_with_http_info(**kwargs)
+        return self.get_a_group_channel_endpoint.call_with_http_info(**kwargs)
 
-    def gc_invite_as_members(
+    def hide_a_channel(
+        self,
+        channel_url,
+        **kwargs
+    ):
+        """Hide a channel  # noqa: E501
+
+        ## Hide a channel  This action allows you to hide a [group channel](https://sendbird.com/docs/chat/platform-api/v3/channel/channel-overview#2-channel-types-3-group-channel) from a user's channel list. Hiding a channel gives users the ability to archive channels so that they can focus on channels that need the most attention.  With this API, you can allow users to hide a channel from themselves or from all channel members. You can also determine whether to have the channel remain hidden when a new message is sent to the channel. Note that only group channels can be hidden.  [https://sendbird.com/docs/chat/platform-api/v3/channel/managing-a-channel/hide-a-channel#1-hide-a-channel](https://sendbird.com/docs/chat/platform-api/v3/channel/managing-a-channel/hide-a-channel#1-hide-a-channel)  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.hide_a_channel(channel_url, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            channel_url (str): (Required) 
+
+        Keyword Args:
+            api_token (str): [optional]
+            hide_a_channel_request (HideAChannelRequest): [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            {str: (bool, date, datetime, dict, float, int, list, str, none_type)}
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['channel_url'] = \
+            channel_url
+        return self.hide_a_channel_endpoint.call_with_http_info(**kwargs)
+
+    def invite_as_members(
         self,
         channel_url,
         **kwargs
     ):
         """Invite as members  # noqa: E501
 
-        ## Invite as members  Invites one or more users as members into the group channel.  > __Note__: By default, users in your application automatically join a [private](#4-private-vs-public) group channel promptly from an invitation without having to accept it. If you want to give them the option to decide whether to accept or decline an invitation, you should set the value of channel invitation preference to false through the [update default channel invitation preference](https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-update-default-channel-invitation-preference) action. Or using the [update a user's channel invitation preference](https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-update-channel-invitation-preference) action, you can also allow the option individually by user.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-invite-as-members ----------------------------  # noqa: E501
+        ## Invite as members  Invites one or more users as members to a group channel. Users can join a group channel immediately after receiving an invitation, without having to accept it. To give users an option to accept or decline an invitation, see [update default channel invitation preference](https://sendbird.com/docs/chat/platform-api/v3/channel/setting-up-channels/update-default-invitation-preference) or [update channel invitation preference](https://sendbird.com/docs/chat/platform-api/v3/channel/managing-a-channel/update-channel-invitation-preference). See [this page](https://sendbird.com/docs/chat/platform-api/v3/channel/channel-overview#2-channel-types-3-open-channel-vs-group-channel-vs-supergroup-channel) to learn more about channel types.  > **Note**: By default, [blocked users](https://sendbird.com/docs/chat/platform-api/v3/moderation/blocking-users/block-users) are included when sending invitations. If you wish to exclude blocked users, [contact our sales team](https://get.sendbird.com/talk-to-sales.html).      [https://sendbird.com/docs/chat/platform-api/v3/channel/inviting-a-user/invite-as-members-channel#1-invite-as-members](https://sendbird.com/docs/chat/platform-api/v3/channel/inviting-a-user/invite-as-members-channel#1-invite-as-members)  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.gc_invite_as_members(channel_url, async_req=True)
+        >>> thread = api.invite_as_members(channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
-            channel_url (str):
+            channel_url (str): (Required) 
 
         Keyword Args:
             api_token (str): [optional]
-            gc_invite_as_members_data (GcInviteAsMembersData): [optional]
+            invite_as_members_request (InviteAsMembersRequest): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -2158,7 +2165,7 @@ class GroupChannelApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            SendBirdGroupChannel
+            InviteAsMembersResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2189,28 +2196,28 @@ class GroupChannelApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['channel_url'] = \
             channel_url
-        return self.gc_invite_as_members_endpoint.call_with_http_info(**kwargs)
+        return self.invite_as_members_endpoint.call_with_http_info(**kwargs)
 
-    def gc_join_channel(
+    def join_a_channel(
         self,
         channel_url,
         **kwargs
     ):
         """Join a channel  # noqa: E501
 
-        ## Join a channel  Allows a user to join a [public](#4-private-vs-public) group channel. Since a user is allowed to join up to 2,000 group channels, a user who already belongs to a maximum number of group channels can't join a new channel.  > __Note__: This action is only permitted for public group channels where the `is_public` property is true.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-join-a-channel ----------------------------  # noqa: E501
+        ## Join a channel  This API allows a user to join a [public](https://sendbird.com/docs/chat/platform-api/v3/channel/channel-overview#4-group-channel-types) group channel. Users can only join public group channels where the `is_public` property is set to `true` using this API. A single user can join up to 2,000 group channels, and a user who reaches the capacity can’t join a new channel. See [this page](https://sendbird.com/docs/chat/platform-api/v3/channel/channel-overview#2-channel-types-3-open-channel-vs-group-channel-vs-supergroup-channel) to learn more about channel types.  [https://sendbird.com/docs/chat/platform-api/v3/channel/managing-a-channel/join-a-channel#1-join-a-channel](https://sendbird.com/docs/chat/platform-api/v3/channel/managing-a-channel/join-a-channel#1-join-a-channel)  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.gc_join_channel(channel_url, async_req=True)
+        >>> thread = api.join_a_channel(channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
-            channel_url (str):
+            channel_url (str): (Required) 
 
         Keyword Args:
             api_token (str): [optional]
-            gc_join_channel_data (GcJoinChannelData): [optional]
+            join_a_channel_request (JoinAChannelRequest): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -2243,7 +2250,7 @@ class GroupChannelApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            None
+            SendbirdGroupChannelDetail
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2274,9 +2281,9 @@ class GroupChannelApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['channel_url'] = \
             channel_url
-        return self.gc_join_channel_endpoint.call_with_http_info(**kwargs)
+        return self.join_a_channel_endpoint.call_with_http_info(**kwargs)
 
-    def gc_leave_channel(
+    def leave_a_channel(
         self,
         channel_url,
         **kwargs
@@ -2287,7 +2294,7 @@ class GroupChannelApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.gc_leave_channel(channel_url, async_req=True)
+        >>> thread = api.leave_a_channel(channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
@@ -2295,7 +2302,7 @@ class GroupChannelApi(object):
 
         Keyword Args:
             api_token (str): [optional]
-            gc_leave_channel_data (GcLeaveChannelData): [optional]
+            leave_a_channel_request (LeaveAChannelRequest): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -2328,7 +2335,7 @@ class GroupChannelApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            OcDeleteChannelByUrl200Response
+            {str: (bool, date, datetime, dict, float, int, list, str, none_type)}
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2359,31 +2366,33 @@ class GroupChannelApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['channel_url'] = \
             channel_url
-        return self.gc_leave_channel_endpoint.call_with_http_info(**kwargs)
+        return self.leave_a_channel_endpoint.call_with_http_info(**kwargs)
 
-    def gc_list_channels(
+    def list_channels(
         self,
+        api_token,
         **kwargs
     ):
         """List channels  # noqa: E501
 
-        ## List channels  Retrieves a list of group channels in the application.  > __Note__: If you want to get a list of a specific user's group channels, use the [list my group channels](https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-list-my-group-channels) action instead.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-list-channels ----------------------------  # noqa: E501
+        ## List group channels  This action retrieves a list of [group channels](https://sendbird.com/docs/chat/platform-api/v3/channel/channel-overview#2-channel-types-3-group-channel). You can use various query parameters to determine the search scope and select what kind of information you want to receive about the queried channels.  If you want to retrieve a list of group channels that a specific user has joined, use the [list group channels by user](https://sendbird.com/docs/chat/platform-api/v3/user/managing-joined-group-channels/list-group-channels-by-user) action under the User section.  https://sendbird.com/docs/chat/platform-api/v3/channel/listing-channels-in-an-application/list-group-channels#1-list-group-channels  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.gc_list_channels(async_req=True)
+        >>> thread = api.list_channels(api_token, async_req=True)
         >>> result = thread.get()
 
+        Args:
+            api_token (str):
 
         Keyword Args:
-            api_token (str): [optional]
-            token (str): [optional]
-            limit (int): [optional]
+            token (str): Specifies a page token that indicates the starting index of a chunk of results. If not specified, the index is set as 0.. [optional]
+            limit (int): Specifies the number of results to return per page. Acceptable values are 1 to 100, inclusive. (Default: 10). [optional]
             distinct_mode (str): [optional]
             public_mode (str): [optional]
             super_mode (str): [optional]
-            created_after (int): [optional]
-            created_before (int): [optional]
+            created_after (int): Restricts the search scope to only retrieve group channels which have been created after the specified time, in Unix milliseconds format.. [optional]
+            created_before (int): Restricts the search scope to only retrieve group channels which have been created before the specified time, in Unix milliseconds format.. [optional]
             show_empty (bool): [optional]
             show_member (bool): [optional]
             show_delivery_receipt (bool): [optional]
@@ -2391,34 +2400,28 @@ class GroupChannelApi(object):
             show_metadata (bool): [optional]
             show_frozen (bool): [optional]
             order (str): [optional]
-            metadata_order_key (str): [optional]
-            custom_types (str): [optional]
-            custom_type_startswith (str): [optional]
-            channel_urls (str): [optional]
-            name (str): [optional]
-            name_contains (str): [optional]
-            name_startswith (str): [optional]
-            members_exactly_in (str): [optional]
-            members_include_in (str): [optional]
-            query_type (str): [optional]
-            members_nickname (str): [optional]
-            members_nickname_contains (str): [optional]
-            metadata_key (str): [optional]
-            metadata_values (str): [optional]
-            metadata_value_startswith (str): [optional]
-            metacounter_key (str): [optional]
-            metacounter_values (str): [optional]
-            metacounter_value_gt (str): [optional]
-            metacounter_value_gte (str): [optional]
-            metacounter_value_lt (str): [optional]
-            metacounter_value_lte (str): [optional]
-            include_sorted_metaarray_in_last_message (bool): [optional]
-            custom_type (str): [optional]
-            read_receipt (bool): [optional]
-            member (bool): [optional]
-            is_distinct (bool): [optional]
-            members_in (str): [optional]
-            user_id (str): [optional]
+            metadata_order_key (str): Specifies the key of an item in metadata. When a value of the order parameter is set to metadata_value_alphabetical, the results are alphabetically sorted by the value of the item specified by the key.. [optional]
+            custom_types (str): Specifies a comma-separated string of one or more custom types to filter group channels. URL encoding each type is recommended. If not specified, all channels are returned, regardless of their custom type.. [optional]
+            custom_type_startswith (str): Searches for group channels with the custom type which starts with the specified value. URL encoding the value is recommended.. [optional]
+            channel_urls (str): Specifies a comma-separated string of one or more group channel URLs to restrict the search scope. URL encoding each channel URL is recommended.. [optional]
+            name (str): Specifies one or more group channel names.. [optional]
+            name_contains (str): Searches for group channels whose names contain the specified value. Note that this parameter is case-insensitive. URL encoding the value is recommended.. [optional]
+            name_startswith (str): Searches for group channels whose names start with the specified value. Note that this parameter is case-insensitive. URL encoding the value is recommended.. [optional]
+            members_exactly_in (str): Searches for group channels with all the specified users as members. The parameter value should consist of user IDs separated by commas.  Only user IDs that match those of existing users are used for channel search. URL encoding each ID is recommended.. [optional]
+            members_include_in (str): Searches for group channels that include one or more users as members among the specified users. The value should consist of user IDs separated by commas or %2C. You can specify up to 60 user IDs.  Only user IDs that match those of existing users are used for channel search. URL encoding each ID is recommended.. [optional]
+            query_type (str): Specifies a logical condition applied to the members_include_in parameter. Acceptable values are either AND or OR. For example, if you specify three members, A, B, and C, in members_include_in, the value of AND returns all channels that include every one of {A. B, C} as members. The value of OR returns channels that include {A}, plus those that include {B}, plus those that include {C}. (Default: AND). [optional]
+            members_nickname (str): Searches for group channels with members whose nicknames match the specified value. URL encoding the value is recommended.. [optional]
+            members_nickname_contains (str): Searches for group channels with members whose nicknames contain the specified value. Note that this parameter is case-insensitive. URL encoding the value is recommended.  * We recommend using at least three characters for the parameter value for better search efficiency when you design and implement related features. If you would like to allow one or two characters for searching, use members_nickname instead to prevent performance issues.. [optional]
+            metadata_key (str): Searches for group channels with metadata containing an item with the specified value as its key. To use this parameter, either the metadata_values parameter or the metadata_value_startswith parameter should be specified.. [optional]
+            metadata_values (str): Searches for group channels with metadata containing an item with the key specified by the metadata_key parameter, and the value of that item matches one or more values specified by this parameter. The string should be specified with multiple values separated by commas. URL encoding each value is recommended. To use this parameter, the metadata_key parameter should be specified.. [optional]
+            metadata_value_startswith (str): Searches for group channels with metadata containing an item with the key specified by the metadata_key parameter, and the values of that item that start with the specified value of this parameter. URL encoding the value is recommended. To use this parameter, the metadata_key parameter should be specified.. [optional]
+            metacounter_key (str): Searches for group channels with metacounter containing an item with the specified value as its key. To use this parameter, either the metacounter_values parameter or one of the metacounter_value_gt, metacounter_value_gte, metacounter_value_lt, and metacounter_value_lte parameters should be specified.. [optional]
+            metacounter_values (str): Searches for group channels with metacounter containing an item with the key specified by the metadata_key parameter, where the value of that item is equal to one or more values specified by this parameter. The string should be specified with multiple values separated by commas. To use this parameter, the metacounter_key parameter should be specified.. [optional]
+            metacounter_value_gt (str): Searches for group channels with metacounter containing an item with the key specified by the metadata_key parameter, where the value of that item is greater than the value specified by this parameter. To use this parameter, the metacounter_key parameter should be specified.. [optional]
+            metacounter_value_gte (str): Searches for group channels with metacounter containing an item with the key specified by the metadata_key parameter, where the value of that item is greater than or equal to the value specified by this parameter. To use this parameter, the metacounter_key parameter should be specified.. [optional]
+            metacounter_value_lt (str): Searches for group channels with metacounter containing an item with the key specified by the metadata_key parameter, where the value of that item is lower than the value specified by this parameter. To use this parameter, the metacounter_key parameter should be specified.. [optional]
+            metacounter_value_lte (str): Searches for group channels with metacounter containing an item with the key specified by the metadata_key parameter, where the value of that item is lower than or equal to the value specified by this parameter. To use this parameter, the metacounter_key parameter should be specified.. [optional]
+            include_sorted_metaarray_in_last_message (bool): Determines whether to include the sorted_metaarray as one of the last_message’s properties in the response.. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -2451,7 +2454,7 @@ class GroupChannelApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            GcListChannelsResponse
+            GroupChatListChannelsResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2480,36 +2483,42 @@ class GroupChannelApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        return self.gc_list_channels_endpoint.call_with_http_info(**kwargs)
+        kwargs['api_token'] = \
+            api_token
+        return self.list_channels_endpoint.call_with_http_info(**kwargs)
 
-    def gc_list_members(
+    def list_members(
         self,
         channel_url,
         **kwargs
     ):
         """List members  # noqa: E501
 
-        ## List members  Retrieves a list of members of a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-list-members ----------------------------   `channel_url`      Type: string      Description: Specifies the URL of the channel to retrieve a list of members of.  # noqa: E501
+        ## List members  Retrieves a list of members of a group channel.  > **Note**: See [this page](https://sendbird.com/docs/chat/platform-api/v3/channel/channel-overview#2-channel-types-3-open-channel-vs-group-channel-vs-supergroup-channel) to learn more about channel types.      [https://sendbird.com/docs/chat/platform-api/v3/channel/listing-users/list-members-of-a-group-channel#1-list-members-of-a-group-channel](https://sendbird.com/docs/chat/platform-api/v3/channel/listing-users/list-members-of-a-group-channel#1-list-members-of-a-group-channel)  `channel_url`   Type: string   Description: Specifies the URL of the channel to retrieve a list of members of.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.gc_list_members(channel_url, async_req=True)
+        >>> thread = api.list_members(channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
-            channel_url (str):
+            channel_url (str): (Required) 
 
         Keyword Args:
-            api_token (str): [optional]
             token (str): [optional]
-            limit (int): [optional]
+            limit (int): Specifies the number of results to return per page. Acceptable values are 1 to 100, inclusive. (Default: 10). [optional]
+            user_id (str): Specifies the unique ID of a user. If `user_id` is provided, the response will include two additional boolean properties about each user in the members list. - `is_blocking_me`: Indicates whether the listed user is blocking the user specified in the user_id parameter. - `is_blocked_by_me`: Indicates whether the listed user is blocked by the user specified in the user_id parameter.. [optional]
             show_delivery_receipt (bool): [optional]
             show_read_receipt (bool): [optional]
-            order (str): [optional]
-            operator_filter (str): [optional]
-            member_state_filter (str): [optional]
-            muted_member_filter (str): [optional]
-            nickname_startswith (str): [optional]
+            show_member_is_muted (bool): [optional]
+            order (str): Specifies the method to sort a list of results. Acceptable values are the following: - `member_nickname_alphabetical` (default): sorts by the member nicknames in alphabetical order. - `operator_then_member_alphabetical`: sorts by the operational role and member nickname in alphabetical order where channel operators are listed before channel members.. [optional]
+            operator_filter (str): Restricts the search scope to only retrieve operators or non-operator members of the channel. Acceptable values are the following: - `all` (default): no filter is applied to the list. - `operator`: only channel operators are retrieved. - `nonoperator`: all channel members, except channel operators, are retrieved.. [optional]
+            member_state_filter (str): Restricts the search scope to retrieve members based on if they have accepted an invitation or if they were invited by a friend. Acceptable values are `invited_only`, `joined_only`, `invited_by_friend`, `invited_by_non_friend`, and `all`. (Default: `all`). [optional]
+            muted_member_filter (str): Restricts the search scope to retrieve members who are muted or unmuted in the channel. Acceptable values are `all`, `muted`, and `unmuted`. (Default: `all`). [optional]
+            member_active_mode_filter (str): Restricts the search scope to retrieve members who are activated or deactivated in the channel. Acceptable values are `all`, `activated`, and `deactivated`. (default: `activated`). [optional]
+            nickname_startswith (str): Searches for members whose nicknames start with the specified value. Urlencoding the value is recommended.. [optional]
+            include_push_preference (bool): Determines whether to include information about the push preference of each member, such as `push_enabled`, `push_trigger_option`, and `do_not_disturb`. (Default: `false`). [optional]
+            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -2542,7 +2551,7 @@ class GroupChannelApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            GcListMembersResponse
+            GroupChannelListMembersResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2573,29 +2582,29 @@ class GroupChannelApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['channel_url'] = \
             channel_url
-        return self.gc_list_members_endpoint.call_with_http_info(**kwargs)
+        return self.list_members_endpoint.call_with_http_info(**kwargs)
 
-    def gc_list_operators(
+    def list_operators(
         self,
         channel_url,
         **kwargs
     ):
         """List operators  # noqa: E501
 
-        ## List operators  Retrieves a list of operators of a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-list-operators ----------------------------   `channel_url`      Type: string      Description: Specifies the URL of the channel to retrieve a list of operators.  # noqa: E501
+        ## List operators  You can retrieve a list of operators of a group channel using this API.  https://sendbird.com/docs/chat/platform-api/v3/user/assigning-a-user-role/list-operators-of-a-group-channel#1-list-operators-of-a-group-channel  `channel_url`   Type: string   Description: Specifies the URL of the channel to retrieve a list of operators.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.gc_list_operators(channel_url, async_req=True)
+        >>> thread = api.list_operators(channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
-            channel_url (str):
+            channel_url (str): (Required) 
 
         Keyword Args:
-            api_token (str): [optional]
             token (str): [optional]
-            limit (int): [optional]
+            limit (int): Specifies the number of results to return per page. Acceptable values are 1 to 100, inclusive. (Default: 10). [optional]
+            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -2628,7 +2637,7 @@ class GroupChannelApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            GcListOperatorsResponse
+            ListOperatorsResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2659,28 +2668,28 @@ class GroupChannelApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['channel_url'] = \
             channel_url
-        return self.gc_list_operators_endpoint.call_with_http_info(**kwargs)
+        return self.list_operators_endpoint.call_with_http_info(**kwargs)
 
-    def gc_register_operators(
+    def register_operators_to_a_group_channel(
         self,
         channel_url,
         **kwargs
     ):
-        """Register operators  # noqa: E501
+        """Register operators to a group channel  # noqa: E501
 
-        ## Register operators  Registers one or more operators to a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-register-operators ----------------------------  # noqa: E501
+        ## Register operators to a group channel  You can register one or more operators to a group channel using this API.  https://sendbird.com/docs/chat/platform-api/v3/user/assigning-a-user-role/register-operators-to-a-group-channel#1-register-operators-to-a-group-channel  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.gc_register_operators(channel_url, async_req=True)
+        >>> thread = api.register_operators_to_a_group_channel(channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
-            channel_url (str):
+            channel_url (str): (Required) 
 
         Keyword Args:
             api_token (str): [optional]
-            gc_register_operators_data (GcRegisterOperatorsData): [optional]
+            register_operators_to_a_group_channel_request (RegisterOperatorsToAGroupChannelRequest): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -2713,7 +2722,7 @@ class GroupChannelApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            GcRegisterOperatorsResponse
+            {str: (bool, date, datetime, dict, float, int, list, str, none_type)}
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2744,28 +2753,28 @@ class GroupChannelApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['channel_url'] = \
             channel_url
-        return self.gc_register_operators_endpoint.call_with_http_info(**kwargs)
+        return self.register_operators_to_a_group_channel_endpoint.call_with_http_info(**kwargs)
 
-    def gc_reset_chat_history(
+    def reset_chat_history(
         self,
         channel_url,
         **kwargs
     ):
         """Reset chat history  # noqa: E501
 
-        ## Reset chat history  Resets the properties related to a user's chat history in a group channel, then clears the existing messages in the channel on the user's side only. A user can no longer see the messages in a group channel once this action is called, but those messages are not deleted from the database of the Sendbird system. All other members in the channel can retrieve and see the messages.  This action simply clears the messages for the user by updating the `last_message` and `read_receipt` properties of the [channel](#2-types-of-a-channel-3-resource-representation) resource in addition to other internally managed data such as the number of the user's unread message.  Using the `reset_all` property, you can also reset the properties related to all users' chat history in a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-reset-chat-history ----------------------------  # noqa: E501
+        ## Reset chat history  This action resets the properties related to a specific user's chat history in a [group channel](https://sendbird.com/docs/chat/platform-api/v3/channel/channel-overview#2-channel-types-3-group-channel), clearing existing messages in a channel from only the specified user's end. Because this action doesn't delete messages from the Sendbird database, other members in the channel can still retrieve and see the messages.  This action clears the messages for the specified user by updating the `last_message` and `read_receipt` properties of the [group channel resource](https://sendbird.com/docs/chat/platform-api/v3/channel/channel-overview#4-list-of-properties-for-group-channels) in addition to other internally managed data such as the count of a user's unread messages.  Using the `reset_all` property, you can also reset the properties related to the chat history of all members in a group channel.  https://sendbird.com/docs/chat/platform-api/v3/channel/managing-a-channel/reset-chat-history#1-reset-chat-history  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.gc_reset_chat_history(channel_url, async_req=True)
+        >>> thread = api.reset_chat_history(channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
-            channel_url (str):
+            channel_url (str): (Required) 
 
         Keyword Args:
             api_token (str): [optional]
-            gc_reset_chat_history_data (GcResetChatHistoryData): [optional]
+            reset_chat_history_request (ResetChatHistoryRequest): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -2798,7 +2807,7 @@ class GroupChannelApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            GcResetChatHistoryResponse
+            ResetChatHistoryResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2829,28 +2838,28 @@ class GroupChannelApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['channel_url'] = \
             channel_url
-        return self.gc_reset_chat_history_endpoint.call_with_http_info(**kwargs)
+        return self.reset_chat_history_endpoint.call_with_http_info(**kwargs)
 
-    def gc_start_typing_indicators(
+    def start_typing_indicators(
         self,
         channel_url,
         **kwargs
     ):
         """Start typing indicators  # noqa: E501
 
-        ## Start typing indicators  You can start showing a typing indicator using this API. Seeing whether other users are typing can help a more interactive conversation environment by showing real-time engagement of other users.  https://sendbird.com/docs/chat/platform-api/v3/channel/managing-typing-indicators/start-typing-indicators ----------------------------   `channel_url`      Type: string      Description: Specifies the URL of the channel to set typing indicators.  # noqa: E501
+        ## Start typing indicators  You can start showing a typing indicator using this API. Seeing whether other users are typing can help a more interactive conversation environment by showing real-time engagement of other users.  If you're looking for an easy way to show typing indicators on your app, check out Sendbird UIKit for a ready-to-use UI feature that can be customized to fit your needs.  https://sendbird.com/docs/chat/platform-api/v3/channel/managing-typing-indicators/start-typing-indicators#1-start-typing-indicators  `channel_url`   Type: string   Description: Specifies the URL of the channel to set typing indicators.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.gc_start_typing_indicators(channel_url, async_req=True)
+        >>> thread = api.start_typing_indicators(channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
-            channel_url (str):
+            channel_url (str): (Required) 
 
         Keyword Args:
             api_token (str): [optional]
-            gc_typing_indicators_data (GcTypingIndicatorsData): [optional]
+            start_typing_indicators_request (StartTypingIndicatorsRequest): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -2883,7 +2892,7 @@ class GroupChannelApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            OcDeleteChannelByUrl200Response
+            {str: (bool, date, datetime, dict, float, int, list, str, none_type)}
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2914,28 +2923,28 @@ class GroupChannelApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['channel_url'] = \
             channel_url
-        return self.gc_start_typing_indicators_endpoint.call_with_http_info(**kwargs)
+        return self.start_typing_indicators_endpoint.call_with_http_info(**kwargs)
 
-    def gc_stop_typing_indicators(
+    def stop_typing_indicators(
         self,
         channel_url,
         **kwargs
     ):
         """Stop typing indicators  # noqa: E501
 
-        ## Stop typing indicators  You can stop showing a typing indicator using this API. To signal that a user is no longer typing, you can let the indicator disappear when the user sends a message or completely deletes the message text.  https://sendbird.com/docs/chat/platform-api/v3/channel/managing-typing-indicators/stop-typing-indicators ----------------------------   `channel_url`      Type: string      Description: Specifies the URL of the channel to set typing indicators.  # noqa: E501
+        ## Stop typing indicators  You can stop showing a typing indicator using this API. To signal that a user is no longer typing, you can let the indicator disappear when the user sends a message or completely deletes the message text.  https://sendbird.com/docs/chat/platform-api/v3/channel/managing-typing-indicators/stop-typing-indicators#1-stop-typing-indicators  `channel_url`   Type: string   Description: Specifies the URL of the channel to set typing indicators.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.gc_stop_typing_indicators(channel_url, async_req=True)
+        >>> thread = api.stop_typing_indicators(channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
-            channel_url (str):
+            channel_url (str): (Required) 
 
         Keyword Args:
             api_token (str): [optional]
-            gc_typing_indicators_data (GcTypingIndicatorsData): [optional]
+            start_typing_indicators_request (StartTypingIndicatorsRequest): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -2968,7 +2977,7 @@ class GroupChannelApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            OcDeleteChannelByUrl200Response
+            {str: (bool, date, datetime, dict, float, int, list, str, none_type)}
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2999,30 +3008,30 @@ class GroupChannelApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['channel_url'] = \
             channel_url
-        return self.gc_stop_typing_indicators_endpoint.call_with_http_info(**kwargs)
+        return self.stop_typing_indicators_endpoint.call_with_http_info(**kwargs)
 
-    def gc_unhide_or_unarchive_channel(
+    def unhide_a_channel(
         self,
         channel_url,
         user_id,
         **kwargs
     ):
-        """Unhide or unarchive a channel  # noqa: E501
+        """Unhide a channel  # noqa: E501
 
-        ## Unhide or unarchive a channel  Makes a hidden or archived channel reappear in the channel list of either a specific user or entire channel members.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-unhide-or-unarchive-a-channel ----------------------------   `channel_url`      Type: string      Description: Specifies the URL of the channel to unhide or unarchive.  # noqa: E501
+        ## Unhide a channel  This action lets a hidden [group channel](https://sendbird.com/docs/chat/platform-api/v3/channel/channel-overview#2-channel-types-3-group-channel) reappear on the channel list of a specific user or every member in the group channel. Hiding or unhiding a channel lets users organize their channel list based on those that require the most attention. Note that only group channels can be hidden or unhidden.  [https://sendbird.com/docs/chat/platform-api/v3/channel/managing-a-channel/unhide-a-channel#1-unhide-a-channel](https://sendbird.com/docs/chat/platform-api/v3/channel/managing-a-channel/unhide-a-channel#1-unhide-a-channel)  `channel_url`   Type: string   Description: Specifies the URL of the channel to unhide or unarchive.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.gc_unhide_or_unarchive_channel(channel_url, user_id, async_req=True)
+        >>> thread = api.unhide_a_channel(channel_url, user_id, async_req=True)
         >>> result = thread.get()
 
         Args:
-            channel_url (str):
-            user_id (str):
+            channel_url (str): (Required) 
+            user_id (str): (Required) 
 
         Keyword Args:
-            api_token (str): [optional]
             should_unhide_all (bool): [optional]
+            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -3055,7 +3064,7 @@ class GroupChannelApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            OcDeleteChannelByUrl200Response
+            {str: (bool, date, datetime, dict, float, int, list, str, none_type)}
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -3088,20 +3097,20 @@ class GroupChannelApi(object):
             channel_url
         kwargs['user_id'] = \
             user_id
-        return self.gc_unhide_or_unarchive_channel_endpoint.call_with_http_info(**kwargs)
+        return self.unhide_a_channel_endpoint.call_with_http_info(**kwargs)
 
-    def gc_update_channel_by_url(
+    def update_a_group_channel(
         self,
         channel_url,
         **kwargs
     ):
-        """Update a channel  # noqa: E501
+        """Update a group channel  # noqa: E501
 
-        ## Update a channel  Updates information on a group channel.  > __Note__: You can't change the members of the channel here. To do so, see [invite as members](#2-invite-as-members) action below.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-update-a-channel ----------------------------  # noqa: E501
+        ## Update a group channel  You can update information about a group channel or a Supergroup channel using this API. You can't make any changes to the members of a channel with this API. To change members, see [invite as members](https://sendbird.com/docs/chat/platform-api/v3/channel/inviting-a-user/invite-as-members-channel) instead. See [this page](https://sendbird.com/docs/chat/platform-api/v3/channel/channel-overview#2-channel-types-3-open-channel-vs-group-channel-vs-supergroup-channel) to learn more about channel types.  https://sendbird.com/docs/chat/platform-api/v3/channel/managing-a-channel/update-a-group-channel#1-update-a-group-channel  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.gc_update_channel_by_url(channel_url, async_req=True)
+        >>> thread = api.update_a_group_channel(channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
@@ -3109,7 +3118,7 @@ class GroupChannelApi(object):
 
         Keyword Args:
             api_token (str): [optional]
-            gc_update_channel_by_url_data (GcUpdateChannelByUrlData): [optional]
+            update_a_group_channel_request (UpdateAGroupChannelRequest): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -3142,7 +3151,7 @@ class GroupChannelApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            SendBirdGroupChannel
+            SendbirdGroupChannelDetail
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -3173,94 +3182,5 @@ class GroupChannelApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['channel_url'] = \
             channel_url
-        return self.gc_update_channel_by_url_endpoint.call_with_http_info(**kwargs)
-
-    def gc_view_channel_by_url(
-        self,
-        channel_url,
-        **kwargs
-    ):
-        """View a channel  # noqa: E501
-
-        ## View a channel  Retrieves information on a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-view-a-channel ----------------------------   `channel_url`      Type: string      Description: Specifies the URL of the channel to retrieve.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.gc_view_channel_by_url(channel_url, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            channel_url (str):
-
-        Keyword Args:
-            api_token (str): [optional]
-            show_delivery_receipt (bool): [optional]
-            show_read_receipt (bool): [optional]
-            show_member (bool): [optional]
-            read_receipt (bool): [optional]
-            member (bool): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            SendBirdGroupChannel
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['channel_url'] = \
-            channel_url
-        return self.gc_view_channel_by_url_endpoint.call_with_http_info(**kwargs)
+        return self.update_a_group_channel_endpoint.call_with_http_info(**kwargs)
 

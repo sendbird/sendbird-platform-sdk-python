@@ -1,7 +1,7 @@
 """
     Sendbird Platform SDK
 
-    Sendbird Platform API SDK  https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api  # noqa: E501
+    Sendbird Platform API SDK  [https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api](https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api)  Contact Support:   Name: Sendbird   Email: [support@sendbird.com](https://mailto:support@sendbird.com)  # noqa: E501
 
     The version of the OpenAPI document: 1.0.0
     Contact: support@sendbird.com
@@ -24,129 +24,136 @@ class TestGroupChannelApi(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def test_gc_accept_invitation(self):
-        """Test case for gc_accept_invitation
+    def test_accept_an_invitation(self):
+        """Test case for accept_an_invitation
 
         Accept an invitation  # noqa: E501
         """
         pass
 
-    def test_gc_cancel_the_registration_of_operators(self):
-        """Test case for gc_cancel_the_registration_of_operators
+    def test_cancel_the_registration_of_operators(self):
+        """Test case for cancel_the_registration_of_operators
 
         Cancel the registration of operators  # noqa: E501
         """
         pass
 
-    def test_gc_check_if_member_by_id(self):
-        """Test case for gc_check_if_member_by_id
+    def test_check_if_member(self):
+        """Test case for check_if_member
 
         Check if member  # noqa: E501
         """
         pass
 
-    def test_gc_create_channel(self):
-        """Test case for gc_create_channel
+    def test_create_a_group_channel(self):
+        """Test case for create_a_group_channel
 
-        Create a channel  # noqa: E501
+        Create a group channel  # noqa: E501
         """
         pass
 
-    def test_gc_decline_invitation(self):
-        """Test case for gc_decline_invitation
+    def test_delete_a_group_channel(self):
+        """Test case for delete_a_group_channel
 
-        Decline an invitation  # noqa: E501
+        Delete a group channel  # noqa: E501
         """
         pass
 
-    def test_gc_delete_channel_by_url(self):
-        """Test case for gc_delete_channel_by_url
+    def test_get_a_group_channel(self):
+        """Test case for get_a_group_channel
 
-        Delete a channel  # noqa: E501
+        Get a group channel  # noqa: E501
         """
         pass
 
-    def test_gc_hide_or_archive_channel(self):
-        """Test case for gc_hide_or_archive_channel
+    def test_hide_a_channel(self):
+        """Test case for hide_a_channel
 
-        Hide or archive a channel  # noqa: E501
+        Hide a channel  # noqa: E501
         """
         pass
 
-    def test_gc_invite_as_members(self):
-        """Test case for gc_invite_as_members
+    def test_invite_as_members(self):
+        """Test case for invite_as_members
 
         Invite as members  # noqa: E501
         """
         pass
 
-    def test_gc_join_channel(self):
-        """Test case for gc_join_channel
+    def test_join_a_channel(self):
+        """Test case for join_a_channel
 
         Join a channel  # noqa: E501
         """
         pass
 
-    def test_gc_leave_channel(self):
-        """Test case for gc_leave_channel
+    def test_leave_a_channel(self):
+        """Test case for leave_a_channel
 
         Leave a channel  # noqa: E501
         """
         pass
 
-    def test_gc_list_channels(self):
-        """Test case for gc_list_channels
+    def test_list_channels(self):
+        """Test case for list_channels
 
         List channels  # noqa: E501
         """
         pass
 
-    def test_gc_list_members(self):
-        """Test case for gc_list_members
+    def test_list_members(self):
+        """Test case for list_members
 
         List members  # noqa: E501
         """
         pass
 
-    def test_gc_list_operators(self):
-        """Test case for gc_list_operators
+    def test_list_operators(self):
+        """Test case for list_operators
 
         List operators  # noqa: E501
         """
         pass
 
-    def test_gc_register_operators(self):
-        """Test case for gc_register_operators
+    def test_register_operators_to_a_group_channel(self):
+        """Test case for register_operators_to_a_group_channel
 
-        Register operators  # noqa: E501
+        Register operators to a group channel  # noqa: E501
         """
         pass
 
-    def test_gc_reset_chat_history(self):
-        """Test case for gc_reset_chat_history
+    def test_reset_chat_history(self):
+        """Test case for reset_chat_history
 
         Reset chat history  # noqa: E501
         """
         pass
 
-    def test_gc_unhide_or_unarchive_channel(self):
-        """Test case for gc_unhide_or_unarchive_channel
+    def test_start_typing_indicators(self):
+        """Test case for start_typing_indicators
 
-        Unhide or unarchive a channel  # noqa: E501
+        Start typing indicators  # noqa: E501
         """
         pass
 
-    def test_gc_update_channel_by_url(self):
-        """Test case for gc_update_channel_by_url
+    def test_stop_typing_indicators(self):
+        """Test case for stop_typing_indicators
 
-        Update a channel  # noqa: E501
+        Stop typing indicators  # noqa: E501
         """
         pass
 
-    def test_gc_view_channel_by_url(self):
-        """Test case for gc_view_channel_by_url
+    def test_unhide_a_channel(self):
+        """Test case for unhide_a_channel
 
-        View a channel  # noqa: E501
+        Unhide a channel  # noqa: E501
+        """
+        pass
+
+    def test_update_a_group_channel(self):
+        """Test case for update_a_group_channel
+
+        Update a group channel  # noqa: E501
         """
         pass
 

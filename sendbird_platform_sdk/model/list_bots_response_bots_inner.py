@@ -1,7 +1,7 @@
 """
     Sendbird Platform SDK
 
-    Sendbird Platform API SDK  https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api  # noqa: E501
+    Sendbird Platform API SDK  [https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api](https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api)  Contact Support:   Name: Sendbird   Email: [support@sendbird.com](https://mailto:support@sendbird.com)  # noqa: E501
 
     The version of the OpenAPI document: 1.0.0
     Contact: support@sendbird.com
@@ -31,8 +31,16 @@ from sendbird_platform_sdk.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from sendbird_platform_sdk.model.create_bot_response_bot import CreateBotResponseBot
-    globals()['CreateBotResponseBot'] = CreateBotResponseBot
+    from sendbird_platform_sdk.model.list_bots_response_bots_inner_ai import ListBotsResponseBotsInnerAi
+    from sendbird_platform_sdk.model.list_bots_response_bots_inner_bot import ListBotsResponseBotsInnerBot
+    from sendbird_platform_sdk.model.list_bots_response_bots_inner_bot_style import ListBotsResponseBotsInnerBotStyle
+    from sendbird_platform_sdk.model.list_bots_response_bots_inner_first_messages_inner import ListBotsResponseBotsInnerFirstMessagesInner
+    from sendbird_platform_sdk.model.list_bots_response_bots_inner_safeguard import ListBotsResponseBotsInnerSafeguard
+    globals()['ListBotsResponseBotsInnerAi'] = ListBotsResponseBotsInnerAi
+    globals()['ListBotsResponseBotsInnerBot'] = ListBotsResponseBotsInnerBot
+    globals()['ListBotsResponseBotsInnerBotStyle'] = ListBotsResponseBotsInnerBotStyle
+    globals()['ListBotsResponseBotsInnerFirstMessagesInner'] = ListBotsResponseBotsInnerFirstMessagesInner
+    globals()['ListBotsResponseBotsInnerSafeguard'] = ListBotsResponseBotsInnerSafeguard
 
 
 class ListBotsResponseBotsInner(ModelNormal):
@@ -88,12 +96,17 @@ class ListBotsResponseBotsInner(ModelNormal):
         """
         lazy_import()
         return {
-            'bot': (CreateBotResponseBot,),  # noqa: E501
+            'ai': (ListBotsResponseBotsInnerAi,),  # noqa: E501
+            'bot': (ListBotsResponseBotsInnerBot,),  # noqa: E501
             'bot_callback_url': (str,),  # noqa: E501
+            'bot_style': (ListBotsResponseBotsInnerBotStyle,),  # noqa: E501
+            'channel_invitation_preference': (int,),  # noqa: E501
+            'created_at': (int,),  # noqa: E501
             'enable_mark_as_read': (bool,),  # noqa: E501
+            'first_messages': ([ListBotsResponseBotsInnerFirstMessagesInner],),  # noqa: E501
             'is_privacy_mode': (bool,),  # noqa: E501
+            'safeguard': (ListBotsResponseBotsInnerSafeguard,),  # noqa: E501
             'show_member': (bool,),  # noqa: E501
-            'channel_invitation_preference': (float,),  # noqa: E501
         }
 
     @cached_property
@@ -102,12 +115,17 @@ class ListBotsResponseBotsInner(ModelNormal):
 
 
     attribute_map = {
+        'ai': 'ai',  # noqa: E501
         'bot': 'bot',  # noqa: E501
         'bot_callback_url': 'bot_callback_url',  # noqa: E501
-        'enable_mark_as_read': 'enable_mark_as_read',  # noqa: E501
-        'is_privacy_mode': 'is_privacy_mode',  # noqa: E501
-        'show_member': 'show_member',  # noqa: E501
+        'bot_style': 'bot_style',  # noqa: E501
         'channel_invitation_preference': 'channel_invitation_preference',  # noqa: E501
+        'created_at': 'created_at',  # noqa: E501
+        'enable_mark_as_read': 'enable_mark_as_read',  # noqa: E501
+        'first_messages': 'first_messages',  # noqa: E501
+        'is_privacy_mode': 'is_privacy_mode',  # noqa: E501
+        'safeguard': 'safeguard',  # noqa: E501
+        'show_member': 'show_member',  # noqa: E501
     }
 
     read_only_vars = {
@@ -151,12 +169,17 @@ class ListBotsResponseBotsInner(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            bot (CreateBotResponseBot): [optional]  # noqa: E501
+            ai (ListBotsResponseBotsInnerAi): [optional]  # noqa: E501
+            bot (ListBotsResponseBotsInnerBot): [optional]  # noqa: E501
             bot_callback_url (str): [optional]  # noqa: E501
+            bot_style (ListBotsResponseBotsInnerBotStyle): [optional]  # noqa: E501
+            channel_invitation_preference (int): [optional]  # noqa: E501
+            created_at (int): [optional]  # noqa: E501
             enable_mark_as_read (bool): [optional]  # noqa: E501
+            first_messages ([ListBotsResponseBotsInnerFirstMessagesInner]): [optional]  # noqa: E501
             is_privacy_mode (bool): [optional]  # noqa: E501
+            safeguard (ListBotsResponseBotsInnerSafeguard): [optional]  # noqa: E501
             show_member (bool): [optional]  # noqa: E501
-            channel_invitation_preference (float): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -242,12 +265,17 @@ class ListBotsResponseBotsInner(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            bot (CreateBotResponseBot): [optional]  # noqa: E501
+            ai (ListBotsResponseBotsInnerAi): [optional]  # noqa: E501
+            bot (ListBotsResponseBotsInnerBot): [optional]  # noqa: E501
             bot_callback_url (str): [optional]  # noqa: E501
+            bot_style (ListBotsResponseBotsInnerBotStyle): [optional]  # noqa: E501
+            channel_invitation_preference (int): [optional]  # noqa: E501
+            created_at (int): [optional]  # noqa: E501
             enable_mark_as_read (bool): [optional]  # noqa: E501
+            first_messages ([ListBotsResponseBotsInnerFirstMessagesInner]): [optional]  # noqa: E501
             is_privacy_mode (bool): [optional]  # noqa: E501
+            safeguard (ListBotsResponseBotsInnerSafeguard): [optional]  # noqa: E501
             show_member (bool): [optional]  # noqa: E501
-            channel_invitation_preference (float): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

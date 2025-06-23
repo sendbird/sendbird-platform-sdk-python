@@ -1,7 +1,7 @@
 """
     Sendbird Platform SDK
 
-    Sendbird Platform API SDK  https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api  # noqa: E501
+    Sendbird Platform API SDK  [https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api](https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api)  Contact Support:   Name: Sendbird   Email: [support@sendbird.com](https://mailto:support@sendbird.com)  # noqa: E501
 
     The version of the OpenAPI document: 1.0.0
     Contact: support@sendbird.com
@@ -82,8 +82,8 @@ class CreateUserTokenResponse(ModelNormal):
                 and the value is attribute type.
         """
         return {
+            'expires_at': (int,),  # noqa: E501
             'token': (str,),  # noqa: E501
-            'expires_at': (float,),  # noqa: E501
         }
 
     @cached_property
@@ -92,8 +92,8 @@ class CreateUserTokenResponse(ModelNormal):
 
 
     attribute_map = {
-        'token': 'token',  # noqa: E501
         'expires_at': 'expires_at',  # noqa: E501
+        'token': 'token',  # noqa: E501
     }
 
     read_only_vars = {
@@ -137,8 +137,8 @@ class CreateUserTokenResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            expires_at (int): [optional]  # noqa: E501
             token (str): [optional]  # noqa: E501
-            expires_at (float): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -224,8 +224,8 @@ class CreateUserTokenResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            expires_at (int): [optional]  # noqa: E501
             token (str): [optional]  # noqa: E501
-            expires_at (float): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

@@ -1,7 +1,7 @@
 """
     Sendbird Platform SDK
 
-    Sendbird Platform API SDK  https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api  # noqa: E501
+    Sendbird Platform API SDK  [https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api](https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api)  Contact Support:   Name: Sendbird   Email: [support@sendbird.com](https://mailto:support@sendbird.com)  # noqa: E501
 
     The version of the OpenAPI document: 1.0.0
     Contact: support@sendbird.com
@@ -22,41 +22,38 @@ from sendbird_platform_sdk.model_utils import (  # noqa: F401
     none_type,
     validate_and_convert_types
 )
-from sendbird_platform_sdk.model.add_registration_or_device_token_data import AddRegistrationOrDeviceTokenData
-from sendbird_platform_sdk.model.add_registration_or_device_token_response import AddRegistrationOrDeviceTokenResponse
-from sendbird_platform_sdk.model.choose_push_notification_content_template_response import ChoosePushNotificationContentTemplateResponse
-from sendbird_platform_sdk.model.create_user_data import CreateUserData
-from sendbird_platform_sdk.model.create_user_token_data import CreateUserTokenData
+from sendbird_platform_sdk.model.add_a_registration_or_device_token_request import AddARegistrationOrDeviceTokenRequest
+from sendbird_platform_sdk.model.add_a_registration_or_device_token_response import AddARegistrationOrDeviceTokenResponse
+from sendbird_platform_sdk.model.choose_a_push_notification_content_template_request import ChooseAPushNotificationContentTemplateRequest
+from sendbird_platform_sdk.model.choose_a_push_notification_content_template_response import ChooseAPushNotificationContentTemplateResponse
+from sendbird_platform_sdk.model.create_a_user_request import CreateAUserRequest
+from sendbird_platform_sdk.model.create_user_token_request import CreateUserTokenRequest
 from sendbird_platform_sdk.model.create_user_token_response import CreateUserTokenResponse
-from sendbird_platform_sdk.model.leave_my_group_channels_data import LeaveMyGroupChannelsData
+from sendbird_platform_sdk.model.get_channel_invitation_preference_response import GetChannelInvitationPreferenceResponse
+from sendbird_platform_sdk.model.leave_my_group_channels_request import LeaveMyGroupChannelsRequest
 from sendbird_platform_sdk.model.list_my_group_channels_response import ListMyGroupChannelsResponse
 from sendbird_platform_sdk.model.list_registration_or_device_tokens_response import ListRegistrationOrDeviceTokensResponse
 from sendbird_platform_sdk.model.list_users_response import ListUsersResponse
-from sendbird_platform_sdk.model.mark_all_messages_as_read_data import MarkAllMessagesAsReadData
-from sendbird_platform_sdk.model.register_as_operator_to_channels_with_custom_channel_types_data import RegisterAsOperatorToChannelsWithCustomChannelTypesData
-from sendbird_platform_sdk.model.remove_registration_or_device_token_by_token_response import RemoveRegistrationOrDeviceTokenByTokenResponse
-from sendbird_platform_sdk.model.remove_registration_or_device_token_from_owner_by_token_response import RemoveRegistrationOrDeviceTokenFromOwnerByTokenResponse
-from sendbird_platform_sdk.model.remove_registration_or_device_token_response import RemoveRegistrationOrDeviceTokenResponse
-from sendbird_platform_sdk.model.reset_push_preferences_response import ResetPushPreferencesResponse
-from sendbird_platform_sdk.model.send_bird_user import SendBirdUser
-from sendbird_platform_sdk.model.update_channel_invitation_preference_data import UpdateChannelInvitationPreferenceData
+from sendbird_platform_sdk.model.mark_all_messages_as_read_request import MarkAllMessagesAsReadRequest
+from sendbird_platform_sdk.model.remove_a_registration_or_device_token_from_an_owner_response import RemoveARegistrationOrDeviceTokenFromAnOwnerResponse
+from sendbird_platform_sdk.model.remove_a_registration_or_device_token_response import RemoveARegistrationOrDeviceTokenResponse
+from sendbird_platform_sdk.model.remove_all_registration_or_device_token_response import RemoveAllRegistrationOrDeviceTokenResponse
+from sendbird_platform_sdk.model.sendbird_user import SendbirdUser
+from sendbird_platform_sdk.model.update_a_user_request import UpdateAUserRequest
+from sendbird_platform_sdk.model.update_channel_invitation_preference_request import UpdateChannelInvitationPreferenceRequest
 from sendbird_platform_sdk.model.update_channel_invitation_preference_response import UpdateChannelInvitationPreferenceResponse
-from sendbird_platform_sdk.model.update_count_preference_of_channel_by_url_data import UpdateCountPreferenceOfChannelByUrlData
+from sendbird_platform_sdk.model.update_count_preference_of_a_channel_request import UpdateCountPreferenceOfAChannelRequest
 from sendbird_platform_sdk.model.update_count_preference_of_channel_by_url_response import UpdateCountPreferenceOfChannelByUrlResponse
-from sendbird_platform_sdk.model.update_push_preferences_data import UpdatePushPreferencesData
-from sendbird_platform_sdk.model.update_push_preferences_for_channel_by_url_data import UpdatePushPreferencesForChannelByUrlData
-from sendbird_platform_sdk.model.update_push_preferences_for_channel_by_url_response import UpdatePushPreferencesForChannelByUrlResponse
+from sendbird_platform_sdk.model.update_push_preferences_for_a_channel_request import UpdatePushPreferencesForAChannelRequest
+from sendbird_platform_sdk.model.update_push_preferences_for_a_channel_response import UpdatePushPreferencesForAChannelResponse
+from sendbird_platform_sdk.model.update_push_preferences_request import UpdatePushPreferencesRequest
 from sendbird_platform_sdk.model.update_push_preferences_response import UpdatePushPreferencesResponse
-from sendbird_platform_sdk.model.update_user_by_id_data import UpdateUserByIdData
-from sendbird_platform_sdk.model.view_channel_invitation_preference_response import ViewChannelInvitationPreferenceResponse
-from sendbird_platform_sdk.model.view_count_preference_of_channel_by_url_response import ViewCountPreferenceOfChannelByUrlResponse
-from sendbird_platform_sdk.model.view_number_of_channels_by_join_status_response import ViewNumberOfChannelsByJoinStatusResponse
+from sendbird_platform_sdk.model.view_count_preference_of_a_channel_response import ViewCountPreferenceOfAChannelResponse
 from sendbird_platform_sdk.model.view_number_of_channels_with_unread_messages_response import ViewNumberOfChannelsWithUnreadMessagesResponse
-from sendbird_platform_sdk.model.view_number_of_unread_items_response import ViewNumberOfUnreadItemsResponse
 from sendbird_platform_sdk.model.view_number_of_unread_messages_response import ViewNumberOfUnreadMessagesResponse
-from sendbird_platform_sdk.model.view_push_preferences_for_channel_by_url_response import ViewPushPreferencesForChannelByUrlResponse
+from sendbird_platform_sdk.model.view_push_preferences_for_a_channel_response import ViewPushPreferencesForAChannelResponse
 from sendbird_platform_sdk.model.view_push_preferences_response import ViewPushPreferencesResponse
-from sendbird_platform_sdk.model.view_who_owns_registration_or_device_token_by_token_response import ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponse
+from sendbird_platform_sdk.model.view_who_owns_a_registration_or_device_token_response import ViewWhoOwnsARegistrationOrDeviceTokenResponse
 
 
 class UserApi(object):
@@ -70,12 +67,12 @@ class UserApi(object):
         if api_client is None:
             api_client = ApiClient()
         self.api_client = api_client
-        self.add_registration_or_device_token_endpoint = _Endpoint(
+        self.add_a_registration_or_device_token_endpoint = _Endpoint(
             settings={
-                'response_type': (AddRegistrationOrDeviceTokenResponse,),
+                'response_type': (AddARegistrationOrDeviceTokenResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/users/{user_id}/push/{token_type}',
-                'operation_id': 'add_registration_or_device_token',
+                'operation_id': 'add_a_registration_or_device_token',
                 'http_method': 'POST',
                 'servers': None,
             },
@@ -84,7 +81,7 @@ class UserApi(object):
                     'user_id',
                     'token_type',
                     'api_token',
-                    'add_registration_or_device_token_data',
+                    'add_a_registration_or_device_token_request',
                 ],
                 'required': [
                     'user_id',
@@ -93,6 +90,7 @@ class UserApi(object):
                 'nullable': [
                 ],
                 'enum': [
+                    'token_type',
                 ],
                 'validation': [
                 ]
@@ -101,6 +99,12 @@ class UserApi(object):
                 'validations': {
                 },
                 'allowed_values': {
+                    ('token_type',): {
+
+                        "GCM": "gcm",
+                        "HUAWEI": "huawei",
+                        "APNS": "apns"
+                    },
                 },
                 'openapi_types': {
                     'user_id':
@@ -109,19 +113,19 @@ class UserApi(object):
                         (str,),
                     'api_token':
                         (str,),
-                    'add_registration_or_device_token_data':
-                        (AddRegistrationOrDeviceTokenData,),
+                    'add_a_registration_or_device_token_request':
+                        (AddARegistrationOrDeviceTokenRequest,),
                 },
                 'attribute_map': {
                     'user_id': 'user_id',
                     'token_type': 'token_type',
-                    'api_token': 'Api-Token',
+                    'api_token': 'api-token',
                 },
                 'location_map': {
                     'user_id': 'path',
                     'token_type': 'path',
                     'api_token': 'header',
-                    'add_registration_or_device_token_data': 'body',
+                    'add_a_registration_or_device_token_request': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -136,12 +140,12 @@ class UserApi(object):
             },
             api_client=api_client
         )
-        self.choose_push_notification_content_template_endpoint = _Endpoint(
+        self.choose_a_push_notification_content_template_endpoint = _Endpoint(
             settings={
-                'response_type': (ChoosePushNotificationContentTemplateResponse,),
+                'response_type': (ChooseAPushNotificationContentTemplateResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/users/{user_id}/push/template',
-                'operation_id': 'choose_push_notification_content_template',
+                'operation_id': 'choose_a_push_notification_content_template',
                 'http_method': 'PUT',
                 'servers': None,
             },
@@ -149,7 +153,7 @@ class UserApi(object):
                 'all': [
                     'user_id',
                     'api_token',
-                    'body',
+                    'choose_a_push_notification_content_template_request',
                 ],
                 'required': [
                     'user_id',
@@ -171,17 +175,17 @@ class UserApi(object):
                         (str,),
                     'api_token':
                         (str,),
-                    'body':
-                        ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
+                    'choose_a_push_notification_content_template_request':
+                        (ChooseAPushNotificationContentTemplateRequest,),
                 },
                 'attribute_map': {
                     'user_id': 'user_id',
-                    'api_token': 'Api-Token',
+                    'api_token': 'api-token',
                 },
                 'location_map': {
                     'user_id': 'path',
                     'api_token': 'header',
-                    'body': 'body',
+                    'choose_a_push_notification_content_template_request': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -196,19 +200,19 @@ class UserApi(object):
             },
             api_client=api_client
         )
-        self.create_user_endpoint = _Endpoint(
+        self.create_a_user_endpoint = _Endpoint(
             settings={
-                'response_type': (SendBirdUser,),
+                'response_type': (SendbirdUser,),
                 'auth': [],
                 'endpoint_path': '/v3/users',
-                'operation_id': 'create_user',
+                'operation_id': 'create_a_user',
                 'http_method': 'POST',
                 'servers': None,
             },
             params_map={
                 'all': [
                     'api_token',
-                    'create_user_data',
+                    'create_a_user_request',
                 ],
                 'required': [],
                 'nullable': [
@@ -226,15 +230,15 @@ class UserApi(object):
                 'openapi_types': {
                     'api_token':
                         (str,),
-                    'create_user_data':
-                        (CreateUserData,),
+                    'create_a_user_request':
+                        (CreateAUserRequest,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
+                    'api_token': 'api-token',
                 },
                 'location_map': {
                     'api_token': 'header',
-                    'create_user_data': 'body',
+                    'create_a_user_request': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -262,7 +266,7 @@ class UserApi(object):
                 'all': [
                     'user_id',
                     'api_token',
-                    'create_user_token_data',
+                    'create_user_token_request',
                 ],
                 'required': [
                     'user_id',
@@ -284,17 +288,17 @@ class UserApi(object):
                         (str,),
                     'api_token':
                         (str,),
-                    'create_user_token_data':
-                        (CreateUserTokenData,),
+                    'create_user_token_request':
+                        (CreateUserTokenRequest,),
                 },
                 'attribute_map': {
                     'user_id': 'user_id',
-                    'api_token': 'Api-Token',
+                    'api_token': 'api-token',
                 },
                 'location_map': {
                     'user_id': 'path',
                     'api_token': 'header',
-                    'create_user_token_data': 'body',
+                    'create_user_token_request': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -309,12 +313,12 @@ class UserApi(object):
             },
             api_client=api_client
         )
-        self.delete_user_by_id_endpoint = _Endpoint(
+        self.delete_a_user_endpoint = _Endpoint(
             settings={
                 'response_type': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
                 'auth': [],
                 'endpoint_path': '/v3/users/{user_id}',
-                'operation_id': 'delete_user_by_id',
+                'operation_id': 'delete_a_user',
                 'http_method': 'DELETE',
                 'servers': None,
             },
@@ -346,7 +350,61 @@ class UserApi(object):
                 },
                 'attribute_map': {
                     'user_id': 'user_id',
-                    'api_token': 'Api-Token',
+                    'api_token': 'api-token',
+                },
+                'location_map': {
+                    'user_id': 'path',
+                    'api_token': 'header',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.get_channel_invitation_preference_endpoint = _Endpoint(
+            settings={
+                'response_type': (GetChannelInvitationPreferenceResponse,),
+                'auth': [],
+                'endpoint_path': '/v3/users/{user_id}/channel_invitation_preference',
+                'operation_id': 'get_channel_invitation_preference',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'user_id',
+                    'api_token',
+                ],
+                'required': [
+                    'user_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'user_id':
+                        (str,),
+                    'api_token':
+                        (str,),
+                },
+                'attribute_map': {
+                    'user_id': 'user_id',
+                    'api_token': 'api-token',
                 },
                 'location_map': {
                     'user_id': 'path',
@@ -376,7 +434,7 @@ class UserApi(object):
                 'all': [
                     'user_id',
                     'api_token',
-                    'leave_my_group_channels_data',
+                    'leave_my_group_channels_request',
                 ],
                 'required': [
                     'user_id',
@@ -398,17 +456,17 @@ class UserApi(object):
                         (str,),
                     'api_token':
                         (str,),
-                    'leave_my_group_channels_data':
-                        (LeaveMyGroupChannelsData,),
+                    'leave_my_group_channels_request':
+                        (LeaveMyGroupChannelsRequest,),
                 },
                 'attribute_map': {
                     'user_id': 'user_id',
-                    'api_token': 'Api-Token',
+                    'api_token': 'api-token',
                 },
                 'location_map': {
                     'user_id': 'path',
                     'api_token': 'header',
-                    'leave_my_group_channels_data': 'body',
+                    'leave_my_group_channels_request': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -441,16 +499,14 @@ class UserApi(object):
                     'distinct_mode',
                     'public_mode',
                     'super_mode',
-                    'hidden_mode',
-                    'member_state_filter',
-                    'unread_filter',
                     'created_after',
                     'created_before',
                     'show_empty',
-                    'show_frozen',
                     'show_member',
                     'show_delivery_receipt',
                     'show_read_receipt',
+                    'show_metadata',
+                    'show_frozen',
                     'order',
                     'metadata_order_key',
                     'custom_types',
@@ -464,6 +520,7 @@ class UserApi(object):
                     'query_type',
                     'members_nickname',
                     'members_nickname_contains',
+                    'members_nickname_startswith',
                     'search_query',
                     'search_fields',
                     'metadata_key',
@@ -475,14 +532,25 @@ class UserApi(object):
                     'metacounter_value_gte',
                     'metacounter_value_lt',
                     'metacounter_value_lte',
-                    'custom_type',
+                    'include_sorted_metaarray_in_last_message',
+                    'hidden_mode',
+                    'unread_filter',
+                    'member_state_filter',
                 ],
                 'required': [
                     'user_id',
+                    'api_token',
                 ],
                 'nullable': [
                 ],
                 'enum': [
+                    'distinct_mode',
+                    'public_mode',
+                    'super_mode',
+                    'order',
+                    'hidden_mode',
+                    'unread_filter',
+                    'member_state_filter',
                 ],
                 'validation': [
                 ]
@@ -491,6 +559,52 @@ class UserApi(object):
                 'validations': {
                 },
                 'allowed_values': {
+                    ('distinct_mode',): {
+
+                        "ALL": "all",
+                        "DISTINCT": "distinct",
+                        "NONDISTINCT": "nondistinct"
+                    },
+                    ('public_mode',): {
+
+                        "ALL": "all",
+                        "PRIVATE": "private",
+                        "PUBLIC": "public"
+                    },
+                    ('super_mode',): {
+
+                        "ALL": "all",
+                        "SUPER": "super",
+                        "NONSUPER": "nonsuper"
+                    },
+                    ('order',): {
+
+                        "CHRONOLOGICAL": "chronological",
+                        "LATEST_LAST_MESSAGE": "latest_last_message",
+                        "CHANNEL_NAME_ALPHABETICAL": "channel_name_alphabetical",
+                        "METADATA_VALUE_ALPHABETICAL": "metadata_value_alphabetical"
+                    },
+                    ('hidden_mode',): {
+
+                        "UNHIDDEN_ONLY": "unhidden_only",
+                        "HIDDEN_ONLY": "hidden_only",
+                        "HIDDEN_ALLOW_AUTO_UNHIDE": "hidden_allow_auto_unhide",
+                        "HIDDEN_PREVENT_AUTO_UNHIDE": "hidden_prevent_auto_unhide",
+                        "ALL": "all"
+                    },
+                    ('unread_filter',): {
+
+                        "ALL": "all",
+                        "UNREAD_MESSAGE": "unread_message"
+                    },
+                    ('member_state_filter',): {
+
+                        "ALL": "all",
+                        "INVITED_ONLY": "invited_only",
+                        "JOINED_ONLY": "joined_only",
+                        "INVITED_BY_FRIEND": "invited_by_friend",
+                        "INVITED_BY_NON_FRIEND": "invited_by_non_friend"
+                    },
                 },
                 'openapi_types': {
                     'user_id':
@@ -507,25 +621,21 @@ class UserApi(object):
                         (str,),
                     'super_mode':
                         (str,),
-                    'hidden_mode':
-                        (str,),
-                    'member_state_filter':
-                        (str,),
-                    'unread_filter':
-                        (str,),
                     'created_after':
                         (int,),
                     'created_before':
                         (int,),
                     'show_empty':
                         (bool,),
-                    'show_frozen':
-                        (bool,),
                     'show_member':
                         (bool,),
                     'show_delivery_receipt':
                         (bool,),
                     'show_read_receipt':
+                        (bool,),
+                    'show_metadata':
+                        (bool,),
+                    'show_frozen':
                         (bool,),
                     'order':
                         (str,),
@@ -553,6 +663,8 @@ class UserApi(object):
                         (str,),
                     'members_nickname_contains':
                         (str,),
+                    'members_nickname_startswith':
+                        (str,),
                     'search_query':
                         (str,),
                     'search_fields':
@@ -575,27 +687,31 @@ class UserApi(object):
                         (str,),
                     'metacounter_value_lte':
                         (str,),
-                    'custom_type':
+                    'include_sorted_metaarray_in_last_message':
+                        (bool,),
+                    'hidden_mode':
+                        (str,),
+                    'unread_filter':
+                        (str,),
+                    'member_state_filter':
                         (str,),
                 },
                 'attribute_map': {
                     'user_id': 'user_id',
-                    'api_token': 'Api-Token',
+                    'api_token': 'api-token',
                     'token': 'token',
                     'limit': 'limit',
                     'distinct_mode': 'distinct_mode',
                     'public_mode': 'public_mode',
                     'super_mode': 'super_mode',
-                    'hidden_mode': 'hidden_mode',
-                    'member_state_filter': 'member_state_filter',
-                    'unread_filter': 'unread_filter',
                     'created_after': 'created_after',
                     'created_before': 'created_before',
                     'show_empty': 'show_empty',
-                    'show_frozen': 'show_frozen',
                     'show_member': 'show_member',
                     'show_delivery_receipt': 'show_delivery_receipt',
                     'show_read_receipt': 'show_read_receipt',
+                    'show_metadata': 'show_metadata',
+                    'show_frozen': 'show_frozen',
                     'order': 'order',
                     'metadata_order_key': 'metadata_order_key',
                     'custom_types': 'custom_types',
@@ -609,6 +725,7 @@ class UserApi(object):
                     'query_type': 'query_type',
                     'members_nickname': 'members_nickname',
                     'members_nickname_contains': 'members_nickname_contains',
+                    'members_nickname_startswith': 'members_nickname_startswith',
                     'search_query': 'search_query',
                     'search_fields': 'search_fields',
                     'metadata_key': 'metadata_key',
@@ -620,7 +737,10 @@ class UserApi(object):
                     'metacounter_value_gte': 'metacounter_value_gte',
                     'metacounter_value_lt': 'metacounter_value_lt',
                     'metacounter_value_lte': 'metacounter_value_lte',
-                    'custom_type': 'custom_type',
+                    'include_sorted_metaarray_in_last_message': 'include_sorted_metaarray_in_last_message',
+                    'hidden_mode': 'hidden_mode',
+                    'unread_filter': 'unread_filter',
+                    'member_state_filter': 'member_state_filter',
                 },
                 'location_map': {
                     'user_id': 'path',
@@ -630,16 +750,14 @@ class UserApi(object):
                     'distinct_mode': 'query',
                     'public_mode': 'query',
                     'super_mode': 'query',
-                    'hidden_mode': 'query',
-                    'member_state_filter': 'query',
-                    'unread_filter': 'query',
                     'created_after': 'query',
                     'created_before': 'query',
                     'show_empty': 'query',
-                    'show_frozen': 'query',
                     'show_member': 'query',
                     'show_delivery_receipt': 'query',
                     'show_read_receipt': 'query',
+                    'show_metadata': 'query',
+                    'show_frozen': 'query',
                     'order': 'query',
                     'metadata_order_key': 'query',
                     'custom_types': 'query',
@@ -653,6 +771,7 @@ class UserApi(object):
                     'query_type': 'query',
                     'members_nickname': 'query',
                     'members_nickname_contains': 'query',
+                    'members_nickname_startswith': 'query',
                     'search_query': 'query',
                     'search_fields': 'query',
                     'metadata_key': 'query',
@@ -664,7 +783,10 @@ class UserApi(object):
                     'metacounter_value_gte': 'query',
                     'metacounter_value_lt': 'query',
                     'metacounter_value_lte': 'query',
-                    'custom_type': 'query',
+                    'include_sorted_metaarray_in_last_message': 'query',
+                    'hidden_mode': 'query',
+                    'unread_filter': 'query',
+                    'member_state_filter': 'query',
                 },
                 'collection_format_map': {
                 }
@@ -699,6 +821,7 @@ class UserApi(object):
                 'nullable': [
                 ],
                 'enum': [
+                    'token_type',
                 ],
                 'validation': [
                 ]
@@ -707,6 +830,12 @@ class UserApi(object):
                 'validations': {
                 },
                 'allowed_values': {
+                    ('token_type',): {
+
+                        "GCM": "gcm",
+                        "HUAWEI": "huawei",
+                        "APNS": "apns"
+                    },
                 },
                 'openapi_types': {
                     'user_id':
@@ -719,7 +848,7 @@ class UserApi(object):
                 'attribute_map': {
                     'user_id': 'user_id',
                     'token_type': 'token_type',
-                    'api_token': 'Api-Token',
+                    'api_token': 'api-token',
                 },
                 'location_map': {
                     'user_id': 'path',
@@ -748,7 +877,6 @@ class UserApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'token',
                     'limit',
                     'active_mode',
@@ -758,11 +886,13 @@ class UserApi(object):
                     'nickname_startswith',
                     'metadatakey',
                     'metadatavalues_in',
+                    'api_token',
                 ],
                 'required': [],
                 'nullable': [
                 ],
                 'enum': [
+                    'active_mode',
                 ],
                 'validation': [
                 ]
@@ -771,10 +901,14 @@ class UserApi(object):
                 'validations': {
                 },
                 'allowed_values': {
+                    ('active_mode',): {
+
+                        "ACTIVATED": "activated",
+                        "DEACTIVATED": "deactivated",
+                        "ALL": "all"
+                    },
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'token':
                         (str,),
                     'limit':
@@ -793,9 +927,10 @@ class UserApi(object):
                         (str,),
                     'metadatavalues_in':
                         (str,),
+                    'api_token':
+                        (str,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'token': 'token',
                     'limit': 'limit',
                     'active_mode': 'active_mode',
@@ -805,9 +940,9 @@ class UserApi(object):
                     'nickname_startswith': 'nickname_startswith',
                     'metadatakey': 'metadatakey',
                     'metadatavalues_in': 'metadatavalues_in',
+                    'api_token': 'api-token',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'token': 'query',
                     'limit': 'query',
                     'active_mode': 'query',
@@ -817,6 +952,7 @@ class UserApi(object):
                     'nickname_startswith': 'query',
                     'metadatakey': 'query',
                     'metadatavalues_in': 'query',
+                    'api_token': 'header',
                 },
                 'collection_format_map': {
                 }
@@ -842,7 +978,7 @@ class UserApi(object):
                 'all': [
                     'user_id',
                     'api_token',
-                    'mark_all_messages_as_read_data',
+                    'mark_all_messages_as_read_request',
                 ],
                 'required': [
                     'user_id',
@@ -864,17 +1000,17 @@ class UserApi(object):
                         (str,),
                     'api_token':
                         (str,),
-                    'mark_all_messages_as_read_data':
-                        (MarkAllMessagesAsReadData,),
+                    'mark_all_messages_as_read_request':
+                        (MarkAllMessagesAsReadRequest,),
                 },
                 'attribute_map': {
                     'user_id': 'user_id',
-                    'api_token': 'Api-Token',
+                    'api_token': 'api-token',
                 },
                 'location_map': {
                     'user_id': 'path',
                     'api_token': 'header',
-                    'mark_all_messages_as_read_data': 'body',
+                    'mark_all_messages_as_read_request': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -889,126 +1025,12 @@ class UserApi(object):
             },
             api_client=api_client
         )
-        self.register_as_operator_to_channels_with_custom_channel_types_endpoint = _Endpoint(
+        self.remove_a_registration_or_device_token_endpoint = _Endpoint(
             settings={
-                'response_type': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
-                'auth': [],
-                'endpoint_path': '/v3/users/{user_id}/operating_channel_custom_types',
-                'operation_id': 'register_as_operator_to_channels_with_custom_channel_types',
-                'http_method': 'POST',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'user_id',
-                    'api_token',
-                    'register_as_operator_to_channels_with_custom_channel_types_data',
-                ],
-                'required': [
-                    'user_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'user_id':
-                        (str,),
-                    'api_token':
-                        (str,),
-                    'register_as_operator_to_channels_with_custom_channel_types_data':
-                        (RegisterAsOperatorToChannelsWithCustomChannelTypesData,),
-                },
-                'attribute_map': {
-                    'user_id': 'user_id',
-                    'api_token': 'Api-Token',
-                },
-                'location_map': {
-                    'user_id': 'path',
-                    'api_token': 'header',
-                    'register_as_operator_to_channels_with_custom_channel_types_data': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
-            api_client=api_client
-        )
-        self.remove_registration_or_device_token_endpoint = _Endpoint(
-            settings={
-                'response_type': (RemoveRegistrationOrDeviceTokenResponse,),
-                'auth': [],
-                'endpoint_path': '/v3/users/{user_id}/push',
-                'operation_id': 'remove_registration_or_device_token',
-                'http_method': 'DELETE',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'user_id',
-                    'api_token',
-                ],
-                'required': [
-                    'user_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'user_id':
-                        (str,),
-                    'api_token':
-                        (str,),
-                },
-                'attribute_map': {
-                    'user_id': 'user_id',
-                    'api_token': 'Api-Token',
-                },
-                'location_map': {
-                    'user_id': 'path',
-                    'api_token': 'header',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
-        self.remove_registration_or_device_token_by_token_endpoint = _Endpoint(
-            settings={
-                'response_type': (RemoveRegistrationOrDeviceTokenByTokenResponse,),
+                'response_type': (RemoveARegistrationOrDeviceTokenResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/users/{user_id}/push/{token_type}/{token}',
-                'operation_id': 'remove_registration_or_device_token_by_token',
+                'operation_id': 'remove_a_registration_or_device_token',
                 'http_method': 'DELETE',
                 'servers': None,
             },
@@ -1027,6 +1049,7 @@ class UserApi(object):
                 'nullable': [
                 ],
                 'enum': [
+                    'token_type',
                 ],
                 'validation': [
                 ]
@@ -1035,6 +1058,12 @@ class UserApi(object):
                 'validations': {
                 },
                 'allowed_values': {
+                    ('token_type',): {
+
+                        "GCM": "gcm",
+                        "HUAWEI": "huawei",
+                        "APNS": "apns"
+                    },
                 },
                 'openapi_types': {
                     'user_id':
@@ -1050,7 +1079,7 @@ class UserApi(object):
                     'user_id': 'user_id',
                     'token_type': 'token_type',
                     'token': 'token',
-                    'api_token': 'Api-Token',
+                    'api_token': 'api-token',
                 },
                 'location_map': {
                     'user_id': 'path',
@@ -1069,12 +1098,12 @@ class UserApi(object):
             },
             api_client=api_client
         )
-        self.remove_registration_or_device_token_from_owner_by_token_endpoint = _Endpoint(
+        self.remove_a_registration_or_device_token_from_an_owner_endpoint = _Endpoint(
             settings={
-                'response_type': (RemoveRegistrationOrDeviceTokenFromOwnerByTokenResponse,),
+                'response_type': (RemoveARegistrationOrDeviceTokenFromAnOwnerResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/push/device_tokens/{token_type}/{token}',
-                'operation_id': 'remove_registration_or_device_token_from_owner_by_token',
+                'operation_id': 'remove_a_registration_or_device_token_from_an_owner',
                 'http_method': 'DELETE',
                 'servers': None,
             },
@@ -1111,11 +1140,65 @@ class UserApi(object):
                 'attribute_map': {
                     'token_type': 'token_type',
                     'token': 'token',
-                    'api_token': 'Api-Token',
+                    'api_token': 'api-token',
                 },
                 'location_map': {
                     'token_type': 'path',
                     'token': 'path',
+                    'api_token': 'header',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.remove_all_registration_or_device_token_endpoint = _Endpoint(
+            settings={
+                'response_type': (RemoveAllRegistrationOrDeviceTokenResponse,),
+                'auth': [],
+                'endpoint_path': '/v3/users/{user_id}/push',
+                'operation_id': 'remove_all_registration_or_device_token',
+                'http_method': 'DELETE',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'user_id',
+                    'api_token',
+                ],
+                'required': [
+                    'user_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'user_id':
+                        (str,),
+                    'api_token':
+                        (str,),
+                },
+                'attribute_map': {
+                    'user_id': 'user_id',
+                    'api_token': 'api-token',
+                },
+                'location_map': {
+                    'user_id': 'path',
                     'api_token': 'header',
                 },
                 'collection_format_map': {
@@ -1131,7 +1214,7 @@ class UserApi(object):
         )
         self.reset_push_preferences_endpoint = _Endpoint(
             settings={
-                'response_type': (ResetPushPreferencesResponse,),
+                'response_type': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
                 'auth': [],
                 'endpoint_path': '/v3/users/{user_id}/push_preference',
                 'operation_id': 'reset_push_preferences',
@@ -1166,7 +1249,7 @@ class UserApi(object):
                 },
                 'attribute_map': {
                     'user_id': 'user_id',
-                    'api_token': 'Api-Token',
+                    'api_token': 'api-token',
                 },
                 'location_map': {
                     'user_id': 'path',
@@ -1183,12 +1266,12 @@ class UserApi(object):
             },
             api_client=api_client
         )
-        self.update_channel_invitation_preference_endpoint = _Endpoint(
+        self.update_a_user_endpoint = _Endpoint(
             settings={
-                'response_type': (UpdateChannelInvitationPreferenceResponse,),
+                'response_type': (SendbirdUser,),
                 'auth': [],
-                'endpoint_path': '/v3/users/{user_id}/channel_invitation_preference',
-                'operation_id': 'update_channel_invitation_preference',
+                'endpoint_path': '/v3/users/{user_id}',
+                'operation_id': 'update_a_user',
                 'http_method': 'PUT',
                 'servers': None,
             },
@@ -1196,7 +1279,7 @@ class UserApi(object):
                 'all': [
                     'user_id',
                     'api_token',
-                    'update_channel_invitation_preference_data',
+                    'update_a_user_request',
                 ],
                 'required': [
                     'user_id',
@@ -1218,17 +1301,17 @@ class UserApi(object):
                         (str,),
                     'api_token':
                         (str,),
-                    'update_channel_invitation_preference_data':
-                        (UpdateChannelInvitationPreferenceData,),
+                    'update_a_user_request':
+                        (UpdateAUserRequest,),
                 },
                 'attribute_map': {
                     'user_id': 'user_id',
-                    'api_token': 'Api-Token',
+                    'api_token': 'api-token',
                 },
                 'location_map': {
                     'user_id': 'path',
                     'api_token': 'header',
-                    'update_channel_invitation_preference_data': 'body',
+                    'update_a_user_request': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -1243,12 +1326,72 @@ class UserApi(object):
             },
             api_client=api_client
         )
-        self.update_count_preference_of_channel_by_url_endpoint = _Endpoint(
+        self.update_channel_invitation_preference_endpoint = _Endpoint(
+            settings={
+                'response_type': (UpdateChannelInvitationPreferenceResponse,),
+                'auth': [],
+                'endpoint_path': '/v3/users/{user_id}/channel_invitation_preference',
+                'operation_id': 'update_channel_invitation_preference',
+                'http_method': 'PUT',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'user_id',
+                    'api_token',
+                    'update_channel_invitation_preference_request',
+                ],
+                'required': [
+                    'user_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'user_id':
+                        (str,),
+                    'api_token':
+                        (str,),
+                    'update_channel_invitation_preference_request':
+                        (UpdateChannelInvitationPreferenceRequest,),
+                },
+                'attribute_map': {
+                    'user_id': 'user_id',
+                    'api_token': 'api-token',
+                },
+                'location_map': {
+                    'user_id': 'path',
+                    'api_token': 'header',
+                    'update_channel_invitation_preference_request': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client
+        )
+        self.update_count_preference_of_a_channel_endpoint = _Endpoint(
             settings={
                 'response_type': (UpdateCountPreferenceOfChannelByUrlResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/users/{user_id}/count_preference/{channel_url}',
-                'operation_id': 'update_count_preference_of_channel_by_url',
+                'operation_id': 'update_count_preference_of_a_channel',
                 'http_method': 'PUT',
                 'servers': None,
             },
@@ -1257,7 +1400,7 @@ class UserApi(object):
                     'user_id',
                     'channel_url',
                     'api_token',
-                    'update_count_preference_of_channel_by_url_data',
+                    'update_count_preference_of_a_channel_request',
                 ],
                 'required': [
                     'user_id',
@@ -1282,19 +1425,19 @@ class UserApi(object):
                         (str,),
                     'api_token':
                         (str,),
-                    'update_count_preference_of_channel_by_url_data':
-                        (UpdateCountPreferenceOfChannelByUrlData,),
+                    'update_count_preference_of_a_channel_request':
+                        (UpdateCountPreferenceOfAChannelRequest,),
                 },
                 'attribute_map': {
                     'user_id': 'user_id',
                     'channel_url': 'channel_url',
-                    'api_token': 'Api-Token',
+                    'api_token': 'api-token',
                 },
                 'location_map': {
                     'user_id': 'path',
                     'channel_url': 'path',
                     'api_token': 'header',
-                    'update_count_preference_of_channel_by_url_data': 'body',
+                    'update_count_preference_of_a_channel_request': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -1322,7 +1465,7 @@ class UserApi(object):
                 'all': [
                     'user_id',
                     'api_token',
-                    'update_push_preferences_data',
+                    'update_push_preferences_request',
                 ],
                 'required': [
                     'user_id',
@@ -1344,17 +1487,17 @@ class UserApi(object):
                         (str,),
                     'api_token':
                         (str,),
-                    'update_push_preferences_data':
-                        (UpdatePushPreferencesData,),
+                    'update_push_preferences_request':
+                        (UpdatePushPreferencesRequest,),
                 },
                 'attribute_map': {
                     'user_id': 'user_id',
-                    'api_token': 'Api-Token',
+                    'api_token': 'api-token',
                 },
                 'location_map': {
                     'user_id': 'path',
                     'api_token': 'header',
-                    'update_push_preferences_data': 'body',
+                    'update_push_preferences_request': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -1369,12 +1512,12 @@ class UserApi(object):
             },
             api_client=api_client
         )
-        self.update_push_preferences_for_channel_by_url_endpoint = _Endpoint(
+        self.update_push_preferences_for_a_channel_endpoint = _Endpoint(
             settings={
-                'response_type': (UpdatePushPreferencesForChannelByUrlResponse,),
+                'response_type': (UpdatePushPreferencesForAChannelResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/users/{user_id}/push_preference/{channel_url}',
-                'operation_id': 'update_push_preferences_for_channel_by_url',
+                'operation_id': 'update_push_preferences_for_a_channel',
                 'http_method': 'PUT',
                 'servers': None,
             },
@@ -1383,7 +1526,7 @@ class UserApi(object):
                     'user_id',
                     'channel_url',
                     'api_token',
-                    'update_push_preferences_for_channel_by_url_data',
+                    'update_push_preferences_for_a_channel_request',
                 ],
                 'required': [
                     'user_id',
@@ -1408,19 +1551,19 @@ class UserApi(object):
                         (str,),
                     'api_token':
                         (str,),
-                    'update_push_preferences_for_channel_by_url_data':
-                        (UpdatePushPreferencesForChannelByUrlData,),
+                    'update_push_preferences_for_a_channel_request':
+                        (UpdatePushPreferencesForAChannelRequest,),
                 },
                 'attribute_map': {
                     'user_id': 'user_id',
                     'channel_url': 'channel_url',
-                    'api_token': 'Api-Token',
+                    'api_token': 'api-token',
                 },
                 'location_map': {
                     'user_id': 'path',
                     'channel_url': 'path',
                     'api_token': 'header',
-                    'update_push_preferences_for_channel_by_url_data': 'body',
+                    'update_push_preferences_for_a_channel_request': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -1435,78 +1578,21 @@ class UserApi(object):
             },
             api_client=api_client
         )
-        self.update_user_by_id_endpoint = _Endpoint(
+        self.view_a_user_endpoint = _Endpoint(
             settings={
-                'response_type': (SendBirdUser,),
+                'response_type': (SendbirdUser,),
                 'auth': [],
                 'endpoint_path': '/v3/users/{user_id}',
-                'operation_id': 'update_user_by_id',
-                'http_method': 'PUT',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'user_id',
-                    'api_token',
-                    'update_user_by_id_data',
-                ],
-                'required': [
-                    'user_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'user_id':
-                        (str,),
-                    'api_token':
-                        (str,),
-                    'update_user_by_id_data':
-                        (UpdateUserByIdData,),
-                },
-                'attribute_map': {
-                    'user_id': 'user_id',
-                    'api_token': 'Api-Token',
-                },
-                'location_map': {
-                    'user_id': 'path',
-                    'api_token': 'header',
-                    'update_user_by_id_data': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
-            api_client=api_client
-        )
-        self.view_channel_invitation_preference_endpoint = _Endpoint(
-            settings={
-                'response_type': (ViewChannelInvitationPreferenceResponse,),
-                'auth': [],
-                'endpoint_path': '/v3/users/{user_id}/channel_invitation_preference',
-                'operation_id': 'view_channel_invitation_preference',
+                'operation_id': 'view_a_user',
                 'http_method': 'GET',
                 'servers': None,
             },
             params_map={
                 'all': [
                     'user_id',
+                    'include_unread_count',
+                    'custom_types',
+                    'super_mode',
                     'api_token',
                 ],
                 'required': [
@@ -1515,6 +1601,7 @@ class UserApi(object):
                 'nullable': [
                 ],
                 'enum': [
+                    'super_mode',
                 ],
                 'validation': [
                 ]
@@ -1523,19 +1610,37 @@ class UserApi(object):
                 'validations': {
                 },
                 'allowed_values': {
+                    ('super_mode',): {
+
+                        "ALL": "all",
+                        "SUPER": "super",
+                        "NONSUPER": "nonsuper"
+                    },
                 },
                 'openapi_types': {
                     'user_id':
+                        (str,),
+                    'include_unread_count':
+                        (bool,),
+                    'custom_types':
+                        (str,),
+                    'super_mode':
                         (str,),
                     'api_token':
                         (str,),
                 },
                 'attribute_map': {
                     'user_id': 'user_id',
-                    'api_token': 'Api-Token',
+                    'include_unread_count': 'include_unread_count',
+                    'custom_types': 'custom_types',
+                    'super_mode': 'super_mode',
+                    'api_token': 'api-token',
                 },
                 'location_map': {
                     'user_id': 'path',
+                    'include_unread_count': 'query',
+                    'custom_types': 'query',
+                    'super_mode': 'query',
                     'api_token': 'header',
                 },
                 'collection_format_map': {
@@ -1549,12 +1654,12 @@ class UserApi(object):
             },
             api_client=api_client
         )
-        self.view_count_preference_of_channel_by_url_endpoint = _Endpoint(
+        self.view_count_preference_of_a_channel_endpoint = _Endpoint(
             settings={
-                'response_type': (ViewCountPreferenceOfChannelByUrlResponse,),
+                'response_type': (ViewCountPreferenceOfAChannelResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/users/{user_id}/count_preference/{channel_url}',
-                'operation_id': 'view_count_preference_of_channel_by_url',
+                'operation_id': 'view_count_preference_of_a_channel',
                 'http_method': 'GET',
                 'servers': None,
             },
@@ -1591,71 +1696,12 @@ class UserApi(object):
                 'attribute_map': {
                     'user_id': 'user_id',
                     'channel_url': 'channel_url',
-                    'api_token': 'Api-Token',
+                    'api_token': 'api-token',
                 },
                 'location_map': {
                     'user_id': 'path',
                     'channel_url': 'path',
                     'api_token': 'header',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
-        self.view_number_of_channels_by_join_status_endpoint = _Endpoint(
-            settings={
-                'response_type': (ViewNumberOfChannelsByJoinStatusResponse,),
-                'auth': [],
-                'endpoint_path': '/v3/users/{user_id}/group_channel_count',
-                'operation_id': 'view_number_of_channels_by_join_status',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'user_id',
-                    'api_token',
-                    'state',
-                ],
-                'required': [
-                    'user_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'user_id':
-                        (str,),
-                    'api_token':
-                        (str,),
-                    'state':
-                        (str,),
-                },
-                'attribute_map': {
-                    'user_id': 'user_id',
-                    'api_token': 'Api-Token',
-                    'state': 'state',
-                },
-                'location_map': {
-                    'user_id': 'path',
-                    'api_token': 'header',
-                    'state': 'query',
                 },
                 'collection_format_map': {
                 }
@@ -1680,9 +1726,9 @@ class UserApi(object):
             params_map={
                 'all': [
                     'user_id',
-                    'api_token',
                     'custom_types',
                     'super_mode',
+                    'api_token',
                 ],
                 'required': [
                     'user_id',
@@ -1690,6 +1736,7 @@ class UserApi(object):
                 'nullable': [
                 ],
                 'enum': [
+                    'super_mode',
                 ],
                 'validation': [
                 ]
@@ -1698,93 +1745,34 @@ class UserApi(object):
                 'validations': {
                 },
                 'allowed_values': {
+                    ('super_mode',): {
+
+                        "ALL": "all",
+                        "SUPER": "super",
+                        "NONSUPER": "nonsuper"
+                    },
                 },
                 'openapi_types': {
                     'user_id':
-                        (str,),
-                    'api_token':
                         (str,),
                     'custom_types':
-                        ([str],),
-                    'super_mode':
                         (str,),
-                },
-                'attribute_map': {
-                    'user_id': 'user_id',
-                    'api_token': 'Api-Token',
-                    'custom_types': 'custom_types',
-                    'super_mode': 'super_mode',
-                },
-                'location_map': {
-                    'user_id': 'path',
-                    'api_token': 'header',
-                    'custom_types': 'query',
-                    'super_mode': 'query',
-                },
-                'collection_format_map': {
-                    'custom_types': 'multi',
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
-        self.view_number_of_unread_items_endpoint = _Endpoint(
-            settings={
-                'response_type': (ViewNumberOfUnreadItemsResponse,),
-                'auth': [],
-                'endpoint_path': '/v3/users/{user_id}/unread_item_count',
-                'operation_id': 'view_number_of_unread_items',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'user_id',
-                    'api_token',
-                    'custom_type',
-                    'item_keys',
-                ],
-                'required': [
-                    'user_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'user_id':
+                    'super_mode':
                         (str,),
                     'api_token':
                         (str,),
-                    'custom_type':
-                        (str,),
-                    'item_keys':
-                        (str,),
                 },
                 'attribute_map': {
                     'user_id': 'user_id',
-                    'api_token': 'Api-Token',
-                    'custom_type': 'custom_type',
-                    'item_keys': 'item_keys',
+                    'custom_types': 'custom_types',
+                    'super_mode': 'super_mode',
+                    'api_token': 'api-token',
                 },
                 'location_map': {
                     'user_id': 'path',
+                    'custom_types': 'query',
+                    'super_mode': 'query',
                     'api_token': 'header',
-                    'custom_type': 'query',
-                    'item_keys': 'query',
                 },
                 'collection_format_map': {
                 }
@@ -1809,9 +1797,9 @@ class UserApi(object):
             params_map={
                 'all': [
                     'user_id',
-                    'api_token',
                     'custom_types',
                     'super_mode',
+                    'api_token',
                 ],
                 'required': [
                     'user_id',
@@ -1831,24 +1819,24 @@ class UserApi(object):
                 'openapi_types': {
                     'user_id':
                         (str,),
-                    'api_token':
-                        (str,),
                     'custom_types':
                         (str,),
                     'super_mode':
                         (str,),
+                    'api_token':
+                        (str,),
                 },
                 'attribute_map': {
                     'user_id': 'user_id',
-                    'api_token': 'Api-Token',
                     'custom_types': 'custom_types',
                     'super_mode': 'super_mode',
+                    'api_token': 'api-token',
                 },
                 'location_map': {
                     'user_id': 'path',
-                    'api_token': 'header',
                     'custom_types': 'query',
                     'super_mode': 'query',
+                    'api_token': 'header',
                 },
                 'collection_format_map': {
                 }
@@ -1898,7 +1886,7 @@ class UserApi(object):
                 },
                 'attribute_map': {
                     'user_id': 'user_id',
-                    'api_token': 'Api-Token',
+                    'api_token': 'api-token',
                 },
                 'location_map': {
                     'user_id': 'path',
@@ -1915,12 +1903,12 @@ class UserApi(object):
             },
             api_client=api_client
         )
-        self.view_push_preferences_for_channel_by_url_endpoint = _Endpoint(
+        self.view_push_preferences_for_a_channel_endpoint = _Endpoint(
             settings={
-                'response_type': (ViewPushPreferencesForChannelByUrlResponse,),
+                'response_type': (ViewPushPreferencesForAChannelResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/users/{user_id}/push_preference/{channel_url}',
-                'operation_id': 'view_push_preferences_for_channel_by_url',
+                'operation_id': 'view_push_preferences_for_a_channel',
                 'http_method': 'GET',
                 'servers': None,
             },
@@ -1957,7 +1945,7 @@ class UserApi(object):
                 'attribute_map': {
                     'user_id': 'user_id',
                     'channel_url': 'channel_url',
-                    'api_token': 'Api-Token',
+                    'api_token': 'api-token',
                 },
                 'location_map': {
                     'user_id': 'path',
@@ -1975,81 +1963,12 @@ class UserApi(object):
             },
             api_client=api_client
         )
-        self.view_user_by_id_endpoint = _Endpoint(
+        self.view_who_owns_a_registration_or_device_token_endpoint = _Endpoint(
             settings={
-                'response_type': (SendBirdUser,),
-                'auth': [],
-                'endpoint_path': '/v3/users/{user_id}',
-                'operation_id': 'view_user_by_id',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'user_id',
-                    'api_token',
-                    'include_unread_count',
-                    'custom_types',
-                    'super_mode',
-                ],
-                'required': [
-                    'user_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'user_id':
-                        (str,),
-                    'api_token':
-                        (str,),
-                    'include_unread_count':
-                        (bool,),
-                    'custom_types':
-                        (str,),
-                    'super_mode':
-                        (str,),
-                },
-                'attribute_map': {
-                    'user_id': 'user_id',
-                    'api_token': 'Api-Token',
-                    'include_unread_count': 'include_unread_count',
-                    'custom_types': 'custom_types',
-                    'super_mode': 'super_mode',
-                },
-                'location_map': {
-                    'user_id': 'path',
-                    'api_token': 'header',
-                    'include_unread_count': 'query',
-                    'custom_types': 'query',
-                    'super_mode': 'query',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
-        self.view_who_owns_registration_or_device_token_by_token_endpoint = _Endpoint(
-            settings={
-                'response_type': (ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponse,),
+                'response_type': (ViewWhoOwnsARegistrationOrDeviceTokenResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/push/device_tokens/{token_type}/{token}',
-                'operation_id': 'view_who_owns_registration_or_device_token_by_token',
+                'operation_id': 'view_who_owns_a_registration_or_device_token',
                 'http_method': 'GET',
                 'servers': None,
             },
@@ -2086,7 +2005,7 @@ class UserApi(object):
                 'attribute_map': {
                     'token_type': 'token_type',
                     'token': 'token',
-                    'api_token': 'Api-Token',
+                    'api_token': 'api-token',
                 },
                 'location_map': {
                     'token_type': 'path',
@@ -2105,7 +2024,7 @@ class UserApi(object):
             api_client=api_client
         )
 
-    def add_registration_or_device_token(
+    def add_a_registration_or_device_token(
         self,
         user_id,
         token_type,
@@ -2117,16 +2036,16 @@ class UserApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.add_registration_or_device_token(user_id, token_type, async_req=True)
+        >>> thread = api.add_a_registration_or_device_token(user_id, token_type, async_req=True)
         >>> result = thread.get()
 
         Args:
-            user_id (str):
-            token_type (str):
+            user_id (str): (Required) 
+            token_type (str): (Required) 
 
         Keyword Args:
             api_token (str): [optional]
-            add_registration_or_device_token_data (AddRegistrationOrDeviceTokenData): [optional]
+            add_a_registration_or_device_token_request (AddARegistrationOrDeviceTokenRequest): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -2159,7 +2078,7 @@ class UserApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            AddRegistrationOrDeviceTokenResponse
+            AddARegistrationOrDeviceTokenResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2192,28 +2111,28 @@ class UserApi(object):
             user_id
         kwargs['token_type'] = \
             token_type
-        return self.add_registration_or_device_token_endpoint.call_with_http_info(**kwargs)
+        return self.add_a_registration_or_device_token_endpoint.call_with_http_info(**kwargs)
 
-    def choose_push_notification_content_template(
+    def choose_a_push_notification_content_template(
         self,
         user_id,
         **kwargs
     ):
         """Choose a push notification content template  # noqa: E501
 
-        ## Choose a push notification content template  Chooses a push notification content template of a user's own. The push notifications feature is only available for group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-choose-a-push-notification-content-template ----------------------------  # noqa: E501
+        ## Choose a push notification content template  Users can choose a template to determine how push notifications appear to them. Push notification content templates are pre-formatted forms that can be customized to display your own push notification messages on a user's device. Sendbird provides two types: `default` and `alternative`. Go to **Settings** > **Chat** > **Push notifications** > **Push notification content templates** on [Sendbird Dashboard](https://dashboard.sendbird.com/auth/signin) to customize the templates.  If the `push_message_template` property is specified when [sending a message](https://sendbird.com/docs/chat/platform-api/v3/message/messaging-basics/send-a-message), the content template customized for the message takes precedence over the user's choice.  > **Note**: Push notifications are only available for group channels.      https://sendbird.com/docs/chat/platform-api/v3/user/configuring-notification-preferences/choose-a-push-notification-content-template#1-choose-a-push-notification-content-template  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.choose_push_notification_content_template(user_id, async_req=True)
+        >>> thread = api.choose_a_push_notification_content_template(user_id, async_req=True)
         >>> result = thread.get()
 
         Args:
-            user_id (str):
+            user_id (str): (Required) 
 
         Keyword Args:
             api_token (str): [optional]
-            body ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]
+            choose_a_push_notification_content_template_request (ChooseAPushNotificationContentTemplateRequest): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -2246,7 +2165,7 @@ class UserApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            ChoosePushNotificationContentTemplateResponse
+            ChooseAPushNotificationContentTemplateResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2277,25 +2196,25 @@ class UserApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['user_id'] = \
             user_id
-        return self.choose_push_notification_content_template_endpoint.call_with_http_info(**kwargs)
+        return self.choose_a_push_notification_content_template_endpoint.call_with_http_info(**kwargs)
 
-    def create_user(
+    def create_a_user(
         self,
         **kwargs
     ):
         """Create a user  # noqa: E501
 
-        ## Create a user  Creates a new user in the application. A user is identified by its unique user ID, and additionally have a changeable nickname, profile image, and so on.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-create-a-user  # noqa: E501
+        ## Create a user  You should create a user in your Sendbird application to initiate conversations in channels. A user is identified by its unique user ID, and additionally have a changeable nickname, profile image, and so on. Users are at the core of all conversations. Sendbird applications are made up of users who chat in either Open Channels or Group Channels. Using this API, it is possible to have fine grained control over your users and what those users can do. To learn more about users, see [User overview](https://sendbird.com/docs/chat/platform-api/v3/user/user-overview#2-resource-representation).  https://sendbird.com/docs/chat/platform-api/v3/user/creating-users/create-a-user#1-create-a-user  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.create_user(async_req=True)
+        >>> thread = api.create_a_user(async_req=True)
         >>> result = thread.get()
 
 
         Keyword Args:
             api_token (str): [optional]
-            create_user_data (CreateUserData): [optional]
+            create_a_user_request (CreateAUserRequest): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -2328,7 +2247,7 @@ class UserApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            SendBirdUser
+            SendbirdUser
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2357,7 +2276,7 @@ class UserApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        return self.create_user_endpoint.call_with_http_info(**kwargs)
+        return self.create_a_user_endpoint.call_with_http_info(**kwargs)
 
     def create_user_token(
         self,
@@ -2366,7 +2285,7 @@ class UserApi(object):
     ):
         """Create user token  # noqa: E501
 
-        ## Create user token  # noqa: E501
+        ## Create user token  This action issues a session token for user authentication. Session tokens provide an efficient stateless authentication method by not storing the tokens in the Sendbird database, and thus improving the server's performance. See [access token vs. session token](https://sendbird.com/docs/chat/platform-api/v3/user/creating-users/create-a-user#2-access-token-vs-session-token) to learn more about authenticating users.  > **Note**: The endpoint `/users/{user_id}` is deprecated. Use `/users/{user_id}/token` for greater efficiency.      https://sendbird.com/docs/chat/platform-api/v3/user/managing-session-tokens/issue-a-session-token#1-issue-a-session-token  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -2374,11 +2293,11 @@ class UserApi(object):
         >>> result = thread.get()
 
         Args:
-            user_id (str):
+            user_id (str): (Required) 
 
         Keyword Args:
             api_token (str): [optional]
-            create_user_token_data (CreateUserTokenData): [optional]
+            create_user_token_request (CreateUserTokenRequest): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -2444,22 +2363,22 @@ class UserApi(object):
             user_id
         return self.create_user_token_endpoint.call_with_http_info(**kwargs)
 
-    def delete_user_by_id(
+    def delete_a_user(
         self,
         user_id,
         **kwargs
     ):
         """Delete a user  # noqa: E501
 
-        ## Delete a user  Deletes a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-delete-a-user ----------------------------  # noqa: E501
+        ## Delete a user  You can delete a user from your Sendbird application using this API.  > **Note**: This API deletes user data and metadata, except for their messages. If you wish to delete user data including their messages, use the [GDPR request](https://sendbird.com/docs/chat/platform-api/v3/privacy/privacy-overview).      [https://sendbird.com/docs/chat/platform-api/v3/user/managing-users/delete-a-user#1-delete-a-user](https://sendbird.com/docs/chat/platform-api/v3/user/managing-users/delete-a-user#1-delete-a-user)  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.delete_user_by_id(user_id, async_req=True)
+        >>> thread = api.delete_a_user(user_id, async_req=True)
         >>> result = thread.get()
 
         Args:
-            user_id (str):
+            user_id (str): (Required) 
 
         Keyword Args:
             api_token (str): [optional]
@@ -2526,7 +2445,91 @@ class UserApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['user_id'] = \
             user_id
-        return self.delete_user_by_id_endpoint.call_with_http_info(**kwargs)
+        return self.delete_a_user_endpoint.call_with_http_info(**kwargs)
+
+    def get_channel_invitation_preference(
+        self,
+        user_id,
+        **kwargs
+    ):
+        """Get channel invitation preference  # noqa: E501
+
+        ## Get channel invitation preference  This action retrieves a user's [group channel](https://sendbird.com/docs/chat/platform-api/v3/channel/channel-overview#2-channel-types-3-group-channel) invitation preference. Users are subject to both user-specific and application-wide invitation preferences. Of the two, the invitation preference set for a specific user takes precedence over [the default channel invitation preference](https://sendbird.com/docs/chat/platform-api/v3/channel/setting-up-channels/get-default-invitation-preference).  [https://sendbird.com/docs/chat/platform-api/v3/channel/managing-a-channel/get-channel-invitation-preference#1-get-channel-invitation-preference](https://sendbird.com/docs/chat/platform-api/v3/channel/managing-a-channel/get-channel-invitation-preference#1-get-channel-invitation-preference)  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_channel_invitation_preference(user_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            user_id (str): (Required) 
+
+        Keyword Args:
+            api_token (str): [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            GetChannelInvitationPreferenceResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['user_id'] = \
+            user_id
+        return self.get_channel_invitation_preference_endpoint.call_with_http_info(**kwargs)
 
     def leave_my_group_channels(
         self,
@@ -2535,7 +2538,7 @@ class UserApi(object):
     ):
         """Leave my group channels  # noqa: E501
 
-        ## Leave my group channels  Makes a user leave all joined group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-leave-my-group-channels ----------------------------   `user_id`      Type: string      Description: Specifies the unique ID of the user to leave all joined group channels.  # noqa: E501
+        ## Leave my group channels  This action allows a user to leave all group channels or channels with a specific custom type. This API is useful if you want to let a user leave a set of channels at once. To let a user leave only one of their group channels, use the [leave a channel API](https://sendbird.com/docs/chat/platform-api/v3/channel/managing-a-channel/leave-a-channel) instead.  Since this API can't be called for a deactivated user, ensure that the [<code>leave_all_when_deactivated</code>](https://sendbird.com/docs/chat/platform-api/v3/user/managing-users/update-a-user#2-request-body) property of the user is set to its default value of `true` to let the user leave all joined group channels upon deactivation.  https://sendbird.com/docs/chat/platform-api/v3/user/managing-joined-group-channels/leave-group-channels#1-leave-group-channels  `user_id`   Type: string   Description: Specifies the unique ID of the user to leave all joined group channels.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -2543,11 +2546,11 @@ class UserApi(object):
         >>> result = thread.get()
 
         Args:
-            user_id (str):
+            user_id (str): (Required) 
 
         Keyword Args:
             api_token (str): [optional]
-            leave_my_group_channels_data (LeaveMyGroupChannelsData): [optional]
+            leave_my_group_channels_request (LeaveMyGroupChannelsRequest): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -2616,62 +2619,65 @@ class UserApi(object):
     def list_my_group_channels(
         self,
         user_id,
+        api_token,
         **kwargs
     ):
         """List my group channels  # noqa: E501
 
-        ## List my group channels  Retrieves all group channels that the user has joined. You can create a request based on various query parameters.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-list-my-group-channels ----------------------------   `user_id`      Type: string      Description: Specifies the unique ID of the target user.  # noqa: E501
+        ## List my group channels  This action retrieves a list of [group channels](https://sendbird.com/docs/chat/platform-api/v3/channel/channel-overview#2-channel-types-3-group-channel) that a specific user has joined. You can use various query parameters to determine the search scope and select what kind of information you want to receive about the queried channels.  If you're looking to retrieve a list of group channels in a specific application, visit the [list group channels](https://sendbird.com/docs/chat/platform-api/v3/channel/listing-channels-in-an-application/list-group-channels) page under the Channel section.  https://sendbird.com/docs/chat/platform-api/v3/user/managing-joined-group-channels/list-group-channels-by-user#1-list-group-channels-by-user  `user_id`   Type: string   Description: Specifies the unique ID of the target user.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.list_my_group_channels(user_id, async_req=True)
+        >>> thread = api.list_my_group_channels(user_id, api_token, async_req=True)
         >>> result = thread.get()
 
         Args:
-            user_id (str):
+            user_id (str): (Required) 
+            api_token (str):
 
         Keyword Args:
-            api_token (str): [optional]
-            token (str): [optional]
-            limit (int): [optional]
+            token (str): Specifies a page token that indicates the starting index of a chunk of results. If not specified, the index is set as 0.. [optional]
+            limit (int): Specifies the number of results to return per page. Acceptable values are 1 to 100, inclusive. (Default: 10). [optional]
             distinct_mode (str): [optional]
             public_mode (str): [optional]
             super_mode (str): [optional]
-            hidden_mode (str): [optional]
-            member_state_filter (str): [optional]
-            unread_filter (str): [optional]
-            created_after (int): [optional]
-            created_before (int): [optional]
+            created_after (int): Restricts the search scope to only retrieve group channels which have been created after the specified time, in Unix milliseconds format.. [optional]
+            created_before (int): Restricts the search scope to only retrieve group channels which have been created before the specified time, in Unix milliseconds format.. [optional]
             show_empty (bool): [optional]
-            show_frozen (bool): [optional]
             show_member (bool): [optional]
             show_delivery_receipt (bool): [optional]
             show_read_receipt (bool): [optional]
+            show_metadata (bool): [optional]
+            show_frozen (bool): [optional]
             order (str): [optional]
-            metadata_order_key (str): [optional]
-            custom_types (str): [optional]
-            custom_type_startswith (str): [optional]
-            channel_urls (str): [optional]
-            name (str): [optional]
-            name_contains (str): [optional]
-            name_startswith (str): [optional]
-            members_exactly_in (str): [optional]
-            members_include_in (str): [optional]
-            query_type (str): [optional]
-            members_nickname (str): [optional]
-            members_nickname_contains (str): [optional]
-            search_query (str): [optional]
-            search_fields (str): [optional]
-            metadata_key (str): [optional]
-            metadata_values (str): [optional]
-            metadata_value_startswith (str): [optional]
-            metacounter_key (str): [optional]
-            metacounter_values (str): [optional]
-            metacounter_value_gt (str): [optional]
-            metacounter_value_gte (str): [optional]
-            metacounter_value_lt (str): [optional]
-            metacounter_value_lte (str): [optional]
-            custom_type (str): [optional]
+            metadata_order_key (str): Specifies the key of an item in metadata. When a value of the order parameter is set to metadata_value_alphabetical, the results are alphabetically sorted by the value of the item specified by the key.. [optional]
+            custom_types (str): Specifies a comma-separated string of one or more custom types to filter group channels. URL encoding each type is recommended. If not specified, all channels are returned, regardless of their custom type.. [optional]
+            custom_type_startswith (str): Searches for group channels with the custom type which starts with the specified value. URL encoding the value is recommended.. [optional]
+            channel_urls (str): Specifies a comma-separated string of one or more group channel URLs to restrict the search scope. URL encoding each channel URL is recommended.. [optional]
+            name (str): Specifies one or more group channel names.. [optional]
+            name_contains (str): Searches for group channels whose names contain the specified value. Note that this parameter is case-insensitive. URL encoding the value is recommended.. [optional]
+            name_startswith (str): Searches for group channels whose names start with the specified value. Note that this parameter is case-insensitive. URL encoding the value is recommended.. [optional]
+            members_exactly_in (str): Searches for group channels with all the specified users as members. The parameter value should consist of user IDs separated by commas.  Only user IDs that match those of existing users are used for channel search. URL encoding each ID is recommended.. [optional]
+            members_include_in (str): Searches for group channels that include one or more users as members among the specified users. The value should consist of user IDs separated by commas or %2C. You can specify up to 60 user IDs.  Only user IDs that match those of existing users are used for channel search. URL encoding each ID is recommended.. [optional]
+            query_type (str): Specifies a logical condition applied to the members_include_in parameter. Acceptable values are either AND or OR. For example, if you specify three members, A, B, and C, in members_include_in, the value of AND returns all channels that include every one of {A. B, C} as members. The value of OR returns channels that include {A}, plus those that include {B}, plus those that include {C}. (Default: AND). [optional]
+            members_nickname (str): Searches for group channels with members whose nicknames match the specified value. URL encoding the value is recommended.. [optional]
+            members_nickname_contains (str): Searches for group channels with members whose nicknames contain the specified value. Note that this parameter is case-insensitive. URL encoding the value is recommended.  * We recommend using at least three characters for the parameter value for better search efficiency when you design and implement related features. If you would like to allow one or two characters for searching, use members_nickname instead to prevent performance issues.. [optional]
+            members_nickname_startswith (str): Searches for group channels with members whose nicknames begin with the specified value. This parameter isn't case-sensitive. URL encoding the value is recommended.. [optional]
+            search_query (str): Searches for group channels where the specified query string matches the channel name or the nickname of the member. This parameter isn't case-sensitive and should be specified in conjunction with the search_fields parameter below. URL encoding the value is recommended.. [optional]
+            search_fields (str): Specifies a comma-separated string of one or more search fields to apply to the query, which restricts the results within the specified fields (OR search condition). Acceptable values are channel_name and member_nickname. This is effective only when the search_query parameter above is specified. (Default: channel_name, member_nickname together). [optional]
+            metadata_key (str): Searches for group channels with metadata containing an item with the specified value as its key. To use this parameter, either the metadata_values parameter or the metadata_value_startswith parameter should be specified.. [optional]
+            metadata_values (str): Searches for group channels with metadata containing an item with the key specified by the metadata_key parameter, and the value of that item matches one or more values specified by this parameter. The string should be specified with multiple values separated by commas. URL encoding each value is recommended. To use this parameter, the metadata_key parameter should be specified.. [optional]
+            metadata_value_startswith (str): Searches for group channels with metadata containing an item with the key specified by the metadata_key parameter, and the values of that item that start with the specified value of this parameter. URL encoding the value is recommended. To use this parameter, the metadata_key parameter should be specified.. [optional]
+            metacounter_key (str): Searches for group channels with metacounter containing an item with the specified value as its key. To use this parameter, either the metacounter_values parameter or one of the metacounter_value_gt, metacounter_value_gte, metacounter_value_lt, and metacounter_value_lte parameters should be specified.. [optional]
+            metacounter_values (str): Searches for group channels with metacounter containing an item with the key specified by the metadata_key parameter, where the value of that item is equal to one or more values specified by this parameter. The string should be specified with multiple values separated by commas. To use this parameter, the metacounter_key parameter should be specified.. [optional]
+            metacounter_value_gt (str): Searches for group channels with metacounter containing an item with the key specified by the metadata_key parameter, where the value of that item is greater than the value specified by this parameter. To use this parameter, the metacounter_key parameter should be specified.. [optional]
+            metacounter_value_gte (str): Searches for group channels with metacounter containing an item with the key specified by the metadata_key parameter, where the value of that item is greater than or equal to the value specified by this parameter. To use this parameter, the metacounter_key parameter should be specified.. [optional]
+            metacounter_value_lt (str): Searches for group channels with metacounter containing an item with the key specified by the metadata_key parameter, where the value of that item is lower than the value specified by this parameter. To use this parameter, the metacounter_key parameter should be specified.. [optional]
+            metacounter_value_lte (str): Searches for group channels with metacounter containing an item with the key specified by the metadata_key parameter, where the value of that item is lower than or equal to the value specified by this parameter. To use this parameter, the metacounter_key parameter should be specified.. [optional]
+            include_sorted_metaarray_in_last_message (bool): Determines whether to include the sorted_metaarray as one of the last_message’s properties in the response.. [optional]
+            hidden_mode (str): Restricts the search scope to group channels that match a specific hidden_status and operating behavior. [optional]
+            unread_filter (str): Restricts the search scope to only retrieve group channels with one or more unread messages. This filter doesn't support Supergroup channels. Acceptable values are all and unread_message. (Default: all). [optional]
+            member_state_filter (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -2735,6 +2741,8 @@ class UserApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['user_id'] = \
             user_id
+        kwargs['api_token'] = \
+            api_token
         return self.list_my_group_channels_endpoint.call_with_http_info(**kwargs)
 
     def list_registration_or_device_tokens(
@@ -2745,7 +2753,7 @@ class UserApi(object):
     ):
         """List registration or device tokens  # noqa: E501
 
-        ## List registration or device tokens  Retrieves a list of a specific user's FCM registration tokens, HMS device tokens, or APNs device tokens. You can specify either `gcm`, `huawei`, or `apns` in the `token_type` parameter, depending on which push notification service you are using.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-list-registration-or-device-tokens ----------------------------  # noqa: E501
+        ## List registration or device tokens  Retrieves a list of a user's registration or device tokens. You can pass `gcm`, `huawei`, or `apns` for FCM registration token, HMS device token, or APNs device token, respectively, in the `token_type` parameter for the push notification service you are using.  https://sendbird.com/docs/chat/platform-api/v3/user/managing-device-tokens/list-registration-or-device-tokens#1-list-registration-or-device-tokens  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -2753,8 +2761,8 @@ class UserApi(object):
         >>> result = thread.get()
 
         Args:
-            user_id (str):
-            token_type (str):
+            user_id (str): (Required) 
+            token_type (str): (Required) 
 
         Keyword Args:
             api_token (str): [optional]
@@ -2831,7 +2839,7 @@ class UserApi(object):
     ):
         """List users  # noqa: E501
 
-        ## List users  Retrieves a list of users in your application. You can query the list using various parameters.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-list-users ----------------------------  # noqa: E501
+        ## List users  You can retrieve a list of users in your Sendbird application using this API. You can generate a customized list using various parameter combinations.  https://sendbird.com/docs/chat/platform-api/v3/user/listing-users/list-users#1-list-users  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -2840,16 +2848,16 @@ class UserApi(object):
 
 
         Keyword Args:
-            api_token (str): [optional]
             token (str): [optional]
             limit (int): [optional]
-            active_mode (str): [optional]
-            show_bot (bool): [optional]
-            user_ids (str): [optional]
+            active_mode (str): Specifies the activation status of the users in the list. Acceptable values are `activated`, `deactivated`, and `all`. (Default: `activated`). [optional]
+            show_bot (bool): Determines whether to include bots in the list. (Default: true). [optional]
+            user_ids (str): Specifies the user IDs. The value should be a comma-separated string that consists of multiple urlencoded user IDs. An example of a urlencoded string is ?user_ids=urlencoded_id_1,urlencoded_id_2. * The maximum number of user IDs in this parameter is 250. If you exceed the maximum number, your request may receive an HTTP 414 error indicating that the request URL is longer than what Sendbird server can interpret.. [optional]
             nickname (str): [optional]
             nickname_startswith (str): [optional]
             metadatakey (str): [optional]
-            metadatavalues_in (str): [optional]
+            metadatavalues_in (str): Searches for blocked users with metadata containing an item with the key specified by the metadatakey parameter above, and the value of that item matches one or more values specified by this parameter. The string should be specified with multiple urlencoded metadata values separated by commas (for example, `?metadatavalues_in=urlencoded_value_1, urlencoded_value_2`). This parameter should be specified in conjunction with the `metadatakey` above.. [optional]
+            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -2920,7 +2928,7 @@ class UserApi(object):
     ):
         """Mark all messages as read  # noqa: E501
 
-        ## Mark all messages as read  Marks all of a user's unread messages as read in the joined group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-mark-all-messages-as-read ----------------------------  # noqa: E501
+        ## Mark all messages as read  This action marks all of a user's unread messages as read in certain group channels. If channels aren't specified, the user's unread messages in all group channels are marked as read.  https://sendbird.com/docs/chat/platform-api/v3/user/marking-messages-as-read/mark-all-of-a-users-messages-as-read#1-mark-all-of-a-user-s-messages-as-read  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -2928,11 +2936,11 @@ class UserApi(object):
         >>> result = thread.get()
 
         Args:
-            user_id (str):
+            user_id (str): (Required) 
 
         Keyword Args:
             api_token (str): [optional]
-            mark_all_messages_as_read_data (MarkAllMessagesAsReadData): [optional]
+            mark_all_messages_as_read_request (MarkAllMessagesAsReadRequest): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -2998,26 +3006,289 @@ class UserApi(object):
             user_id
         return self.mark_all_messages_as_read_endpoint.call_with_http_info(**kwargs)
 
-    def register_as_operator_to_channels_with_custom_channel_types(
+    def remove_a_registration_or_device_token(
+        self,
+        user_id,
+        token_type,
+        token,
+        **kwargs
+    ):
+        """Remove a registration or device token - When unregistering a specific token  # noqa: E501
+
+        ## Remove a registration or device token  Removes a user's specific registration or device token or all tokens. You can pass `gcm`, `huawei`, or `apns` for FCM registration token, HMS device token, or APNs device token, respectively, in the `token_type` parameter for the push notification service you are using.  https://sendbird.com/docs/chat/platform-api/v3/user/managing-device-tokens/remove-a-registration-or-device-token#1-remove-a-registration-or-device-token  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.remove_a_registration_or_device_token(user_id, token_type, token, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            user_id (str): (Required) 
+            token_type (str): (Required) 
+            token (str): (Required) 
+
+        Keyword Args:
+            api_token (str): [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            RemoveARegistrationOrDeviceTokenResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['user_id'] = \
+            user_id
+        kwargs['token_type'] = \
+            token_type
+        kwargs['token'] = \
+            token
+        return self.remove_a_registration_or_device_token_endpoint.call_with_http_info(**kwargs)
+
+    def remove_a_registration_or_device_token_from_an_owner(
+        self,
+        token_type,
+        token,
+        **kwargs
+    ):
+        """Remove a registration or device token from an owner  # noqa: E501
+
+        ## Remove a registration or device token from an owner  Removes a registration or device token from a user who is the owner of the token. You can pass `gcm`, `huawei`, or `apns` for FCM registration token, HMS device token, or APNs device token, respectively, in the `token_type` parameter for the push notification service you are using.  https://sendbird.com/docs/chat/platform-api/v3/user/managing-device-tokens/remove-a-registration-or-device-token-from-an-owner#1-remove-a-registration-or-device-token-from-an-owner  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.remove_a_registration_or_device_token_from_an_owner(token_type, token, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            token_type (str): (Required) 
+            token (str): (Required) 
+
+        Keyword Args:
+            api_token (str): [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            RemoveARegistrationOrDeviceTokenFromAnOwnerResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['token_type'] = \
+            token_type
+        kwargs['token'] = \
+            token
+        return self.remove_a_registration_or_device_token_from_an_owner_endpoint.call_with_http_info(**kwargs)
+
+    def remove_all_registration_or_device_token(
         self,
         user_id,
         **kwargs
     ):
-        """Register as an operator to channels with custom channel types  # noqa: E501
+        """Remove a registration or device token - When unregistering all device tokens  # noqa: E501
 
-        ## Register as an operator to channels with custom channel types  Registers a user as an operator to channels with particular custom channel types.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-register-as-an-operator-to-channels-with-custom-channel-types ----------------------------  # noqa: E501
+        ## Remove a registration or device token  Removes a user's specific registration or device token or all tokens. You can pass `gcm`, `huawei`, or `apns` for FCM registration token, HMS device token, or APNs device token, respectively, in the `token_type` parameter for the push notification service you are using.  https://sendbird.com/docs/chat/platform-api/v3/user/managing-device-tokens/remove-a-registration-or-device-token#1-remove-a-registration-or-device-token  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.register_as_operator_to_channels_with_custom_channel_types(user_id, async_req=True)
+        >>> thread = api.remove_all_registration_or_device_token(user_id, async_req=True)
         >>> result = thread.get()
 
         Args:
-            user_id (str):
+            user_id (str): (Required) 
 
         Keyword Args:
             api_token (str): [optional]
-            register_as_operator_to_channels_with_custom_channel_types_data (RegisterAsOperatorToChannelsWithCustomChannelTypesData): [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            RemoveAllRegistrationOrDeviceTokenResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['user_id'] = \
+            user_id
+        return self.remove_all_registration_or_device_token_endpoint.call_with_http_info(**kwargs)
+
+    def reset_push_preferences(
+        self,
+        user_id,
+        **kwargs
+    ):
+        """Reset push preferences  # noqa: E501
+
+        ## Reset push preferences  You can reset a user's notifications preferences. The values are reset to the default as the following.  - The values for the `do_not_disturb` and `snooze_enabled` properties are set to `false`.      - The values of the parameters associated with the time frame are all set to `0`.      - The value for the `timezone` property is set to `UTC`.      - The value for the `push_sound` property is set to `default`.       > **Note**: Push notifications are only available for group channels.      [https://sendbird.com/docs/chat/platform-api/v3/user/configuring-notification-preferences/reset-push-notification-preferences#1-reset-push-notification-preferences](https://sendbird.com/docs/chat/platform-api/v3/user/configuring-notification-preferences/reset-push-notification-preferences#1-reset-push-notification-preferences)  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.reset_push_preferences(user_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            user_id (str): (Required) 
+
+        Keyword Args:
+            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -3081,355 +3352,92 @@ class UserApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['user_id'] = \
             user_id
-        return self.register_as_operator_to_channels_with_custom_channel_types_endpoint.call_with_http_info(**kwargs)
-
-    def remove_registration_or_device_token(
-        self,
-        user_id,
-        **kwargs
-    ):
-        """Remove a registration or device token - When unregistering all device tokens  # noqa: E501
-
-        ## Remove a registration or device token  Removes a specific user's one or more FCM registration tokens, HMS device tokens, or APNs device tokens.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-remove-a-registration-or-device-token ----------------------------  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.remove_registration_or_device_token(user_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            user_id (str):
-
-        Keyword Args:
-            api_token (str): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            RemoveRegistrationOrDeviceTokenResponse
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['user_id'] = \
-            user_id
-        return self.remove_registration_or_device_token_endpoint.call_with_http_info(**kwargs)
-
-    def remove_registration_or_device_token_by_token(
-        self,
-        user_id,
-        token_type,
-        token,
-        **kwargs
-    ):
-        """Remove a registration or device token - When unregistering a specific token  # noqa: E501
-
-        ## Remove a registration or device token  Removes a specific user's one or more FCM registration tokens, HMS device tokens, or APNs device tokens.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-remove-a-registration-or-device-token ----------------------------  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.remove_registration_or_device_token_by_token(user_id, token_type, token, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            user_id (str):
-            token_type (str):
-            token (str):
-
-        Keyword Args:
-            api_token (str): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            RemoveRegistrationOrDeviceTokenByTokenResponse
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['user_id'] = \
-            user_id
-        kwargs['token_type'] = \
-            token_type
-        kwargs['token'] = \
-            token
-        return self.remove_registration_or_device_token_by_token_endpoint.call_with_http_info(**kwargs)
-
-    def remove_registration_or_device_token_from_owner_by_token(
-        self,
-        token_type,
-        token,
-        **kwargs
-    ):
-        """Remove a registration or device token from an owner  # noqa: E501
-
-        ## Remove a registration or device token from an owner  Removes a registration or device token from a user who owns it. You can pass one of two values in `token_type`: `gcm`, `huawei`, or `apns`, depending on which push service you are using.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-remove-a-registration-or-device-token-from-an-owner ----------------------------  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.remove_registration_or_device_token_from_owner_by_token(token_type, token, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            token_type (str):
-            token (str):
-
-        Keyword Args:
-            api_token (str): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            RemoveRegistrationOrDeviceTokenFromOwnerByTokenResponse
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['token_type'] = \
-            token_type
-        kwargs['token'] = \
-            token
-        return self.remove_registration_or_device_token_from_owner_by_token_endpoint.call_with_http_info(**kwargs)
-
-    def reset_push_preferences(
-        self,
-        user_id,
-        **kwargs
-    ):
-        """Reset push preferences  # noqa: E501
-
-        ## Reset push preferences  Resets a user's push preferences. After performing this action,   `do_not_disturb` and `snooze_enabled` are set to false.  The values of the parameters associated with the time frame are all set to 0.  `timezone` is reset to `UTC`.  `push_sound` is reset to `default`.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-reset-push-preferences ----------------------------  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.reset_push_preferences(user_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            user_id (str):
-
-        Keyword Args:
-            api_token (str): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            ResetPushPreferencesResponse
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['user_id'] = \
-            user_id
         return self.reset_push_preferences_endpoint.call_with_http_info(**kwargs)
+
+    def update_a_user(
+        self,
+        user_id,
+        **kwargs
+    ):
+        """Update a user  # noqa: E501
+
+        ## Update a user  You can update information about a user using this API. In addition to changing a user's nickname or profile image, you can issue a new access token for the user. The new access token replaces the previous one as the necessary token for authentication.  You can also deactivate or reactivate a user using this API request. If the `leave_all_when_deactivated` is set to `true`, a user leaves all joined group channels and becomes deactivated.  > **Note**: Issuing session tokens through the `/users/{user_id}` endpoint is now deprecated and it&apos;s replaced with [&lt;code&gt;/users/{user_id}/token&lt;/code&gt;](https://sendbird.com/docs/chat/platform-api/v3/user/managing-session-tokens/issue-a-session-token) endpoint for greater efficiency. For those who are currently using the old endpoint, you can start issuing tokens using the new endpoint.      [https://sendbird.com/docs/chat/platform-api/v3/user/managing-users/update-a-user#1-update-a-user](https://sendbird.com/docs/chat/platform-api/v3/user/managing-users/update-a-user#1-update-a-user)  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.update_a_user(user_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            user_id (str): (Required) 
+
+        Keyword Args:
+            api_token (str): [optional]
+            update_a_user_request (UpdateAUserRequest): [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            SendbirdUser
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['user_id'] = \
+            user_id
+        return self.update_a_user_endpoint.call_with_http_info(**kwargs)
 
     def update_channel_invitation_preference(
         self,
@@ -3438,7 +3446,7 @@ class UserApi(object):
     ):
         """Update channel invitation preference  # noqa: E501
 
-        ## Update channel invitation preference  Updates the channel invitation preference for a user's [private](https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#-3-private-vs-public) group channels.  > __Note__: Using the [update default channel invitation preference](https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-update-default-channel-invitation-preference) action, you can update the value of channel invitation preference which is globally applied to all users within the application.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-update-channel-invitation-preference  # noqa: E501
+        ## Update channel invitation preference  This action updates a user's [group channel](https://sendbird.com/docs/chat/platform-api/v3/channel/channel-overview#2-channel-types-3-group-channel) invitation preference. Updating the [application's default channel invitation preference](https://sendbird.com/docs/chat/platform-api/v3/channel/setting-up-channels/update-default-invitation-preference) won't override existing users' individual channel invitation preferences. The changed preference only affects the users created after the update.  https://sendbird.com/docs/chat/platform-api/v3/channel/managing-a-channel/update-channel-invitation-preference#1-update-channel-invitation-preference  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -3446,11 +3454,11 @@ class UserApi(object):
         >>> result = thread.get()
 
         Args:
-            user_id (str):
+            user_id (str): (Required) 
 
         Keyword Args:
             api_token (str): [optional]
-            update_channel_invitation_preference_data (UpdateChannelInvitationPreferenceData): [optional]
+            update_channel_invitation_preference_request (UpdateChannelInvitationPreferenceRequest): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -3516,7 +3524,7 @@ class UserApi(object):
             user_id
         return self.update_channel_invitation_preference_endpoint.call_with_http_info(**kwargs)
 
-    def update_count_preference_of_channel_by_url(
+    def update_count_preference_of_a_channel(
         self,
         user_id,
         channel_url,
@@ -3524,20 +3532,20 @@ class UserApi(object):
     ):
         """Update count preference of a channel  # noqa: E501
 
-        ## Update count preference of a channel  Updates count preference of a specific group channel of a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-update-count-preference-of-a-channel ----------------------------  # noqa: E501
+        ## Update count preference of a channel  This action updates a user's count preference of a specific group channel. The count preference allows a user to either update the number of unread messages or the number of unread mentioned messages, or both in a specific group channel.  If you want to retrieve the total number count of a specific group channel, go to the [get count preference of a channel](https://sendbird.com/docs/chat/platform-api/v3/user/managing-unread-count/get-count-preference-of-a-channel) page.  https://sendbird.com/docs/chat/platform-api/v3/user/managing-unread-count/update-count-preference-of-a-channel#1-update-count-preference-of-a-channel  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.update_count_preference_of_channel_by_url(user_id, channel_url, async_req=True)
+        >>> thread = api.update_count_preference_of_a_channel(user_id, channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
-            user_id (str):
-            channel_url (str):
+            user_id (str): (Required) 
+            channel_url (str): (Required) 
 
         Keyword Args:
             api_token (str): [optional]
-            update_count_preference_of_channel_by_url_data (UpdateCountPreferenceOfChannelByUrlData): [optional]
+            update_count_preference_of_a_channel_request (UpdateCountPreferenceOfAChannelRequest): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -3603,7 +3611,7 @@ class UserApi(object):
             user_id
         kwargs['channel_url'] = \
             channel_url
-        return self.update_count_preference_of_channel_by_url_endpoint.call_with_http_info(**kwargs)
+        return self.update_count_preference_of_a_channel_endpoint.call_with_http_info(**kwargs)
 
     def update_push_preferences(
         self,
@@ -3612,7 +3620,7 @@ class UserApi(object):
     ):
         """Update push preferences  # noqa: E501
 
-        ## Update push preferences  Updates a user's push preferences. Through this action, you can set `do_not_disturb` for a user, and update the time frame in which the setting applies.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-update-push-preferences ----------------------------  # noqa: E501
+        ## Update push preferences  You can update a user's notifications preferences. A push notification is a message that is immediately delivered to a user's device when the device is either idle or running the client app in the background.  > **Note**: Push notifications are only available for group channels.      [https://sendbird.com/docs/chat/platform-api/v3/user/configuring-notification-preferences/update-push-notification-preferences#1-update-push-notification-preferences](https://sendbird.com/docs/chat/platform-api/v3/user/configuring-notification-preferences/update-push-notification-preferences#1-update-push-notification-preferences)  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -3620,11 +3628,11 @@ class UserApi(object):
         >>> result = thread.get()
 
         Args:
-            user_id (str):
+            user_id (str): (Required) 
 
         Keyword Args:
             api_token (str): [optional]
-            update_push_preferences_data (UpdatePushPreferencesData): [optional]
+            update_push_preferences_request (UpdatePushPreferencesRequest): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -3690,7 +3698,7 @@ class UserApi(object):
             user_id
         return self.update_push_preferences_endpoint.call_with_http_info(**kwargs)
 
-    def update_push_preferences_for_channel_by_url(
+    def update_push_preferences_for_a_channel(
         self,
         user_id,
         channel_url,
@@ -3698,20 +3706,20 @@ class UserApi(object):
     ):
         """Update push preferences for a channel  # noqa: E501
 
-        ## Update push preferences for a channel  Updates push preferences for a user's specific group channel. The push notifications feature is only available for group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-update-push-preferences-for-a-channel ----------------------------  # noqa: E501
+        ## Update push preferences for a channel  You can update a user's notifications preferences for a specific channel. A push notification is a message that is immediately delivered to a user's device when the device is either idle or running the client app in the background.  > **Note**: Push notifications are only available for group channels.      [https://sendbird.com/docs/chat/platform-api/v3/user/configuring-notification-preferences/update-push-notification-preferences-for-a-channel#1-update-push-notification-preferences-for-a-channel](https://sendbird.com/docs/chat/platform-api/v3/user/configuring-notification-preferences/update-push-notification-preferences-for-a-channel#1-update-push-notification-preferences-for-a-channel)  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.update_push_preferences_for_channel_by_url(user_id, channel_url, async_req=True)
+        >>> thread = api.update_push_preferences_for_a_channel(user_id, channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
-            user_id (str):
-            channel_url (str):
+            user_id (str): (Required) 
+            channel_url (str): (Required) 
 
         Keyword Args:
             api_token (str): [optional]
-            update_push_preferences_for_channel_by_url_data (UpdatePushPreferencesForChannelByUrlData): [optional]
+            update_push_preferences_for_a_channel_request (UpdatePushPreferencesForAChannelRequest): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -3744,7 +3752,7 @@ class UserApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            UpdatePushPreferencesForChannelByUrlResponse
+            UpdatePushPreferencesForAChannelResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -3777,111 +3785,29 @@ class UserApi(object):
             user_id
         kwargs['channel_url'] = \
             channel_url
-        return self.update_push_preferences_for_channel_by_url_endpoint.call_with_http_info(**kwargs)
+        return self.update_push_preferences_for_a_channel_endpoint.call_with_http_info(**kwargs)
 
-    def update_user_by_id(
+    def view_a_user(
         self,
         user_id,
         **kwargs
     ):
-        """Update a user  # noqa: E501
+        """View a user  # noqa: E501
 
-        ## Update a user  Updates information on a user. In addition to changing a user's nickname or profile image, you can issue a new access token for the user. The new access token replaces the previous one as the necessary token for authentication.  You can also deactivate or reactivate a user. If the `leave_all_when_deactivated` is true (which it is by default), a user leaves all joined group channels when deactivated.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-update-a-user ----------------------------  # noqa: E501
+        ## View a user  You can retrieve information about a user using this API.  https://sendbird.com/docs/chat/platform-api/v3/user/listing-users/get-a-user#1-get-a-user  `user_id`   Type: string   Description: Specifies the unique ID of the user to retrieve.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.update_user_by_id(user_id, async_req=True)
+        >>> thread = api.view_a_user(user_id, async_req=True)
         >>> result = thread.get()
 
         Args:
-            user_id (str):
+            user_id (str): (Required) 
 
         Keyword Args:
-            api_token (str): [optional]
-            update_user_by_id_data (UpdateUserByIdData): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            SendBirdUser
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['user_id'] = \
-            user_id
-        return self.update_user_by_id_endpoint.call_with_http_info(**kwargs)
-
-    def view_channel_invitation_preference(
-        self,
-        user_id,
-        **kwargs
-    ):
-        """View channel invitation preference  # noqa: E501
-
-        ## View channel invitation preference  Retrieves channel invitation preference for a user's [private](https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#-3-private-vs-public) group channels.  > __Note__: Using the [view default channel invitation preference](https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-view-default-channel-invitation-preference) action, you can retrieve the value of channel invitation preference which is globally applied to all users within the application.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-channel-invitation-preference  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.view_channel_invitation_preference(user_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            user_id (str):
-
-        Keyword Args:
+            include_unread_count (bool): [optional]
+            custom_types (str): [optional]
+            super_mode (str): Restricts the search scope to retrieve only Supergroup or non-Supergroup channels. Acceptable values are `all`, `super`, and `nonsuper`. This parameter should be specified in conjunction with `include_unread_count` above. (Default: `all`). [optional]
             api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -3915,7 +3841,7 @@ class UserApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            ViewChannelInvitationPreferenceResponse
+            SendbirdUser
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -3946,9 +3872,9 @@ class UserApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['user_id'] = \
             user_id
-        return self.view_channel_invitation_preference_endpoint.call_with_http_info(**kwargs)
+        return self.view_a_user_endpoint.call_with_http_info(**kwargs)
 
-    def view_count_preference_of_channel_by_url(
+    def view_count_preference_of_a_channel(
         self,
         user_id,
         channel_url,
@@ -3956,16 +3882,16 @@ class UserApi(object):
     ):
         """View count preference of a channel  # noqa: E501
 
-        ## View count preference of a channel  Retrieves count preference of a specific group channel of a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-count-preference-of-a-channel ----------------------------  # noqa: E501
+        ## View count preference of a channel  This action retrieves a user's count preference of a specific group channel. The count preference allows a user to either retrieve the number of unread messages or unread mentioned messages, or both in a specific group channel.  If you want to update the total number count of a specific group channel, visit the [update count preference of a channel](https://sendbird.com/docs/chat/platform-api/v3/user/managing-unread-count/update-count-preference-of-a-channel).  https://sendbird.com/docs/chat/platform-api/v3/user/managing-unread-count/get-count-preference-of-a-channel#1-get-count-preference-of-a-channel  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.view_count_preference_of_channel_by_url(user_id, channel_url, async_req=True)
+        >>> thread = api.view_count_preference_of_a_channel(user_id, channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
-            user_id (str):
-            channel_url (str):
+            user_id (str): (Required) 
+            channel_url (str): (Required) 
 
         Keyword Args:
             api_token (str): [optional]
@@ -4001,7 +3927,7 @@ class UserApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            ViewCountPreferenceOfChannelByUrlResponse
+            ViewCountPreferenceOfAChannelResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -4034,92 +3960,7 @@ class UserApi(object):
             user_id
         kwargs['channel_url'] = \
             channel_url
-        return self.view_count_preference_of_channel_by_url_endpoint.call_with_http_info(**kwargs)
-
-    def view_number_of_channels_by_join_status(
-        self,
-        user_id,
-        **kwargs
-    ):
-        """View number of channels by join status  # noqa: E501
-
-        ## View number of channels by join status  Retrieves the number of a user's group channels by their join status.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-number-of-channels-by-join-status ----------------------------   `user_id`      Type: string      Description: Specifies the unique ID of the user to retrieve the number.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.view_number_of_channels_by_join_status(user_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            user_id (str):
-
-        Keyword Args:
-            api_token (str): [optional]
-            state (str): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            ViewNumberOfChannelsByJoinStatusResponse
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['user_id'] = \
-            user_id
-        return self.view_number_of_channels_by_join_status_endpoint.call_with_http_info(**kwargs)
+        return self.view_count_preference_of_a_channel_endpoint.call_with_http_info(**kwargs)
 
     def view_number_of_channels_with_unread_messages(
         self,
@@ -4128,7 +3969,7 @@ class UserApi(object):
     ):
         """View number of channels with unread messages  # noqa: E501
 
-        ## View number of channels with unread messages  Retrieves the total number of a user's group channels with unread messages.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-number-of-channels-with-unread-messages ----------------------------  # noqa: E501
+        ## View number of channels with unread messages  This action retrieves the total number of group channels in which a user has unread messages. You can use various query parameters to determine the search scope of group channels.  https://sendbird.com/docs/chat/platform-api/v3/user/managing-unread-count/get-number-of-channels-with-unread-messages#1-get-number-of-channels-with-unread-messages  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -4136,12 +3977,12 @@ class UserApi(object):
         >>> result = thread.get()
 
         Args:
-            user_id (str):
+            user_id (str): (Required) 
 
         Keyword Args:
+            custom_types (str): [optional]
+            super_mode (str): Restricts the search scope to either Supergroup channels or non-Supergroup channels or both. Acceptable values are all, super, and nonsuper. (Default: all). [optional]
             api_token (str): [optional]
-            custom_types ([str]): [optional]
-            super_mode (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -4207,92 +4048,6 @@ class UserApi(object):
             user_id
         return self.view_number_of_channels_with_unread_messages_endpoint.call_with_http_info(**kwargs)
 
-    def view_number_of_unread_items(
-        self,
-        user_id,
-        **kwargs
-    ):
-        """View number of unread items  # noqa: E501
-
-        ## View number of unread items  Retrieves a set of total numbers of a user's unread messages, unread mentioned messages, or received invitations in either super or non-super group channels. This action is only available for the group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-number-of-unread-items ----------------------------  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.view_number_of_unread_items(user_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            user_id (str):
-
-        Keyword Args:
-            api_token (str): [optional]
-            custom_type (str): [optional]
-            item_keys (str): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            ViewNumberOfUnreadItemsResponse
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['user_id'] = \
-            user_id
-        return self.view_number_of_unread_items_endpoint.call_with_http_info(**kwargs)
-
     def view_number_of_unread_messages(
         self,
         user_id,
@@ -4300,7 +4055,7 @@ class UserApi(object):
     ):
         """View number of unread messages  # noqa: E501
 
-        ## View number of unread messages  Retrieves the total number of a user's currently unread messages in the group channels. The unread counts feature is only available for the group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-number-of-unread-messages ----------------------------   `user_id`      Type: string      Description: Specifies the unique ID of the user to retrieve the number.  # noqa: E501
+        ## View number of unread messages  This action retrieves a user's total number of unread messages in group channels.  > **Note**: The unread count feature is only available for group channels.      [https://sendbird.com/docs/chat/platform-api/v3/user/managing-unread-count/get-number-of-unread-messages#1-get-number-of-unread-messages](https://sendbird.com/docs/chat/platform-api/v3/user/managing-unread-count/get-number-of-unread-messages#1-get-number-of-unread-messages)  `user_id`   Type: string   Description: Specifies the unique ID of a user.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -4308,12 +4063,12 @@ class UserApi(object):
         >>> result = thread.get()
 
         Args:
-            user_id (str):
+            user_id (str): (Required) 
 
         Keyword Args:
+            custom_types (str): Specifies a comma-separated string of one or more custom types to filter group channels. URL encoding each type is recommended. If not specified, all channels are returned, regardless of their custom type.. [optional]
+            super_mode (str): Restricts the search scope to either Supergroup channels or non-Supergroup channels or both. Acceptable values are `all`, `super`, and `nonsuper`. (Default: `all`). [optional]
             api_token (str): [optional]
-            custom_types (str): [optional]
-            super_mode (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -4386,7 +4141,7 @@ class UserApi(object):
     ):
         """View push preferences  # noqa: E501
 
-        ## View push preferences  Retrieves a user's push preferences about whether the user has set `do_not_disturb` to pause notifications for a certain period of time, and the time frame in which the user has applied the setting.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-push-preferences ----------------------------  # noqa: E501
+        ## View push preferences  You can retrieves a user's notifications preferences. A push notification is a message that is immediately delivered to a user's device when the device is either idle or running the client app in the background.  > **Note**: Push notifications are only available for group channels.      [https://sendbird.com/docs/chat/platform-api/v3/user/configuring-notification-preferences/get-push-notification-preferences#1-get-push-notification-preferences](https://sendbird.com/docs/chat/platform-api/v3/user/configuring-notification-preferences/get-push-notification-preferences#1-get-push-notification-preferences)  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -4394,7 +4149,7 @@ class UserApi(object):
         >>> result = thread.get()
 
         Args:
-            user_id (str):
+            user_id (str): (Required) 
 
         Keyword Args:
             api_token (str): [optional]
@@ -4463,7 +4218,7 @@ class UserApi(object):
             user_id
         return self.view_push_preferences_endpoint.call_with_http_info(**kwargs)
 
-    def view_push_preferences_for_channel_by_url(
+    def view_push_preferences_for_a_channel(
         self,
         user_id,
         channel_url,
@@ -4471,16 +4226,16 @@ class UserApi(object):
     ):
         """View push preferences for a channel  # noqa: E501
 
-        ## View push preferences for a channel  Retrieves whether a user has turned on notification messages for a specific channel. The push notifications feature is only available for group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-push-preferences-for-a-channel ----------------------------  # noqa: E501
+        ## View push preferences for a channel  You can retrieve a user's notifications preferences for a specific channel. A push notification is a message that is immediately delivered to a user's device when the device is either idle or running the client app in the background. These notifications preferences can be configured.  > **Note**: Push notifications are only available for group channels.      [https://sendbird.com/docs/chat/platform-api/v3/user/configuring-notification-preferences/get-push-notification-preferences-for-a-channel#1-get-push-notification-preferences-for-a-channel](https://sendbird.com/docs/chat/platform-api/v3/user/configuring-notification-preferences/get-push-notification-preferences-for-a-channel#1-get-push-notification-preferences-for-a-channel)  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.view_push_preferences_for_channel_by_url(user_id, channel_url, async_req=True)
+        >>> thread = api.view_push_preferences_for_a_channel(user_id, channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
-            user_id (str):
-            channel_url (str):
+            user_id (str): (Required) 
+            channel_url (str): (Required) 
 
         Keyword Args:
             api_token (str): [optional]
@@ -4516,7 +4271,7 @@ class UserApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            ViewPushPreferencesForChannelByUrlResponse
+            ViewPushPreferencesForAChannelResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -4549,96 +4304,9 @@ class UserApi(object):
             user_id
         kwargs['channel_url'] = \
             channel_url
-        return self.view_push_preferences_for_channel_by_url_endpoint.call_with_http_info(**kwargs)
+        return self.view_push_preferences_for_a_channel_endpoint.call_with_http_info(**kwargs)
 
-    def view_user_by_id(
-        self,
-        user_id,
-        **kwargs
-    ):
-        """View a user  # noqa: E501
-
-        ## View a user  Retrieves information on a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-a-user ----------------------------   `user_id`      Type: string      Description: Specifies the unique ID of the user to retrieve.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.view_user_by_id(user_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            user_id (str):
-
-        Keyword Args:
-            api_token (str): [optional]
-            include_unread_count (bool): [optional]
-            custom_types (str): [optional]
-            super_mode (str): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            SendBirdUser
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['user_id'] = \
-            user_id
-        return self.view_user_by_id_endpoint.call_with_http_info(**kwargs)
-
-    def view_who_owns_registration_or_device_token_by_token(
+    def view_who_owns_a_registration_or_device_token(
         self,
         token_type,
         token,
@@ -4650,12 +4318,12 @@ class UserApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.view_who_owns_registration_or_device_token_by_token(token_type, token, async_req=True)
+        >>> thread = api.view_who_owns_a_registration_or_device_token(token_type, token, async_req=True)
         >>> result = thread.get()
 
         Args:
-            token_type (str):
-            token (str):
+            token_type (str): (Required) 
+            token (str): (Required) 
 
         Keyword Args:
             api_token (str): [optional]
@@ -4691,7 +4359,7 @@ class UserApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponse
+            ViewWhoOwnsARegistrationOrDeviceTokenResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -4724,5 +4392,5 @@ class UserApi(object):
             token_type
         kwargs['token'] = \
             token
-        return self.view_who_owns_registration_or_device_token_by_token_endpoint.call_with_http_info(**kwargs)
+        return self.view_who_owns_a_registration_or_device_token_endpoint.call_with_http_info(**kwargs)
 

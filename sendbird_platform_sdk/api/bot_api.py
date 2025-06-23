@@ -1,7 +1,7 @@
 """
     Sendbird Platform SDK
 
-    Sendbird Platform API SDK  https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api  # noqa: E501
+    Sendbird Platform API SDK  [https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api](https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api)  Contact Support:   Name: Sendbird   Email: [support@sendbird.com](https://mailto:support@sendbird.com)  # noqa: E501
 
     The version of the OpenAPI document: 1.0.0
     Contact: support@sendbird.com
@@ -22,16 +22,13 @@ from sendbird_platform_sdk.model_utils import (  # noqa: F401
     none_type,
     validate_and_convert_types
 )
-from sendbird_platform_sdk.model.create_bot_data import CreateBotData
-from sendbird_platform_sdk.model.create_bot_response import CreateBotResponse
-from sendbird_platform_sdk.model.join_channels_data import JoinChannelsData
-from sendbird_platform_sdk.model.join_channels_response import JoinChannelsResponse
+from sendbird_platform_sdk.model.create_a_bot_request import CreateABotRequest
+from sendbird_platform_sdk.model.create_a_bot_response import CreateABotResponse
+from sendbird_platform_sdk.model.join_channels_request import JoinChannelsRequest
 from sendbird_platform_sdk.model.list_bots_response import ListBotsResponse
-from sendbird_platform_sdk.model.send_bird_bots_message_response import SendBirdBotsMessageResponse
-from sendbird_platform_sdk.model.send_bot_s_message_data import SendBotSMessageData
-from sendbird_platform_sdk.model.update_bot_by_id_data import UpdateBotByIdData
-from sendbird_platform_sdk.model.update_bot_by_id_response import UpdateBotByIdResponse
-from sendbird_platform_sdk.model.view_bot_by_id_response import ViewBotByIdResponse
+from sendbird_platform_sdk.model.send_a_bot_message_request import SendABotMessageRequest
+from sendbird_platform_sdk.model.sendbird_group_channel_detail import SendbirdGroupChannelDetail
+from sendbird_platform_sdk.model.sendbird_message_response import SendbirdMessageResponse
 
 
 class BotApi(object):
@@ -45,19 +42,19 @@ class BotApi(object):
         if api_client is None:
             api_client = ApiClient()
         self.api_client = api_client
-        self.create_bot_endpoint = _Endpoint(
+        self.create_a_bot_endpoint = _Endpoint(
             settings={
-                'response_type': (CreateBotResponse,),
+                'response_type': (CreateABotResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/bots',
-                'operation_id': 'create_bot',
+                'operation_id': 'create_a_bot',
                 'http_method': 'POST',
                 'servers': None,
             },
             params_map={
                 'all': [
                     'api_token',
-                    'create_bot_data',
+                    'create_a_bot_request',
                 ],
                 'required': [],
                 'nullable': [
@@ -75,15 +72,15 @@ class BotApi(object):
                 'openapi_types': {
                     'api_token':
                         (str,),
-                    'create_bot_data':
-                        (CreateBotData,),
+                    'create_a_bot_request':
+                        (CreateABotRequest,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
+                    'api_token': 'api-token',
                 },
                 'location_map': {
                     'api_token': 'header',
-                    'create_bot_data': 'body',
+                    'create_a_bot_request': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -98,63 +95,9 @@ class BotApi(object):
             },
             api_client=api_client
         )
-        self.delete_bot_by_id_endpoint = _Endpoint(
-            settings={
-                'response_type': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
-                'auth': [],
-                'endpoint_path': '/v3/bots/{bot_userid}',
-                'operation_id': 'delete_bot_by_id',
-                'http_method': 'DELETE',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'bot_userid',
-                    'api_token',
-                ],
-                'required': [
-                    'bot_userid',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'bot_userid':
-                        (str,),
-                    'api_token':
-                        (str,),
-                },
-                'attribute_map': {
-                    'bot_userid': 'bot_userid',
-                    'api_token': 'Api-Token',
-                },
-                'location_map': {
-                    'bot_userid': 'path',
-                    'api_token': 'header',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
         self.join_channels_endpoint = _Endpoint(
             settings={
-                'response_type': (JoinChannelsResponse,),
+                'response_type': (SendbirdGroupChannelDetail,),
                 'auth': [],
                 'endpoint_path': '/v3/bots/{bot_userid}/channels',
                 'operation_id': 'join_channels',
@@ -165,7 +108,7 @@ class BotApi(object):
                 'all': [
                     'bot_userid',
                     'api_token',
-                    'join_channels_data',
+                    'join_channels_request',
                 ],
                 'required': [
                     'bot_userid',
@@ -187,17 +130,17 @@ class BotApi(object):
                         (str,),
                     'api_token':
                         (str,),
-                    'join_channels_data':
-                        (JoinChannelsData,),
+                    'join_channels_request':
+                        (JoinChannelsRequest,),
                 },
                 'attribute_map': {
                     'bot_userid': 'bot_userid',
-                    'api_token': 'Api-Token',
+                    'api_token': 'api-token',
                 },
                 'location_map': {
                     'bot_userid': 'path',
                     'api_token': 'header',
-                    'join_channels_data': 'body',
+                    'join_channels_request': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -212,22 +155,23 @@ class BotApi(object):
             },
             api_client=api_client
         )
-        self.leave_channels_endpoint = _Endpoint(
+        self.leave_a_group_channel_endpoint = _Endpoint(
             settings={
-                'response_type': None,
+                'response_type': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
                 'auth': [],
-                'endpoint_path': '/v3/bots/{bot_userid}/channels',
-                'operation_id': 'leave_channels',
+                'endpoint_path': '/v3/bots/{bot_userid}/channels/{channel_url}',
+                'operation_id': 'leave_a_group_channel',
                 'http_method': 'DELETE',
                 'servers': None,
             },
             params_map={
                 'all': [
+                    'channel_url',
                     'bot_userid',
                     'api_token',
-                    'channel_url',
                 ],
                 'required': [
+                    'channel_url',
                     'bot_userid',
                 ],
                 'nullable': [
@@ -243,50 +187,50 @@ class BotApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
+                    'channel_url':
+                        (str,),
                     'bot_userid':
                         (str,),
                     'api_token':
                         (str,),
-                    'channel_url':
-                        (str,),
                 },
                 'attribute_map': {
-                    'bot_userid': 'bot_userid',
-                    'api_token': 'Api-Token',
                     'channel_url': 'channel_url',
+                    'bot_userid': 'bot_userid',
+                    'api_token': 'api-token',
                 },
                 'location_map': {
+                    'channel_url': 'path',
                     'bot_userid': 'path',
                     'api_token': 'header',
-                    'channel_url': 'query',
                 },
                 'collection_format_map': {
                 }
             },
             headers_map={
-                'accept': [],
+                'accept': [
+                    'application/json'
+                ],
                 'content_type': [],
             },
             api_client=api_client
         )
-        self.leave_channels_by_url_endpoint = _Endpoint(
+        self.leave_group_channels_endpoint = _Endpoint(
             settings={
                 'response_type': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
                 'auth': [],
-                'endpoint_path': '/v3/bots/{bot_userid}/channels/{channel_url}',
-                'operation_id': 'leave_channels_by_url',
+                'endpoint_path': '/v3/bots/{bot_userid}/channels',
+                'operation_id': 'leave_group_channels',
                 'http_method': 'DELETE',
                 'servers': None,
             },
             params_map={
                 'all': [
                     'bot_userid',
-                    'channel_url',
                     'api_token',
                 ],
                 'required': [
                     'bot_userid',
-                    'channel_url',
                 ],
                 'nullable': [
                 ],
@@ -303,19 +247,15 @@ class BotApi(object):
                 'openapi_types': {
                     'bot_userid':
                         (str,),
-                    'channel_url':
-                        (str,),
                     'api_token':
                         (str,),
                 },
                 'attribute_map': {
                     'bot_userid': 'bot_userid',
-                    'channel_url': 'channel_url',
-                    'api_token': 'Api-Token',
+                    'api_token': 'api-token',
                 },
                 'location_map': {
                     'bot_userid': 'path',
-                    'channel_url': 'path',
                     'api_token': 'header',
                 },
                 'collection_format_map': {
@@ -340,9 +280,9 @@ class BotApi(object):
             },
             params_map={
                 'all': [
-                    'api_token',
                     'token',
                     'limit',
+                    'api_token',
                 ],
                 'required': [],
                 'nullable': [
@@ -358,22 +298,22 @@ class BotApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'api_token':
-                        (str,),
                     'token':
                         (str,),
                     'limit':
                         (int,),
+                    'api_token':
+                        (str,),
                 },
                 'attribute_map': {
-                    'api_token': 'Api-Token',
                     'token': 'token',
                     'limit': 'limit',
+                    'api_token': 'api-token',
                 },
                 'location_map': {
-                    'api_token': 'header',
                     'token': 'query',
                     'limit': 'query',
+                    'api_token': 'header',
                 },
                 'collection_format_map': {
                 }
@@ -386,12 +326,12 @@ class BotApi(object):
             },
             api_client=api_client
         )
-        self.send_bots_message_endpoint = _Endpoint(
+        self.send_a_bot_message_endpoint = _Endpoint(
             settings={
-                'response_type': (SendBirdBotsMessageResponse,),
+                'response_type': (SendbirdMessageResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/bots/{bot_userid}/send',
-                'operation_id': 'send_bots_message',
+                'operation_id': 'send_a_bot_message',
                 'http_method': 'POST',
                 'servers': None,
             },
@@ -399,7 +339,7 @@ class BotApi(object):
                 'all': [
                     'bot_userid',
                     'api_token',
-                    'send_bot_s_message_data',
+                    'send_a_bot_message_request',
                 ],
                 'required': [
                     'bot_userid',
@@ -421,17 +361,17 @@ class BotApi(object):
                         (str,),
                     'api_token':
                         (str,),
-                    'send_bot_s_message_data':
-                        (SendBotSMessageData,),
+                    'send_a_bot_message_request':
+                        (SendABotMessageRequest,),
                 },
                 'attribute_map': {
                     'bot_userid': 'bot_userid',
-                    'api_token': 'Api-Token',
+                    'api_token': 'api-token',
                 },
                 'location_map': {
                     'bot_userid': 'path',
                     'api_token': 'header',
-                    'send_bot_s_message_data': 'body',
+                    'send_a_bot_message_request': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -443,141 +383,27 @@ class BotApi(object):
                 'content_type': [
                     'application/json'
                 ]
-            },
-            api_client=api_client
-        )
-        self.update_bot_by_id_endpoint = _Endpoint(
-            settings={
-                'response_type': (UpdateBotByIdResponse,),
-                'auth': [],
-                'endpoint_path': '/v3/bots/{bot_userid}',
-                'operation_id': 'update_bot_by_id',
-                'http_method': 'PUT',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'bot_userid',
-                    'api_token',
-                    'update_bot_by_id_data',
-                ],
-                'required': [
-                    'bot_userid',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'bot_userid':
-                        (str,),
-                    'api_token':
-                        (str,),
-                    'update_bot_by_id_data':
-                        (UpdateBotByIdData,),
-                },
-                'attribute_map': {
-                    'bot_userid': 'bot_userid',
-                    'api_token': 'Api-Token',
-                },
-                'location_map': {
-                    'bot_userid': 'path',
-                    'api_token': 'header',
-                    'update_bot_by_id_data': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
-            api_client=api_client
-        )
-        self.view_bot_by_id_endpoint = _Endpoint(
-            settings={
-                'response_type': (ViewBotByIdResponse,),
-                'auth': [],
-                'endpoint_path': '/v3/bots/{bot_userid}',
-                'operation_id': 'view_bot_by_id',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'bot_userid',
-                    'api_token',
-                ],
-                'required': [
-                    'bot_userid',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'bot_userid':
-                        (str,),
-                    'api_token':
-                        (str,),
-                },
-                'attribute_map': {
-                    'bot_userid': 'bot_userid',
-                    'api_token': 'Api-Token',
-                },
-                'location_map': {
-                    'bot_userid': 'path',
-                    'api_token': 'header',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
             },
             api_client=api_client
         )
 
-    def create_bot(
+    def create_a_bot(
         self,
         **kwargs
     ):
         """Create a bot  # noqa: E501
 
-        ## Create a bot  Creates a new bot within the application. Creating a bot is similar to creating a normal user, except that a callback URL is specified in order for the bot to receive events.  > __Note__: The bot must [join](#2-join-channels) a group channel first to interact with users. In group channels, you can invite a bot through the [invite as members](https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-invite-as-members) action instead.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-create-a-bot  # noqa: E501
+        ## Create a bot  Creates a new bot within an application. Creating a bot is similar to creating a normal user, except a callback URL should be specified for a bot to receive events.  > **Note**: The bot must first [join a group channel](https://sendbird.com/docs/chat/platform-api/v3/bot/managing-a-bot/join-channels) to interact with users. In group channels, you can also invite a bot through the [invite as members](https://sendbird.com/docs/chat/platform-api/v3/channel/inviting-a-user/invite-as-members-channel) action.      [https://sendbird.com/docs/chat/platform-api/v3/bot/creating-a-bot/create-a-bot#1-create-a-bot](https://sendbird.com/docs/chat/platform-api/v3/bot/creating-a-bot/create-a-bot#1-create-a-bot)  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.create_bot(async_req=True)
+        >>> thread = api.create_a_bot(async_req=True)
         >>> result = thread.get()
 
 
         Keyword Args:
             api_token (str): [optional]
-            create_bot_data (CreateBotData): [optional]
+            create_a_bot_request (CreateABotRequest): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -610,7 +436,7 @@ class BotApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            CreateBotResponse
+            CreateABotResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -639,91 +465,7 @@ class BotApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        return self.create_bot_endpoint.call_with_http_info(**kwargs)
-
-    def delete_bot_by_id(
-        self,
-        bot_userid,
-        **kwargs
-    ):
-        """Delete a bot  # noqa: E501
-
-        ## Delete a bot  Deletes a bot from an application.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-delete-a-bot ----------------------------  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.delete_bot_by_id(bot_userid, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            bot_userid (str):
-
-        Keyword Args:
-            api_token (str): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            {str: (bool, date, datetime, dict, float, int, list, str, none_type)}
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['bot_userid'] = \
-            bot_userid
-        return self.delete_bot_by_id_endpoint.call_with_http_info(**kwargs)
+        return self.create_a_bot_endpoint.call_with_http_info(**kwargs)
 
     def join_channels(
         self,
@@ -732,7 +474,7 @@ class BotApi(object):
     ):
         """Join channels  # noqa: E501
 
-        ## Join channels  Makes a bot join one or more channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-join-channels ----------------------------  # noqa: E501
+        ## Join channels  Makes a bot join one or more group channels.  [https://sendbird.com/docs/chat/platform-api/v3/bot/managing-a-bot/join-channels#1-join-channels](https://sendbird.com/docs/chat/platform-api/v3/bot/managing-a-bot/join-channels#1-join-channels)  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -740,11 +482,11 @@ class BotApi(object):
         >>> result = thread.get()
 
         Args:
-            bot_userid (str):
+            bot_userid (str): (Required) 
 
         Keyword Args:
             api_token (str): [optional]
-            join_channels_data (JoinChannelsData): [optional]
+            join_channels_request (JoinChannelsRequest): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -777,7 +519,7 @@ class BotApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            JoinChannelsResponse
+            SendbirdGroupChannelDetail
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -810,26 +552,27 @@ class BotApi(object):
             bot_userid
         return self.join_channels_endpoint.call_with_http_info(**kwargs)
 
-    def leave_channels(
+    def leave_a_group_channel(
         self,
+        channel_url,
         bot_userid,
         **kwargs
     ):
-        """Leave channels - When leaving all channels  # noqa: E501
+        """Leave channels - When leaving a specific channel  # noqa: E501
 
-        ## Leave channels  Makes a bot leave one or more group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-leave-channels ----------------------------  # noqa: E501
+        ## Leave channels  Makes a bot leave a specific channel  [https://sendbird.com/docs/chat/platform-api/v3/bot/managing-a-bot/leave-channels#1-leave-channels](https://sendbird.com/docs/chat/platform-api/v3/bot/managing-a-bot/leave-channels#1-leave-channels)  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.leave_channels(bot_userid, async_req=True)
+        >>> thread = api.leave_a_group_channel(channel_url, bot_userid, async_req=True)
         >>> result = thread.get()
 
         Args:
-            bot_userid (str):
+            channel_url (str):
+            bot_userid (str): (Required) 
 
         Keyword Args:
             api_token (str): [optional]
-            channel_url (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -862,7 +605,7 @@ class BotApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            None
+            {str: (bool, date, datetime, dict, float, int, list, str, none_type)}
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -891,28 +634,28 @@ class BotApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['channel_url'] = \
+            channel_url
         kwargs['bot_userid'] = \
             bot_userid
-        return self.leave_channels_endpoint.call_with_http_info(**kwargs)
+        return self.leave_a_group_channel_endpoint.call_with_http_info(**kwargs)
 
-    def leave_channels_by_url(
+    def leave_group_channels(
         self,
         bot_userid,
-        channel_url,
         **kwargs
     ):
-        """Leave channels - When leaving a channel by its channel URL  # noqa: E501
+        """Leave channels - When leaving all channels  # noqa: E501
 
-        ## Leave channels  Makes a bot leave one or more group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-leave-channels ----------------------------  # noqa: E501
+        ## Leave channels  Makes a bot leave all group channels.  [https://sendbird.com/docs/chat/platform-api/v3/bot/managing-a-bot/leave-channels#1-leave-channels](https://sendbird.com/docs/chat/platform-api/v3/bot/managing-a-bot/leave-channels#1-leave-channels)  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.leave_channels_by_url(bot_userid, channel_url, async_req=True)
+        >>> thread = api.leave_group_channels(bot_userid, async_req=True)
         >>> result = thread.get()
 
         Args:
-            bot_userid (str):
-            channel_url (str):
+            bot_userid (str): (Required) 
 
         Keyword Args:
             api_token (str): [optional]
@@ -979,9 +722,7 @@ class BotApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['bot_userid'] = \
             bot_userid
-        kwargs['channel_url'] = \
-            channel_url
-        return self.leave_channels_by_url_endpoint.call_with_http_info(**kwargs)
+        return self.leave_group_channels_endpoint.call_with_http_info(**kwargs)
 
     def list_bots(
         self,
@@ -989,7 +730,7 @@ class BotApi(object):
     ):
         """List bots  # noqa: E501
 
-        ## List bots  Retrieves a list of all bots within an application.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-list-bots ----------------------------  # noqa: E501
+        ## List bots  Retrieves a list of all bots within an application.  https://sendbird.com/docs/chat/platform-api/v3/bot/listing-bots/list-bots#1-list-bots  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -998,9 +739,9 @@ class BotApi(object):
 
 
         Keyword Args:
-            api_token (str): [optional]
             token (str): [optional]
             limit (int): [optional]
+            api_token (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -1064,26 +805,26 @@ class BotApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         return self.list_bots_endpoint.call_with_http_info(**kwargs)
 
-    def send_bots_message(
+    def send_a_bot_message(
         self,
         bot_userid,
         **kwargs
     ):
         """Send a bot's message  # noqa: E501
 
-        ## Send a bot's message  Sends a bot's message to a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-send-a-bot-s-message ----------------------------   `bot_userid`      Type: string      Description: Specifies the ID of the bot to send a message.  # noqa: E501
+        ## Send a bot message  Sends a bot message to a group channel.  [https://sendbird.com/docs/chat/platform-api/v3/bot/sending-a-bot-message/send-a-bot-message#1-send-a-bot-message](https://sendbird.com/docs/chat/platform-api/v3/bot/sending-a-bot-message/send-a-bot-message#1-send-a-bot-message)  `bot_userid`   Type: string   Description: Specifies the ID of the bot to send a message.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.send_bots_message(bot_userid, async_req=True)
+        >>> thread = api.send_a_bot_message(bot_userid, async_req=True)
         >>> result = thread.get()
 
         Args:
-            bot_userid (str):
+            bot_userid (str): (Required) 
 
         Keyword Args:
             api_token (str): [optional]
-            send_bot_s_message_data (SendBotSMessageData): [optional]
+            send_a_bot_message_request (SendABotMessageRequest): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -1116,7 +857,7 @@ class BotApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            SendBirdBotsMessageResponse
+            SendbirdMessageResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -1147,174 +888,5 @@ class BotApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['bot_userid'] = \
             bot_userid
-        return self.send_bots_message_endpoint.call_with_http_info(**kwargs)
-
-    def update_bot_by_id(
-        self,
-        bot_userid,
-        **kwargs
-    ):
-        """Update a bot  # noqa: E501
-
-        ## Update a bot  Updates information on a bot.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-update-a-bot ----------------------------  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.update_bot_by_id(bot_userid, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            bot_userid (str):
-
-        Keyword Args:
-            api_token (str): [optional]
-            update_bot_by_id_data (UpdateBotByIdData): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            UpdateBotByIdResponse
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['bot_userid'] = \
-            bot_userid
-        return self.update_bot_by_id_endpoint.call_with_http_info(**kwargs)
-
-    def view_bot_by_id(
-        self,
-        bot_userid,
-        **kwargs
-    ):
-        """View a bot  # noqa: E501
-
-        ## View a bot  Retrieves information on a bot.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-view-a-bot ----------------------------  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.view_bot_by_id(bot_userid, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            bot_userid (str):
-
-        Keyword Args:
-            api_token (str): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            ViewBotByIdResponse
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['bot_userid'] = \
-            bot_userid
-        return self.view_bot_by_id_endpoint.call_with_http_info(**kwargs)
+        return self.send_a_bot_message_endpoint.call_with_http_info(**kwargs)
 

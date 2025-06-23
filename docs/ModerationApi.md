@@ -4,125 +4,19 @@ All URIs are relative to *https://api-APP_ID.sendbird.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ban_from_channels_with_custom_channel_types**](ModerationApi.md#ban_from_channels_with_custom_channel_types) | **POST** /v3/users/{user_id}/banned_channel_custom_types | Ban from channels with custom channel types
-[**block_user**](ModerationApi.md#block_user) | **POST** /v3/users/{user_id}/block | Block a user
-[**gc_ban_user**](ModerationApi.md#gc_ban_user) | **POST** /v3/group_channels/{channel_url}/ban | Ban a user
-[**gc_freeze_channel**](ModerationApi.md#gc_freeze_channel) | **PUT** /v3/group_channels/{channel_url}/freeze | Freeze a channel
-[**gc_list_banned_users**](ModerationApi.md#gc_list_banned_users) | **GET** /v3/group_channels/{channel_url}/ban | List banned users
-[**gc_list_muted_users**](ModerationApi.md#gc_list_muted_users) | **GET** /v3/group_channels/{channel_url}/mute | List muted users
-[**gc_mute_user**](ModerationApi.md#gc_mute_user) | **POST** /v3/group_channels/{channel_url}/mute | Mute a user
-[**gc_unban_user_by_id**](ModerationApi.md#gc_unban_user_by_id) | **DELETE** /v3/group_channels/{channel_url}/ban/{banned_user_id} | Unban a user
-[**gc_unmute_user_by_id**](ModerationApi.md#gc_unmute_user_by_id) | **DELETE** /v3/group_channels/{channel_url}/mute/{muted_user_id} | Unmute a user
-[**gc_update_ban_by_id**](ModerationApi.md#gc_update_ban_by_id) | **PUT** /v3/group_channels/{channel_url}/ban/{banned_user_id} | Update a ban
-[**gc_view_ban_by_id**](ModerationApi.md#gc_view_ban_by_id) | **GET** /v3/group_channels/{channel_url}/ban/{banned_user_id} | View a ban
-[**gc_view_mute_by_id**](ModerationApi.md#gc_view_mute_by_id) | **GET** /v3/group_channels/{channel_url}/mute/{muted_user_id} | View a mute
-[**list_banned_channels**](ModerationApi.md#list_banned_channels) | **GET** /v3/users/{user_id}/ban | List banned channels
+[**block_a_user**](ModerationApi.md#block_a_user) | **POST** /v3/users/{user_id}/block | Block a user
+[**freeze_a_group_channel**](ModerationApi.md#freeze_a_group_channel) | **PUT** /v3/group_channels/{channel_url}/freeze | Freeze a group channel
+[**freeze_an_open_channel**](ModerationApi.md#freeze_an_open_channel) | **PUT** /v3/open_channels/{channel_url}/freeze | Freeze an open channel
 [**list_blocked_users**](ModerationApi.md#list_blocked_users) | **GET** /v3/users/{user_id}/block | List blocked users
-[**list_muted_channels**](ModerationApi.md#list_muted_channels) | **GET** /v3/users/{user_id}/mute | List muted channels
-[**mute_in_channels_with_custom_channel_types**](ModerationApi.md#mute_in_channels_with_custom_channel_types) | **POST** /v3/users/{user_id}/muted_channel_custom_types | Mute in channels with custom channel types
-[**oc_ban_user**](ModerationApi.md#oc_ban_user) | **POST** /v3/open_channels/{channel_url}/ban | Ban a user
-[**oc_freeze_channel**](ModerationApi.md#oc_freeze_channel) | **PUT** /v3/open_channels/{channel_url}/freeze | Freeze a channel
-[**oc_list_banned_users**](ModerationApi.md#oc_list_banned_users) | **GET** /v3/open_channels/{channel_url}/ban | List banned users
-[**oc_list_muted_users**](ModerationApi.md#oc_list_muted_users) | **GET** /v3/open_channels/{channel_url}/mute | List muted users
-[**oc_mute_user**](ModerationApi.md#oc_mute_user) | **POST** /v3/open_channels/{channel_url}/mute | Mute a user
-[**oc_unban_user_by_id**](ModerationApi.md#oc_unban_user_by_id) | **DELETE** /v3/open_channels/{channel_url}/ban/{banned_user_id} | Unban a user
-[**oc_unmute_user_by_id**](ModerationApi.md#oc_unmute_user_by_id) | **DELETE** /v3/open_channels/{channel_url}/mute/{muted_user_id} | Unmute a user
-[**oc_update_ban_by_id**](ModerationApi.md#oc_update_ban_by_id) | **PUT** /v3/open_channels/{channel_url}/ban/{banned_user_id} | Update a ban
-[**oc_view_ban_by_id**](ModerationApi.md#oc_view_ban_by_id) | **GET** /v3/open_channels/{channel_url}/ban/{banned_user_id} | View a ban
-[**oc_view_mute_by_id**](ModerationApi.md#oc_view_mute_by_id) | **GET** /v3/open_channels/{channel_url}/mute/{muted_user_id} | View a mute
-[**unblock_user_by_id**](ModerationApi.md#unblock_user_by_id) | **DELETE** /v3/users/{user_id}/block/{target_id} | Unblock a user
+[**unblock_a_user**](ModerationApi.md#unblock_a_user) | **DELETE** /v3/users/{user_id}/block/{target_id} | Unblock a user
 
 
-# **ban_from_channels_with_custom_channel_types**
-> {str: (bool, date, datetime, dict, float, int, list, str, none_type)} ban_from_channels_with_custom_channel_types(user_id)
-
-Ban from channels with custom channel types
-
-## Ban from channels with custom channel types  Bans a user from channels with particular custom channel types.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-ban-from-channels-with-custom-channel-types ----------------------------
-
-### Example
-
-
-```python
-import time
-import sendbird_platform_sdk
-from sendbird_platform_sdk.api import moderation_api
-from sendbird_platform_sdk.model.ban_from_channels_with_custom_channel_types_data import BanFromChannelsWithCustomChannelTypesData
-from pprint import pprint
-# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird_platform_sdk.Configuration(
-    host = "https://api-APP_ID.sendbird.com"
-)
-
-
-# Enter a context with an instance of the API client
-with sendbird_platform_sdk.ApiClient() as api_client:
-    # Create an instance of the API class
-    api_instance = moderation_api.ModerationApi(api_client)
-    user_id = "user_id_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
-    ban_from_channels_with_custom_channel_types_data = BanFromChannelsWithCustomChannelTypesData(
-        channel_custom_types=[
-            "channel_custom_types_example",
-        ],
-    ) # BanFromChannelsWithCustomChannelTypesData |  (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        # Ban from channels with custom channel types
-        api_response = api_instance.ban_from_channels_with_custom_channel_types(user_id)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling ModerationApi->ban_from_channels_with_custom_channel_types: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # Ban from channels with custom channel types
-        api_response = api_instance.ban_from_channels_with_custom_channel_types(user_id, api_token=api_token, ban_from_channels_with_custom_channel_types_data=ban_from_channels_with_custom_channel_types_data)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling ModerationApi->ban_from_channels_with_custom_channel_types: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **user_id** | **str**|  |
- **api_token** | **str**|  | [optional]
- **ban_from_channels_with_custom_channel_types_data** | [**BanFromChannelsWithCustomChannelTypesData**](BanFromChannelsWithCustomChannelTypesData.md)|  | [optional]
-
-### Return type
-
-**{str: (bool, date, datetime, dict, float, int, list, str, none_type)}**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful response |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **block_user**
-> BlockUserResponse block_user(user_id)
+# **block_a_user**
+> BlockAUserResponse block_a_user(user_id)
 
 Block a user
 
-## Block a user  Allows a user to block another user. A user doesn't receive messages from someone they have blocked anymore. Also, blocking someone doesn't alert them that they have been blocked. Blocked users still can send messages as normal in the channel: however, they can't receive any messages from the users who have blocked them.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-block-a-user ----------------------------
+## Block a user  A user can block another user if the user doesn't wish to receive any messages or notifications from the blocked user in a 1-to-1 group channel. In a 1-to-N group channel, the user can still receive messages from the blocked user, but this depends on the UI settings of the chat view. In any case, notifications from the blocked user won't be delivered to the 1-to-N group channel. You can choose whether or not the user can view [which users are blocked](https://sendbird.com/docs/chat/platform-api/v3/moderation/listing-blocked-and-blocking-users/list-blocked-and-blocking-users) in the channel UI.  Sendbird application provides two blocking options: include or exclude blocked users when sending invitations, and turn on or off notifications from blocked users. [Explicit and classic block modes](https://sendbird.com/docs/chat/platform-api/v3/deprecated#2-explicit-and-classic-block-modes) have been deprecated and are only supported for customers who started using them before they were deprecated.  - **Include or exclude blocked users when sending invitations**: Determines whether or not to automatically filter out blocked users when a user invites a group of users to a new group channel. By default, blocked users are included when sending invitations. The value of this option can be changed by Sendbird if your Sendbird application isn't integrated to the client app. If you want to change the value, [contact our sales team](https://get.sendbird.com/talk-to-sales.html).      - **Turn on or off notifications from blocked users**: Determines whether or not to receive message notifications from the blocked user in a specific 1-to-N group channel where they are both members. By default, a user doesn't receive notifications from blocked users. The value of this option can be set individually per channel. If you want to use this option, [contact our sales team](https://get.sendbird.com/talk-to-sales.html).       > **Note**: To learn more about other available moderation tools, see [Moderation Overview](https://sendbird.com/docs/chat/platform-api/v3/moderation/moderation-overview#2-actions).      The following tables explain what happens to a user's chat experience when the user blocks another user in a 1-to-1 or 1-to-N group channel. In the case of a 1-to-1 group channel, the block mode is only maintained with the original members. If other than the original members are added, the rules for 1-to-N group channel begin to apply.  [https://sendbird.com/docs/chat/platform-api/v3/moderation/blocking-users/block-users#1-block-users](https://sendbird.com/docs/chat/platform-api/v3/moderation/blocking-users/block-users#1-block-users)
 
 ### Example
 
@@ -131,8 +25,8 @@ Block a user
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import moderation_api
-from sendbird_platform_sdk.model.block_user_response import BlockUserResponse
-from sendbird_platform_sdk.model.block_user_data import BlockUserData
+from sendbird_platform_sdk.model.block_a_user_request import BlockAUserRequest
+from sendbird_platform_sdk.model.block_a_user_response import BlockAUserResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -145,35 +39,31 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = moderation_api.ModerationApi(api_client)
-    user_id = "user_id_example" # str | 
+    user_id = "user_id_example" # str | (Required) 
     api_token = "{{API_TOKEN}}" # str |  (optional)
-    block_user_data = BlockUserData(
-        user_id="user_id_example",
+    block_a_user_request = BlockAUserRequest(
         target_id="target_id_example",
         user_ids=[
             "user_ids_example",
         ],
-        users=[
-            "users_example",
-        ],
-    ) # BlockUserData |  (optional)
+    ) # BlockAUserRequest |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Block a user
-        api_response = api_instance.block_user(user_id)
+        api_response = api_instance.block_a_user(user_id)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling ModerationApi->block_user: %s\n" % e)
+        print("Exception when calling ModerationApi->block_a_user: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Block a user
-        api_response = api_instance.block_user(user_id, api_token=api_token, block_user_data=block_user_data)
+        api_response = api_instance.block_a_user(user_id, api_token=api_token, block_a_user_request=block_a_user_request)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling ModerationApi->block_user: %s\n" % e)
+        print("Exception when calling ModerationApi->block_a_user: %s\n" % e)
 ```
 
 
@@ -181,13 +71,13 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user_id** | **str**|  |
+ **user_id** | **str**| (Required)  |
  **api_token** | **str**|  | [optional]
- **block_user_data** | [**BlockUserData**](BlockUserData.md)|  | [optional]
+ **block_a_user_request** | [**BlockAUserRequest**](BlockAUserRequest.md)|  | [optional]
 
 ### Return type
 
-[**BlockUserResponse**](BlockUserResponse.md)
+[**BlockAUserResponse**](BlockAUserResponse.md)
 
 ### Authorization
 
@@ -207,12 +97,12 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **gc_ban_user**
-> GcBanUserResponse gc_ban_user(channel_url)
+# **freeze_a_group_channel**
+> SendbirdGroupChannelDetail freeze_a_group_channel(channel_url)
 
-Ban a user
+Freeze a group channel
 
-## Ban a user  Bans a user from a group channel. A banned user is immediately expelled from a channel and allowed to join the channel again after a set time period.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-ban-a-user ----------------------------
+## Freeze a group channel  Freezes or unfreezes a group channel.  > **Note**: To learn more about other available moderation tools, see [Moderation Overview](https://sendbird.com/docs/chat/platform-api/v3/moderation/moderation-overview#2-actions).      [https://sendbird.com/docs/chat/platform-api/v3/moderation/freezing-a-channel/freeze-a-group-channel#1-freeze-a-group-channel](https://sendbird.com/docs/chat/platform-api/v3/moderation/freezing-a-channel/freeze-a-group-channel#1-freeze-a-group-channel)
 
 ### Example
 
@@ -221,8 +111,8 @@ Ban a user
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import moderation_api
-from sendbird_platform_sdk.model.gc_ban_user_data import GcBanUserData
-from sendbird_platform_sdk.model.gc_ban_user_response import GcBanUserResponse
+from sendbird_platform_sdk.model.sendbird_group_channel_detail import SendbirdGroupChannelDetail
+from sendbird_platform_sdk.model.freeze_a_group_channel_request import FreezeAGroupChannelRequest
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -235,116 +125,28 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = moderation_api.ModerationApi(api_client)
-    channel_url = "channel_url_example" # str | 
+    channel_url = "channel_url_example" # str | (Required) 
     api_token = "{{API_TOKEN}}" # str |  (optional)
-    gc_ban_user_data = GcBanUserData(
-        channel_url="channel_url_example",
-        user_id="user_id_example",
-        agent_id="agent_id_example",
-        seconds=1,
-        description="description_example",
-    ) # GcBanUserData |  (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        # Ban a user
-        api_response = api_instance.gc_ban_user(channel_url)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling ModerationApi->gc_ban_user: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # Ban a user
-        api_response = api_instance.gc_ban_user(channel_url, api_token=api_token, gc_ban_user_data=gc_ban_user_data)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling ModerationApi->gc_ban_user: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **channel_url** | **str**|  |
- **api_token** | **str**|  | [optional]
- **gc_ban_user_data** | [**GcBanUserData**](GcBanUserData.md)|  | [optional]
-
-### Return type
-
-[**GcBanUserResponse**](GcBanUserResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful response |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **gc_freeze_channel**
-> SendBirdGroupChannel gc_freeze_channel(channel_url)
-
-Freeze a channel
-
-## Freeze a channel  Freezes or unfreezes a group channel.  > __Note__: Only users designated as channel operators are allowed to talk when a channel is frozen.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-freeze-a-channel ----------------------------
-
-### Example
-
-
-```python
-import time
-import sendbird_platform_sdk
-from sendbird_platform_sdk.api import moderation_api
-from sendbird_platform_sdk.model.gc_freeze_channel_data import GcFreezeChannelData
-from sendbird_platform_sdk.model.send_bird_group_channel import SendBirdGroupChannel
-from pprint import pprint
-# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird_platform_sdk.Configuration(
-    host = "https://api-APP_ID.sendbird.com"
-)
-
-
-# Enter a context with an instance of the API client
-with sendbird_platform_sdk.ApiClient() as api_client:
-    # Create an instance of the API class
-    api_instance = moderation_api.ModerationApi(api_client)
-    channel_url = "channel_url_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
-    gc_freeze_channel_data = GcFreezeChannelData(
-        channel_url="channel_url_example",
+    freeze_a_group_channel_request = FreezeAGroupChannelRequest(
         freeze=True,
-    ) # GcFreezeChannelData |  (optional)
+    ) # FreezeAGroupChannelRequest |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
-        # Freeze a channel
-        api_response = api_instance.gc_freeze_channel(channel_url)
+        # Freeze a group channel
+        api_response = api_instance.freeze_a_group_channel(channel_url)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling ModerationApi->gc_freeze_channel: %s\n" % e)
+        print("Exception when calling ModerationApi->freeze_a_group_channel: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        # Freeze a channel
-        api_response = api_instance.gc_freeze_channel(channel_url, api_token=api_token, gc_freeze_channel_data=gc_freeze_channel_data)
+        # Freeze a group channel
+        api_response = api_instance.freeze_a_group_channel(channel_url, api_token=api_token, freeze_a_group_channel_request=freeze_a_group_channel_request)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling ModerationApi->gc_freeze_channel: %s\n" % e)
+        print("Exception when calling ModerationApi->freeze_a_group_channel: %s\n" % e)
 ```
 
 
@@ -352,13 +154,13 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **channel_url** | **str**|  |
+ **channel_url** | **str**| (Required)  |
  **api_token** | **str**|  | [optional]
- **gc_freeze_channel_data** | [**GcFreezeChannelData**](GcFreezeChannelData.md)|  | [optional]
+ **freeze_a_group_channel_request** | [**FreezeAGroupChannelRequest**](FreezeAGroupChannelRequest.md)|  | [optional]
 
 ### Return type
 
-[**SendBirdGroupChannel**](SendBirdGroupChannel.md)
+[**SendbirdGroupChannelDetail**](SendbirdGroupChannelDetail.md)
 
 ### Authorization
 
@@ -378,12 +180,12 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **gc_list_banned_users**
-> GcListBannedUsersResponse gc_list_banned_users(channel_url)
+# **freeze_an_open_channel**
+> SendbirdOpenChannel freeze_an_open_channel(channel_url)
 
-List banned users
+Freeze an open channel
 
-## List banned users  Retrieves a list of the banned users from a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-list-banned-users ----------------------------   `channel_url`      Type: string      Description: Specifies the URL of the channel where to retrieve a list of banned users.
+## Freeze an open channel  Freezes or unfreezes an open channel.  > **Note**: To learn more about other available moderation tools, see [Moderation Overview](https://sendbird.com/docs/chat/platform-api/v3/moderation/moderation-overview#2-actions).      [https://sendbird.com/docs/chat/platform-api/v3/moderation/freezing-a-channel/freeze-an-open-channel#1-freeze-an-open-channel](https://sendbird.com/docs/chat/platform-api/v3/moderation/freezing-a-channel/freeze-an-open-channel#1-freeze-an-open-channel)
 
 ### Example
 
@@ -392,7 +194,8 @@ List banned users
 import time
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api import moderation_api
-from sendbird_platform_sdk.model.gc_list_banned_users_response import GcListBannedUsersResponse
+from sendbird_platform_sdk.model.freeze_an_open_channel_request import FreezeAnOpenChannelRequest
+from sendbird_platform_sdk.model.sendbird_open_channel import SendbirdOpenChannel
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -405,27 +208,28 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = moderation_api.ModerationApi(api_client)
-    channel_url = "channel_url_example" # str | 
+    channel_url = "channel_url_example" # str | (Required) 
     api_token = "{{API_TOKEN}}" # str |  (optional)
-    token = "token_example" # str |  (optional)
-    limit = 1 # int |  (optional)
+    freeze_an_open_channel_request = FreezeAnOpenChannelRequest(
+        freeze=True,
+    ) # FreezeAnOpenChannelRequest |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
-        # List banned users
-        api_response = api_instance.gc_list_banned_users(channel_url)
+        # Freeze an open channel
+        api_response = api_instance.freeze_an_open_channel(channel_url)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling ModerationApi->gc_list_banned_users: %s\n" % e)
+        print("Exception when calling ModerationApi->freeze_an_open_channel: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        # List banned users
-        api_response = api_instance.gc_list_banned_users(channel_url, api_token=api_token, token=token, limit=limit)
+        # Freeze an open channel
+        api_response = api_instance.freeze_an_open_channel(channel_url, api_token=api_token, freeze_an_open_channel_request=freeze_an_open_channel_request)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling ModerationApi->gc_list_banned_users: %s\n" % e)
+        print("Exception when calling ModerationApi->freeze_an_open_channel: %s\n" % e)
 ```
 
 
@@ -433,182 +237,13 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **channel_url** | **str**|  |
+ **channel_url** | **str**| (Required)  |
  **api_token** | **str**|  | [optional]
- **token** | **str**|  | [optional]
- **limit** | **int**|  | [optional]
+ **freeze_an_open_channel_request** | [**FreezeAnOpenChannelRequest**](FreezeAnOpenChannelRequest.md)|  | [optional]
 
 ### Return type
 
-[**GcListBannedUsersResponse**](GcListBannedUsersResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful response |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **gc_list_muted_users**
-> GcListMutedUsersResponse gc_list_muted_users(channel_url)
-
-List muted users
-
-## List muted users  Retrieves a list of the muted users in a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-list-muted-users ----------------------------   `channel_url`      Type: string      Description: Specifies the URL of the channel to retrieve a list of muted users.
-
-### Example
-
-
-```python
-import time
-import sendbird_platform_sdk
-from sendbird_platform_sdk.api import moderation_api
-from sendbird_platform_sdk.model.gc_list_muted_users_response import GcListMutedUsersResponse
-from pprint import pprint
-# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird_platform_sdk.Configuration(
-    host = "https://api-APP_ID.sendbird.com"
-)
-
-
-# Enter a context with an instance of the API client
-with sendbird_platform_sdk.ApiClient() as api_client:
-    # Create an instance of the API class
-    api_instance = moderation_api.ModerationApi(api_client)
-    channel_url = "channel_url_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
-    token = "token_example" # str |  (optional)
-    limit = 1 # int |  (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        # List muted users
-        api_response = api_instance.gc_list_muted_users(channel_url)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling ModerationApi->gc_list_muted_users: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # List muted users
-        api_response = api_instance.gc_list_muted_users(channel_url, api_token=api_token, token=token, limit=limit)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling ModerationApi->gc_list_muted_users: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **channel_url** | **str**|  |
- **api_token** | **str**|  | [optional]
- **token** | **str**|  | [optional]
- **limit** | **int**|  | [optional]
-
-### Return type
-
-[**GcListMutedUsersResponse**](GcListMutedUsersResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful response |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **gc_mute_user**
-> SendBirdGroupChannel gc_mute_user(channel_url)
-
-Mute a user
-
-## Mute a user  Mutes a user in a group channel. A muted user remains in the channel and is allowed to view the messages, but can't send any messages until unmuted.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-mute-a-user ----------------------------
-
-### Example
-
-
-```python
-import time
-import sendbird_platform_sdk
-from sendbird_platform_sdk.api import moderation_api
-from sendbird_platform_sdk.model.gc_mute_user_data import GcMuteUserData
-from sendbird_platform_sdk.model.send_bird_group_channel import SendBirdGroupChannel
-from pprint import pprint
-# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird_platform_sdk.Configuration(
-    host = "https://api-APP_ID.sendbird.com"
-)
-
-
-# Enter a context with an instance of the API client
-with sendbird_platform_sdk.ApiClient() as api_client:
-    # Create an instance of the API class
-    api_instance = moderation_api.ModerationApi(api_client)
-    channel_url = "channel_url_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
-    gc_mute_user_data = GcMuteUserData(
-        channel_url="channel_url_example",
-        user_id="user_id_example",
-        seconds=1,
-        description="description_example",
-    ) # GcMuteUserData |  (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        # Mute a user
-        api_response = api_instance.gc_mute_user(channel_url)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling ModerationApi->gc_mute_user: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # Mute a user
-        api_response = api_instance.gc_mute_user(channel_url, api_token=api_token, gc_mute_user_data=gc_mute_user_data)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling ModerationApi->gc_mute_user: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **channel_url** | **str**|  |
- **api_token** | **str**|  | [optional]
- **gc_mute_user_data** | [**GcMuteUserData**](GcMuteUserData.md)|  | [optional]
-
-### Return type
-
-[**SendBirdGroupChannel**](SendBirdGroupChannel.md)
+[**SendbirdOpenChannel**](SendbirdOpenChannel.md)
 
 ### Authorization
 
@@ -617,496 +252,6 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful response |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **gc_unban_user_by_id**
-> OcDeleteChannelByUrl200Response gc_unban_user_by_id(channel_url, banned_user_id)
-
-Unban a user
-
-## Unban a user  Unbans a user from a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-unban-a-user ----------------------------
-
-### Example
-
-
-```python
-import time
-import sendbird_platform_sdk
-from sendbird_platform_sdk.api import moderation_api
-from sendbird_platform_sdk.model.oc_delete_channel_by_url200_response import OcDeleteChannelByUrl200Response
-from pprint import pprint
-# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird_platform_sdk.Configuration(
-    host = "https://api-APP_ID.sendbird.com"
-)
-
-
-# Enter a context with an instance of the API client
-with sendbird_platform_sdk.ApiClient() as api_client:
-    # Create an instance of the API class
-    api_instance = moderation_api.ModerationApi(api_client)
-    channel_url = "channel_url_example" # str | 
-    banned_user_id = "banned_user_id_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        # Unban a user
-        api_response = api_instance.gc_unban_user_by_id(channel_url, banned_user_id)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling ModerationApi->gc_unban_user_by_id: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # Unban a user
-        api_response = api_instance.gc_unban_user_by_id(channel_url, banned_user_id, api_token=api_token)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling ModerationApi->gc_unban_user_by_id: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **channel_url** | **str**|  |
- **banned_user_id** | **str**|  |
- **api_token** | **str**|  | [optional]
-
-### Return type
-
-[**OcDeleteChannelByUrl200Response**](OcDeleteChannelByUrl200Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful response |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **gc_unmute_user_by_id**
-> OcDeleteChannelByUrl200Response gc_unmute_user_by_id(channel_url, muted_user_id)
-
-Unmute a user
-
-## Unmute a user  Unmutes a user within a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-unmute-a-user ----------------------------
-
-### Example
-
-
-```python
-import time
-import sendbird_platform_sdk
-from sendbird_platform_sdk.api import moderation_api
-from sendbird_platform_sdk.model.oc_delete_channel_by_url200_response import OcDeleteChannelByUrl200Response
-from pprint import pprint
-# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird_platform_sdk.Configuration(
-    host = "https://api-APP_ID.sendbird.com"
-)
-
-
-# Enter a context with an instance of the API client
-with sendbird_platform_sdk.ApiClient() as api_client:
-    # Create an instance of the API class
-    api_instance = moderation_api.ModerationApi(api_client)
-    channel_url = "channel_url_example" # str | 
-    muted_user_id = "muted_user_id_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        # Unmute a user
-        api_response = api_instance.gc_unmute_user_by_id(channel_url, muted_user_id)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling ModerationApi->gc_unmute_user_by_id: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # Unmute a user
-        api_response = api_instance.gc_unmute_user_by_id(channel_url, muted_user_id, api_token=api_token)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling ModerationApi->gc_unmute_user_by_id: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **channel_url** | **str**|  |
- **muted_user_id** | **str**|  |
- **api_token** | **str**|  | [optional]
-
-### Return type
-
-[**OcDeleteChannelByUrl200Response**](OcDeleteChannelByUrl200Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful response |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **gc_update_ban_by_id**
-> GcUpdateBanByIdResponse gc_update_ban_by_id(channel_url, banned_user_id)
-
-Update a ban
-
-## Update a ban  Updates details of a ban imposed on a user. You can change the length of the ban with this action, and also provide an updated description.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-update-a-ban ----------------------------
-
-### Example
-
-
-```python
-import time
-import sendbird_platform_sdk
-from sendbird_platform_sdk.api import moderation_api
-from sendbird_platform_sdk.model.gc_update_ban_by_id_data import GcUpdateBanByIdData
-from sendbird_platform_sdk.model.gc_update_ban_by_id_response import GcUpdateBanByIdResponse
-from pprint import pprint
-# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird_platform_sdk.Configuration(
-    host = "https://api-APP_ID.sendbird.com"
-)
-
-
-# Enter a context with an instance of the API client
-with sendbird_platform_sdk.ApiClient() as api_client:
-    # Create an instance of the API class
-    api_instance = moderation_api.ModerationApi(api_client)
-    channel_url = "channel_url_example" # str | 
-    banned_user_id = "banned_user_id_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
-    gc_update_ban_by_id_data = GcUpdateBanByIdData(
-        channel_url="channel_url_example",
-        banned_user_id="banned_user_id_example",
-        seconds=1,
-        description="description_example",
-    ) # GcUpdateBanByIdData |  (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        # Update a ban
-        api_response = api_instance.gc_update_ban_by_id(channel_url, banned_user_id)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling ModerationApi->gc_update_ban_by_id: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # Update a ban
-        api_response = api_instance.gc_update_ban_by_id(channel_url, banned_user_id, api_token=api_token, gc_update_ban_by_id_data=gc_update_ban_by_id_data)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling ModerationApi->gc_update_ban_by_id: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **channel_url** | **str**|  |
- **banned_user_id** | **str**|  |
- **api_token** | **str**|  | [optional]
- **gc_update_ban_by_id_data** | [**GcUpdateBanByIdData**](GcUpdateBanByIdData.md)|  | [optional]
-
-### Return type
-
-[**GcUpdateBanByIdResponse**](GcUpdateBanByIdResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful response |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **gc_view_ban_by_id**
-> GcViewBanByIdResponse gc_view_ban_by_id(channel_url, banned_user_id)
-
-View a ban
-
-## View a ban  Retrieves details of a ban imposed on a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-view-a-ban ----------------------------
-
-### Example
-
-
-```python
-import time
-import sendbird_platform_sdk
-from sendbird_platform_sdk.api import moderation_api
-from sendbird_platform_sdk.model.gc_view_ban_by_id_response import GcViewBanByIdResponse
-from pprint import pprint
-# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird_platform_sdk.Configuration(
-    host = "https://api-APP_ID.sendbird.com"
-)
-
-
-# Enter a context with an instance of the API client
-with sendbird_platform_sdk.ApiClient() as api_client:
-    # Create an instance of the API class
-    api_instance = moderation_api.ModerationApi(api_client)
-    channel_url = "channel_url_example" # str | 
-    banned_user_id = "banned_user_id_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        # View a ban
-        api_response = api_instance.gc_view_ban_by_id(channel_url, banned_user_id)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling ModerationApi->gc_view_ban_by_id: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # View a ban
-        api_response = api_instance.gc_view_ban_by_id(channel_url, banned_user_id, api_token=api_token)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling ModerationApi->gc_view_ban_by_id: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **channel_url** | **str**|  |
- **banned_user_id** | **str**|  |
- **api_token** | **str**|  | [optional]
-
-### Return type
-
-[**GcViewBanByIdResponse**](GcViewBanByIdResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful response |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **gc_view_mute_by_id**
-> GcViewMuteByIdResponse gc_view_mute_by_id(channel_url, muted_user_id)
-
-View a mute
-
-## View a mute  Checks if a user is muted in a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-view-a-mute ----------------------------
-
-### Example
-
-
-```python
-import time
-import sendbird_platform_sdk
-from sendbird_platform_sdk.api import moderation_api
-from sendbird_platform_sdk.model.gc_view_mute_by_id_response import GcViewMuteByIdResponse
-from pprint import pprint
-# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird_platform_sdk.Configuration(
-    host = "https://api-APP_ID.sendbird.com"
-)
-
-
-# Enter a context with an instance of the API client
-with sendbird_platform_sdk.ApiClient() as api_client:
-    # Create an instance of the API class
-    api_instance = moderation_api.ModerationApi(api_client)
-    channel_url = "channel_url_example" # str | 
-    muted_user_id = "muted_user_id_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        # View a mute
-        api_response = api_instance.gc_view_mute_by_id(channel_url, muted_user_id)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling ModerationApi->gc_view_mute_by_id: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # View a mute
-        api_response = api_instance.gc_view_mute_by_id(channel_url, muted_user_id, api_token=api_token)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling ModerationApi->gc_view_mute_by_id: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **channel_url** | **str**|  |
- **muted_user_id** | **str**|  |
- **api_token** | **str**|  | [optional]
-
-### Return type
-
-[**GcViewMuteByIdResponse**](GcViewMuteByIdResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful response |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **list_banned_channels**
-> ListBannedChannelsResponse list_banned_channels(user_id)
-
-List banned channels
-
-## List banned channels  Retrieves a list of open and group channels with additional information where a user is banned.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-list-banned-channels ----------------------------   `user_id`      Type: string      Description: Specifies the unique ID of the target user.
-
-### Example
-
-
-```python
-import time
-import sendbird_platform_sdk
-from sendbird_platform_sdk.api import moderation_api
-from sendbird_platform_sdk.model.list_banned_channels_response import ListBannedChannelsResponse
-from pprint import pprint
-# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird_platform_sdk.Configuration(
-    host = "https://api-APP_ID.sendbird.com"
-)
-
-
-# Enter a context with an instance of the API client
-with sendbird_platform_sdk.ApiClient() as api_client:
-    # Create an instance of the API class
-    api_instance = moderation_api.ModerationApi(api_client)
-    user_id = "user_id_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
-    token = "token_example" # str |  (optional)
-    limit = 1 # int |  (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        # List banned channels
-        api_response = api_instance.list_banned_channels(user_id)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling ModerationApi->list_banned_channels: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # List banned channels
-        api_response = api_instance.list_banned_channels(user_id, api_token=api_token, token=token, limit=limit)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling ModerationApi->list_banned_channels: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **user_id** | **str**|  |
- **api_token** | **str**|  | [optional]
- **token** | **str**|  | [optional]
- **limit** | **int**|  | [optional]
-
-### Return type
-
-[**ListBannedChannelsResponse**](ListBannedChannelsResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -1123,7 +268,7 @@ No authorization required
 
 List blocked users
 
-## List blocked users  Retrieves a list of other users that a user has blocked.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-list-blocked-users ----------------------------   `user_id`      Type: string      Description: Specifies the unique ID of the target user.
+## List blocked by and blocking users  This action retrieves a list of users who are either blocked by a specific user or a list of users who are blocking a specific user.  [https://sendbird.com/docs/chat/platform-api/v3/moderation/listing-blocked-and-blocking-users/list-blocked-and-blocking-users#1-list-blocked-by-and-blocking-users](https://sendbird.com/docs/chat/platform-api/v3/moderation/listing-blocked-and-blocking-users/list-blocked-and-blocking-users#1-list-blocked-by-and-blocking-users)  `user_id`   Type: string   Description: Specifies the unique ID of the target user.
 
 ### Example
 
@@ -1145,13 +290,14 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = moderation_api.ModerationApi(api_client)
-    user_id = "user_id_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
+    user_id = "user_id_example" # str | (Required) 
+    list = "blocked_by_me" # str | Specifies whether to retrieve a list of users who are blocked by the specified user or a list of users who are blocking the specified user. Acceptable values are blocked_by_me and blocking_me. The `me` in the values refers to the user specified in the parameter. (Default: blocked_by_me) (optional)
     token = "token_example" # str |  (optional)
     limit = 1 # int |  (optional)
-    user_ids = "user_ids_example" # str |  (optional)
+    user_ids = "user_ids_example" # str | Specifies the user IDs of the blocked or blocking users to search for. The value should be a comma-separated string that consists of multiple URL encoded user IDs. (optional)
     metadatakey = "metadatakey_example" # str |  (optional)
     metadatavalues_in = "metadatavalues_in_example" # str |  (optional)
+    api_token = "{{API_TOKEN}}" # str |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -1165,7 +311,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # List blocked users
-        api_response = api_instance.list_blocked_users(user_id, api_token=api_token, token=token, limit=limit, user_ids=user_ids, metadatakey=metadatakey, metadatavalues_in=metadatavalues_in)
+        api_response = api_instance.list_blocked_users(user_id, list=list, token=token, limit=limit, user_ids=user_ids, metadatakey=metadatakey, metadatavalues_in=metadatavalues_in, api_token=api_token)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling ModerationApi->list_blocked_users: %s\n" % e)
@@ -1176,13 +322,14 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user_id** | **str**|  |
- **api_token** | **str**|  | [optional]
+ **user_id** | **str**| (Required)  |
+ **list** | **str**| Specifies whether to retrieve a list of users who are blocked by the specified user or a list of users who are blocking the specified user. Acceptable values are blocked_by_me and blocking_me. The &#x60;me&#x60; in the values refers to the user specified in the parameter. (Default: blocked_by_me) | [optional]
  **token** | **str**|  | [optional]
  **limit** | **int**|  | [optional]
- **user_ids** | **str**|  | [optional]
+ **user_ids** | **str**| Specifies the user IDs of the blocked or blocking users to search for. The value should be a comma-separated string that consists of multiple URL encoded user IDs. | [optional]
  **metadatakey** | **str**|  | [optional]
  **metadatavalues_in** | **str**|  | [optional]
+ **api_token** | **str**|  | [optional]
 
 ### Return type
 
@@ -1206,1006 +353,12 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_muted_channels**
-> ListMutedChannelsResponse list_muted_channels(user_id)
-
-List muted channels
-
-## List muted channels  Retrieves a list of open and group channels with additional information where a user is muted.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-list-muted-channels ----------------------------   `user_id`      Type: string      Description: Specifies the unique ID of the target user.
-
-### Example
-
-
-```python
-import time
-import sendbird_platform_sdk
-from sendbird_platform_sdk.api import moderation_api
-from sendbird_platform_sdk.model.list_muted_channels_response import ListMutedChannelsResponse
-from pprint import pprint
-# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird_platform_sdk.Configuration(
-    host = "https://api-APP_ID.sendbird.com"
-)
-
-
-# Enter a context with an instance of the API client
-with sendbird_platform_sdk.ApiClient() as api_client:
-    # Create an instance of the API class
-    api_instance = moderation_api.ModerationApi(api_client)
-    user_id = "user_id_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
-    token = "token_example" # str |  (optional)
-    limit = 1 # int |  (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        # List muted channels
-        api_response = api_instance.list_muted_channels(user_id)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling ModerationApi->list_muted_channels: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # List muted channels
-        api_response = api_instance.list_muted_channels(user_id, api_token=api_token, token=token, limit=limit)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling ModerationApi->list_muted_channels: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **user_id** | **str**|  |
- **api_token** | **str**|  | [optional]
- **token** | **str**|  | [optional]
- **limit** | **int**|  | [optional]
-
-### Return type
-
-[**ListMutedChannelsResponse**](ListMutedChannelsResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful response |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **mute_in_channels_with_custom_channel_types**
-> {str: (bool, date, datetime, dict, float, int, list, str, none_type)} mute_in_channels_with_custom_channel_types(user_id)
-
-Mute in channels with custom channel types
-
-## Mute in channels with custom channel types  Mutes a user in channels with particular custom channel types.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-mute-in-channels-with-custom-channel-types ----------------------------
-
-### Example
-
-
-```python
-import time
-import sendbird_platform_sdk
-from sendbird_platform_sdk.api import moderation_api
-from sendbird_platform_sdk.model.mute_in_channels_with_custom_channel_types_data import MuteInChannelsWithCustomChannelTypesData
-from pprint import pprint
-# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird_platform_sdk.Configuration(
-    host = "https://api-APP_ID.sendbird.com"
-)
-
-
-# Enter a context with an instance of the API client
-with sendbird_platform_sdk.ApiClient() as api_client:
-    # Create an instance of the API class
-    api_instance = moderation_api.ModerationApi(api_client)
-    user_id = "user_id_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
-    mute_in_channels_with_custom_channel_types_data = MuteInChannelsWithCustomChannelTypesData(
-        channel_custom_types=[
-            "channel_custom_types_example",
-        ],
-    ) # MuteInChannelsWithCustomChannelTypesData |  (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        # Mute in channels with custom channel types
-        api_response = api_instance.mute_in_channels_with_custom_channel_types(user_id)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling ModerationApi->mute_in_channels_with_custom_channel_types: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # Mute in channels with custom channel types
-        api_response = api_instance.mute_in_channels_with_custom_channel_types(user_id, api_token=api_token, mute_in_channels_with_custom_channel_types_data=mute_in_channels_with_custom_channel_types_data)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling ModerationApi->mute_in_channels_with_custom_channel_types: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **user_id** | **str**|  |
- **api_token** | **str**|  | [optional]
- **mute_in_channels_with_custom_channel_types_data** | [**MuteInChannelsWithCustomChannelTypesData**](MuteInChannelsWithCustomChannelTypesData.md)|  | [optional]
-
-### Return type
-
-**{str: (bool, date, datetime, dict, float, int, list, str, none_type)}**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful response |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **oc_ban_user**
-> OcBanUserResponse oc_ban_user(channel_url)
-
-Ban a user
-
-## Ban a user  Bans a user from an open channel. A banned user is immediately expelled from a channel and allowed to participate in the channel again after a set time period.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-ban-a-user ----------------------------
-
-### Example
-
-
-```python
-import time
-import sendbird_platform_sdk
-from sendbird_platform_sdk.api import moderation_api
-from sendbird_platform_sdk.model.oc_ban_user_response import OcBanUserResponse
-from sendbird_platform_sdk.model.oc_ban_user_data import OcBanUserData
-from pprint import pprint
-# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird_platform_sdk.Configuration(
-    host = "https://api-APP_ID.sendbird.com"
-)
-
-
-# Enter a context with an instance of the API client
-with sendbird_platform_sdk.ApiClient() as api_client:
-    # Create an instance of the API class
-    api_instance = moderation_api.ModerationApi(api_client)
-    channel_url = "channel_url_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
-    oc_ban_user_data = OcBanUserData(
-        channel_url="channel_url_example",
-        user_id="user_id_example",
-        agent_id="agent_id_example",
-        seconds=1,
-        description="description_example",
-    ) # OcBanUserData |  (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        # Ban a user
-        api_response = api_instance.oc_ban_user(channel_url)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling ModerationApi->oc_ban_user: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # Ban a user
-        api_response = api_instance.oc_ban_user(channel_url, api_token=api_token, oc_ban_user_data=oc_ban_user_data)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling ModerationApi->oc_ban_user: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **channel_url** | **str**|  |
- **api_token** | **str**|  | [optional]
- **oc_ban_user_data** | [**OcBanUserData**](OcBanUserData.md)|  | [optional]
-
-### Return type
-
-[**OcBanUserResponse**](OcBanUserResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful response |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **oc_freeze_channel**
-> SendBirdOpenChannel oc_freeze_channel(channel_url)
-
-Freeze a channel
-
-## Freeze a channel  Freezes or unfreezes an open channel.  > __Note__: Only users designated as channel operators are allowed to talk when a channel is frozen.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-freeze-a-channel ----------------------------
-
-### Example
-
-
-```python
-import time
-import sendbird_platform_sdk
-from sendbird_platform_sdk.api import moderation_api
-from sendbird_platform_sdk.model.oc_freeze_channel_data import OcFreezeChannelData
-from sendbird_platform_sdk.model.send_bird_open_channel import SendBirdOpenChannel
-from pprint import pprint
-# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird_platform_sdk.Configuration(
-    host = "https://api-APP_ID.sendbird.com"
-)
-
-
-# Enter a context with an instance of the API client
-with sendbird_platform_sdk.ApiClient() as api_client:
-    # Create an instance of the API class
-    api_instance = moderation_api.ModerationApi(api_client)
-    channel_url = "channel_url_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
-    oc_freeze_channel_data = OcFreezeChannelData(
-        channel_url="channel_url_example",
-        freeze=True,
-    ) # OcFreezeChannelData |  (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        # Freeze a channel
-        api_response = api_instance.oc_freeze_channel(channel_url)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling ModerationApi->oc_freeze_channel: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # Freeze a channel
-        api_response = api_instance.oc_freeze_channel(channel_url, api_token=api_token, oc_freeze_channel_data=oc_freeze_channel_data)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling ModerationApi->oc_freeze_channel: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **channel_url** | **str**|  |
- **api_token** | **str**|  | [optional]
- **oc_freeze_channel_data** | [**OcFreezeChannelData**](OcFreezeChannelData.md)|  | [optional]
-
-### Return type
-
-[**SendBirdOpenChannel**](SendBirdOpenChannel.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful response |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **oc_list_banned_users**
-> OcListBannedUsersResponse oc_list_banned_users(channel_url)
-
-List banned users
-
-## List banned users  Retrieves a list of banned users from a specific open channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-list-banned-users ----------------------------   `channel_url`      Type: string      Description: Specifies the URL of the channel where to retrieve a list of banned users.
-
-### Example
-
-
-```python
-import time
-import sendbird_platform_sdk
-from sendbird_platform_sdk.api import moderation_api
-from sendbird_platform_sdk.model.oc_list_banned_users_response import OcListBannedUsersResponse
-from pprint import pprint
-# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird_platform_sdk.Configuration(
-    host = "https://api-APP_ID.sendbird.com"
-)
-
-
-# Enter a context with an instance of the API client
-with sendbird_platform_sdk.ApiClient() as api_client:
-    # Create an instance of the API class
-    api_instance = moderation_api.ModerationApi(api_client)
-    channel_url = "channel_url_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
-    token = "token_example" # str |  (optional)
-    limit = 1 # int |  (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        # List banned users
-        api_response = api_instance.oc_list_banned_users(channel_url)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling ModerationApi->oc_list_banned_users: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # List banned users
-        api_response = api_instance.oc_list_banned_users(channel_url, api_token=api_token, token=token, limit=limit)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling ModerationApi->oc_list_banned_users: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **channel_url** | **str**|  |
- **api_token** | **str**|  | [optional]
- **token** | **str**|  | [optional]
- **limit** | **int**|  | [optional]
-
-### Return type
-
-[**OcListBannedUsersResponse**](OcListBannedUsersResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful response |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **oc_list_muted_users**
-> OcListMutedUsersResponse oc_list_muted_users(channel_url)
-
-List muted users
-
-## List muted users  Retrieves a list of muted users in the channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-list-muted-users ----------------------------   `channel_url`      Type: string      Description: Specifies the URL of the channel to retrieve a list of muted users.
-
-### Example
-
-
-```python
-import time
-import sendbird_platform_sdk
-from sendbird_platform_sdk.api import moderation_api
-from sendbird_platform_sdk.model.oc_list_muted_users_response import OcListMutedUsersResponse
-from pprint import pprint
-# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird_platform_sdk.Configuration(
-    host = "https://api-APP_ID.sendbird.com"
-)
-
-
-# Enter a context with an instance of the API client
-with sendbird_platform_sdk.ApiClient() as api_client:
-    # Create an instance of the API class
-    api_instance = moderation_api.ModerationApi(api_client)
-    channel_url = "channel_url_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
-    token = "token_example" # str |  (optional)
-    limit = 1 # int |  (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        # List muted users
-        api_response = api_instance.oc_list_muted_users(channel_url)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling ModerationApi->oc_list_muted_users: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # List muted users
-        api_response = api_instance.oc_list_muted_users(channel_url, api_token=api_token, token=token, limit=limit)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling ModerationApi->oc_list_muted_users: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **channel_url** | **str**|  |
- **api_token** | **str**|  | [optional]
- **token** | **str**|  | [optional]
- **limit** | **int**|  | [optional]
-
-### Return type
-
-[**OcListMutedUsersResponse**](OcListMutedUsersResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful response |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **oc_mute_user**
-> SendBirdOpenChannel oc_mute_user(channel_url)
-
-Mute a user
-
-## Mute a user  Mutes a user in the channel. A muted user remains in the channel and is allowed to view the messages, but can't send any messages until unmuted.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-mute-a-user
-
-### Example
-
-
-```python
-import time
-import sendbird_platform_sdk
-from sendbird_platform_sdk.api import moderation_api
-from sendbird_platform_sdk.model.send_bird_open_channel import SendBirdOpenChannel
-from sendbird_platform_sdk.model.oc_mute_user_data import OcMuteUserData
-from pprint import pprint
-# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird_platform_sdk.Configuration(
-    host = "https://api-APP_ID.sendbird.com"
-)
-
-
-# Enter a context with an instance of the API client
-with sendbird_platform_sdk.ApiClient() as api_client:
-    # Create an instance of the API class
-    api_instance = moderation_api.ModerationApi(api_client)
-    channel_url = "channel_url_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
-    oc_mute_user_data = OcMuteUserData(
-        user_id="user_id_example",
-        seconds=1,
-        description="description_example",
-    ) # OcMuteUserData |  (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        # Mute a user
-        api_response = api_instance.oc_mute_user(channel_url)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling ModerationApi->oc_mute_user: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # Mute a user
-        api_response = api_instance.oc_mute_user(channel_url, api_token=api_token, oc_mute_user_data=oc_mute_user_data)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling ModerationApi->oc_mute_user: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **channel_url** | **str**|  |
- **api_token** | **str**|  | [optional]
- **oc_mute_user_data** | [**OcMuteUserData**](OcMuteUserData.md)|  | [optional]
-
-### Return type
-
-[**SendBirdOpenChannel**](SendBirdOpenChannel.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful response |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **oc_unban_user_by_id**
-> OcDeleteChannelByUrl200Response oc_unban_user_by_id(channel_url, banned_user_id)
-
-Unban a user
-
-## Unban a user  Unbans a user from an open channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-unban-a-user ----------------------------
-
-### Example
-
-
-```python
-import time
-import sendbird_platform_sdk
-from sendbird_platform_sdk.api import moderation_api
-from sendbird_platform_sdk.model.oc_delete_channel_by_url200_response import OcDeleteChannelByUrl200Response
-from pprint import pprint
-# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird_platform_sdk.Configuration(
-    host = "https://api-APP_ID.sendbird.com"
-)
-
-
-# Enter a context with an instance of the API client
-with sendbird_platform_sdk.ApiClient() as api_client:
-    # Create an instance of the API class
-    api_instance = moderation_api.ModerationApi(api_client)
-    channel_url = "channel_url_example" # str | 
-    banned_user_id = "banned_user_id_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        # Unban a user
-        api_response = api_instance.oc_unban_user_by_id(channel_url, banned_user_id)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling ModerationApi->oc_unban_user_by_id: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # Unban a user
-        api_response = api_instance.oc_unban_user_by_id(channel_url, banned_user_id, api_token=api_token)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling ModerationApi->oc_unban_user_by_id: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **channel_url** | **str**|  |
- **banned_user_id** | **str**|  |
- **api_token** | **str**|  | [optional]
-
-### Return type
-
-[**OcDeleteChannelByUrl200Response**](OcDeleteChannelByUrl200Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful response |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **oc_unmute_user_by_id**
-> OcDeleteChannelByUrl200Response oc_unmute_user_by_id(channel_url, muted_user_id)
-
-Unmute a user
-
-## Unmute a user  Unmutes a user from an open channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-unmute-a-user ----------------------------
-
-### Example
-
-
-```python
-import time
-import sendbird_platform_sdk
-from sendbird_platform_sdk.api import moderation_api
-from sendbird_platform_sdk.model.oc_delete_channel_by_url200_response import OcDeleteChannelByUrl200Response
-from pprint import pprint
-# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird_platform_sdk.Configuration(
-    host = "https://api-APP_ID.sendbird.com"
-)
-
-
-# Enter a context with an instance of the API client
-with sendbird_platform_sdk.ApiClient() as api_client:
-    # Create an instance of the API class
-    api_instance = moderation_api.ModerationApi(api_client)
-    channel_url = "channel_url_example" # str | 
-    muted_user_id = "muted_user_id_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        # Unmute a user
-        api_response = api_instance.oc_unmute_user_by_id(channel_url, muted_user_id)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling ModerationApi->oc_unmute_user_by_id: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # Unmute a user
-        api_response = api_instance.oc_unmute_user_by_id(channel_url, muted_user_id, api_token=api_token)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling ModerationApi->oc_unmute_user_by_id: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **channel_url** | **str**|  |
- **muted_user_id** | **str**|  |
- **api_token** | **str**|  | [optional]
-
-### Return type
-
-[**OcDeleteChannelByUrl200Response**](OcDeleteChannelByUrl200Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful response |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **oc_update_ban_by_id**
-> OcUpdateBanByIdResponse oc_update_ban_by_id(channel_url, banned_user_id)
-
-Update a ban
-
-## Update a ban  Updates details of a ban imposed on a user. You can change the length of a ban with this action, and also provide an updated description.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-update-a-ban ----------------------------
-
-### Example
-
-
-```python
-import time
-import sendbird_platform_sdk
-from sendbird_platform_sdk.api import moderation_api
-from sendbird_platform_sdk.model.oc_update_ban_by_id_response import OcUpdateBanByIdResponse
-from sendbird_platform_sdk.model.oc_update_ban_by_id_data import OcUpdateBanByIdData
-from pprint import pprint
-# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird_platform_sdk.Configuration(
-    host = "https://api-APP_ID.sendbird.com"
-)
-
-
-# Enter a context with an instance of the API client
-with sendbird_platform_sdk.ApiClient() as api_client:
-    # Create an instance of the API class
-    api_instance = moderation_api.ModerationApi(api_client)
-    channel_url = "channel_url_example" # str | 
-    banned_user_id = "banned_user_id_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
-    oc_update_ban_by_id_data = OcUpdateBanByIdData(
-        channel_url="channel_url_example",
-        banned_user_id="banned_user_id_example",
-        seconds=1,
-        description="description_example",
-    ) # OcUpdateBanByIdData |  (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        # Update a ban
-        api_response = api_instance.oc_update_ban_by_id(channel_url, banned_user_id)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling ModerationApi->oc_update_ban_by_id: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # Update a ban
-        api_response = api_instance.oc_update_ban_by_id(channel_url, banned_user_id, api_token=api_token, oc_update_ban_by_id_data=oc_update_ban_by_id_data)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling ModerationApi->oc_update_ban_by_id: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **channel_url** | **str**|  |
- **banned_user_id** | **str**|  |
- **api_token** | **str**|  | [optional]
- **oc_update_ban_by_id_data** | [**OcUpdateBanByIdData**](OcUpdateBanByIdData.md)|  | [optional]
-
-### Return type
-
-[**OcUpdateBanByIdResponse**](OcUpdateBanByIdResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful response |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **oc_view_ban_by_id**
-> OcViewBanByIdResponse oc_view_ban_by_id(channel_url, banned_user_id)
-
-View a ban
-
-## View a ban  Retrieves details of a ban imposed on a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-view-a-ban ----------------------------
-
-### Example
-
-
-```python
-import time
-import sendbird_platform_sdk
-from sendbird_platform_sdk.api import moderation_api
-from sendbird_platform_sdk.model.oc_view_ban_by_id_response import OcViewBanByIdResponse
-from pprint import pprint
-# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird_platform_sdk.Configuration(
-    host = "https://api-APP_ID.sendbird.com"
-)
-
-
-# Enter a context with an instance of the API client
-with sendbird_platform_sdk.ApiClient() as api_client:
-    # Create an instance of the API class
-    api_instance = moderation_api.ModerationApi(api_client)
-    channel_url = "channel_url_example" # str | 
-    banned_user_id = "banned_user_id_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        # View a ban
-        api_response = api_instance.oc_view_ban_by_id(channel_url, banned_user_id)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling ModerationApi->oc_view_ban_by_id: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # View a ban
-        api_response = api_instance.oc_view_ban_by_id(channel_url, banned_user_id, api_token=api_token)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling ModerationApi->oc_view_ban_by_id: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **channel_url** | **str**|  |
- **banned_user_id** | **str**|  |
- **api_token** | **str**|  | [optional]
-
-### Return type
-
-[**OcViewBanByIdResponse**](OcViewBanByIdResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful response |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **oc_view_mute_by_id**
-> OcViewMuteByIdResponse oc_view_mute_by_id(channel_url, muted_user_id)
-
-View a mute
-
-## View a mute  Checks if a user is muted in an open channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-view-a-mute ----------------------------
-
-### Example
-
-
-```python
-import time
-import sendbird_platform_sdk
-from sendbird_platform_sdk.api import moderation_api
-from sendbird_platform_sdk.model.oc_view_mute_by_id_response import OcViewMuteByIdResponse
-from pprint import pprint
-# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = sendbird_platform_sdk.Configuration(
-    host = "https://api-APP_ID.sendbird.com"
-)
-
-
-# Enter a context with an instance of the API client
-with sendbird_platform_sdk.ApiClient() as api_client:
-    # Create an instance of the API class
-    api_instance = moderation_api.ModerationApi(api_client)
-    channel_url = "channel_url_example" # str | 
-    muted_user_id = "muted_user_id_example" # str | 
-    api_token = "{{API_TOKEN}}" # str |  (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        # View a mute
-        api_response = api_instance.oc_view_mute_by_id(channel_url, muted_user_id)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling ModerationApi->oc_view_mute_by_id: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # View a mute
-        api_response = api_instance.oc_view_mute_by_id(channel_url, muted_user_id, api_token=api_token)
-        pprint(api_response)
-    except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling ModerationApi->oc_view_mute_by_id: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **channel_url** | **str**|  |
- **muted_user_id** | **str**|  |
- **api_token** | **str**|  | [optional]
-
-### Return type
-
-[**OcViewMuteByIdResponse**](OcViewMuteByIdResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful response |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **unblock_user_by_id**
-> {str: (bool, date, datetime, dict, float, int, list, str, none_type)} unblock_user_by_id(user_id, target_id)
+# **unblock_a_user**
+> {str: (bool, date, datetime, dict, float, int, list, str, none_type)} unblock_a_user(user_id, target_id)
 
 Unblock a user
 
-## Unblock a user  Unblocks the user.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-unblock-a-user ----------------------------
+## Unblock a user  Unblocks the user.  https://sendbird.com/docs/chat/platform-api/v3/moderation/blocking-users/unblock-a-user#1-unblock-a-user
 
 ### Example
 
@@ -2226,26 +379,26 @@ configuration = sendbird_platform_sdk.Configuration(
 with sendbird_platform_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = moderation_api.ModerationApi(api_client)
-    user_id = "user_id_example" # str | 
-    target_id = "target_id_example" # str | 
+    user_id = "user_id_example" # str | (Required) 
+    target_id = "target_id_example" # str | (Required) 
     api_token = "{{API_TOKEN}}" # str |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Unblock a user
-        api_response = api_instance.unblock_user_by_id(user_id, target_id)
+        api_response = api_instance.unblock_a_user(user_id, target_id)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling ModerationApi->unblock_user_by_id: %s\n" % e)
+        print("Exception when calling ModerationApi->unblock_a_user: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Unblock a user
-        api_response = api_instance.unblock_user_by_id(user_id, target_id, api_token=api_token)
+        api_response = api_instance.unblock_a_user(user_id, target_id, api_token=api_token)
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
-        print("Exception when calling ModerationApi->unblock_user_by_id: %s\n" % e)
+        print("Exception when calling ModerationApi->unblock_a_user: %s\n" % e)
 ```
 
 
@@ -2253,8 +406,8 @@ with sendbird_platform_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user_id** | **str**|  |
- **target_id** | **str**|  |
+ **user_id** | **str**| (Required)  |
+ **target_id** | **str**| (Required)  |
  **api_token** | **str**|  | [optional]
 
 ### Return type

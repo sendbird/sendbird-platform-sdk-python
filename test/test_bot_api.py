@@ -1,7 +1,7 @@
 """
     Sendbird Platform SDK
 
-    Sendbird Platform API SDK  https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api  # noqa: E501
+    Sendbird Platform API SDK  [https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api](https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api)  Contact Support:   Name: Sendbird   Email: [support@sendbird.com](https://mailto:support@sendbird.com)  # noqa: E501
 
     The version of the OpenAPI document: 1.0.0
     Contact: support@sendbird.com
@@ -24,17 +24,10 @@ class TestBotApi(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def test_create_bot(self):
-        """Test case for create_bot
+    def test_create_a_bot(self):
+        """Test case for create_a_bot
 
         Create a bot  # noqa: E501
-        """
-        pass
-
-    def test_delete_bot_by_id(self):
-        """Test case for delete_bot_by_id
-
-        Delete a bot  # noqa: E501
         """
         pass
 
@@ -45,17 +38,17 @@ class TestBotApi(unittest.TestCase):
         """
         pass
 
-    def test_leave_channels(self):
-        """Test case for leave_channels
+    def test_leave_a_group_channel(self):
+        """Test case for leave_a_group_channel
 
-        Leave channels - When leaving all channels  # noqa: E501
+        Leave channels - When leaving a specific channel  # noqa: E501
         """
         pass
 
-    def test_leave_channels_by_url(self):
-        """Test case for leave_channels_by_url
+    def test_leave_group_channels(self):
+        """Test case for leave_group_channels
 
-        Leave channels - When leaving a channel by its channel URL  # noqa: E501
+        Leave channels - When leaving all channels  # noqa: E501
         """
         pass
 
@@ -66,24 +59,10 @@ class TestBotApi(unittest.TestCase):
         """
         pass
 
-    def test_send_bots_message(self):
-        """Test case for send_bots_message
+    def test_send_a_bot_message(self):
+        """Test case for send_a_bot_message
 
         Send a bot's message  # noqa: E501
-        """
-        pass
-
-    def test_update_bot_by_id(self):
-        """Test case for update_bot_by_id
-
-        Update a bot  # noqa: E501
-        """
-        pass
-
-    def test_view_bot_by_id(self):
-        """Test case for view_bot_by_id
-
-        View a bot  # noqa: E501
         """
         pass
 
