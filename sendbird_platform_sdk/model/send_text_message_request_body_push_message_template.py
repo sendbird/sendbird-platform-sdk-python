@@ -31,8 +31,8 @@ from sendbird_platform_sdk.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from sendbird_platform_sdk.model.send_text_message_request_body_push_message_template_one_of import SendTextMessageRequestBodyPushMessageTemplateOneOf
-    globals()['SendTextMessageRequestBodyPushMessageTemplateOneOf'] = SendTextMessageRequestBodyPushMessageTemplateOneOf
+    from sendbird_platform_sdk.model.send_a_message_request_push_message_template_one_of import SendAMessageRequestPushMessageTemplateOneOf
+    globals()['SendAMessageRequestPushMessageTemplateOneOf'] = SendAMessageRequestPushMessageTemplateOneOf
 
 
 class SendTextMessageRequestBodyPushMessageTemplate(ModelComposed):
@@ -312,7 +312,7 @@ class SendTextMessageRequestBodyPushMessageTemplate(ModelComposed):
           'allOf': [
           ],
           'oneOf': [
-              SendTextMessageRequestBodyPushMessageTemplateOneOf,
+              SendAMessageRequestPushMessageTemplateOneOf,
               str,
           ],
         }

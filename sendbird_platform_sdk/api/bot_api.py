@@ -26,9 +26,10 @@ from sendbird_platform_sdk.model.create_a_bot_request import CreateABotRequest
 from sendbird_platform_sdk.model.create_a_bot_response import CreateABotResponse
 from sendbird_platform_sdk.model.join_channels_request import JoinChannelsRequest
 from sendbird_platform_sdk.model.list_bots_response import ListBotsResponse
-from sendbird_platform_sdk.model.send_a_bot_message_request import SendABotMessageRequest
+from sendbird_platform_sdk.model.send_a_bot_message_response import SendABotMessageResponse
+from sendbird_platform_sdk.model.sendbird_extended_message_payload import SendbirdExtendedMessagePayload
 from sendbird_platform_sdk.model.sendbird_group_channel_detail import SendbirdGroupChannelDetail
-from sendbird_platform_sdk.model.sendbird_message_response import SendbirdMessageResponse
+from sendbird_platform_sdk.model.sendbird_sorted_metaarray import SendbirdSortedMetaarray
 
 
 class BotApi(object):
@@ -328,7 +329,7 @@ class BotApi(object):
         )
         self.send_a_bot_message_endpoint = _Endpoint(
             settings={
-                'response_type': (SendbirdMessageResponse,),
+                'response_type': (SendABotMessageResponse,),
                 'auth': [],
                 'endpoint_path': '/v3/bots/{bot_userid}/send',
                 'operation_id': 'send_a_bot_message',
@@ -338,15 +339,39 @@ class BotApi(object):
             params_map={
                 'all': [
                     'bot_userid',
+                    'message_type',
+                    'channel_url',
                     'api_token',
-                    'send_a_bot_message_request',
+                    'message',
+                    'mentioned',
+                    'extended_message_payload',
+                    'file',
+                    'require_auth',
+                    'mention_type',
+                    'mentioned_user_ids',
+                    'is_silent',
+                    'sorted_metaarray',
+                    'apns_bundle_id',
+                    'apple_critical_alert_options',
+                    'sound',
+                    'volume',
+                    'created_at',
+                    'custom_type',
+                    'data',
+                    'dedup_id',
+                    'mark_as_read',
+                    'send_push',
                 ],
                 'required': [
                     'bot_userid',
+                    'message_type',
+                    'channel_url',
                 ],
                 'nullable': [
                 ],
                 'enum': [
+                    'message_type',
+                    'mention_type',
                 ],
                 'validation': [
                 ]
@@ -355,25 +380,118 @@ class BotApi(object):
                 'validations': {
                 },
                 'allowed_values': {
+                    ('message_type',): {
+
+                        "MESG": "MESG",
+                        "FILE": "FILE"
+                    },
+                    ('mention_type',): {
+
+                        "USERS": "users",
+                        "CHANNEL": "channel"
+                    },
                 },
                 'openapi_types': {
                     'bot_userid':
                         (str,),
+                    'message_type':
+                        (str,),
+                    'channel_url':
+                        (str,),
                     'api_token':
                         (str,),
-                    'send_a_bot_message_request':
-                        (SendABotMessageRequest,),
+                    'message':
+                        (str,),
+                    'mentioned':
+                        ([str],),
+                    'extended_message_payload':
+                        (SendbirdExtendedMessagePayload,),
+                    'file':
+                        (file_type,),
+                    'require_auth':
+                        (bool,),
+                    'mention_type':
+                        (str,),
+                    'mentioned_user_ids':
+                        ([str],),
+                    'is_silent':
+                        (bool,),
+                    'sorted_metaarray':
+                        (SendbirdSortedMetaarray,),
+                    'apns_bundle_id':
+                        (str,),
+                    'apple_critical_alert_options':
+                        ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
+                    'sound':
+                        (str,),
+                    'volume':
+                        (float,),
+                    'created_at':
+                        (int,),
+                    'custom_type':
+                        (str,),
+                    'data':
+                        (str,),
+                    'dedup_id':
+                        (str,),
+                    'mark_as_read':
+                        (bool,),
+                    'send_push':
+                        (bool,),
                 },
                 'attribute_map': {
                     'bot_userid': 'bot_userid',
+                    'message_type': 'message_type',
+                    'channel_url': 'channel_url',
                     'api_token': 'api-token',
+                    'message': 'message',
+                    'mentioned': 'mentioned',
+                    'extended_message_payload': 'extended_message_payload',
+                    'file': 'file',
+                    'require_auth': 'require_auth',
+                    'mention_type': 'mention_type',
+                    'mentioned_user_ids': 'mentioned_user_ids',
+                    'is_silent': 'is_silent',
+                    'sorted_metaarray': 'sorted_metaarray',
+                    'apns_bundle_id': 'apns_bundle_id',
+                    'apple_critical_alert_options': 'apple_critical_alert_options',
+                    'sound': 'sound',
+                    'volume': 'volume',
+                    'created_at': 'created_at',
+                    'custom_type': 'custom_type',
+                    'data': 'data',
+                    'dedup_id': 'dedup_id',
+                    'mark_as_read': 'mark_as_read',
+                    'send_push': 'send_push',
                 },
                 'location_map': {
                     'bot_userid': 'path',
+                    'message_type': 'form',
+                    'channel_url': 'form',
                     'api_token': 'header',
-                    'send_a_bot_message_request': 'body',
+                    'message': 'form',
+                    'mentioned': 'form',
+                    'extended_message_payload': 'form',
+                    'file': 'form',
+                    'require_auth': 'form',
+                    'mention_type': 'form',
+                    'mentioned_user_ids': 'form',
+                    'is_silent': 'form',
+                    'sorted_metaarray': 'form',
+                    'apns_bundle_id': 'form',
+                    'apple_critical_alert_options': 'form',
+                    'sound': 'form',
+                    'volume': 'form',
+                    'created_at': 'form',
+                    'custom_type': 'form',
+                    'data': 'form',
+                    'dedup_id': 'form',
+                    'mark_as_read': 'form',
+                    'send_push': 'form',
                 },
                 'collection_format_map': {
+                    'mentioned': 'csv',
+                    'mentioned_user_ids': 'csv',
                 }
             },
             headers_map={
@@ -381,7 +499,7 @@ class BotApi(object):
                     'application/json'
                 ],
                 'content_type': [
-                    'application/json'
+                    'multipart/form-data'
                 ]
             },
             api_client=api_client
@@ -808,6 +926,8 @@ class BotApi(object):
     def send_a_bot_message(
         self,
         bot_userid,
+        message_type,
+        channel_url,
         **kwargs
     ):
         """Send a bot's message  # noqa: E501
@@ -816,15 +936,35 @@ class BotApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.send_a_bot_message(bot_userid, async_req=True)
+        >>> thread = api.send_a_bot_message(bot_userid, message_type, channel_url, async_req=True)
         >>> result = thread.get()
 
         Args:
             bot_userid (str): (Required) 
+            message_type (str): Specifies the type of message to send. MESG for text message, FILE for file message.
+            channel_url (str): Specifies the URL of the channel to send the message to.
 
         Keyword Args:
             api_token (str): [optional]
-            send_a_bot_message_request (SendABotMessageRequest): [optional]
+            message (str): Specifies the content of the message. * This property is required when message_type is MESG.. [optional]
+            mentioned ([str]): * This property is available when message_type is MESG.. [optional]
+            extended_message_payload (SendbirdExtendedMessagePayload): [optional]
+            file (file_type): When sending a single file with a message, specifies the data of the file to upload to the Sendbird server in raw binary format. When sending a request containing a file, change the value of the content-type header to multipart/form-data;boundary={your_unique_boundary_string} in the request. * This property is required when message_type is FILE. * This doesn't allow a converted base64-encoded string from a file as its value.. [optional]
+            require_auth (bool): Determines whether to require an authentication key to verify if the file is being properly accessed. Only the user who uploaded the file or users who are in the channel where the file was uploaded should have access. The authentication key managed internally by the Sendbird system is generated every time a user logs in to the Sendbird server and is valid for three days starting from the last login. If set to false, Sendbird tries to access a file without any key. To access encrypted files, such as the files in the Sendbird server which are by default encrypted, the property must be set to true. (Default: false) The require_auth parameter only works if the file or URL is managed by Sendbird, which means that when you upload files using multipart format or provide URLs that point to the files hosted on the Sendbird server. However, if the file is hosted on a server or service that is not managed by Sendbird, access control and authentication for the file should be handled by the respective server or service hosting the file. * This property is available when message_type is FILE.. [optional]
+            mention_type (str): * This property is available when message_type is FILE.. [optional]
+            mentioned_user_ids ([str]): * This property is available when message_type is FILE.. [optional]
+            is_silent (bool): * This property is available when message_type is FILE.. [optional]
+            sorted_metaarray (SendbirdSortedMetaarray): [optional]
+            apns_bundle_id (str): * This property is available when message_type is FILE.. [optional]
+            apple_critical_alert_options ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): * This property is available when message_type is FILE.. [optional]
+            sound (str): * This property is available when message_type is FILE.. [optional]
+            volume (float): * This property is available when message_type is FILE.. [optional]
+            created_at (int): [optional]
+            custom_type (str): [optional]
+            data (str): [optional]
+            dedup_id (str): [optional]
+            mark_as_read (bool): [optional]
+            send_push (bool): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -857,7 +997,7 @@ class BotApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            SendbirdMessageResponse
+            SendABotMessageResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -888,5 +1028,9 @@ class BotApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['bot_userid'] = \
             bot_userid
+        kwargs['message_type'] = \
+            message_type
+        kwargs['channel_url'] = \
+            channel_url
         return self.send_a_bot_message_endpoint.call_with_http_info(**kwargs)
 

@@ -766,7 +766,61 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     channel_type = "open_channels" # str | (Required) 
     channel_url = "channel_url_example" # str | (Required) 
     api_token = "{{API_TOKEN}}" # str |  (optional)
-    send_a_message_request = SendAMessageRequest(None) # SendAMessageRequest |  (optional)
+    send_a_message_request = SendAMessageRequest(
+        message_type="MESG",
+        user_id="user_id_example",
+        message="message_example",
+        push_message_template=SendAMessageRequestPushMessageTemplate("push_message_template_example"),
+        poll_id=1,
+        files=SendbirdFile(
+            url="url_example",
+            file_name="file_name_example",
+            file_size=1,
+            file_type="file_type_example",
+            thumbnails=[
+                SendbirdThumbnail(
+                    height=1,
+                    plain_url="plain_url_example",
+                    real_height=1,
+                    real_width=1,
+                    url="url_example",
+                    width=1,
+                ),
+            ],
+            require_auth=True,
+        ),
+        require_auth=True,
+        thumbnail1="thumbnail1_example",
+        thumbnail2="thumbnail2_example",
+        thumbnail3="thumbnail3_example",
+        thumbnails=[
+            "thumbnails_example",
+        ],
+        apns_bundle_id="apns_bundle_id_example",
+        apple_critical_alert_options={},
+        created_at=1,
+        custom_type="custom_type_example",
+        data="data_example",
+        dedup_id="dedup_id_example",
+        include_poll_details=True,
+        is_silent=True,
+        mark_as_read=True,
+        mention_type="users",
+        mentioned_user_ids=[
+            "mentioned_user_ids_example",
+        ],
+        send_push=True,
+        sorted_metaarray=SendbirdSortedMetaarray([
+            SendbirdSortedMetaarrayInner(
+                key="key_example",
+                value=[
+                    "value_example",
+                ],
+            ),
+        ]),
+        sound="sound_example",
+        volume=3.14,
+    ) # SendAMessageRequest |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
