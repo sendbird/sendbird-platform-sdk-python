@@ -31,12 +31,10 @@ from sendbird_platform_sdk.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from sendbird_platform_sdk.model.list_bots_response_bots_inner_ai import ListBotsResponseBotsInnerAi
     from sendbird_platform_sdk.model.list_bots_response_bots_inner_bot import ListBotsResponseBotsInnerBot
     from sendbird_platform_sdk.model.list_bots_response_bots_inner_bot_style import ListBotsResponseBotsInnerBotStyle
     from sendbird_platform_sdk.model.list_bots_response_bots_inner_first_messages_inner import ListBotsResponseBotsInnerFirstMessagesInner
     from sendbird_platform_sdk.model.list_bots_response_bots_inner_safeguard import ListBotsResponseBotsInnerSafeguard
-    globals()['ListBotsResponseBotsInnerAi'] = ListBotsResponseBotsInnerAi
     globals()['ListBotsResponseBotsInnerBot'] = ListBotsResponseBotsInnerBot
     globals()['ListBotsResponseBotsInnerBotStyle'] = ListBotsResponseBotsInnerBotStyle
     globals()['ListBotsResponseBotsInnerFirstMessagesInner'] = ListBotsResponseBotsInnerFirstMessagesInner
@@ -96,7 +94,6 @@ class ListBotsResponseBotsInner(ModelNormal):
         """
         lazy_import()
         return {
-            'ai': (ListBotsResponseBotsInnerAi,),  # noqa: E501
             'bot': (ListBotsResponseBotsInnerBot,),  # noqa: E501
             'bot_callback_url': (str,),  # noqa: E501
             'bot_style': (ListBotsResponseBotsInnerBotStyle,),  # noqa: E501
@@ -115,7 +112,6 @@ class ListBotsResponseBotsInner(ModelNormal):
 
 
     attribute_map = {
-        'ai': 'ai',  # noqa: E501
         'bot': 'bot',  # noqa: E501
         'bot_callback_url': 'bot_callback_url',  # noqa: E501
         'bot_style': 'bot_style',  # noqa: E501
@@ -169,7 +165,6 @@ class ListBotsResponseBotsInner(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            ai (ListBotsResponseBotsInnerAi): [optional]  # noqa: E501
             bot (ListBotsResponseBotsInnerBot): [optional]  # noqa: E501
             bot_callback_url (str): [optional]  # noqa: E501
             bot_style (ListBotsResponseBotsInnerBotStyle): [optional]  # noqa: E501
@@ -265,7 +260,6 @@ class ListBotsResponseBotsInner(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            ai (ListBotsResponseBotsInnerAi): [optional]  # noqa: E501
             bot (ListBotsResponseBotsInnerBot): [optional]  # noqa: E501
             bot_callback_url (str): [optional]  # noqa: E501
             bot_style (ListBotsResponseBotsInnerBotStyle): [optional]  # noqa: E501

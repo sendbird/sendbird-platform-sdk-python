@@ -18,7 +18,6 @@ docs/ChooseAPushNotificationContentTemplateResponse.md
 docs/CreateABotRequest.md
 docs/CreateABotResponse.md
 docs/CreateABotResponseBot.md
-docs/CreateABotResponseBotStyle.md
 docs/CreateAChannelMetadataRequest.md
 docs/CreateAChannelMetadataResponse.md
 docs/CreateAGroupChannelRequest.md
@@ -54,7 +53,6 @@ docs/LeaveMyGroupChannelsRequest.md
 docs/ListBlockedUsersResponse.md
 docs/ListBotsResponse.md
 docs/ListBotsResponseBotsInner.md
-docs/ListBotsResponseBotsInnerAi.md
 docs/ListBotsResponseBotsInnerBot.md
 docs/ListBotsResponseBotsInnerBotStyle.md
 docs/ListBotsResponseBotsInnerBotStyleColor.md
@@ -129,6 +127,8 @@ docs/UpdateAUserRequest.md
 docs/UpdateAUserResponse.md
 docs/UpdateAnOpenChannelRequest.md
 docs/UpdateAnOpenChannelResponse.md
+docs/UpdateBotByIdData.md
+docs/UpdateBotByIdResponse.md
 docs/UpdateChannelInvitationPreferenceRequest.md
 docs/UpdateChannelInvitationPreferenceResponse.md
 docs/UpdateCountPreferenceOfAChannelRequest.md
@@ -141,6 +141,8 @@ docs/UpdatePushPreferencesRequest.md
 docs/UpdatePushPreferencesResponse.md
 docs/UserApi.md
 docs/ViewAUserResponse.md
+docs/ViewBotByIdResponse.md
+docs/ViewBotByIdResponseBot.md
 docs/ViewCountPreferenceOfAChannelResponse.md
 docs/ViewNumberOfChannelsWithUnreadMessagesResponse.md
 docs/ViewNumberOfDailyActiveUsersResponse.md
@@ -181,7 +183,6 @@ sendbird_platform_sdk/model/choose_a_push_notification_content_template_response
 sendbird_platform_sdk/model/create_a_bot_request.py
 sendbird_platform_sdk/model/create_a_bot_response.py
 sendbird_platform_sdk/model/create_a_bot_response_bot.py
-sendbird_platform_sdk/model/create_a_bot_response_bot_style.py
 sendbird_platform_sdk/model/create_a_channel_metadata_request.py
 sendbird_platform_sdk/model/create_a_channel_metadata_response.py
 sendbird_platform_sdk/model/create_a_group_channel_request.py
@@ -216,7 +217,6 @@ sendbird_platform_sdk/model/leave_my_group_channels_request.py
 sendbird_platform_sdk/model/list_blocked_users_response.py
 sendbird_platform_sdk/model/list_bots_response.py
 sendbird_platform_sdk/model/list_bots_response_bots_inner.py
-sendbird_platform_sdk/model/list_bots_response_bots_inner_ai.py
 sendbird_platform_sdk/model/list_bots_response_bots_inner_bot.py
 sendbird_platform_sdk/model/list_bots_response_bots_inner_bot_style.py
 sendbird_platform_sdk/model/list_bots_response_bots_inner_bot_style_color.py
@@ -286,6 +286,8 @@ sendbird_platform_sdk/model/update_a_user_request.py
 sendbird_platform_sdk/model/update_a_user_response.py
 sendbird_platform_sdk/model/update_an_open_channel_request.py
 sendbird_platform_sdk/model/update_an_open_channel_response.py
+sendbird_platform_sdk/model/update_bot_by_id_data.py
+sendbird_platform_sdk/model/update_bot_by_id_response.py
 sendbird_platform_sdk/model/update_channel_invitation_preference_request.py
 sendbird_platform_sdk/model/update_channel_invitation_preference_response.py
 sendbird_platform_sdk/model/update_count_preference_of_a_channel_request.py
@@ -297,6 +299,8 @@ sendbird_platform_sdk/model/update_push_preferences_for_a_channel_response.py
 sendbird_platform_sdk/model/update_push_preferences_request.py
 sendbird_platform_sdk/model/update_push_preferences_response.py
 sendbird_platform_sdk/model/view_a_user_response.py
+sendbird_platform_sdk/model/view_bot_by_id_response.py
+sendbird_platform_sdk/model/view_bot_by_id_response_bot.py
 sendbird_platform_sdk/model/view_count_preference_of_a_channel_response.py
 sendbird_platform_sdk/model/view_number_of_channels_with_unread_messages_response.py
 sendbird_platform_sdk/model/view_number_of_daily_active_users_response.py
@@ -312,6 +316,4 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_send_a_message_request_push_message_template.py
-test/test_send_a_message_request_push_message_template_one_of.py
 tox.ini

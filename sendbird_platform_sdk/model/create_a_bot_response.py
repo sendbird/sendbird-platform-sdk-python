@@ -32,9 +32,9 @@ from sendbird_platform_sdk.exceptions import ApiAttributeError
 
 def lazy_import():
     from sendbird_platform_sdk.model.create_a_bot_response_bot import CreateABotResponseBot
-    from sendbird_platform_sdk.model.create_a_bot_response_bot_style import CreateABotResponseBotStyle
+    from sendbird_platform_sdk.model.list_bots_response_bots_inner_bot_style import ListBotsResponseBotsInnerBotStyle
     globals()['CreateABotResponseBot'] = CreateABotResponseBot
-    globals()['CreateABotResponseBotStyle'] = CreateABotResponseBotStyle
+    globals()['ListBotsResponseBotsInnerBotStyle'] = ListBotsResponseBotsInnerBotStyle
 
 
 class CreateABotResponse(ModelNormal):
@@ -92,7 +92,7 @@ class CreateABotResponse(ModelNormal):
         return {
             'bot': (CreateABotResponseBot,),  # noqa: E501
             'bot_callback_url': (str,),  # noqa: E501
-            'bot_style': (CreateABotResponseBotStyle,),  # noqa: E501
+            'bot_style': (ListBotsResponseBotsInnerBotStyle,),  # noqa: E501
             'channel_invitation_preference': (int,),  # noqa: E501
             'created_at': (int,),  # noqa: E501
             'enable_mark_as_read': (bool,),  # noqa: E501
@@ -161,7 +161,7 @@ class CreateABotResponse(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             bot_callback_url (str): [optional]  # noqa: E501
-            bot_style (CreateABotResponseBotStyle): [optional]  # noqa: E501
+            bot_style (ListBotsResponseBotsInnerBotStyle): [optional]  # noqa: E501
             channel_invitation_preference (int): [optional]  # noqa: E501
             created_at (int): [optional]  # noqa: E501
             enable_mark_as_read (bool): [optional]  # noqa: E501
@@ -257,7 +257,7 @@ class CreateABotResponse(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             bot_callback_url (str): [optional]  # noqa: E501
-            bot_style (CreateABotResponseBotStyle): [optional]  # noqa: E501
+            bot_style (ListBotsResponseBotsInnerBotStyle): [optional]  # noqa: E501
             channel_invitation_preference (int): [optional]  # noqa: E501
             created_at (int): [optional]  # noqa: E501
             enable_mark_as_read (bool): [optional]  # noqa: E501
