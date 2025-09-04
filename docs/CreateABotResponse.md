@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **bot** | [**CreateABotResponseBot**](CreateABotResponseBot.md) |  | 
 **bot_callback_url** | **str** |  | [optional] 
-**bot_style** | [**CreateABotResponseBotStyle**](CreateABotResponseBotStyle.md) |  | [optional] 
+**bot_style** | [**ListBotsResponseBotsInnerBotStyle**](ListBotsResponseBotsInnerBotStyle.md) |  | [optional] 
 **channel_invitation_preference** | **int** |  | [optional] 
 **created_at** | **int** |  | [optional] 
 **enable_mark_as_read** | **bool** |  | [optional] 

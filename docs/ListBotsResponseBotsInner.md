@@ -4,7 +4,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ai** | [**ListBotsResponseBotsInnerAi**](ListBotsResponseBotsInnerAi.md) |  | [optional] 
 **bot** | [**ListBotsResponseBotsInnerBot**](ListBotsResponseBotsInnerBot.md) |  | [optional] 
 **bot_callback_url** | **str** |  | [optional] 
 **bot_style** | [**ListBotsResponseBotsInnerBotStyle**](ListBotsResponseBotsInnerBotStyle.md) |  | [optional] 

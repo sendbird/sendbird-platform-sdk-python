@@ -30,6 +30,9 @@ from sendbird_platform_sdk.model.send_a_bot_message_response import SendABotMess
 from sendbird_platform_sdk.model.sendbird_extended_message_payload import SendbirdExtendedMessagePayload
 from sendbird_platform_sdk.model.sendbird_group_channel_detail import SendbirdGroupChannelDetail
 from sendbird_platform_sdk.model.sendbird_sorted_metaarray import SendbirdSortedMetaarray
+from sendbird_platform_sdk.model.update_bot_by_id_data import UpdateBotByIdData
+from sendbird_platform_sdk.model.update_bot_by_id_response import UpdateBotByIdResponse
+from sendbird_platform_sdk.model.view_bot_by_id_response import ViewBotByIdResponse
 
 
 class BotApi(object):
@@ -93,6 +96,60 @@ class BotApi(object):
                 'content_type': [
                     'application/json'
                 ]
+            },
+            api_client=api_client
+        )
+        self.delete_bot_by_id_endpoint = _Endpoint(
+            settings={
+                'response_type': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
+                'auth': [],
+                'endpoint_path': '/v3/bots/{bot_userid}',
+                'operation_id': 'delete_bot_by_id',
+                'http_method': 'DELETE',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'bot_userid',
+                    'api_token',
+                ],
+                'required': [
+                    'bot_userid',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'bot_userid':
+                        (str,),
+                    'api_token':
+                        (str,),
+                },
+                'attribute_map': {
+                    'bot_userid': 'bot_userid',
+                    'api_token': 'Api-Token',
+                },
+                'location_map': {
+                    'bot_userid': 'path',
+                    'api_token': 'header',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
             },
             api_client=api_client
         )
@@ -504,6 +561,120 @@ class BotApi(object):
             },
             api_client=api_client
         )
+        self.update_bot_by_id_endpoint = _Endpoint(
+            settings={
+                'response_type': (UpdateBotByIdResponse,),
+                'auth': [],
+                'endpoint_path': '/v3/bots/{bot_userid}',
+                'operation_id': 'update_bot_by_id',
+                'http_method': 'PUT',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'bot_userid',
+                    'api_token',
+                    'update_bot_by_id_data',
+                ],
+                'required': [
+                    'bot_userid',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'bot_userid':
+                        (str,),
+                    'api_token':
+                        (str,),
+                    'update_bot_by_id_data':
+                        (UpdateBotByIdData,),
+                },
+                'attribute_map': {
+                    'bot_userid': 'bot_userid',
+                    'api_token': 'Api-Token',
+                },
+                'location_map': {
+                    'bot_userid': 'path',
+                    'api_token': 'header',
+                    'update_bot_by_id_data': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client
+        )
+        self.view_bot_by_id_endpoint = _Endpoint(
+            settings={
+                'response_type': (ViewBotByIdResponse,),
+                'auth': [],
+                'endpoint_path': '/v3/bots/{bot_userid}',
+                'operation_id': 'view_bot_by_id',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'bot_userid',
+                    'api_token',
+                ],
+                'required': [
+                    'bot_userid',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'bot_userid':
+                        (str,),
+                    'api_token':
+                        (str,),
+                },
+                'attribute_map': {
+                    'bot_userid': 'bot_userid',
+                    'api_token': 'Api-Token',
+                },
+                'location_map': {
+                    'bot_userid': 'path',
+                    'api_token': 'header',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
 
     def create_a_bot(
         self,
@@ -584,6 +755,90 @@ class BotApi(object):
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         return self.create_a_bot_endpoint.call_with_http_info(**kwargs)
+
+    def delete_bot_by_id(
+        self,
+        bot_userid,
+        **kwargs
+    ):
+        """Delete a bot  # noqa: E501
+
+        ## Delete a bot  Deletes a bot from an application.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-delete-a-bot ----------------------------  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.delete_bot_by_id(bot_userid, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            bot_userid (str):
+
+        Keyword Args:
+            api_token (str): [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            {str: (bool, date, datetime, dict, float, int, list, str, none_type)}
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['bot_userid'] = \
+            bot_userid
+        return self.delete_bot_by_id_endpoint.call_with_http_info(**kwargs)
 
     def join_channels(
         self,
@@ -1033,4 +1288,173 @@ class BotApi(object):
         kwargs['channel_url'] = \
             channel_url
         return self.send_a_bot_message_endpoint.call_with_http_info(**kwargs)
+
+    def update_bot_by_id(
+        self,
+        bot_userid,
+        **kwargs
+    ):
+        """Update a bot  # noqa: E501
+
+        ## Update a bot  Updates information on a bot.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-update-a-bot ----------------------------  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.update_bot_by_id(bot_userid, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            bot_userid (str):
+
+        Keyword Args:
+            api_token (str): [optional]
+            update_bot_by_id_data (UpdateBotByIdData): [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            UpdateBotByIdResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['bot_userid'] = \
+            bot_userid
+        return self.update_bot_by_id_endpoint.call_with_http_info(**kwargs)
+
+    def view_bot_by_id(
+        self,
+        bot_userid,
+        **kwargs
+    ):
+        """View a bot  # noqa: E501
+
+        ## View a bot  Retrieves information on a bot.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-view-a-bot ----------------------------  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.view_bot_by_id(bot_userid, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            bot_userid (str):
+
+        Keyword Args:
+            api_token (str): [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            ViewBotByIdResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['bot_userid'] = \
+            bot_userid
+        return self.view_bot_by_id_endpoint.call_with_http_info(**kwargs)
 
