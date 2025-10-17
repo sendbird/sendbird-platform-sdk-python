@@ -83,7 +83,7 @@ class AcceptAnInvitationRequest(ModelNormal):
         """
         return {
             'user_id': (str,),  # noqa: E501
-            'access_code': (str,),  # noqa: E501
+            'access_code': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -140,7 +140,7 @@ class AcceptAnInvitationRequest(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            access_code (str): [optional]  # noqa: E501
+            access_code (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -230,7 +230,7 @@ class AcceptAnInvitationRequest(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            access_code (str): [optional]  # noqa: E501
+            access_code (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

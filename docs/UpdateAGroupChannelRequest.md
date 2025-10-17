@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**access_code** | **str** |  | [optional] 
+**access_code** | **str, none_type** |  | [optional] 
 **cover_file** | **file_type** |  | [optional] 
 **cover_url** | **str** |  | [optional] 
 **custom_type** | **str** |  | [optional] 

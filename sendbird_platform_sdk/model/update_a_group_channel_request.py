@@ -82,7 +82,7 @@ class UpdateAGroupChannelRequest(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'access_code': (str,),  # noqa: E501
+            'access_code': (str, none_type,),  # noqa: E501
             'cover_file': (file_type,),  # noqa: E501
             'cover_url': (str,),  # noqa: E501
             'custom_type': (str,),  # noqa: E501
@@ -153,7 +153,7 @@ class UpdateAGroupChannelRequest(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            access_code (str): [optional]  # noqa: E501
+            access_code (str, none_type): [optional]  # noqa: E501
             cover_file (file_type): [optional]  # noqa: E501
             cover_url (str): [optional]  # noqa: E501
             custom_type (str): [optional]  # noqa: E501
@@ -248,7 +248,7 @@ class UpdateAGroupChannelRequest(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            access_code (str): [optional]  # noqa: E501
+            access_code (str, none_type): [optional]  # noqa: E501
             cover_file (file_type): [optional]  # noqa: E501
             cover_url (str): [optional]  # noqa: E501
             custom_type (str): [optional]  # noqa: E501

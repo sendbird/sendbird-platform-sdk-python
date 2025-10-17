@@ -13,16 +13,10 @@ import sys
 import unittest
 
 import sendbird_platform_sdk
-from sendbird_platform_sdk.model.send_admin_message_request_body import SendAdminMessageRequestBody
-from sendbird_platform_sdk.model.send_file_message_request_body import SendFileMessageRequestBody
-from sendbird_platform_sdk.model.send_text_message_request_body import SendTextMessageRequestBody
-from sendbird_platform_sdk.model.send_text_message_request_body_push_message_template import SendTextMessageRequestBodyPushMessageTemplate
+from sendbird_platform_sdk.model.send_a_message_request_push_message_template import SendAMessageRequestPushMessageTemplate
 from sendbird_platform_sdk.model.sendbird_file import SendbirdFile
 from sendbird_platform_sdk.model.sendbird_sorted_metaarray import SendbirdSortedMetaarray
-globals()['SendAdminMessageRequestBody'] = SendAdminMessageRequestBody
-globals()['SendFileMessageRequestBody'] = SendFileMessageRequestBody
-globals()['SendTextMessageRequestBody'] = SendTextMessageRequestBody
-globals()['SendTextMessageRequestBodyPushMessageTemplate'] = SendTextMessageRequestBodyPushMessageTemplate
+globals()['SendAMessageRequestPushMessageTemplate'] = SendAMessageRequestPushMessageTemplate
 globals()['SendbirdFile'] = SendbirdFile
 globals()['SendbirdSortedMetaarray'] = SendbirdSortedMetaarray
 from sendbird_platform_sdk.model.send_a_message_request import SendAMessageRequest

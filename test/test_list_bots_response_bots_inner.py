@@ -13,12 +13,10 @@ import sys
 import unittest
 
 import sendbird_platform_sdk
-from sendbird_platform_sdk.model.list_bots_response_bots_inner_ai import ListBotsResponseBotsInnerAi
 from sendbird_platform_sdk.model.list_bots_response_bots_inner_bot import ListBotsResponseBotsInnerBot
 from sendbird_platform_sdk.model.list_bots_response_bots_inner_bot_style import ListBotsResponseBotsInnerBotStyle
 from sendbird_platform_sdk.model.list_bots_response_bots_inner_first_messages_inner import ListBotsResponseBotsInnerFirstMessagesInner
 from sendbird_platform_sdk.model.list_bots_response_bots_inner_safeguard import ListBotsResponseBotsInnerSafeguard
-globals()['ListBotsResponseBotsInnerAi'] = ListBotsResponseBotsInnerAi
 globals()['ListBotsResponseBotsInnerBot'] = ListBotsResponseBotsInnerBot
 globals()['ListBotsResponseBotsInnerBotStyle'] = ListBotsResponseBotsInnerBotStyle
 globals()['ListBotsResponseBotsInnerFirstMessagesInner'] = ListBotsResponseBotsInnerFirstMessagesInner

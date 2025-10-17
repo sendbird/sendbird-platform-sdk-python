@@ -82,12 +82,12 @@ class CreateAUserRequest(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'nickname': (str,),  # noqa: E501
+            'nickname': (str, none_type,),  # noqa: E501
             'profile_url': (str,),  # noqa: E501
             'user_id': (str,),  # noqa: E501
-            'discovery_keys': ([str],),  # noqa: E501
+            'discovery_keys': ([str], none_type,),  # noqa: E501
             'issue_access_token': (bool,),  # noqa: E501
-            'metadata': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),  # noqa: E501
+            'metadata': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type,),  # noqa: E501
             'profile_file': (file_type,),  # noqa: E501
         }
 
@@ -113,15 +113,15 @@ class CreateAUserRequest(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, nickname, profile_url, user_id, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, nickname, user_id, *args, **kwargs):  # noqa: E501
         """CreateAUserRequest - a model defined in OpenAPI
 
         Args:
-            nickname (str):
-            profile_url (str):
+            nickname (str, none_type):
             user_id (str):
 
         Keyword Args:
+            profile_url (str): defaults to ""  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
@@ -152,12 +152,13 @@ class CreateAUserRequest(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            discovery_keys ([str]): [optional]  # noqa: E501
+            discovery_keys ([str], none_type): [optional]  # noqa: E501
             issue_access_token (bool): [optional]  # noqa: E501
-            metadata ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]  # noqa: E501
+            metadata ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): [optional]  # noqa: E501
             profile_file (file_type): Specifies the file of the user's profile image. An acceptable image is limited to a JPG, JPEG, or PNG file of up to 5 MB. When passing a file, you should send a multipart request. If the profile_file property is specified, the profile_url property is not required.. [optional]  # noqa: E501
         """
 
+        profile_url = kwargs.get('profile_url', "")
         _check_type = kwargs.pop('_check_type', True)
         _spec_property_naming = kwargs.pop('_spec_property_naming', True)
         _path_to_item = kwargs.pop('_path_to_item', ())
@@ -210,15 +211,15 @@ class CreateAUserRequest(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, nickname, profile_url, user_id, *args, **kwargs):  # noqa: E501
+    def __init__(self, nickname, user_id, *args, **kwargs):  # noqa: E501
         """CreateAUserRequest - a model defined in OpenAPI
 
         Args:
-            nickname (str):
-            profile_url (str):
+            nickname (str, none_type):
             user_id (str):
 
         Keyword Args:
+            profile_url (str): defaults to ""  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
@@ -249,12 +250,13 @@ class CreateAUserRequest(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            discovery_keys ([str]): [optional]  # noqa: E501
+            discovery_keys ([str], none_type): [optional]  # noqa: E501
             issue_access_token (bool): [optional]  # noqa: E501
-            metadata ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]  # noqa: E501
+            metadata ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): [optional]  # noqa: E501
             profile_file (file_type): Specifies the file of the user's profile image. An acceptable image is limited to a JPG, JPEG, or PNG file of up to 5 MB. When passing a file, you should send a multipart request. If the profile_file property is specified, the profile_url property is not required.. [optional]  # noqa: E501
         """
 
+        profile_url = kwargs.get('profile_url', "")
         _check_type = kwargs.pop('_check_type', True)
         _spec_property_naming = kwargs.pop('_spec_property_naming', False)
         _path_to_item = kwargs.pop('_path_to_item', ())

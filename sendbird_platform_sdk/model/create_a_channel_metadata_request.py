@@ -82,7 +82,7 @@ class CreateAChannelMetadataRequest(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'metadata': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),  # noqa: E501
+            'metadata': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type,),  # noqa: E501
             'include_ts': (bool,),  # noqa: E501
         }
 
@@ -107,7 +107,7 @@ class CreateAChannelMetadataRequest(ModelNormal):
         """CreateAChannelMetadataRequest - a model defined in OpenAPI
 
         Args:
-            metadata ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}):
+            metadata ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -197,7 +197,7 @@ class CreateAChannelMetadataRequest(ModelNormal):
         """CreateAChannelMetadataRequest - a model defined in OpenAPI
 
         Args:
-            metadata ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}):
+            metadata ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types

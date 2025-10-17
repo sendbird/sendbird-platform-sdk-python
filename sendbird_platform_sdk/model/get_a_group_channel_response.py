@@ -36,8 +36,8 @@ def lazy_import():
     from sendbird_platform_sdk.model.sendbird_disappearing_message import SendbirdDisappearingMessage
     from sendbird_platform_sdk.model.sendbird_group_channel import SendbirdGroupChannel
     from sendbird_platform_sdk.model.sendbird_group_channel_detail_channel import SendbirdGroupChannelDetailChannel
+    from sendbird_platform_sdk.model.sendbird_group_channel_last_message import SendbirdGroupChannelLastMessage
     from sendbird_platform_sdk.model.sendbird_member import SendbirdMember
-    from sendbird_platform_sdk.model.sendbird_message_response import SendbirdMessageResponse
     from sendbird_platform_sdk.model.sendbird_push_trigger_option import SendbirdPushTriggerOption
     from sendbird_platform_sdk.model.sendbird_sms_fallback import SendbirdSmsFallback
     globals()['GetAGroupChannelResponseAllOf'] = GetAGroupChannelResponseAllOf
@@ -45,8 +45,8 @@ def lazy_import():
     globals()['SendbirdDisappearingMessage'] = SendbirdDisappearingMessage
     globals()['SendbirdGroupChannel'] = SendbirdGroupChannel
     globals()['SendbirdGroupChannelDetailChannel'] = SendbirdGroupChannelDetailChannel
+    globals()['SendbirdGroupChannelLastMessage'] = SendbirdGroupChannelLastMessage
     globals()['SendbirdMember'] = SendbirdMember
-    globals()['SendbirdMessageResponse'] = SendbirdMessageResponse
     globals()['SendbirdPushTriggerOption'] = SendbirdPushTriggerOption
     globals()['SendbirdSmsFallback'] = SendbirdSmsFallback
 
@@ -130,7 +130,7 @@ class GetAGroupChannelResponse(ModelComposed):
             'count_preference': (str,),  # noqa: E501
             'cover_url': (str,),  # noqa: E501
             'created_at': (int,),  # noqa: E501
-            'created_by': (SendbirdBasicUserInfo,),  # noqa: E501
+            'created_by': (SendbirdBasicUserInfo, none_type),  # noqa: E501
             'custom_type': (str,),  # noqa: E501
             'data': (str,),  # noqa: E501
             'delivery_receipt': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),  # noqa: E501
@@ -141,8 +141,8 @@ class GetAGroupChannelResponse(ModelComposed):
             'hidden_state': (str,),  # noqa: E501
             'ignore_profanity_filter': (bool,),  # noqa: E501
             'invited_at': (int,),  # noqa: E501
-            'inviter': (SendbirdBasicUserInfo,),  # noqa: E501
-            'is_access_code_required': (bool,),  # noqa: E501
+            'inviter': (SendbirdBasicUserInfo, none_type),  # noqa: E501
+            'is_access_code_required': (bool, none_type,),  # noqa: E501
             'is_broadcast': (bool,),  # noqa: E501
             'is_discoverable': (bool,),  # noqa: E501
             'is_distinct': (bool,),  # noqa: E501
@@ -154,14 +154,14 @@ class GetAGroupChannelResponse(ModelComposed):
             'is_push_enabled': (bool,),  # noqa: E501
             'is_super': (bool,),  # noqa: E501
             'joined_member_count': (int,),  # noqa: E501
-            'joined_ts': (int,),  # noqa: E501
-            'last_message': (SendbirdMessageResponse,),  # noqa: E501
+            'joined_ts': (int, none_type,),  # noqa: E501
+            'last_message': (SendbirdGroupChannelLastMessage, none_type),  # noqa: E501
             'max_length_message': (int,),  # noqa: E501
             'member_count': (int,),  # noqa: E501
             'member_state': (str,),  # noqa: E501
             'members': ([SendbirdMember],),  # noqa: E501
             'message_survival_seconds': (int,),  # noqa: E501
-            'metadata': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),  # noqa: E501
+            'metadata': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type,),  # noqa: E501
             'my_role': (str,),  # noqa: E501
             'name': (str,),  # noqa: E501
             'push_trigger_option': (SendbirdPushTriggerOption,),  # noqa: E501
@@ -283,7 +283,7 @@ class GetAGroupChannelResponse(ModelComposed):
             ignore_profanity_filter (bool): [optional]  # noqa: E501
             invited_at (int): [optional]  # noqa: E501
             inviter (SendbirdBasicUserInfo): [optional]  # noqa: E501
-            is_access_code_required (bool): [optional]  # noqa: E501
+            is_access_code_required (bool, none_type): [optional]  # noqa: E501
             is_broadcast (bool): [optional]  # noqa: E501
             is_discoverable (bool): [optional]  # noqa: E501
             is_distinct (bool): [optional]  # noqa: E501
@@ -295,14 +295,14 @@ class GetAGroupChannelResponse(ModelComposed):
             is_push_enabled (bool): [optional]  # noqa: E501
             is_super (bool): [optional]  # noqa: E501
             joined_member_count (int): [optional]  # noqa: E501
-            joined_ts (int): [optional]  # noqa: E501
-            last_message (SendbirdMessageResponse): [optional]  # noqa: E501
+            joined_ts (int, none_type): [optional]  # noqa: E501
+            last_message (SendbirdGroupChannelLastMessage): [optional]  # noqa: E501
             max_length_message (int): [optional]  # noqa: E501
             member_count (int): [optional]  # noqa: E501
             member_state (str): [optional]  # noqa: E501
             members ([SendbirdMember]): [optional]  # noqa: E501
             message_survival_seconds (int): [optional]  # noqa: E501
-            metadata ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]  # noqa: E501
+            metadata ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): [optional]  # noqa: E501
             my_role (str): [optional]  # noqa: E501
             name (str): [optional]  # noqa: E501
             push_trigger_option (SendbirdPushTriggerOption): [optional]  # noqa: E501
@@ -432,7 +432,7 @@ class GetAGroupChannelResponse(ModelComposed):
             ignore_profanity_filter (bool): [optional]  # noqa: E501
             invited_at (int): [optional]  # noqa: E501
             inviter (SendbirdBasicUserInfo): [optional]  # noqa: E501
-            is_access_code_required (bool): [optional]  # noqa: E501
+            is_access_code_required (bool, none_type): [optional]  # noqa: E501
             is_broadcast (bool): [optional]  # noqa: E501
             is_discoverable (bool): [optional]  # noqa: E501
             is_distinct (bool): [optional]  # noqa: E501
@@ -444,14 +444,14 @@ class GetAGroupChannelResponse(ModelComposed):
             is_push_enabled (bool): [optional]  # noqa: E501
             is_super (bool): [optional]  # noqa: E501
             joined_member_count (int): [optional]  # noqa: E501
-            joined_ts (int): [optional]  # noqa: E501
-            last_message (SendbirdMessageResponse): [optional]  # noqa: E501
+            joined_ts (int, none_type): [optional]  # noqa: E501
+            last_message (SendbirdGroupChannelLastMessage): [optional]  # noqa: E501
             max_length_message (int): [optional]  # noqa: E501
             member_count (int): [optional]  # noqa: E501
             member_state (str): [optional]  # noqa: E501
             members ([SendbirdMember]): [optional]  # noqa: E501
             message_survival_seconds (int): [optional]  # noqa: E501
-            metadata ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]  # noqa: E501
+            metadata ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): [optional]  # noqa: E501
             my_role (str): [optional]  # noqa: E501
             name (str): [optional]  # noqa: E501
             push_trigger_option (SendbirdPushTriggerOption): [optional]  # noqa: E501

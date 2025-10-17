@@ -75,7 +75,7 @@ class SendbirdUser(ModelNormal):
         """
         return (bool, date, datetime, dict, float, int, list, str, none_type,)  # noqa: E501
 
-    _nullable = True
+    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -91,7 +91,7 @@ class SendbirdUser(ModelNormal):
             'user_id': (str,),  # noqa: E501
             'access_token': (str,),  # noqa: E501
             'created_at': (int,),  # noqa: E501
-            'discovery_keys': ([str],),  # noqa: E501
+            'discovery_keys': ([str], none_type,),  # noqa: E501
             'has_ever_logged_in': (bool,),  # noqa: E501
             'is_active': (bool,),  # noqa: E501
             'is_hide_me_from_friends': (bool,),  # noqa: E501
@@ -99,9 +99,9 @@ class SendbirdUser(ModelNormal):
             'is_shadow_blocked': (bool,),  # noqa: E501
             'last_seen_at': (int,),  # noqa: E501
             'locale': (str,),  # noqa: E501
-            'metadata': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),  # noqa: E501
-            'nickname': (str,),  # noqa: E501
-            'preferred_languages': ([str],),  # noqa: E501
+            'metadata': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type,),  # noqa: E501
+            'nickname': (str, none_type,),  # noqa: E501
+            'preferred_languages': ([str], none_type,),  # noqa: E501
             'profile_url': (str,),  # noqa: E501
             'require_auth_for_profile_image': (bool,),  # noqa: E501
             'state': (str, none_type,),  # noqa: E501
@@ -109,7 +109,6 @@ class SendbirdUser(ModelNormal):
             'unread_message_count': (int,),  # noqa: E501
             'phone_number': (str,),  # noqa: E501
             'is_created': (bool,),  # noqa: E501
-            'session_tokens': ([str],),  # noqa: E501
         }
 
     @cached_property
@@ -139,7 +138,6 @@ class SendbirdUser(ModelNormal):
         'unread_message_count': 'unread_message_count',  # noqa: E501
         'phone_number': 'phone_number',  # noqa: E501
         'is_created': 'is_created',  # noqa: E501
-        'session_tokens': 'session_tokens',  # noqa: E501
     }
 
     read_only_vars = {
@@ -188,7 +186,7 @@ class SendbirdUser(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             access_token (str): [optional]  # noqa: E501
             created_at (int): [optional]  # noqa: E501
-            discovery_keys ([str]): [optional]  # noqa: E501
+            discovery_keys ([str], none_type): [optional]  # noqa: E501
             has_ever_logged_in (bool): [optional]  # noqa: E501
             is_active (bool): [optional]  # noqa: E501
             is_hide_me_from_friends (bool): [optional]  # noqa: E501
@@ -196,17 +194,16 @@ class SendbirdUser(ModelNormal):
             is_shadow_blocked (bool): [optional]  # noqa: E501
             last_seen_at (int): [optional]  # noqa: E501
             locale (str): [optional]  # noqa: E501
-            metadata ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]  # noqa: E501
-            nickname (str): [optional]  # noqa: E501
-            preferred_languages ([str]): [optional]  # noqa: E501
-            profile_url (str): [optional]  # noqa: E501
+            metadata ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): [optional]  # noqa: E501
+            nickname (str, none_type): [optional]  # noqa: E501
+            preferred_languages ([str], none_type): [optional]  # noqa: E501
+            profile_url (str): [optional] if omitted the server will use the default value of ""  # noqa: E501
             require_auth_for_profile_image (bool): [optional]  # noqa: E501
             state (str, none_type): [optional]  # noqa: E501
             unread_channel_count (int): [optional]  # noqa: E501
             unread_message_count (int): [optional]  # noqa: E501
             phone_number (str): [optional]  # noqa: E501
             is_created (bool): [optional]  # noqa: E501
-            session_tokens ([str]): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -298,7 +295,7 @@ class SendbirdUser(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             access_token (str): [optional]  # noqa: E501
             created_at (int): [optional]  # noqa: E501
-            discovery_keys ([str]): [optional]  # noqa: E501
+            discovery_keys ([str], none_type): [optional]  # noqa: E501
             has_ever_logged_in (bool): [optional]  # noqa: E501
             is_active (bool): [optional]  # noqa: E501
             is_hide_me_from_friends (bool): [optional]  # noqa: E501
@@ -306,17 +303,16 @@ class SendbirdUser(ModelNormal):
             is_shadow_blocked (bool): [optional]  # noqa: E501
             last_seen_at (int): [optional]  # noqa: E501
             locale (str): [optional]  # noqa: E501
-            metadata ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]  # noqa: E501
-            nickname (str): [optional]  # noqa: E501
-            preferred_languages ([str]): [optional]  # noqa: E501
-            profile_url (str): [optional]  # noqa: E501
+            metadata ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): [optional]  # noqa: E501
+            nickname (str, none_type): [optional]  # noqa: E501
+            preferred_languages ([str], none_type): [optional]  # noqa: E501
+            profile_url (str): [optional] if omitted the server will use the default value of ""  # noqa: E501
             require_auth_for_profile_image (bool): [optional]  # noqa: E501
             state (str, none_type): [optional]  # noqa: E501
             unread_channel_count (int): [optional]  # noqa: E501
             unread_message_count (int): [optional]  # noqa: E501
             phone_number (str): [optional]  # noqa: E501
             is_created (bool): [optional]  # noqa: E501
-            session_tokens ([str]): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

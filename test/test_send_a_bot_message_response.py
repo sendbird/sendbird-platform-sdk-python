@@ -13,6 +13,8 @@ import sys
 import unittest
 
 import sendbird_platform_sdk
+from sendbird_platform_sdk.model.sendbird_message_response import SendbirdMessageResponse
+globals()['SendbirdMessageResponse'] = SendbirdMessageResponse
 from sendbird_platform_sdk.model.send_a_bot_message_response import SendABotMessageResponse
 
 

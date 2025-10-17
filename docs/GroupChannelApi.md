@@ -341,7 +341,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
                 preferred_languages=[
                     "preferred_languages_example",
                 ],
-                profile_url="profile_url_example",
+                profile_url="",
                 require_auth_for_profile_image=True,
                 user_id="user_id_example",
                 state="",
@@ -349,9 +349,6 @@ with sendbird_platform_sdk.ApiClient() as api_client:
                 unread_message_count=1,
                 phone_number="phone_number_example",
                 is_created=True,
-                session_tokens=[
-                    "session_tokens_example",
-                ],
             ),
         ],
     ) # CreateAGroupChannelRequest |  (optional)

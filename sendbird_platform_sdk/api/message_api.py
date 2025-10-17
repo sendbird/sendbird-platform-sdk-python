@@ -92,7 +92,7 @@ class MessageApi(object):
                     'channel_url':
                         (str,),
                     'message_id':
-                        (str,),
+                        (int,),
                     'api_token':
                         (str,),
                     'add_extra_data_to_a_message_request':
@@ -169,7 +169,7 @@ class MessageApi(object):
                     'channel_url':
                         (str,),
                     'message_id':
-                        (str,),
+                        (int,),
                     'api_token':
                         (str,),
                 },
@@ -246,7 +246,7 @@ class MessageApi(object):
                     'channel_url':
                         (str,),
                     'message_id':
-                        (str,),
+                        (int,),
                     'include_reactions':
                         (bool,),
                     'include_thread_info':
@@ -714,7 +714,7 @@ class MessageApi(object):
                     'channel_url':
                         (str,),
                     'message_id':
-                        (str,),
+                        (int,),
                     'keys':
                         (str,),
                     'api_token':
@@ -863,7 +863,7 @@ class MessageApi(object):
                     'channel_url':
                         (str,),
                     'message_id':
-                        (str,),
+                        (int,),
                     'api_token':
                         (str,),
                     'update_a_message_request':
@@ -941,7 +941,7 @@ class MessageApi(object):
                     'channel_url':
                         (str,),
                     'message_id':
-                        (str,),
+                        (int,),
                     'api_token':
                         (str,),
                     'update_extra_data_in_a_message_request':
@@ -993,7 +993,7 @@ class MessageApi(object):
         Args:
             channel_type (str): (Required) 
             channel_url (str): (Required) 
-            message_id (str): (Required) 
+            message_id (int): (Required) 
 
         Keyword Args:
             api_token (str): [optional]
@@ -1086,7 +1086,7 @@ class MessageApi(object):
         Args:
             channel_type (str): (Required) 
             channel_url (str): (Required) 
-            message_id (str): (Required) 
+            message_id (int): (Required) 
 
         Keyword Args:
             api_token (str): [optional]
@@ -1178,7 +1178,7 @@ class MessageApi(object):
         Args:
             channel_type (str): (Required) 
             channel_url (str): (Required) 
-            message_id (str): (Required) 
+            message_id (int): (Required) 
 
         Keyword Args:
             include_reactions (bool): [optional]
@@ -1647,7 +1647,7 @@ class MessageApi(object):
         Args:
             channel_type (str): (Required) 
             channel_url (str): (Required) 
-            message_id (str): (Required) 
+            message_id (int): (Required) 
 
         Keyword Args:
             keys (str): [optional]
@@ -1829,7 +1829,7 @@ class MessageApi(object):
         Args:
             channel_type (str): (Required) 
             channel_url (str): (Required) 
-            message_id (str): (Required) 
+            message_id (int): (Required) 
 
         Keyword Args:
             api_token (str): [optional]
@@ -1922,7 +1922,7 @@ class MessageApi(object):
         Args:
             channel_type (str): (Required) 
             channel_url (str): (Required) 
-            message_id (str): (Required) 
+            message_id (int): (Required) 
 
         Keyword Args:
             api_token (str): [optional]
