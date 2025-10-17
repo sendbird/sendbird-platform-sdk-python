@@ -31,6 +31,13 @@ class TestBotApi(unittest.TestCase):
         """
         pass
 
+    def test_delete_bot_by_id(self):
+        """Test case for delete_bot_by_id
+
+        Delete a bot  # noqa: E501
+        """
+        pass
+
     def test_join_channels(self):
         """Test case for join_channels
 
@@ -63,6 +70,20 @@ class TestBotApi(unittest.TestCase):
         """Test case for send_a_bot_message
 
         Send a bot's message  # noqa: E501
+        """
+        pass
+
+    def test_update_bot_by_id(self):
+        """Test case for update_bot_by_id
+
+        Update a bot  # noqa: E501
+        """
+        pass
+
+    def test_view_bot_by_id(self):
+        """Test case for view_bot_by_id
+
+        View a bot  # noqa: E501
         """
         pass
 

@@ -47,7 +47,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     api_instance = message_api.MessageApi(api_client)
     channel_type = "open_channels" # str | (Required) 
     channel_url = "channel_url_example" # str | (Required) 
-    message_id = "message_id_example" # str | (Required) 
+    message_id = 1 # int | (Required) 
     api_token = "{{API_TOKEN}}" # str |  (optional)
     add_extra_data_to_a_message_request = AddExtraDataToAMessageRequest(
         sorted_metaarray=SendbirdSortedMetaarray([
@@ -85,7 +85,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **channel_type** | **str**| (Required)  |
  **channel_url** | **str**| (Required)  |
- **message_id** | **str**| (Required)  |
+ **message_id** | **int**| (Required)  |
  **api_token** | **str**|  | [optional]
  **add_extra_data_to_a_message_request** | [**AddExtraDataToAMessageRequest**](AddExtraDataToAMessageRequest.md)|  | [optional]
 
@@ -139,7 +139,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     api_instance = message_api.MessageApi(api_client)
     channel_type = "open_channels" # str | (Required) 
     channel_url = "channel_url_example" # str | (Required) 
-    message_id = "message_id_example" # str | (Required) 
+    message_id = 1 # int | (Required) 
     api_token = "{{API_TOKEN}}" # str |  (optional)
 
     # example passing only required values which don't have defaults set
@@ -167,7 +167,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **channel_type** | **str**| (Required)  |
  **channel_url** | **str**| (Required)  |
- **message_id** | **str**| (Required)  |
+ **message_id** | **int**| (Required)  |
  **api_token** | **str**|  | [optional]
 
 ### Return type
@@ -221,7 +221,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     api_instance = message_api.MessageApi(api_client)
     channel_type = "open_channels" # str | (Required) 
     channel_url = "channel_url_example" # str | (Required) 
-    message_id = "message_id_example" # str | (Required) 
+    message_id = 1 # int | (Required) 
     include_reactions = True # bool |  (optional)
     include_thread_info = True # bool |  (optional)
     include_parent_message_info = True # bool |  (optional)
@@ -254,7 +254,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **channel_type** | **str**| (Required)  |
  **channel_url** | **str**| (Required)  |
- **message_id** | **str**| (Required)  |
+ **message_id** | **int**| (Required)  |
  **include_reactions** | **bool**|  | [optional]
  **include_thread_info** | **bool**|  | [optional]
  **include_parent_message_info** | **bool**|  | [optional]
@@ -680,7 +680,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     api_instance = message_api.MessageApi(api_client)
     channel_type = "open_channels" # str | (Required) 
     channel_url = "channel_url_example" # str | (Required) 
-    message_id = "message_id_example" # str | (Required) 
+    message_id = 1 # int | (Required) 
     keys = "keys_example" # str |  (optional)
     api_token = "{{API_TOKEN}}" # str |  (optional)
 
@@ -709,7 +709,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **channel_type** | **str**| (Required)  |
  **channel_url** | **str**| (Required)  |
- **message_id** | **str**| (Required)  |
+ **message_id** | **int**| (Required)  |
  **keys** | **str**|  | [optional]
  **api_token** | **str**|  | [optional]
 
@@ -902,7 +902,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     api_instance = message_api.MessageApi(api_client)
     channel_type = "open_channels" # str | (Required) 
     channel_url = "channel_url_example" # str | (Required) 
-    message_id = "message_id_example" # str | (Required) 
+    message_id = 1 # int | (Required) 
     api_token = "{{API_TOKEN}}" # str |  (optional)
     update_a_message_request = UpdateAMessageRequest(
         custom_type="custom_type_example",
@@ -941,7 +941,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **channel_type** | **str**| (Required)  |
  **channel_url** | **str**| (Required)  |
- **message_id** | **str**| (Required)  |
+ **message_id** | **int**| (Required)  |
  **api_token** | **str**|  | [optional]
  **update_a_message_request** | [**UpdateAMessageRequest**](UpdateAMessageRequest.md)|  | [optional]
 
@@ -997,7 +997,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
     api_instance = message_api.MessageApi(api_client)
     channel_type = "open_channels" # str | (Required) 
     channel_url = "channel_url_example" # str | (Required) 
-    message_id = "message_id_example" # str | (Required) 
+    message_id = 1 # int | (Required) 
     api_token = "{{API_TOKEN}}" # str |  (optional)
     update_extra_data_in_a_message_request = UpdateExtraDataInAMessageRequest(
         mode="mode_example",
@@ -1037,7 +1037,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **channel_type** | **str**| (Required)  |
  **channel_url** | **str**| (Required)  |
- **message_id** | **str**| (Required)  |
+ **message_id** | **int**| (Required)  |
  **api_token** | **str**|  | [optional]
  **update_extra_data_in_a_message_request** | [**UpdateExtraDataInAMessageRequest**](UpdateExtraDataInAMessageRequest.md)|  | [optional]
 

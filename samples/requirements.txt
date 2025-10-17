@@ -1,1 +1,0 @@
-sendbird_platform_sdk >= 0.0.16

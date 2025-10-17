@@ -100,7 +100,7 @@ class SendbirdOpenChannel(ModelNormal):
             'name': (str,),  # noqa: E501
             'operators': ([SendbirdBasicUserInfo],),  # noqa: E501
             'participant_count': (int,),  # noqa: E501
-            'metadata': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),  # noqa: E501
+            'metadata': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -179,7 +179,7 @@ class SendbirdOpenChannel(ModelNormal):
             name (str): [optional]  # noqa: E501
             operators ([SendbirdBasicUserInfo]): [optional]  # noqa: E501
             participant_count (int): [optional]  # noqa: E501
-            metadata ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]  # noqa: E501
+            metadata ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -280,7 +280,7 @@ class SendbirdOpenChannel(ModelNormal):
             name (str): [optional]  # noqa: E501
             operators ([SendbirdBasicUserInfo]): [optional]  # noqa: E501
             participant_count (int): [optional]  # noqa: E501
-            metadata ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]  # noqa: E501
+            metadata ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

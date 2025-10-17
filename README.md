@@ -67,10 +67,9 @@ All the documentation for this project lives in the /docs directory of this repo
 |       | Documentation |
 | ----------- | ----------- |
 | Announcement   | [docs/AnnouncementApi.md](docs/AnnouncementApi.md)|
-| Application | [docs/ApplicationApi.md](docs/ApplicationApi.md)  |
 | Bot | [docs/BotApi.md](docs/BotApi.md)  |
 | GroupChannel | [docs/GroupChannelApi.md](docs/GroupChannelApi.md)  |
 | Message | [docs/MessageApi.md](docs/MessageApi.md)  |
 | OpenChannel | [docs/OpenChannelApi.md ](docs/OpenChannelApi.md)  |
 | User | [docs/UserApi.md](docs/UserApi.md)  |
-
+| Moderation | [docs/ModerationApi.md](docs/ModerationApi.md)  |

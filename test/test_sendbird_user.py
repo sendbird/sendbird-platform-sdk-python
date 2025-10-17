@@ -27,9 +27,205 @@ class TestSendbirdUser(unittest.TestCase):
 
     def testSendbirdUser(self):
         """Test SendbirdUser"""
-        # FIXME: construct object with mandatory attributes with example values
-        # model = SendbirdUser()  # noqa: E501
-        pass
+        # SendbirdUser has no required fields, test with common optional fields
+        model = SendbirdUser(
+            user_id="user123",
+            nickname="Test User",
+            profile_url="https://example.com/profile.jpg",
+            is_online=True,
+            is_active=True
+        )
+        self.assertEqual(model.user_id, "user123")
+        self.assertEqual(model.nickname, "Test User")
+        self.assertTrue(model.is_online)
+        self.assertTrue(model.is_active)
+        
+    def testSendbirdUserWithMetadata(self):
+        """Test SendbirdUser with metadata"""
+        model = SendbirdUser(
+            user_id="user123",
+            nickname="Test User",
+            metadata={"level": 10, "vip": True, "region": "US"}
+        )
+        self.assertEqual(model.user_id, "user123")
+        self.assertEqual(model.metadata["level"], 10)
+        self.assertTrue(model.metadata["vip"])
+        
+    def testSendbirdUserState(self):
+        """Test SendbirdUser with state enum"""
+        # Test with valid state values
+        model_invited = SendbirdUser(
+            user_id="user123",
+            state="invited"
+        )
+        self.assertEqual(model_invited.state, "invited")
+        
+        model_joined = SendbirdUser(
+            user_id="user123",
+            state="joined"
+        )
+        self.assertEqual(model_joined.state, "joined")
+        
+    def testSendbirdUserSerialization(self):
+        """Test SendbirdUser serialization"""
+        model = SendbirdUser(
+            user_id="user123",
+            nickname="Test User",
+            is_online=True,
+            metadata={"key": "value"}
+        )
+        model_dict = model.to_dict()
+        self.assertIsInstance(model_dict, dict)
+        self.assertEqual(model_dict['user_id'], "user123")
+        self.assertEqual(model_dict['nickname'], "Test User")
+        
+    def testSendbirdUserFullFields(self):
+        """Test SendbirdUser with all common fields"""
+        import time
+        current_time = int(time.time())
+        
+        model = SendbirdUser(
+            user_id="user123",
+            nickname="Test User",
+            profile_url="https://example.com/profile.jpg",
+            is_online=True,
+            is_active=True,
+            created_at=current_time,
+            last_seen_at=current_time,
+            discovery_keys=["email:test@example.com"],
+            locale="en-US",
+            preferred_languages=["en", "ko"],
+            unread_message_count=5,
+            unread_channel_count=2
+        )
+        
+        self.assertEqual(model.user_id, "user123")
+        self.assertEqual(model.nickname, "Test User")
+        self.assertTrue(model.is_online)
+        self.assertEqual(model.unread_message_count, 5)
+        self.assertEqual(model.unread_channel_count, 2)
+        self.assertEqual(len(model.preferred_languages), 2)
+        
+    def testSendbirdUserNullableState(self):
+        """Test SendbirdUser with nullable state field"""
+        # State can be None
+        model1 = SendbirdUser(
+            user_id="user123",
+            state=None
+        )
+        self.assertEqual(model1.user_id, "user123")
+        
+        # State with empty string
+        model2 = SendbirdUser(
+            user_id="user123",
+            state=""
+        )
+        self.assertEqual(model2.state, "")
+        
+        # State with valid values
+        model3 = SendbirdUser(
+            user_id="user123",
+            state="invited"
+        )
+        self.assertEqual(model3.state, "invited")
+        
+    def testSendbirdUserOptionalFields(self):
+        """Test SendbirdUser with various optional fields
+        
+        FIXME: test_2 currently fails - optional fields should accept None
+        """
+        # Minimal user (most fields optional - can be omitted)
+        model = SendbirdUser(user_id="user123")
+        self.assertEqual(model.user_id, "user123")
+        
+        # User with optional fields set to None - Expected: should accept
+        # FIXME: Currently raises ApiTypeError - this is a bug
+        model2 = SendbirdUser(
+            user_id="user123",
+            nickname=None,  # optional should accept None
+            profile_url='',
+            metadata=None
+        )
+        self.assertEqual(model2.user_id, "user123")
+        
+    def testSendbirdUserOptionalBooleanFields(self):
+        """Test SendbirdUser with optional boolean fields"""
+        # Without boolean fields
+        model1 = SendbirdUser(user_id="user123")
+        self.assertIsNotNone(model1)
+        
+        # With boolean fields set to False
+        model2 = SendbirdUser(
+            user_id="user123",
+            is_online=False,
+            is_active=False,
+            is_hide_me_from_friends=False,
+            is_shadow_blocked=False
+        )
+        self.assertFalse(model2.is_online)
+        self.assertFalse(model2.is_active)
+        
+        # With boolean fields set to True
+        model3 = SendbirdUser(
+            user_id="user123",
+            is_online=True,
+            is_active=True,
+            has_ever_logged_in=True
+        )
+        self.assertTrue(model3.is_online)
+        self.assertTrue(model3.is_active)
+        self.assertTrue(model3.has_ever_logged_in)
+        
+    def testSendbirdUserOptionalListFields(self):
+        """Test SendbirdUser with optional list fields
+        
+        FIXME: test_2 currently fails - optional fields should accept None
+        """
+        # Empty lists (valid)
+        model1 = SendbirdUser(
+            user_id="user123",
+            discovery_keys=[],
+            preferred_languages=[],
+        )
+        self.assertEqual(len(model1.discovery_keys), 0)
+        self.assertEqual(len(model1.preferred_languages), 0)
+        
+        # None lists - Expected: should accept None
+        # FIXME: Currently raises ApiTypeError - this is a bug
+        model2 = SendbirdUser(
+            user_id="user123",
+            discovery_keys=None,
+            preferred_languages=None,
+        )
+        self.assertEqual(model2.user_id, "user123")
+        
+    def testSendbirdUserOptionalMetadataNull(self):
+        """Test SendbirdUser with metadata set to None vs empty dict
+        
+        FIXME: test_1 currently fails - optional fields should accept None
+        """
+        # Metadata as None - Expected: should accept None
+        # FIXME: Currently raises ApiTypeError - this is a bug
+        model1 = SendbirdUser(
+            user_id="user123",
+            metadata=None
+        )
+        self.assertIsNotNone(model1)
+        
+        # Metadata as empty dict (valid)
+        model2 = SendbirdUser(
+            user_id="user123",
+            metadata={}
+        )
+        self.assertEqual(len(model2.metadata), 0)
+        
+        # Metadata with None values inside dict (valid - values can be None)
+        model3 = SendbirdUser(
+            user_id="user123",
+            metadata={"key1": None, "key2": "value"}
+        )
+        self.assertIsNone(model3.metadata["key1"])
+        self.assertEqual(model3.metadata["key2"], "value")
 
 
 if __name__ == '__main__':

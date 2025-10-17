@@ -1,7 +1,6 @@
 .gitignore
 .gitlab-ci.yml
 .travis.yml
-README.md
 docs/AcceptAnInvitationRequest.md
 docs/AcceptAnInvitationResponse.md
 docs/AddARegistrationOrDeviceTokenRequest.md
@@ -104,8 +103,10 @@ docs/SendbirdFile.md
 docs/SendbirdGroupChannel.md
 docs/SendbirdGroupChannelDetail.md
 docs/SendbirdGroupChannelDetailChannel.md
+docs/SendbirdGroupChannelLastMessage.md
 docs/SendbirdMember.md
 docs/SendbirdMessageResponse.md
+docs/SendbirdMessageResponseExtendedMessagePayload.md
 docs/SendbirdMessageResponseMessageEvents.md
 docs/SendbirdOpenChannel.md
 docs/SendbirdParentMessageInfo.md
@@ -152,7 +153,6 @@ docs/ViewPushPreferencesForAChannelResponse.md
 docs/ViewPushPreferencesResponse.md
 docs/ViewWhoOwnsARegistrationOrDeviceTokenResponse.md
 git_push.sh
-requirements.txt
 sendbird_platform_sdk/__init__.py
 sendbird_platform_sdk/api/__init__.py
 sendbird_platform_sdk/api/announcement_api.py
@@ -264,8 +264,10 @@ sendbird_platform_sdk/model/sendbird_file.py
 sendbird_platform_sdk/model/sendbird_group_channel.py
 sendbird_platform_sdk/model/sendbird_group_channel_detail.py
 sendbird_platform_sdk/model/sendbird_group_channel_detail_channel.py
+sendbird_platform_sdk/model/sendbird_group_channel_last_message.py
 sendbird_platform_sdk/model/sendbird_member.py
 sendbird_platform_sdk/model/sendbird_message_response.py
+sendbird_platform_sdk/model/sendbird_message_response_extended_message_payload.py
 sendbird_platform_sdk/model/sendbird_message_response_message_events.py
 sendbird_platform_sdk/model/sendbird_open_channel.py
 sendbird_platform_sdk/model/sendbird_parent_message_info.py
@@ -314,6 +316,3 @@ sendbird_platform_sdk/models/__init__.py
 sendbird_platform_sdk/rest.py
 setup.cfg
 setup.py
-test-requirements.txt
-test/__init__.py
-tox.ini

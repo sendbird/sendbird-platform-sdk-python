@@ -14,9 +14,9 @@ import unittest
 
 import sendbird_platform_sdk
 from sendbird_platform_sdk.model.create_a_bot_response_bot import CreateABotResponseBot
-from sendbird_platform_sdk.model.create_a_bot_response_bot_style import CreateABotResponseBotStyle
+from sendbird_platform_sdk.model.list_bots_response_bots_inner_bot_style import ListBotsResponseBotsInnerBotStyle
 globals()['CreateABotResponseBot'] = CreateABotResponseBot
-globals()['CreateABotResponseBotStyle'] = CreateABotResponseBotStyle
+globals()['ListBotsResponseBotsInnerBotStyle'] = ListBotsResponseBotsInnerBotStyle
 from sendbird_platform_sdk.model.create_a_bot_response import CreateABotResponse
 
 

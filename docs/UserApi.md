@@ -240,7 +240,7 @@ with sendbird_platform_sdk.ApiClient() as api_client:
         metadata={},
         nickname="nickname_example",
         profile_file=open('/path/to/file', 'rb'),
-        profile_url="profile_url_example",
+        profile_url="",
         user_id="user_id_example",
     ) # CreateAUserRequest |  (optional)
 

@@ -10,16 +10,24 @@
 
 
 import unittest
+from unittest.mock import Mock, patch, MagicMock
 
 import sendbird_platform_sdk
 from sendbird_platform_sdk.api.user_api import UserApi  # noqa: E501
+from sendbird_platform_sdk.api_client import ApiClient
+from sendbird_platform_sdk.configuration import Configuration
+from sendbird_platform_sdk.model.create_a_user_request import CreateAUserRequest
+from sendbird_platform_sdk.model.update_a_user_request import UpdateAUserRequest
+from sendbird_platform_sdk.model.sendbird_user import SendbirdUser
 
 
 class TestUserApi(unittest.TestCase):
     """UserApi unit test stubs"""
 
     def setUp(self):
-        self.api = UserApi()  # noqa: E501
+        self.configuration = Configuration(host="https://api-test.sendbird.com")
+        self.api_client = ApiClient(configuration=self.configuration)
+        self.api = UserApi(api_client=self.api_client)  # noqa: E501
 
     def tearDown(self):
         pass
@@ -38,12 +46,39 @@ class TestUserApi(unittest.TestCase):
         """
         pass
 
-    def test_create_a_user(self):
+    @patch.object(ApiClient, 'call_api')
+    def test_create_a_user(self, mock_call_api):
         """Test case for create_a_user
 
         Create a user  # noqa: E501
         """
-        pass
+        # Mock response
+        mock_response = MagicMock()
+        mock_response.data = {
+            'user_id': 'test_user_123',
+            'nickname': 'Test User',
+            'profile_url': 'https://example.com/profile.jpg'
+        }
+        mock_call_api.return_value = mock_response
+        
+        # Create request
+        request = CreateAUserRequest(
+            user_id='test_user_123',
+            nickname='Test User',
+            profile_url='https://example.com/profile.jpg'
+        )
+        
+        # Call API
+        response = self.api.create_a_user(
+            api_token='test_api_token',
+            create_a_user_request=request
+        )
+        
+        # Verify mock was called
+        mock_call_api.assert_called_once()
+        
+        # Verify response
+        self.assertIsNotNone(response)
 
     def test_create_user_token(self):
         """Test case for create_user_token
@@ -87,12 +122,33 @@ class TestUserApi(unittest.TestCase):
         """
         pass
 
-    def test_list_users(self):
+    @patch.object(ApiClient, 'call_api')
+    def test_list_users(self, mock_call_api):
         """Test case for list_users
 
         List users  # noqa: E501
         """
-        pass
+        # Mock response
+        mock_response = MagicMock()
+        mock_response.data = {
+            'users': [
+                {'user_id': 'user1', 'nickname': 'User One'},
+                {'user_id': 'user2', 'nickname': 'User Two'}
+            ],
+            'next': ''
+        }
+        mock_call_api.return_value = mock_response
+        
+        # Call API
+        response = self.api.list_users(
+            api_token='test_api_token'
+        )
+        
+        # Verify mock was called
+        mock_call_api.assert_called_once()
+        
+        # Verify response
+        self.assertIsNotNone(response)
 
     def test_mark_all_messages_as_read(self):
         """Test case for mark_all_messages_as_read
@@ -164,12 +220,33 @@ class TestUserApi(unittest.TestCase):
         """
         pass
 
-    def test_view_a_user(self):
+    @patch.object(ApiClient, 'call_api')
+    def test_view_a_user(self, mock_call_api):
         """Test case for view_a_user
 
         View a user  # noqa: E501
         """
-        pass
+        # Mock response
+        mock_response = MagicMock()
+        mock_response.data = {
+            'user_id': 'test_user_123',
+            'nickname': 'Test User',
+            'profile_url': 'https://example.com/profile.jpg',
+            'is_online': True
+        }
+        mock_call_api.return_value = mock_response
+        
+        # Call API
+        response = self.api.view_a_user(
+            api_token='test_api_token',
+            user_id='test_user_123'
+        )
+        
+        # Verify mock was called
+        mock_call_api.assert_called_once()
+        
+        # Verify response
+        self.assertIsNotNone(response)
 
     def test_view_count_preference_of_a_channel(self):
         """Test case for view_count_preference_of_a_channel

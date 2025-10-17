@@ -82,15 +82,15 @@ class UpdateAUserRequest(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'discovery_keys': ([str],),  # noqa: E501
+            'discovery_keys': ([str], none_type,),  # noqa: E501
             'is_active': (bool,),  # noqa: E501
             'issue_access_token': (bool,),  # noqa: E501
             'last_seen_at': (int,),  # noqa: E501
             'leave_all_when_deactivated': (bool,),  # noqa: E501
-            'nickname': (str,),  # noqa: E501
-            'preferred_languages': ([str],),  # noqa: E501
+            'nickname': (str, none_type,),  # noqa: E501
+            'preferred_languages': ([str], none_type,),  # noqa: E501
             'profile_file': (file_type,),  # noqa: E501
-            'profile_url': (str,),  # noqa: E501
+            'profile_url': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -151,15 +151,15 @@ class UpdateAUserRequest(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            discovery_keys ([str]): [optional]  # noqa: E501
+            discovery_keys ([str], none_type): [optional]  # noqa: E501
             is_active (bool): [optional]  # noqa: E501
             issue_access_token (bool): [optional]  # noqa: E501
             last_seen_at (int): [optional]  # noqa: E501
             leave_all_when_deactivated (bool): [optional]  # noqa: E501
-            nickname (str): [optional]  # noqa: E501
-            preferred_languages ([str]): [optional]  # noqa: E501
+            nickname (str, none_type): [optional]  # noqa: E501
+            preferred_languages ([str], none_type): [optional]  # noqa: E501
             profile_file (file_type): [optional]  # noqa: E501
-            profile_url (str): [optional]  # noqa: E501
+            profile_url (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -245,15 +245,15 @@ class UpdateAUserRequest(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            discovery_keys ([str]): [optional]  # noqa: E501
+            discovery_keys ([str], none_type): [optional]  # noqa: E501
             is_active (bool): [optional]  # noqa: E501
             issue_access_token (bool): [optional]  # noqa: E501
             last_seen_at (int): [optional]  # noqa: E501
             leave_all_when_deactivated (bool): [optional]  # noqa: E501
-            nickname (str): [optional]  # noqa: E501
-            preferred_languages ([str]): [optional]  # noqa: E501
+            nickname (str, none_type): [optional]  # noqa: E501
+            preferred_languages ([str], none_type): [optional]  # noqa: E501
             profile_file (file_type): [optional]  # noqa: E501
-            profile_url (str): [optional]  # noqa: E501
+            profile_url (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

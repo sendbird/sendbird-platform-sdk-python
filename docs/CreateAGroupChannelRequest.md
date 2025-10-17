@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **users** | [**[SendbirdUser]**](SendbirdUser.md) |  | 
-**access_code** | **str** |  | [optional] 
-**block_sdk_user_channel_join** | **bool** |  | [optional] 
+**access_code** | **str, none_type** |  | [optional] 
+**block_sdk_user_channel_join** | **bool, none_type** |  | [optional] 
 **channel_url** | **str** |  | [optional] 
 **cover_file** | **file_type** | Uploads a file for the channel cover image. | [optional] 
 **cover_url** | **str** |  | [optional] 

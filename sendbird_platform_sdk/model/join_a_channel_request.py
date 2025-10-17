@@ -83,7 +83,7 @@ class JoinAChannelRequest(ModelNormal):
         """
         return {
             'user_id': (str,),  # noqa: E501
-            'access_code': (str,),  # noqa: E501
+            'access_code': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -140,7 +140,7 @@ class JoinAChannelRequest(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            access_code (str): This property should be specified if the public group channel to join requires an access code to users, which means that the is_access_code_required property of the channel resource is true.. [optional]  # noqa: E501
+            access_code (str, none_type): This property should be specified if the public group channel to join requires an access code to users, which means that the is_access_code_required property of the channel resource is true.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -230,7 +230,7 @@ class JoinAChannelRequest(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            access_code (str): This property should be specified if the public group channel to join requires an access code to users, which means that the is_access_code_required property of the channel resource is true.. [optional]  # noqa: E501
+            access_code (str, none_type): This property should be specified if the public group channel to join requires an access code to users, which means that the is_access_code_required property of the channel resource is true.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

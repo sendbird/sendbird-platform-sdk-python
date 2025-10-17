@@ -92,9 +92,9 @@ class SendbirdBasicUserInfo(ModelNormal):
             'is_active': (bool,),  # noqa: E501
             'is_blocked_by_me': (bool,),  # noqa: E501
             'role': (str,),  # noqa: E501
-            'nickname': (str,),  # noqa: E501
+            'nickname': (str, none_type,),  # noqa: E501
             'profile_url': (str,),  # noqa: E501
-            'metadata': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),  # noqa: E501
+            'metadata': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -161,9 +161,9 @@ class SendbirdBasicUserInfo(ModelNormal):
             is_active (bool): [optional]  # noqa: E501
             is_blocked_by_me (bool): [optional]  # noqa: E501
             role (str): [optional]  # noqa: E501
-            nickname (str): [optional]  # noqa: E501
-            profile_url (str): [optional]  # noqa: E501
-            metadata ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]  # noqa: E501
+            nickname (str, none_type): [optional]  # noqa: E501
+            profile_url (str): [optional] if omitted the server will use the default value of ""  # noqa: E501
+            metadata ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -257,9 +257,9 @@ class SendbirdBasicUserInfo(ModelNormal):
             is_active (bool): [optional]  # noqa: E501
             is_blocked_by_me (bool): [optional]  # noqa: E501
             role (str): [optional]  # noqa: E501
-            nickname (str): [optional]  # noqa: E501
-            profile_url (str): [optional]  # noqa: E501
-            metadata ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]  # noqa: E501
+            nickname (str, none_type): [optional]  # noqa: E501
+            profile_url (str): [optional] if omitted the server will use the default value of ""  # noqa: E501
+            metadata ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

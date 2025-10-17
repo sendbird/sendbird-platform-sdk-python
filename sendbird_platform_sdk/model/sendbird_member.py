@@ -111,10 +111,10 @@ class SendbirdMember(ModelNormal):
             'is_muted': (bool,),  # noqa: E501
             'is_online': (bool,),  # noqa: E501
             'last_seen_at': (int,),  # noqa: E501
-            'metadata': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),  # noqa: E501
+            'metadata': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type,),  # noqa: E501
             'muted_description': (str,),  # noqa: E501
             'muted_end_at': (int,),  # noqa: E501
-            'nickname': (str,),  # noqa: E501
+            'nickname': (str, none_type,),  # noqa: E501
             'push_enabled': (bool,),  # noqa: E501
             'push_trigger_option': (SendbirdPushTriggerOption,),  # noqa: E501
             'profile_url': (str,),  # noqa: E501
@@ -208,13 +208,13 @@ class SendbirdMember(ModelNormal):
             is_muted (bool): [optional]  # noqa: E501
             is_online (bool): [optional]  # noqa: E501
             last_seen_at (int): [optional]  # noqa: E501
-            metadata ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]  # noqa: E501
+            metadata ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): [optional]  # noqa: E501
             muted_description (str): [optional]  # noqa: E501
             muted_end_at (int): [optional]  # noqa: E501
-            nickname (str): [optional]  # noqa: E501
+            nickname (str, none_type): [optional]  # noqa: E501
             push_enabled (bool): [optional]  # noqa: E501
             push_trigger_option (SendbirdPushTriggerOption): [optional]  # noqa: E501
-            profile_url (str): [optional]  # noqa: E501
+            profile_url (str): [optional] if omitted the server will use the default value of ""  # noqa: E501
             require_auth_for_profile_image (bool): [optional]  # noqa: E501
             read_ts (int): [optional]  # noqa: E501
             role (str, none_type): [optional]  # noqa: E501
@@ -318,13 +318,13 @@ class SendbirdMember(ModelNormal):
             is_muted (bool): [optional]  # noqa: E501
             is_online (bool): [optional]  # noqa: E501
             last_seen_at (int): [optional]  # noqa: E501
-            metadata ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]  # noqa: E501
+            metadata ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): [optional]  # noqa: E501
             muted_description (str): [optional]  # noqa: E501
             muted_end_at (int): [optional]  # noqa: E501
-            nickname (str): [optional]  # noqa: E501
+            nickname (str, none_type): [optional]  # noqa: E501
             push_enabled (bool): [optional]  # noqa: E501
             push_trigger_option (SendbirdPushTriggerOption): [optional]  # noqa: E501
-            profile_url (str): [optional]  # noqa: E501
+            profile_url (str): [optional] if omitted the server will use the default value of ""  # noqa: E501
             require_auth_for_profile_image (bool): [optional]  # noqa: E501
             read_ts (int): [optional]  # noqa: E501
             role (str, none_type): [optional]  # noqa: E501

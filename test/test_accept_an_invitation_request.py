@@ -27,9 +27,71 @@ class TestAcceptAnInvitationRequest(unittest.TestCase):
 
     def testAcceptAnInvitationRequest(self):
         """Test AcceptAnInvitationRequest"""
-        # FIXME: construct object with mandatory attributes with example values
-        # model = AcceptAnInvitationRequest()  # noqa: E501
-        pass
+        # Test with required field
+        model = AcceptAnInvitationRequest(user_id="test_user_123")
+        self.assertEqual(model.user_id, "test_user_123")
+        
+    def testAcceptAnInvitationRequestWithAccessCode(self):
+        """Test AcceptAnInvitationRequest with optional access_code"""
+        model = AcceptAnInvitationRequest(
+            user_id="test_user_123",
+            access_code="secret_code_456"
+        )
+        self.assertEqual(model.user_id, "test_user_123")
+        self.assertEqual(model.access_code, "secret_code_456")
+        
+    def testAcceptAnInvitationRequestMissingRequired(self):
+        """Test AcceptAnInvitationRequest fails without required field"""
+        with self.assertRaises(TypeError):
+            model = AcceptAnInvitationRequest()
+            
+    def testAcceptAnInvitationRequestSerialization(self):
+        """Test AcceptAnInvitationRequest serialization"""
+        model = AcceptAnInvitationRequest(
+            user_id="test_user_123",
+            access_code="secret_code_456"
+        )
+        # Test that model can be converted to dict
+        model_dict = model.to_dict()
+        self.assertIsInstance(model_dict, dict)
+        self.assertEqual(model_dict['user_id'], "test_user_123")
+        self.assertEqual(model_dict['access_code'], "secret_code_456")
+        
+    def testAcceptAnInvitationRequestOptionalFieldNotSet(self):
+        """Test AcceptAnInvitationRequest with optional field not set"""
+        model = AcceptAnInvitationRequest(user_id="test_user_123")
+        # Optional field should not be present or should be None-like
+        self.assertFalse(hasattr(model, 'access_code') and model.access_code)
+        
+    def testAcceptAnInvitationRequestOptionalFieldShouldAcceptNone(self):
+        """Test that optional access_code should accept None
+        
+        FIXME: Currently fails - optional fields should accept None
+        This is a potential SDK bug where optional fields reject None values
+        """
+        # Expected behavior: optional fields should accept None
+        model = AcceptAnInvitationRequest(
+            user_id="test_user_123",
+            access_code=None
+        )
+        self.assertEqual(model.user_id, "test_user_123")
+        
+    def testAcceptAnInvitationRequestOptionalFieldEmptyString(self):
+        """Test AcceptAnInvitationRequest with optional field as empty string"""
+        model = AcceptAnInvitationRequest(
+            user_id="test_user_123",
+            access_code=""
+        )
+        self.assertEqual(model.user_id, "test_user_123")
+        self.assertEqual(model.access_code, "")
+        
+    def testAcceptAnInvitationRequestSerializationWithoutOptional(self):
+        """Test serialization without optional fields"""
+        model = AcceptAnInvitationRequest(user_id="test_user_123")
+        model_dict = model.to_dict()
+        self.assertIsInstance(model_dict, dict)
+        self.assertEqual(model_dict['user_id'], "test_user_123")
+        # Optional field might or might not be in dict depending on implementation
 
 
 if __name__ == '__main__':

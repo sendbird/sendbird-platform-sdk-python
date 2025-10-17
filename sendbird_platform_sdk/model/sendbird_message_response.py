@@ -32,15 +32,15 @@ from sendbird_platform_sdk.exceptions import ApiAttributeError
 
 def lazy_import():
     from sendbird_platform_sdk.model.sendbird_basic_user_info import SendbirdBasicUserInfo
-    from sendbird_platform_sdk.model.sendbird_extended_message_payload import SendbirdExtendedMessagePayload
     from sendbird_platform_sdk.model.sendbird_file import SendbirdFile
+    from sendbird_platform_sdk.model.sendbird_message_response_extended_message_payload import SendbirdMessageResponseExtendedMessagePayload
     from sendbird_platform_sdk.model.sendbird_message_response_message_events import SendbirdMessageResponseMessageEvents
     from sendbird_platform_sdk.model.sendbird_parent_message_info import SendbirdParentMessageInfo
     from sendbird_platform_sdk.model.sendbird_reaction import SendbirdReaction
     from sendbird_platform_sdk.model.sendbird_sorted_metaarray import SendbirdSortedMetaarray
     globals()['SendbirdBasicUserInfo'] = SendbirdBasicUserInfo
-    globals()['SendbirdExtendedMessagePayload'] = SendbirdExtendedMessagePayload
     globals()['SendbirdFile'] = SendbirdFile
+    globals()['SendbirdMessageResponseExtendedMessagePayload'] = SendbirdMessageResponseExtendedMessagePayload
     globals()['SendbirdMessageResponseMessageEvents'] = SendbirdMessageResponseMessageEvents
     globals()['SendbirdParentMessageInfo'] = SendbirdParentMessageInfo
     globals()['SendbirdReaction'] = SendbirdReaction
@@ -86,7 +86,7 @@ class SendbirdMessageResponse(ModelNormal):
         lazy_import()
         return (bool, date, datetime, dict, float, int, list, str, none_type,)  # noqa: E501
 
-    _nullable = True
+    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -129,7 +129,7 @@ class SendbirdMessageResponse(ModelNormal):
             'parent_message_info': (SendbirdParentMessageInfo,),  # noqa: E501
             'is_reply_to_channel': (bool,),  # noqa: E501
             'message_events': (SendbirdMessageResponseMessageEvents,),  # noqa: E501
-            'extended_message_payload': (SendbirdExtendedMessagePayload,),  # noqa: E501
+            'extended_message_payload': (SendbirdMessageResponseExtendedMessagePayload,),  # noqa: E501
         }
 
     @cached_property
@@ -240,7 +240,7 @@ class SendbirdMessageResponse(ModelNormal):
             parent_message_info (SendbirdParentMessageInfo): [optional]  # noqa: E501
             is_reply_to_channel (bool): [optional]  # noqa: E501
             message_events (SendbirdMessageResponseMessageEvents): [optional]  # noqa: E501
-            extended_message_payload (SendbirdExtendedMessagePayload): [optional]  # noqa: E501
+            extended_message_payload (SendbirdMessageResponseExtendedMessagePayload): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -355,7 +355,7 @@ class SendbirdMessageResponse(ModelNormal):
             parent_message_info (SendbirdParentMessageInfo): [optional]  # noqa: E501
             is_reply_to_channel (bool): [optional]  # noqa: E501
             message_events (SendbirdMessageResponseMessageEvents): [optional]  # noqa: E501
-            extended_message_payload (SendbirdExtendedMessagePayload): [optional]  # noqa: E501
+            extended_message_payload (SendbirdMessageResponseExtendedMessagePayload): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

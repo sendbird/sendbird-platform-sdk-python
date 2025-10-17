@@ -89,8 +89,8 @@ class CreateAGroupChannelRequest(ModelNormal):
         lazy_import()
         return {
             'users': ([SendbirdUser],),  # noqa: E501
-            'access_code': (str,),  # noqa: E501
-            'block_sdk_user_channel_join': (bool,),  # noqa: E501
+            'access_code': (str, none_type,),  # noqa: E501
+            'block_sdk_user_channel_join': (bool, none_type,),  # noqa: E501
             'channel_url': (str,),  # noqa: E501
             'cover_file': (file_type,),  # noqa: E501
             'cover_url': (str,),  # noqa: E501
@@ -180,8 +180,8 @@ class CreateAGroupChannelRequest(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            access_code (str): [optional]  # noqa: E501
-            block_sdk_user_channel_join (bool): [optional]  # noqa: E501
+            access_code (str, none_type): [optional]  # noqa: E501
+            block_sdk_user_channel_join (bool, none_type): [optional]  # noqa: E501
             channel_url (str): [optional]  # noqa: E501
             cover_file (file_type): Uploads a file for the channel cover image.. [optional]  # noqa: E501
             cover_url (str): [optional]  # noqa: E501
@@ -287,8 +287,8 @@ class CreateAGroupChannelRequest(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            access_code (str): [optional]  # noqa: E501
-            block_sdk_user_channel_join (bool): [optional]  # noqa: E501
+            access_code (str, none_type): [optional]  # noqa: E501
+            block_sdk_user_channel_join (bool, none_type): [optional]  # noqa: E501
             channel_url (str): [optional]  # noqa: E501
             cover_file (file_type): Uploads a file for the channel cover image.. [optional]  # noqa: E501
             cover_url (str): [optional]  # noqa: E501

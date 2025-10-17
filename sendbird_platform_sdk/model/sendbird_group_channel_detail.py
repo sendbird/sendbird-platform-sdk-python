@@ -104,7 +104,7 @@ class SendbirdGroupChannelDetail(ModelNormal):
             'channel': (SendbirdGroupChannelDetailChannel,),  # noqa: E501
             'cover_url': (str,),  # noqa: E501
             'created_at': (int,),  # noqa: E501
-            'created_by': (SendbirdBasicUserInfo,),  # noqa: E501
+            'created_by': (SendbirdBasicUserInfo, none_type),  # noqa: E501
             'custom_type': (str,),  # noqa: E501
             'data': (str,),  # noqa: E501
             'delivery_receipt': ({str: (int,)},),  # noqa: E501
@@ -122,7 +122,7 @@ class SendbirdGroupChannelDetail(ModelNormal):
             'is_public': (bool,),  # noqa: E501
             'is_super': (bool,),  # noqa: E501
             'joined_member_count': (int,),  # noqa: E501
-            'last_message': (SendbirdMessageResponse,),  # noqa: E501
+            'last_message': (SendbirdMessageResponse, none_type),  # noqa: E501
             'max_length_message': (int,),  # noqa: E501
             'member_count': (int,),  # noqa: E501
             'members': ([SendbirdMember],),  # noqa: E501

@@ -27,9 +27,169 @@ class TestCreateAUserRequest(unittest.TestCase):
 
     def testCreateAUserRequest(self):
         """Test CreateAUserRequest"""
-        # FIXME: construct object with mandatory attributes with example values
-        # model = CreateAUserRequest()  # noqa: E501
-        pass
+        # Test with required fields
+        model = CreateAUserRequest(
+            nickname="John Doe",
+            profile_url="https://example.com/profile.jpg",
+            user_id="user123"
+        )
+        self.assertEqual(model.nickname, "John Doe")
+        self.assertEqual(model.profile_url, "https://example.com/profile.jpg")
+        self.assertEqual(model.user_id, "user123")
+        
+    def testCreateAUserRequestWithOptionalFields(self):
+        """Test CreateAUserRequest with optional fields"""
+        model = CreateAUserRequest(
+            nickname="John Doe",
+            profile_url="https://example.com/profile.jpg",
+            user_id="user123",
+            discovery_keys=["email:john@example.com", "phone:1234567890"],
+            issue_access_token=True,
+            metadata={"level": 5, "vip": True}
+        )
+        self.assertEqual(model.nickname, "John Doe")
+        self.assertEqual(model.user_id, "user123")
+        self.assertEqual(len(model.discovery_keys), 2)
+        self.assertTrue(model.issue_access_token)
+        self.assertEqual(model.metadata["level"], 5)
+        
+    def testCreateAUserRequestMissingRequired(self):
+        """Test CreateAUserRequest fails without required fields"""
+        with self.assertRaises(TypeError):
+            model = CreateAUserRequest()
+            
+    def testCreateAUserRequestSerialization(self):
+        """Test CreateAUserRequest serialization"""
+        model = CreateAUserRequest(
+            nickname="John Doe",
+            profile_url="https://example.com/profile.jpg",
+            user_id="user123",
+            metadata={"key": "value"}
+        )
+        model_dict = model.to_dict()
+        self.assertIsInstance(model_dict, dict)
+        self.assertEqual(model_dict['nickname'], "John Doe")
+        self.assertEqual(model_dict['user_id'], "user123")
+        self.assertEqual(model_dict['metadata']['key'], "value")
+        
+    def testCreateAUserRequestOptionalDiscoveryKeys(self):
+        """Test CreateAUserRequest with optional discovery_keys
+        
+        FIXME: test_3 currently fails - optional fields should accept None
+        """
+        # Without discovery_keys (optional - can be omitted)
+        model1 = CreateAUserRequest(
+            nickname="John Doe",
+            profile_url="https://example.com/profile.jpg",
+            user_id="user123"
+        )
+        self.assertIsNotNone(model1)
+        
+        # With empty discovery_keys (valid)
+        model2 = CreateAUserRequest(
+            nickname="John Doe",
+            profile_url="https://example.com/profile.jpg",
+            user_id="user123",
+            discovery_keys=[]
+        )
+        self.assertEqual(len(model2.discovery_keys), 0)
+        
+        # With None discovery_keys - Expected: should accept None
+        # FIXME: Currently raises ApiTypeError - this is a bug
+        model3 = CreateAUserRequest(
+            nickname="John Doe",
+            profile_url="https://example.com/profile.jpg",
+            user_id="user123",
+            discovery_keys=None
+        )
+        self.assertIsNotNone(model3)
+        
+    def testCreateAUserRequestOptionalMetadata(self):
+        """Test CreateAUserRequest with optional metadata variations
+        
+        FIXME: test_3 currently fails - optional fields should accept None
+        """
+        # Without metadata (optional - can be omitted)
+        model1 = CreateAUserRequest(
+            nickname="John Doe",
+            profile_url="https://example.com/profile.jpg",
+            user_id="user123"
+        )
+        self.assertIsNotNone(model1)
+        
+        # With empty metadata (valid)
+        model2 = CreateAUserRequest(
+            nickname="John Doe",
+            profile_url="https://example.com/profile.jpg",
+            user_id="user123",
+            metadata={}
+        )
+        self.assertEqual(len(model2.metadata), 0)
+        
+        # With None metadata - Expected: should accept None
+        # FIXME: Currently raises ApiTypeError - this is a bug
+        model3 = CreateAUserRequest(
+            nickname="John Doe",
+            profile_url="https://example.com/profile.jpg",
+            user_id="user123",
+            metadata=None
+        )
+        self.assertIsNotNone(model3)
+        
+    def testCreateAUserRequestOptionalIssueAccessToken(self):
+        """Test CreateAUserRequest with optional issue_access_token"""
+        # Without issue_access_token (default behavior)
+        model1 = CreateAUserRequest(
+            nickname="John Doe",
+            profile_url="https://example.com/profile.jpg",
+            user_id="user123"
+        )
+        self.assertIsNotNone(model1)
+        
+        # With issue_access_token=True
+        model2 = CreateAUserRequest(
+            nickname="John Doe",
+            profile_url="https://example.com/profile.jpg",
+            user_id="user123",
+            issue_access_token=True
+        )
+        self.assertTrue(model2.issue_access_token)
+        
+        # With issue_access_token=False
+        model3 = CreateAUserRequest(
+            nickname="John Doe",
+            profile_url="https://example.com/profile.jpg",
+            user_id="user123",
+            issue_access_token=False
+        )
+        self.assertFalse(model3.issue_access_token)
+        
+    def testCreateAUserRequestOptionalFieldsShouldAcceptNone(self):
+        """Test that optional fields should accept None
+        
+        FIXME: Currently fails - SDK incorrectly rejects None for optional fields
+        This is a bug in the OpenAPI generator or SDK configuration
+        """
+        # Expected: optional fields should accept None
+        # Actual: raises ApiTypeError
+        
+        # Test discovery_keys with None
+        model1 = CreateAUserRequest(
+            nickname="John Doe",
+            profile_url="https://example.com/profile.jpg",
+            user_id="user123",
+            discovery_keys=None
+        )
+        self.assertIsNotNone(model1)
+        
+        # Test metadata with None  
+        model2 = CreateAUserRequest(
+            nickname="John Doe",
+            profile_url="https://example.com/profile.jpg",
+            user_id="user123",
+            metadata=None
+        )
+        self.assertIsNotNone(model2)
 
 
 if __name__ == '__main__':

@@ -17,8 +17,8 @@ from sendbird_platform_sdk.model.invite_as_members_response_all_of import Invite
 from sendbird_platform_sdk.model.sendbird_basic_user_info import SendbirdBasicUserInfo
 from sendbird_platform_sdk.model.sendbird_disappearing_message import SendbirdDisappearingMessage
 from sendbird_platform_sdk.model.sendbird_group_channel import SendbirdGroupChannel
+from sendbird_platform_sdk.model.sendbird_group_channel_last_message import SendbirdGroupChannelLastMessage
 from sendbird_platform_sdk.model.sendbird_member import SendbirdMember
-from sendbird_platform_sdk.model.sendbird_message_response import SendbirdMessageResponse
 from sendbird_platform_sdk.model.sendbird_push_trigger_option import SendbirdPushTriggerOption
 from sendbird_platform_sdk.model.sendbird_sms_fallback import SendbirdSmsFallback
 from sendbird_platform_sdk.model.sendbird_user import SendbirdUser
@@ -26,8 +26,8 @@ globals()['InviteAsMembersResponseAllOf'] = InviteAsMembersResponseAllOf
 globals()['SendbirdBasicUserInfo'] = SendbirdBasicUserInfo
 globals()['SendbirdDisappearingMessage'] = SendbirdDisappearingMessage
 globals()['SendbirdGroupChannel'] = SendbirdGroupChannel
+globals()['SendbirdGroupChannelLastMessage'] = SendbirdGroupChannelLastMessage
 globals()['SendbirdMember'] = SendbirdMember
-globals()['SendbirdMessageResponse'] = SendbirdMessageResponse
 globals()['SendbirdPushTriggerOption'] = SendbirdPushTriggerOption
 globals()['SendbirdSmsFallback'] = SendbirdSmsFallback
 globals()['SendbirdUser'] = SendbirdUser
