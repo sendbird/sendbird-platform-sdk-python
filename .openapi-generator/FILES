@@ -1,4 +1,3 @@
-.gitignore
 .gitlab-ci.yml
 .travis.yml
 docs/AcceptAnInvitationRequest.md
