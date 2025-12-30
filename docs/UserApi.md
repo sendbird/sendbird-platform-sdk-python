@@ -7,8 +7,11 @@ Method | HTTP request | Description
 [**add_a_registration_or_device_token**](UserApi.md#add_a_registration_or_device_token) | **POST** /v3/users/{user_id}/push/{token_type} | Add a registration or device token
 [**choose_a_push_notification_content_template**](UserApi.md#choose_a_push_notification_content_template) | **PUT** /v3/users/{user_id}/push/template | Choose a push notification content template
 [**create_a_user**](UserApi.md#create_a_user) | **POST** /v3/users | Create a user
+[**create_user_metadata**](UserApi.md#create_user_metadata) | **POST** /v3/users/{user_id}/metadata | Create user metadata
 [**create_user_token**](UserApi.md#create_user_token) | **POST** /v3/users/{user_id}/token | Create user token
 [**delete_a_user**](UserApi.md#delete_a_user) | **DELETE** /v3/users/{user_id} | Delete a user
+[**delete_specific_user_metadata**](UserApi.md#delete_specific_user_metadata) | **DELETE** /v3/users/{user_id}/metadata/{key} | Delete user metadata
+[**delete_user_all_metadata**](UserApi.md#delete_user_all_metadata) | **DELETE** /v3/users/{user_id}/metadata | Delete user metadata
 [**get_channel_invitation_preference**](UserApi.md#get_channel_invitation_preference) | **GET** /v3/users/{user_id}/channel_invitation_preference | Get channel invitation preference
 [**leave_my_group_channels**](UserApi.md#leave_my_group_channels) | **PUT** /v3/users/{user_id}/my_group_channels/leave | Leave my group channels
 [**list_my_group_channels**](UserApi.md#list_my_group_channels) | **GET** /v3/users/{user_id}/my_group_channels | List my group channels
@@ -24,12 +27,15 @@ Method | HTTP request | Description
 [**update_count_preference_of_a_channel**](UserApi.md#update_count_preference_of_a_channel) | **PUT** /v3/users/{user_id}/count_preference/{channel_url} | Update count preference of a channel
 [**update_push_preferences**](UserApi.md#update_push_preferences) | **PUT** /v3/users/{user_id}/push_preference | Update push preferences
 [**update_push_preferences_for_a_channel**](UserApi.md#update_push_preferences_for_a_channel) | **PUT** /v3/users/{user_id}/push_preference/{channel_url} | Update push preferences for a channel
+[**update_specific_user_metadata**](UserApi.md#update_specific_user_metadata) | **PUT** /v3/users/{user_id}/metadata/{key} | Update specific user metadata
+[**update_user_metadata**](UserApi.md#update_user_metadata) | **PUT** /v3/users/{user_id}/metadata | Update user metadata
 [**view_a_user**](UserApi.md#view_a_user) | **GET** /v3/users/{user_id} | View a user
 [**view_count_preference_of_a_channel**](UserApi.md#view_count_preference_of_a_channel) | **GET** /v3/users/{user_id}/count_preference/{channel_url} | View count preference of a channel
 [**view_number_of_channels_with_unread_messages**](UserApi.md#view_number_of_channels_with_unread_messages) | **GET** /v3/users/{user_id}/unread_channel_count | View number of channels with unread messages
 [**view_number_of_unread_messages**](UserApi.md#view_number_of_unread_messages) | **GET** /v3/users/{user_id}/unread_message_count | View number of unread messages
 [**view_push_preferences**](UserApi.md#view_push_preferences) | **GET** /v3/users/{user_id}/push_preference | View push preferences
 [**view_push_preferences_for_a_channel**](UserApi.md#view_push_preferences_for_a_channel) | **GET** /v3/users/{user_id}/push_preference/{channel_url} | View push preferences for a channel
+[**view_specific_user_metadata**](UserApi.md#view_specific_user_metadata) | **GET** /v3/users/{user_id}/metadata/{key} | Get specific user metadata
 [**view_who_owns_a_registration_or_device_token**](UserApi.md#view_who_owns_a_registration_or_device_token) | **GET** /v3/push/device_tokens/{token_type}/{token} | View who owns a registration or device token
 
 
@@ -284,6 +290,88 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **create_user_metadata**
+> {str: (bool, date, datetime, dict, float, int, list, str, none_type)} create_user_metadata(user_id)
+
+Create user metadata
+
+## Create metadata When creating new items of the user metadata. https://sendbird.com/docs/chat/platform-api/v3/user/managing-metadata/user-create-metadata
+
+### Example
+
+
+```python
+import time
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import user_api
+from sendbird_platform_sdk.model.create_user_metadata_request import CreateUserMetadataRequest
+from pprint import pprint
+# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = sendbird_platform_sdk.Configuration(
+    host = "https://api-APP_ID.sendbird.com"
+)
+
+
+# Enter a context with an instance of the API client
+with sendbird_platform_sdk.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = user_api.UserApi(api_client)
+    user_id = "user_id_example" # str | (Required) 
+    api_token = "api-token_example" # str |  (optional)
+    create_user_metadata_request = CreateUserMetadataRequest(
+        metadata={},
+    ) # CreateUserMetadataRequest |  (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Create user metadata
+        api_response = api_instance.create_user_metadata(user_id)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling UserApi->create_user_metadata: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Create user metadata
+        api_response = api_instance.create_user_metadata(user_id, api_token=api_token, create_user_metadata_request=create_user_metadata_request)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling UserApi->create_user_metadata: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **user_id** | **str**| (Required)  |
+ **api_token** | **str**|  | [optional]
+ **create_user_metadata_request** | [**CreateUserMetadataRequest**](CreateUserMetadataRequest.md)|  | [optional]
+
+### Return type
+
+**{str: (bool, date, datetime, dict, float, int, list, str, none_type)}**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **create_user_token**
 > CreateUserTokenResponse create_user_token(user_id)
 
@@ -412,6 +500,162 @@ with sendbird_platform_sdk.ApiClient() as api_client:
         pprint(api_response)
     except sendbird_platform_sdk.ApiException as e:
         print("Exception when calling UserApi->delete_a_user: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **user_id** | **str**| (Required)  |
+ **api_token** | **str**|  | [optional]
+
+### Return type
+
+**{str: (bool, date, datetime, dict, float, int, list, str, none_type)}**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **delete_specific_user_metadata**
+> {str: (bool, date, datetime, dict, float, int, list, str, none_type)} delete_specific_user_metadata(user_id, key)
+
+Delete user metadata
+
+## Delete metadata https://sendbird.com/docs/chat/platform-api/v3/user/managing-metadata/user-delete-metadata
+
+### Example
+
+
+```python
+import time
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import user_api
+from pprint import pprint
+# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = sendbird_platform_sdk.Configuration(
+    host = "https://api-APP_ID.sendbird.com"
+)
+
+
+# Enter a context with an instance of the API client
+with sendbird_platform_sdk.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = user_api.UserApi(api_client)
+    user_id = "user_id_example" # str | (Required) 
+    key = "key_example" # str | 
+    api_token = "api-token_example" # str |  (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Delete user metadata
+        api_response = api_instance.delete_specific_user_metadata(user_id, key)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling UserApi->delete_specific_user_metadata: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Delete user metadata
+        api_response = api_instance.delete_specific_user_metadata(user_id, key, api_token=api_token)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling UserApi->delete_specific_user_metadata: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **user_id** | **str**| (Required)  |
+ **key** | **str**|  |
+ **api_token** | **str**|  | [optional]
+
+### Return type
+
+**{str: (bool, date, datetime, dict, float, int, list, str, none_type)}**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **delete_user_all_metadata**
+> {str: (bool, date, datetime, dict, float, int, list, str, none_type)} delete_user_all_metadata(user_id)
+
+Delete user metadata
+
+## Delete metadata You can delete a specific or all metadata of a user. Metadata stores additional user information such as their preference settings. https://sendbird.com/docs/chat/platform-api/v3/user/managing-metadata/user-delete-metadata
+
+### Example
+
+
+```python
+import time
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import user_api
+from pprint import pprint
+# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = sendbird_platform_sdk.Configuration(
+    host = "https://api-APP_ID.sendbird.com"
+)
+
+
+# Enter a context with an instance of the API client
+with sendbird_platform_sdk.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = user_api.UserApi(api_client)
+    user_id = "user_id_example" # str | (Required) 
+    api_token = "api-token_example" # str |  (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Delete user metadata
+        api_response = api_instance.delete_user_all_metadata(user_id)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling UserApi->delete_user_all_metadata: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Delete user metadata
+        api_response = api_instance.delete_user_all_metadata(user_id, api_token=api_token)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling UserApi->delete_user_all_metadata: %s\n" % e)
 ```
 
 
@@ -1780,6 +2024,173 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **update_specific_user_metadata**
+> {str: (bool, date, datetime, dict, float, int, list, str, none_type)} update_specific_user_metadata(user_id, key)
+
+Update specific user metadata
+
+## Update metadata https://sendbird.com/docs/chat/platform-api/v3/user/managing-metadata/user-update-metadata
+
+### Example
+
+
+```python
+import time
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import user_api
+from sendbird_platform_sdk.model.update_specific_user_metadata_request import UpdateSpecificUserMetadataRequest
+from pprint import pprint
+# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = sendbird_platform_sdk.Configuration(
+    host = "https://api-APP_ID.sendbird.com"
+)
+
+
+# Enter a context with an instance of the API client
+with sendbird_platform_sdk.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = user_api.UserApi(api_client)
+    user_id = "user_id_example" # str | (Required) 
+    key = "key_example" # str | 
+    api_token = "api-token_example" # str |  (optional)
+    update_specific_user_metadata_request = UpdateSpecificUserMetadataRequest(
+        value="value_example",
+    ) # UpdateSpecificUserMetadataRequest |  (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Update specific user metadata
+        api_response = api_instance.update_specific_user_metadata(user_id, key)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling UserApi->update_specific_user_metadata: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Update specific user metadata
+        api_response = api_instance.update_specific_user_metadata(user_id, key, api_token=api_token, update_specific_user_metadata_request=update_specific_user_metadata_request)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling UserApi->update_specific_user_metadata: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **user_id** | **str**| (Required)  |
+ **key** | **str**|  |
+ **api_token** | **str**|  | [optional]
+ **update_specific_user_metadata_request** | [**UpdateSpecificUserMetadataRequest**](UpdateSpecificUserMetadataRequest.md)|  | [optional]
+
+### Return type
+
+**{str: (bool, date, datetime, dict, float, int, list, str, none_type)}**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_user_metadata**
+> {str: (bool, date, datetime, dict, float, int, list, str, none_type)} update_user_metadata(user_id)
+
+Update user metadata
+
+## Update metadata When updating existing items of the user metadata by their keys or adding new items to the metadata https://sendbird.com/docs/chat/platform-api/v3/user/managing-metadata/user-update-metadata
+
+### Example
+
+
+```python
+import time
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import user_api
+from sendbird_platform_sdk.model.update_user_metadata_request import UpdateUserMetadataRequest
+from pprint import pprint
+# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = sendbird_platform_sdk.Configuration(
+    host = "https://api-APP_ID.sendbird.com"
+)
+
+
+# Enter a context with an instance of the API client
+with sendbird_platform_sdk.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = user_api.UserApi(api_client)
+    user_id = "user_id_example" # str | (Required) 
+    api_token = "api-token_example" # str |  (optional)
+    update_user_metadata_request = UpdateUserMetadataRequest(
+        metadata={},
+        upsert=True,
+    ) # UpdateUserMetadataRequest |  (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Update user metadata
+        api_response = api_instance.update_user_metadata(user_id)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling UserApi->update_user_metadata: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Update user metadata
+        api_response = api_instance.update_user_metadata(user_id, api_token=api_token, update_user_metadata_request=update_user_metadata_request)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling UserApi->update_user_metadata: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **user_id** | **str**| (Required)  |
+ **api_token** | **str**|  | [optional]
+ **update_user_metadata_request** | [**UpdateUserMetadataRequest**](UpdateUserMetadataRequest.md)|  | [optional]
+
+### Return type
+
+**{str: (bool, date, datetime, dict, float, int, list, str, none_type)}**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **view_a_user**
 > SendbirdUser view_a_user(user_id)
 
@@ -2247,6 +2658,85 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ViewPushPreferencesForAChannelResponse**](ViewPushPreferencesForAChannelResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **view_specific_user_metadata**
+> {str: (bool, date, datetime, dict, float, int, list, str, none_type)} view_specific_user_metadata(user_id, key)
+
+Get specific user metadata
+
+## Get metadata https://sendbird.com/docs/chat/platform-api/v3/user/managing-metadata/user-get-metadata
+
+### Example
+
+
+```python
+import time
+import sendbird_platform_sdk
+from sendbird_platform_sdk.api import user_api
+from pprint import pprint
+# Defining the host is optional and defaults to https://api-APP_ID.sendbird.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = sendbird_platform_sdk.Configuration(
+    host = "https://api-APP_ID.sendbird.com"
+)
+
+
+# Enter a context with an instance of the API client
+with sendbird_platform_sdk.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = user_api.UserApi(api_client)
+    user_id = "user_id_example" # str | (Required) 
+    key = "key_example" # str | 
+    api_token = "{{API_TOKEN}}" # str |  (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Get specific user metadata
+        api_response = api_instance.view_specific_user_metadata(user_id, key)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling UserApi->view_specific_user_metadata: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Get specific user metadata
+        api_response = api_instance.view_specific_user_metadata(user_id, key, api_token=api_token)
+        pprint(api_response)
+    except sendbird_platform_sdk.ApiException as e:
+        print("Exception when calling UserApi->view_specific_user_metadata: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **user_id** | **str**| (Required)  |
+ **key** | **str**|  |
+ **api_token** | **str**|  | [optional]
+
+### Return type
+
+**{str: (bool, date, datetime, dict, float, int, list, str, none_type)}**
 
 ### Authorization
 
