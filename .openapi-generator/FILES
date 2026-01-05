@@ -1,4 +1,3 @@
-.gitignore
 .gitlab-ci.yml
 .travis.yml
 docs/AcceptAnInvitationRequest.md
@@ -25,6 +24,7 @@ docs/CreateAUserRequest.md
 docs/CreateAUserResponse.md
 docs/CreateAnOpenChannelRequest.md
 docs/CreateAnOpenChannelResponse.md
+docs/CreateUserMetadataRequest.md
 docs/CreateUserTokenRequest.md
 docs/CreateUserTokenResponse.md
 docs/FreezeAGroupChannelRequest.md
@@ -140,6 +140,8 @@ docs/UpdatePushPreferencesForAChannelRequest.md
 docs/UpdatePushPreferencesForAChannelResponse.md
 docs/UpdatePushPreferencesRequest.md
 docs/UpdatePushPreferencesResponse.md
+docs/UpdateSpecificUserMetadataRequest.md
+docs/UpdateUserMetadataRequest.md
 docs/UserApi.md
 docs/ViewAUserResponse.md
 docs/ViewBotByIdResponse.md
@@ -191,6 +193,7 @@ sendbird_platform_sdk/model/create_a_user_request.py
 sendbird_platform_sdk/model/create_a_user_response.py
 sendbird_platform_sdk/model/create_an_open_channel_request.py
 sendbird_platform_sdk/model/create_an_open_channel_response.py
+sendbird_platform_sdk/model/create_user_metadata_request.py
 sendbird_platform_sdk/model/create_user_token_request.py
 sendbird_platform_sdk/model/create_user_token_response.py
 sendbird_platform_sdk/model/freeze_a_group_channel_request.py
@@ -300,6 +303,8 @@ sendbird_platform_sdk/model/update_push_preferences_for_a_channel_request.py
 sendbird_platform_sdk/model/update_push_preferences_for_a_channel_response.py
 sendbird_platform_sdk/model/update_push_preferences_request.py
 sendbird_platform_sdk/model/update_push_preferences_response.py
+sendbird_platform_sdk/model/update_specific_user_metadata_request.py
+sendbird_platform_sdk/model/update_user_metadata_request.py
 sendbird_platform_sdk/model/view_a_user_response.py
 sendbird_platform_sdk/model/view_bot_by_id_response.py
 sendbird_platform_sdk/model/view_bot_by_id_response_bot.py

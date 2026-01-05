@@ -12,7 +12,7 @@
 from setuptools import setup, find_packages  # noqa: H301
 
 NAME = "sendbird_platform_sdk"
-VERSION = "2.1.1"
+VERSION = "2.1.2"
 # To install the library, run the following
 #
 # python setup.py install
@@ -21,7 +21,7 @@ VERSION = "2.1.1"
 # http://pypi.python.org/pypi/setuptools
 
 REQUIRES = [
-  "urllib3 >= 1.25.3",
+  "urllib3 >= 2.6.0",
   "python-dateutil",
 ]
 

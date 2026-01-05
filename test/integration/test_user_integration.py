@@ -9,6 +9,9 @@ import time
 from sendbird_platform_sdk.api.user_api import UserApi
 from sendbird_platform_sdk.model.create_a_user_request import CreateAUserRequest
 from sendbird_platform_sdk.model.update_a_user_request import UpdateAUserRequest
+from sendbird_platform_sdk.model.create_user_metadata_request import CreateUserMetadataRequest
+from sendbird_platform_sdk.model.update_user_metadata_request import UpdateUserMetadataRequest
+from sendbird_platform_sdk.model.update_specific_user_metadata_request import UpdateSpecificUserMetadataRequest
 from sendbird_platform_sdk.exceptions import ApiException
 
 
@@ -114,7 +117,7 @@ class TestUserApiIntegration:
             nickname="User with Metadata",
             profile_url="https://example.com/profile.jpg",
             metadata={
-                "level": 5,
+                "level": "5",
                 "vip": True,
                 "country": "US"
             }
@@ -137,6 +140,10 @@ class TestUserApiIntegration:
         
         assert view_response is not None
         assert view_response.user_id == test_user_id
+        assert view_response.metadata is not None
+        assert view_response.metadata.get("level") == "5"
+        assert view_response.metadata.get("vip") == "True"
+        assert view_response.metadata.get("country") == "US"
         
         # Cleanup
         try:
@@ -167,6 +174,305 @@ class TestUserApiIntegration:
         
         # Cleanup
         try:
+            self.api.delete_a_user(
+                api_token=self.api_token,
+                user_id=test_user_id
+            )
+        except ApiException:
+            pass
+
+    def test_create_user_metadata(self, test_user_id):
+        """Test creating a user metadata"""
+        create_request = CreateAUserRequest(
+            user_id=test_user_id,
+            nickname="User",
+            profile_url="https://example.com/profile.jpg",
+        )
+        
+        create_response = self.api.create_a_user(
+            api_token=self.api_token,
+            create_a_user_request=create_request
+        )
+        
+        assert create_response is not None
+        assert create_response.user_id == test_user_id
+        
+        # create user metadata
+        create_user_metadata_request = CreateUserMetadataRequest(
+            metadata={
+                "level": "5",
+                "country": "US"
+            }
+        )
+        create_user_metadata_response = self.api.create_user_metadata(
+            api_token=self.api_token,
+            user_id=test_user_id,
+            create_user_metadata_request=create_user_metadata_request
+        )
+
+        assert create_user_metadata_response is not None
+        assert create_user_metadata_response.get("level") == "5"
+        assert create_user_metadata_response.get("country") == "US"
+        
+        # Cleanup
+        try:
+            self.api.delete_user_all_metadata(
+                api_token=self.api_token,
+                user_id=test_user_id,
+            )
+            self.api.delete_a_user(
+                api_token=self.api_token,
+                user_id=test_user_id
+            )
+        except ApiException:
+            pass
+
+    def test_update_user_metadata(self, test_user_id):
+        """Test creating a user with metadata"""
+        create_request = CreateAUserRequest(
+            user_id=test_user_id,
+            nickname="User with Metadata",
+            profile_url="https://example.com/profile.jpg",
+            metadata={
+                "level": "5",
+                "country": "US"
+            }
+        )
+        
+        create_response = self.api.create_a_user(
+            api_token=self.api_token,
+            create_a_user_request=create_request
+        )
+        
+        assert create_response is not None
+        assert create_response.user_id == test_user_id
+        assert create_response.metadata.get("level") == "5"
+        assert create_response.metadata.get("country") == "US"
+        
+        # update user metadata
+        update_user_metadata_request = UpdateUserMetadataRequest(
+            metadata = {
+                "level": "10",
+                "city": "San Francisco"
+            },
+            upsert = True,
+        )
+
+        update_user_metadata_response = self.api.update_user_metadata(
+            api_token=self.api_token,
+            user_id=test_user_id,
+            update_user_metadata_request=update_user_metadata_request
+        )
+
+        assert update_user_metadata_response is not None
+        assert update_user_metadata_response.get("level") == "10"
+        assert update_user_metadata_response.get("country") is None
+        assert update_user_metadata_response.get("city") == "San Francisco"
+        
+        # Cleanup
+        try:
+            self.api.delete_user_all_metadata(
+                api_token=self.api_token,
+                user_id=test_user_id,
+            )
+            self.api.delete_a_user(
+                api_token=self.api_token,
+                user_id=test_user_id
+            )
+        except ApiException:
+            pass
+
+    def test_delete_user_metadata(self, test_user_id):
+        """Test creating a user with metadata"""
+        create_request = CreateAUserRequest(
+            user_id=test_user_id,
+            nickname="User with Metadata",
+            profile_url="https://example.com/profile.jpg",
+            metadata={
+                "level": "5",
+                "country": "US"
+            }
+        )
+        
+        create_response = self.api.create_a_user(
+            api_token=self.api_token,
+            create_a_user_request=create_request
+        )
+        
+        assert create_response is not None
+        assert create_response.user_id == test_user_id
+        assert create_response.metadata.get("level") == "5"
+        assert create_response.metadata.get("country") == "US"
+        
+        # delete user metadata
+        self.api.delete_user_all_metadata(
+            api_token=self.api_token,
+            user_id=test_user_id
+        )
+
+        view_response = self.api.view_a_user(
+            api_token=self.api_token,
+            user_id=test_user_id
+        )
+
+        assert view_response is not None
+        assert view_response.metadata is not None
+        assert view_response.metadata == {}
+        
+        # Cleanup
+        try:
+            self.api.delete_user_all_metadata(
+                api_token=self.api_token,
+                user_id=test_user_id,
+            )
+            self.api.delete_a_user(
+                api_token=self.api_token,
+                user_id=test_user_id
+            )
+        except ApiException:
+            pass
+
+    def test_view_specific_user_metadata(self, test_user_id):
+        """Test creating a user with metadata"""
+        create_request = CreateAUserRequest(
+            user_id=test_user_id,
+            nickname="User with Metadata",
+            profile_url="https://example.com/profile.jpg",
+            metadata={
+                "level": "5",
+                "country": "US"
+            }
+        )
+        
+        create_response = self.api.create_a_user(
+            api_token=self.api_token,
+            create_a_user_request=create_request
+        )
+        
+        assert create_response is not None
+        assert create_response.user_id == test_user_id
+        assert create_response.metadata.get("level") == "5"
+        assert create_response.metadata.get("country") == "US"
+        
+        # get specific user metadata
+        specific_user_metadata_response = self.api.view_specific_user_metadata(
+            api_token=self.api_token,
+            user_id=test_user_id,
+            key="level"
+        )
+
+        assert specific_user_metadata_response is not None
+        assert specific_user_metadata_response.get("level") == "5"
+        assert specific_user_metadata_response.get("country") is None
+        
+        # Cleanup
+        try:
+            self.api.delete_user_all_metadata(
+                api_token=self.api_token,
+                user_id=test_user_id,
+            )
+            self.api.delete_a_user(
+                api_token=self.api_token,
+                user_id=test_user_id
+            )
+        except ApiException:
+            pass
+
+    def test_update_specific_user_metadata(self, test_user_id):
+        """Test creating a user with metadata"""
+        create_request = CreateAUserRequest(
+            user_id=test_user_id,
+            nickname="User with Metadata",
+            profile_url="https://example.com/profile.jpg",
+            metadata={
+                "level": "5",
+                "country": "US"
+            }
+        )
+        
+        create_response = self.api.create_a_user(
+            api_token=self.api_token,
+            create_a_user_request=create_request
+        )
+        
+        assert create_response is not None
+        assert create_response.user_id == test_user_id
+        assert create_response.metadata.get("level") == "5"
+        assert create_response.metadata.get("country") == "US"
+        
+        # update specific user metadata
+        update_specific_user_metadata_request = UpdateSpecificUserMetadataRequest(
+            value="15"
+        )
+
+        update_specific_user_metadata_response = self.api.update_specific_user_metadata(
+            api_token=self.api_token,
+            user_id=test_user_id,
+            key="level",
+            update_specific_user_metadata_request=update_specific_user_metadata_request
+        )
+
+        assert update_specific_user_metadata_response is not None
+        assert update_specific_user_metadata_response.get("level") == "15"
+        
+        # Cleanup
+        try:
+            self.api.delete_user_all_metadata(
+                api_token=self.api_token,
+                user_id=test_user_id,
+            )
+            self.api.delete_a_user(
+                api_token=self.api_token,
+                user_id=test_user_id
+            )
+        except ApiException:
+            pass
+
+    def test_delete_specific_user_metadata(self, test_user_id):
+        """Test creating a user with metadata"""
+        create_request = CreateAUserRequest(
+            user_id=test_user_id,
+            nickname="User with Metadata",
+            profile_url="https://example.com/profile.jpg",
+            metadata={
+                "level": "5",
+                "country": "US"
+            }
+        )
+        
+        create_response = self.api.create_a_user(
+            api_token=self.api_token,
+            create_a_user_request=create_request
+        )
+        
+        assert create_response is not None
+        assert create_response.user_id == test_user_id
+        assert create_response.metadata.get("level") == "5"
+        assert create_response.metadata.get("country") == "US"
+        
+        # delete specific user metadata
+        self.api.delete_specific_user_metadata(
+            api_token=self.api_token,
+            user_id=test_user_id,
+            key="level",
+        )
+
+        view_response = self.api.view_a_user(
+            api_token=self.api_token,
+            user_id=test_user_id
+        )
+
+        assert view_response is not None
+        assert view_response.metadata is not None
+        assert view_response.metadata.get("level") is None
+        assert view_response.metadata.get("country") == "US"
+        
+        # Cleanup
+        try:
+            self.api.delete_user_all_metadata(
+                api_token=self.api_token,
+                user_id=test_user_id,
+            )
             self.api.delete_a_user(
                 api_token=self.api_token,
                 user_id=test_user_id
