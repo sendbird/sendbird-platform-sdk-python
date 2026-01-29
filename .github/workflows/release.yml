@@ -1,0 +1,156 @@
+name: Release (TestPyPI -> PyPI)
+
+on:
+  release:
+    types: [published]
+
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: "Git ref to build (branch/tag/sha). Example: main, v2.1.2, a1b2c3d"
+        required: true
+        default: "main"
+        type: string
+      version_tag:
+        description: "Expected version tag to validate against setup.py VERSION. Example: v2.1.2 or 2.1.2 (optional)"
+        required: false
+        default: ""
+        type: string
+      target:
+        description: "Where to publish"
+        required: true
+        default: "test"
+        type: choice
+        options:
+          - test
+          - release
+          - both
+
+jobs:
+  build:
+    name: Build dists
+    runs-on: ubuntu-latest
+    outputs:
+      normalized_version: ${{ steps.version.outputs.normalized_version }}
+    steps:
+      - name: Checkout (release event)
+        if: ${{ github.event_name == 'release' }}
+        uses: actions/checkout@v4
+
+      - name: Checkout (manual ref)
+        if: ${{ github.event_name == 'workflow_dispatch' }}
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.ref }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Determine expected version tag
+        id: version
+        run: |
+          python - << 'PY'
+          import os, re
+
+          event_name = os.environ.get("GITHUB_EVENT_NAME", "")
+          ref_name = os.environ.get("GITHUB_REF_NAME", "")
+          input_tag = os.environ.get("INPUT_VERSION_TAG", "").strip()
+
+          if event_name == "workflow_dispatch":
+            raw = input_tag  # may be empty
+          else:
+            raw = ref_name   # release tag name
+
+          raw = raw.strip()
+          if not raw:
+            # empty means "skip version validation"
+            print("normalized_version=")
+            return
+
+          m = re.match(r"^v?(.+)$", raw)
+          normalized = m.group(1) if m else raw
+          print(f"normalized_version={normalized}")
+          PY
+        env:
+          INPUT_VERSION_TAG: ${{ inputs.version_tag }}
+
+      - name: Validate setup.py VERSION matches expected tag (when provided)
+        if: ${{ steps.version.outputs.normalized_version != '' }}
+        run: |
+          python - << 'PY'
+          import re, pathlib, sys, os
+
+          expected = os.environ["EXPECTED_VERSION"]
+          text = pathlib.Path("setup.py").read_text(encoding="utf-8")
+
+          m = re.search(r'VERSION\s*=\s*"([^"]+)"', text)
+          if not m:
+            print("VERSION not found in setup.py")
+            sys.exit(1)
+
+          setup_ver = m.group(1)
+          if setup_ver != expected:
+            print(f"Mismatch: expected={expected} setup.py VERSION={setup_ver}")
+            sys.exit(1)
+
+          print(f"OK: version {setup_ver}")
+          PY
+        env:
+          EXPECTED_VERSION: ${{ steps.version.outputs.normalized_version }}
+
+      - name: Install build tools
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install build
+
+      - name: Build distributions
+        run: |
+          python -m build
+
+      - name: Upload dist artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: python-dist
+          path: dist/*
+
+  publish_testpypi:
+    name: Publish to TestPyPI (OIDC)
+    needs: build
+    runs-on: ubuntu-latest
+    environment: testpypi
+    permissions:
+      id-token: write
+      contents: read
+    if: ${{ github.event_name == 'release' || inputs.target == 'test' || inputs.target == 'both' || inputs.target == 'release' }}
+    steps:
+      - name: Download dist artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: python-dist
+          path: dist
+
+      - name: Publish distributions to TestPyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          repository-url: https://test.pypi.org/legacy/
+
+  publish_pypi:
+    name: Publish to PyPI (OIDC)
+    needs: publish_testpypi
+    runs-on: ubuntu-latest
+    environment: pypi
+    permissions:
+      id-token: write
+      contents: read
+    if: ${{ github.event_name == 'release' || inputs.target == 'release' || inputs.target == 'both' }}
+    steps:
+      - name: Download dist artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: python-dist
+          path: dist
+
+      - name: Publish distributions to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
