@@ -120,7 +120,7 @@ jobs:
     name: Publish to TestPyPI (OIDC)
     needs: build
     runs-on: ubuntu-latest
-    environment: testpypi
+    environment: pypi
     permissions:
       id-token: write
       contents: read
