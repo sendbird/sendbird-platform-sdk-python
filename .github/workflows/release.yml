@@ -114,6 +114,7 @@ jobs:
         with:
           name: python-dist
           path: dist/*
+          retention-days: 3
 
   publish_testpypi:
     name: Publish to TestPyPI (OIDC)
