@@ -30,3 +30,4 @@ test-requirements.txt
 tox.ini
 pytest.ini
 .gitignore
+.github/**
