@@ -64,14 +64,14 @@ jobs:
             raw = ref_name   # release tag name
 
           raw = raw.strip()
+
           if not raw:
             # empty means "skip version validation"
             print("normalized_version=")
-            return
-
-          m = re.match(r"^v?(.+)$", raw)
-          normalized = m.group(1) if m else raw
-          print(f"normalized_version={normalized}")
+          else:
+            m = re.match(r"^v?(.+)$", raw)
+            normalized = m.group(1) if m else raw
+            print(f"normalized_version={normalized}")
           PY
         env:
           INPUT_VERSION_TAG: ${{ inputs.version_tag }}
