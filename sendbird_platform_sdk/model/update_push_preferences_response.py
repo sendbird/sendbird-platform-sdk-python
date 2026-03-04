@@ -32,7 +32,9 @@ from sendbird_platform_sdk.exceptions import ApiAttributeError
 
 def lazy_import():
     from sendbird_platform_sdk.model.sendbird_push_trigger_option import SendbirdPushTriggerOption
+    from sendbird_platform_sdk.model.update_push_preferences_request_dnd_schedules_inner import UpdatePushPreferencesRequestDndSchedulesInner
     globals()['SendbirdPushTriggerOption'] = SendbirdPushTriggerOption
+    globals()['UpdatePushPreferencesRequestDndSchedulesInner'] = UpdatePushPreferencesRequestDndSchedulesInner
 
 
 class UpdatePushPreferencesResponse(ModelNormal):
@@ -102,6 +104,7 @@ class UpdatePushPreferencesResponse(ModelNormal):
             'start_hour': (int,),  # noqa: E501
             'start_min': (int,),  # noqa: E501
             'timezone': (str,),  # noqa: E501
+            'dnd_schedules': ([UpdatePushPreferencesRequestDndSchedulesInner],),  # noqa: E501
         }
 
     @cached_property
@@ -124,6 +127,7 @@ class UpdatePushPreferencesResponse(ModelNormal):
         'start_hour': 'start_hour',  # noqa: E501
         'start_min': 'start_min',  # noqa: E501
         'timezone': 'timezone',  # noqa: E501
+        'dnd_schedules': 'dnd_schedules',  # noqa: E501
     }
 
     read_only_vars = {
@@ -181,6 +185,7 @@ class UpdatePushPreferencesResponse(ModelNormal):
             start_hour (int): [optional]  # noqa: E501
             start_min (int): [optional]  # noqa: E501
             timezone (str): [optional]  # noqa: E501
+            dnd_schedules ([UpdatePushPreferencesRequestDndSchedulesInner]): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -280,6 +285,7 @@ class UpdatePushPreferencesResponse(ModelNormal):
             start_hour (int): [optional]  # noqa: E501
             start_min (int): [optional]  # noqa: E501
             timezone (str): [optional]  # noqa: E501
+            dnd_schedules ([UpdatePushPreferencesRequestDndSchedulesInner]): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
