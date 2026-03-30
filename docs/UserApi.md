@@ -1887,6 +1887,19 @@ with sendbird_platform_sdk.ApiClient() as api_client:
         start_hour=1,
         start_min=1,
         timezone="timezone_example",
+        dnd_schedules=[
+            UpdatePushPreferencesRequestDndSchedulesInner(
+                day_of_week="monday",
+                time_windows=[
+                    UpdatePushPreferencesRequestDndSchedulesInnerTimeWindowsInner(
+                        start_hour=1,
+                        start_min=1,
+                        end_hour=1,
+                        end_min=1,
+                    ),
+                ],
+            ),
+        ],
     ) # UpdatePushPreferencesRequest |  (optional)
 
     # example passing only required values which don't have defaults set

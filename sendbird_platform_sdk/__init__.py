@@ -11,7 +11,7 @@
 """
 
 
-__version__ = "2.1.2"
+__version__ = "2.1.5"
 
 # import ApiClient
 from sendbird_platform_sdk.api_client import ApiClient
