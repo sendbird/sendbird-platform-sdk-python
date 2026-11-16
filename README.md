@@ -39,7 +39,7 @@ In order to make requests with this SDK you will need you master API token. This
 ![how to find you api token](https://i.imgur.com/0YMKtpX.png)
 
 # 💻 Requirements 
-This package has been tested with python version 3.9.10
+This package requires Python 3.10 or newer.
 
 
 # ⚙️ Installation 
